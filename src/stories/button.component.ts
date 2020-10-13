@@ -6,9 +6,9 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
     type="button"
     (click)="onClick.emit($event)"
     [ngClass]="classes"
-    [ngStyle]="{ 'background-color': backgroundColor }"
+    [ngStyle]="{ 'background-color': backgroundColor, 'color': color }"
   >
-    {{ label }}
+    {{ label }} {{ title }}
   </button>`,
   styleUrls: ['./button.css'],
 })
@@ -19,17 +19,26 @@ export default class ButtonComponent {
   @Input()
   primary = false;
 
+  @Input()
+  title = 'Butto';
+
   /**
    * What background color to use
    */
   @Input()
   backgroundColor?: string;
 
+  @Input()
+  color?: string;
+
+  @Input()
+  name?: string;
+
   /**
    * How large should the button be?
    */
   @Input()
-  size: 'small' | 'medium' | 'large' = 'medium';
+  size: string;
 
   /**
    * Button contents

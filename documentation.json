@@ -86,7 +86,7 @@
         },
         {
             "name": "ButtonComponent",
-            "id": "component-ButtonComponent-642c6c4e474cd5a0ac760dfda26b2fc9",
+            "id": "component-ButtonComponent-e1957a286a34a61e482a9df6140f5860",
             "file": "src/stories/button.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -98,7 +98,7 @@
                 "./button.css"
             ],
             "styles": [],
-            "template": "<button   type=\"button\"\n   (click)=\"onClick.emit($event)\"\n   [ngClass]=\"classes\"\n   [ngStyle]=\"{ 'background-color': backgroundColor }\"\n >\n   {{ label }}\n </button>",
+            "template": "<button   type=\"button\"\n   (click)=\"onClick.emit($event)\"\n   [ngClass]=\"classes\"\n   [ngStyle]=\"{ 'background-color': backgroundColor, 'color': color }\"\n >\n   {{ label }}\n </button>",
             "templateUrl": [],
             "viewProviders": [],
             "inputsClass": [
@@ -109,10 +109,15 @@
                     "type": "string"
                 },
                 {
+                    "name": "color",
+                    "line": 29,
+                    "type": "string"
+                },
+                {
                     "name": "label",
                     "defaultValue": "'Button'",
                     "description": "<p>Button contents</p>\n",
-                    "line": 40
+                    "line": 43
                 },
                 {
                     "name": "primary",
@@ -122,10 +127,9 @@
                 },
                 {
                     "name": "size",
-                    "defaultValue": "'medium'",
                     "description": "<p>How large should the button be?</p>\n",
-                    "line": 32,
-                    "type": "\"small\" | \"medium\" | \"large\""
+                    "line": 35,
+                    "type": "string"
                 }
             ],
             "outputsClass": [
@@ -133,7 +137,7 @@
                     "name": "onClick",
                     "defaultValue": "new EventEmitter<Event>()",
                     "description": "<p>Optional click handler</p>\n",
-                    "line": 46,
+                    "line": 49,
                     "type": "EventEmitter"
                 }
             ],
@@ -144,7 +148,7 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\n\n@Component({\n  selector: 'storybook-button',\n  template: ` <button\n    type=\"button\"\n    (click)=\"onClick.emit($event)\"\n    [ngClass]=\"classes\"\n    [ngStyle]=\"{ 'background-color': backgroundColor }\"\n  >\n    {{ label }}\n  </button>`,\n  styleUrls: ['./button.css'],\n})\nexport default class ButtonComponent {\n  /**\n   * Is this the principal call to action on the page?\n   */\n  @Input()\n  primary = false;\n\n  /**\n   * What background color to use\n   */\n  @Input()\n  backgroundColor?: string;\n\n  /**\n   * How large should the button be?\n   */\n  @Input()\n  size: 'small' | 'medium' | 'large' = 'medium';\n\n  /**\n   * Button contents\n   *\n   * @required\n   */\n  @Input()\n  label = 'Button';\n\n  /**\n   * Optional click handler\n   */\n  @Output()\n  onClick = new EventEmitter<Event>();\n\n  public get classes(): string[] {\n    const mode = this.primary ? 'storybook-button--primary' : 'storybook-button--secondary';\n\n    return ['storybook-button', `storybook-button--${this.size}`, mode];\n  }\n}\n",
+            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\n\n@Component({\n  selector: 'storybook-button',\n  template: ` <button\n    type=\"button\"\n    (click)=\"onClick.emit($event)\"\n    [ngClass]=\"classes\"\n    [ngStyle]=\"{ 'background-color': backgroundColor, 'color': color }\"\n  >\n    {{ label }}\n  </button>`,\n  styleUrls: ['./button.css'],\n})\nexport default class ButtonComponent {\n  /**\n   * Is this the principal call to action on the page?\n   */\n  @Input()\n  primary = false;\n\n  /**\n   * What background color to use\n   */\n  @Input()\n  backgroundColor?: string;\n\n  @Input()\n  color?: string;\n\n  /**\n   * How large should the button be?\n   */\n  @Input()\n  size: string;\n\n  /**\n   * Button contents\n   *\n   * @required\n   */\n  @Input()\n  label = 'Button';\n\n  /**\n   * Optional click handler\n   */\n  @Output()\n  onClick = new EventEmitter<Event>();\n\n  public get classes(): string[] {\n    const mode = this.primary ? 'storybook-button--primary' : 'storybook-button--secondary';\n\n    return ['storybook-button', `storybook-button--${this.size}`, mode];\n  }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -160,14 +164,14 @@
                         "name": "classes",
                         "type": "[]",
                         "returnType": "string[]",
-                        "line": 48
+                        "line": 51
                     }
                 }
             }
         },
         {
             "name": "ButtonComponent",
-            "id": "component-ButtonComponent-5f7307da33586eeac77a6181043bf3ca-1",
+            "id": "component-ButtonComponent-bee0daaa12ba7374af69445a5a45b77a-1",
             "file": "src/app/button/button.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -185,12 +189,6 @@
             "viewProviders": [],
             "inputsClass": [
                 {
-                    "name": "size",
-                    "defaultValue": "'medium'",
-                    "line": 15,
-                    "type": "\"middle\" | \"medium\" | \"large\""
-                },
-                {
                     "name": "title",
                     "line": 12,
                     "type": "string"
@@ -205,7 +203,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 17
+                    "line": 14
                 }
             ],
             "hostBindings": [],
@@ -213,7 +211,7 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\n\n@Component({\n    selector: 'app-button',\n    templateUrl: './button.component.html',\n    styleUrls: ['./button.component.scss'],\n})\n\n\n\nexport class ButtonComponent implements OnInit {\n    @Input() title: string;\n\n    @Input()\n  size: 'middle' | 'medium' | 'large' = 'medium';\n\n    ngOnInit() {\n        console.log(this)\n    }\n}",
+            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\n\n@Component({\n    selector: 'app-button',\n    templateUrl: './button.component.html',\n    styleUrls: ['./button.component.scss'],\n})\n\n\n\nexport class ButtonComponent implements OnInit {\n    @Input() title: string;\n\n    ngOnInit() {\n        console.log(this)\n    }\n}",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -552,7 +550,7 @@
                 "linktype": "component",
                 "name": "ButtonComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/4",
+                "coverageCount": "0/3",
                 "status": "low"
             },
             {
@@ -669,9 +667,9 @@
                 "type": "component",
                 "linktype": "component",
                 "name": "ButtonComponent",
-                "coveragePercent": 83,
-                "coverageCount": "5/6",
-                "status": "very-good"
+                "coveragePercent": 71,
+                "coverageCount": "5/7",
+                "status": "good"
             },
             {
                 "filePath": "src/test.ts",

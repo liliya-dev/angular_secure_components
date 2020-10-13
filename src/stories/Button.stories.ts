@@ -7,6 +7,9 @@ export default {
   component: Button,
   argTypes: {
     backgroundColor: { control: 'color' },
+    color: { control: 'color' },
+    title: { control: 'text'},
+    name: {control: 'text'}
   },
 } as Meta;
 
