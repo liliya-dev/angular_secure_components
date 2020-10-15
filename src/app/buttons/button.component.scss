@@ -1,0 +1,21 @@
+.btn-app {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  outline: none;
+  transition: 0.3s;
+  border-radius: 8px;
+  &--h36 {
+    height: 36px;
+    padding: 10px 18px 8px 18px;
+  }
+  &--asimetric {
+    border-radius: 20px 5px;
+    height: 52px;
+    padding: 18px 41px 18px 44px;
+  }
+  &--small {
+    padding: 13px 38px 12px 38px;
+  }
+}

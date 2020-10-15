@@ -1,0 +1,16 @@
+:root {
+  --text-color: rgb(var(--text-color-code));
+  --text-color-code: 255, 255, 255;
+  --danger-color: rgb(var(--danger-color-code));
+  --danger-color-code: 234, 45, 45;
+  --secondary-color: rgb(var(--secondary-color-code));
+  --secondary-color-code: 1, 25, 73;
+  --info-color: rgb(var(--info-color-code));
+  --info-color-code: 36, 176, 75;
+  --success-grad-dark: linear-gradient(89.52deg, #1D973F -46.17%, #05539A 186.99%);
+  --success-grad-light: linear-gradient(89.52deg, #24B04B -46.17%, #0263BC 186.99%);
+  --higlited-grad-light: linear-gradient(269.4deg, #FB5F47 38.27%, #F9BE5A 113.07%);
+  --highlited-grad-dark: linear-gradient(269.4deg, #D54832 38.27%, #EBB252 113.07%);
+  --input-bg-color: hsl(217, 22%, 93%);
+  --light-btn-hover: hsl(217, 16%, 74%);
+}

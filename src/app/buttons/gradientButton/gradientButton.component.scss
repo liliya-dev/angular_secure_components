@@ -1,0 +1,21 @@
+.btn-grad {
+  background: var(--higlited-grad-light);
+  border: none;
+  color: var(--text-color);
+
+  & > img {
+     margin-left: 27px;
+     height: 8px;
+     width: 4px;
+     margin-bottom: 2px;
+  }
+
+  &:hover {
+      background: var(--highlited-grad-dark);
+  }
+
+  &:active {
+      background: var(--higlited-grad-light);
+  }
+
+}

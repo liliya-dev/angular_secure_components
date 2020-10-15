@@ -1,19 +1,5 @@
-/* You can add global styles to this file, and also import other style files */
-
-@font-face {
-    font-family: 'Sofia Pro';
-    src: url("./assets/fonts/sofiapro-light.otf");
-}
-
-@font-face {
-    font-family: 'Gramatica Regular';
-    src: url("./assets/fonts/Gramatica-Regular.ttf");
-}
-
-@font-face {
-    font-family: 'Gramatica Bold';
-    src: url("./assets/fonts/Gramatica-Bold.ttf");
-}
+@import './fonts.scss';
+@import './vars.scss';
 
 * {
     box-sizing: border-box;

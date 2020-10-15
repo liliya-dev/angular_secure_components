@@ -86,7 +86,7 @@
         },
         {
             "name": "ButtonComponent",
-            "id": "component-ButtonComponent-e1957a286a34a61e482a9df6140f5860",
+            "id": "component-ButtonComponent-9a0e161cfb9c2b7b47e11baef7e6c1b8",
             "file": "src/stories/button.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -98,26 +98,31 @@
                 "./button.css"
             ],
             "styles": [],
-            "template": "<button   type=\"button\"\n   (click)=\"onClick.emit($event)\"\n   [ngClass]=\"classes\"\n   [ngStyle]=\"{ 'background-color': backgroundColor, 'color': color }\"\n >\n   {{ label }}\n </button>",
+            "template": "<button   type=\"button\"\n   (click)=\"onClick.emit($event)\"\n   [ngClass]=\"classes\"\n   [ngStyle]=\"{ 'background-color': backgroundColor, 'color': color }\"\n >\n   {{ label }} {{ title }}\n </button>",
             "templateUrl": [],
             "viewProviders": [],
             "inputsClass": [
                 {
                     "name": "backgroundColor",
                     "description": "<p>What background color to use</p>\n",
-                    "line": 26,
+                    "line": 29,
                     "type": "string"
                 },
                 {
                     "name": "color",
-                    "line": 29,
+                    "line": 32,
                     "type": "string"
                 },
                 {
                     "name": "label",
                     "defaultValue": "'Button'",
                     "description": "<p>Button contents</p>\n",
-                    "line": 43
+                    "line": 49
+                },
+                {
+                    "name": "name",
+                    "line": 35,
+                    "type": "string"
                 },
                 {
                     "name": "primary",
@@ -128,8 +133,13 @@
                 {
                     "name": "size",
                     "description": "<p>How large should the button be?</p>\n",
-                    "line": 35,
+                    "line": 41,
                     "type": "string"
+                },
+                {
+                    "name": "title",
+                    "defaultValue": "'Butto'",
+                    "line": 23
                 }
             ],
             "outputsClass": [
@@ -137,7 +147,7 @@
                     "name": "onClick",
                     "defaultValue": "new EventEmitter<Event>()",
                     "description": "<p>Optional click handler</p>\n",
-                    "line": 49,
+                    "line": 55,
                     "type": "EventEmitter"
                 }
             ],
@@ -148,7 +158,7 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\n\n@Component({\n  selector: 'storybook-button',\n  template: ` <button\n    type=\"button\"\n    (click)=\"onClick.emit($event)\"\n    [ngClass]=\"classes\"\n    [ngStyle]=\"{ 'background-color': backgroundColor, 'color': color }\"\n  >\n    {{ label }}\n  </button>`,\n  styleUrls: ['./button.css'],\n})\nexport default class ButtonComponent {\n  /**\n   * Is this the principal call to action on the page?\n   */\n  @Input()\n  primary = false;\n\n  /**\n   * What background color to use\n   */\n  @Input()\n  backgroundColor?: string;\n\n  @Input()\n  color?: string;\n\n  /**\n   * How large should the button be?\n   */\n  @Input()\n  size: string;\n\n  /**\n   * Button contents\n   *\n   * @required\n   */\n  @Input()\n  label = 'Button';\n\n  /**\n   * Optional click handler\n   */\n  @Output()\n  onClick = new EventEmitter<Event>();\n\n  public get classes(): string[] {\n    const mode = this.primary ? 'storybook-button--primary' : 'storybook-button--secondary';\n\n    return ['storybook-button', `storybook-button--${this.size}`, mode];\n  }\n}\n",
+            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\n\n@Component({\n  selector: 'storybook-button',\n  template: ` <button\n    type=\"button\"\n    (click)=\"onClick.emit($event)\"\n    [ngClass]=\"classes\"\n    [ngStyle]=\"{ 'background-color': backgroundColor, 'color': color }\"\n  >\n    {{ label }} {{ title }}\n  </button>`,\n  styleUrls: ['./button.css'],\n})\nexport default class ButtonComponent {\n  /**\n   * Is this the principal call to action on the page?\n   */\n  @Input()\n  primary = false;\n\n  @Input()\n  title = 'Butto';\n\n  /**\n   * What background color to use\n   */\n  @Input()\n  backgroundColor?: string;\n\n  @Input()\n  color?: string;\n\n  @Input()\n  name?: string;\n\n  /**\n   * How large should the button be?\n   */\n  @Input()\n  size: string;\n\n  /**\n   * Button contents\n   *\n   * @required\n   */\n  @Input()\n  label = 'Button';\n\n  /**\n   * Optional click handler\n   */\n  @Output()\n  onClick = new EventEmitter<Event>();\n\n  public get classes(): string[] {\n    const mode = this.primary ? 'storybook-button--primary' : 'storybook-button--secondary';\n\n    return ['storybook-button', `storybook-button--${this.size}`, mode];\n  }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -164,30 +174,46 @@
                         "name": "classes",
                         "type": "[]",
                         "returnType": "string[]",
-                        "line": 51
+                        "line": 57
                     }
                 }
             }
         },
         {
-            "name": "ButtonComponent",
-            "id": "component-ButtonComponent-bee0daaa12ba7374af69445a5a45b77a-1",
-            "file": "src/app/button/button.component.ts",
+            "name": "gradientButtonComponent",
+            "id": "component-gradientButtonComponent-5e71106a5c1c659ac3f9bcacff6a6baf",
+            "file": "src/app/buttons/gradientButton/gradientButton.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
             "outputs": [],
             "providers": [],
-            "selector": "app-button",
+            "selector": "app-gradient-button",
             "styleUrls": [
-                "./button.component.scss"
+                "../button.component.scss",
+                "gradientButton.component.scss"
             ],
             "styles": [],
             "templateUrl": [
-                "./button.component.html"
+                "./gradientButton.component.html"
             ],
             "viewProviders": [],
             "inputsClass": [
+                {
+                    "name": "backgroundColor",
+                    "line": 14,
+                    "type": "string"
+                },
+                {
+                    "name": "classes",
+                    "line": 13,
+                    "type": "string"
+                },
+                {
+                    "name": "color",
+                    "line": 15,
+                    "type": "string"
+                },
                 {
                     "name": "title",
                     "line": 12,
@@ -203,7 +229,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 14
+                    "line": 17
                 }
             ],
             "hostBindings": [],
@@ -211,22 +237,99 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\n\n@Component({\n    selector: 'app-button',\n    templateUrl: './button.component.html',\n    styleUrls: ['./button.component.scss'],\n})\n\n\n\nexport class ButtonComponent implements OnInit {\n    @Input() title: string;\n\n    ngOnInit() {\n        console.log(this)\n    }\n}",
+            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\n\n@Component({\n    selector: 'app-gradient-button',\n    templateUrl: './gradientButton.component.html',\n    styleUrls: ['../button.component.scss', 'gradientButton.component.scss'],\n})\n\n\n\nexport class gradientButtonComponent implements OnInit {\n    @Input() title: string;\n    @Input() classes: string;\n    @Input() backgroundColor: string;\n    @Input() color: string;\n\n    ngOnInit() {\n\n    }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".app-button {\n    background-color: azure;\n    padding: 15px;\n}",
-                    "styleUrl": "./button.component.scss"
+                    "data": ".btn-app {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  box-sizing: border-box;\n  outline: none;\n  transition: 0.3s;\n  border-radius: 8px;\n  &--h36 {\n    height: 36px;\n    padding: 10px 18px 8px 18px;\n  }\n  &--asimetric {\n    border-radius: 20px 5px;\n    height: 52px;\n    padding: 18px 41px 18px 44px;\n  }\n  &--small {\n    padding: 13px 38px 12px 38px;\n  }\n}\n",
+                    "styleUrl": "../button.component.scss"
+                },
+                {
+                    "data": ".btn-grad {\n  background: var(--higlited-grad-light);\n  border: none;\n  color: var(--text-color);\n\n  & > img {\n     margin-left: 27px;\n     height: 8px;\n     width: 4px;\n     margin-bottom: 2px;\n  }\n\n  &:hover {\n      background: var(--highlited-grad-dark);\n  }\n\n  &:active {\n      background: var(--higlited-grad-light);\n  }\n\n}\n",
+                    "styleUrl": "gradientButton.component.scss"
                 }
             ],
             "stylesData": "",
             "implements": [
                 "OnInit"
             ],
-            "isDuplicate": true,
-            "duplicateId": 1,
-            "duplicateName": "ButtonComponent-1",
-            "templateData": "<button \n    class=\"btn-app fs-16-light-500 btn-transparent\"\n    [ngStyle]=\"{ 'background-color': backgroundColor }\"\n>\n    {{title}}\n</button>"
+            "templateData": "<button\n  [ngClass]=\"classes\"\n  [ngStyle]=\"{ 'background': backgroundColor, 'color': color }\"\n>\n  {{ title }}\n  <img src='../../../assets/images/next.svg' alt=\"arrow\" />\n</button>\n\n"
+        },
+        {
+            "name": "simpleButtonComponent",
+            "id": "component-simpleButtonComponent-c33720fa521dc42ac741076bf409bb24",
+            "file": "src/app/buttons/simpleButton/simpleButton.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-simple-button",
+            "styleUrls": [
+                "../button.component.scss",
+                "simpleButton.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./simpleButton.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "backgroundColor",
+                    "line": 14,
+                    "type": "string"
+                },
+                {
+                    "name": "classes",
+                    "line": 13,
+                    "type": "string"
+                },
+                {
+                    "name": "color",
+                    "line": 15,
+                    "type": "string"
+                },
+                {
+                    "name": "title",
+                    "line": 12,
+                    "type": "string"
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 17
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\n\n@Component({\n    selector: 'app-simple-button',\n    templateUrl: './simpleButton.component.html',\n    styleUrls: ['../button.component.scss', 'simpleButton.component.scss'],\n})\n\n\n\nexport class simpleButtonComponent implements OnInit {\n    @Input() title: string;\n    @Input() classes: string;\n    @Input() backgroundColor: string;\n    @Input() color: string;\n\n    ngOnInit() {\n\n    }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".btn-app {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  box-sizing: border-box;\n  outline: none;\n  transition: 0.3s;\n  border-radius: 8px;\n  &--h36 {\n    height: 36px;\n    padding: 10px 18px 8px 18px;\n  }\n  &--asimetric {\n    border-radius: 20px 5px;\n    height: 52px;\n    padding: 18px 41px 18px 44px;\n  }\n  &--small {\n    padding: 13px 38px 12px 38px;\n  }\n}\n",
+                    "styleUrl": "../button.component.scss"
+                },
+                {
+                    "data": ".btn-danger {\n  color: var(--danger-color);\n  background: inherit;\n  outline: none;\n  border: 1px solid rgba(var(--danger-color-code), 0.2);\n\n  &:hover {\n      cursor: pointer;\n      background: rgba(var(--danger-color-code), 0.3);\n  }\n\n  &:active {\n      background: rgba(var(--danger-color-code), 0.5);\n  }\n}\n\n.btn-transparent {\n  text-transform: uppercase;\n  color: rgba(var(--secondary-color-code), 0.75);\n  border: none;\n  background-color: transparent;\n  position: relative;\n  padding-left: 20px;\n  &:hover {\n      &:after {\n          content: url(('../../../assets/images/back.svg'));\n          position: absolute;\n          top: 0;\n          left: 0;\n      }\n  }\n}\n\n.btn-success {\n  background: transparent;\n  border: none;\n  position: relative;\n  color: var(--text-color);\n  z-index: 2;\n  text-transform: uppercase;\n\n  &::before {\n      position: absolute;\n      width: 100%;\n      height: 100%;\n      content: '';\n      background: var(--success-grad-light);\n      z-index: -1;\n      top: 0;\n      left: 0;\n      border-radius: 8px;\n      transition: 0.3s;\n  }\n\n  &::after {\n      position: absolute;\n      width: 100%;\n      height: 100%;\n      content: '';\n      z-index: -1;\n      background: var(--success-grad-dark);\n      top: 0;\n      left: 0;\n      border-radius: 8px;\n      transition: 0.3s;\n      opacity: 0;\n  }\n\n  &:hover {\n      &::before {\n          opacity: 0;\n      }\n\n      &::after {\n          opacity: 1;\n      }\n  }\n\n  &:active {\n      &::before {\n          opacity: 1;\n      }\n\n      &::after {\n          opacity: 0;\n      }\n  }\n}\n",
+                    "styleUrl": "simpleButton.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<button\n  [ngClass]=\"classes\"\n  [ngStyle]=\"{ 'background-color': backgroundColor, 'color': color }\"\n>\n  {{ title }}\n</button>\n"
         },
         {
             "name": "TextComponent",
@@ -283,6 +386,9 @@
                         },
                         {
                             "name": "TextComponent"
+                        },
+                        {
+                            "name": "simpleButtonComponent"
                         }
                     ]
                 },
@@ -320,6 +426,14 @@
                 "defaultValue": "require.context('./', true, /\\.spec\\.ts$/)"
             },
             {
+                "name": "Danger",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/buttons/simpleButton/simpleButton.stories.ts",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
                 "name": "environment",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -334,6 +448,14 @@
                 "file": "src/environments/environment.ts",
                 "type": "object",
                 "defaultValue": "{\n  production: false\n}"
+            },
+            {
+                "name": "Gradient",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/buttons/gradientButton/gradientButton.stories.ts",
+                "type": "",
+                "defaultValue": "Template.bind({})"
             },
             {
                 "name": "Large",
@@ -352,12 +474,20 @@
                 "defaultValue": "Template.bind({})"
             },
             {
-                "name": "Primary",
+                "name": "props",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/button/button.stories.ts",
-                "type": "",
-                "defaultValue": "Template.bind({})"
+                "file": "src/app/buttons/simpleButton/simpleButton.stories.ts",
+                "type": "object",
+                "defaultValue": "{\n  backgroundColor: { control: 'color' },\n  color: { control: 'color' },\n  title: { control: 'text'},\n}"
+            },
+            {
+                "name": "props",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/buttons/gradientButton/gradientButton.stories.ts",
+                "type": "object",
+                "defaultValue": "{\n  backgroundColor: { control: 'color' },\n  color: { control: 'color' },\n  title: { control: 'text'},\n}"
             },
             {
                 "name": "require",
@@ -375,18 +505,18 @@
                 "defaultValue": "Template.bind({})"
             },
             {
-                "name": "Secondary",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/button/button.stories.ts",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
                 "name": "Small",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/stories/Button.stories.ts",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Success",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/buttons/simpleButton/simpleButton.stories.ts",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
@@ -402,9 +532,25 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/button/button.stories.ts",
-                "type": "Story<ButtonComponent>",
-                "defaultValue": "(args: ButtonComponent) => ({\n    component: ButtonComponent,\n    props: args,\n  })"
+                "file": "src/app/buttons/simpleButton/simpleButton.stories.ts",
+                "type": "Story<simpleButtonComponent>",
+                "defaultValue": "(args: simpleButtonComponent) => ({\n    component: simpleButtonComponent,\n    props: args,\n  })"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/buttons/gradientButton/gradientButton.stories.ts",
+                "type": "Story<gradientButtonComponent>",
+                "defaultValue": "(args: gradientButtonComponent) => ({\n    component: gradientButtonComponent,\n    props: args,\n  })"
+            },
+            {
+                "name": "Transparent",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/buttons/simpleButton/simpleButton.stories.ts",
+                "type": "",
+                "defaultValue": "Template.bind({})"
             }
         ],
         "functions": [],
@@ -428,6 +574,48 @@
                     "type": "literal type"
                 }
             ],
+            "src/app/buttons/simpleButton/simpleButton.stories.ts": [
+                {
+                    "name": "Danger",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/buttons/simpleButton/simpleButton.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "props",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/buttons/simpleButton/simpleButton.stories.ts",
+                    "type": "object",
+                    "defaultValue": "{\n  backgroundColor: { control: 'color' },\n  color: { control: 'color' },\n  title: { control: 'text'},\n}"
+                },
+                {
+                    "name": "Success",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/buttons/simpleButton/simpleButton.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/buttons/simpleButton/simpleButton.stories.ts",
+                    "type": "Story<simpleButtonComponent>",
+                    "defaultValue": "(args: simpleButtonComponent) => ({\n    component: simpleButtonComponent,\n    props: args,\n  })"
+                },
+                {
+                    "name": "Transparent",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/buttons/simpleButton/simpleButton.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                }
+            ],
             "src/environments/environment.prod.ts": [
                 {
                     "name": "environment",
@@ -446,6 +634,32 @@
                     "file": "src/environments/environment.ts",
                     "type": "object",
                     "defaultValue": "{\n  production: false\n}"
+                }
+            ],
+            "src/app/buttons/gradientButton/gradientButton.stories.ts": [
+                {
+                    "name": "Gradient",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/buttons/gradientButton/gradientButton.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "props",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/buttons/gradientButton/gradientButton.stories.ts",
+                    "type": "object",
+                    "defaultValue": "{\n  backgroundColor: { control: 'color' },\n  color: { control: 'color' },\n  title: { control: 'text'},\n}"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/buttons/gradientButton/gradientButton.stories.ts",
+                    "type": "Story<gradientButtonComponent>",
+                    "defaultValue": "(args: gradientButtonComponent) => ({\n    component: gradientButtonComponent,\n    props: args,\n  })"
                 }
             ],
             "src/stories/Button.stories.ts": [
@@ -489,32 +703,6 @@
                     "type": "Story<Button>",
                     "defaultValue": "(args: Button) => ({\n  component: Button,\n  props: args,\n})"
                 }
-            ],
-            "src/app/button/button.stories.ts": [
-                {
-                    "name": "Primary",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/button/button.stories.ts",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Secondary",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/button/button.stories.ts",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/button/button.stories.ts",
-                    "type": "Story<ButtonComponent>",
-                    "defaultValue": "(args: ButtonComponent) => ({\n    component: ButtonComponent,\n    props: args,\n  })"
-                }
             ]
         },
         "groupedFunctions": {},
@@ -523,7 +711,7 @@
     },
     "routes": [],
     "coverage": {
-        "count": 4,
+        "count": 2,
         "status": "low",
         "files": [
             {
@@ -545,40 +733,99 @@
                 "status": "low"
             },
             {
-                "filePath": "src/app/button/button.component.ts",
+                "filePath": "src/app/buttons/gradientButton/gradientButton.component.ts",
                 "type": "component",
                 "linktype": "component",
-                "name": "ButtonComponent",
+                "name": "gradientButtonComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/3",
+                "coverageCount": "0/6",
                 "status": "low"
             },
             {
-                "filePath": "src/app/button/button.stories.ts",
+                "filePath": "src/app/buttons/gradientButton/gradientButton.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "Primary",
+                "name": "Gradient",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
             },
             {
-                "filePath": "src/app/button/button.stories.ts",
+                "filePath": "src/app/buttons/gradientButton/gradientButton.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "Secondary",
+                "name": "props",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
             },
             {
-                "filePath": "src/app/button/button.stories.ts",
+                "filePath": "src/app/buttons/gradientButton/gradientButton.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/buttons/simpleButton/simpleButton.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "simpleButtonComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/6",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/buttons/simpleButton/simpleButton.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Danger",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/buttons/simpleButton/simpleButton.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "props",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/buttons/simpleButton/simpleButton.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Success",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/buttons/simpleButton/simpleButton.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/buttons/simpleButton/simpleButton.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Transparent",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -667,8 +914,8 @@
                 "type": "component",
                 "linktype": "component",
                 "name": "ButtonComponent",
-                "coveragePercent": 71,
-                "coverageCount": "5/7",
+                "coveragePercent": 55,
+                "coverageCount": "5/9",
                 "status": "good"
             },
             {
