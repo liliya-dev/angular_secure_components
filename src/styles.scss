@@ -12,7 +12,7 @@ body {
     font-size: 20px;
 }
 
-ol, ul {
+ol, ul, li {
 	list-style: none;
 }
 
@@ -27,4 +27,8 @@ button, input {
     &:hover {
         cursor: pointer;
     }
+}
+
+::placeholder {
+    font-family: inherit;
 }

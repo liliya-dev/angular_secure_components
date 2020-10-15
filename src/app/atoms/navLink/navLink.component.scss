@@ -1,0 +1,75 @@
+.nav-link-sidebar {
+  text-transform: uppercase;
+  background: rgba(var(--secondary-color-code), 0.5);
+  position: relative;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: 0.3;
+
+  &::after {
+    content: '';
+    height: 0;
+  }
+
+  &:hover {
+    background: var(--secondary-color); 
+    -webkit-background-clip: text;
+    cursor: pointer;
+  }
+
+  &:active {
+    background: var(--success-grad-light); 
+    -webkit-background-clip: text;
+  }
+
+  &--active {
+    text-decoration: none;
+    -webkit-text-fill-color: transparent;
+    transition: 0.3;
+    background: var(--success-grad-light); 
+    -webkit-background-clip: text;
+  }
+}
+
+.nav-link-main {
+  background: rgba(var(--secondary-color-code), 0.75);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: relative;
+  text-transform: capitalize;
+
+  &::after {
+    content: '';
+    transition: 0.3s;
+    position: absolute;
+    width: 0;
+    height: 1px;
+    background-color: rgba(var(--secondary-color-code), 0.75);
+    bottom: 0;
+    left: 0;
+  }
+
+  &:hover {
+    &::after {
+      width: 100%;
+    }
+  }
+
+  &:active {
+    background: var(--success-grad-light); 
+    -webkit-background-clip: text;
+
+    &::after {
+      width: 0;
+      background: var(--success-grad-light);
+    }
+  }
+
+  &--active {
+    text-decoration: none;
+    -webkit-text-fill-color: transparent;
+    transition: 0.3;
+    background: var(--success-grad-light); 
+    -webkit-background-clip: text;
+  }
+}

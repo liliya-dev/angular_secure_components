@@ -1,0 +1,15 @@
+.icons-container {
+  width: 100%;
+
+  &-box {
+    
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    opacity: 0.3;
+
+    & > img {
+      max-width: 80%;
+    }
+  }
+}

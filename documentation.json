@@ -82,7 +82,7 @@
                 }
             ],
             "stylesData": "",
-            "templateData": "<div>\n  <h1 class=\"title\">{{title}}</h1>\n  <app-button [name]=\"'www'\" [number]=\"'tgugygu'\"></app-button>\n  <app-text></app-text>\n</div>"
+            "templateData": "<div>\n  <h1 class=\"title\">{{title}}</h1>\n</div>"
         },
         {
             "name": "ButtonComponent",
@@ -180,9 +180,141 @@
             }
         },
         {
+            "name": "DateMenuComponent",
+            "id": "component-DateMenuComponent-0c363d11e141cb18f2815ab118a8f269",
+            "file": "src/app/molecules/date-menu/date-menu.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-date-menu",
+            "styleUrls": [
+                "./date-menu.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./date-menu.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 12
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-date-menu',\n  templateUrl: './date-menu.component.html',\n  styleUrls: ['./date-menu.component.scss']\n})\nexport class DateMenuComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./date-menu.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [],
+                "line": 8
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<p>date-menu works!</p>\n<app-icon-container></app-icon-container>\n<p>date-menu works!</p>\n"
+        },
+        {
+            "name": "formInputComponent",
+            "id": "component-formInputComponent-685838e89e17c5238e1345aad72a1dcc",
+            "file": "src/app/atoms/inputs/formInput/formInput.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-form-input",
+            "styleUrls": [
+                "formInput.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./formInput.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "backgroundColor",
+                    "line": 12,
+                    "type": "string"
+                },
+                {
+                    "name": "classes",
+                    "line": 15,
+                    "type": "string"
+                },
+                {
+                    "name": "color",
+                    "line": 14,
+                    "type": "string"
+                },
+                {
+                    "name": "placeholder",
+                    "line": 13,
+                    "type": "string"
+                },
+                {
+                    "name": "wrapperClasses",
+                    "line": 16,
+                    "type": "string"
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 18
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\n\n@Component({\n    selector: 'app-form-input',\n    templateUrl: './formInput.component.html',\n    styleUrls: ['formInput.component.scss'],\n})\n\n\n\nexport class formInputComponent implements OnInit {\n    @Input() backgroundColor: string;\n    @Input() placeholder: string;\n    @Input() color: string;\n    @Input() classes: string;\n    @Input() wrapperClasses: string;\n\n    ngOnInit() {\n\n    }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".form-input-field {\n  width: 100%;\n  padding-bottom: 11px;\n  padding-top: 15px;\n  padding-right: 16px;\n  background: var(--input-bg-color);\n  border: none;\n  color: var(--secondary-color);\n  border-radius: 8px;\n\n  &--simple {\n    padding-left: 16px;\n  }\n\n  &--icon {\n    padding-left: 53px;\n    background: var(--input-bg-color); \n  }\n\n  &::placeholder {\n    color: rgba(var(--secondary-color-code), 0.5);\n  }\n}\n\n.form-input__wrapper {\n  width: 100%;\n  position: relative;\n  width: 100%;\n  height: 46px;\n\n  &--icon {\n    &:after {\n      content: url('../../../../assets/images/Search.png');\n      position: absolute;\n      top: 13px;\n      left: 16px;\n      opacity: 0.5;\n      width: 20px;\n      height: 20px;\n    }\n  }\n}",
+                    "styleUrl": "formInput.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<div \n  [ngClass]=\"wrapperClasses\"\n>\n  <input \n    [ngClass]=\"classes\"\n    [ngStyle]=\"{ 'background': backgroundColor, 'color': color }\"\n    [placeholder]=\"placeholder\"\n    type=\"text\"\n  >\n</div>\n"
+        },
+        {
             "name": "gradientButtonComponent",
-            "id": "component-gradientButtonComponent-5e71106a5c1c659ac3f9bcacff6a6baf",
-            "file": "src/app/buttons/gradientButton/gradientButton.component.ts",
+            "id": "component-gradientButtonComponent-ee857e56cbc93120dd448d40b64dc232",
+            "file": "src/app/atoms/buttons/gradientButton/gradientButton.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -196,6 +328,133 @@
             "styles": [],
             "templateUrl": [
                 "./gradientButton.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "backgroundColor",
+                    "line": 13,
+                    "type": "string"
+                },
+                {
+                    "name": "color",
+                    "line": 14,
+                    "type": "string"
+                },
+                {
+                    "name": "title",
+                    "line": 12,
+                    "type": "string"
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 16
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\n\n@Component({\n    selector: 'app-gradient-button',\n    templateUrl: './gradientButton.component.html',\n    styleUrls: ['../button.component.scss', 'gradientButton.component.scss'],\n})\n\n\n\nexport class gradientButtonComponent implements OnInit {\n    @Input() title: string;\n    @Input() backgroundColor: string;\n    @Input() color: string;\n\n    ngOnInit() {\n\n    }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".btn-app {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  box-sizing: border-box;\n  outline: none;\n  transition: 0.3s;\n  border-radius: 8px;\n  &--h36 {\n    height: 36px;\n    padding: 10px 18px 8px 18px;\n  }\n  &--asimetric {\n    border-radius: 20px 5px;\n    height: 52px;\n    padding: 18px 41px 18px 44px;\n  }\n\n  &--h46 {\n    height: 46px;\n    padding: 13px 19px 12px 17px;\n  }\n\n  &--h53 {\n    padding: 9px 50px;\n    height: 53px;\n  }\n}\n",
+                    "styleUrl": "../button.component.scss"
+                },
+                {
+                    "data": ".btn-grad {\n  background: var(--higlited-grad-light);\n  border: none;\n  color: var(--text-color);\n\n  & > img {\n     margin-left: 27px;\n     height: 8px;\n     width: 4px;\n     margin-bottom: 2px;\n  }\n\n  &:hover {\n      background: var(--highlited-grad-dark);\n  }\n\n  &:active {\n      background: var(--higlited-grad-light);\n  }\n\n}\n",
+                    "styleUrl": "gradientButton.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<button\n  [ngClass]=\"classes\"\n  [ngStyle]=\"{ 'background': backgroundColor, 'color': color }\"\n>\n  {{ title }}\n  <img src='../../../assets/images/next.svg' alt=\"arrow\" />\n</button>\n\n"
+        },
+        {
+            "name": "IconContainerComponent",
+            "id": "component-IconContainerComponent-7cbd95fa14f6bcba21cf9a5a4b6f1d3c",
+            "file": "src/app/atoms/iconContainer/iconContainer.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-icon-container",
+            "styleUrls": [
+                "iconContainer.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./iconContainer.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "backgroundColor",
+                    "line": 12,
+                    "type": "string"
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 14
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\n\n@Component({\n    selector: 'app-icon-container',\n    templateUrl: './iconContainer.component.html',\n    styleUrls: ['iconContainer.component.scss'],\n})\n\n\n\nexport class IconContainerComponent implements OnInit {\n    @Input() backgroundColor: string;\n\n    ngOnInit() {\n\n    }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".icons-container {\n  width: 100%;\n\n  &-box {\n    \n    display: grid;\n    grid-template-columns: repeat(3, 1fr);\n    align-items: center;\n    opacity: 0.3;\n\n    & > img {\n      max-width: 80%;\n    }\n  }\n}",
+                    "styleUrl": "iconContainer.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<div \n  [ngStyle]=\"{ 'background': backgroundColor }\"\n  class=\"icons-container\"\n>\n  <div class=\"icons-container-box\">\n      <img src=\"../../../assets/images/companies/logo1.png\" alt=\"company logo\">\n      <img src=\"../../../assets/images/companies/logo2.png\" alt=\"company logo\">\n      <img src=\"../../../assets/images/companies/logo3.png\" alt=\"company logo\">\n  </div>\n  <div class=\"icons-container-box\">\n      <img src=\"../../../assets/images/companies/logo4.png\" alt=\"company logo\">\n      <img src=\"../../../assets/images/companies/logo5.png\" alt=\"company logo\">\n      <img src=\"../../../assets/images/companies/logo6.png\" alt=\"company logo\">\n  </div>\n</div>\n"
+        },
+        {
+            "name": "infoButtonComponent",
+            "id": "component-infoButtonComponent-a0e838d1117da308099ddbbbb641b940",
+            "file": "src/app/atoms/buttons/infoButton/infoButton.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-info-button",
+            "styleUrls": [
+                "../button.component.scss",
+                "infoButton.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./infoButton.component.html"
             ],
             "viewProviders": [],
             "inputsClass": [
@@ -237,28 +496,444 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\n\n@Component({\n    selector: 'app-gradient-button',\n    templateUrl: './gradientButton.component.html',\n    styleUrls: ['../button.component.scss', 'gradientButton.component.scss'],\n})\n\n\n\nexport class gradientButtonComponent implements OnInit {\n    @Input() title: string;\n    @Input() classes: string;\n    @Input() backgroundColor: string;\n    @Input() color: string;\n\n    ngOnInit() {\n\n    }\n}\n",
+            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\n\n@Component({\n    selector: 'app-info-button',\n    templateUrl: './infoButton.component.html',\n    styleUrls: ['../button.component.scss', 'infoButton.component.scss'],\n})\n\n\n\nexport class infoButtonComponent implements OnInit {\n    @Input() title: string;\n    @Input() classes: string;\n    @Input() backgroundColor: string;\n    @Input() color: string;\n\n    ngOnInit() {\n\n    }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".btn-app {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  box-sizing: border-box;\n  outline: none;\n  transition: 0.3s;\n  border-radius: 8px;\n  &--h36 {\n    height: 36px;\n    padding: 10px 18px 8px 18px;\n  }\n  &--asimetric {\n    border-radius: 20px 5px;\n    height: 52px;\n    padding: 18px 41px 18px 44px;\n  }\n  &--small {\n    padding: 13px 38px 12px 38px;\n  }\n}\n",
+                    "data": ".btn-app {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  box-sizing: border-box;\n  outline: none;\n  transition: 0.3s;\n  border-radius: 8px;\n  &--h36 {\n    height: 36px;\n    padding: 10px 18px 8px 18px;\n  }\n  &--asimetric {\n    border-radius: 20px 5px;\n    height: 52px;\n    padding: 18px 41px 18px 44px;\n  }\n\n  &--h46 {\n    height: 46px;\n    padding: 13px 19px 12px 17px;\n  }\n\n  &--h53 {\n    padding: 9px 50px;\n    height: 53px;\n  }\n}\n",
                     "styleUrl": "../button.component.scss"
                 },
                 {
-                    "data": ".btn-grad {\n  background: var(--higlited-grad-light);\n  border: none;\n  color: var(--text-color);\n\n  & > img {\n     margin-left: 27px;\n     height: 8px;\n     width: 4px;\n     margin-bottom: 2px;\n  }\n\n  &:hover {\n      background: var(--highlited-grad-dark);\n  }\n\n  &:active {\n      background: var(--higlited-grad-light);\n  }\n\n}\n",
-                    "styleUrl": "gradientButton.component.scss"
+                    "data": ".btn-info {\n  padding: 9px 15px 9px 15px;\n  height: 40px;\n  border: none;\n  color: var(--info-color);\n  background-color: rgba(var(--info-color-code), 0.05);  \n  text-transform: capitalize;\n\n  & > img {\n      margin-right: 15px;\n  }\n\n  &:hover {\n      background-color: rgba(var(--info-color-code), 0.3);  \n  }\n\n  &:active {\n      background-color: transparent; \n  }\n}\n",
+                    "styleUrl": "infoButton.component.scss"
                 }
             ],
             "stylesData": "",
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<button\n  [ngClass]=\"classes\"\n  [ngStyle]=\"{ 'background': backgroundColor, 'color': color }\"\n>\n  {{ title }}\n  <img src='../../../assets/images/next.svg' alt=\"arrow\" />\n</button>\n\n"
+            "templateData": "<button \n  [ngClass]=\"classes\"\n  [ngStyle]=\"{ 'background': backgroundColor, 'color': color }\"\n>\n  <img src=\"../../../assets/images/support.png\" alt=\"support button logo\">\n  {{ title }}\n</button>\n"
+        },
+        {
+            "name": "largeButtonComponent",
+            "id": "component-largeButtonComponent-63bad58326caa129a51d540d58512e45",
+            "file": "src/app/atoms/buttons/largeButton/largeButton.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-large-button",
+            "styleUrls": [
+                "../button.component.scss",
+                "largeButton.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./largeButton.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "backgroundColor",
+                    "line": 15,
+                    "type": "string"
+                },
+                {
+                    "name": "classes",
+                    "line": 14,
+                    "type": "string"
+                },
+                {
+                    "name": "color",
+                    "line": 16,
+                    "type": "string"
+                },
+                {
+                    "name": "text",
+                    "line": 13,
+                    "type": "string"
+                },
+                {
+                    "name": "title",
+                    "line": 12,
+                    "type": "string"
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 18
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\n\n@Component({\n    selector: 'app-large-button',\n    templateUrl: './largeButton.component.html',\n    styleUrls: ['../button.component.scss', 'largeButton.component.scss'],\n})\n\n\n\nexport class largeButtonComponent implements OnInit {\n    @Input() title: string;\n    @Input() text: string;\n    @Input() classes: string;\n    @Input() backgroundColor: string;\n    @Input() color: string;\n\n    ngOnInit() {\n\n    }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".btn-app {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  box-sizing: border-box;\n  outline: none;\n  transition: 0.3s;\n  border-radius: 8px;\n  &--h36 {\n    height: 36px;\n    padding: 10px 18px 8px 18px;\n  }\n  &--asimetric {\n    border-radius: 20px 5px;\n    height: 52px;\n    padding: 18px 41px 18px 44px;\n  }\n\n  &--h46 {\n    height: 46px;\n    padding: 13px 19px 12px 17px;\n  }\n\n  &--h53 {\n    padding: 9px 50px;\n    height: 53px;\n  }\n}\n",
+                    "styleUrl": "../button.component.scss"
+                },
+                {
+                    "data": ".btn-large {\n    background: transparent;\n    border: none;\n    position: relative;\n    color: var(--secondary-color);\n    width: 100%;\n    z-index: 2;\n    display: flex;\n    \n    &.btn-app { \n        justify-content: center;\n    }\n\n    &--active {\n        background: var(--success-grad-light);\n        color: var(--text-color);\n    }\n\n    & > span > p {\n        margin: 0;\n    }\n\n    & > span > .fs-14-strong {\n        text-transform: uppercase;\n    }\n\n    &::before {\n        position: absolute;\n        width: 100%;\n        height: 100%;\n        content: '';\n        background: rgba(var(--secondary-color-code), 0.05);\n        z-index: -1;\n        top: 0;\n        left: 0;\n        border-radius: 8px;\n        transition: 0.3s;\n    }\n\n    &::after {\n        position: absolute;\n        width: 100%;\n        height: 100%;\n        content: '';\n        z-index: -1;\n        background: var(--success-grad-light);\n        top: 0;\n        left: 0;\n        border-radius: 8px;\n        transition: 0.3s;\n        opacity: 0;\n    }\n\n    &:hover {\n        &::before {\n            background: rgba(var(--secondary-color-code), 0.1);\n        }\n    }\n\n    &:active {\n        color: var(--text-color);\n        &::before {\n            opacity: 0;\n        }\n\n        &::after {\n            opacity: 1;\n        }\n    }\n}",
+                    "styleUrl": "largeButton.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<button \n  [ngClass]=\"classes\"\n  [ngStyle]=\"{ 'background': backgroundColor, 'color': color }\"\n>\n  <span>\n      <p class=\"fs-14-gramm-normal\">{{ title }}</p>\n      <p class=\"fs-14-sofia-300\">{{ text }}</p>\n  </span>\n</button>"
+        },
+        {
+            "name": "lightButtonComponent",
+            "id": "component-lightButtonComponent-b84de4644a0bba524447d89278eda9ac",
+            "file": "src/app/atoms/buttons/lightButton/lightButton.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-light-button",
+            "styleUrls": [
+                "../button.component.scss",
+                "lightButton.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./lightButton.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "backgroundColor",
+                    "line": 13,
+                    "type": "string"
+                },
+                {
+                    "name": "classes",
+                    "line": 12,
+                    "type": "string"
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 15
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\n\n@Component({\n    selector: 'app-light-button',\n    templateUrl: './lightButton.component.html',\n    styleUrls: ['../button.component.scss', 'lightButton.component.scss'],\n})\n\n\n\nexport class lightButtonComponent implements OnInit {\n    @Input() classes: string;\n    @Input() backgroundColor: string;\n\n    ngOnInit() {\n\n    }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".btn-app {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  box-sizing: border-box;\n  outline: none;\n  transition: 0.3s;\n  border-radius: 8px;\n  &--h36 {\n    height: 36px;\n    padding: 10px 18px 8px 18px;\n  }\n  &--asimetric {\n    border-radius: 20px 5px;\n    height: 52px;\n    padding: 18px 41px 18px 44px;\n  }\n\n  &--h46 {\n    height: 46px;\n    padding: 13px 19px 12px 17px;\n  }\n\n  &--h53 {\n    padding: 9px 50px;\n    height: 53px;\n  }\n}\n",
+                    "styleUrl": "../button.component.scss"
+                },
+                {
+                    "data": ".btn-light {\n    border: none;\n    padding: 16px;\n    background: var(--input-bg-color);\n\n    &:hover {\n        background: var(--light-btn-hover);\n    }\n\n    &:active {\n        background: var(--light-btn-hover);\n    }\n}",
+                    "styleUrl": "lightButton.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<button \n  [ngClass]=\"classes\"\n  [ngStyle]=\"{ 'background': backgroundColor }\"\n>\n  <img src=\"../../../assets/images/back-icon.png\">\n</button>\n\n"
+        },
+        {
+            "name": "navLinkComponent",
+            "id": "component-navLinkComponent-03acad61e30f8f7e86f49adee7138db0",
+            "file": "src/app/atoms/navLink/navLink.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-nav-link",
+            "styleUrls": [
+                "navLink.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./navLink.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "classes",
+                    "line": 13,
+                    "type": "string"
+                },
+                {
+                    "name": "title",
+                    "line": 12,
+                    "type": "string"
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 15
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\n\n@Component({\n    selector: 'app-nav-link',\n    templateUrl: './navLink.component.html',\n    styleUrls: ['navLink.component.scss'],\n})\n\n\n\nexport class navLinkComponent implements OnInit {\n    @Input() title: string;\n    @Input() classes: string;\n\n    ngOnInit() {\n\n    }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".nav-link-sidebar {\n  text-transform: uppercase;\n  background: rgba(var(--secondary-color-code), 0.5);\n  position: relative;\n  -webkit-background-clip: text;\n  -webkit-text-fill-color: transparent;\n  transition: 0.3;\n\n  &::after {\n    content: '';\n    height: 0;\n  }\n\n  &:hover {\n    background: var(--secondary-color); \n    -webkit-background-clip: text;\n    cursor: pointer;\n  }\n\n  &:active {\n    background: var(--success-grad-light); \n    -webkit-background-clip: text;\n  }\n\n  &--active {\n    text-decoration: none;\n    -webkit-text-fill-color: transparent;\n    transition: 0.3;\n    background: var(--success-grad-light); \n    -webkit-background-clip: text;\n  }\n}\n\n.nav-link-main {\n  background: rgba(var(--secondary-color-code), 0.75);\n  -webkit-background-clip: text;\n  -webkit-text-fill-color: transparent;\n  position: relative;\n  text-transform: capitalize;\n\n  &::after {\n    content: '';\n    transition: 0.3s;\n    position: absolute;\n    width: 0;\n    height: 1px;\n    background-color: rgba(var(--secondary-color-code), 0.75);\n    bottom: 0;\n    left: 0;\n  }\n\n  &:hover {\n    &::after {\n      width: 100%;\n    }\n  }\n\n  &:active {\n    background: var(--success-grad-light); \n    -webkit-background-clip: text;\n\n    &::after {\n      width: 0;\n      background: var(--success-grad-light);\n    }\n  }\n\n  &--active {\n    text-decoration: none;\n    -webkit-text-fill-color: transparent;\n    transition: 0.3;\n    background: var(--success-grad-light); \n    -webkit-background-clip: text;\n  }\n}\n",
+                    "styleUrl": "navLink.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<a \n  href=\"#\" \n  [ngClass]=\"classes\"\n>\n  {{ title }}\n</a>\n"
+        },
+        {
+            "name": "primaryButtonComponent",
+            "id": "component-primaryButtonComponent-aa52398da27cd36901a9d9922f7c1677",
+            "file": "src/app/atoms/buttons/primaryButton/primaryButton.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-primary-button",
+            "styleUrls": [
+                "../button.component.scss",
+                "primaryButton.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./primaryButton.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "backgroundColor",
+                    "line": 13,
+                    "type": "string"
+                },
+                {
+                    "name": "classes",
+                    "line": 14,
+                    "type": "string"
+                },
+                {
+                    "name": "title",
+                    "line": 12,
+                    "type": "string"
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 16
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\n\n@Component({\n    selector: 'app-primary-button',\n    templateUrl: './primaryButton.component.html',\n    styleUrls: ['../button.component.scss', 'primaryButton.component.scss'],\n})\n\n\n\nexport class primaryButtonComponent implements OnInit {\n    @Input() title: string;\n    @Input() backgroundColor: string;\n    @Input() classes: string;\n\n    ngOnInit() {\n\n    }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".btn-app {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  box-sizing: border-box;\n  outline: none;\n  transition: 0.3s;\n  border-radius: 8px;\n  &--h36 {\n    height: 36px;\n    padding: 10px 18px 8px 18px;\n  }\n  &--asimetric {\n    border-radius: 20px 5px;\n    height: 52px;\n    padding: 18px 41px 18px 44px;\n  }\n\n  &--h46 {\n    height: 46px;\n    padding: 13px 19px 12px 17px;\n  }\n\n  &--h53 {\n    padding: 9px 50px;\n    height: 53px;\n  }\n}\n",
+                    "styleUrl": "../button.component.scss"
+                },
+                {
+                    "data": ".module-border-wrap {\n    height: 46px;\n    box-sizing: border-box;\n    background: var(--success-grad-light);\n    padding: 1px;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    width: fit-content;\n    border-radius: 6px;\n}\n\n.module-opacity-wrap {\n    background: var(--text-color);\n    border-radius: 5px;\n}\n\n.btn-primary.btn-app {\n    height: 44px;\n    border-radius: 5px;  \n}\n\n.btn-primary {\n    margin: 0;\n    background: transparent;\n    border: none;\n    position: relative;\n\n    p {\n        margin: 0;\n    }\n   \n\n    &__name {\n        background: var(--success-grad-light);\n        -webkit-background-clip: text;\n        -webkit-text-fill-color: transparent;\n        transition: 0;\n    }\n\n    & > svg { \n        margin-right: 20px;\n        fill: url(#paint0_linear);\n        opacity: 0.8;\n        fill-opacity: 0.8;\n    }\n\n    &:active > svg { \n        opacity: 1;\n        fill-opacity: 1;\n        fill: var(--text-color); \n    }\n\n    &:hover {\n        background: linear-gradient(89.52deg, hsla(137, 66%, 42%, 0.2) -46.17%, rgba(2, 99, 188, 0.2) 186.99%);\n    }\n\n    &:active {\n        background: var(--success-grad-light);\n        color: var(--text-color);\n\n        & > .btn-primary__name {\n            background: var(--text-color);\n            -webkit-background-clip: text;\n            -webkit-text-fill-color: transparent;\n        }\n    }\n}\n",
+                    "styleUrl": "primaryButton.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<div class=\"module-border-wrap\">\n  <div class=\"module-opacity-wrap \">\n      <button \n        [ngStyle]=\"{ 'background': backgroundColor }\"\n        [ngClass]=\"classes\"\n      >\n          <svg width=\"20\" height=\"21\" viewBox=\"0 0 20 21\" xmlns=\"http://www.w3.org/2000/svg\">\n              <path d=\"M6.71 5.96433L9 3.55979V13.5857C9 13.863 9.10536 14.1289 9.29289 14.3249C9.48043 14.521 \n              9.73478 14.6312 10 14.6312C10.2652 14.6312 10.5196 14.521 10.7071 14.3249C10.8946 14.1289 \n              11 13.863 11 13.5857V3.55979L13.29 5.96433C13.383 6.06232 13.4936 6.1401 13.6154 6.19317C13.7373 \n              6.24625 13.868 6.27358 14 6.27358C14.132 6.27358 14.2627 6.24625 14.3846 6.19317C14.5064 6.1401\n              14.617 6.06232 14.71 5.96433C14.8037 5.86714 14.8781 5.75152 14.9289 5.62412C14.9797 5.49672 \n              15.0058 5.36007 15.0058 5.22206C15.0058 5.08405 14.9797 4.9474 14.9289 4.82C14.8781 4.6926 14.8037 \n              4.57698 14.71 4.47979L10.71 0.297969C10.6149 0.20279 10.5028 0.128181 10.38 0.0784232C10.1365 \n              -0.0261411 9.86346 -0.0261411 9.62 0.0784232C9.49725 0.128181 9.3851 0.20279 9.29 0.297969L5.29 \n              4.47979C5.19676 4.57726 5.1228 4.69299 5.07234 4.82034C5.02188 4.9477 4.99591 5.08421 4.99591 \n              5.22206C4.99591 5.35991 5.02188 5.49642 5.07234 5.62378C5.1228 5.75113 5.19676 5.86686 5.29 \n              5.96433C5.38324 6.06181 5.49393 6.13913 5.61575 6.19189C5.73757 6.24464 5.86814 6.27179 6 \n              6.27179C6.13186 6.27179 6.26243 6.24464 6.38425 6.19189C6.50607 6.13913 6.61676 6.06181 6.71 \n              5.96433ZM19 10.4493C18.7348 10.4493 18.4804 10.5595 18.2929 10.7555C18.1054 10.9516 18 11.2175 \n              18 11.4948V17.7675C18 18.0448 17.8946 18.3107 17.7071 18.5068C17.5196 18.7028 17.2652 18.813 17 \n              18.813H3C2.73478 18.813 2.48043 18.7028 2.29289 18.5068C2.10536 18.3107 2 18.0448 2 \n              17.7675V11.4948C2 11.2175 1.89464 10.9516 1.70711 10.7555C1.51957 10.5595 1.26522 10.4493 \n              1 10.4493C0.734784 10.4493 0.48043 10.5595 0.292893 10.7555C0.105357 10.9516 0 11.2175 0 \n              11.4948V17.7675C0 18.5993 0.316071 19.3971 0.87868 19.9853C1.44129 20.5734 2.20435 20.9039 \n              3 20.9039H17C17.7956 20.9039 18.5587 20.5734 19.1213 19.9853C19.6839 19.3971 20 18.5993 20 \n              17.7675V11.4948C20 11.2175 19.8946 10.9516 19.7071 10.7555C19.5196 10.5595 19.2652 10.4493 \n              19 10.4493Z\"/>\n              <defs>\n              <linearGradient id=\"paint0_linear\" x1=\"-9.10937\" y1=\"46.0158\" x2=\"37.9111\" y2=\"45.6381\" \n              gradientUnits=\"userSpaceOnUse\">\n              <stop stop-color=\"#24B04B\"/>\n              <stop offset=\"1\" stop-color=\"#0263BC\"/>\n              </linearGradient>\n              </defs>\n          </svg>\n          <p class=\"btn-primary__name\">\n              {{ title }}\n          </p>\n      </button>\n  </div>\n</div>"
+        },
+        {
+            "name": "searchItemComponent",
+            "id": "component-searchItemComponent-8aed315c7cd249cd8116230c154a8a92",
+            "file": "src/app/atoms/searchItem/searchItem.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-nav-link",
+            "styleUrls": [
+                "searchItem.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./searchItem.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "classes",
+                    "line": 13,
+                    "type": "string"
+                },
+                {
+                    "name": "title",
+                    "line": 12,
+                    "type": "string"
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 15
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\n\n@Component({\n    selector: 'app-nav-link',\n    templateUrl: './searchItem.component.html',\n    styleUrls: ['searchItem.component.scss'],\n})\n\n\n\nexport class searchItemComponent implements OnInit {\n    @Input() title: string;\n    @Input() classes: string;\n\n    ngOnInit() {\n\n    }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".search-list__item {\n  box-sizing: border-box;\n  list-style: none;\n  width: 100%;\n  height: 46px;\n  padding: 15px 53px;\n  background: var(--input-bg-color);\n  transition: 0.3s;\n  color: var(--secondary-color);\n  opacity: 0.75;\n\n  &:hover {\n    cursor: pointer;\n    background-color: var(--light-btn-hover);\n  }\n}\n\n.list-item-icon {\n  padding: 19px 53px;\n  width: 100%;\n  height: 54px;\n  border: 1px solid rgba(var(--secondary-color-code), 0.1);\n  border-radius: 8px;\n  position: relative;\n  color: rgba(var(--secondary-color-code), 0.7);\n\n  &:after {\n    content: url('../../../assets/images/check.png');\n    position: absolute;\n    left: 17px;\n    top: 17px;\n  }\n}",
+                    "styleUrl": "searchItem.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<li \n  [ngClass]=\"classes\"\n>\n  {{ title }}\n</li>\n\n"
+        },
+        {
+            "name": "secondaryButtonComponent",
+            "id": "component-secondaryButtonComponent-c21cc17b95a3d834a2e33b2457374047",
+            "file": "src/app/atoms/buttons/secondaryButton/secondaryButton.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-secondary-button",
+            "styleUrls": [
+                "../button.component.scss",
+                "secondaryButton.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./secondaryButton.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "backgroundColor",
+                    "line": 13,
+                    "type": "string"
+                },
+                {
+                    "name": "classes",
+                    "line": 15,
+                    "type": "string"
+                },
+                {
+                    "name": "color",
+                    "line": 14,
+                    "type": "string"
+                },
+                {
+                    "name": "title",
+                    "line": 12,
+                    "type": "string"
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 17
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\n\n@Component({\n    selector: 'app-secondary-button',\n    templateUrl: './secondaryButton.component.html',\n    styleUrls: ['../button.component.scss', 'secondaryButton.component.scss'],\n})\n\n\n\nexport class secondaryButtonComponent implements OnInit {\n    @Input() title: string;\n    @Input() backgroundColor: string;\n    @Input() color: string;\n    @Input() classes: string;\n\n    ngOnInit() {\n\n    }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".btn-app {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  box-sizing: border-box;\n  outline: none;\n  transition: 0.3s;\n  border-radius: 8px;\n  &--h36 {\n    height: 36px;\n    padding: 10px 18px 8px 18px;\n  }\n  &--asimetric {\n    border-radius: 20px 5px;\n    height: 52px;\n    padding: 18px 41px 18px 44px;\n  }\n\n  &--h46 {\n    height: 46px;\n    padding: 13px 19px 12px 17px;\n  }\n\n  &--h53 {\n    padding: 9px 50px;\n    height: 53px;\n  }\n}\n",
+                    "styleUrl": "../button.component.scss"
+                },
+                {
+                    "data": ".btn-secondary {\n    background: rgba(var(--secondary-color-code),0.05);\n    color: var(--secondary-color);\n    border: none;\n\n    &:hover {\n        background: rgba(var(--secondary-color-code),0.2);\n    }\n\n    &:active {\n        background: rgba(var(--secondary-color-code),0.7);\n        color: var(--text-color);\n    }\n\n    & > svg {\n        margin-right: 20px;\n        fill: var(--secondary-color); \n        opacity: 0.5;\n        fill-opacity: 1;\n        transition: 0.3s;\n    }\n\n    &:active > svg { \n        opacity: 1;\n        fill: var(--text-color);\n    }\n}",
+                    "styleUrl": "secondaryButton.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<button \n  [ngStyle]=\"{'background': backgroundColor, 'color': color }\"\n  [ngClass]=\"classes\"\n>\n  <svg width=\"20\" height=\"20\" viewBox=\"0 0 20 20\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n      <path d=\"M17 0H3C2.20435 0 1.44129 0.316071 0.87868 0.87868C0.316071 1.44129 1.80878e-07 2.20435 \n      1.80878e-07 3V4.17C-0.000143207 4.58294 0.0849664 4.99147 0.25 5.37V5.43C0.39128 5.75097 \n      0.591392 6.04266 0.84 6.29L7 12.41V19C6.99966 19.1699 7.04264 19.3372 7.12487 19.4859C7.20711 \n      19.6346 7.32589 19.7599 7.47 19.85C7.62914 19.9486 7.81277 20.0006 8 20C8.15654 19.9991 8.31068 \n      19.9614 8.45 19.89L12.45 17.89C12.6149 17.8069 12.7536 17.6798 12.8507 17.5227C12.9478 17.3656 \n      12.9994 17.1847 13 17V12.41L19.12 6.29C19.3686 6.04266 19.5687 5.75097 19.71 5.43V5.37C19.8888 \n      4.99443 19.9876 4.58578 20 4.17V3C20 2.20435 19.6839 1.44129 19.1213 0.87868C18.5587 0.316071 \n      17.7956 0 17 0ZM11.29 11.29C11.1973 11.3834 11.124 11.4943 11.0742 11.6161C11.0245 11.7379 10.9992 \n      11.8684 11 12V16.38L9 17.38V12C9.00076 11.8684 8.97554 11.7379 8.92577 11.6161C8.87601 11.4943 8.80268\n      11.3834 8.71 11.29L3.41 6H16.59L11.29 11.29ZM18 4H2V3C2 2.73478 2.10536 2.48043 2.29289\n      2.29289C2.48043 2.10536 2.73478 2 3 2H17C17.2652 2 17.5196 2.10536 17.7071 2.29289C17.8946 2.48043 \n      18 2.73478 18 3V4Z\" />\n  </svg>\n      {{ title }}\n  </button>"
         },
         {
             "name": "simpleButtonComponent",
             "id": "component-simpleButtonComponent-c33720fa521dc42ac741076bf409bb24",
-            "file": "src/app/buttons/simpleButton/simpleButton.component.ts",
+            "file": "src/app/atoms/buttons/simpleButton/simpleButton.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -317,11 +992,11 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".btn-app {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  box-sizing: border-box;\n  outline: none;\n  transition: 0.3s;\n  border-radius: 8px;\n  &--h36 {\n    height: 36px;\n    padding: 10px 18px 8px 18px;\n  }\n  &--asimetric {\n    border-radius: 20px 5px;\n    height: 52px;\n    padding: 18px 41px 18px 44px;\n  }\n  &--small {\n    padding: 13px 38px 12px 38px;\n  }\n}\n",
+                    "data": ".btn-app {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  box-sizing: border-box;\n  outline: none;\n  transition: 0.3s;\n  border-radius: 8px;\n  &--h36 {\n    height: 36px;\n    padding: 10px 18px 8px 18px;\n  }\n  &--asimetric {\n    border-radius: 20px 5px;\n    height: 52px;\n    padding: 18px 41px 18px 44px;\n  }\n\n  &--h46 {\n    height: 46px;\n    padding: 13px 19px 12px 17px;\n  }\n\n  &--h53 {\n    padding: 9px 50px;\n    height: 53px;\n  }\n}\n",
                     "styleUrl": "../button.component.scss"
                 },
                 {
-                    "data": ".btn-danger {\n  color: var(--danger-color);\n  background: inherit;\n  outline: none;\n  border: 1px solid rgba(var(--danger-color-code), 0.2);\n\n  &:hover {\n      cursor: pointer;\n      background: rgba(var(--danger-color-code), 0.3);\n  }\n\n  &:active {\n      background: rgba(var(--danger-color-code), 0.5);\n  }\n}\n\n.btn-transparent {\n  text-transform: uppercase;\n  color: rgba(var(--secondary-color-code), 0.75);\n  border: none;\n  background-color: transparent;\n  position: relative;\n  padding-left: 20px;\n  &:hover {\n      &:after {\n          content: url(('../../../assets/images/back.svg'));\n          position: absolute;\n          top: 0;\n          left: 0;\n      }\n  }\n}\n\n.btn-success {\n  background: transparent;\n  border: none;\n  position: relative;\n  color: var(--text-color);\n  z-index: 2;\n  text-transform: uppercase;\n\n  &::before {\n      position: absolute;\n      width: 100%;\n      height: 100%;\n      content: '';\n      background: var(--success-grad-light);\n      z-index: -1;\n      top: 0;\n      left: 0;\n      border-radius: 8px;\n      transition: 0.3s;\n  }\n\n  &::after {\n      position: absolute;\n      width: 100%;\n      height: 100%;\n      content: '';\n      z-index: -1;\n      background: var(--success-grad-dark);\n      top: 0;\n      left: 0;\n      border-radius: 8px;\n      transition: 0.3s;\n      opacity: 0;\n  }\n\n  &:hover {\n      &::before {\n          opacity: 0;\n      }\n\n      &::after {\n          opacity: 1;\n      }\n  }\n\n  &:active {\n      &::before {\n          opacity: 1;\n      }\n\n      &::after {\n          opacity: 0;\n      }\n  }\n}\n",
+                    "data": ".btn-danger {\n  color: var(--danger-color);\n  background: inherit;\n  outline: none;\n  border: 1px solid rgba(var(--danger-color-code), 0.2);\n\n  &:hover {\n      cursor: pointer;\n      background: rgba(var(--danger-color-code), 0.3);\n  }\n\n  &:active {\n      background: rgba(var(--danger-color-code), 0.5);\n  }\n}\n\n.btn-transparent {\n  text-transform: uppercase;\n  color: rgba(var(--secondary-color-code), 0.75);\n  border: none;\n  background-color: transparent;\n  position: relative;\n  padding-left: 20px;\n  &:hover {\n      &:after {\n          content: url('../../../../assets/images/back.svg');\n          position: absolute;\n          top: 0;\n          left: 0;\n      }\n  }\n}\n\n.btn-success {\n  background: transparent;\n  border: none;\n  position: relative;\n  color: var(--text-color);\n  z-index: 2;\n  text-transform: uppercase;\n\n  &::before {\n      position: absolute;\n      width: 100%;\n      height: 100%;\n      content: '';\n      background: var(--success-grad-light);\n      z-index: -1;\n      top: 0;\n      left: 0;\n      border-radius: 8px;\n      transition: 0.3s;\n  }\n\n  &::after {\n      position: absolute;\n      width: 100%;\n      height: 100%;\n      content: '';\n      z-index: -1;\n      background: var(--success-grad-dark);\n      top: 0;\n      left: 0;\n      border-radius: 8px;\n      transition: 0.3s;\n      opacity: 0;\n  }\n\n  &:hover {\n      &::before {\n          opacity: 0;\n      }\n\n      &::after {\n          opacity: 1;\n      }\n  }\n\n  &:active {\n      &::before {\n          opacity: 1;\n      }\n\n      &::after {\n          opacity: 0;\n      }\n  }\n}\n",
                     "styleUrl": "simpleButton.component.scss"
                 }
             ],
@@ -385,10 +1060,10 @@
                             "name": "AppComponent"
                         },
                         {
-                            "name": "TextComponent"
+                            "name": "DateMenuComponent"
                         },
                         {
-                            "name": "simpleButtonComponent"
+                            "name": "IconContainerComponent"
                         }
                     ]
                 },
@@ -413,6 +1088,76 @@
                     "elements": []
                 }
             ]
+        },
+        {
+            "name": "DateMenuModule",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "DateMenuComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": [
+                        {
+                            "name": "IconContainerModule"
+                        }
+                    ]
+                },
+                {
+                    "type": "exports",
+                    "elements": []
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "IconContainerModule",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "IconContainerComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": []
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
         }
     ],
     "miscellaneous": {
@@ -429,7 +1174,7 @@
                 "name": "Danger",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/buttons/simpleButton/simpleButton.stories.ts",
+                "file": "src/app/atoms/buttons/simpleButton/simpleButton.stories.ts",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
@@ -453,7 +1198,15 @@
                 "name": "Gradient",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/buttons/gradientButton/gradientButton.stories.ts",
+                "file": "src/app/atoms/buttons/gradientButton/gradientButton.stories.ts",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Info",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/atoms/buttons/infoButton/infoButton.stories.ts",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
@@ -466,6 +1219,30 @@
                 "defaultValue": "Template.bind({})"
             },
             {
+                "name": "Large",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/atoms/buttons/largeButton/largeButton.stories.ts",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Light",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/atoms/buttons/lightButton/lightButton.stories.ts",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Main",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/atoms/navLink/navLink.stories.ts",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
                 "name": "Primary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -474,10 +1251,50 @@
                 "defaultValue": "Template.bind({})"
             },
             {
+                "name": "Primary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/atoms/buttons/primaryButton/primaryButton.stories.ts",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
                 "name": "props",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/buttons/simpleButton/simpleButton.stories.ts",
+                "file": "src/app/molecules/date-menu/date-menu.stories.ts",
+                "type": "object",
+                "defaultValue": "{\n  backgroundColor: { control: 'color' },\n}"
+            },
+            {
+                "name": "props",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/atoms/iconContainer/iconContainer.stories.ts",
+                "type": "object",
+                "defaultValue": "{\n  backgroundColor: { control: 'color' },\n}"
+            },
+            {
+                "name": "props",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/atoms/navLink/navLink.stories.ts",
+                "type": "object",
+                "defaultValue": "{\n  title: { control: 'text' },\n}"
+            },
+            {
+                "name": "props",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/atoms/searchItem/searchItem.stories.ts",
+                "type": "object",
+                "defaultValue": "{\n  title: { control: 'text' },\n}"
+            },
+            {
+                "name": "props",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/atoms/buttons/infoButton/infoButton.stories.ts",
                 "type": "object",
                 "defaultValue": "{\n  backgroundColor: { control: 'color' },\n  color: { control: 'color' },\n  title: { control: 'text'},\n}"
             },
@@ -485,9 +1302,57 @@
                 "name": "props",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/buttons/gradientButton/gradientButton.stories.ts",
+                "file": "src/app/atoms/buttons/gradientButton/gradientButton.stories.ts",
                 "type": "object",
                 "defaultValue": "{\n  backgroundColor: { control: 'color' },\n  color: { control: 'color' },\n  title: { control: 'text'},\n}"
+            },
+            {
+                "name": "props",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/atoms/buttons/lightButton/lightButton.stories.ts",
+                "type": "object",
+                "defaultValue": "{\n  backgroundColor: { control: 'color' },\n  color: { control: 'color' },\n  title: { control: 'text'},\n}"
+            },
+            {
+                "name": "props",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/atoms/buttons/largeButton/largeButton.stories.ts",
+                "type": "object",
+                "defaultValue": "{\n  backgroundColor: { control: 'color' },\n  color: { control: 'color' },\n  title: { control: 'text'},\n}"
+            },
+            {
+                "name": "props",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/atoms/buttons/primaryButton/primaryButton.stories.ts",
+                "type": "object",
+                "defaultValue": "{\n  backgroundColor: { control: 'color' },\n  title: { control: 'text'},\n}"
+            },
+            {
+                "name": "props",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/atoms/buttons/secondaryButton/secondaryButton.stories.ts",
+                "type": "object",
+                "defaultValue": "{\n  backgroundColor: { control: 'color' },\n  color: { control: 'color' },\n  title: { control: 'text'},\n}"
+            },
+            {
+                "name": "props",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/atoms/buttons/simpleButton/simpleButton.stories.ts",
+                "type": "object",
+                "defaultValue": "{\n  backgroundColor: { control: 'color' },\n  color: { control: 'color' },\n  title: { control: 'text'},\n}"
+            },
+            {
+                "name": "props",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/atoms/inputs/formInput/formInput.stories.ts",
+                "type": "object",
+                "defaultValue": "{\n  backgroundColor: { control: 'color' },\n  color: { control: 'color' },\n  placeholder: { control: 'text'},\n}"
             },
             {
                 "name": "require",
@@ -505,6 +1370,54 @@
                 "defaultValue": "Template.bind({})"
             },
             {
+                "name": "Secondary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/atoms/buttons/secondaryButton/secondaryButton.stories.ts",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "SideBar",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/atoms/navLink/navLink.stories.ts",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Simple",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/molecules/date-menu/date-menu.stories.ts",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Simple",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/atoms/iconContainer/iconContainer.stories.ts",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Simple",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/atoms/searchItem/searchItem.stories.ts",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Simple",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/atoms/inputs/formInput/formInput.stories.ts",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
                 "name": "Small",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -516,7 +1429,7 @@
                 "name": "Success",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/buttons/simpleButton/simpleButton.stories.ts",
+                "file": "src/app/atoms/buttons/simpleButton/simpleButton.stories.ts",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
@@ -532,7 +1445,87 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/buttons/simpleButton/simpleButton.stories.ts",
+                "file": "src/app/molecules/date-menu/date-menu.stories.ts",
+                "type": "Story<DateMenuComponent>",
+                "defaultValue": "(args: DateMenuComponent) => ({\n    component: DateMenuComponent,\n    props: args,\n  })"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/atoms/iconContainer/iconContainer.stories.ts",
+                "type": "Story<IconContainerComponent>",
+                "defaultValue": "(args: IconContainerComponent) => ({\n    component: IconContainerComponent,\n    props: args,\n  })"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/atoms/navLink/navLink.stories.ts",
+                "type": "Story<navLinkComponent>",
+                "defaultValue": "(args: navLinkComponent) => ({\n    component: navLinkComponent,\n    props: args,\n  })"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/atoms/searchItem/searchItem.stories.ts",
+                "type": "Story<searchItemComponent>",
+                "defaultValue": "(args: searchItemComponent) => ({\n    component: searchItemComponent,\n    props: args,\n  })"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/atoms/buttons/infoButton/infoButton.stories.ts",
+                "type": "Story<infoButtonComponent>",
+                "defaultValue": "(args: infoButtonComponent) => ({\n    component: infoButtonComponent,\n    props: args,\n  })"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/atoms/buttons/gradientButton/gradientButton.stories.ts",
+                "type": "Story<gradientButtonComponent>",
+                "defaultValue": "(args: gradientButtonComponent) => ({\n    component: gradientButtonComponent,\n    props: args,\n  })"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/atoms/buttons/lightButton/lightButton.stories.ts",
+                "type": "Story<lightButtonComponent>",
+                "defaultValue": "(args: lightButtonComponent) => ({\n    component: lightButtonComponent,\n    props: args,\n  })"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/atoms/buttons/largeButton/largeButton.stories.ts",
+                "type": "Story<largeButtonComponent>",
+                "defaultValue": "(args: largeButtonComponent) => ({\n    component: largeButtonComponent,\n    props: args,\n  })"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/atoms/buttons/primaryButton/primaryButton.stories.ts",
+                "type": "Story<primaryButtonComponent>",
+                "defaultValue": "(args: primaryButtonComponent) => ({\n    component: primaryButtonComponent,\n    props: args,\n  })"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/atoms/buttons/secondaryButton/secondaryButton.stories.ts",
+                "type": "Story<secondaryButtonComponent>",
+                "defaultValue": "(args: secondaryButtonComponent) => ({\n    component: secondaryButtonComponent,\n    props: args,\n  })"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/atoms/buttons/simpleButton/simpleButton.stories.ts",
                 "type": "Story<simpleButtonComponent>",
                 "defaultValue": "(args: simpleButtonComponent) => ({\n    component: simpleButtonComponent,\n    props: args,\n  })"
             },
@@ -540,15 +1533,31 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/buttons/gradientButton/gradientButton.stories.ts",
-                "type": "Story<gradientButtonComponent>",
-                "defaultValue": "(args: gradientButtonComponent) => ({\n    component: gradientButtonComponent,\n    props: args,\n  })"
+                "file": "src/app/atoms/inputs/formInput/formInput.stories.ts",
+                "type": "Story<formInputComponent>",
+                "defaultValue": "(args: formInputComponent) => ({\n    component: formInputComponent,\n    props: args,\n  })"
             },
             {
                 "name": "Transparent",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/buttons/simpleButton/simpleButton.stories.ts",
+                "file": "src/app/atoms/buttons/simpleButton/simpleButton.stories.ts",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "WithIcon",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/atoms/searchItem/searchItem.stories.ts",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "WithIcon",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/atoms/inputs/formInput/formInput.stories.ts",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             }
@@ -574,12 +1583,12 @@
                     "type": "literal type"
                 }
             ],
-            "src/app/buttons/simpleButton/simpleButton.stories.ts": [
+            "src/app/atoms/buttons/simpleButton/simpleButton.stories.ts": [
                 {
                     "name": "Danger",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/buttons/simpleButton/simpleButton.stories.ts",
+                    "file": "src/app/atoms/buttons/simpleButton/simpleButton.stories.ts",
                     "type": "",
                     "defaultValue": "Template.bind({})"
                 },
@@ -587,7 +1596,7 @@
                     "name": "props",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/buttons/simpleButton/simpleButton.stories.ts",
+                    "file": "src/app/atoms/buttons/simpleButton/simpleButton.stories.ts",
                     "type": "object",
                     "defaultValue": "{\n  backgroundColor: { control: 'color' },\n  color: { control: 'color' },\n  title: { control: 'text'},\n}"
                 },
@@ -595,7 +1604,7 @@
                     "name": "Success",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/buttons/simpleButton/simpleButton.stories.ts",
+                    "file": "src/app/atoms/buttons/simpleButton/simpleButton.stories.ts",
                     "type": "",
                     "defaultValue": "Template.bind({})"
                 },
@@ -603,7 +1612,7 @@
                     "name": "Template",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/buttons/simpleButton/simpleButton.stories.ts",
+                    "file": "src/app/atoms/buttons/simpleButton/simpleButton.stories.ts",
                     "type": "Story<simpleButtonComponent>",
                     "defaultValue": "(args: simpleButtonComponent) => ({\n    component: simpleButtonComponent,\n    props: args,\n  })"
                 },
@@ -611,7 +1620,7 @@
                     "name": "Transparent",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/buttons/simpleButton/simpleButton.stories.ts",
+                    "file": "src/app/atoms/buttons/simpleButton/simpleButton.stories.ts",
                     "type": "",
                     "defaultValue": "Template.bind({})"
                 }
@@ -636,12 +1645,12 @@
                     "defaultValue": "{\n  production: false\n}"
                 }
             ],
-            "src/app/buttons/gradientButton/gradientButton.stories.ts": [
+            "src/app/atoms/buttons/gradientButton/gradientButton.stories.ts": [
                 {
                     "name": "Gradient",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/buttons/gradientButton/gradientButton.stories.ts",
+                    "file": "src/app/atoms/buttons/gradientButton/gradientButton.stories.ts",
                     "type": "",
                     "defaultValue": "Template.bind({})"
                 },
@@ -649,7 +1658,7 @@
                     "name": "props",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/buttons/gradientButton/gradientButton.stories.ts",
+                    "file": "src/app/atoms/buttons/gradientButton/gradientButton.stories.ts",
                     "type": "object",
                     "defaultValue": "{\n  backgroundColor: { control: 'color' },\n  color: { control: 'color' },\n  title: { control: 'text'},\n}"
                 },
@@ -657,9 +1666,35 @@
                     "name": "Template",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/buttons/gradientButton/gradientButton.stories.ts",
+                    "file": "src/app/atoms/buttons/gradientButton/gradientButton.stories.ts",
                     "type": "Story<gradientButtonComponent>",
                     "defaultValue": "(args: gradientButtonComponent) => ({\n    component: gradientButtonComponent,\n    props: args,\n  })"
+                }
+            ],
+            "src/app/atoms/buttons/infoButton/infoButton.stories.ts": [
+                {
+                    "name": "Info",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/atoms/buttons/infoButton/infoButton.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "props",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/atoms/buttons/infoButton/infoButton.stories.ts",
+                    "type": "object",
+                    "defaultValue": "{\n  backgroundColor: { control: 'color' },\n  color: { control: 'color' },\n  title: { control: 'text'},\n}"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/atoms/buttons/infoButton/infoButton.stories.ts",
+                    "type": "Story<infoButtonComponent>",
+                    "defaultValue": "(args: infoButtonComponent) => ({\n    component: infoButtonComponent,\n    props: args,\n  })"
                 }
             ],
             "src/stories/Button.stories.ts": [
@@ -703,6 +1738,264 @@
                     "type": "Story<Button>",
                     "defaultValue": "(args: Button) => ({\n  component: Button,\n  props: args,\n})"
                 }
+            ],
+            "src/app/atoms/buttons/largeButton/largeButton.stories.ts": [
+                {
+                    "name": "Large",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/atoms/buttons/largeButton/largeButton.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "props",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/atoms/buttons/largeButton/largeButton.stories.ts",
+                    "type": "object",
+                    "defaultValue": "{\n  backgroundColor: { control: 'color' },\n  color: { control: 'color' },\n  title: { control: 'text'},\n}"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/atoms/buttons/largeButton/largeButton.stories.ts",
+                    "type": "Story<largeButtonComponent>",
+                    "defaultValue": "(args: largeButtonComponent) => ({\n    component: largeButtonComponent,\n    props: args,\n  })"
+                }
+            ],
+            "src/app/atoms/buttons/lightButton/lightButton.stories.ts": [
+                {
+                    "name": "Light",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/atoms/buttons/lightButton/lightButton.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "props",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/atoms/buttons/lightButton/lightButton.stories.ts",
+                    "type": "object",
+                    "defaultValue": "{\n  backgroundColor: { control: 'color' },\n  color: { control: 'color' },\n  title: { control: 'text'},\n}"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/atoms/buttons/lightButton/lightButton.stories.ts",
+                    "type": "Story<lightButtonComponent>",
+                    "defaultValue": "(args: lightButtonComponent) => ({\n    component: lightButtonComponent,\n    props: args,\n  })"
+                }
+            ],
+            "src/app/atoms/navLink/navLink.stories.ts": [
+                {
+                    "name": "Main",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/atoms/navLink/navLink.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "props",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/atoms/navLink/navLink.stories.ts",
+                    "type": "object",
+                    "defaultValue": "{\n  title: { control: 'text' },\n}"
+                },
+                {
+                    "name": "SideBar",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/atoms/navLink/navLink.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/atoms/navLink/navLink.stories.ts",
+                    "type": "Story<navLinkComponent>",
+                    "defaultValue": "(args: navLinkComponent) => ({\n    component: navLinkComponent,\n    props: args,\n  })"
+                }
+            ],
+            "src/app/atoms/buttons/primaryButton/primaryButton.stories.ts": [
+                {
+                    "name": "Primary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/atoms/buttons/primaryButton/primaryButton.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "props",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/atoms/buttons/primaryButton/primaryButton.stories.ts",
+                    "type": "object",
+                    "defaultValue": "{\n  backgroundColor: { control: 'color' },\n  title: { control: 'text'},\n}"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/atoms/buttons/primaryButton/primaryButton.stories.ts",
+                    "type": "Story<primaryButtonComponent>",
+                    "defaultValue": "(args: primaryButtonComponent) => ({\n    component: primaryButtonComponent,\n    props: args,\n  })"
+                }
+            ],
+            "src/app/molecules/date-menu/date-menu.stories.ts": [
+                {
+                    "name": "props",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/molecules/date-menu/date-menu.stories.ts",
+                    "type": "object",
+                    "defaultValue": "{\n  backgroundColor: { control: 'color' },\n}"
+                },
+                {
+                    "name": "Simple",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/molecules/date-menu/date-menu.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/molecules/date-menu/date-menu.stories.ts",
+                    "type": "Story<DateMenuComponent>",
+                    "defaultValue": "(args: DateMenuComponent) => ({\n    component: DateMenuComponent,\n    props: args,\n  })"
+                }
+            ],
+            "src/app/atoms/iconContainer/iconContainer.stories.ts": [
+                {
+                    "name": "props",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/atoms/iconContainer/iconContainer.stories.ts",
+                    "type": "object",
+                    "defaultValue": "{\n  backgroundColor: { control: 'color' },\n}"
+                },
+                {
+                    "name": "Simple",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/atoms/iconContainer/iconContainer.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/atoms/iconContainer/iconContainer.stories.ts",
+                    "type": "Story<IconContainerComponent>",
+                    "defaultValue": "(args: IconContainerComponent) => ({\n    component: IconContainerComponent,\n    props: args,\n  })"
+                }
+            ],
+            "src/app/atoms/searchItem/searchItem.stories.ts": [
+                {
+                    "name": "props",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/atoms/searchItem/searchItem.stories.ts",
+                    "type": "object",
+                    "defaultValue": "{\n  title: { control: 'text' },\n}"
+                },
+                {
+                    "name": "Simple",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/atoms/searchItem/searchItem.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/atoms/searchItem/searchItem.stories.ts",
+                    "type": "Story<searchItemComponent>",
+                    "defaultValue": "(args: searchItemComponent) => ({\n    component: searchItemComponent,\n    props: args,\n  })"
+                },
+                {
+                    "name": "WithIcon",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/atoms/searchItem/searchItem.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                }
+            ],
+            "src/app/atoms/buttons/secondaryButton/secondaryButton.stories.ts": [
+                {
+                    "name": "props",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/atoms/buttons/secondaryButton/secondaryButton.stories.ts",
+                    "type": "object",
+                    "defaultValue": "{\n  backgroundColor: { control: 'color' },\n  color: { control: 'color' },\n  title: { control: 'text'},\n}"
+                },
+                {
+                    "name": "Secondary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/atoms/buttons/secondaryButton/secondaryButton.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/atoms/buttons/secondaryButton/secondaryButton.stories.ts",
+                    "type": "Story<secondaryButtonComponent>",
+                    "defaultValue": "(args: secondaryButtonComponent) => ({\n    component: secondaryButtonComponent,\n    props: args,\n  })"
+                }
+            ],
+            "src/app/atoms/inputs/formInput/formInput.stories.ts": [
+                {
+                    "name": "props",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/atoms/inputs/formInput/formInput.stories.ts",
+                    "type": "object",
+                    "defaultValue": "{\n  backgroundColor: { control: 'color' },\n  color: { control: 'color' },\n  placeholder: { control: 'text'},\n}"
+                },
+                {
+                    "name": "Simple",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/atoms/inputs/formInput/formInput.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/atoms/inputs/formInput/formInput.stories.ts",
+                    "type": "Story<formInputComponent>",
+                    "defaultValue": "(args: formInputComponent) => ({\n    component: formInputComponent,\n    props: args,\n  })"
+                },
+                {
+                    "name": "WithIcon",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/atoms/inputs/formInput/formInput.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                }
             ]
         },
         "groupedFunctions": {},
@@ -711,7 +2004,7 @@
     },
     "routes": [],
     "coverage": {
-        "count": 2,
+        "count": 0,
         "status": "low",
         "files": [
             {
@@ -733,16 +2026,16 @@
                 "status": "low"
             },
             {
-                "filePath": "src/app/buttons/gradientButton/gradientButton.component.ts",
+                "filePath": "src/app/atoms/buttons/gradientButton/gradientButton.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "gradientButtonComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/6",
+                "coverageCount": "0/5",
                 "status": "low"
             },
             {
-                "filePath": "src/app/buttons/gradientButton/gradientButton.stories.ts",
+                "filePath": "src/app/atoms/buttons/gradientButton/gradientButton.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -752,7 +2045,7 @@
                 "status": "low"
             },
             {
-                "filePath": "src/app/buttons/gradientButton/gradientButton.stories.ts",
+                "filePath": "src/app/atoms/buttons/gradientButton/gradientButton.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -762,7 +2055,7 @@
                 "status": "low"
             },
             {
-                "filePath": "src/app/buttons/gradientButton/gradientButton.stories.ts",
+                "filePath": "src/app/atoms/buttons/gradientButton/gradientButton.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -772,7 +2065,202 @@
                 "status": "low"
             },
             {
-                "filePath": "src/app/buttons/simpleButton/simpleButton.component.ts",
+                "filePath": "src/app/atoms/buttons/infoButton/infoButton.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "infoButtonComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/6",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/atoms/buttons/infoButton/infoButton.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Info",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/atoms/buttons/infoButton/infoButton.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "props",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/atoms/buttons/infoButton/infoButton.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/atoms/buttons/largeButton/largeButton.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "largeButtonComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/7",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/atoms/buttons/largeButton/largeButton.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Large",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/atoms/buttons/largeButton/largeButton.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "props",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/atoms/buttons/largeButton/largeButton.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/atoms/buttons/lightButton/lightButton.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "lightButtonComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/atoms/buttons/lightButton/lightButton.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Light",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/atoms/buttons/lightButton/lightButton.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "props",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/atoms/buttons/lightButton/lightButton.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/atoms/buttons/primaryButton/primaryButton.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "primaryButtonComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/atoms/buttons/primaryButton/primaryButton.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Primary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/atoms/buttons/primaryButton/primaryButton.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "props",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/atoms/buttons/primaryButton/primaryButton.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/atoms/buttons/secondaryButton/secondaryButton.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "secondaryButtonComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/6",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/atoms/buttons/secondaryButton/secondaryButton.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "props",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/atoms/buttons/secondaryButton/secondaryButton.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Secondary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/atoms/buttons/secondaryButton/secondaryButton.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/atoms/buttons/simpleButton/simpleButton.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "simpleButtonComponent",
@@ -781,7 +2269,7 @@
                 "status": "low"
             },
             {
-                "filePath": "src/app/buttons/simpleButton/simpleButton.stories.ts",
+                "filePath": "src/app/atoms/buttons/simpleButton/simpleButton.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -791,7 +2279,7 @@
                 "status": "low"
             },
             {
-                "filePath": "src/app/buttons/simpleButton/simpleButton.stories.ts",
+                "filePath": "src/app/atoms/buttons/simpleButton/simpleButton.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -801,7 +2289,7 @@
                 "status": "low"
             },
             {
-                "filePath": "src/app/buttons/simpleButton/simpleButton.stories.ts",
+                "filePath": "src/app/atoms/buttons/simpleButton/simpleButton.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -811,7 +2299,7 @@
                 "status": "low"
             },
             {
-                "filePath": "src/app/buttons/simpleButton/simpleButton.stories.ts",
+                "filePath": "src/app/atoms/buttons/simpleButton/simpleButton.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -821,11 +2309,236 @@
                 "status": "low"
             },
             {
-                "filePath": "src/app/buttons/simpleButton/simpleButton.stories.ts",
+                "filePath": "src/app/atoms/buttons/simpleButton/simpleButton.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "Transparent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/atoms/iconContainer/iconContainer.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "IconContainerComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/atoms/iconContainer/iconContainer.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "props",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/atoms/iconContainer/iconContainer.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Simple",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/atoms/iconContainer/iconContainer.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/atoms/inputs/formInput/formInput.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "formInputComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/7",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/atoms/inputs/formInput/formInput.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "props",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/atoms/inputs/formInput/formInput.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Simple",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/atoms/inputs/formInput/formInput.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/atoms/inputs/formInput/formInput.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "WithIcon",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/atoms/navLink/navLink.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "navLinkComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/atoms/navLink/navLink.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Main",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/atoms/navLink/navLink.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "props",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/atoms/navLink/navLink.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "SideBar",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/atoms/navLink/navLink.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/atoms/searchItem/searchItem.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "searchItemComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/atoms/searchItem/searchItem.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "props",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/atoms/searchItem/searchItem.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Simple",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/atoms/searchItem/searchItem.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/atoms/searchItem/searchItem.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "WithIcon",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/molecules/date-menu/date-menu.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "DateMenuComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/molecules/date-menu/date-menu.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "props",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/molecules/date-menu/date-menu.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Simple",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/molecules/date-menu/date-menu.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"

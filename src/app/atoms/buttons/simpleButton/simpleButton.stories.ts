@@ -34,5 +34,5 @@ const Template: Story<simpleButtonComponent> = (args: simpleButtonComponent) => 
   export const Success = Template.bind({});
   Success.args = {
     title: "save",
-    classes: "btn-app--small btn-app btn-success fs-12-sofia-400"
+    classes: "btn-app--h36 btn-app btn-success fs-12-gramm-400 "
   };

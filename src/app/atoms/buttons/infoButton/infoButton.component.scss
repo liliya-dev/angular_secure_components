@@ -1,0 +1,20 @@
+.btn-info {
+  padding: 9px 15px 9px 15px;
+  height: 40px;
+  border: none;
+  color: var(--info-color);
+  background-color: rgba(var(--info-color-code), 0.05);  
+  text-transform: capitalize;
+
+  & > img {
+      margin-right: 15px;
+  }
+
+  &:hover {
+      background-color: rgba(var(--info-color-code), 0.3);  
+  }
+
+  &:active {
+      background-color: transparent; 
+  }
+}

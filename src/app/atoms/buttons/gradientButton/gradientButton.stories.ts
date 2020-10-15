@@ -21,7 +21,7 @@ const Template: Story<gradientButtonComponent> = (args: gradientButtonComponent)
 
   export const Gradient = Template.bind({});
   Gradient.args = {
-    title: "clear",
+    title: "next",
     classes: "btn-app--asimetric btn-app btn-grad fs-16-sofia-800"
   };
 

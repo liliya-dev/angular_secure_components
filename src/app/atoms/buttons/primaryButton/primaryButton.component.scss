@@ -1,0 +1,68 @@
+.module-border-wrap {
+    height: 46px;
+    box-sizing: border-box;
+    background: var(--success-grad-light);
+    padding: 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    border-radius: 6px;
+}
+
+.module-opacity-wrap {
+    background: var(--text-color);
+    border-radius: 5px;
+}
+
+.btn-primary.btn-app {
+    height: 44px;
+    border-radius: 5px;  
+}
+
+.btn-primary {
+    margin: 0;
+    background: transparent;
+    border: none;
+    position: relative;
+
+    p {
+        margin: 0;
+    }
+   
+
+    &__name {
+        background: var(--success-grad-light);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        transition: 0;
+    }
+
+    & > svg { 
+        margin-right: 20px;
+        fill: url(#paint0_linear);
+        opacity: 0.8;
+        fill-opacity: 0.8;
+    }
+
+    &:active > svg { 
+        opacity: 1;
+        fill-opacity: 1;
+        fill: var(--text-color); 
+    }
+
+    &:hover {
+        background: linear-gradient(89.52deg, hsla(137, 66%, 42%, 0.2) -46.17%, rgba(2, 99, 188, 0.2) 186.99%);
+    }
+
+    &:active {
+        background: var(--success-grad-light);
+        color: var(--text-color);
+
+        & > .btn-primary__name {
+            background: var(--text-color);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    }
+}
