@@ -4,12 +4,14 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { DateMenuComponent } from './molecules/date-menu/date-menu.component';
 import { IconContainerComponent } from './atoms/iconContainer/iconContainer.component';
+import { navLinkComponent } from './atoms/navLink/navLink.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    IconContainerComponent,
     DateMenuComponent,
-    IconContainerComponent
+    navLinkComponent
   ],
   imports: [
     BrowserModule,

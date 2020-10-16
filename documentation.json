@@ -82,7 +82,7 @@
                 }
             ],
             "stylesData": "",
-            "templateData": "<div>\n  <h1 class=\"title\">{{title}}</h1>\n</div>"
+            "templateData": "<div>\n  <h1 class=\"title\">{{title}}dddd</h1>\n  <app-date-menu></app-date-menu>\n</div>\n"
         },
         {
             "name": "ButtonComponent",
@@ -233,7 +233,11 @@
             "implements": [
                 "OnInit"
             ],
+<<<<<<< HEAD
             "templateData": "<p>date-menu works!</p>\n<app-icon-container></app-icon-container>"
+=======
+            "templateData": "<p>date-menu works!</p>\n<app-nav-link [title]=\"'ddd'\" classes=\"'nav-link-sidebar fs-12-gramm-400 nav-link'\"></app-nav-link>\n<p>date-menu works!</p>\n"
+>>>>>>> 8b54a3d80229361d562ddb7522205990a9949f9e
         },
         {
             "name": "formInputComponent",
@@ -1064,6 +1068,9 @@
                         },
                         {
                             "name": "IconContainerComponent"
+                        },
+                        {
+                            "name": "navLinkComponent"
                         }
                     ]
                 },
@@ -1088,6 +1095,42 @@
                     "elements": []
                 }
             ]
+<<<<<<< HEAD
+=======
+        },
+        {
+            "name": "IconContainerModule",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "IconContainerComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": []
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+>>>>>>> 8b54a3d80229361d562ddb7522205990a9949f9e
         }
     ],
     "miscellaneous": {
@@ -1123,6 +1166,14 @@
                 "file": "src/environments/environment.ts",
                 "type": "object",
                 "defaultValue": "{\n  production: false\n}"
+            },
+            {
+                "name": "f",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/app.stories.ts",
+                "type": "",
+                "defaultValue": "Template.bind({})"
             },
             {
                 "name": "Gradient",
@@ -1192,9 +1243,13 @@
                 "name": "props",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+<<<<<<< HEAD
                 "file": "src/app/atoms/iconContainer/iconContainer.stories.ts",
+=======
+                "file": "src/app/app.stories.ts",
+>>>>>>> 8b54a3d80229361d562ddb7522205990a9949f9e
                 "type": "object",
-                "defaultValue": "{\n  backgroundColor: { control: 'color' },\n}"
+                "defaultValue": "{\n\n}"
             },
             {
                 "name": "props",
@@ -1224,9 +1279,15 @@
                 "name": "props",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+<<<<<<< HEAD
                 "file": "src/app/atoms/inputs/formInput/formInput.stories.ts",
                 "type": "object",
                 "defaultValue": "{\n  backgroundColor: { control: 'color' },\n  color: { control: 'color' },\n  placeholder: { control: 'text'},\n}"
+=======
+                "file": "src/app/molecules/date-menu/date-menu.stories.ts",
+                "type": "object",
+                "defaultValue": "{\n  backgroundColor: { control: 'color' },\n}"
+>>>>>>> 8b54a3d80229361d562ddb7522205990a9949f9e
             },
             {
                 "name": "props",
@@ -1240,7 +1301,19 @@
                 "name": "props",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+<<<<<<< HEAD
                 "file": "src/app/atoms/buttons/largeButton/largeButton.stories.ts",
+=======
+                "file": "src/app/atoms/buttons/infoButton/infoButton.stories.ts",
+>>>>>>> 8b54a3d80229361d562ddb7522205990a9949f9e
+                "type": "object",
+                "defaultValue": "{\n  backgroundColor: { control: 'color' },\n  color: { control: 'color' },\n  title: { control: 'text'},\n}"
+            },
+            {
+                "name": "props",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/atoms/buttons/lightButton/lightButton.stories.ts",
                 "type": "object",
                 "defaultValue": "{\n  backgroundColor: { control: 'color' },\n  color: { control: 'color' },\n  title: { control: 'text'},\n}"
             },
@@ -1367,6 +1440,16 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "src/app/app.stories.ts",
+                "type": "Story<AppComponent>",
+                "defaultValue": "(args: AppComponent) => ({\n    component: AppComponent,\n    props: args,\n  })"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+<<<<<<< HEAD
+=======
                 "file": "src/stories/Button.stories.ts",
                 "type": "Story<Button>",
                 "defaultValue": "(args: Button) => ({\n  component: Button,\n  props: args,\n})"
@@ -1375,6 +1458,7 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+>>>>>>> 8b54a3d80229361d562ddb7522205990a9949f9e
                 "file": "src/app/atoms/iconContainer/iconContainer.stories.ts",
                 "type": "Story<IconContainerComponent>",
                 "defaultValue": "(args: IconContainerComponent) => ({\n    component: IconContainerComponent,\n    props: args,\n  })"
@@ -1415,9 +1499,15 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+<<<<<<< HEAD
                 "file": "src/app/atoms/buttons/gradientButton/gradientButton.stories.ts",
                 "type": "Story<gradientButtonComponent>",
                 "defaultValue": "(args: gradientButtonComponent) => ({\n    component: gradientButtonComponent,\n    props: args,\n  })"
+=======
+                "file": "src/app/atoms/buttons/infoButton/infoButton.stories.ts",
+                "type": "Story<infoButtonComponent>",
+                "defaultValue": "(args: infoButtonComponent) => ({\n    component: infoButtonComponent,\n    props: args,\n  })"
+>>>>>>> 8b54a3d80229361d562ddb7522205990a9949f9e
             },
             {
                 "name": "Template",
@@ -1434,6 +1524,17 @@
                 "file": "src/app/atoms/buttons/lightButton/lightButton.stories.ts",
                 "type": "Story<lightButtonComponent>",
                 "defaultValue": "(args: lightButtonComponent) => ({\n    component: lightButtonComponent,\n    props: args,\n  })"
+<<<<<<< HEAD
+=======
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/atoms/buttons/primaryButton/primaryButton.stories.ts",
+                "type": "Story<primaryButtonComponent>",
+                "defaultValue": "(args: primaryButtonComponent) => ({\n    component: primaryButtonComponent,\n    props: args,\n  })"
+>>>>>>> 8b54a3d80229361d562ddb7522205990a9949f9e
             },
             {
                 "name": "Template",
@@ -1573,6 +1674,32 @@
                     "file": "src/environments/environment.ts",
                     "type": "object",
                     "defaultValue": "{\n  production: false\n}"
+                }
+            ],
+            "src/app/app.stories.ts": [
+                {
+                    "name": "f",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/app.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "props",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/app.stories.ts",
+                    "type": "object",
+                    "defaultValue": "{\n\n}"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/app.stories.ts",
+                    "type": "Story<AppComponent>",
+                    "defaultValue": "(args: AppComponent) => ({\n    component: AppComponent,\n    props: args,\n  })"
                 }
             ],
             "src/app/atoms/buttons/gradientButton/gradientButton.stories.ts": [
@@ -1842,6 +1969,35 @@
                 }
             ],
             "src/app/molecules/date-menu/date-menu.stories.ts": [
+<<<<<<< HEAD
+=======
+                {
+                    "name": "props",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/molecules/date-menu/date-menu.stories.ts",
+                    "type": "object",
+                    "defaultValue": "{\n  backgroundColor: { control: 'color' },\n}"
+                },
+                {
+                    "name": "Simple",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/molecules/date-menu/date-menu.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/molecules/date-menu/date-menu.stories.ts",
+                    "type": "Story<DateMenuComponent>",
+                    "defaultValue": "(args: DateMenuComponent) => ({\n    component: DateMenuComponent,\n    props: args,\n  })"
+                }
+            ],
+            "src/app/atoms/buttons/secondaryButton/secondaryButton.stories.ts": [
+>>>>>>> 8b54a3d80229361d562ddb7522205990a9949f9e
                 {
                     "name": "props",
                     "ctype": "miscellaneous",
@@ -1953,6 +2109,36 @@
                 "name": "AppComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/app.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "f",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/app.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "props",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/app.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
                 "status": "low"
             },
             {

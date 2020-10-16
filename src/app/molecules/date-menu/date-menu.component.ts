@@ -6,8 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./date-menu.component.scss']
 })
 export class DateMenuComponent implements OnInit {
+  titles = [1,2,3];
+  constructor() {
 
-  constructor() { }
+  }
+
+  onClickMe() {
+  }
 
   ngOnInit(): void {
   }
