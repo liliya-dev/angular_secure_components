@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DateMenuComponent } from './date-menu.component';
+import { FormScreenFourthComponent } from './form-screen-fourth.component';
 
-describe('DateMenuComponent', () => {
-  let component: DateMenuComponent;
-  let fixture: ComponentFixture<DateMenuComponent>;
+describe('FormScreenFourthComponent', () => {
+  let component: FormScreenFourthComponent;
+  let fixture: ComponentFixture<FormScreenFourthComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DateMenuComponent ]
+      declarations: [ FormScreenFourthComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DateMenuComponent);
+    fixture = TestBed.createComponent(FormScreenFourthComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,0 +1,92 @@
+.app-card {
+    background: rgba(var(--secondary-color-code), 0.5);
+    width: fit-content;
+    padding: 1px;
+    border-radius: 12px;
+    text-align: center;
+
+    &.active {
+        background: var(--success-grad-light);
+        position: relative;
+        
+        &::after {
+          content: url('../../../assets/images/checkbox.svg');
+          width: 19px;
+          height: 19px;
+          position: absolute;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          top: 8px;
+          right: 8px;
+          background: var(--success-grad-light);
+          border-radius: 50%;
+        }
+    }
+
+    &:hover {
+      background: var(--success-grad-light);
+    }
+
+    &__wrapper {
+        border-radius: 12px;
+        background-color: var(--text-color);
+    }
+
+    &__text-wrapper {
+        width: 100%;
+        word-wrap: break-word;
+    }
+
+    &__container {
+        width: 130px;
+        padding: 22px 15px 28px;
+
+        border-radius: 12px;
+        background-color: rgba(var(--text-color-code), 0.15);
+        color: var(--secondary-color);
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        & > img {
+            margin-bottom: 20px;
+            width: 44px;
+            height: 50px;
+        }
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    .app-card {
+      width: 100%;
+      &.active {
+          &::after {
+            top: 12px;
+            left: 58px;
+          }
+      }
+      &__wrapper  {
+        width: 100%;
+      } 
+
+      &__container {
+        flex-direction: row;
+        padding: 13px 15px;
+        width: 100%;
+        & > img {
+          margin-right: 50px;
+          margin-bottom: 0;
+          width: 55px;
+          height: 62px;
+        }
+      }
+  
+  
+      &__text-wrapper {
+        text-align: center;
+        width: 50%;
+      }
+    }
+  }

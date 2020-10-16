@@ -1,15 +1,16 @@
 import { CommonModule } from '@angular/common';
 import { action } from '@storybook/addon-actions';
 import { Meta, moduleMetadata, Story } from '@storybook/angular';
-import { navLinkComponent } from '../../atoms/navLink/navLink.component';
+import { navLinkComponent } from '../../../atoms/navLink/navLink.component';
 import { DateMenuComponent } from './date-menu.component';
 
 const props = {
   backgroundColor: { control: 'color' },
+  items: { control: 'array'}
 };
 
 export default {
-    title: 'Molecules/Date Menu',
+    title: 'Molecules/Menu',
     decorators: [
       moduleMetadata({
         declarations: [DateMenuComponent, navLinkComponent],
@@ -24,8 +25,8 @@ const Template: Story<DateMenuComponent> = (args: DateMenuComponent) => ({
     props: args,
   });
 
-  export const Simple = Template.bind({});
-  Simple.args = {
-
+  export const Date = Template.bind({});
+  Date.args = {
+    items: ['today', 'this week', 'this month', 'this year']
   };
 

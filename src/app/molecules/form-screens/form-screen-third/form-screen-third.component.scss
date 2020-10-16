@@ -1,0 +1,20 @@
+.app-form-screen-third {
+    &__container {
+        width: 100%;
+        margin-top: 56px;
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .app-form-screen-third {
+        &__container {
+            flex-direction: column;
+        }
+    }
+
+    .app-card {
+        margin-bottom: 8px;
+    }
+}

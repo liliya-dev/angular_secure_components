@@ -1,4 +1,4 @@
-.nav-link-sidebar {
+.nav-link-secondary {
   text-transform: uppercase;
   background: rgba(var(--secondary-color-code), 0.5);
   position: relative;
@@ -6,15 +6,9 @@
   -webkit-text-fill-color: transparent;
   transition: 0.3;
 
-  &::after {
-    content: '';
-    height: 0;
-  }
-
   &:hover {
     background: var(--secondary-color); 
     -webkit-background-clip: text;
-    cursor: pointer;
   }
 
   &:active {
@@ -22,12 +16,35 @@
     -webkit-background-clip: text;
   }
 
-  &--active {
+  &.active {
     text-decoration: none;
     -webkit-text-fill-color: transparent;
     transition: 0.3;
     background: var(--success-grad-light); 
     -webkit-background-clip: text;
+  }
+}
+
+.nav-link-highlited {
+  &.active {
+    &::after {
+      width: 100%;
+    }
+  }
+  &::after {
+    content: '';
+    transition: 0.3s;
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: var(--success-grad-light);
+    bottom: -3px;
+    left: 0;
+  }
+  &:active {
+    &::after {
+      width: 100%;
+    }
   }
 }
 
@@ -61,11 +78,10 @@
 
     &::after {
       width: 0;
-      background: var(--success-grad-light);
     }
   }
 
-  &--active {
+  &.active {
     text-decoration: none;
     -webkit-text-fill-color: transparent;
     transition: 0.3;

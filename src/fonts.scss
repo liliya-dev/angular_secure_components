@@ -15,6 +15,22 @@
   src: url("./assets/fonts/Gramatica-Bold.ttf");
 }
 
+.fs-h3 {
+  font-family: 'Sofia pro', 'open-sans';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  color: var(--secondary-color);
+}
+
+.fs-18-sofia-300 {
+  font-family: 'Sofia pro', 'open-sans';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 18px;
+  color: rgba(var(--secondary-color-code), 0.75);
+}
+
 .fs-16-gramm-300 {
   font-family: 'Gramatica Bold', 'open-sans';
   font-style: normal;
@@ -69,9 +85,25 @@
   font-size: 14px;
 }
 
+
+.fs-12-sofia-400 {
+  font-family: 'Sofia pro', 'open-sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 110%;
+}
+
 .fs-12-gramm-400 {
   font-family: 'Gramatica Bold', 'open-sans';
   font-style: normal;
   font-weight: 400;
   font-size: 12px;
+}
+
+.fs-10-sofia-300 {
+  font-family: 'Sofia pro', 'open-sans';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 10px;
 }

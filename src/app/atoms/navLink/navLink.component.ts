@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, OnInit } from '@angular/core';
 
 @Component({
     selector: 'app-nav-link',
@@ -8,11 +8,14 @@ import { Component, Input, OnInit } from '@angular/core';
 
 
 
-export class navLinkComponent implements OnInit {
+export class navLinkComponent implements OnInit, OnChanges {
     @Input() title: string;
     @Input() classes: string;
-
+    @Input() isActive: boolean;
+    appointedClasses = '';
+    ngOnChanges() {
+        this.appointedClasses = this.isActive ? `${this.classes} active` : this.classes;
+    }
     ngOnInit() {
-
     }
 }

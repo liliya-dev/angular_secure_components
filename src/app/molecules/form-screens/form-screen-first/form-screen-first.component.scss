@@ -1,0 +1,32 @@
+.app-form-screen-first {
+    &__container {
+        width: 100%;
+        margin-top: 32px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__column {
+        width: 48%;
+
+        & > app-form-input {
+            margin-bottom: 32px;
+        }
+    }
+}
+
+.form-input__wrapper {
+    margin-bottom: 32px;
+}
+
+@media screen and (max-width: 600px) {
+    .app-form-screen-first {
+        &__container {
+            flex-direction: column;
+        }
+
+        &__column {
+            width: 99%;
+        }
+    } 
+}

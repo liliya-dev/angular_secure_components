@@ -1,0 +1,16 @@
+<ul class="app-side-menu list">
+    <li 
+        class="app-side-menu__item"
+        *ngFor="let item of items; let i = index" 
+    >   
+        <app-nav-link
+        [isActive]="active === i"
+        [title]="item" 
+        classes="nav-link-secondary fs-12-gramm-400"
+        (click)="handlClick($event, i)"
+        >
+        </app-nav-link>
+    </li>
+</ul>
+
+  

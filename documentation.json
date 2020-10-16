@@ -180,9 +180,104 @@
             }
         },
         {
+            "name": "CardComponent",
+            "id": "component-CardComponent-a0c955605a8cc4049f252ed905212586",
+            "file": "src/app/atoms/card/card.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-card",
+            "styleUrls": [
+                "./card.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./card.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "isActive",
+                    "line": 12,
+                    "type": "string"
+                },
+                {
+                    "name": "src",
+                    "line": 11,
+                    "type": "string"
+                },
+                {
+                    "name": "text",
+                    "line": 9,
+                    "type": "string"
+                },
+                {
+                    "name": "title",
+                    "line": 10,
+                    "type": "string"
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "classes",
+                    "defaultValue": "\"app-card\"",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 14
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "ngOnChanges",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 18
+                },
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 23
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component, Input, OnChanges, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-card',\n  templateUrl: './card.component.html',\n  styleUrls: ['./card.component.scss']\n})\nexport class CardComponent implements OnInit, OnChanges {\n  @Input() text: string;\n  @Input() title: string;\n  @Input() src: string;\n  @Input() isActive: string;\n\n  classes = \"app-card\";\n\n  constructor() { }\n\n  ngOnChanges() {\n    console.log(this.title, 'yugbuiguyg')\n    this.classes = !this.isActive ? `${this.classes} active` : this.classes;\n  }\n\n  ngOnInit() {\n    console.log(this.title, 'yugbuiguyg')\n    this.classes = !this.isActive ? `${this.classes} active` : this.classes;\n  }\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".app-card {\n    background: rgba(var(--secondary-color-code), 0.5);\n    width: fit-content;\n    padding: 1px;\n    border-radius: 12px;\n    text-align: center;\n\n    &.active {\n        background: var(--success-grad-light);\n        position: relative;\n        \n        &::after {\n          content: url('../../../assets/images/checkbox.svg');\n          width: 19px;\n          height: 19px;\n          position: absolute;\n          display: flex;\n          align-items: center;\n          justify-content: center;\n          top: 8px;\n          right: 8px;\n          background: var(--success-grad-light);\n          border-radius: 50%;\n        }\n    }\n\n    &:hover {\n      background: var(--success-grad-light);\n    }\n\n    &__wrapper {\n        border-radius: 12px;\n        background-color: var(--text-color);\n    }\n\n    &__text-wrapper {\n        width: 100%;\n        word-wrap: break-word;\n    }\n\n    &__container {\n        width: 130px;\n        padding: 22px 15px 28px;\n\n        border-radius: 12px;\n        background-color: rgba(var(--text-color-code), 0.15);\n        color: var(--secondary-color);\n\n        display: flex;\n        flex-direction: column;\n        align-items: center;\n\n        & > img {\n            margin-bottom: 20px;\n            width: 44px;\n            height: 50px;\n        }\n    }\n  }\n\n  @media screen and (max-width: 600px) {\n    .app-card {\n      width: 100%;\n      &.active {\n          &::after {\n            top: 12px;\n            left: 58px;\n          }\n      }\n      &__wrapper  {\n        width: 100%;\n      } \n\n      &__container {\n        flex-direction: row;\n        padding: 13px 15px;\n        width: 100%;\n        & > img {\n          margin-right: 50px;\n          margin-bottom: 0;\n          width: 55px;\n          height: 62px;\n        }\n      }\n  \n  \n      &__text-wrapper {\n        text-align: center;\n        width: 50%;\n      }\n    }\n  }",
+                    "styleUrl": "./card.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [],
+                "line": 14
+            },
+            "implements": [
+                "OnInit",
+                "OnChanges"
+            ],
+            "templateData": "<div [ngClass]=\"classes\">\n    <div class=\"app-card__wrapper\">\n        <div class=\"app-card__container\">\n            <img [src]='src' alt=\"text + 'flag'\" />\n            <div class=\"app-card__text-wrapper\">\n              <p class=\"fs-12-gramm-400\">{{ title }}</p>\n              <p class=\"fs-10-sofia-300\">{{ text }}</p>\n            </div>\n        </div>\n    </div>\n</div>"
+        },
+        {
             "name": "DateMenuComponent",
-            "id": "component-DateMenuComponent-0c363d11e141cb18f2815ab118a8f269",
-            "file": "src/app/molecules/date-menu/date-menu.component.ts",
+            "id": "component-DateMenuComponent-5d1894e3c0ac585d7f019eccb0c44786",
+            "file": "src/app/molecules/menu/date-menu/date-menu.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -197,10 +292,58 @@
                 "./date-menu.component.html"
             ],
             "viewProviders": [],
-            "inputsClass": [],
+            "inputsClass": [
+                {
+                    "name": "items",
+                    "line": 9,
+                    "type": "string[]"
+                }
+            ],
             "outputsClass": [],
-            "propertiesClass": [],
+            "propertiesClass": [
+                {
+                    "name": "active",
+                    "defaultValue": "0",
+                    "type": "number",
+                    "optional": false,
+                    "description": "",
+                    "line": 10
+                }
+            ],
             "methodsClass": [
+                {
+                    "name": "handlClick",
+                    "args": [
+                        {
+                            "name": "event",
+                            "type": "any"
+                        },
+                        {
+                            "name": "i",
+                            "type": "number"
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 15,
+                    "jsdoctags": [
+                        {
+                            "name": "event",
+                            "type": "any",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        },
+                        {
+                            "name": "i",
+                            "type": "number",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
                 {
                     "name": "ngOnInit",
                     "args": [],
@@ -215,29 +358,19 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-date-menu',\n  templateUrl: './date-menu.component.html',\n  styleUrls: ['./date-menu.component.scss']\n})\nexport class DateMenuComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-date-menu',\n  templateUrl: './date-menu.component.html',\n  styleUrls: ['./date-menu.component.scss']\n})\nexport class DateMenuComponent implements OnInit {\n  @Input() items: string[];\n  active = 0;\n\n  ngOnInit() {\n  }\n  \n  handlClick(event: any, i: number) {\n    event.preventDefault();\n    this.active = i;\n  }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "",
+                    "data": ".app-date-menu {\n    display: flex;\n    align-items: center;\n\n    &__list {\n        display: flex;\n        align-items: center;\n    }\n\n    &__item {\n        padding: 0 10px 5px;\n    }\n\n    &__container {\n        height: 46px;\n        margin-left: 20px;\n        padding: 10px 13px;\n        border: 1px solid rgba(var(--secondary-color-code), 0.3);\n        border-radius: 12px;\n        & > img {\n            height: 20px;\n            width: 18px;\n          }\n    }\n}",
                     "styleUrl": "./date-menu.component.scss"
                 }
             ],
             "stylesData": "",
-            "constructorObj": {
-                "name": "constructor",
-                "description": "",
-                "args": [],
-                "line": 8
-            },
             "implements": [
                 "OnInit"
             ],
-<<<<<<< HEAD
-            "templateData": "<p>date-menu works!</p>\n<app-icon-container></app-icon-container>"
-=======
-            "templateData": "<p>date-menu works!</p>\n<app-nav-link [title]=\"'ddd'\" classes=\"'nav-link-sidebar fs-12-gramm-400 nav-link'\"></app-nav-link>\n<p>date-menu works!</p>\n"
->>>>>>> 8b54a3d80229361d562ddb7522205990a9949f9e
+            "templateData": "<div class=\"app-date-menu\">\n  <ul class=\"app-date-menu__list\">\n    <li \n      class=\"app-date-menu__item\"\n      *ngFor=\"let item of items; let i = index\" \n    >\n      <app-nav-link\n        [isActive]=\"active === i\"\n        [title]=\"item\" \n        classes=\"nav-link-secondary nav-link-highlited fs-12-gramm-400\"\n        (click)=\"handlClick($event, i)\"\n      >\n      </app-nav-link>\n    </li>\n  </ul>\n  <div class=\"app-date-menu__container\">\n    <img src='../../../../assets/images/calendar.png' alt=\"calendar\" />\n  </div>\n</div>\n"
         },
         {
             "name": "formInputComponent",
@@ -314,6 +447,211 @@
                 "OnInit"
             ],
             "templateData": "<div \n  [ngClass]=\"wrapperClasses\"\n>\n  <input \n    [ngClass]=\"classes\"\n    [ngStyle]=\"{ 'background': backgroundColor, 'color': color }\"\n    [placeholder]=\"placeholder\"\n    type=\"text\"\n  >\n</div>\n"
+        },
+        {
+            "name": "FormScreenFirstComponent",
+            "id": "component-FormScreenFirstComponent-16eb4047c9a3b278a32b3b361bdad16d",
+            "file": "src/app/molecules/form-screens/form-screen-first/form-screen-first.component.ts",
+            "encapsulation": [
+                "ViewEncapsulation.None"
+            ],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-form-screen-first",
+            "styleUrls": [
+                "./form-screen-first.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./form-screen-first.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 13
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit, ViewEncapsulation } from '@angular/core';\n\n@Component({\n  selector: 'app-form-screen-first',\n  templateUrl: './form-screen-first.component.html',\n  styleUrls: ['./form-screen-first.component.scss'],\n  encapsulation: ViewEncapsulation.None\n})\nexport class FormScreenFirstComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".app-form-screen-first {\n    &__container {\n        width: 100%;\n        margin-top: 32px;\n        display: flex;\n        justify-content: space-between;\n    }\n\n    &__column {\n        width: 48%;\n\n        & > app-form-input {\n            margin-bottom: 32px;\n        }\n    }\n}\n\n.form-input__wrapper {\n    margin-bottom: 32px;\n}\n",
+                    "styleUrl": "./form-screen-first.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [],
+                "line": 9
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<h3 class=\"fs-h3\">Create your account</h3>\n<div class=\"app-form-screen-first__container\"> \n    <div class=\"app-form-screen-first__column\">   \n       <app-form-input\n            [placeholder]=\"'First Name'\"\n            [classes]=\"'form-input-field form-input-field--simple fs-16-sofia-300'\"\n            [wrapperClasses]=\"'form-input__wrapper form-input__wrapper--simple'\"\n        > \n        </app-form-input> \n        <app-form-input\n            [placeholder]=\"'Email'\"\n            [classes]=\"'form-input-field form-input-field--simple fs-16-sofia-300'\"\n            [wrapperClasses]=\"'form-input__wrapper form-input__wrapper--simple'\"\n        > \n        </app-form-input>    \n        <app-form-input\n            [placeholder]=\"'Password'\"\n            [classes]=\"'form-input-field form-input-field--simple fs-16-sofia-300'\"\n            [wrapperClasses]=\"'form-input__wrapper form-input__wrapper--simple'\"\n        > \n        </app-form-input>        \n    </div>\n    <div class=\"app-form-screen-first__column\">   \n        <app-form-input\n            [placeholder]=\"'Last Name'\"\n            [classes]=\"'form-input-field form-input-field--simple fs-16-sofia-300'\"\n            [wrapperClasses]=\"'form-input__wrapper form-input__wrapper--simple'\"\n         > \n         </app-form-input> \n         <app-form-input\n            [placeholder]=\"'This account is for'\"\n            [classes]=\"'form-input-field form-input-field--simple fs-16-sofia-300'\"\n            [wrapperClasses]=\"'form-input__wrapper form-input__wrapper--simple'\"\n         > \n         </app-form-input>    \n         <app-form-input\n            [placeholder]=\"'Confirm Password'\"\n            [classes]=\"'form-input-field form-input-field--simple fs-16-sofia-300'\"\n            [wrapperClasses]=\"'form-input__wrapper form-input__wrapper--simple'\"\n         > \n         </app-form-input>        \n   </div>\n</div>\n"
+        },
+        {
+            "name": "FormScreenSecondComponent",
+            "id": "component-FormScreenSecondComponent-f38e5338cd795724065676f709596162",
+            "file": "src/app/molecules/form-screens/form-screen-second/form-screen-second.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-form-screen-second",
+            "styleUrls": [
+                "./form-screen-second.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./form-screen-second.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 12
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-form-screen-second',\n  templateUrl: './form-screen-second.component.html',\n  styleUrls: ['./form-screen-second.component.scss']\n})\nexport class FormScreenSecondComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "h3 {\n    margin-bottom: 22px;\n}\n\np {\n    margin-bottom: 40px;\n}",
+                    "styleUrl": "./form-screen-second.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [],
+                "line": 8
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<h3 class=\"fs-h3\">Add your first domain</h3>\n<p class=\"fs-18-sofia-300\">You can add more domains inside the app</p>\n<app-form-input\n    [placeholder]=\"'yourwebsite.com'\"\n    [classes]=\"'form-input-field form-input-field--simple fs-16-sofia-300'\"\n    [wrapperClasses]=\"'form-input__wrapper form-input__wrapper--simple'\"\n> \n</app-form-input>"
+        },
+        {
+            "name": "FormScreenThirdComponent",
+            "id": "component-FormScreenThirdComponent-6f96c522c4d6cbd13302ce6231a0da22",
+            "file": "src/app/molecules/form-screens/form-screen-third/form-screen-third.component.ts",
+            "encapsulation": [
+                "ViewEncapsulation.None"
+            ],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-form-screen-third",
+            "styleUrls": [
+                "./form-screen-third.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./form-screen-third.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "modules",
+                    "defaultValue": "[\n    {\n      title: \"GDPR, eprivacy\",\n      text: \"Europe\",\n      src: \"../../../assets/images/flags/euro.png\"\n    },\n    {\n      title: \"CCPA\",\n      text: \"California\",\n      src: \"../../../assets/images/flags/ccpa.png\"\n    },\n    {\n      title: \"LGPD\",\n      text: \"Brasil\",\n      src: \"../../../assets/images/flags/lgpd.png\"\n    }\n  ]",
+                    "type": "[]",
+                    "optional": false,
+                    "description": "",
+                    "line": 11
+                },
+                {
+                    "name": "selectedModules",
+                    "defaultValue": "[]",
+                    "type": "string[]",
+                    "optional": false,
+                    "description": "",
+                    "line": 10
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 39
+                },
+                {
+                    "name": "selectModule",
+                    "args": [
+                        {
+                            "name": "title",
+                            "type": "string"
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 29,
+                    "jsdoctags": [
+                        {
+                            "name": "title",
+                            "type": "string",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit, ViewEncapsulation } from '@angular/core';\n\n@Component({\n  selector: 'app-form-screen-third',\n  templateUrl: './form-screen-third.component.html',\n  styleUrls: ['./form-screen-third.component.scss'],\n  encapsulation: ViewEncapsulation.None\n})\nexport class FormScreenThirdComponent implements OnInit {\n  selectedModules: string[]=[];\n  modules=[\n    {\n      title: \"GDPR, eprivacy\",\n      text: \"Europe\",\n      src: \"../../../assets/images/flags/euro.png\"\n    },\n    {\n      title: \"CCPA\",\n      text: \"California\",\n      src: \"../../../assets/images/flags/ccpa.png\"\n    },\n    {\n      title: \"LGPD\",\n      text: \"Brasil\",\n      src: \"../../../assets/images/flags/lgpd.png\"\n    }\n  ]\n\n  selectModule(title: string) {\n    if (this.selectedModules.includes(title)) {\n      this.selectedModules = this.selectedModules.filter(module => module !== title);\n    } else {\n      this.selectedModules = [...this.selectedModules, title];\n    }\n\n    console.log(this.selectedModules)\n  }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".app-form-screen-third {\n    &__container {\n        width: 100%;\n        margin-top: 56px;\n        display: flex;\n        justify-content: space-between;\n    }\n}\n\n@media screen and (max-width: 600px) {\n    .app-form-screen-third {\n        &__container {\n            flex-direction: column;\n        }\n    }\n\n    .app-card {\n        margin-bottom: 8px;\n    }\n}",
+                    "styleUrl": "./form-screen-third.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<h3 class=\"fs-h3\">Select your compliance modules</h3>\n<ul class=\"app-form-screen-third__container\">\n    <li \n        class=\"app-form-screen-third__item\"\n        *ngFor=\"let module of modules; let i = index\" \n    >\n        <app-card\n            (click)=\"selectModule(module.title)\"\n            [title]=\"module.title\"\n            [text]=\"module.text\"\n            [src]=\"module.src\"\n            isActive=\"selectedModules.includes(module.title)\"\n        >\n        </app-card>\n    </li>\n</ul>\n"
         },
         {
             "name": "gradientButtonComponent",
@@ -667,7 +1005,7 @@
         },
         {
             "name": "navLinkComponent",
-            "id": "component-navLinkComponent-03acad61e30f8f7e86f49adee7138db0",
+            "id": "component-navLinkComponent-30016bada6746b6d1b7450897d119b1e",
             "file": "src/app/atoms/navLink/navLink.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -690,21 +1028,43 @@
                     "type": "string"
                 },
                 {
+                    "name": "isActive",
+                    "line": 14,
+                    "type": "boolean"
+                },
+                {
                     "name": "title",
                     "line": 12,
                     "type": "string"
                 }
             ],
             "outputsClass": [],
-            "propertiesClass": [],
+            "propertiesClass": [
+                {
+                    "name": "appointedClasses",
+                    "defaultValue": "''",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 15
+                }
+            ],
             "methodsClass": [
+                {
+                    "name": "ngOnChanges",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 16
+                },
                 {
                     "name": "ngOnInit",
                     "args": [],
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 15
+                    "line": 19
                 }
             ],
             "hostBindings": [],
@@ -712,19 +1072,20 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\n\n@Component({\n    selector: 'app-nav-link',\n    templateUrl: './navLink.component.html',\n    styleUrls: ['navLink.component.scss'],\n})\n\n\n\nexport class navLinkComponent implements OnInit {\n    @Input() title: string;\n    @Input() classes: string;\n\n    ngOnInit() {\n\n    }\n}\n",
+            "sourceCode": "import { Component, Input, OnChanges, OnInit } from '@angular/core';\n\n@Component({\n    selector: 'app-nav-link',\n    templateUrl: './navLink.component.html',\n    styleUrls: ['navLink.component.scss'],\n})\n\n\n\nexport class navLinkComponent implements OnInit, OnChanges {\n    @Input() title: string;\n    @Input() classes: string;\n    @Input() isActive: boolean;\n    appointedClasses = '';\n    ngOnChanges() {\n        this.appointedClasses = this.isActive ? `${this.classes} active` : this.classes;\n    }\n    ngOnInit() {\n    }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".nav-link-sidebar {\n  text-transform: uppercase;\n  background: rgba(var(--secondary-color-code), 0.5);\n  position: relative;\n  -webkit-background-clip: text;\n  -webkit-text-fill-color: transparent;\n  transition: 0.3;\n\n  &::after {\n    content: '';\n    height: 0;\n  }\n\n  &:hover {\n    background: var(--secondary-color); \n    -webkit-background-clip: text;\n    cursor: pointer;\n  }\n\n  &:active {\n    background: var(--success-grad-light); \n    -webkit-background-clip: text;\n  }\n\n  &--active {\n    text-decoration: none;\n    -webkit-text-fill-color: transparent;\n    transition: 0.3;\n    background: var(--success-grad-light); \n    -webkit-background-clip: text;\n  }\n}\n\n.nav-link-main {\n  background: rgba(var(--secondary-color-code), 0.75);\n  -webkit-background-clip: text;\n  -webkit-text-fill-color: transparent;\n  position: relative;\n  text-transform: capitalize;\n\n  &::after {\n    content: '';\n    transition: 0.3s;\n    position: absolute;\n    width: 0;\n    height: 1px;\n    background-color: rgba(var(--secondary-color-code), 0.75);\n    bottom: 0;\n    left: 0;\n  }\n\n  &:hover {\n    &::after {\n      width: 100%;\n    }\n  }\n\n  &:active {\n    background: var(--success-grad-light); \n    -webkit-background-clip: text;\n\n    &::after {\n      width: 0;\n      background: var(--success-grad-light);\n    }\n  }\n\n  &--active {\n    text-decoration: none;\n    -webkit-text-fill-color: transparent;\n    transition: 0.3;\n    background: var(--success-grad-light); \n    -webkit-background-clip: text;\n  }\n}\n",
+                    "data": ".nav-link-secondary {\n  text-transform: uppercase;\n  background: rgba(var(--secondary-color-code), 0.5);\n  position: relative;\n  -webkit-background-clip: text;\n  -webkit-text-fill-color: transparent;\n  transition: 0.3;\n\n  &:hover {\n    background: var(--secondary-color); \n    -webkit-background-clip: text;\n  }\n\n  &:active {\n    background: var(--success-grad-light); \n    -webkit-background-clip: text;\n  }\n\n  &.active {\n    text-decoration: none;\n    -webkit-text-fill-color: transparent;\n    transition: 0.3;\n    background: var(--success-grad-light); \n    -webkit-background-clip: text;\n  }\n}\n\n.nav-link-highlited {\n  &.active {\n    &::after {\n      width: 100%;\n    }\n  }\n  &::after {\n    content: '';\n    transition: 0.3s;\n    position: absolute;\n    width: 0;\n    height: 2px;\n    background: var(--success-grad-light);\n    bottom: -3px;\n    left: 0;\n  }\n  &:active {\n    &::after {\n      width: 100%;\n    }\n  }\n}\n\n.nav-link-main {\n  background: rgba(var(--secondary-color-code), 0.75);\n  -webkit-background-clip: text;\n  -webkit-text-fill-color: transparent;\n  position: relative;\n  text-transform: capitalize;\n\n  &::after {\n    content: '';\n    transition: 0.3s;\n    position: absolute;\n    width: 0;\n    height: 1px;\n    background-color: rgba(var(--secondary-color-code), 0.75);\n    bottom: 0;\n    left: 0;\n  }\n\n  &:hover {\n    &::after {\n      width: 100%;\n    }\n  }\n\n  &:active {\n    background: var(--success-grad-light); \n    -webkit-background-clip: text;\n\n    &::after {\n      width: 0;\n    }\n  }\n\n  &.active {\n    text-decoration: none;\n    -webkit-text-fill-color: transparent;\n    transition: 0.3;\n    background: var(--success-grad-light); \n    -webkit-background-clip: text;\n  }\n}\n",
                     "styleUrl": "navLink.component.scss"
                 }
             ],
             "stylesData": "",
             "implements": [
-                "OnInit"
+                "OnInit",
+                "OnChanges"
             ],
-            "templateData": "<a \n  href=\"#\" \n  [ngClass]=\"classes\"\n>\n  {{ title }}\n</a>\n"
+            "templateData": "<a \n  href=\"#\" \n  [ngClass]=\"appointedClasses\"\n>\n  {{ title }}\n</a>\n"
         },
         {
             "name": "primaryButtonComponent",
@@ -935,6 +1296,104 @@
             "templateData": "<button \n  [ngStyle]=\"{'background': backgroundColor, 'color': color }\"\n  [ngClass]=\"classes\"\n>\n  <svg width=\"20\" height=\"20\" viewBox=\"0 0 20 20\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n      <path d=\"M17 0H3C2.20435 0 1.44129 0.316071 0.87868 0.87868C0.316071 1.44129 1.80878e-07 2.20435 \n      1.80878e-07 3V4.17C-0.000143207 4.58294 0.0849664 4.99147 0.25 5.37V5.43C0.39128 5.75097 \n      0.591392 6.04266 0.84 6.29L7 12.41V19C6.99966 19.1699 7.04264 19.3372 7.12487 19.4859C7.20711 \n      19.6346 7.32589 19.7599 7.47 19.85C7.62914 19.9486 7.81277 20.0006 8 20C8.15654 19.9991 8.31068 \n      19.9614 8.45 19.89L12.45 17.89C12.6149 17.8069 12.7536 17.6798 12.8507 17.5227C12.9478 17.3656 \n      12.9994 17.1847 13 17V12.41L19.12 6.29C19.3686 6.04266 19.5687 5.75097 19.71 5.43V5.37C19.8888 \n      4.99443 19.9876 4.58578 20 4.17V3C20 2.20435 19.6839 1.44129 19.1213 0.87868C18.5587 0.316071 \n      17.7956 0 17 0ZM11.29 11.29C11.1973 11.3834 11.124 11.4943 11.0742 11.6161C11.0245 11.7379 10.9992 \n      11.8684 11 12V16.38L9 17.38V12C9.00076 11.8684 8.97554 11.7379 8.92577 11.6161C8.87601 11.4943 8.80268\n      11.3834 8.71 11.29L3.41 6H16.59L11.29 11.29ZM18 4H2V3C2 2.73478 2.10536 2.48043 2.29289\n      2.29289C2.48043 2.10536 2.73478 2 3 2H17C17.2652 2 17.5196 2.10536 17.7071 2.29289C17.8946 2.48043 \n      18 2.73478 18 3V4Z\" />\n  </svg>\n      {{ title }}\n  </button>"
         },
         {
+            "name": "SideMenuComponent",
+            "id": "component-SideMenuComponent-1adef6d841c0e69c73857783c6abb9ed",
+            "file": "src/app/molecules/menu/side-menu/side-menu.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-side-menu",
+            "styleUrls": [
+                "./side-menu.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./side-menu.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "items",
+                    "line": 9,
+                    "type": "string[]"
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "active",
+                    "defaultValue": "0",
+                    "type": "number",
+                    "optional": false,
+                    "description": "",
+                    "line": 11
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "handlClick",
+                    "args": [
+                        {
+                            "name": "event",
+                            "type": "any"
+                        },
+                        {
+                            "name": "i",
+                            "type": "number"
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 13,
+                    "jsdoctags": [
+                        {
+                            "name": "event",
+                            "type": "any",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        },
+                        {
+                            "name": "i",
+                            "type": "number",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 18
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-side-menu',\n  templateUrl: './side-menu.component.html',\n  styleUrls: ['./side-menu.component.scss']\n})\nexport class SideMenuComponent implements OnInit {\n  @Input() items: string[];\n\n  active = 0;\n  \n  handlClick(event: any, i: number) {\n    event.preventDefault();\n    this.active = i;\n  }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".app-side-menu {\n    width: fit-content;\n    border-radius: 12px 30px;\n    background-color: var(--text-color);\n    padding: 32px 72px 12px 32px;\n    box-shadow: 0px 50px 70px rgba(44, 59, 82, 0.15);\n    \n    &__item {\n        width: fit-content;\n        margin-bottom: 20px;\n    }\n  }",
+                    "styleUrl": "./side-menu.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<ul class=\"app-side-menu list\">\n    <li \n        class=\"app-side-menu__item\"\n        *ngFor=\"let item of items; let i = index\" \n    >   \n        <app-nav-link\n        [isActive]=\"active === i\"\n        [title]=\"item\" \n        classes=\"nav-link-secondary fs-12-gramm-400\"\n        (click)=\"handlClick($event, i)\"\n        >\n        </app-nav-link>\n    </li>\n</ul>\n\n  \n"
+        },
+        {
             "name": "simpleButtonComponent",
             "id": "component-simpleButtonComponent-c33720fa521dc42ac741076bf409bb24",
             "file": "src/app/atoms/buttons/simpleButton/simpleButton.component.ts",
@@ -1011,6 +1470,77 @@
             "templateData": "<button\n  [ngClass]=\"classes\"\n  [ngStyle]=\"{ 'background-color': backgroundColor, 'color': color }\"\n>\n  {{ title }}\n</button>\n"
         },
         {
+            "name": "StepsComponent",
+            "id": "component-StepsComponent-56761d0f122a6be120516be0868a3cf5",
+            "file": "src/app/atoms/steps/steps.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-steps",
+            "styleUrls": [
+                "./steps.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./steps.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "activePoints",
+                    "line": 10,
+                    "type": "number"
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "classes",
+                    "defaultValue": "[]",
+                    "type": "[]",
+                    "optional": false,
+                    "description": "",
+                    "line": 11
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "ngOnChanges",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 15
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component, Input, OnChanges } from '@angular/core';\nimport { detectClasses } from './helpers';\n\n@Component({\n  selector: 'app-steps',\n  templateUrl: './steps.component.html',\n  styleUrls: ['./steps.component.scss']\n})\nexport class StepsComponent implements OnChanges {\n  @Input() activePoints: number;\n  classes=[];\n\n  constructor() { }\n\n  ngOnChanges(): void {\n    this.classes = detectClasses(this.activePoints);\n  }\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".app-steps {\n    display: flex;\n    width: 100%;\n    height: 47px;\n    justify-content: space-between;\n    align-items: flex-start;\n    &__label {\n        position: absolute;\n        top: 200%;\n    }\n\n    &__line {\n        height: 1px;\n        width: 49%;\n        z-index: 3;\n        margin-top: 3px;\n        background-color: var(--text-color);\n      \n        &.active {\n          background: var(--success-grad-light);\n        }\n      }\n\n    &__circle {\n        height: 8px;\n        width: 8px;\n        border-radius: 50%;\n        position: relative;\n        z-index: 2;\n        color: rgba(var(--secondary-color-code), 0.5);\n  \n        & > .app-steps__dot {\n            background: rgba(var(--secondary-color-code), 0.5);\n            height: 8px;\n            width: 8px;\n            border-radius: 50%;\n        }\n\n        &.active {\n            color: var(--secondary-color);\n        \n            & > .app-steps__dot {\n              background: var(--success-grad-light);\n            }\n          }\n        &::before {\n            content: \"\";\n            border-radius: 50%;\n            top: -3px;\n            left: -3px;\n            position: absolute;\n            height: 14px;\n            width: 14px;\n            z-index: -1;\n            background: var(--text-color)\n          }\n    }\n  \n  }\n\n.text-al-left {\n    text-align: left;\n}\n\n.text-al-center {\n    text-align: center;\n    left: -18px;\n}\n\n.text-al-right {\n    text-align: right;\n    left: -50px;\n}",
+                    "styleUrl": "./steps.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [],
+                "line": 11
+            },
+            "implements": [
+                "OnChanges"
+            ],
+            "templateData": "<div class=\"app-steps fs-12-sofia-400\">\n    <div [ngClass]=\"classes[0]\">\n        <div class=\"app-steps__dot\"></div>\n        <div class=\"app-steps__label text-al-left\">Add your information</div>\n    </div>\n    <div [ngClass]=\"classes[1]\"></div>\n    <div [ngClass]=\"classes[2]\">\n        <div class=\"app-steps__dot\"></div>\n        <div class=\"app-steps__label text-al-center\">Add domain</div>\n    </div>\n    <div [ngClass]=\"classes[3]\"></div>\n    <div [ngClass]=\"classes[4]\">\n        <div class=\"app-steps__dot\"></div>\n        <div class=\"app-steps__label text-al-right\">Select coverage</div>\n    </div>\n</div>\n"
+        },
+        {
             "name": "TextComponent",
             "id": "component-TextComponent-5240852f5f79154599e5039e84db7905",
             "file": "src/app/text/text.component.ts",
@@ -1064,10 +1594,28 @@
                             "name": "AppComponent"
                         },
                         {
+                            "name": "CardComponent"
+                        },
+                        {
                             "name": "DateMenuComponent"
                         },
                         {
+                            "name": "FormScreenFirstComponent"
+                        },
+                        {
+                            "name": "FormScreenSecondComponent"
+                        },
+                        {
+                            "name": "FormScreenThirdComponent"
+                        },
+                        {
                             "name": "IconContainerComponent"
+                        },
+                        {
+                            "name": "SideMenuComponent"
+                        },
+                        {
+                            "name": "StepsComponent"
                         },
                         {
                             "name": "navLinkComponent"
@@ -1095,42 +1643,6 @@
                     "elements": []
                 }
             ]
-<<<<<<< HEAD
-=======
-        },
-        {
-            "name": "IconContainerModule",
-            "children": [
-                {
-                    "type": "providers",
-                    "elements": []
-                },
-                {
-                    "type": "declarations",
-                    "elements": [
-                        {
-                            "name": "IconContainerComponent"
-                        }
-                    ]
-                },
-                {
-                    "type": "imports",
-                    "elements": []
-                },
-                {
-                    "type": "exports",
-                    "elements": []
-                },
-                {
-                    "type": "bootstrap",
-                    "elements": []
-                },
-                {
-                    "type": "classes",
-                    "elements": []
-                }
-            ]
->>>>>>> 8b54a3d80229361d562ddb7522205990a9949f9e
         }
     ],
     "miscellaneous": {
@@ -1148,6 +1660,14 @@
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/app/atoms/buttons/simpleButton/simpleButton.stories.ts",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Date",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/molecules/menu/date-menu/date-menu.stories.ts",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
@@ -1176,10 +1696,26 @@
                 "defaultValue": "Template.bind({})"
             },
             {
+                "name": "First",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/molecules/form-screens/form-screen-first/form-screen-first.stories.ts",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
                 "name": "Gradient",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/app/atoms/buttons/gradientButton/gradientButton.stories.ts",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Highlited",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/atoms/navLink/navLink.stories.ts",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
@@ -1243,11 +1779,7 @@
                 "name": "props",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-<<<<<<< HEAD
-                "file": "src/app/atoms/iconContainer/iconContainer.stories.ts",
-=======
                 "file": "src/app/app.stories.ts",
->>>>>>> 8b54a3d80229361d562ddb7522205990a9949f9e
                 "type": "object",
                 "defaultValue": "{\n\n}"
             },
@@ -1255,9 +1787,25 @@
                 "name": "props",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "src/app/atoms/card/card.stories.ts",
+                "type": "object",
+                "defaultValue": "{\n  backgroundColor: { control: 'color' },\n  color: { control: 'color' },\n  src: { control: 'text'},\n  title: { control: 'text'},\n  text: { control: 'text' },\n  isActive: { control: 'boolean'}\n}"
+            },
+            {
+                "name": "props",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/atoms/iconContainer/iconContainer.stories.ts",
+                "type": "object",
+                "defaultValue": "{\n  backgroundColor: { control: 'color' },\n}"
+            },
+            {
+                "name": "props",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "src/app/atoms/navLink/navLink.stories.ts",
                 "type": "object",
-                "defaultValue": "{\n  title: { control: 'text' },\n}"
+                "defaultValue": "{\n  title: { control: 'text' },\n  isActive: { control: 'boolean'}\n}"
             },
             {
                 "name": "props",
@@ -1271,23 +1819,17 @@
                 "name": "props",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/molecules/date-menu/date-menu.stories.ts",
+                "file": "src/app/atoms/steps/steps.stories.ts",
                 "type": "object",
-                "defaultValue": "{\n  backgroundColor: { control: 'color' },\n}"
+                "defaultValue": "{\n  activePoints: { control: 'number'}\n}"
             },
             {
                 "name": "props",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-<<<<<<< HEAD
-                "file": "src/app/atoms/inputs/formInput/formInput.stories.ts",
+                "file": "src/app/atoms/buttons/infoButton/infoButton.stories.ts",
                 "type": "object",
-                "defaultValue": "{\n  backgroundColor: { control: 'color' },\n  color: { control: 'color' },\n  placeholder: { control: 'text'},\n}"
-=======
-                "file": "src/app/molecules/date-menu/date-menu.stories.ts",
-                "type": "object",
-                "defaultValue": "{\n  backgroundColor: { control: 'color' },\n}"
->>>>>>> 8b54a3d80229361d562ddb7522205990a9949f9e
+                "defaultValue": "{\n  backgroundColor: { control: 'color' },\n  color: { control: 'color' },\n  title: { control: 'text'},\n}"
             },
             {
                 "name": "props",
@@ -1301,19 +1843,7 @@
                 "name": "props",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-<<<<<<< HEAD
                 "file": "src/app/atoms/buttons/largeButton/largeButton.stories.ts",
-=======
-                "file": "src/app/atoms/buttons/infoButton/infoButton.stories.ts",
->>>>>>> 8b54a3d80229361d562ddb7522205990a9949f9e
-                "type": "object",
-                "defaultValue": "{\n  backgroundColor: { control: 'color' },\n  color: { control: 'color' },\n  title: { control: 'text'},\n}"
-            },
-            {
-                "name": "props",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/atoms/buttons/lightButton/lightButton.stories.ts",
                 "type": "object",
                 "defaultValue": "{\n  backgroundColor: { control: 'color' },\n  color: { control: 'color' },\n  title: { control: 'text'},\n}"
             },
@@ -1337,6 +1867,14 @@
                 "name": "props",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "src/app/atoms/buttons/secondaryButton/secondaryButton.stories.ts",
+                "type": "object",
+                "defaultValue": "{\n  backgroundColor: { control: 'color' },\n  color: { control: 'color' },\n  title: { control: 'text'},\n}"
+            },
+            {
+                "name": "props",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "src/app/atoms/buttons/simpleButton/simpleButton.stories.ts",
                 "type": "object",
                 "defaultValue": "{\n  backgroundColor: { control: 'color' },\n  color: { control: 'color' },\n  title: { control: 'text'},\n}"
@@ -1345,17 +1883,49 @@
                 "name": "props",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/atoms/buttons/infoButton/infoButton.stories.ts",
+                "file": "src/app/atoms/inputs/formInput/formInput.stories.ts",
                 "type": "object",
-                "defaultValue": "{\n  backgroundColor: { control: 'color' },\n  color: { control: 'color' },\n  title: { control: 'text'},\n}"
+                "defaultValue": "{\n  backgroundColor: { control: 'color' },\n  color: { control: 'color' },\n  placeholder: { control: 'text'},\n}"
             },
             {
                 "name": "props",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/atoms/buttons/secondaryButton/secondaryButton.stories.ts",
+                "file": "src/app/molecules/form-screens/form-screen-first/form-screen-first.stories.ts",
                 "type": "object",
-                "defaultValue": "{\n  backgroundColor: { control: 'color' },\n  color: { control: 'color' },\n  title: { control: 'text'},\n}"
+                "defaultValue": "{\n}"
+            },
+            {
+                "name": "props",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/molecules/form-screens/form-screen-second/form-screen-second.stories.ts",
+                "type": "object",
+                "defaultValue": "{\n}"
+            },
+            {
+                "name": "props",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/molecules/form-screens/form-screen-third/form-screen-third.stories.ts",
+                "type": "object",
+                "defaultValue": "{\n}"
+            },
+            {
+                "name": "props",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/molecules/menu/date-menu/date-menu.stories.ts",
+                "type": "object",
+                "defaultValue": "{\n  backgroundColor: { control: 'color' },\n  items: { control: 'array'}\n}"
+            },
+            {
+                "name": "props",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/molecules/menu/side-menu/side-menu.stories.ts",
+                "type": "object",
+                "defaultValue": "{\n  backgroundColor: { control: 'color' },\n  items: { control: 'array'}\n}"
             },
             {
                 "name": "require",
@@ -1363,6 +1933,14 @@
                 "subtype": "variable",
                 "file": "src/test.ts",
                 "type": "literal type"
+            },
+            {
+                "name": "Second",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/molecules/form-screens/form-screen-second/form-screen-second.stories.ts",
+                "type": "",
+                "defaultValue": "Template.bind({})"
             },
             {
                 "name": "Secondary",
@@ -1376,15 +1954,31 @@
                 "name": "Secondary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "src/app/atoms/navLink/navLink.stories.ts",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Secondary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "src/app/atoms/buttons/secondaryButton/secondaryButton.stories.ts",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
             {
-                "name": "SideBar",
+                "name": "Side",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/atoms/navLink/navLink.stories.ts",
+                "file": "src/app/molecules/menu/side-menu/side-menu.stories.ts",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Simple",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/atoms/card/card.stories.ts",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
@@ -1408,7 +2002,7 @@
                 "name": "Simple",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/molecules/date-menu/date-menu.stories.ts",
+                "file": "src/app/atoms/steps/steps.stories.ts",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
@@ -1448,8 +2042,6 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-<<<<<<< HEAD
-=======
                 "file": "src/stories/Button.stories.ts",
                 "type": "Story<Button>",
                 "defaultValue": "(args: Button) => ({\n  component: Button,\n  props: args,\n})"
@@ -1458,7 +2050,14 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
->>>>>>> 8b54a3d80229361d562ddb7522205990a9949f9e
+                "file": "src/app/atoms/card/card.stories.ts",
+                "type": "Story<CardComponent>",
+                "defaultValue": "(args: CardComponent) => ({\n    component: CardComponent,\n    props: args,\n  })"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "src/app/atoms/iconContainer/iconContainer.stories.ts",
                 "type": "Story<IconContainerComponent>",
                 "defaultValue": "(args: IconContainerComponent) => ({\n    component: IconContainerComponent,\n    props: args,\n  })"
@@ -1483,31 +2082,25 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/molecules/date-menu/date-menu.stories.ts",
-                "type": "Story<DateMenuComponent>",
-                "defaultValue": "(args: DateMenuComponent) => ({\n    component: DateMenuComponent,\n    props: args,\n  })"
+                "file": "src/app/atoms/steps/steps.stories.ts",
+                "type": "Story<StepsComponent>",
+                "defaultValue": "(args: StepsComponent) => ({\n    component: StepsComponent,\n    props: args,\n  })"
             },
             {
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/atoms/inputs/formInput/formInput.stories.ts",
-                "type": "Story<formInputComponent>",
-                "defaultValue": "(args: formInputComponent) => ({\n    component: formInputComponent,\n    props: args,\n  })"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-<<<<<<< HEAD
-                "file": "src/app/atoms/buttons/gradientButton/gradientButton.stories.ts",
-                "type": "Story<gradientButtonComponent>",
-                "defaultValue": "(args: gradientButtonComponent) => ({\n    component: gradientButtonComponent,\n    props: args,\n  })"
-=======
                 "file": "src/app/atoms/buttons/infoButton/infoButton.stories.ts",
                 "type": "Story<infoButtonComponent>",
                 "defaultValue": "(args: infoButtonComponent) => ({\n    component: infoButtonComponent,\n    props: args,\n  })"
->>>>>>> 8b54a3d80229361d562ddb7522205990a9949f9e
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/atoms/buttons/gradientButton/gradientButton.stories.ts",
+                "type": "Story<gradientButtonComponent>",
+                "defaultValue": "(args: gradientButtonComponent) => ({\n    component: gradientButtonComponent,\n    props: args,\n  })"
             },
             {
                 "name": "Template",
@@ -1524,8 +2117,6 @@
                 "file": "src/app/atoms/buttons/lightButton/lightButton.stories.ts",
                 "type": "Story<lightButtonComponent>",
                 "defaultValue": "(args: lightButtonComponent) => ({\n    component: lightButtonComponent,\n    props: args,\n  })"
-<<<<<<< HEAD
-=======
             },
             {
                 "name": "Template",
@@ -1534,15 +2125,14 @@
                 "file": "src/app/atoms/buttons/primaryButton/primaryButton.stories.ts",
                 "type": "Story<primaryButtonComponent>",
                 "defaultValue": "(args: primaryButtonComponent) => ({\n    component: primaryButtonComponent,\n    props: args,\n  })"
->>>>>>> 8b54a3d80229361d562ddb7522205990a9949f9e
             },
             {
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/atoms/buttons/primaryButton/primaryButton.stories.ts",
-                "type": "Story<primaryButtonComponent>",
-                "defaultValue": "(args: primaryButtonComponent) => ({\n    component: primaryButtonComponent,\n    props: args,\n  })"
+                "file": "src/app/atoms/buttons/secondaryButton/secondaryButton.stories.ts",
+                "type": "Story<secondaryButtonComponent>",
+                "defaultValue": "(args: secondaryButtonComponent) => ({\n    component: secondaryButtonComponent,\n    props: args,\n  })"
             },
             {
                 "name": "Template",
@@ -1556,17 +2146,57 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/atoms/buttons/infoButton/infoButton.stories.ts",
-                "type": "Story<infoButtonComponent>",
-                "defaultValue": "(args: infoButtonComponent) => ({\n    component: infoButtonComponent,\n    props: args,\n  })"
+                "file": "src/app/atoms/inputs/formInput/formInput.stories.ts",
+                "type": "Story<formInputComponent>",
+                "defaultValue": "(args: formInputComponent) => ({\n    component: formInputComponent,\n    props: args,\n  })"
             },
             {
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/atoms/buttons/secondaryButton/secondaryButton.stories.ts",
-                "type": "Story<secondaryButtonComponent>",
-                "defaultValue": "(args: secondaryButtonComponent) => ({\n    component: secondaryButtonComponent,\n    props: args,\n  })"
+                "file": "src/app/molecules/form-screens/form-screen-first/form-screen-first.stories.ts",
+                "type": "Story<FormScreenFirstComponent>",
+                "defaultValue": "(args: FormScreenFirstComponent) => ({\n    component: FormScreenFirstComponent,\n    props: args,\n  })"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/molecules/form-screens/form-screen-second/form-screen-second.stories.ts",
+                "type": "Story<FormScreenSecondComponent>",
+                "defaultValue": "(args: FormScreenSecondComponent) => ({\n    component: FormScreenSecondComponent,\n    props: args,\n  })"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/molecules/form-screens/form-screen-third/form-screen-third.stories.ts",
+                "type": "Story<FormScreenThirdComponent>",
+                "defaultValue": "(args: FormScreenThirdComponent) => ({\n    component: FormScreenThirdComponent,\n    props: args,\n  })"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/molecules/menu/date-menu/date-menu.stories.ts",
+                "type": "Story<DateMenuComponent>",
+                "defaultValue": "(args: DateMenuComponent) => ({\n    component: DateMenuComponent,\n    props: args,\n  })"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/molecules/menu/side-menu/side-menu.stories.ts",
+                "type": "Story<SideMenuComponent>",
+                "defaultValue": "(args: SideMenuComponent) => ({\n    component: SideMenuComponent,\n    props: args,\n  })"
+            },
+            {
+                "name": "Third",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/molecules/form-screens/form-screen-third/form-screen-third.stories.ts",
+                "type": "",
+                "defaultValue": "Template.bind({})"
             },
             {
                 "name": "Transparent",
@@ -1593,7 +2223,28 @@
                 "defaultValue": "Template.bind({})"
             }
         ],
-        "functions": [],
+        "functions": [
+            {
+                "name": "detectClasses",
+                "file": "src/app/atoms/steps/helpers.ts",
+                "ctype": "miscellaneous",
+                "subtype": "function",
+                "description": "",
+                "args": [
+                    {
+                        "name": "num"
+                    }
+                ],
+                "jsdoctags": [
+                    {
+                        "name": "num",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            }
+        ],
         "typealiases": [],
         "enumerations": [],
         "groupedVariables": {
@@ -1656,6 +2307,32 @@
                     "defaultValue": "Template.bind({})"
                 }
             ],
+            "src/app/molecules/menu/date-menu/date-menu.stories.ts": [
+                {
+                    "name": "Date",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/molecules/menu/date-menu/date-menu.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "props",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/molecules/menu/date-menu/date-menu.stories.ts",
+                    "type": "object",
+                    "defaultValue": "{\n  backgroundColor: { control: 'color' },\n  items: { control: 'array'}\n}"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/molecules/menu/date-menu/date-menu.stories.ts",
+                    "type": "Story<DateMenuComponent>",
+                    "defaultValue": "(args: DateMenuComponent) => ({\n    component: DateMenuComponent,\n    props: args,\n  })"
+                }
+            ],
             "src/environments/environment.prod.ts": [
                 {
                     "name": "environment",
@@ -1702,6 +2379,32 @@
                     "defaultValue": "(args: AppComponent) => ({\n    component: AppComponent,\n    props: args,\n  })"
                 }
             ],
+            "src/app/molecules/form-screens/form-screen-first/form-screen-first.stories.ts": [
+                {
+                    "name": "First",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/molecules/form-screens/form-screen-first/form-screen-first.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "props",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/molecules/form-screens/form-screen-first/form-screen-first.stories.ts",
+                    "type": "object",
+                    "defaultValue": "{\n}"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/molecules/form-screens/form-screen-first/form-screen-first.stories.ts",
+                    "type": "Story<FormScreenFirstComponent>",
+                    "defaultValue": "(args: FormScreenFirstComponent) => ({\n    component: FormScreenFirstComponent,\n    props: args,\n  })"
+                }
+            ],
             "src/app/atoms/buttons/gradientButton/gradientButton.stories.ts": [
                 {
                     "name": "Gradient",
@@ -1726,6 +2429,48 @@
                     "file": "src/app/atoms/buttons/gradientButton/gradientButton.stories.ts",
                     "type": "Story<gradientButtonComponent>",
                     "defaultValue": "(args: gradientButtonComponent) => ({\n    component: gradientButtonComponent,\n    props: args,\n  })"
+                }
+            ],
+            "src/app/atoms/navLink/navLink.stories.ts": [
+                {
+                    "name": "Highlited",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/atoms/navLink/navLink.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Main",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/atoms/navLink/navLink.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "props",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/atoms/navLink/navLink.stories.ts",
+                    "type": "object",
+                    "defaultValue": "{\n  title: { control: 'text' },\n  isActive: { control: 'boolean'}\n}"
+                },
+                {
+                    "name": "Secondary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/atoms/navLink/navLink.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/atoms/navLink/navLink.stories.ts",
+                    "type": "Story<navLinkComponent>",
+                    "defaultValue": "(args: navLinkComponent) => ({\n    component: navLinkComponent,\n    props: args,\n  })"
                 }
             ],
             "src/app/atoms/buttons/infoButton/infoButton.stories.ts": [
@@ -1848,40 +2593,6 @@
                     "defaultValue": "(args: lightButtonComponent) => ({\n    component: lightButtonComponent,\n    props: args,\n  })"
                 }
             ],
-            "src/app/atoms/navLink/navLink.stories.ts": [
-                {
-                    "name": "Main",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/atoms/navLink/navLink.stories.ts",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "props",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/atoms/navLink/navLink.stories.ts",
-                    "type": "object",
-                    "defaultValue": "{\n  title: { control: 'text' },\n}"
-                },
-                {
-                    "name": "SideBar",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/atoms/navLink/navLink.stories.ts",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/atoms/navLink/navLink.stories.ts",
-                    "type": "Story<navLinkComponent>",
-                    "defaultValue": "(args: navLinkComponent) => ({\n    component: navLinkComponent,\n    props: args,\n  })"
-                }
-            ],
             "src/app/atoms/buttons/primaryButton/primaryButton.stories.ts": [
                 {
                     "name": "Primary",
@@ -1906,6 +2617,32 @@
                     "file": "src/app/atoms/buttons/primaryButton/primaryButton.stories.ts",
                     "type": "Story<primaryButtonComponent>",
                     "defaultValue": "(args: primaryButtonComponent) => ({\n    component: primaryButtonComponent,\n    props: args,\n  })"
+                }
+            ],
+            "src/app/atoms/card/card.stories.ts": [
+                {
+                    "name": "props",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/atoms/card/card.stories.ts",
+                    "type": "object",
+                    "defaultValue": "{\n  backgroundColor: { control: 'color' },\n  color: { control: 'color' },\n  src: { control: 'text'},\n  title: { control: 'text'},\n  text: { control: 'text' },\n  isActive: { control: 'boolean'}\n}"
+                },
+                {
+                    "name": "Simple",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/atoms/card/card.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/atoms/card/card.stories.ts",
+                    "type": "Story<CardComponent>",
+                    "defaultValue": "(args: CardComponent) => ({\n    component: CardComponent,\n    props: args,\n  })"
                 }
             ],
             "src/app/atoms/iconContainer/iconContainer.stories.ts": [
@@ -1968,22 +2705,20 @@
                     "defaultValue": "Template.bind({})"
                 }
             ],
-            "src/app/molecules/date-menu/date-menu.stories.ts": [
-<<<<<<< HEAD
-=======
+            "src/app/atoms/steps/steps.stories.ts": [
                 {
                     "name": "props",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/molecules/date-menu/date-menu.stories.ts",
+                    "file": "src/app/atoms/steps/steps.stories.ts",
                     "type": "object",
-                    "defaultValue": "{\n  backgroundColor: { control: 'color' },\n}"
+                    "defaultValue": "{\n  activePoints: { control: 'number'}\n}"
                 },
                 {
                     "name": "Simple",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/molecules/date-menu/date-menu.stories.ts",
+                    "file": "src/app/atoms/steps/steps.stories.ts",
                     "type": "",
                     "defaultValue": "Template.bind({})"
                 },
@@ -1991,26 +2726,25 @@
                     "name": "Template",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/molecules/date-menu/date-menu.stories.ts",
-                    "type": "Story<DateMenuComponent>",
-                    "defaultValue": "(args: DateMenuComponent) => ({\n    component: DateMenuComponent,\n    props: args,\n  })"
+                    "file": "src/app/atoms/steps/steps.stories.ts",
+                    "type": "Story<StepsComponent>",
+                    "defaultValue": "(args: StepsComponent) => ({\n    component: StepsComponent,\n    props: args,\n  })"
                 }
             ],
             "src/app/atoms/buttons/secondaryButton/secondaryButton.stories.ts": [
->>>>>>> 8b54a3d80229361d562ddb7522205990a9949f9e
                 {
                     "name": "props",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/molecules/date-menu/date-menu.stories.ts",
+                    "file": "src/app/atoms/buttons/secondaryButton/secondaryButton.stories.ts",
                     "type": "object",
-                    "defaultValue": "{\n  backgroundColor: { control: 'color' },\n}"
+                    "defaultValue": "{\n  backgroundColor: { control: 'color' },\n  color: { control: 'color' },\n  title: { control: 'text'},\n}"
                 },
                 {
-                    "name": "Simple",
+                    "name": "Secondary",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/molecules/date-menu/date-menu.stories.ts",
+                    "file": "src/app/atoms/buttons/secondaryButton/secondaryButton.stories.ts",
                     "type": "",
                     "defaultValue": "Template.bind({})"
                 },
@@ -2018,9 +2752,9 @@
                     "name": "Template",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/molecules/date-menu/date-menu.stories.ts",
-                    "type": "Story<DateMenuComponent>",
-                    "defaultValue": "(args: DateMenuComponent) => ({\n    component: DateMenuComponent,\n    props: args,\n  })"
+                    "file": "src/app/atoms/buttons/secondaryButton/secondaryButton.stories.ts",
+                    "type": "Story<secondaryButtonComponent>",
+                    "defaultValue": "(args: secondaryButtonComponent) => ({\n    component: secondaryButtonComponent,\n    props: args,\n  })"
                 }
             ],
             "src/app/atoms/inputs/formInput/formInput.stories.ts": [
@@ -2057,20 +2791,20 @@
                     "defaultValue": "Template.bind({})"
                 }
             ],
-            "src/app/atoms/buttons/secondaryButton/secondaryButton.stories.ts": [
+            "src/app/molecules/form-screens/form-screen-second/form-screen-second.stories.ts": [
                 {
                     "name": "props",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/atoms/buttons/secondaryButton/secondaryButton.stories.ts",
+                    "file": "src/app/molecules/form-screens/form-screen-second/form-screen-second.stories.ts",
                     "type": "object",
-                    "defaultValue": "{\n  backgroundColor: { control: 'color' },\n  color: { control: 'color' },\n  title: { control: 'text'},\n}"
+                    "defaultValue": "{\n}"
                 },
                 {
-                    "name": "Secondary",
+                    "name": "Second",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/atoms/buttons/secondaryButton/secondaryButton.stories.ts",
+                    "file": "src/app/molecules/form-screens/form-screen-second/form-screen-second.stories.ts",
                     "type": "",
                     "defaultValue": "Template.bind({})"
                 },
@@ -2078,13 +2812,88 @@
                     "name": "Template",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/atoms/buttons/secondaryButton/secondaryButton.stories.ts",
-                    "type": "Story<secondaryButtonComponent>",
-                    "defaultValue": "(args: secondaryButtonComponent) => ({\n    component: secondaryButtonComponent,\n    props: args,\n  })"
+                    "file": "src/app/molecules/form-screens/form-screen-second/form-screen-second.stories.ts",
+                    "type": "Story<FormScreenSecondComponent>",
+                    "defaultValue": "(args: FormScreenSecondComponent) => ({\n    component: FormScreenSecondComponent,\n    props: args,\n  })"
+                }
+            ],
+            "src/app/molecules/form-screens/form-screen-third/form-screen-third.stories.ts": [
+                {
+                    "name": "props",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/molecules/form-screens/form-screen-third/form-screen-third.stories.ts",
+                    "type": "object",
+                    "defaultValue": "{\n}"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/molecules/form-screens/form-screen-third/form-screen-third.stories.ts",
+                    "type": "Story<FormScreenThirdComponent>",
+                    "defaultValue": "(args: FormScreenThirdComponent) => ({\n    component: FormScreenThirdComponent,\n    props: args,\n  })"
+                },
+                {
+                    "name": "Third",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/molecules/form-screens/form-screen-third/form-screen-third.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                }
+            ],
+            "src/app/molecules/menu/side-menu/side-menu.stories.ts": [
+                {
+                    "name": "props",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/molecules/menu/side-menu/side-menu.stories.ts",
+                    "type": "object",
+                    "defaultValue": "{\n  backgroundColor: { control: 'color' },\n  items: { control: 'array'}\n}"
+                },
+                {
+                    "name": "Side",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/molecules/menu/side-menu/side-menu.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/molecules/menu/side-menu/side-menu.stories.ts",
+                    "type": "Story<SideMenuComponent>",
+                    "defaultValue": "(args: SideMenuComponent) => ({\n    component: SideMenuComponent,\n    props: args,\n  })"
                 }
             ]
         },
-        "groupedFunctions": {},
+        "groupedFunctions": {
+            "src/app/atoms/steps/helpers.ts": [
+                {
+                    "name": "detectClasses",
+                    "file": "src/app/atoms/steps/helpers.ts",
+                    "ctype": "miscellaneous",
+                    "subtype": "function",
+                    "description": "",
+                    "args": [
+                        {
+                            "name": "num"
+                        }
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "num",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
         "groupedEnumerations": {},
         "groupedTypeAliases": {}
     },
@@ -2435,6 +3244,45 @@
                 "status": "low"
             },
             {
+                "filePath": "src/app/atoms/card/card.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "CardComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/9",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/atoms/card/card.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "props",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/atoms/card/card.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Simple",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/atoms/card/card.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
                 "filePath": "src/app/atoms/iconContainer/iconContainer.component.ts",
                 "type": "component",
                 "linktype": "component",
@@ -2528,7 +3376,17 @@
                 "linktype": "component",
                 "name": "navLinkComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/4",
+                "coverageCount": "0/7",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/atoms/navLink/navLink.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Highlited",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
                 "status": "low"
             },
             {
@@ -2556,7 +3414,7 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "SideBar",
+                "name": "Secondary",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -2621,16 +3479,25 @@
                 "status": "low"
             },
             {
-                "filePath": "src/app/molecules/date-menu/date-menu.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "DateMenuComponent",
+                "filePath": "src/app/atoms/steps/helpers.ts",
+                "type": "function",
+                "linksubtype": "function",
+                "name": "detectClasses",
                 "coveragePercent": 0,
-                "coverageCount": "0/3",
+                "coverageCount": "0/1",
                 "status": "low"
             },
             {
-                "filePath": "src/app/molecules/date-menu/date-menu.stories.ts",
+                "filePath": "src/app/atoms/steps/steps.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "StepsComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/atoms/steps/steps.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -2640,7 +3507,7 @@
                 "status": "low"
             },
             {
-                "filePath": "src/app/molecules/date-menu/date-menu.stories.ts",
+                "filePath": "src/app/atoms/steps/steps.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -2650,7 +3517,202 @@
                 "status": "low"
             },
             {
-                "filePath": "src/app/molecules/date-menu/date-menu.stories.ts",
+                "filePath": "src/app/atoms/steps/steps.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/molecules/form-screens/form-screen-first/form-screen-first.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "FormScreenFirstComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/molecules/form-screens/form-screen-first/form-screen-first.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "First",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/molecules/form-screens/form-screen-first/form-screen-first.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "props",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/molecules/form-screens/form-screen-first/form-screen-first.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/molecules/form-screens/form-screen-second/form-screen-second.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "FormScreenSecondComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/molecules/form-screens/form-screen-second/form-screen-second.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "props",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/molecules/form-screens/form-screen-second/form-screen-second.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Second",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/molecules/form-screens/form-screen-second/form-screen-second.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/molecules/form-screens/form-screen-third/form-screen-third.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "FormScreenThirdComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/molecules/form-screens/form-screen-third/form-screen-third.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "props",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/molecules/form-screens/form-screen-third/form-screen-third.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/molecules/form-screens/form-screen-third/form-screen-third.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Third",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/molecules/menu/date-menu/date-menu.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "DateMenuComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/molecules/menu/date-menu/date-menu.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Date",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/molecules/menu/date-menu/date-menu.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "props",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/molecules/menu/date-menu/date-menu.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/molecules/menu/side-menu/side-menu.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "SideMenuComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/molecules/menu/side-menu/side-menu.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "props",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/molecules/menu/side-menu/side-menu.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Side",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/molecules/menu/side-menu/side-menu.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",

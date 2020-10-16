@@ -1,5 +1,3 @@
-import { Placeholder } from '@angular/compiler/src/i18n/i18n_ast';
-import { action } from '@storybook/addon-actions';
 import { Meta, Story } from '@storybook/angular';
 import { formInputComponent } from './formInput.component';
 
