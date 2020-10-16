@@ -23,7 +23,7 @@ const Template: Story<CardComponent> = (args: CardComponent) => ({
 
   export const Simple = Template.bind({});
   Simple.args = {
-    src: '../../../assets/images/flags/ccpa.png',
+    src: 'assets/images/flags/ccpa.png',
     title: 'GDPR, EPRIVACY',
     text: 'Europe', 
     isActive: false,

@@ -12,17 +12,17 @@ export class FormScreenThirdComponent implements OnInit {
     {
       title: "GDPR, eprivacy",
       text: "Europe",
-      src: "../../../assets/images/flags/euro.png"
+      src: "assets/images/flags/euro.png"
     },
     {
       title: "CCPA",
       text: "California",
-      src: "../../../assets/images/flags/ccpa.png"
+      src: "assets/images/flags/ccpa.png"
     },
     {
       title: "LGPD",
       text: "Brasil",
-      src: "../../../assets/images/flags/lgpd.png"
+      src: "assets/images/flags/lgpd.png"
     }
   ]
 
