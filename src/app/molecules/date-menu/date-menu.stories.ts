@@ -1,19 +1,19 @@
 import { action } from '@storybook/addon-actions';
 import { Meta, Story } from '@storybook/angular';
-import { DateMenuComponent } from './date-menu.component';
+import { DateMenuModule } from './date-menu.module';
 
 const props = {
   backgroundColor: { control: 'color' },
 };
 
 export default {
-    title: 'Molecules/Date Menu',
-    component: DateMenuComponent,
+    title: 'Molecules/DateMenu',
+    component: DateMenuModule,
     argTypes: props,
   } as Meta;
 
-const Template: Story<DateMenuComponent> = (args: DateMenuComponent) => ({
-    component: DateMenuComponent,
+const Template: Story<DateMenuModule> = (args: DateMenuModule) => ({
+    component: DateMenuModule,
     props: args,
   });
 

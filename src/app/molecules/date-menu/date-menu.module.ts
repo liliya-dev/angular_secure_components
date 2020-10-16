@@ -1,15 +1,16 @@
 import { NgModule } from '@angular/core';
+import { IconContainerComponent } from '../../atoms/iconContainer/iconContainer.component';
 import { DateMenuComponent } from './date-menu.component';
-import { IconContainerModule } from '../../atoms/iconContainer/iconContainer.module';
 
 @NgModule({
   declarations: [
-    DateMenuComponent
+    DateMenuComponent,
+
   ],
   imports: [
-    IconContainerModule
+    IconContainerComponent
   ],
-  exports: [
-  ]
+  providers: [],
+  bootstrap: []
 })
 export class DateMenuModule { }
