@@ -21,7 +21,7 @@ export class FormScreenThirdComponent implements OnInit {
     },
     {
       title: "LGPD",
-      text: "Brasil",
+      text: "Brasil ",
       src: "assets/images/flags/lgpd.png"
     }
   ]
