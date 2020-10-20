@@ -1,4 +1,3 @@
-import { action } from '@storybook/addon-actions';
 import { Meta, Story } from '@storybook/angular';
 import { infoButtonComponent } from './infoButton.component';
 
@@ -9,19 +8,18 @@ const props = {
 };
 
 export default {
-    title: 'Atoms/Button',
-    component: infoButtonComponent,
-    argTypes: props,
-  } as Meta;
+  title: 'Atoms/Button',
+  component: infoButtonComponent,
+  argTypes: props,
+} as Meta;
 
 const Template: Story<infoButtonComponent> = (args: infoButtonComponent) => ({
-    component: infoButtonComponent,
-    props: args,
-  });
+  component: infoButtonComponent,
+  props: args,
+});
 
-  export const Info = Template.bind({});
-  Info.args = {
-    title: "support",
-    classes: "btn-app btn-info fs-14-sofia-normal"
-  };
+export const Info = Template.bind({});
+Info.args = {
+  title: "support",
+};
 

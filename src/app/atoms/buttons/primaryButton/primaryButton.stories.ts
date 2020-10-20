@@ -8,19 +8,18 @@ const props = {
 };
 
 export default {
-    title: 'Atoms/Button',
-    component: primaryButtonComponent,
-    argTypes: props,
-  } as Meta;
+  title: 'Atoms/Button',
+  component: primaryButtonComponent,
+  argTypes: props,
+} as Meta;
 
 const Template: Story<primaryButtonComponent> = (args: primaryButtonComponent) => ({
-    component: primaryButtonComponent,
-    props: args,
-  });
+  component: primaryButtonComponent,
+  props: args,
+});
 
-  export const Primary = Template.bind({});
-  Primary.args = {
-    title: "Export",
-    classes: "btn-app btn-app--h46 btn-primary fs-16-sofia-300"
-  };
+export const Primary = Template.bind({});
+Primary.args = {
+  title: "Export",
+};
 

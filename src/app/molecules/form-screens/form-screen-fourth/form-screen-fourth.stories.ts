@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Meta, moduleMetadata, Story } from '@storybook/angular';
-import { formInputComponent } from '../../../atoms/inputs/formInput/formInput.component';
+import { largeButtonComponent } from '../../../atoms/buttons/largeButton/largeButton.component';
 import { FormScreenFourthComponent } from './form-screen-fourth.component';
 
 const props = {
@@ -10,7 +10,7 @@ export default {
     title: 'Molecules/Form Screen',
     decorators: [
       moduleMetadata({
-        declarations: [FormScreenFourthComponent, formInputComponent],
+        declarations: [FormScreenFourthComponent, largeButtonComponent],
         imports: [CommonModule],
       }),
     ],
@@ -18,11 +18,11 @@ export default {
   } as Meta;
 
 const Template: Story<FormScreenFourthComponent> = (args: FormScreenFourthComponent) => ({
-    component: FormScreenFourthComponent,
-    props: args,
-  });
+  component: FormScreenFourthComponent,
+  props: args,
+});
 
-  export const Fourth = Template.bind({});
-  Fourth.args = {
-  };
+export const Fourth = Template.bind({});
+Fourth.args = {
+};
 

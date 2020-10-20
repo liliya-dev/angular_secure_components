@@ -6,12 +6,9 @@
     width: 100%;
     z-index: 2;
     display: flex;
-    
-    &.btn-app { 
-        justify-content: center;
-    }
+    justify-content: center;
 
-    &--active {
+    &.active {
         background: var(--success-grad-light);
         color: var(--text-color);
     }
@@ -20,7 +17,7 @@
         margin: 0;
     }
 
-    & > span > .fs-14-strong {
+    & > span > .fs-14-gramm-normal {
         text-transform: uppercase;
     }
 

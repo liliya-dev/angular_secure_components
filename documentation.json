@@ -85,103 +85,8 @@
             "templateData": "<div>\n  <h1 class=\"title\">{{title}}dddd</h1>\n  <app-date-menu></app-date-menu>\n</div>\n"
         },
         {
-            "name": "ButtonComponent",
-            "id": "component-ButtonComponent-9a0e161cfb9c2b7b47e11baef7e6c1b8",
-            "file": "src/stories/button.component.ts",
-            "encapsulation": [],
-            "entryComponents": [],
-            "inputs": [],
-            "outputs": [],
-            "providers": [],
-            "selector": "storybook-button",
-            "styleUrls": [
-                "./button.css"
-            ],
-            "styles": [],
-            "template": "<button   type=\"button\"\n   (click)=\"onClick.emit($event)\"\n   [ngClass]=\"classes\"\n   [ngStyle]=\"{ 'background-color': backgroundColor, 'color': color }\"\n >\n   {{ label }} {{ title }}\n </button>",
-            "templateUrl": [],
-            "viewProviders": [],
-            "inputsClass": [
-                {
-                    "name": "backgroundColor",
-                    "description": "<p>What background color to use</p>\n",
-                    "line": 29,
-                    "type": "string"
-                },
-                {
-                    "name": "color",
-                    "line": 32,
-                    "type": "string"
-                },
-                {
-                    "name": "label",
-                    "defaultValue": "'Button'",
-                    "description": "<p>Button contents</p>\n",
-                    "line": 49
-                },
-                {
-                    "name": "name",
-                    "line": 35,
-                    "type": "string"
-                },
-                {
-                    "name": "primary",
-                    "defaultValue": "false",
-                    "description": "<p>Is this the principal call to action on the page?</p>\n",
-                    "line": 20
-                },
-                {
-                    "name": "size",
-                    "description": "<p>How large should the button be?</p>\n",
-                    "line": 41,
-                    "type": "string"
-                },
-                {
-                    "name": "title",
-                    "defaultValue": "'Butto'",
-                    "line": 23
-                }
-            ],
-            "outputsClass": [
-                {
-                    "name": "onClick",
-                    "defaultValue": "new EventEmitter<Event>()",
-                    "description": "<p>Optional click handler</p>\n",
-                    "line": 55,
-                    "type": "EventEmitter"
-                }
-            ],
-            "propertiesClass": [],
-            "methodsClass": [],
-            "hostBindings": [],
-            "hostListeners": [],
-            "description": "",
-            "rawdescription": "",
-            "type": "component",
-            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\n\n@Component({\n  selector: 'storybook-button',\n  template: ` <button\n    type=\"button\"\n    (click)=\"onClick.emit($event)\"\n    [ngClass]=\"classes\"\n    [ngStyle]=\"{ 'background-color': backgroundColor, 'color': color }\"\n  >\n    {{ label }} {{ title }}\n  </button>`,\n  styleUrls: ['./button.css'],\n})\nexport default class ButtonComponent {\n  /**\n   * Is this the principal call to action on the page?\n   */\n  @Input()\n  primary = false;\n\n  @Input()\n  title = 'Butto';\n\n  /**\n   * What background color to use\n   */\n  @Input()\n  backgroundColor?: string;\n\n  @Input()\n  color?: string;\n\n  @Input()\n  name?: string;\n\n  /**\n   * How large should the button be?\n   */\n  @Input()\n  size: string;\n\n  /**\n   * Button contents\n   *\n   * @required\n   */\n  @Input()\n  label = 'Button';\n\n  /**\n   * Optional click handler\n   */\n  @Output()\n  onClick = new EventEmitter<Event>();\n\n  public get classes(): string[] {\n    const mode = this.primary ? 'storybook-button--primary' : 'storybook-button--secondary';\n\n    return ['storybook-button', `storybook-button--${this.size}`, mode];\n  }\n}\n",
-            "assetsDirs": [],
-            "styleUrlsData": [
-                {
-                    "data": ".storybook-button {\n  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;\n  font-weight: 700;\n  border: 0;\n  border-radius: 3em;\n  cursor: pointer;\n  display: inline-block;\n  line-height: 1;\n}\n.storybook-button--primary {\n  color: white;\n  background-color: #1ea7fd;\n}\n.storybook-button--secondary {\n  color: #333;\n  background-color: transparent;\n  box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;\n}\n.storybook-button--small {\n  font-size: 12px;\n  padding: 10px 16px;\n}\n.storybook-button--medium {\n  font-size: 14px;\n  padding: 11px 20px;\n}\n.storybook-button--large {\n  font-size: 16px;\n  padding: 12px 24px;\n}\n",
-                    "styleUrl": "./button.css"
-                }
-            ],
-            "stylesData": "",
-            "accessors": {
-                "classes": {
-                    "name": "classes",
-                    "getSignature": {
-                        "name": "classes",
-                        "type": "[]",
-                        "returnType": "string[]",
-                        "line": 57
-                    }
-                }
-            }
-        },
-        {
             "name": "CardComponent",
-            "id": "component-CardComponent-af75f195a51a9de5f615c9b73681229e",
+            "id": "component-CardComponent-3ad0cc647416c9e4a53baead85ea0375",
             "file": "src/app/atoms/card/card.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -236,7 +141,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 19
+                    "line": 17
                 }
             ],
             "hostBindings": [],
@@ -244,21 +149,15 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, Input, OnChanges } from '@angular/core';\n\n@Component({\n  selector: 'app-card',\n  templateUrl: './card.component.html',\n  styleUrls: ['./card.component.scss']\n})\n\nexport class CardComponent implements OnChanges {\n  @Input() text: string;\n  @Input() title: string;\n  @Input() src: string;\n  @Input() isActive: string;\n\n  classes;\n\n  constructor() { }\n\n  ngOnChanges() {\n    console.log(this.title, this.isActive,'yugbuiguyg')\n    this.classes = this.isActive ? \"app-card active\" : \"app-card\";\n  }\n}\n",
+            "sourceCode": "import { Component, Input, OnChanges } from '@angular/core';\n\n@Component({\n  selector: 'app-card',\n  templateUrl: './card.component.html',\n  styleUrls: ['./card.component.scss']\n})\n\nexport class CardComponent implements OnChanges {\n  @Input() text: string;\n  @Input() title: string;\n  @Input() src: string;\n  @Input() isActive: string;\n\n  classes;\n\n  ngOnChanges() {\n    this.classes = this.isActive ? \"app-card active\" : \"app-card\";\n  }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".app-card {\n    background: rgba(var(--secondary-color-code), 0.5);\n    width: fit-content;\n    padding: 1px;\n    border-radius: 12px;\n    text-align: center;\n\n    &.active {\n        background: var(--success-grad-light);\n        position: relative;\n        \n        &::after {\n          content: url('../../../assets/images/checkbox.svg');\n          width: 19px;\n          height: 19px;\n          position: absolute;\n          display: flex;\n          align-items: center;\n          justify-content: center;\n          top: 8px;\n          right: 8px;\n          background: var(--success-grad-light);\n          border-radius: 50%;\n        }\n    }\n\n    &:hover {\n      background: var(--success-grad-light);\n      cursor: pointer;\n    }\n\n    &__wrapper {\n        border-radius: 12px;\n        background-color: var(--text-color);\n    }\n\n    &__text-wrapper {\n        width: 100%;\n        word-wrap: break-word;\n    }\n\n    &__container {\n        width: 130px;\n        padding: 22px 15px 28px;\n\n        border-radius: 12px;\n        background-color: rgba(var(--text-color-code), 0.15);\n        color: var(--secondary-color);\n\n        display: flex;\n        flex-direction: column;\n        align-items: center;\n\n        & > img {\n            margin-bottom: 20px;\n            width: 44px;\n            height: 50px;\n        }\n    }\n  }\n\n  @media screen and (max-width: 600px) {\n    .app-card {\n      width: 100%;\n      &.active {\n          &::after {\n            top: 12px;\n            left: 58px;\n          }\n      }\n      &__wrapper  {\n        width: 100%;\n      } \n\n      &__container {\n        flex-direction: row;\n        padding: 13px 15px;\n        width: 100%;\n        & > img {\n          margin-right: 50px;\n          margin-bottom: 0;\n          width: 55px;\n          height: 62px;\n        }\n      }\n  \n  \n      &__text-wrapper {\n        text-align: center;\n        width: 50%;\n      }\n    }\n  }",
+                    "data": ".app-card {\n    background: rgba(var(--secondary-color-code), 0.5);\n    width: fit-content;\n    padding: 1px;\n    border-radius: 12px;\n    text-align: center;\n\n    &.active {\n        background: var(--success-grad-light);\n        position: relative;\n        \n        &::after {\n          content: url('../../../assets/images/checkbox.svg');\n          width: 19px;\n          height: 19px;\n          position: absolute;\n          display: flex;\n          align-items: center;\n          justify-content: center;\n          top: 8px;\n          right: 8px;\n          background: var(--success-grad-light);\n          border-radius: 50%;\n        }\n    }\n\n    &:hover {\n      background: var(--success-grad-light);\n      cursor: pointer;\n    }\n\n    &__wrapper {\n        border-radius: 12px;\n        background-color: var(--text-color);\n    }\n\n    &__text-wrapper {\n        width: 100%;\n        word-wrap: break-word;\n    }\n\n    &__container {\n        width: 130px;\n        padding: 22px 15px 28px;\n\n        border-radius: 12px;\n        background-color: rgba(var(--text-color-code), 0.15);\n        color: var(--secondary-color);\n\n        display: flex;\n        flex-direction: column;\n        align-items: center;\n\n        & > img {\n            margin-bottom: 20px;\n            width: 44px;\n            height: 50px;\n        }\n    }\n  }\n\n@media screen and (max-width: 600px) {\n  .app-card {\n    width: 100%;\n    &.active {\n        &::after {\n          top: 12px;\n          left: 58px;\n        }\n    }\n    &__wrapper  {\n      width: 100%;\n    } \n\n    &__container {\n      flex-direction: row;\n      padding: 13px 15px;\n      width: 100%;\n      & > img {\n        margin-right: 50px;\n        margin-bottom: 0;\n        width: 55px;\n        height: 62px;\n      }\n    }\n\n\n    &__text-wrapper {\n      text-align: center;\n      width: 50%;\n    }\n  }\n}",
                     "styleUrl": "./card.component.scss"
                 }
             ],
             "stylesData": "",
-            "constructorObj": {
-                "name": "constructor",
-                "description": "",
-                "args": [],
-                "line": 15
-            },
             "implements": [
                 "OnChanges"
             ],
@@ -266,7 +165,7 @@
         },
         {
             "name": "DateMenuComponent",
-            "id": "component-DateMenuComponent-5d1894e3c0ac585d7f019eccb0c44786",
+            "id": "component-DateMenuComponent-82e703cd31b36cd7300ac8895dcd9b12",
             "file": "src/app/molecules/menu/date-menu/date-menu.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -316,7 +215,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 15,
+                    "line": 12,
                     "jsdoctags": [
                         {
                             "name": "event",
@@ -333,14 +232,6 @@
                             }
                         }
                     ]
-                },
-                {
-                    "name": "ngOnInit",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 12
                 }
             ],
             "hostBindings": [],
@@ -348,7 +239,7 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-date-menu',\n  templateUrl: './date-menu.component.html',\n  styleUrls: ['./date-menu.component.scss']\n})\nexport class DateMenuComponent implements OnInit {\n  @Input() items: string[];\n  active = 0;\n\n  ngOnInit() {\n  }\n  \n  handlClick(event: any, i: number) {\n    event.preventDefault();\n    this.active = i;\n  }\n}\n",
+            "sourceCode": "import { Component, Input } from '@angular/core';\n\n@Component({\n  selector: 'app-date-menu',\n  templateUrl: './date-menu.component.html',\n  styleUrls: ['./date-menu.component.scss']\n})\nexport class DateMenuComponent {\n  @Input() items: string[];\n  active = 0;\n\n  handlClick(event: any, i: number) {\n    event.preventDefault();\n    this.active = i;\n  }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -357,14 +248,11 @@
                 }
             ],
             "stylesData": "",
-            "implements": [
-                "OnInit"
-            ],
             "templateData": "<div class=\"app-date-menu\">\n  <ul class=\"app-date-menu__list\">\n    <li \n      class=\"app-date-menu__item\"\n      *ngFor=\"let item of items; let i = index\" \n    >\n      <app-nav-link\n        [isActive]=\"active === i\"\n        [title]=\"item\" \n        classes=\"nav-link-secondary nav-link-highlited fs-12-gramm-400\"\n        (click)=\"handlClick($event, i)\"\n      >\n      </app-nav-link>\n    </li>\n  </ul>\n  <div class=\"app-date-menu__container\">\n    <img src='../../../../assets/images/calendar.png' alt=\"calendar\" />\n  </div>\n</div>\n"
         },
         {
             "name": "formInputComponent",
-            "id": "component-formInputComponent-685838e89e17c5238e1345aad72a1dcc",
+            "id": "component-formInputComponent-4d92682d9bd8e260d30bc0c71d9a5c6c",
             "file": "src/app/atoms/inputs/formInput/formInput.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -383,48 +271,39 @@
             "inputsClass": [
                 {
                     "name": "backgroundColor",
-                    "line": 12,
+                    "line": 10,
                     "type": "string"
                 },
                 {
                     "name": "classes",
-                    "line": 15,
-                    "type": "string"
-                },
-                {
-                    "name": "color",
-                    "line": 14,
-                    "type": "string"
-                },
-                {
-                    "name": "placeholder",
                     "line": 13,
                     "type": "string"
                 },
                 {
+                    "name": "color",
+                    "line": 12,
+                    "type": "string"
+                },
+                {
+                    "name": "placeholderText",
+                    "line": 11,
+                    "type": "string"
+                },
+                {
                     "name": "wrapperClasses",
-                    "line": 16,
+                    "line": 14,
                     "type": "string"
                 }
             ],
             "outputsClass": [],
             "propertiesClass": [],
-            "methodsClass": [
-                {
-                    "name": "ngOnInit",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 18
-                }
-            ],
+            "methodsClass": [],
             "hostBindings": [],
             "hostListeners": [],
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\n\n@Component({\n    selector: 'app-form-input',\n    templateUrl: './formInput.component.html',\n    styleUrls: ['formInput.component.scss'],\n})\n\n\n\nexport class formInputComponent implements OnInit {\n    @Input() backgroundColor: string;\n    @Input() placeholder: string;\n    @Input() color: string;\n    @Input() classes: string;\n    @Input() wrapperClasses: string;\n\n    ngOnInit() {\n\n    }\n}\n",
+            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\n\n@Component({\n    selector: 'app-form-input',\n    templateUrl: './formInput.component.html',\n    styleUrls: ['formInput.component.scss'],\n})\n\nexport class formInputComponent {\n    @Input() backgroundColor: string;\n    @Input() placeholderText: string;\n    @Input() color: string;\n    @Input() classes: string;\n    @Input() wrapperClasses: string;\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -433,14 +312,89 @@
                 }
             ],
             "stylesData": "",
-            "implements": [
-                "OnInit"
+            "templateData": "<div \n  [ngClass]=\"wrapperClasses\"\n>\n  <input \n    [ngClass]=\"classes\"\n    [ngStyle]=\"{ 'background': backgroundColor, 'color': color }\"\n    [placeholder]=\"placeholderText\"\n    type=\"text\"\n  >\n</div>\n"
+        },
+        {
+            "name": "FormScreenFifthComponent",
+            "id": "component-FormScreenFifthComponent-81bc91c938562e807d1603d2588046ef",
+            "file": "src/app/molecules/form-screens/form-screen-fifth/form-screen-fifth.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-form-screen-fifth",
+            "styleUrls": [
+                "./form-screen-fifth.component.scss"
             ],
-            "templateData": "<div \n  [ngClass]=\"wrapperClasses\"\n>\n  <input \n    [ngClass]=\"classes\"\n    [ngStyle]=\"{ 'background': backgroundColor, 'color': color }\"\n    [placeholder]=\"placeholder\"\n    type=\"text\"\n  >\n</div>\n"
+            "styles": [],
+            "templateUrl": [
+                "./form-screen-fifth.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "modules",
+                    "defaultValue": "[\n    {\n      title: \"GDPR, eprivacy\",\n      text: \"Europe\",\n    },\n    {\n      title: \"Thailand\",\n      text: \"Bangkok\",\n    },\n    {\n      title: \"Calofornia\",\n      text: \"Europe \",\n    },\n    {\n      title: \"CCPA\",\n      text: \"Europe\",\n    },\n    {\n      title: \"Canada\",\n      text: \"Ottawa\",\n    },\n    {\n      title: \"Dubai\",\n      text: \"Dubai \",\n    },\n    {\n      title: \"GDPR, eprivacy2\",\n      text: \"Europe\",\n    },\n    {\n      title: \"Thailand2\",\n      text: \"Bangkok\",\n    },\n    {\n      title: \"Calofornia2\",\n      text: \"Europe \",\n    },\n  ]",
+                    "type": "[]",
+                    "optional": false,
+                    "description": "",
+                    "line": 10
+                },
+                {
+                    "name": "selectedModules",
+                    "defaultValue": "[]",
+                    "type": "string[]",
+                    "optional": false,
+                    "description": "",
+                    "line": 9
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "selectModule",
+                    "args": [
+                        {
+                            "name": "title",
+                            "type": "string"
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 49,
+                    "jsdoctags": [
+                        {
+                            "name": "title",
+                            "type": "string",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\n\n@Component({\n  selector: 'app-form-screen-fifth',\n  templateUrl: './form-screen-fifth.component.html',\n  styleUrls: ['./form-screen-fifth.component.scss']\n})\nexport class FormScreenFifthComponent {\n  selectedModules: string[]=[];\n  modules=[\n    {\n      title: \"GDPR, eprivacy\",\n      text: \"Europe\",\n    },\n    {\n      title: \"Thailand\",\n      text: \"Bangkok\",\n    },\n    {\n      title: \"Calofornia\",\n      text: \"Europe \",\n    },\n    {\n      title: \"CCPA\",\n      text: \"Europe\",\n    },\n    {\n      title: \"Canada\",\n      text: \"Ottawa\",\n    },\n    {\n      title: \"Dubai\",\n      text: \"Dubai \",\n    },\n    {\n      title: \"GDPR, eprivacy2\",\n      text: \"Europe\",\n    },\n    {\n      title: \"Thailand2\",\n      text: \"Bangkok\",\n    },\n    {\n      title: \"Calofornia2\",\n      text: \"Europe \",\n    },\n  ]\n\n  selectModule(title: string) {\n    if (this.selectedModules.includes(title)) {\n      this.selectedModules = this.selectedModules.filter(module => module !== title);\n    } else {\n      this.selectedModules = [...this.selectedModules, title];\n    }\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".app-form-screen-fifth {\n   width: 100%;\n   display: flex;\n   justify-content: space-between;\n   align-items: center; \n\n   &__list {\n       width: 32%;\n   }\n\n   &__item {\n       width: 100%;\n       margin-bottom: 12px;;\n   }\n}\n\n.fs-h3 {\n    margin-bottom: 43px;\n}\n\n@media screen and (max-width: 600px) {\n    .app-form-screen-fifth {\n        flex-direction: column;\n     \n        &__list {\n            width: 100%;\n        }\n     \n        &__item {\n            width: 100%;\n            margin-bottom: 8px;;\n        }\n     }\n}",
+                    "styleUrl": "./form-screen-fifth.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<h3 class=\"fs-h3\">Select your compliance modules</h3>\n<div class=\"app-form-screen-fifth\">\n    <ul class=\"app-form-screen-fifth__list\">\n        <li \n            class=\"app-form-screen-fifth__item\"\n            *ngFor=\"let module of modules.slice(0, 3); let i = index\" \n        >\n            <app-large-button\n                (click)=\"selectModule(module.title)\"\n                [title]=\"module.title\"\n                [text]=\"module.text\"\n                [isActive]=\"selectedModules.includes(module.title)\"\n            >\n            </app-large-button>\n        </li>\n    </ul>\n    <ul class=\"app-form-screen-fifth__list\">\n        <li \n            class=\"app-form-screen-fifth__item\"\n            *ngFor=\"let module of modules.slice(3, 6); let i = index\" \n        >\n            <app-large-button\n                (click)=\"selectModule(module.title)\"\n                [title]=\"module.title\"\n                [text]=\"module.text\"\n                [isActive]=\"selectedModules.includes(module.title)\"\n            >\n            </app-large-button>\n        </li>\n    </ul>\n    <ul class=\"app-form-screen-fifth__list\">\n        <li \n            class=\"app-form-screen-fifth__item\"\n            *ngFor=\"let module of modules.slice(6); let i = index\" \n        >\n            <app-large-button\n                (click)=\"selectModule(module.title)\"\n                [title]=\"module.title\"\n                [text]=\"module.text\"\n                [isActive]=\"selectedModules.includes(module.title)\"\n            >\n            </app-large-button>\n        </li>\n    </ul>\n</div>\n\n\n"
         },
         {
             "name": "FormScreenFirstComponent",
-            "id": "component-FormScreenFirstComponent-16eb4047c9a3b278a32b3b361bdad16d",
+            "id": "component-FormScreenFirstComponent-945882fbe93b9cc741ffe24cfba04afe",
             "file": "src/app/molecules/form-screens/form-screen-first/form-screen-first.component.ts",
             "encapsulation": [
                 "ViewEncapsulation.None"
@@ -461,44 +415,26 @@
             "inputsClass": [],
             "outputsClass": [],
             "propertiesClass": [],
-            "methodsClass": [
-                {
-                    "name": "ngOnInit",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 13
-                }
-            ],
+            "methodsClass": [],
             "hostBindings": [],
             "hostListeners": [],
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, OnInit, ViewEncapsulation } from '@angular/core';\n\n@Component({\n  selector: 'app-form-screen-first',\n  templateUrl: './form-screen-first.component.html',\n  styleUrls: ['./form-screen-first.component.scss'],\n  encapsulation: ViewEncapsulation.None\n})\nexport class FormScreenFirstComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "sourceCode": "import { Component, ViewEncapsulation } from '@angular/core';\n\n@Component({\n  selector: 'app-form-screen-first',\n  templateUrl: './form-screen-first.component.html',\n  styleUrls: ['./form-screen-first.component.scss'],\n  encapsulation: ViewEncapsulation.None\n})\n\nexport class FormScreenFirstComponent {\n\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".app-form-screen-first {\n    &__container {\n        width: 100%;\n        margin-top: 32px;\n        display: flex;\n        justify-content: space-between;\n    }\n\n    &__column {\n        width: 48%;\n\n        & > app-form-input {\n            margin-bottom: 32px;\n        }\n    }\n}\n\n.form-input__wrapper {\n    margin-bottom: 32px;\n}\n\n@media screen and (max-width: 600px) {\n    .app-form-screen-first {\n        &__container {\n            flex-direction: column;\n        }\n\n        &__column {\n            width: 99%;\n        }\n    } \n}\n",
+                    "data": ".app-form-screen-first {\n    &__container {\n        width: 100%;\n        margin-top: 32px;\n        display: flex;\n        justify-content: space-between;\n    }\n\n    &__column {\n        width: 48%;\n\n        & > app-form-input {\n            margin-bottom: 32px;\n        }\n    }\n}\n\n.form-input__wrapper {\n    margin-bottom: 32px;\n}\n\n@media screen and (max-width: 600px) {\n    .app-form-screen-first {\n        &__container {\n            flex-direction: column;\n        }\n\n        &__column {\n            width: 99%;\n        }\n    } \n\n    .form-input__wrapper {\n        margin-bottom: 5px;\n    }\n}\n",
                     "styleUrl": "./form-screen-first.component.scss"
                 }
             ],
             "stylesData": "",
-            "constructorObj": {
-                "name": "constructor",
-                "description": "",
-                "args": [],
-                "line": 9
-            },
-            "implements": [
-                "OnInit"
-            ],
-            "templateData": "<h3 class=\"fs-h3\">Create your account</h3>\n<div class=\"app-form-screen-first__container\"> \n    <div class=\"app-form-screen-first__column\">   \n       <app-form-input\n            [placeholder]=\"'First Name'\"\n            [classes]=\"'form-input-field form-input-field--simple fs-16-sofia-300'\"\n            [wrapperClasses]=\"'form-input__wrapper form-input__wrapper--simple'\"\n        > \n        </app-form-input> \n        <app-form-input\n            [placeholder]=\"'Email'\"\n            [classes]=\"'form-input-field form-input-field--simple fs-16-sofia-300'\"\n            [wrapperClasses]=\"'form-input__wrapper form-input__wrapper--simple'\"\n        > \n        </app-form-input>    \n        <app-form-input\n            [placeholder]=\"'Password'\"\n            [classes]=\"'form-input-field form-input-field--simple fs-16-sofia-300'\"\n            [wrapperClasses]=\"'form-input__wrapper form-input__wrapper--simple'\"\n        > \n        </app-form-input>        \n    </div>\n    <div class=\"app-form-screen-first__column\">   \n        <app-form-input\n            [placeholder]=\"'Last Name'\"\n            [classes]=\"'form-input-field form-input-field--simple fs-16-sofia-300'\"\n            [wrapperClasses]=\"'form-input__wrapper form-input__wrapper--simple'\"\n         > \n         </app-form-input> \n         <app-form-input\n            [placeholder]=\"'This account is for'\"\n            [classes]=\"'form-input-field form-input-field--simple fs-16-sofia-300'\"\n            [wrapperClasses]=\"'form-input__wrapper form-input__wrapper--simple'\"\n         > \n         </app-form-input>    \n         <app-form-input\n            [placeholder]=\"'Confirm Password'\"\n            [classes]=\"'form-input-field form-input-field--simple fs-16-sofia-300'\"\n            [wrapperClasses]=\"'form-input__wrapper form-input__wrapper--simple'\"\n         > \n         </app-form-input>        \n   </div>\n</div>\n"
+            "templateData": "<h3 class=\"fs-h3\">Create your account</h3>\n<div class=\"app-form-screen-first__container\"> \n    <div class=\"app-form-screen-first__column\">   \n       <app-form-input\n            [placeholderText]=\"'First Name'\"\n            [classes]=\"'form-input-field form-input-field--simple fs-16-sofia-300'\"\n            [wrapperClasses]=\"'form-input__wrapper form-input__wrapper--simple'\"\n        > \n        </app-form-input> \n        <app-form-input\n            [placeholderText]=\"'Email'\"\n            [classes]=\"'form-input-field form-input-field--simple fs-16-sofia-300'\"\n            [wrapperClasses]=\"'form-input__wrapper form-input__wrapper--simple'\"\n        > \n        </app-form-input>    \n        <app-form-input\n            [placeholderText]=\"'Password'\"\n            [classes]=\"'form-input-field form-input-field--simple fs-16-sofia-300'\"\n            [wrapperClasses]=\"'form-input__wrapper form-input__wrapper--simple'\"\n        > \n        </app-form-input>        \n    </div>\n    <div class=\"app-form-screen-first__column\">   \n        <app-form-input\n            [placeholderText]=\"'Last Name'\"\n            [classes]=\"'form-input-field form-input-field--simple fs-16-sofia-300'\"\n            [wrapperClasses]=\"'form-input__wrapper form-input__wrapper--simple'\"\n         > \n         </app-form-input> \n         <app-form-input\n            [placeholderText]=\"'This account is for'\"\n            [classes]=\"'form-input-field form-input-field--simple fs-16-sofia-300'\"\n            [wrapperClasses]=\"'form-input__wrapper form-input__wrapper--simple'\"\n         > \n         </app-form-input>    \n         <app-form-input\n            [placeholderText]=\"'Confirm Password'\"\n            [classes]=\"'form-input-field form-input-field--simple fs-16-sofia-300'\"\n            [wrapperClasses]=\"'form-input__wrapper form-input__wrapper--simple'\"\n         > \n         </app-form-input>        \n   </div>\n</div>\n"
         },
         {
             "name": "FormScreenFourthComponent",
-            "id": "component-FormScreenFourthComponent-adf65d61df554e975fea2814b714ddbb",
+            "id": "component-FormScreenFourthComponent-396d9e58f7ff5dc64413ab04f7ea2dba",
             "file": "src/app/molecules/form-screens/form-screen-fourth/form-screen-fourth.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -516,15 +452,46 @@
             "viewProviders": [],
             "inputsClass": [],
             "outputsClass": [],
-            "propertiesClass": [],
+            "propertiesClass": [
+                {
+                    "name": "modules",
+                    "defaultValue": "[\n    {\n      title: \"GDPR, eprivacy\",\n      text: \"Europe\",\n    },\n    {\n      title: \"Thailand\",\n      text: \"Bangkok\",\n    },\n    {\n      title: \"Calofornia\",\n      text: \"Europe \",\n    },\n    {\n      title: \"CCPA\",\n      text: \"Europe\",\n    },\n    {\n      title: \"Canada\",\n      text: \"Ottawa\",\n    },\n    {\n      title: \"Dubai\",\n      text: \"Dubai \",\n    },\n  ]",
+                    "type": "[]",
+                    "optional": false,
+                    "description": "",
+                    "line": 11
+                },
+                {
+                    "name": "selectedModules",
+                    "defaultValue": "[]",
+                    "type": "string[]",
+                    "optional": false,
+                    "description": "",
+                    "line": 10
+                }
+            ],
             "methodsClass": [
                 {
-                    "name": "ngOnInit",
-                    "args": [],
+                    "name": "selectModule",
+                    "args": [
+                        {
+                            "name": "title",
+                            "type": "string"
+                        }
+                    ],
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 12
+                    "line": 38,
+                    "jsdoctags": [
+                        {
+                            "name": "title",
+                            "type": "string",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
                 }
             ],
             "hostBindings": [],
@@ -532,29 +499,20 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-form-screen-fourth',\n  templateUrl: './form-screen-fourth.component.html',\n  styleUrls: ['./form-screen-fourth.component.scss']\n})\nexport class FormScreenFourthComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "sourceCode": "import { Component } from '@angular/core';\n\n@Component({\n  selector: 'app-form-screen-fourth',\n  templateUrl: './form-screen-fourth.component.html',\n  styleUrls: ['./form-screen-fourth.component.scss']\n})\nexport class FormScreenFourthComponent {\n\n  selectedModules: string[]=[];\n  modules=[\n    {\n      title: \"GDPR, eprivacy\",\n      text: \"Europe\",\n    },\n    {\n      title: \"Thailand\",\n      text: \"Bangkok\",\n    },\n    {\n      title: \"Calofornia\",\n      text: \"Europe \",\n    },\n    {\n      title: \"CCPA\",\n      text: \"Europe\",\n    },\n    {\n      title: \"Canada\",\n      text: \"Ottawa\",\n    },\n    {\n      title: \"Dubai\",\n      text: \"Dubai \",\n    },\n  ]\n\n  selectModule(title: string) {\n    if (this.selectedModules.includes(title)) {\n      this.selectedModules = this.selectedModules.filter(module => module !== title);\n    } else {\n      this.selectedModules = [...this.selectedModules, title];\n    }\n  }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "",
+                    "data": ".app-form-screen-fourth {\n    width: 100%;\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n\n    &__list {\n        width: 48%;\n    }\n\n    &__item {\n        width: 100%;\n        margin-bottom: 16px;\n    }\n}\n\n\n.fs-h3 {\n    margin-bottom: 43px;\n}\n\n\n@media screen and (max-width: 600px) {\n    .app-form-screen-fourth {\n        flex-direction: column;\n     \n        &__list {\n            width: 100%;\n        }\n     \n        &__item {\n            width: 100%;\n            margin-bottom: 8px;;\n        }\n     }\n}",
                     "styleUrl": "./form-screen-fourth.component.scss"
                 }
             ],
             "stylesData": "",
-            "constructorObj": {
-                "name": "constructor",
-                "description": "",
-                "args": [],
-                "line": 8
-            },
-            "implements": [
-                "OnInit"
-            ],
-            "templateData": "<p>form-screen-fourth works!</p>\n"
+            "templateData": "<h3 class=\"fs-h3\">Select your compliance modules</h3>\n<div class=\"app-form-screen-fourth\">\n    <ul class=\"app-form-screen-fourth__list\">\n        <li \n            class=\"app-form-screen-fourth__item\"\n            *ngFor=\"let module of modules.slice(0, modules.length/2); let i = index\" \n        >\n            <app-large-button\n                (click)=\"selectModule(module.title)\"\n                [title]=\"module.title\"\n                [text]=\"module.text\"\n                [isActive]=\"selectedModules.includes(module.title)\"\n            >\n            </app-large-button>\n        </li>\n    </ul>\n    <ul class=\"app-form-screen-fourth__list\">\n        <li \n            class=\"app-form-screen-fourth__item\"\n            *ngFor=\"let module of modules.slice(modules.length/2); let i = index\" \n        >\n            <app-large-button\n                (click)=\"selectModule(module.title)\"\n                [title]=\"module.title\"\n                [text]=\"module.text\"\n                [isActive]=\"selectedModules.includes(module.title)\"\n            >\n            </app-large-button>\n        </li>\n    </ul>\n</div>\n\n"
         },
         {
             "name": "FormScreenSecondComponent",
-            "id": "component-FormScreenSecondComponent-f38e5338cd795724065676f709596162",
+            "id": "component-FormScreenSecondComponent-254f069c736237e438893d0c2f7cfb69",
             "file": "src/app/molecules/form-screens/form-screen-second/form-screen-second.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -573,22 +531,13 @@
             "inputsClass": [],
             "outputsClass": [],
             "propertiesClass": [],
-            "methodsClass": [
-                {
-                    "name": "ngOnInit",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 12
-                }
-            ],
+            "methodsClass": [],
             "hostBindings": [],
             "hostListeners": [],
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-form-screen-second',\n  templateUrl: './form-screen-second.component.html',\n  styleUrls: ['./form-screen-second.component.scss']\n})\nexport class FormScreenSecondComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "sourceCode": "import { Component } from '@angular/core';\n\n@Component({\n  selector: 'app-form-screen-second',\n  templateUrl: './form-screen-second.component.html',\n  styleUrls: ['./form-screen-second.component.scss']\n})\nexport class FormScreenSecondComponent {\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -597,20 +546,11 @@
                 }
             ],
             "stylesData": "",
-            "constructorObj": {
-                "name": "constructor",
-                "description": "",
-                "args": [],
-                "line": 8
-            },
-            "implements": [
-                "OnInit"
-            ],
-            "templateData": "<h3 class=\"fs-h3\">Add your first domain</h3>\n<p class=\"fs-18-sofia-300\">You can add more domains inside the app</p>\n<app-form-input\n    [placeholder]=\"'yourwebsite.com'\"\n    [classes]=\"'form-input-field form-input-field--simple fs-16-sofia-300'\"\n    [wrapperClasses]=\"'form-input__wrapper form-input__wrapper--simple'\"\n> \n</app-form-input>"
+            "templateData": "<h3 class=\"fs-h3\">Add your first domain</h3>\n<p class=\"fs-18-sofia-300\">You can add more domains inside the app</p>\n<app-form-input\n    [placeholderText]=\"'yourwebsite.com'\"\n    [classes]=\"'form-input-field form-input-field--simple fs-16-sofia-300'\"\n    [wrapperClasses]=\"'form-input__wrapper form-input__wrapper--simple'\"\n> \n</app-form-input>"
         },
         {
             "name": "FormScreenThirdComponent",
-            "id": "component-FormScreenThirdComponent-a881afdd176b415325052f0dc2fccab5",
+            "id": "component-FormScreenThirdComponent-3beaee160e13d6d94bcd0c79904b2491",
             "file": "src/app/molecules/form-screens/form-screen-third/form-screen-third.component.ts",
             "encapsulation": [
                 "ViewEncapsulation.None"
@@ -650,14 +590,6 @@
             ],
             "methodsClass": [
                 {
-                    "name": "ngOnInit",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 39
-                },
-                {
                     "name": "selectModule",
                     "args": [
                         {
@@ -685,7 +617,7 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, OnInit, ViewEncapsulation } from '@angular/core';\n\n@Component({\n  selector: 'app-form-screen-third',\n  templateUrl: './form-screen-third.component.html',\n  styleUrls: ['./form-screen-third.component.scss'],\n  encapsulation: ViewEncapsulation.None\n})\nexport class FormScreenThirdComponent implements OnInit {\n  selectedModules: string[]=[];\n  modules=[\n    {\n      title: \"GDPR, eprivacy\",\n      text: \"Europe\",\n      src: \"assets/images/flags/euro.png\"\n    },\n    {\n      title: \"CCPA\",\n      text: \"California\",\n      src: \"assets/images/flags/ccpa.png\"\n    },\n    {\n      title: \"LGPD\",\n      text: \"Brasil \",\n      src: \"assets/images/flags/lgpd.png\"\n    }\n  ]\n\n  selectModule(title: string) {\n    if (this.selectedModules.includes(title)) {\n      this.selectedModules = this.selectedModules.filter(module => module !== title);\n    } else {\n      this.selectedModules = [...this.selectedModules, title];\n    }\n\n    console.log(this.selectedModules)\n  }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "sourceCode": "import { Component, ViewEncapsulation } from '@angular/core';\n\n@Component({\n  selector: 'app-form-screen-third',\n  templateUrl: './form-screen-third.component.html',\n  styleUrls: ['./form-screen-third.component.scss'],\n  encapsulation: ViewEncapsulation.None\n})\nexport class FormScreenThirdComponent {\n  selectedModules: string[]=[];\n  modules=[\n    {\n      title: \"GDPR, eprivacy\",\n      text: \"Europe\",\n      src: \"assets/images/flags/euro.png\"\n    },\n    {\n      title: \"CCPA\",\n      text: \"California\",\n      src: \"assets/images/flags/ccpa.png\"\n    },\n    {\n      title: \"LGPD\",\n      text: \"Brasil \",\n      src: \"assets/images/flags/lgpd.png\"\n    }\n  ]\n\n  selectModule(title: string) {\n    if (this.selectedModules.includes(title)) {\n      this.selectedModules = this.selectedModules.filter(module => module !== title);\n    } else {\n      this.selectedModules = [...this.selectedModules, title];\n    }\n  }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -694,14 +626,11 @@
                 }
             ],
             "stylesData": "",
-            "implements": [
-                "OnInit"
-            ],
             "templateData": "<h3 class=\"fs-h3\">Select your compliance modules</h3>\n<ul class=\"app-form-screen-third__container\">\n    <li \n        class=\"app-form-screen-third__item\"\n        *ngFor=\"let module of modules; let i = index\" \n    >\n        <app-card\n            (click)=\"selectModule(module.title)\"\n            [title]=\"module.title\"\n            [text]=\"module.text\"\n            [src]=\"module.src\"\n            [isActive]=\"selectedModules.includes(module.title)\"\n        >\n        </app-card>\n    </li>\n</ul>\n"
         },
         {
             "name": "gradientButtonComponent",
-            "id": "component-gradientButtonComponent-ee857e56cbc93120dd448d40b64dc232",
+            "id": "component-gradientButtonComponent-af6591e44001c8c2e3ae99bd88b66b85",
             "file": "src/app/atoms/buttons/gradientButton/gradientButton.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -721,42 +650,33 @@
             "inputsClass": [
                 {
                     "name": "backgroundColor",
-                    "line": 13,
+                    "line": 11,
                     "type": "string"
                 },
                 {
                     "name": "color",
-                    "line": 14,
+                    "line": 12,
                     "type": "string"
                 },
                 {
                     "name": "title",
-                    "line": 12,
+                    "line": 10,
                     "type": "string"
                 }
             ],
             "outputsClass": [],
             "propertiesClass": [],
-            "methodsClass": [
-                {
-                    "name": "ngOnInit",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 16
-                }
-            ],
+            "methodsClass": [],
             "hostBindings": [],
             "hostListeners": [],
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\n\n@Component({\n    selector: 'app-gradient-button',\n    templateUrl: './gradientButton.component.html',\n    styleUrls: ['../button.component.scss', 'gradientButton.component.scss'],\n})\n\n\n\nexport class gradientButtonComponent implements OnInit {\n    @Input() title: string;\n    @Input() backgroundColor: string;\n    @Input() color: string;\n\n    ngOnInit() {\n\n    }\n}\n",
+            "sourceCode": "import { Component, Input } from '@angular/core';\n\n@Component({\n    selector: 'app-gradient-button',\n    templateUrl: './gradientButton.component.html',\n    styleUrls: ['../button.component.scss', 'gradientButton.component.scss'],\n})\n\nexport class gradientButtonComponent  {\n    @Input() title: string;\n    @Input() backgroundColor: string;\n    @Input() color: string;\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".btn-app {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  box-sizing: border-box;\n  outline: none;\n  transition: 0.3s;\n  border-radius: 8px;\n  &--h36 {\n    height: 36px;\n    padding: 10px 18px 8px 18px;\n  }\n  &--asimetric {\n    border-radius: 20px 5px;\n    height: 52px;\n    padding: 18px 41px 18px 44px;\n  }\n\n  &--h46 {\n    height: 46px;\n    padding: 13px 19px 12px 17px;\n  }\n\n  &--h53 {\n    padding: 9px 50px;\n    height: 53px;\n  }\n}\n",
+                    "data": ".btn-app {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  box-sizing: border-box;\n  outline: none;\n  transition: 0.3s;\n  border-radius: 8px;\n  &--h36 {\n    height: 36px;\n    padding: 10px 18px 8px 18px;\n  }\n  &--asimetric {\n    border-radius: 20px 5px;\n    height: 52px;\n    padding: 18px 41px 18px 44px;\n  }\n\n  &--h46 {\n    height: 46px;\n    padding: 13px 19px 12px 17px;\n  }\n\n  &--h53 {\n    padding: 9px 10px;\n    height: 53px;\n  }\n}\n",
                     "styleUrl": "../button.component.scss"
                 },
                 {
@@ -765,14 +685,11 @@
                 }
             ],
             "stylesData": "",
-            "implements": [
-                "OnInit"
-            ],
-            "templateData": "<button\n  [ngClass]=\"classes\"\n  [ngStyle]=\"{ 'background': backgroundColor, 'color': color }\"\n>\n  {{ title }}\n  <img src='assets/images/next.svg' alt=\"arrow\" />\n</button>\n\n"
+            "templateData": "<button\n  class=\"btn-app--asimetric btn-app btn-grad fs-16-sofia-800\"\n  [ngStyle]=\"{ 'background': backgroundColor, 'color': color }\"\n>\n  {{ title }}\n  <img src='assets/images/next.svg' alt=\"arrow\" />\n</button>\n\n"
         },
         {
             "name": "IconContainerComponent",
-            "id": "component-IconContainerComponent-7cbd95fa14f6bcba21cf9a5a4b6f1d3c",
+            "id": "component-IconContainerComponent-d73cfc4ef07f33757fef4d60b68a9605",
             "file": "src/app/atoms/iconContainer/iconContainer.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -797,22 +714,13 @@
             ],
             "outputsClass": [],
             "propertiesClass": [],
-            "methodsClass": [
-                {
-                    "name": "ngOnInit",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 14
-                }
-            ],
+            "methodsClass": [],
             "hostBindings": [],
             "hostListeners": [],
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\n\n@Component({\n    selector: 'app-icon-container',\n    templateUrl: './iconContainer.component.html',\n    styleUrls: ['iconContainer.component.scss'],\n})\n\n\n\nexport class IconContainerComponent implements OnInit {\n    @Input() backgroundColor: string;\n\n    ngOnInit() {\n\n    }\n}\n",
+            "sourceCode": "import { Component, Input } from '@angular/core';\n\n@Component({\n    selector: 'app-icon-container',\n    templateUrl: './iconContainer.component.html',\n    styleUrls: ['iconContainer.component.scss'],\n})\n\n\n\nexport class IconContainerComponent {\n    @Input() backgroundColor: string;\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -821,14 +729,11 @@
                 }
             ],
             "stylesData": "",
-            "implements": [
-                "OnInit"
-            ],
             "templateData": "<div \n  [ngStyle]=\"{ 'background': backgroundColor }\"\n  class=\"icons-container\"\n>\n  <div class=\"icons-container-box\">\n      <img src=\"assets/images/companies/logo1.png\" alt=\"company logo\">\n      <img src=\"assets/images/companies/logo2.png\" alt=\"company logo\">\n      <img src=\"assets/images/companies/logo3.png\" alt=\"company logo\">\n  </div>\n  <div class=\"icons-container-box\">\n      <img src=\"assets/images/companies/logo4.png\" alt=\"company logo\">\n      <img src=\"assets/images/companies/logo5.png\" alt=\"company logo\">\n      <img src=\"assets/images/companies/logo6.png\" alt=\"company logo\">\n  </div>\n</div>\n"
         },
         {
             "name": "infoButtonComponent",
-            "id": "component-infoButtonComponent-a0e838d1117da308099ddbbbb641b940",
+            "id": "component-infoButtonComponent-1f6201a32d98d7dd07eb1c8102ed5ca0",
             "file": "src/app/atoms/buttons/infoButton/infoButton.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -848,47 +753,33 @@
             "inputsClass": [
                 {
                     "name": "backgroundColor",
-                    "line": 14,
-                    "type": "string"
-                },
-                {
-                    "name": "classes",
-                    "line": 13,
+                    "line": 11,
                     "type": "string"
                 },
                 {
                     "name": "color",
-                    "line": 15,
+                    "line": 12,
                     "type": "string"
                 },
                 {
                     "name": "title",
-                    "line": 12,
+                    "line": 10,
                     "type": "string"
                 }
             ],
             "outputsClass": [],
             "propertiesClass": [],
-            "methodsClass": [
-                {
-                    "name": "ngOnInit",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 17
-                }
-            ],
+            "methodsClass": [],
             "hostBindings": [],
             "hostListeners": [],
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\n\n@Component({\n    selector: 'app-info-button',\n    templateUrl: './infoButton.component.html',\n    styleUrls: ['../button.component.scss', 'infoButton.component.scss'],\n})\n\n\n\nexport class infoButtonComponent implements OnInit {\n    @Input() title: string;\n    @Input() classes: string;\n    @Input() backgroundColor: string;\n    @Input() color: string;\n\n    ngOnInit() {\n\n    }\n}\n",
+            "sourceCode": "import { Component, Input } from '@angular/core';\n\n@Component({\n    selector: 'app-info-button',\n    templateUrl: './infoButton.component.html',\n    styleUrls: ['../button.component.scss', 'infoButton.component.scss'],\n})\n\nexport class infoButtonComponent {\n    @Input() title: string;\n    @Input() backgroundColor: string;\n    @Input() color: string;\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".btn-app {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  box-sizing: border-box;\n  outline: none;\n  transition: 0.3s;\n  border-radius: 8px;\n  &--h36 {\n    height: 36px;\n    padding: 10px 18px 8px 18px;\n  }\n  &--asimetric {\n    border-radius: 20px 5px;\n    height: 52px;\n    padding: 18px 41px 18px 44px;\n  }\n\n  &--h46 {\n    height: 46px;\n    padding: 13px 19px 12px 17px;\n  }\n\n  &--h53 {\n    padding: 9px 50px;\n    height: 53px;\n  }\n}\n",
+                    "data": ".btn-app {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  box-sizing: border-box;\n  outline: none;\n  transition: 0.3s;\n  border-radius: 8px;\n  &--h36 {\n    height: 36px;\n    padding: 10px 18px 8px 18px;\n  }\n  &--asimetric {\n    border-radius: 20px 5px;\n    height: 52px;\n    padding: 18px 41px 18px 44px;\n  }\n\n  &--h46 {\n    height: 46px;\n    padding: 13px 19px 12px 17px;\n  }\n\n  &--h53 {\n    padding: 9px 10px;\n    height: 53px;\n  }\n}\n",
                     "styleUrl": "../button.component.scss"
                 },
                 {
@@ -897,14 +788,11 @@
                 }
             ],
             "stylesData": "",
-            "implements": [
-                "OnInit"
-            ],
-            "templateData": "<button \n  [ngClass]=\"classes\"\n  [ngStyle]=\"{ 'background': backgroundColor, 'color': color }\"\n>\n  <img src=\"assets/images/support.png\" alt=\"support button logo\">\n  {{ title }}\n</button>\n"
+            "templateData": "<button \n  class=\"btn-app btn-info fs-14-sofia-normal\"\n  [ngStyle]=\"{ 'background': backgroundColor, 'color': color }\"\n>\n  <img src=\"assets/images/support.png\" alt=\"support button logo\">\n  {{ title }}\n</button>\n"
         },
         {
             "name": "largeButtonComponent",
-            "id": "component-largeButtonComponent-63bad58326caa129a51d540d58512e45",
+            "id": "component-largeButtonComponent-0b2daa9e18aac34629177ff957b7533c",
             "file": "src/app/atoms/buttons/largeButton/largeButton.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -924,35 +812,43 @@
             "inputsClass": [
                 {
                     "name": "backgroundColor",
-                    "line": 15,
-                    "type": "string"
-                },
-                {
-                    "name": "classes",
-                    "line": 14,
-                    "type": "string"
-                },
-                {
-                    "name": "color",
-                    "line": 16,
-                    "type": "string"
-                },
-                {
-                    "name": "text",
                     "line": 13,
                     "type": "string"
                 },
                 {
-                    "name": "title",
+                    "name": "color",
+                    "line": 14,
+                    "type": "string"
+                },
+                {
+                    "name": "isActive",
                     "line": 12,
+                    "type": "string"
+                },
+                {
+                    "name": "text",
+                    "line": 11,
+                    "type": "string"
+                },
+                {
+                    "name": "title",
+                    "line": 10,
                     "type": "string"
                 }
             ],
             "outputsClass": [],
-            "propertiesClass": [],
+            "propertiesClass": [
+                {
+                    "name": "classes",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 16
+                }
+            ],
             "methodsClass": [
                 {
-                    "name": "ngOnInit",
+                    "name": "ngOnChanges",
                     "args": [],
                     "optional": false,
                     "returnType": "void",
@@ -965,27 +861,27 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\n\n@Component({\n    selector: 'app-large-button',\n    templateUrl: './largeButton.component.html',\n    styleUrls: ['../button.component.scss', 'largeButton.component.scss'],\n})\n\n\n\nexport class largeButtonComponent implements OnInit {\n    @Input() title: string;\n    @Input() text: string;\n    @Input() classes: string;\n    @Input() backgroundColor: string;\n    @Input() color: string;\n\n    ngOnInit() {\n\n    }\n}\n",
+            "sourceCode": "import { Component, Input, OnChanges } from '@angular/core';\n\n@Component({\n    selector: 'app-large-button',\n    templateUrl: './largeButton.component.html',\n    styleUrls: ['../button.component.scss', 'largeButton.component.scss'],\n})\n\nexport class largeButtonComponent implements OnChanges {\n    @Input() title: string;\n    @Input() text: string;\n    @Input() isActive: string;\n    @Input() backgroundColor: string;\n    @Input() color: string;\n\n    classes: string;\n\n    ngOnChanges() {\n        this.classes = !this.isActive ? \"btn-large btn-app--h53 btn-app \" : \"btn-large active btn-app--h53 btn-app \";\n    }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".btn-app {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  box-sizing: border-box;\n  outline: none;\n  transition: 0.3s;\n  border-radius: 8px;\n  &--h36 {\n    height: 36px;\n    padding: 10px 18px 8px 18px;\n  }\n  &--asimetric {\n    border-radius: 20px 5px;\n    height: 52px;\n    padding: 18px 41px 18px 44px;\n  }\n\n  &--h46 {\n    height: 46px;\n    padding: 13px 19px 12px 17px;\n  }\n\n  &--h53 {\n    padding: 9px 50px;\n    height: 53px;\n  }\n}\n",
+                    "data": ".btn-app {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  box-sizing: border-box;\n  outline: none;\n  transition: 0.3s;\n  border-radius: 8px;\n  &--h36 {\n    height: 36px;\n    padding: 10px 18px 8px 18px;\n  }\n  &--asimetric {\n    border-radius: 20px 5px;\n    height: 52px;\n    padding: 18px 41px 18px 44px;\n  }\n\n  &--h46 {\n    height: 46px;\n    padding: 13px 19px 12px 17px;\n  }\n\n  &--h53 {\n    padding: 9px 10px;\n    height: 53px;\n  }\n}\n",
                     "styleUrl": "../button.component.scss"
                 },
                 {
-                    "data": ".btn-large {\n    background: transparent;\n    border: none;\n    position: relative;\n    color: var(--secondary-color);\n    width: 100%;\n    z-index: 2;\n    display: flex;\n    \n    &.btn-app { \n        justify-content: center;\n    }\n\n    &--active {\n        background: var(--success-grad-light);\n        color: var(--text-color);\n    }\n\n    & > span > p {\n        margin: 0;\n    }\n\n    & > span > .fs-14-strong {\n        text-transform: uppercase;\n    }\n\n    &::before {\n        position: absolute;\n        width: 100%;\n        height: 100%;\n        content: '';\n        background: rgba(var(--secondary-color-code), 0.05);\n        z-index: -1;\n        top: 0;\n        left: 0;\n        border-radius: 8px;\n        transition: 0.3s;\n    }\n\n    &::after {\n        position: absolute;\n        width: 100%;\n        height: 100%;\n        content: '';\n        z-index: -1;\n        background: var(--success-grad-light);\n        top: 0;\n        left: 0;\n        border-radius: 8px;\n        transition: 0.3s;\n        opacity: 0;\n    }\n\n    &:hover {\n        &::before {\n            background: rgba(var(--secondary-color-code), 0.1);\n        }\n    }\n\n    &:active {\n        color: var(--text-color);\n        &::before {\n            opacity: 0;\n        }\n\n        &::after {\n            opacity: 1;\n        }\n    }\n}",
+                    "data": ".btn-large {\n    background: transparent;\n    border: none;\n    position: relative;\n    color: var(--secondary-color);\n    width: 100%;\n    z-index: 2;\n    display: flex;\n    justify-content: center;\n\n    &.active {\n        background: var(--success-grad-light);\n        color: var(--text-color);\n    }\n\n    & > span > p {\n        margin: 0;\n    }\n\n    & > span > .fs-14-gramm-normal {\n        text-transform: uppercase;\n    }\n\n    &::before {\n        position: absolute;\n        width: 100%;\n        height: 100%;\n        content: '';\n        background: rgba(var(--secondary-color-code), 0.05);\n        z-index: -1;\n        top: 0;\n        left: 0;\n        border-radius: 8px;\n        transition: 0.3s;\n    }\n\n    &::after {\n        position: absolute;\n        width: 100%;\n        height: 100%;\n        content: '';\n        z-index: -1;\n        background: var(--success-grad-light);\n        top: 0;\n        left: 0;\n        border-radius: 8px;\n        transition: 0.3s;\n        opacity: 0;\n    }\n\n    &:hover {\n        &::before {\n            background: rgba(var(--secondary-color-code), 0.1);\n        }\n    }\n\n    &:active {\n        color: var(--text-color);\n        &::before {\n            opacity: 0;\n        }\n\n        &::after {\n            opacity: 1;\n        }\n    }\n}",
                     "styleUrl": "largeButton.component.scss"
                 }
             ],
             "stylesData": "",
             "implements": [
-                "OnInit"
+                "OnChanges"
             ],
             "templateData": "<button \n  [ngClass]=\"classes\"\n  [ngStyle]=\"{ 'background': backgroundColor, 'color': color }\"\n>\n  <span>\n      <p class=\"fs-14-gramm-normal\">{{ title }}</p>\n      <p class=\"fs-14-sofia-300\">{{ text }}</p>\n  </span>\n</button>"
         },
         {
             "name": "lightButtonComponent",
-            "id": "component-lightButtonComponent-b84de4644a0bba524447d89278eda9ac",
+            "id": "component-lightButtonComponent-4bb6efbf0c90b015d23c490755a74935",
             "file": "src/app/atoms/buttons/lightButton/lightButton.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1005,37 +901,23 @@
             "inputsClass": [
                 {
                     "name": "backgroundColor",
-                    "line": 13,
-                    "type": "string"
-                },
-                {
-                    "name": "classes",
-                    "line": 12,
+                    "line": 10,
                     "type": "string"
                 }
             ],
             "outputsClass": [],
             "propertiesClass": [],
-            "methodsClass": [
-                {
-                    "name": "ngOnInit",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 15
-                }
-            ],
+            "methodsClass": [],
             "hostBindings": [],
             "hostListeners": [],
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\n\n@Component({\n    selector: 'app-light-button',\n    templateUrl: './lightButton.component.html',\n    styleUrls: ['../button.component.scss', 'lightButton.component.scss'],\n})\n\n\n\nexport class lightButtonComponent implements OnInit {\n    @Input() classes: string;\n    @Input() backgroundColor: string;\n\n    ngOnInit() {\n\n    }\n}\n",
+            "sourceCode": "import { Component, Input } from '@angular/core';\n\n@Component({\n    selector: 'app-light-button',\n    templateUrl: './lightButton.component.html',\n    styleUrls: ['../button.component.scss', 'lightButton.component.scss'],\n})\n\nexport class lightButtonComponent {\n    @Input() backgroundColor: string;\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".btn-app {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  box-sizing: border-box;\n  outline: none;\n  transition: 0.3s;\n  border-radius: 8px;\n  &--h36 {\n    height: 36px;\n    padding: 10px 18px 8px 18px;\n  }\n  &--asimetric {\n    border-radius: 20px 5px;\n    height: 52px;\n    padding: 18px 41px 18px 44px;\n  }\n\n  &--h46 {\n    height: 46px;\n    padding: 13px 19px 12px 17px;\n  }\n\n  &--h53 {\n    padding: 9px 50px;\n    height: 53px;\n  }\n}\n",
+                    "data": ".btn-app {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  box-sizing: border-box;\n  outline: none;\n  transition: 0.3s;\n  border-radius: 8px;\n  &--h36 {\n    height: 36px;\n    padding: 10px 18px 8px 18px;\n  }\n  &--asimetric {\n    border-radius: 20px 5px;\n    height: 52px;\n    padding: 18px 41px 18px 44px;\n  }\n\n  &--h46 {\n    height: 46px;\n    padding: 13px 19px 12px 17px;\n  }\n\n  &--h53 {\n    padding: 9px 10px;\n    height: 53px;\n  }\n}\n",
                     "styleUrl": "../button.component.scss"
                 },
                 {
@@ -1044,14 +926,11 @@
                 }
             ],
             "stylesData": "",
-            "implements": [
-                "OnInit"
-            ],
-            "templateData": "<button \n  [ngClass]=\"classes\"\n  [ngStyle]=\"{ 'background': backgroundColor }\"\n>\n  <img src=\"assets/images/back-icon.png\">\n</button>\n\n"
+            "templateData": "<button \n  class=\"btn-app btn-light\"\n  [ngStyle]=\"{ 'background': backgroundColor }\"\n>\n  <img src=\"assets/images/back-icon.png\">\n</button>\n\n"
         },
         {
             "name": "navLinkComponent",
-            "id": "component-navLinkComponent-30016bada6746b6d1b7450897d119b1e",
+            "id": "component-navLinkComponent-e858f214b4e7e9828f22f4c10df812e4",
             "file": "src/app/atoms/navLink/navLink.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1103,14 +982,6 @@
                     "returnType": "void",
                     "typeParameters": [],
                     "line": 16
-                },
-                {
-                    "name": "ngOnInit",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 19
                 }
             ],
             "hostBindings": [],
@@ -1118,7 +989,7 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, Input, OnChanges, OnInit } from '@angular/core';\n\n@Component({\n    selector: 'app-nav-link',\n    templateUrl: './navLink.component.html',\n    styleUrls: ['navLink.component.scss'],\n})\n\n\n\nexport class navLinkComponent implements OnInit, OnChanges {\n    @Input() title: string;\n    @Input() classes: string;\n    @Input() isActive: boolean;\n    appointedClasses = '';\n    ngOnChanges() {\n        this.appointedClasses = this.isActive ? `${this.classes} active` : this.classes;\n    }\n    ngOnInit() {\n    }\n}\n",
+            "sourceCode": "import { Component, Input, OnChanges } from '@angular/core';\n\n@Component({\n    selector: 'app-nav-link',\n    templateUrl: './navLink.component.html',\n    styleUrls: ['navLink.component.scss'],\n})\n\n\n\nexport class navLinkComponent implements OnChanges {\n    @Input() title: string;\n    @Input() classes: string;\n    @Input() isActive: boolean;\n    appointedClasses = '';\n    ngOnChanges() {\n        this.appointedClasses = this.isActive ? `${this.classes} active` : this.classes;\n    }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -1128,14 +999,13 @@
             ],
             "stylesData": "",
             "implements": [
-                "OnInit",
                 "OnChanges"
             ],
             "templateData": "<a \n  href=\"#\" \n  [ngClass]=\"appointedClasses\"\n>\n  {{ title }}\n</a>\n"
         },
         {
             "name": "primaryButtonComponent",
-            "id": "component-primaryButtonComponent-aa52398da27cd36901a9d9922f7c1677",
+            "id": "component-primaryButtonComponent-a592601172812fee7523d424cc3e14d6",
             "file": "src/app/atoms/buttons/primaryButton/primaryButton.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1159,11 +1029,6 @@
                     "type": "string"
                 },
                 {
-                    "name": "classes",
-                    "line": 14,
-                    "type": "string"
-                },
-                {
                     "name": "title",
                     "line": 12,
                     "type": "string"
@@ -1171,26 +1036,17 @@
             ],
             "outputsClass": [],
             "propertiesClass": [],
-            "methodsClass": [
-                {
-                    "name": "ngOnInit",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 16
-                }
-            ],
+            "methodsClass": [],
             "hostBindings": [],
             "hostListeners": [],
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\n\n@Component({\n    selector: 'app-primary-button',\n    templateUrl: './primaryButton.component.html',\n    styleUrls: ['../button.component.scss', 'primaryButton.component.scss'],\n})\n\n\n\nexport class primaryButtonComponent implements OnInit {\n    @Input() title: string;\n    @Input() backgroundColor: string;\n    @Input() classes: string;\n\n    ngOnInit() {\n\n    }\n}\n",
+            "sourceCode": "import { Component, Input } from '@angular/core';\n\n@Component({\n    selector: 'app-primary-button',\n    templateUrl: './primaryButton.component.html',\n    styleUrls: ['../button.component.scss', 'primaryButton.component.scss'],\n})\n\n\n\nexport class primaryButtonComponent {\n    @Input() title: string;\n    @Input() backgroundColor: string;\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".btn-app {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  box-sizing: border-box;\n  outline: none;\n  transition: 0.3s;\n  border-radius: 8px;\n  &--h36 {\n    height: 36px;\n    padding: 10px 18px 8px 18px;\n  }\n  &--asimetric {\n    border-radius: 20px 5px;\n    height: 52px;\n    padding: 18px 41px 18px 44px;\n  }\n\n  &--h46 {\n    height: 46px;\n    padding: 13px 19px 12px 17px;\n  }\n\n  &--h53 {\n    padding: 9px 50px;\n    height: 53px;\n  }\n}\n",
+                    "data": ".btn-app {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  box-sizing: border-box;\n  outline: none;\n  transition: 0.3s;\n  border-radius: 8px;\n  &--h36 {\n    height: 36px;\n    padding: 10px 18px 8px 18px;\n  }\n  &--asimetric {\n    border-radius: 20px 5px;\n    height: 52px;\n    padding: 18px 41px 18px 44px;\n  }\n\n  &--h46 {\n    height: 46px;\n    padding: 13px 19px 12px 17px;\n  }\n\n  &--h53 {\n    padding: 9px 10px;\n    height: 53px;\n  }\n}\n",
                     "styleUrl": "../button.component.scss"
                 },
                 {
@@ -1199,21 +1055,106 @@
                 }
             ],
             "stylesData": "",
-            "implements": [
-                "OnInit"
+            "templateData": "<div class=\"module-border-wrap\">\n  <div class=\"module-opacity-wrap \">\n      <button \n        [ngStyle]=\"{ 'background': backgroundColor }\"\n        class=\"btn-app btn-app--h46 btn-primary fs-16-sofia-300\"\n      >\n          <svg width=\"20\" height=\"21\" viewBox=\"0 0 20 21\" xmlns=\"http://www.w3.org/2000/svg\">\n              <path d=\"M6.71 5.96433L9 3.55979V13.5857C9 13.863 9.10536 14.1289 9.29289 14.3249C9.48043 14.521 \n              9.73478 14.6312 10 14.6312C10.2652 14.6312 10.5196 14.521 10.7071 14.3249C10.8946 14.1289 \n              11 13.863 11 13.5857V3.55979L13.29 5.96433C13.383 6.06232 13.4936 6.1401 13.6154 6.19317C13.7373 \n              6.24625 13.868 6.27358 14 6.27358C14.132 6.27358 14.2627 6.24625 14.3846 6.19317C14.5064 6.1401\n              14.617 6.06232 14.71 5.96433C14.8037 5.86714 14.8781 5.75152 14.9289 5.62412C14.9797 5.49672 \n              15.0058 5.36007 15.0058 5.22206C15.0058 5.08405 14.9797 4.9474 14.9289 4.82C14.8781 4.6926 14.8037 \n              4.57698 14.71 4.47979L10.71 0.297969C10.6149 0.20279 10.5028 0.128181 10.38 0.0784232C10.1365 \n              -0.0261411 9.86346 -0.0261411 9.62 0.0784232C9.49725 0.128181 9.3851 0.20279 9.29 0.297969L5.29 \n              4.47979C5.19676 4.57726 5.1228 4.69299 5.07234 4.82034C5.02188 4.9477 4.99591 5.08421 4.99591 \n              5.22206C4.99591 5.35991 5.02188 5.49642 5.07234 5.62378C5.1228 5.75113 5.19676 5.86686 5.29 \n              5.96433C5.38324 6.06181 5.49393 6.13913 5.61575 6.19189C5.73757 6.24464 5.86814 6.27179 6 \n              6.27179C6.13186 6.27179 6.26243 6.24464 6.38425 6.19189C6.50607 6.13913 6.61676 6.06181 6.71 \n              5.96433ZM19 10.4493C18.7348 10.4493 18.4804 10.5595 18.2929 10.7555C18.1054 10.9516 18 11.2175 \n              18 11.4948V17.7675C18 18.0448 17.8946 18.3107 17.7071 18.5068C17.5196 18.7028 17.2652 18.813 17 \n              18.813H3C2.73478 18.813 2.48043 18.7028 2.29289 18.5068C2.10536 18.3107 2 18.0448 2 \n              17.7675V11.4948C2 11.2175 1.89464 10.9516 1.70711 10.7555C1.51957 10.5595 1.26522 10.4493 \n              1 10.4493C0.734784 10.4493 0.48043 10.5595 0.292893 10.7555C0.105357 10.9516 0 11.2175 0 \n              11.4948V17.7675C0 18.5993 0.316071 19.3971 0.87868 19.9853C1.44129 20.5734 2.20435 20.9039 \n              3 20.9039H17C17.7956 20.9039 18.5587 20.5734 19.1213 19.9853C19.6839 19.3971 20 18.5993 20 \n              17.7675V11.4948C20 11.2175 19.8946 10.9516 19.7071 10.7555C19.5196 10.5595 19.2652 10.4493 \n              19 10.4493Z\"/>\n              <defs>\n              <linearGradient id=\"paint0_linear\" x1=\"-9.10937\" y1=\"46.0158\" x2=\"37.9111\" y2=\"45.6381\" \n              gradientUnits=\"userSpaceOnUse\">\n              <stop stop-color=\"#24B04B\"/>\n              <stop offset=\"1\" stop-color=\"#0263BC\"/>\n              </linearGradient>\n              </defs>\n          </svg>\n          <p class=\"btn-primary__name\">\n              {{ title }}\n          </p>\n      </button>\n  </div>\n</div>"
+        },
+        {
+            "name": "RegistrationFormComponent",
+            "id": "component-RegistrationFormComponent-79e22b1c267e9f4997f220242ea029dd",
+            "file": "src/app/organisms/registration-form/registration-form.component.ts",
+            "encapsulation": [
+                "ViewEncapsulation.None"
             ],
-            "templateData": "<div class=\"module-border-wrap\">\n  <div class=\"module-opacity-wrap \">\n      <button \n        [ngStyle]=\"{ 'background': backgroundColor }\"\n        [ngClass]=\"classes\"\n      >\n          <svg width=\"20\" height=\"21\" viewBox=\"0 0 20 21\" xmlns=\"http://www.w3.org/2000/svg\">\n              <path d=\"M6.71 5.96433L9 3.55979V13.5857C9 13.863 9.10536 14.1289 9.29289 14.3249C9.48043 14.521 \n              9.73478 14.6312 10 14.6312C10.2652 14.6312 10.5196 14.521 10.7071 14.3249C10.8946 14.1289 \n              11 13.863 11 13.5857V3.55979L13.29 5.96433C13.383 6.06232 13.4936 6.1401 13.6154 6.19317C13.7373 \n              6.24625 13.868 6.27358 14 6.27358C14.132 6.27358 14.2627 6.24625 14.3846 6.19317C14.5064 6.1401\n              14.617 6.06232 14.71 5.96433C14.8037 5.86714 14.8781 5.75152 14.9289 5.62412C14.9797 5.49672 \n              15.0058 5.36007 15.0058 5.22206C15.0058 5.08405 14.9797 4.9474 14.9289 4.82C14.8781 4.6926 14.8037 \n              4.57698 14.71 4.47979L10.71 0.297969C10.6149 0.20279 10.5028 0.128181 10.38 0.0784232C10.1365 \n              -0.0261411 9.86346 -0.0261411 9.62 0.0784232C9.49725 0.128181 9.3851 0.20279 9.29 0.297969L5.29 \n              4.47979C5.19676 4.57726 5.1228 4.69299 5.07234 4.82034C5.02188 4.9477 4.99591 5.08421 4.99591 \n              5.22206C4.99591 5.35991 5.02188 5.49642 5.07234 5.62378C5.1228 5.75113 5.19676 5.86686 5.29 \n              5.96433C5.38324 6.06181 5.49393 6.13913 5.61575 6.19189C5.73757 6.24464 5.86814 6.27179 6 \n              6.27179C6.13186 6.27179 6.26243 6.24464 6.38425 6.19189C6.50607 6.13913 6.61676 6.06181 6.71 \n              5.96433ZM19 10.4493C18.7348 10.4493 18.4804 10.5595 18.2929 10.7555C18.1054 10.9516 18 11.2175 \n              18 11.4948V17.7675C18 18.0448 17.8946 18.3107 17.7071 18.5068C17.5196 18.7028 17.2652 18.813 17 \n              18.813H3C2.73478 18.813 2.48043 18.7028 2.29289 18.5068C2.10536 18.3107 2 18.0448 2 \n              17.7675V11.4948C2 11.2175 1.89464 10.9516 1.70711 10.7555C1.51957 10.5595 1.26522 10.4493 \n              1 10.4493C0.734784 10.4493 0.48043 10.5595 0.292893 10.7555C0.105357 10.9516 0 11.2175 0 \n              11.4948V17.7675C0 18.5993 0.316071 19.3971 0.87868 19.9853C1.44129 20.5734 2.20435 20.9039 \n              3 20.9039H17C17.7956 20.9039 18.5587 20.5734 19.1213 19.9853C19.6839 19.3971 20 18.5993 20 \n              17.7675V11.4948C20 11.2175 19.8946 10.9516 19.7071 10.7555C19.5196 10.5595 19.2652 10.4493 \n              19 10.4493Z\"/>\n              <defs>\n              <linearGradient id=\"paint0_linear\" x1=\"-9.10937\" y1=\"46.0158\" x2=\"37.9111\" y2=\"45.6381\" \n              gradientUnits=\"userSpaceOnUse\">\n              <stop stop-color=\"#24B04B\"/>\n              <stop offset=\"1\" stop-color=\"#0263BC\"/>\n              </linearGradient>\n              </defs>\n          </svg>\n          <p class=\"btn-primary__name\">\n              {{ title }}\n          </p>\n      </button>\n  </div>\n</div>"
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-registration-form",
+            "styleUrls": [
+                "./registration-form.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./registration-form.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "isMobile",
+                    "line": 11,
+                    "type": "boolean"
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "activeScreen",
+                    "defaultValue": "1",
+                    "type": "number",
+                    "optional": false,
+                    "description": "",
+                    "line": 10
+                },
+                {
+                    "name": "isStarted",
+                    "defaultValue": "false",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 12
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "changeScreen",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 14
+                },
+                {
+                    "name": "changeScreenToPrevious",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 22
+                },
+                {
+                    "name": "setIsStarted",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 30
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component, Input, ViewEncapsulation } from '@angular/core';\n\n@Component({\n  selector: 'app-registration-form',\n  templateUrl: './registration-form.component.html',\n  styleUrls: ['./registration-form.component.scss'],\n  encapsulation: ViewEncapsulation.None\n})\nexport class RegistrationFormComponent {\n  activeScreen=1;\n  @Input() isMobile: boolean;\n  isStarted=false;\n\n  changeScreen() {\n    if (this.activeScreen === 5) {\n      return\n    } else {\n      this.activeScreen = this.activeScreen + 1;\n    }\n  }\n\n  changeScreenToPrevious() {\n    if (this.activeScreen === 1) {\n      return\n    } else {\n      this.activeScreen = this.activeScreen - 1;\n    }\n  }\n\n  setIsStarted() {\n    this.isStarted = true;\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".registration-form {\n    width: 100%;\n    background: url('../../../assets/images/bg.png');\n    height: auto;\n  \n\n    &__header {\n        width: 100%;\n        display: flex;\n        justify-content: space-between;\n        align-items: center;\n        padding: 20px 64px;\n        background-color: rgba(var(--text-color-code), 0.5);\n    }\n\n    &__logo {\n        width: 117px;\n        height: 46px;\n    }\n\n    &__list {\n        width: 75%;\n        margin-bottom: 30px;\n    }\n\n    &__body {\n        padding: 42px 64px 130px;\n        display: flex;\n        justify-content: space-between;\n\n        &--left {\n            display: flex;\n            flex-direction: column;\n            align-items: flex-start;\n            width: 44%;\n\n            & > h2, & > h5 {\n                margin-bottom: 20px;\n            }\n        }\n\n        &--right {\n            display: flex;\n            flex-direction: column;\n            justify-content: space-between;\n            width: 52%;\n            min-height: 458px;\n            border-radius: 12px 30px;\n            box-shadow: 0px 50px 70px rgba(44, 59, 82, 0.15);\n        }\n    }\n\n    &__wrapper-top {\n        padding: 34px 48px 7px 48px;\n    }\n\n    &__wrapper-bottom {\n        padding: 32px 48px 28px 48px;\n        display: flex;\n        justify-content: space-between;\n        align-items: center;\n        background-color: var(--input-bg-color);\n        border-radius: 0 0 12px 30px;\n\n        &--left {\n            width: 55%;\n        }\n    }\n}\n\n.list-item-icon {\n    margin-bottom: 12px;\n}\n\n@media screen and (max-width: 1250px) {\n    .registration-form {\n        &__list {\n            width: 100%;\n        }\n\n        &__body {\n            padding: 42px 20px;\n        }\n        &__header {\n            padding: 20px;\n        }\n        &__wrapper-top {\n            padding: 20px;\n        }\n\n        &__wrapper-bottom {\n            padding: 20px 10px;\n        }\n    }\n}",
+                    "styleUrl": "./registration-form.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<div class=\"registration-form\" *ngIf=\"!isMobile\">\n    <div class=\"registration-form__header\">\n        <img class=\"registration-form__logo\" src=\"assets/images/logo.png\" alt=\"logo secure privacy\">\n        <app-info-button [title]=\"'support'\"></app-info-button>\n    </div>\n    <div class=\"registration-form__body\">\n        <div class=\"registration-form__body--left\">\n            <h2 class=\"fs-h2\">\n                Register now and receive 100% no-risk\n                <span class=\"fs-h2--bold\">Free Trial</span>\n            </h2>\n            <ul class=\"registration-form__list\">\n                <app-search-item \n                    [title]=\"'Get access to all features.'\"\n                    [classes]=\"'list-item-icon fs-16-sofia-300'\"\n                >\n                </app-search-item>\n                <app-search-item \n                    [title]=\"'Pay NOTHING for the first 7-days.'\"\n                    [classes]=\"'list-item-icon fs-16-sofia-300'\"\n                >\n                </app-search-item>\n                <app-search-item \n                    [title]=\"'Cancel at ANY time during your trial.'\"\n                    [classes]=\"'list-item-icon fs-16-sofia-300'\"\n                >\n                </app-search-item>\n            </ul>\n            <h5 class=\"fs-h5\">These awesome companies are using Secure Privacy</h5>\n            <app-icon-container></app-icon-container>\n        </div>\n        <div class=\"registration-form__body--right\">\n            <div class=\"registration-form__wrapper-top\" [ngSwitch]=\"activeScreen\">\n                <app-form-screen-first *ngSwitchCase=\"1\"></app-form-screen-first>\n                <app-form-screen-second *ngSwitchCase=\"2\"></app-form-screen-second>\n                <app-form-screen-third *ngSwitchCase=\"3\"></app-form-screen-third>\n                <app-form-screen-fourth *ngSwitchCase=\"4\"></app-form-screen-fourth>\n                <app-form-screen-fifth *ngSwitchCase=\"5\"></app-form-screen-fifth>\n            </div>\n            <div class=\"registration-form__wrapper-bottom\">\n                <div class=\"registration-form__wrapper-bottom--left\">\n                    <app-steps [activePoints]=\"activeScreen\"></app-steps>\n                </div>\n                <app-gradient-button \n                    [title]=\"'Next'\"\n                    (click)=\"changeScreen()\"\n                >\n                </app-gradient-button>\n            </div>\n        </div>\n    </div>  \n</div>\n<div class=\"registration-form\" *ngIf=\"isMobile\">\n    <div class=\"registration-form__header\">\n        <img class=\"registration-form__logo\" src=\"assets/images/logo.png\" alt=\"logo secure privacy\">\n        <app-info-button [title]=\"'support'\"></app-info-button>\n    </div>\n    <div class=\"registration-form__body\" [ngStyle]=\"{'padding-top':'10px'}\">\n        <div \n            class=\"registration-form__body--left\" \n            *ngIf=\"!isStarted\"\n            [ngStyle]=\"{'width':'100%', 'align-items': 'center'}\"\n        >\n            <h2 class=\"fs-h2\">\n                Register now and receive 100% no-risk\n                <span class=\"fs-h2--bold\">Free Trial</span>\n            </h2>\n            <ul class=\"registration-form__list\">\n                <app-search-item \n                    [title]=\"'Get access to all features.'\"\n                    [classes]=\"'list-item-icon fs-16-sofia-300'\"\n                >\n                </app-search-item>\n                <app-search-item \n                    [title]=\"'Pay NOTHING for the first 7-days.'\"\n                    [classes]=\"'list-item-icon fs-16-sofia-300'\"\n                >\n                </app-search-item>\n                <app-search-item \n                    [title]=\"'Cancel at ANY time during your trial.'\"\n                    [classes]=\"'list-item-icon fs-16-sofia-300'\"\n                >\n                </app-search-item>\n            </ul>\n            <h5 class=\"fs-h5\">These awesome companies are using Secure Privacy</h5>\n            <app-icon-container></app-icon-container>\n            <div [ngStyle]=\"{'margin-bottom':'32px'}\"></div>\n            <app-gradient-button \n                [title]=\"'get started'\"\n                (click)=\"setIsStarted()\"\n            >\n            </app-gradient-button>\n        </div>\n        <div \n            class=\"registration-form__body--right\" \n            *ngIf=\"isStarted\"\n            [ngStyle]=\"{'width':'100%'}\"\n        >\n            <div class=\"registration-form__wrapper-top\" [ngSwitch]=\"activeScreen\">\n                <app-form-screen-first *ngSwitchCase=\"1\"></app-form-screen-first>\n                <app-form-screen-second *ngSwitchCase=\"2\"></app-form-screen-second>\n                <app-form-screen-third *ngSwitchCase=\"3\"></app-form-screen-third>\n                <app-form-screen-fourth *ngSwitchCase=\"4\"></app-form-screen-fourth>\n                <app-form-screen-fifth *ngSwitchCase=\"5\"></app-form-screen-fifth>\n            </div>\n            <div class=\"registration-form__wrapper-bottom\">\n                <app-simple-button \n                    [classes]=\"'btn-app fs-16-sofia-500 btn-transparent'\"\n                    [title]=\"'back'\"\n                    (click)=\"changeScreenToPrevious()\"\n                >\n                </app-simple-button>\n                <app-gradient-button \n                    [title]=\"'Next'\"\n                    (click)=\"changeScreen()\"\n                >\n                </app-gradient-button>\n            </div>\n        </div>\n    </div>\n</div>\n"
         },
         {
             "name": "searchItemComponent",
-            "id": "component-searchItemComponent-8aed315c7cd249cd8116230c154a8a92",
+            "id": "component-searchItemComponent-3d9606557f7ac67a0812c153bcb688a3",
             "file": "src/app/atoms/searchItem/searchItem.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
             "outputs": [],
             "providers": [],
-            "selector": "app-nav-link",
+            "selector": "app-search-item",
             "styleUrls": [
                 "searchItem.component.scss"
             ],
@@ -1236,38 +1177,26 @@
             ],
             "outputsClass": [],
             "propertiesClass": [],
-            "methodsClass": [
-                {
-                    "name": "ngOnInit",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 15
-                }
-            ],
+            "methodsClass": [],
             "hostBindings": [],
             "hostListeners": [],
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\n\n@Component({\n    selector: 'app-nav-link',\n    templateUrl: './searchItem.component.html',\n    styleUrls: ['searchItem.component.scss'],\n})\n\n\n\nexport class searchItemComponent implements OnInit {\n    @Input() title: string;\n    @Input() classes: string;\n\n    ngOnInit() {\n\n    }\n}\n",
+            "sourceCode": "import { Component, Input } from '@angular/core';\n\n@Component({\n    selector: 'app-search-item',\n    templateUrl: './searchItem.component.html',\n    styleUrls: ['searchItem.component.scss'],\n})\n\n\n\nexport class searchItemComponent {\n    @Input() title: string;\n    @Input() classes: string;\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".search-list__item {\n  box-sizing: border-box;\n  list-style: none;\n  width: 100%;\n  height: 46px;\n  padding: 15px 53px;\n  background: var(--input-bg-color);\n  transition: 0.3s;\n  color: var(--secondary-color);\n  opacity: 0.75;\n\n  &:hover {\n    cursor: pointer;\n    background-color: var(--light-btn-hover);\n  }\n}\n\n.list-item-icon {\n  padding: 19px 53px;\n  width: 100%;\n  height: 54px;\n  border: 1px solid rgba(var(--secondary-color-code), 0.1);\n  border-radius: 8px;\n  position: relative;\n  color: rgba(var(--secondary-color-code), 0.7);\n\n  &:after {\n    content: url('../../../assets/images/check.png');\n    position: absolute;\n    left: 17px;\n    top: 17px;\n  }\n}",
+                    "data": ".search-list__item {\n  box-sizing: border-box;\n  list-style: none;\n  width: 100%;\n  height: 46px;\n  padding: 15px 53px;\n  background: var(--input-bg-color);\n  transition: 0.3s;\n  color: var(--secondary-color);\n  opacity: 0.75;\n\n  &:hover {\n    cursor: pointer;\n    background-color: var(--light-btn-hover);\n  }\n}\n\n.list-item-icon {\n  padding: 19px 53px;\n  width: 100%;\n  height: auto;\n  border: 1px solid rgba(var(--secondary-color-code), 0.1);\n  border-radius: 8px;\n  position: relative;\n  color: rgba(var(--secondary-color-code), 0.7);\n\n  &:after {\n    content: url('../../../assets/images/check.png');\n    position: absolute;\n    left: 17px;\n    top: calc(50% - 10px);\n  }\n}",
                     "styleUrl": "searchItem.component.scss"
                 }
             ],
             "stylesData": "",
-            "implements": [
-                "OnInit"
-            ],
             "templateData": "<li \n  [ngClass]=\"classes\"\n>\n  {{ title }}\n</li>\n\n"
         },
         {
             "name": "secondaryButtonComponent",
-            "id": "component-secondaryButtonComponent-c21cc17b95a3d834a2e33b2457374047",
+            "id": "component-secondaryButtonComponent-4fae33b68f213fcd5391eb37ede3c769",
             "file": "src/app/atoms/buttons/secondaryButton/secondaryButton.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1291,11 +1220,6 @@
                     "type": "string"
                 },
                 {
-                    "name": "classes",
-                    "line": 15,
-                    "type": "string"
-                },
-                {
                     "name": "color",
                     "line": 14,
                     "type": "string"
@@ -1308,26 +1232,17 @@
             ],
             "outputsClass": [],
             "propertiesClass": [],
-            "methodsClass": [
-                {
-                    "name": "ngOnInit",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 17
-                }
-            ],
+            "methodsClass": [],
             "hostBindings": [],
             "hostListeners": [],
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\n\n@Component({\n    selector: 'app-secondary-button',\n    templateUrl: './secondaryButton.component.html',\n    styleUrls: ['../button.component.scss', 'secondaryButton.component.scss'],\n})\n\n\n\nexport class secondaryButtonComponent implements OnInit {\n    @Input() title: string;\n    @Input() backgroundColor: string;\n    @Input() color: string;\n    @Input() classes: string;\n\n    ngOnInit() {\n\n    }\n}\n",
+            "sourceCode": "import { Component, Input } from '@angular/core';\n\n@Component({\n    selector: 'app-secondary-button',\n    templateUrl: './secondaryButton.component.html',\n    styleUrls: ['../button.component.scss', 'secondaryButton.component.scss'],\n})\n\n\n\nexport class secondaryButtonComponent {\n    @Input() title: string;\n    @Input() backgroundColor: string;\n    @Input() color: string;\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".btn-app {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  box-sizing: border-box;\n  outline: none;\n  transition: 0.3s;\n  border-radius: 8px;\n  &--h36 {\n    height: 36px;\n    padding: 10px 18px 8px 18px;\n  }\n  &--asimetric {\n    border-radius: 20px 5px;\n    height: 52px;\n    padding: 18px 41px 18px 44px;\n  }\n\n  &--h46 {\n    height: 46px;\n    padding: 13px 19px 12px 17px;\n  }\n\n  &--h53 {\n    padding: 9px 50px;\n    height: 53px;\n  }\n}\n",
+                    "data": ".btn-app {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  box-sizing: border-box;\n  outline: none;\n  transition: 0.3s;\n  border-radius: 8px;\n  &--h36 {\n    height: 36px;\n    padding: 10px 18px 8px 18px;\n  }\n  &--asimetric {\n    border-radius: 20px 5px;\n    height: 52px;\n    padding: 18px 41px 18px 44px;\n  }\n\n  &--h46 {\n    height: 46px;\n    padding: 13px 19px 12px 17px;\n  }\n\n  &--h53 {\n    padding: 9px 10px;\n    height: 53px;\n  }\n}\n",
                     "styleUrl": "../button.component.scss"
                 },
                 {
@@ -1336,14 +1251,11 @@
                 }
             ],
             "stylesData": "",
-            "implements": [
-                "OnInit"
-            ],
-            "templateData": "<button \n  [ngStyle]=\"{'background': backgroundColor, 'color': color }\"\n  [ngClass]=\"classes\"\n>\n  <svg width=\"20\" height=\"20\" viewBox=\"0 0 20 20\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n      <path d=\"M17 0H3C2.20435 0 1.44129 0.316071 0.87868 0.87868C0.316071 1.44129 1.80878e-07 2.20435 \n      1.80878e-07 3V4.17C-0.000143207 4.58294 0.0849664 4.99147 0.25 5.37V5.43C0.39128 5.75097 \n      0.591392 6.04266 0.84 6.29L7 12.41V19C6.99966 19.1699 7.04264 19.3372 7.12487 19.4859C7.20711 \n      19.6346 7.32589 19.7599 7.47 19.85C7.62914 19.9486 7.81277 20.0006 8 20C8.15654 19.9991 8.31068 \n      19.9614 8.45 19.89L12.45 17.89C12.6149 17.8069 12.7536 17.6798 12.8507 17.5227C12.9478 17.3656 \n      12.9994 17.1847 13 17V12.41L19.12 6.29C19.3686 6.04266 19.5687 5.75097 19.71 5.43V5.37C19.8888 \n      4.99443 19.9876 4.58578 20 4.17V3C20 2.20435 19.6839 1.44129 19.1213 0.87868C18.5587 0.316071 \n      17.7956 0 17 0ZM11.29 11.29C11.1973 11.3834 11.124 11.4943 11.0742 11.6161C11.0245 11.7379 10.9992 \n      11.8684 11 12V16.38L9 17.38V12C9.00076 11.8684 8.97554 11.7379 8.92577 11.6161C8.87601 11.4943 8.80268\n      11.3834 8.71 11.29L3.41 6H16.59L11.29 11.29ZM18 4H2V3C2 2.73478 2.10536 2.48043 2.29289\n      2.29289C2.48043 2.10536 2.73478 2 3 2H17C17.2652 2 17.5196 2.10536 17.7071 2.29289C17.8946 2.48043 \n      18 2.73478 18 3V4Z\" />\n  </svg>\n      {{ title }}\n  </button>"
+            "templateData": "<button \n  [ngStyle]=\"{'background': backgroundColor, 'color': color }\"\n  class=\"btn-secondary btn-app btn-app--h46 fs-16-sofia-300\"\n>\n  <svg width=\"20\" height=\"20\" viewBox=\"0 0 20 20\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n      <path d=\"M17 0H3C2.20435 0 1.44129 0.316071 0.87868 0.87868C0.316071 1.44129 1.80878e-07 2.20435 \n      1.80878e-07 3V4.17C-0.000143207 4.58294 0.0849664 4.99147 0.25 5.37V5.43C0.39128 5.75097 \n      0.591392 6.04266 0.84 6.29L7 12.41V19C6.99966 19.1699 7.04264 19.3372 7.12487 19.4859C7.20711 \n      19.6346 7.32589 19.7599 7.47 19.85C7.62914 19.9486 7.81277 20.0006 8 20C8.15654 19.9991 8.31068 \n      19.9614 8.45 19.89L12.45 17.89C12.6149 17.8069 12.7536 17.6798 12.8507 17.5227C12.9478 17.3656 \n      12.9994 17.1847 13 17V12.41L19.12 6.29C19.3686 6.04266 19.5687 5.75097 19.71 5.43V5.37C19.8888 \n      4.99443 19.9876 4.58578 20 4.17V3C20 2.20435 19.6839 1.44129 19.1213 0.87868C18.5587 0.316071 \n      17.7956 0 17 0ZM11.29 11.29C11.1973 11.3834 11.124 11.4943 11.0742 11.6161C11.0245 11.7379 10.9992 \n      11.8684 11 12V16.38L9 17.38V12C9.00076 11.8684 8.97554 11.7379 8.92577 11.6161C8.87601 11.4943 8.80268\n      11.3834 8.71 11.29L3.41 6H16.59L11.29 11.29ZM18 4H2V3C2 2.73478 2.10536 2.48043 2.29289\n      2.29289C2.48043 2.10536 2.73478 2 3 2H17C17.2652 2 17.5196 2.10536 17.7071 2.29289C17.8946 2.48043 \n      18 2.73478 18 3V4Z\" />\n  </svg>\n      {{ title }}\n  </button>"
         },
         {
             "name": "SideMenuComponent",
-            "id": "component-SideMenuComponent-1adef6d841c0e69c73857783c6abb9ed",
+            "id": "component-SideMenuComponent-53eebe3fcf7c286c89cb8f21e98121d5",
             "file": "src/app/molecules/menu/side-menu/side-menu.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1410,14 +1322,6 @@
                             }
                         }
                     ]
-                },
-                {
-                    "name": "ngOnInit",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 18
                 }
             ],
             "hostBindings": [],
@@ -1425,7 +1329,7 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-side-menu',\n  templateUrl: './side-menu.component.html',\n  styleUrls: ['./side-menu.component.scss']\n})\nexport class SideMenuComponent implements OnInit {\n  @Input() items: string[];\n\n  active = 0;\n  \n  handlClick(event: any, i: number) {\n    event.preventDefault();\n    this.active = i;\n  }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "sourceCode": "import { Component, Input } from '@angular/core';\n\n@Component({\n  selector: 'app-side-menu',\n  templateUrl: './side-menu.component.html',\n  styleUrls: ['./side-menu.component.scss']\n})\nexport class SideMenuComponent {\n  @Input() items: string[];\n\n  active = 0;\n  \n  handlClick(event: any, i: number) {\n    event.preventDefault();\n    this.active = i;\n  }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -1434,14 +1338,11 @@
                 }
             ],
             "stylesData": "",
-            "implements": [
-                "OnInit"
-            ],
             "templateData": "<ul class=\"app-side-menu list\">\n    <li \n        class=\"app-side-menu__item\"\n        *ngFor=\"let item of items; let i = index\" \n    >   \n        <app-nav-link\n        [isActive]=\"active === i\"\n        [title]=\"item\" \n        classes=\"nav-link-secondary fs-12-gramm-400\"\n        (click)=\"handlClick($event, i)\"\n        >\n        </app-nav-link>\n    </li>\n</ul>\n\n  \n"
         },
         {
             "name": "simpleButtonComponent",
-            "id": "component-simpleButtonComponent-c33720fa521dc42ac741076bf409bb24",
+            "id": "component-simpleButtonComponent-da091f31733307928ea0d841eb5c67ce",
             "file": "src/app/atoms/buttons/simpleButton/simpleButton.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1482,26 +1383,17 @@
             ],
             "outputsClass": [],
             "propertiesClass": [],
-            "methodsClass": [
-                {
-                    "name": "ngOnInit",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 17
-                }
-            ],
+            "methodsClass": [],
             "hostBindings": [],
             "hostListeners": [],
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\n\n@Component({\n    selector: 'app-simple-button',\n    templateUrl: './simpleButton.component.html',\n    styleUrls: ['../button.component.scss', 'simpleButton.component.scss'],\n})\n\n\n\nexport class simpleButtonComponent implements OnInit {\n    @Input() title: string;\n    @Input() classes: string;\n    @Input() backgroundColor: string;\n    @Input() color: string;\n\n    ngOnInit() {\n\n    }\n}\n",
+            "sourceCode": "import { Component, Input } from '@angular/core';\n\n@Component({\n    selector: 'app-simple-button',\n    templateUrl: './simpleButton.component.html',\n    styleUrls: ['../button.component.scss', 'simpleButton.component.scss'],\n})\n\n\n\nexport class simpleButtonComponent {\n    @Input() title: string;\n    @Input() classes: string;\n    @Input() backgroundColor: string;\n    @Input() color: string;\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".btn-app {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  box-sizing: border-box;\n  outline: none;\n  transition: 0.3s;\n  border-radius: 8px;\n  &--h36 {\n    height: 36px;\n    padding: 10px 18px 8px 18px;\n  }\n  &--asimetric {\n    border-radius: 20px 5px;\n    height: 52px;\n    padding: 18px 41px 18px 44px;\n  }\n\n  &--h46 {\n    height: 46px;\n    padding: 13px 19px 12px 17px;\n  }\n\n  &--h53 {\n    padding: 9px 50px;\n    height: 53px;\n  }\n}\n",
+                    "data": ".btn-app {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  box-sizing: border-box;\n  outline: none;\n  transition: 0.3s;\n  border-radius: 8px;\n  &--h36 {\n    height: 36px;\n    padding: 10px 18px 8px 18px;\n  }\n  &--asimetric {\n    border-radius: 20px 5px;\n    height: 52px;\n    padding: 18px 41px 18px 44px;\n  }\n\n  &--h46 {\n    height: 46px;\n    padding: 13px 19px 12px 17px;\n  }\n\n  &--h53 {\n    padding: 9px 10px;\n    height: 53px;\n  }\n}\n",
                     "styleUrl": "../button.component.scss"
                 },
                 {
@@ -1510,14 +1402,11 @@
                 }
             ],
             "stylesData": "",
-            "implements": [
-                "OnInit"
-            ],
             "templateData": "<button\n  [ngClass]=\"classes\"\n  [ngStyle]=\"{ 'background-color': backgroundColor, 'color': color }\"\n>\n  {{ title }}\n</button>\n"
         },
         {
             "name": "StepsComponent",
-            "id": "component-StepsComponent-56761d0f122a6be120516be0868a3cf5",
+            "id": "component-StepsComponent-ac0fbef98c381047e79e65c14d0db755",
             "file": "src/app/atoms/steps/steps.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1558,7 +1447,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 15
+                    "line": 13
                 }
             ],
             "hostBindings": [],
@@ -1566,7 +1455,7 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, Input, OnChanges } from '@angular/core';\nimport { detectClasses } from './helpers';\n\n@Component({\n  selector: 'app-steps',\n  templateUrl: './steps.component.html',\n  styleUrls: ['./steps.component.scss']\n})\nexport class StepsComponent implements OnChanges {\n  @Input() activePoints: number;\n  classes=[];\n\n  constructor() { }\n\n  ngOnChanges(): void {\n    this.classes = detectClasses(this.activePoints);\n  }\n\n}\n",
+            "sourceCode": "import { Component, Input, OnChanges } from '@angular/core';\nimport { detectClasses } from './helpers';\n\n@Component({\n  selector: 'app-steps',\n  templateUrl: './steps.component.html',\n  styleUrls: ['./steps.component.scss']\n})\nexport class StepsComponent implements OnChanges {\n  @Input() activePoints: number;\n  classes=[];\n  \n  ngOnChanges(): void {\n    this.classes = detectClasses(this.activePoints);\n  }\n\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -1575,54 +1464,10 @@
                 }
             ],
             "stylesData": "",
-            "constructorObj": {
-                "name": "constructor",
-                "description": "",
-                "args": [],
-                "line": 11
-            },
             "implements": [
                 "OnChanges"
             ],
             "templateData": "<div class=\"app-steps fs-12-sofia-400\">\n    <div [ngClass]=\"classes[0]\">\n        <div class=\"app-steps__dot\"></div>\n        <div class=\"app-steps__label text-al-left\">Add your information</div>\n    </div>\n    <div [ngClass]=\"classes[1]\"></div>\n    <div [ngClass]=\"classes[2]\">\n        <div class=\"app-steps__dot\"></div>\n        <div class=\"app-steps__label text-al-center\">Add domain</div>\n    </div>\n    <div [ngClass]=\"classes[3]\"></div>\n    <div [ngClass]=\"classes[4]\">\n        <div class=\"app-steps__dot\"></div>\n        <div class=\"app-steps__label text-al-right\">Select coverage</div>\n    </div>\n</div>\n"
-        },
-        {
-            "name": "TextComponent",
-            "id": "component-TextComponent-5240852f5f79154599e5039e84db7905",
-            "file": "src/app/text/text.component.ts",
-            "encapsulation": [],
-            "entryComponents": [],
-            "inputs": [],
-            "outputs": [],
-            "providers": [],
-            "selector": "app-text",
-            "styleUrls": [
-                "./text.component.scss"
-            ],
-            "styles": [],
-            "templateUrl": [
-                "./text.component.html"
-            ],
-            "viewProviders": [],
-            "inputsClass": [],
-            "outputsClass": [],
-            "propertiesClass": [],
-            "methodsClass": [],
-            "hostBindings": [],
-            "hostListeners": [],
-            "description": "",
-            "rawdescription": "",
-            "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\n\n@Component({\n  selector: 'app-text',\n  templateUrl: './text.component.html',\n  styleUrls: ['./text.component.scss']\n})\nexport class TextComponent {\n\n}\n",
-            "assetsDirs": [],
-            "styleUrlsData": [
-                {
-                    "data": "",
-                    "styleUrl": "./text.component.scss"
-                }
-            ],
-            "stylesData": "",
-            "templateData": "<p>text works!</p>\n"
         }
     ],
     "modules": [
@@ -1646,6 +1491,9 @@
                             "name": "DateMenuComponent"
                         },
                         {
+                            "name": "FormScreenFifthComponent"
+                        },
+                        {
                             "name": "FormScreenFirstComponent"
                         },
                         {
@@ -1661,16 +1509,37 @@
                             "name": "IconContainerComponent"
                         },
                         {
+                            "name": "RegistrationFormComponent"
+                        },
+                        {
                             "name": "SideMenuComponent"
                         },
                         {
                             "name": "StepsComponent"
                         },
                         {
+                            "name": "formInputComponent"
+                        },
+                        {
+                            "name": "infoButtonComponent"
+                        },
+                        {
                             "name": "largeButtonComponent"
                         },
                         {
+                            "name": "lightButtonComponent"
+                        },
+                        {
                             "name": "navLinkComponent"
+                        },
+                        {
+                            "name": "primaryButtonComponent"
+                        },
+                        {
+                            "name": "secondaryButtonComponent"
+                        },
+                        {
+                            "name": "simpleButtonComponent"
                         }
                     ]
                 },
@@ -1700,14 +1569,6 @@
     "miscellaneous": {
         "variables": [
             {
-                "name": "context",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/test.ts",
-                "type": "",
-                "defaultValue": "require.context('./', true, /\\.spec\\.ts$/)"
-            },
-            {
                 "name": "Danger",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -1720,6 +1581,14 @@
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/app/molecules/menu/date-menu/date-menu.stories.ts",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Desktop",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/organisms/registration-form/registration-form.stories.ts",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
@@ -1738,6 +1607,14 @@
                 "file": "src/environments/environment.ts",
                 "type": "object",
                 "defaultValue": "{\n  production: false\n}"
+            },
+            {
+                "name": "Fifth",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/molecules/form-screens/form-screen-fifth/form-screen-fifth.stories.ts",
+                "type": "",
+                "defaultValue": "Template.bind({})"
             },
             {
                 "name": "First",
@@ -1783,14 +1660,6 @@
                 "name": "Large",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/Button.stories.ts",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "Large",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "src/app/atoms/buttons/largeButton/largeButton.stories.ts",
                 "type": "",
                 "defaultValue": "Template.bind({})"
@@ -1812,10 +1681,10 @@
                 "defaultValue": "Template.bind({})"
             },
             {
-                "name": "Primary",
+                "name": "Mobile",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/Button.stories.ts",
+                "file": "src/app/organisms/registration-form/registration-form.stories.ts",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
@@ -1831,17 +1700,17 @@
                 "name": "props",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/atoms/iconContainer/iconContainer.stories.ts",
+                "file": "src/app/atoms/card/card.stories.ts",
                 "type": "object",
-                "defaultValue": "{\n  backgroundColor: { control: 'color' },\n}"
+                "defaultValue": "{\n  backgroundColor: { control: 'color' },\n  color: { control: 'color' },\n  src: { control: 'text'},\n  title: { control: 'text'},\n  text: { control: 'text' },\n  isActive: { control: 'boolean'}\n}"
             },
             {
                 "name": "props",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/atoms/card/card.stories.ts",
+                "file": "src/app/atoms/iconContainer/iconContainer.stories.ts",
                 "type": "object",
-                "defaultValue": "{\n  backgroundColor: { control: 'color' },\n  color: { control: 'color' },\n  src: { control: 'text'},\n  title: { control: 'text'},\n  text: { control: 'text' },\n  isActive: { control: 'boolean'}\n}"
+                "defaultValue": "{\n  backgroundColor: { control: 'color' },\n}"
             },
             {
                 "name": "props",
@@ -1863,14 +1732,6 @@
                 "name": "props",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/atoms/buttons/gradientButton/gradientButton.stories.ts",
-                "type": "object",
-                "defaultValue": "{\n  backgroundColor: { control: 'color' },\n  color: { control: 'color' },\n  title: { control: 'text'},\n}"
-            },
-            {
-                "name": "props",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "src/app/atoms/steps/steps.stories.ts",
                 "type": "object",
                 "defaultValue": "{\n  activePoints: { control: 'number'}\n}"
@@ -1879,7 +1740,15 @@
                 "name": "props",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/atoms/buttons/infoButton/infoButton.stories.ts",
+                "file": "src/app/organisms/registration-form/registration-form.stories.ts",
+                "type": "object",
+                "defaultValue": "{\n}"
+            },
+            {
+                "name": "props",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/atoms/buttons/gradientButton/gradientButton.stories.ts",
                 "type": "object",
                 "defaultValue": "{\n  backgroundColor: { control: 'color' },\n  color: { control: 'color' },\n  title: { control: 'text'},\n}"
             },
@@ -1887,7 +1756,7 @@
                 "name": "props",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/atoms/buttons/lightButton/lightButton.stories.ts",
+                "file": "src/app/atoms/buttons/infoButton/infoButton.stories.ts",
                 "type": "object",
                 "defaultValue": "{\n  backgroundColor: { control: 'color' },\n  color: { control: 'color' },\n  title: { control: 'text'},\n}"
             },
@@ -1903,9 +1772,9 @@
                 "name": "props",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/atoms/buttons/primaryButton/primaryButton.stories.ts",
+                "file": "src/app/atoms/buttons/lightButton/lightButton.stories.ts",
                 "type": "object",
-                "defaultValue": "{\n  backgroundColor: { control: 'color' },\n  title: { control: 'text'},\n}"
+                "defaultValue": "{\n  backgroundColor: { control: 'color' },\n  color: { control: 'color' },\n  title: { control: 'text'},\n}"
             },
             {
                 "name": "props",
@@ -1927,17 +1796,17 @@
                 "name": "props",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/atoms/inputs/formInput/formInput.stories.ts",
+                "file": "src/app/atoms/buttons/primaryButton/primaryButton.stories.ts",
                 "type": "object",
-                "defaultValue": "{\n  backgroundColor: { control: 'color' },\n  color: { control: 'color' },\n  placeholder: { control: 'text'},\n}"
+                "defaultValue": "{\n  backgroundColor: { control: 'color' },\n  title: { control: 'text'},\n}"
             },
             {
                 "name": "props",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/molecules/form-screens/form-screen-first/form-screen-first.stories.ts",
+                "file": "src/app/atoms/inputs/formInput/formInput.stories.ts",
                 "type": "object",
-                "defaultValue": "{\n}"
+                "defaultValue": "{\n  backgroundColor: { control: 'color' },\n  color: { control: 'color' },\n  placeholder: { control: 'text'},\n}"
             },
             {
                 "name": "props",
@@ -1959,6 +1828,14 @@
                 "name": "props",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "src/app/molecules/form-screens/form-screen-fifth/form-screen-fifth.stories.ts",
+                "type": "object",
+                "defaultValue": "{\n}"
+            },
+            {
+                "name": "props",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "src/app/molecules/form-screens/form-screen-fourth/form-screen-fourth.stories.ts",
                 "type": "object",
                 "defaultValue": "{\n}"
@@ -1967,7 +1844,7 @@
                 "name": "props",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/molecules/form-screens/form-screen-second/form-screen-second.stories.ts",
+                "file": "src/app/molecules/form-screens/form-screen-first/form-screen-first.stories.ts",
                 "type": "object",
                 "defaultValue": "{\n}"
             },
@@ -1980,25 +1857,18 @@
                 "defaultValue": "{\n}"
             },
             {
-                "name": "require",
+                "name": "props",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/test.ts",
-                "type": "literal type"
+                "file": "src/app/molecules/form-screens/form-screen-second/form-screen-second.stories.ts",
+                "type": "object",
+                "defaultValue": "{\n}"
             },
             {
                 "name": "Second",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/app/molecules/form-screens/form-screen-second/form-screen-second.stories.ts",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "Secondary",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/Button.stories.ts",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
@@ -2030,7 +1900,7 @@
                 "name": "Simple",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/atoms/iconContainer/iconContainer.stories.ts",
+                "file": "src/app/atoms/card/card.stories.ts",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
@@ -2038,7 +1908,7 @@
                 "name": "Simple",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/atoms/card/card.stories.ts",
+                "file": "src/app/atoms/iconContainer/iconContainer.stories.ts",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
@@ -2063,14 +1933,6 @@
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/app/atoms/inputs/formInput/formInput.stories.ts",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "Small",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/Button.stories.ts",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
@@ -2086,9 +1948,9 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/Button.stories.ts",
-                "type": "Story<Button>",
-                "defaultValue": "(args: Button) => ({\n  component: Button,\n  props: args,\n})"
+                "file": "src/app/atoms/card/card.stories.ts",
+                "type": "Story<CardComponent>",
+                "defaultValue": "(args: CardComponent) => ({\n  component: CardComponent,\n  props: args,\n})"
             },
             {
                 "name": "Template",
@@ -2096,15 +1958,7 @@
                 "subtype": "variable",
                 "file": "src/app/atoms/iconContainer/iconContainer.stories.ts",
                 "type": "Story<IconContainerComponent>",
-                "defaultValue": "(args: IconContainerComponent) => ({\n    component: IconContainerComponent,\n    props: args,\n  })"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/atoms/card/card.stories.ts",
-                "type": "Story<CardComponent>",
-                "defaultValue": "(args: CardComponent) => ({\n    component: CardComponent,\n    props: args,\n  })"
+                "defaultValue": "(args: IconContainerComponent) => ({\n  component: IconContainerComponent,\n  props: args,\n})"
             },
             {
                 "name": "Template",
@@ -2112,7 +1966,7 @@
                 "subtype": "variable",
                 "file": "src/app/atoms/navLink/navLink.stories.ts",
                 "type": "Story<navLinkComponent>",
-                "defaultValue": "(args: navLinkComponent) => ({\n    component: navLinkComponent,\n    props: args,\n  })"
+                "defaultValue": "(args: navLinkComponent) => ({\n  component: navLinkComponent,\n  props: args,\n})"
             },
             {
                 "name": "Template",
@@ -2126,17 +1980,25 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/atoms/buttons/gradientButton/gradientButton.stories.ts",
-                "type": "Story<gradientButtonComponent>",
-                "defaultValue": "(args: gradientButtonComponent) => ({\n    component: gradientButtonComponent,\n    props: args,\n  })"
+                "file": "src/app/atoms/steps/steps.stories.ts",
+                "type": "Story<StepsComponent>",
+                "defaultValue": "(args: StepsComponent) => ({\n  component: StepsComponent,\n  props: args,\n})"
             },
             {
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/atoms/steps/steps.stories.ts",
-                "type": "Story<StepsComponent>",
-                "defaultValue": "(args: StepsComponent) => ({\n    component: StepsComponent,\n    props: args,\n  })"
+                "file": "src/app/organisms/registration-form/registration-form.stories.ts",
+                "type": "Story<RegistrationFormComponent>",
+                "defaultValue": "(args: RegistrationFormComponent) => ({\n    component: RegistrationFormComponent,\n    props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/atoms/buttons/gradientButton/gradientButton.stories.ts",
+                "type": "Story<gradientButtonComponent>",
+                "defaultValue": "(args: gradientButtonComponent) => ({\n  component: gradientButtonComponent,\n  props: args,\n})"
             },
             {
                 "name": "Template",
@@ -2144,15 +2006,7 @@
                 "subtype": "variable",
                 "file": "src/app/atoms/buttons/infoButton/infoButton.stories.ts",
                 "type": "Story<infoButtonComponent>",
-                "defaultValue": "(args: infoButtonComponent) => ({\n    component: infoButtonComponent,\n    props: args,\n  })"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/atoms/buttons/lightButton/lightButton.stories.ts",
-                "type": "Story<lightButtonComponent>",
-                "defaultValue": "(args: lightButtonComponent) => ({\n    component: lightButtonComponent,\n    props: args,\n  })"
+                "defaultValue": "(args: infoButtonComponent) => ({\n  component: infoButtonComponent,\n  props: args,\n})"
             },
             {
                 "name": "Template",
@@ -2160,15 +2014,15 @@
                 "subtype": "variable",
                 "file": "src/app/atoms/buttons/largeButton/largeButton.stories.ts",
                 "type": "Story<largeButtonComponent>",
-                "defaultValue": "(args: largeButtonComponent) => ({\n    component: largeButtonComponent,\n    props: args,\n  })"
+                "defaultValue": "(args: largeButtonComponent) => ({\n  component: largeButtonComponent,\n  props: args,\n})"
             },
             {
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/atoms/buttons/primaryButton/primaryButton.stories.ts",
-                "type": "Story<primaryButtonComponent>",
-                "defaultValue": "(args: primaryButtonComponent) => ({\n    component: primaryButtonComponent,\n    props: args,\n  })"
+                "file": "src/app/atoms/buttons/lightButton/lightButton.stories.ts",
+                "type": "Story<lightButtonComponent>",
+                "defaultValue": "(args: lightButtonComponent) => ({\n  component: lightButtonComponent,\n  props: args,\n})"
             },
             {
                 "name": "Template",
@@ -2176,7 +2030,7 @@
                 "subtype": "variable",
                 "file": "src/app/atoms/buttons/simpleButton/simpleButton.stories.ts",
                 "type": "Story<simpleButtonComponent>",
-                "defaultValue": "(args: simpleButtonComponent) => ({\n    component: simpleButtonComponent,\n    props: args,\n  })"
+                "defaultValue": "(args: simpleButtonComponent) => ({\n  component: simpleButtonComponent,\n  props: args,\n})"
             },
             {
                 "name": "Template",
@@ -2184,7 +2038,15 @@
                 "subtype": "variable",
                 "file": "src/app/atoms/buttons/secondaryButton/secondaryButton.stories.ts",
                 "type": "Story<secondaryButtonComponent>",
-                "defaultValue": "(args: secondaryButtonComponent) => ({\n    component: secondaryButtonComponent,\n    props: args,\n  })"
+                "defaultValue": "(args: secondaryButtonComponent) => ({\n  component: secondaryButtonComponent,\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/atoms/buttons/primaryButton/primaryButton.stories.ts",
+                "type": "Story<primaryButtonComponent>",
+                "defaultValue": "(args: primaryButtonComponent) => ({\n  component: primaryButtonComponent,\n  props: args,\n})"
             },
             {
                 "name": "Template",
@@ -2198,17 +2060,9 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/molecules/form-screens/form-screen-first/form-screen-first.stories.ts",
-                "type": "Story<FormScreenFirstComponent>",
-                "defaultValue": "(args: FormScreenFirstComponent) => ({\n    component: FormScreenFirstComponent,\n    props: args,\n  })"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "src/app/molecules/menu/date-menu/date-menu.stories.ts",
                 "type": "Story<DateMenuComponent>",
-                "defaultValue": "(args: DateMenuComponent) => ({\n    component: DateMenuComponent,\n    props: args,\n  })"
+                "defaultValue": "(args: DateMenuComponent) => ({\n  component: DateMenuComponent,\n  props: args,\n})"
             },
             {
                 "name": "Template",
@@ -2216,7 +2070,15 @@
                 "subtype": "variable",
                 "file": "src/app/molecules/menu/side-menu/side-menu.stories.ts",
                 "type": "Story<SideMenuComponent>",
-                "defaultValue": "(args: SideMenuComponent) => ({\n    component: SideMenuComponent,\n    props: args,\n  })"
+                "defaultValue": "(args: SideMenuComponent) => ({\n  component: SideMenuComponent,\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/molecules/form-screens/form-screen-fifth/form-screen-fifth.stories.ts",
+                "type": "Story<FormScreenFifthComponent>",
+                "defaultValue": "(args: FormScreenFifthComponent) => ({\n    component: FormScreenFifthComponent,\n    props: args,\n  })"
             },
             {
                 "name": "Template",
@@ -2224,15 +2086,15 @@
                 "subtype": "variable",
                 "file": "src/app/molecules/form-screens/form-screen-fourth/form-screen-fourth.stories.ts",
                 "type": "Story<FormScreenFourthComponent>",
-                "defaultValue": "(args: FormScreenFourthComponent) => ({\n    component: FormScreenFourthComponent,\n    props: args,\n  })"
+                "defaultValue": "(args: FormScreenFourthComponent) => ({\n  component: FormScreenFourthComponent,\n  props: args,\n})"
             },
             {
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/molecules/form-screens/form-screen-second/form-screen-second.stories.ts",
-                "type": "Story<FormScreenSecondComponent>",
-                "defaultValue": "(args: FormScreenSecondComponent) => ({\n    component: FormScreenSecondComponent,\n    props: args,\n  })"
+                "file": "src/app/molecules/form-screens/form-screen-first/form-screen-first.stories.ts",
+                "type": "Story<FormScreenFirstComponent>",
+                "defaultValue": "(args: FormScreenFirstComponent) => ({\n  component: FormScreenFirstComponent,\n  props: args,\n})"
             },
             {
                 "name": "Template",
@@ -2240,7 +2102,15 @@
                 "subtype": "variable",
                 "file": "src/app/molecules/form-screens/form-screen-third/form-screen-third.stories.ts",
                 "type": "Story<FormScreenThirdComponent>",
-                "defaultValue": "(args: FormScreenThirdComponent) => ({\n    component: FormScreenThirdComponent,\n    props: args,\n  })"
+                "defaultValue": "(args: FormScreenThirdComponent) => ({\n  component: FormScreenThirdComponent,\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/molecules/form-screens/form-screen-second/form-screen-second.stories.ts",
+                "type": "Story<FormScreenSecondComponent>",
+                "defaultValue": "(args: FormScreenSecondComponent) => ({\n  component: FormScreenSecondComponent,\n  props: args,\n})"
             },
             {
                 "name": "Third",
@@ -2300,23 +2170,6 @@
         "typealiases": [],
         "enumerations": [],
         "groupedVariables": {
-            "src/test.ts": [
-                {
-                    "name": "context",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/test.ts",
-                    "type": "",
-                    "defaultValue": "require.context('./', true, /\\.spec\\.ts$/)"
-                },
-                {
-                    "name": "require",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/test.ts",
-                    "type": "literal type"
-                }
-            ],
             "src/app/atoms/buttons/simpleButton/simpleButton.stories.ts": [
                 {
                     "name": "Danger",
@@ -2348,7 +2201,7 @@
                     "subtype": "variable",
                     "file": "src/app/atoms/buttons/simpleButton/simpleButton.stories.ts",
                     "type": "Story<simpleButtonComponent>",
-                    "defaultValue": "(args: simpleButtonComponent) => ({\n    component: simpleButtonComponent,\n    props: args,\n  })"
+                    "defaultValue": "(args: simpleButtonComponent) => ({\n  component: simpleButtonComponent,\n  props: args,\n})"
                 },
                 {
                     "name": "Transparent",
@@ -2382,7 +2235,41 @@
                     "subtype": "variable",
                     "file": "src/app/molecules/menu/date-menu/date-menu.stories.ts",
                     "type": "Story<DateMenuComponent>",
-                    "defaultValue": "(args: DateMenuComponent) => ({\n    component: DateMenuComponent,\n    props: args,\n  })"
+                    "defaultValue": "(args: DateMenuComponent) => ({\n  component: DateMenuComponent,\n  props: args,\n})"
+                }
+            ],
+            "src/app/organisms/registration-form/registration-form.stories.ts": [
+                {
+                    "name": "Desktop",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/organisms/registration-form/registration-form.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Mobile",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/organisms/registration-form/registration-form.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "props",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/organisms/registration-form/registration-form.stories.ts",
+                    "type": "object",
+                    "defaultValue": "{\n}"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/organisms/registration-form/registration-form.stories.ts",
+                    "type": "Story<RegistrationFormComponent>",
+                    "defaultValue": "(args: RegistrationFormComponent) => ({\n    component: RegistrationFormComponent,\n    props: args,\n})"
                 }
             ],
             "src/environments/environment.prod.ts": [
@@ -2403,6 +2290,32 @@
                     "file": "src/environments/environment.ts",
                     "type": "object",
                     "defaultValue": "{\n  production: false\n}"
+                }
+            ],
+            "src/app/molecules/form-screens/form-screen-fifth/form-screen-fifth.stories.ts": [
+                {
+                    "name": "Fifth",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/molecules/form-screens/form-screen-fifth/form-screen-fifth.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "props",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/molecules/form-screens/form-screen-fifth/form-screen-fifth.stories.ts",
+                    "type": "object",
+                    "defaultValue": "{\n}"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/molecules/form-screens/form-screen-fifth/form-screen-fifth.stories.ts",
+                    "type": "Story<FormScreenFifthComponent>",
+                    "defaultValue": "(args: FormScreenFifthComponent) => ({\n    component: FormScreenFifthComponent,\n    props: args,\n  })"
                 }
             ],
             "src/app/molecules/form-screens/form-screen-first/form-screen-first.stories.ts": [
@@ -2428,7 +2341,7 @@
                     "subtype": "variable",
                     "file": "src/app/molecules/form-screens/form-screen-first/form-screen-first.stories.ts",
                     "type": "Story<FormScreenFirstComponent>",
-                    "defaultValue": "(args: FormScreenFirstComponent) => ({\n    component: FormScreenFirstComponent,\n    props: args,\n  })"
+                    "defaultValue": "(args: FormScreenFirstComponent) => ({\n  component: FormScreenFirstComponent,\n  props: args,\n})"
                 }
             ],
             "src/app/molecules/form-screens/form-screen-fourth/form-screen-fourth.stories.ts": [
@@ -2454,7 +2367,7 @@
                     "subtype": "variable",
                     "file": "src/app/molecules/form-screens/form-screen-fourth/form-screen-fourth.stories.ts",
                     "type": "Story<FormScreenFourthComponent>",
-                    "defaultValue": "(args: FormScreenFourthComponent) => ({\n    component: FormScreenFourthComponent,\n    props: args,\n  })"
+                    "defaultValue": "(args: FormScreenFourthComponent) => ({\n  component: FormScreenFourthComponent,\n  props: args,\n})"
                 }
             ],
             "src/app/atoms/buttons/gradientButton/gradientButton.stories.ts": [
@@ -2480,7 +2393,7 @@
                     "subtype": "variable",
                     "file": "src/app/atoms/buttons/gradientButton/gradientButton.stories.ts",
                     "type": "Story<gradientButtonComponent>",
-                    "defaultValue": "(args: gradientButtonComponent) => ({\n    component: gradientButtonComponent,\n    props: args,\n  })"
+                    "defaultValue": "(args: gradientButtonComponent) => ({\n  component: gradientButtonComponent,\n  props: args,\n})"
                 }
             ],
             "src/app/atoms/navLink/navLink.stories.ts": [
@@ -2522,7 +2435,7 @@
                     "subtype": "variable",
                     "file": "src/app/atoms/navLink/navLink.stories.ts",
                     "type": "Story<navLinkComponent>",
-                    "defaultValue": "(args: navLinkComponent) => ({\n    component: navLinkComponent,\n    props: args,\n  })"
+                    "defaultValue": "(args: navLinkComponent) => ({\n  component: navLinkComponent,\n  props: args,\n})"
                 }
             ],
             "src/app/atoms/buttons/infoButton/infoButton.stories.ts": [
@@ -2548,49 +2461,7 @@
                     "subtype": "variable",
                     "file": "src/app/atoms/buttons/infoButton/infoButton.stories.ts",
                     "type": "Story<infoButtonComponent>",
-                    "defaultValue": "(args: infoButtonComponent) => ({\n    component: infoButtonComponent,\n    props: args,\n  })"
-                }
-            ],
-            "src/stories/Button.stories.ts": [
-                {
-                    "name": "Large",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/Button.stories.ts",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Primary",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/Button.stories.ts",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Secondary",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/Button.stories.ts",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Small",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/Button.stories.ts",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/Button.stories.ts",
-                    "type": "Story<Button>",
-                    "defaultValue": "(args: Button) => ({\n  component: Button,\n  props: args,\n})"
+                    "defaultValue": "(args: infoButtonComponent) => ({\n  component: infoButtonComponent,\n  props: args,\n})"
                 }
             ],
             "src/app/atoms/buttons/largeButton/largeButton.stories.ts": [
@@ -2616,7 +2487,7 @@
                     "subtype": "variable",
                     "file": "src/app/atoms/buttons/largeButton/largeButton.stories.ts",
                     "type": "Story<largeButtonComponent>",
-                    "defaultValue": "(args: largeButtonComponent) => ({\n    component: largeButtonComponent,\n    props: args,\n  })"
+                    "defaultValue": "(args: largeButtonComponent) => ({\n  component: largeButtonComponent,\n  props: args,\n})"
                 }
             ],
             "src/app/atoms/buttons/lightButton/lightButton.stories.ts": [
@@ -2642,7 +2513,7 @@
                     "subtype": "variable",
                     "file": "src/app/atoms/buttons/lightButton/lightButton.stories.ts",
                     "type": "Story<lightButtonComponent>",
-                    "defaultValue": "(args: lightButtonComponent) => ({\n    component: lightButtonComponent,\n    props: args,\n  })"
+                    "defaultValue": "(args: lightButtonComponent) => ({\n  component: lightButtonComponent,\n  props: args,\n})"
                 }
             ],
             "src/app/atoms/buttons/primaryButton/primaryButton.stories.ts": [
@@ -2668,33 +2539,7 @@
                     "subtype": "variable",
                     "file": "src/app/atoms/buttons/primaryButton/primaryButton.stories.ts",
                     "type": "Story<primaryButtonComponent>",
-                    "defaultValue": "(args: primaryButtonComponent) => ({\n    component: primaryButtonComponent,\n    props: args,\n  })"
-                }
-            ],
-            "src/app/atoms/iconContainer/iconContainer.stories.ts": [
-                {
-                    "name": "props",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/atoms/iconContainer/iconContainer.stories.ts",
-                    "type": "object",
-                    "defaultValue": "{\n  backgroundColor: { control: 'color' },\n}"
-                },
-                {
-                    "name": "Simple",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/atoms/iconContainer/iconContainer.stories.ts",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/atoms/iconContainer/iconContainer.stories.ts",
-                    "type": "Story<IconContainerComponent>",
-                    "defaultValue": "(args: IconContainerComponent) => ({\n    component: IconContainerComponent,\n    props: args,\n  })"
+                    "defaultValue": "(args: primaryButtonComponent) => ({\n  component: primaryButtonComponent,\n  props: args,\n})"
                 }
             ],
             "src/app/atoms/card/card.stories.ts": [
@@ -2720,7 +2565,33 @@
                     "subtype": "variable",
                     "file": "src/app/atoms/card/card.stories.ts",
                     "type": "Story<CardComponent>",
-                    "defaultValue": "(args: CardComponent) => ({\n    component: CardComponent,\n    props: args,\n  })"
+                    "defaultValue": "(args: CardComponent) => ({\n  component: CardComponent,\n  props: args,\n})"
+                }
+            ],
+            "src/app/atoms/iconContainer/iconContainer.stories.ts": [
+                {
+                    "name": "props",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/atoms/iconContainer/iconContainer.stories.ts",
+                    "type": "object",
+                    "defaultValue": "{\n  backgroundColor: { control: 'color' },\n}"
+                },
+                {
+                    "name": "Simple",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/atoms/iconContainer/iconContainer.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/atoms/iconContainer/iconContainer.stories.ts",
+                    "type": "Story<IconContainerComponent>",
+                    "defaultValue": "(args: IconContainerComponent) => ({\n  component: IconContainerComponent,\n  props: args,\n})"
                 }
             ],
             "src/app/atoms/searchItem/searchItem.stories.ts": [
@@ -2780,7 +2651,7 @@
                     "subtype": "variable",
                     "file": "src/app/atoms/steps/steps.stories.ts",
                     "type": "Story<StepsComponent>",
-                    "defaultValue": "(args: StepsComponent) => ({\n    component: StepsComponent,\n    props: args,\n  })"
+                    "defaultValue": "(args: StepsComponent) => ({\n  component: StepsComponent,\n  props: args,\n})"
                 }
             ],
             "src/app/atoms/buttons/secondaryButton/secondaryButton.stories.ts": [
@@ -2806,7 +2677,7 @@
                     "subtype": "variable",
                     "file": "src/app/atoms/buttons/secondaryButton/secondaryButton.stories.ts",
                     "type": "Story<secondaryButtonComponent>",
-                    "defaultValue": "(args: secondaryButtonComponent) => ({\n    component: secondaryButtonComponent,\n    props: args,\n  })"
+                    "defaultValue": "(args: secondaryButtonComponent) => ({\n  component: secondaryButtonComponent,\n  props: args,\n})"
                 }
             ],
             "src/app/atoms/inputs/formInput/formInput.stories.ts": [
@@ -2866,7 +2737,33 @@
                     "subtype": "variable",
                     "file": "src/app/molecules/menu/side-menu/side-menu.stories.ts",
                     "type": "Story<SideMenuComponent>",
-                    "defaultValue": "(args: SideMenuComponent) => ({\n    component: SideMenuComponent,\n    props: args,\n  })"
+                    "defaultValue": "(args: SideMenuComponent) => ({\n  component: SideMenuComponent,\n  props: args,\n})"
+                }
+            ],
+            "src/app/molecules/form-screens/form-screen-third/form-screen-third.stories.ts": [
+                {
+                    "name": "props",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/molecules/form-screens/form-screen-third/form-screen-third.stories.ts",
+                    "type": "object",
+                    "defaultValue": "{\n}"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/molecules/form-screens/form-screen-third/form-screen-third.stories.ts",
+                    "type": "Story<FormScreenThirdComponent>",
+                    "defaultValue": "(args: FormScreenThirdComponent) => ({\n  component: FormScreenThirdComponent,\n  props: args,\n})"
+                },
+                {
+                    "name": "Third",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/molecules/form-screens/form-screen-third/form-screen-third.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
                 }
             ],
             "src/app/molecules/form-screens/form-screen-second/form-screen-second.stories.ts": [
@@ -2892,33 +2789,7 @@
                     "subtype": "variable",
                     "file": "src/app/molecules/form-screens/form-screen-second/form-screen-second.stories.ts",
                     "type": "Story<FormScreenSecondComponent>",
-                    "defaultValue": "(args: FormScreenSecondComponent) => ({\n    component: FormScreenSecondComponent,\n    props: args,\n  })"
-                }
-            ],
-            "src/app/molecules/form-screens/form-screen-third/form-screen-third.stories.ts": [
-                {
-                    "name": "props",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/molecules/form-screens/form-screen-third/form-screen-third.stories.ts",
-                    "type": "object",
-                    "defaultValue": "{\n}"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/molecules/form-screens/form-screen-third/form-screen-third.stories.ts",
-                    "type": "Story<FormScreenThirdComponent>",
-                    "defaultValue": "(args: FormScreenThirdComponent) => ({\n    component: FormScreenThirdComponent,\n    props: args,\n  })"
-                },
-                {
-                    "name": "Third",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/molecules/form-screens/form-screen-third/form-screen-third.stories.ts",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
+                    "defaultValue": "(args: FormScreenSecondComponent) => ({\n  component: FormScreenSecondComponent,\n  props: args,\n})"
                 }
             ]
         },
@@ -2978,7 +2849,7 @@
                 "linktype": "component",
                 "name": "gradientButtonComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/5",
+                "coverageCount": "0/4",
                 "status": "low"
             },
             {
@@ -3017,7 +2888,7 @@
                 "linktype": "component",
                 "name": "infoButtonComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/6",
+                "coverageCount": "0/4",
                 "status": "low"
             },
             {
@@ -3056,7 +2927,7 @@
                 "linktype": "component",
                 "name": "largeButtonComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/7",
+                "coverageCount": "0/8",
                 "status": "low"
             },
             {
@@ -3095,7 +2966,7 @@
                 "linktype": "component",
                 "name": "lightButtonComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/4",
+                "coverageCount": "0/2",
                 "status": "low"
             },
             {
@@ -3134,7 +3005,7 @@
                 "linktype": "component",
                 "name": "primaryButtonComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/5",
+                "coverageCount": "0/3",
                 "status": "low"
             },
             {
@@ -3173,7 +3044,7 @@
                 "linktype": "component",
                 "name": "secondaryButtonComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/6",
+                "coverageCount": "0/4",
                 "status": "low"
             },
             {
@@ -3212,7 +3083,7 @@
                 "linktype": "component",
                 "name": "simpleButtonComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/6",
+                "coverageCount": "0/5",
                 "status": "low"
             },
             {
@@ -3271,7 +3142,7 @@
                 "linktype": "component",
                 "name": "CardComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/8",
+                "coverageCount": "0/7",
                 "status": "low"
             },
             {
@@ -3310,7 +3181,7 @@
                 "linktype": "component",
                 "name": "IconContainerComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/3",
+                "coverageCount": "0/2",
                 "status": "low"
             },
             {
@@ -3349,7 +3220,7 @@
                 "linktype": "component",
                 "name": "formInputComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/7",
+                "coverageCount": "0/6",
                 "status": "low"
             },
             {
@@ -3398,7 +3269,7 @@
                 "linktype": "component",
                 "name": "navLinkComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/7",
+                "coverageCount": "0/6",
                 "status": "low"
             },
             {
@@ -3457,7 +3328,7 @@
                 "linktype": "component",
                 "name": "searchItemComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/4",
+                "coverageCount": "0/3",
                 "status": "low"
             },
             {
@@ -3515,7 +3386,7 @@
                 "linktype": "component",
                 "name": "StepsComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/5",
+                "coverageCount": "0/4",
                 "status": "low"
             },
             {
@@ -3549,12 +3420,51 @@
                 "status": "low"
             },
             {
+                "filePath": "src/app/molecules/form-screens/form-screen-fifth/form-screen-fifth.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "FormScreenFifthComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/molecules/form-screens/form-screen-fifth/form-screen-fifth.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Fifth",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/molecules/form-screens/form-screen-fifth/form-screen-fifth.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "props",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/molecules/form-screens/form-screen-fifth/form-screen-fifth.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
                 "filePath": "src/app/molecules/form-screens/form-screen-first/form-screen-first.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "FormScreenFirstComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/3",
+                "coverageCount": "0/1",
                 "status": "low"
             },
             {
@@ -3593,7 +3503,7 @@
                 "linktype": "component",
                 "name": "FormScreenFourthComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/3",
+                "coverageCount": "0/4",
                 "status": "low"
             },
             {
@@ -3632,7 +3542,7 @@
                 "linktype": "component",
                 "name": "FormScreenSecondComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/3",
+                "coverageCount": "0/1",
                 "status": "low"
             },
             {
@@ -3671,7 +3581,7 @@
                 "linktype": "component",
                 "name": "FormScreenThirdComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/5",
+                "coverageCount": "0/4",
                 "status": "low"
             },
             {
@@ -3710,7 +3620,7 @@
                 "linktype": "component",
                 "name": "DateMenuComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/5",
+                "coverageCount": "0/4",
                 "status": "low"
             },
             {
@@ -3749,7 +3659,7 @@
                 "linktype": "component",
                 "name": "SideMenuComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/5",
+                "coverageCount": "0/4",
                 "status": "low"
             },
             {
@@ -3783,10 +3693,50 @@
                 "status": "low"
             },
             {
-                "filePath": "src/app/text/text.component.ts",
+                "filePath": "src/app/organisms/registration-form/registration-form.component.ts",
                 "type": "component",
                 "linktype": "component",
-                "name": "TextComponent",
+                "name": "RegistrationFormComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/7",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/organisms/registration-form/registration-form.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Desktop",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/organisms/registration-form/registration-form.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Mobile",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/organisms/registration-form/registration-form.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "props",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/organisms/registration-form/registration-form.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -3807,85 +3757,6 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "environment",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/Button.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Large",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/Button.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Primary",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/Button.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Secondary",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/Button.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Small",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/Button.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Template",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/button.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "ButtonComponent",
-                "coveragePercent": 55,
-                "coverageCount": "5/9",
-                "status": "good"
-            },
-            {
-                "filePath": "src/test.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "context",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/test.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "require",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"

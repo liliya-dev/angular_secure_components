@@ -1,4 +1,3 @@
-import { action } from '@storybook/addon-actions';
 import { Meta, Story } from '@storybook/angular';
 import { lightButtonComponent } from './lightButton.component';
 
@@ -9,18 +8,18 @@ const props = {
 };
 
 export default {
-    title: 'Atoms/Button',
-    component: lightButtonComponent,
-    argTypes: props,
-  } as Meta;
+  title: 'Atoms/Button',
+  component: lightButtonComponent,
+  argTypes: props,
+} as Meta;
 
 const Template: Story<lightButtonComponent> = (args: lightButtonComponent) => ({
-    component: lightButtonComponent,
-    props: args,
-  });
+  component: lightButtonComponent,
+  props: args,
+});
 
-  export const Light = Template.bind({});
-  Light.args = {
-    classes: "btn-app btn-light"
-  };
+export const Light = Template.bind({});
+Light.args = {
+  
+};
 

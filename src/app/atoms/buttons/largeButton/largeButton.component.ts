@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnChanges } from '@angular/core';
 
 @Component({
     selector: 'app-large-button',
@@ -6,16 +6,16 @@ import { Component, Input, OnInit } from '@angular/core';
     styleUrls: ['../button.component.scss', 'largeButton.component.scss'],
 })
 
-
-
-export class largeButtonComponent implements OnInit {
+export class largeButtonComponent implements OnChanges {
     @Input() title: string;
     @Input() text: string;
-    @Input() classes: string;
+    @Input() isActive: string;
     @Input() backgroundColor: string;
     @Input() color: string;
 
-    ngOnInit() {
+    classes: string;
 
+    ngOnChanges() {
+        this.classes = !this.isActive ? "btn-large btn-app--h53 btn-app " : "btn-large active btn-app--h53 btn-app ";
     }
 }

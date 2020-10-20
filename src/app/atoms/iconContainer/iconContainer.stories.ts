@@ -7,18 +7,18 @@ const props = {
 };
 
 export default {
-    title: 'Atoms/IconContainer',
-    component: IconContainerComponent,
-    argTypes: props,
-  } as Meta;
+  title: 'Atoms/IconContainer',
+  component: IconContainerComponent,
+  argTypes: props,
+} as Meta;
 
 const Template: Story<IconContainerComponent> = (args: IconContainerComponent) => ({
-    component: IconContainerComponent,
-    props: args,
-  });
+  component: IconContainerComponent,
+  props: args,
+});
 
-  export const Simple = Template.bind({});
-  Simple.args = {
-    
-  };
+export const Simple = Template.bind({});
+Simple.args = {
+  
+};
 

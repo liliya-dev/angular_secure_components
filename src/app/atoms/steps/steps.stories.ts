@@ -6,18 +6,18 @@ const props = {
 };
 
 export default {
-    title: 'Atoms/Steps',
-    component: StepsComponent,
-    argTypes: props,
-  } as Meta;
+  title: 'Atoms/Steps',
+  component: StepsComponent,
+  argTypes: props,
+} as Meta;
 
 const Template: Story<StepsComponent> = (args: StepsComponent) => ({
-    component: StepsComponent,
-    props: args,
-  });
+  component: StepsComponent,
+  props: args,
+});
 
-  export const Simple = Template.bind({});
-  Simple.args = {
-    activePoints: 2
-  };
+export const Simple = Template.bind({});
+Simple.args = {
+  activePoints: 2
+};
 

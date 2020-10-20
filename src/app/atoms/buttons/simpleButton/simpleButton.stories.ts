@@ -9,30 +9,30 @@ const props = {
 };
 
 export default {
-    title: 'Atoms/Button',
-    component: simpleButtonComponent,
-    argTypes: props,
-  } as Meta;
+  title: 'Atoms/Button',
+  component: simpleButtonComponent,
+  argTypes: props,
+} as Meta;
 
 const Template: Story<simpleButtonComponent> = (args: simpleButtonComponent) => ({
-    component: simpleButtonComponent,
-    props: args,
-  });
+  component: simpleButtonComponent,
+  props: args,
+});
 
-  export const Danger = Template.bind({});
-  Danger.args = {
-    title: "clear",
-    classes: "btn-danger fs-16-gramm-300 btn-app btn-app--h36"
-  };
+export const Danger = Template.bind({});
+Danger.args = {
+  title: "clear",
+  classes: "btn-danger fs-16-gramm-300 btn-app btn-app--h36"
+};
 
-  export const Transparent = Template.bind({});
-  Transparent.args = {
-    title: "back",
-    classes: "btn-app fs-16-sofia-500 btn-transparent"
-  };
+export const Transparent = Template.bind({});
+Transparent.args = {
+  title: "back",
+  classes: "btn-app fs-16-sofia-500 btn-transparent"
+};
 
-  export const Success = Template.bind({});
-  Success.args = {
-    title: "save",
-    classes: "btn-app--h36 btn-app btn-success fs-12-gramm-400 "
-  };
+export const Success = Template.bind({});
+Success.args = {
+  title: "save",
+  classes: "btn-app--h36 btn-app btn-success fs-12-gramm-400 "
+};

@@ -1,18 +1,36 @@
 
 @font-face {
   font-family: 'Sofia pro';
-  src: url("./assets/fonts/sofiapro-light.otf");
+  src: url("../assets/fonts/sofiapro-light.otf");
 }
 
 
 @font-face {
   font-family: 'Gramatica Regular';
-  src: url("./assets/fonts/Gramatica-Regular.ttf");
+  src: url("../assets/fonts/Gramatica-Regular.ttf");
 }
 
 @font-face {
   font-family: 'Gramatica Bold';
-  src: url("./assets/fonts/Gramatica-Bold.ttf");
+  src: url("../assets/fonts/Gramatica-Bold.ttf");
+}
+
+.fs-h2 {
+  font-family: 'Gramatica Regular', 'open-sans';
+  font-size: 38px;
+  line-height: 120%;
+  text-transform: capitalize;
+  color: var(--secondary-color);
+}
+
+.fs-h2--bold {
+  font-family: 'Gramatica Bold', 'open-sans';
+  font-size: 38px;
+  line-height: 120%;
+  text-transform: capitalize;
+  background: var(--success-grad-light);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .fs-h3 {
@@ -21,6 +39,15 @@
   font-weight: 600;
   font-size: 24px;
   color: var(--secondary-color);
+}
+
+.fs-h5 {
+  font-family: 'Sofia pro', 'open-sans';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  color: var(--secondary-color);
+  text-transform: capitalize;
 }
 
 .fs-18-sofia-300 {

@@ -9,19 +9,18 @@ const props = {
 };
 
 export default {
-    title: 'Atoms/Button',
-    component: secondaryButtonComponent,
-    argTypes: props,
-  } as Meta;
+  title: 'Atoms/Button',
+  component: secondaryButtonComponent,
+  argTypes: props,
+} as Meta;
 
 const Template: Story<secondaryButtonComponent> = (args: secondaryButtonComponent) => ({
-    component: secondaryButtonComponent,
-    props: args,
-  });
+  component: secondaryButtonComponent,
+  props: args,
+});
 
-  export const Secondary = Template.bind({});
+export const Secondary = Template.bind({});
   Secondary.args = {
-    title: "Filters",
-    classes: "btn-secondary btn-app btn-app--h46 fs-16-sofia-300"
-  };
+    title: "Filters"
+};
 

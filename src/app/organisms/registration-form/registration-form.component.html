@@ -1,0 +1,121 @@
+<div class="registration-form" *ngIf="!isMobile">
+    <div class="registration-form__header">
+        <img class="registration-form__logo" src="assets/images/logo.png" alt="logo secure privacy">
+        <app-info-button [title]="'support'"></app-info-button>
+    </div>
+    <div class="registration-form__body">
+        <div class="registration-form__body--left">
+            <h2 class="fs-h2">
+                Register now and receive 100% no-risk
+                <span class="fs-h2--bold">Free Trial</span>
+            </h2>
+            <ul class="registration-form__list">
+                <app-search-item 
+                    [title]="'Get access to all features.'"
+                    [classes]="'list-item-icon fs-16-sofia-300'"
+                >
+                </app-search-item>
+                <app-search-item 
+                    [title]="'Pay NOTHING for the first 7-days.'"
+                    [classes]="'list-item-icon fs-16-sofia-300'"
+                >
+                </app-search-item>
+                <app-search-item 
+                    [title]="'Cancel at ANY time during your trial.'"
+                    [classes]="'list-item-icon fs-16-sofia-300'"
+                >
+                </app-search-item>
+            </ul>
+            <h5 class="fs-h5">These awesome companies are using Secure Privacy</h5>
+            <app-icon-container></app-icon-container>
+        </div>
+        <div class="registration-form__body--right">
+            <div class="registration-form__wrapper-top" [ngSwitch]="activeScreen">
+                <app-form-screen-first *ngSwitchCase="1"></app-form-screen-first>
+                <app-form-screen-second *ngSwitchCase="2"></app-form-screen-second>
+                <app-form-screen-third *ngSwitchCase="3"></app-form-screen-third>
+                <app-form-screen-fourth *ngSwitchCase="4"></app-form-screen-fourth>
+                <app-form-screen-fifth *ngSwitchCase="5"></app-form-screen-fifth>
+            </div>
+            <div class="registration-form__wrapper-bottom">
+                <div class="registration-form__wrapper-bottom--left">
+                    <app-steps [activePoints]="activeScreen"></app-steps>
+                </div>
+                <app-gradient-button 
+                    [title]="'Next'"
+                    (click)="changeScreen()"
+                >
+                </app-gradient-button>
+            </div>
+        </div>
+    </div>  
+</div>
+<div class="registration-form" *ngIf="isMobile">
+    <div class="registration-form__header">
+        <img class="registration-form__logo" src="assets/images/logo.png" alt="logo secure privacy">
+        <app-info-button [title]="'support'"></app-info-button>
+    </div>
+    <div class="registration-form__body" [ngStyle]="{'padding-top':'10px'}">
+        <div 
+            class="registration-form__body--left" 
+            *ngIf="!isStarted"
+            [ngStyle]="{'width':'100%', 'align-items': 'center'}"
+        >
+            <h2 class="fs-h2">
+                Register now and receive 100% no-risk
+                <span class="fs-h2--bold">Free Trial</span>
+            </h2>
+            <ul class="registration-form__list">
+                <app-search-item 
+                    [title]="'Get access to all features.'"
+                    [classes]="'list-item-icon fs-16-sofia-300'"
+                >
+                </app-search-item>
+                <app-search-item 
+                    [title]="'Pay NOTHING for the first 7-days.'"
+                    [classes]="'list-item-icon fs-16-sofia-300'"
+                >
+                </app-search-item>
+                <app-search-item 
+                    [title]="'Cancel at ANY time during your trial.'"
+                    [classes]="'list-item-icon fs-16-sofia-300'"
+                >
+                </app-search-item>
+            </ul>
+            <h5 class="fs-h5">These awesome companies are using Secure Privacy</h5>
+            <app-icon-container></app-icon-container>
+            <div [ngStyle]="{'margin-bottom':'32px'}"></div>
+            <app-gradient-button 
+                [title]="'get started'"
+                (click)="setIsStarted()"
+            >
+            </app-gradient-button>
+        </div>
+        <div 
+            class="registration-form__body--right" 
+            *ngIf="isStarted"
+            [ngStyle]="{'width':'100%'}"
+        >
+            <div class="registration-form__wrapper-top" [ngSwitch]="activeScreen">
+                <app-form-screen-first *ngSwitchCase="1"></app-form-screen-first>
+                <app-form-screen-second *ngSwitchCase="2"></app-form-screen-second>
+                <app-form-screen-third *ngSwitchCase="3"></app-form-screen-third>
+                <app-form-screen-fourth *ngSwitchCase="4"></app-form-screen-fourth>
+                <app-form-screen-fifth *ngSwitchCase="5"></app-form-screen-fifth>
+            </div>
+            <div class="registration-form__wrapper-bottom">
+                <app-simple-button 
+                    [classes]="'btn-app fs-16-sofia-500 btn-transparent'"
+                    [title]="'back'"
+                    (click)="changeScreenToPrevious()"
+                >
+                </app-simple-button>
+                <app-gradient-button 
+                    [title]="'Next'"
+                    (click)="changeScreen()"
+                >
+                </app-gradient-button>
+            </div>
+        </div>
+    </div>
+</div>

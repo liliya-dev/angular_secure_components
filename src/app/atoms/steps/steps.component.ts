@@ -9,9 +9,7 @@ import { detectClasses } from './helpers';
 export class StepsComponent implements OnChanges {
   @Input() activePoints: number;
   classes=[];
-
-  constructor() { }
-
+  
   ngOnChanges(): void {
     this.classes = detectClasses(this.activePoints);
   }

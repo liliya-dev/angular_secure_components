@@ -1,18 +1,14 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
-    selector: 'app-nav-link',
+    selector: 'app-search-item',
     templateUrl: './searchItem.component.html',
     styleUrls: ['searchItem.component.scss'],
 })
 
 
 
-export class searchItemComponent implements OnInit {
+export class searchItemComponent {
     @Input() title: string;
     @Input() classes: string;
-
-    ngOnInit() {
-
-    }
 }

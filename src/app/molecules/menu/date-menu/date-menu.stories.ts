@@ -10,23 +10,23 @@ const props = {
 };
 
 export default {
-    title: 'Molecules/Menu',
-    decorators: [
-      moduleMetadata({
-        declarations: [DateMenuComponent, navLinkComponent],
-        imports: [CommonModule],
-      }),
-    ],
-    argTypes: props,
-  } as Meta;
+  title: 'Molecules/Menu',
+  decorators: [
+    moduleMetadata({
+      declarations: [DateMenuComponent, navLinkComponent],
+      imports: [CommonModule],
+    }),
+  ],
+  argTypes: props,
+} as Meta;
 
 const Template: Story<DateMenuComponent> = (args: DateMenuComponent) => ({
-    component: DateMenuComponent,
-    props: args,
-  });
+  component: DateMenuComponent,
+  props: args,
+});
 
-  export const Date = Template.bind({});
-  Date.args = {
-    items: ['today', 'this week', 'this month', 'this year']
-  };
+export const Date = Template.bind({});
+Date.args = {
+  items: ['today', 'this week', 'this month', 'this year']
+};
 

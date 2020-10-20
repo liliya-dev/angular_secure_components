@@ -32,10 +32,10 @@ export function detectClasses(num: number) {
         default:
             classes = [
                 "app-steps__circle active", 
-                "app-steps__line", 
-                "app-steps__circle", 
-                "app-steps__line", 
-                "app-steps__circle" 
+                "app-steps__line active", 
+                "app-steps__circle active", 
+                "app-steps__line active", 
+                "app-steps__circle active" 
             ]
     }
     return classes;

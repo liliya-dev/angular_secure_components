@@ -14,10 +14,7 @@ export class CardComponent implements OnChanges {
 
   classes;
 
-  constructor() { }
-
   ngOnChanges() {
-    console.log(this.title, this.isActive,'yugbuiguyg')
     this.classes = this.isActive ? "app-card active" : "app-card";
   }
 }

@@ -6,16 +6,10 @@ import { Component, Input, OnInit } from '@angular/core';
     styleUrls: ['formInput.component.scss'],
 })
 
-
-
-export class formInputComponent implements OnInit {
+export class formInputComponent {
     @Input() backgroundColor: string;
-    @Input() placeholder: string;
+    @Input() placeholderText: string;
     @Input() color: string;
     @Input() classes: string;
     @Input() wrapperClasses: string;
-
-    ngOnInit() {
-
-    }
 }

@@ -1,4 +1,3 @@
-import { action } from '@storybook/addon-actions';
 import { Meta, Story } from '@storybook/angular';
 import { gradientButtonComponent } from './gradientButton.component';
 
@@ -9,19 +8,18 @@ const props = {
 };
 
 export default {
-    title: 'Atoms/Button',
-    component: gradientButtonComponent,
-    argTypes: props,
-  } as Meta;
+  title: 'Atoms/Button',
+  component: gradientButtonComponent,
+  argTypes: props,
+} as Meta;
 
 const Template: Story<gradientButtonComponent> = (args: gradientButtonComponent) => ({
-    component: gradientButtonComponent,
-    props: args,
-  });
+  component: gradientButtonComponent,
+  props: args,
+});
 
-  export const Gradient = Template.bind({});
+export const Gradient = Template.bind({});
   Gradient.args = {
     title: "next",
-    classes: "btn-app--asimetric btn-app btn-grad fs-16-sofia-800"
-  };
+};
 

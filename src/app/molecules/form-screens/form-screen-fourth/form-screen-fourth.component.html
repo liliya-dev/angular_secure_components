@@ -1,1 +1,32 @@
-<p>form-screen-fourth works!</p>
+<h3 class="fs-h3">Select your compliance modules</h3>
+<div class="app-form-screen-fourth">
+    <ul class="app-form-screen-fourth__list">
+        <li 
+            class="app-form-screen-fourth__item"
+            *ngFor="let module of modules.slice(0, modules.length/2); let i = index" 
+        >
+            <app-large-button
+                (click)="selectModule(module.title)"
+                [title]="module.title"
+                [text]="module.text"
+                [isActive]="selectedModules.includes(module.title)"
+            >
+            </app-large-button>
+        </li>
+    </ul>
+    <ul class="app-form-screen-fourth__list">
+        <li 
+            class="app-form-screen-fourth__item"
+            *ngFor="let module of modules.slice(modules.length/2); let i = index" 
+        >
+            <app-large-button
+                (click)="selectModule(module.title)"
+                [title]="module.title"
+                [text]="module.text"
+                [isActive]="selectedModules.includes(module.title)"
+            >
+            </app-large-button>
+        </li>
+    </ul>
+</div>
+

@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
     selector: 'app-secondary-button',
@@ -8,13 +8,8 @@ import { Component, Input, OnInit } from '@angular/core';
 
 
 
-export class secondaryButtonComponent implements OnInit {
+export class secondaryButtonComponent {
     @Input() title: string;
     @Input() backgroundColor: string;
     @Input() color: string;
-    @Input() classes: string;
-
-    ngOnInit() {
-
-    }
 }

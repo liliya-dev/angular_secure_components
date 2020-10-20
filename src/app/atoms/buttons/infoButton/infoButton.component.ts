@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
     selector: 'app-info-button',
@@ -6,15 +6,8 @@ import { Component, Input, OnInit } from '@angular/core';
     styleUrls: ['../button.component.scss', 'infoButton.component.scss'],
 })
 
-
-
-export class infoButtonComponent implements OnInit {
+export class infoButtonComponent {
     @Input() title: string;
-    @Input() classes: string;
     @Input() backgroundColor: string;
     @Input() color: string;
-
-    ngOnInit() {
-
-    }
 }

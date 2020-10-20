@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-form-screen-third',
@@ -6,7 +6,7 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
   styleUrls: ['./form-screen-third.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
-export class FormScreenThirdComponent implements OnInit {
+export class FormScreenThirdComponent {
   selectedModules: string[]=[];
   modules=[
     {
@@ -32,11 +32,5 @@ export class FormScreenThirdComponent implements OnInit {
     } else {
       this.selectedModules = [...this.selectedModules, title];
     }
-
-    console.log(this.selectedModules)
   }
-
-  ngOnInit(): void {
-  }
-
 }

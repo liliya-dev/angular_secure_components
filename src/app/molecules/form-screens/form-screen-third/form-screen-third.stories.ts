@@ -7,22 +7,22 @@ const props = {
 };
 
 export default {
-    title: 'Molecules/Form Screen',
-    decorators: [
-      moduleMetadata({
-        declarations: [FormScreenThirdComponent, CardComponent],
-        imports: [CommonModule],
-      }),
-    ],
-    argTypes: props,
-  } as Meta;
+  title: 'Molecules/Form Screen',
+  decorators: [
+    moduleMetadata({
+      declarations: [FormScreenThirdComponent, CardComponent],
+      imports: [CommonModule],
+    }),
+  ],
+  argTypes: props,
+} as Meta;
 
 const Template: Story<FormScreenThirdComponent> = (args: FormScreenThirdComponent) => ({
-    component: FormScreenThirdComponent,
-    props: args,
-  });
+  component: FormScreenThirdComponent,
+  props: args,
+});
 
-  export const Third = Template.bind({});
-  Third.args = {
-  };
+export const Third = Template.bind({});
+Third.args = {
+};
 

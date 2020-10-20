@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
     selector: 'app-simple-button',
@@ -8,13 +8,9 @@ import { Component, Input, OnInit } from '@angular/core';
 
 
 
-export class simpleButtonComponent implements OnInit {
+export class simpleButtonComponent {
     @Input() title: string;
     @Input() classes: string;
     @Input() backgroundColor: string;
     @Input() color: string;
-
-    ngOnInit() {
-
-    }
 }

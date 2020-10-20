@@ -1,12 +1,11 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-form-screen-fourth',
-  templateUrl: './form-screen-fourth.component.html',
-  styleUrls: ['./form-screen-fourth.component.scss']
+  selector: 'app-form-screen-fifth',
+  templateUrl: './form-screen-fifth.component.html',
+  styleUrls: ['./form-screen-fifth.component.scss']
 })
-export class FormScreenFourthComponent {
-
+export class FormScreenFifthComponent {
   selectedModules: string[]=[];
   modules=[
     {
@@ -32,6 +31,18 @@ export class FormScreenFourthComponent {
     {
       title: "Dubai",
       text: "Dubai ",
+    },
+    {
+      title: "GDPR, eprivacy2",
+      text: "Europe",
+    },
+    {
+      title: "Thailand2",
+      text: "Bangkok",
+    },
+    {
+      title: "Calofornia2",
+      text: "Europe ",
     },
   ]
 
