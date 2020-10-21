@@ -1,0 +1,9 @@
+<ng-select class="custom fs-16-sofia-300" [(ngModel)]="selectedCar" [addTag]="true" (change)="onChange($event)">
+    <ng-option class="option" *ngFor="let car of cars">
+        
+        <h1 *ngIf="car.name===selectedCar"class="red">{{car.name}}</h1>
+        <h1 *ngIf="car.name!==selectedCar"class="black">{{car.name}}</h1>
+
+    </ng-option>
+ </ng-select>
+  

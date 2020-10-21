@@ -1,5 +1,4 @@
 import { CommonModule } from '@angular/common';
-import { action } from '@storybook/addon-actions';
 import { Meta, moduleMetadata, Story } from '@storybook/angular';
 import { navLinkComponent } from '../../../atoms/navLink/navLink.component';
 import { DateMenuComponent } from './date-menu.component';

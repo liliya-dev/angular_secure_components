@@ -21,6 +21,9 @@ import { FormScreenThirdComponent } from './molecules/form-screens/form-screen-t
 import { FormScreenFourthComponent } from './molecules/form-screens/form-screen-fourth/form-screen-fourth.component';
 import { FormScreenFifthComponent } from './molecules/form-screens/form-screen-fifth/form-screen-fifth.component';
 import { RegistrationFormComponent } from './organisms/registration-form/registration-form.component';
+import { SelectInputComponent } from './molecules/select-input/select-input.component';
+import { NgSelectModule } from '@ng-select/ng-select';
+
 
 @NgModule({
   declarations: [
@@ -43,11 +46,13 @@ import { RegistrationFormComponent } from './organisms/registration-form/registr
     largeButtonComponent,
     FormScreenFourthComponent,
     FormScreenFifthComponent,
-    RegistrationFormComponent
+    RegistrationFormComponent,
+    SelectInputComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    NgSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]
