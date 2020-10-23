@@ -8,6 +8,7 @@
     padding: 0;
 }
 
+
 body {
     font-family: 'Gramatica Regular', 'open-sans';
     font-size: 20px;
@@ -22,7 +23,7 @@ a {
     color: inherit;
 }
 
-button, input {
+button, input, label {
     outline: none;
 
     &:hover {

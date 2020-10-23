@@ -15,7 +15,7 @@
     }
 }
 
-.form-input__wrapper {
+.form-input__wrapper, .ng-select {
     margin-bottom: 32px;
 }
 
@@ -30,7 +30,7 @@
         }
     } 
 
-    .form-input__wrapper {
+    .form-input__wrapper, .ng-select {
         margin-bottom: 5px;
     }
 }

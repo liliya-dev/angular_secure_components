@@ -3,6 +3,10 @@
     color: var(--secondary-color);
     border: none;
 
+    &__title {
+        margin-left: 20px;
+    }
+
     &:hover {
         background: rgba(var(--secondary-color-code),0.2);
     }
@@ -13,7 +17,6 @@
     }
 
     & > svg {
-        margin-right: 20px;
         fill: var(--secondary-color); 
         opacity: 0.5;
         fill-opacity: 1;

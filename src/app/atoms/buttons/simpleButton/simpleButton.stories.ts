@@ -36,3 +36,9 @@ Success.args = {
   title: "save",
   classes: "btn-app--h36 btn-app btn-success fs-12-gramm-400 "
 };
+
+export const SuccessAsimetric = Template.bind({});
+SuccessAsimetric.args = {
+  title: "notify me",
+  classes: "btn-app--asimetric  btn-success-asimetric fs-12-gramm-400 "
+};

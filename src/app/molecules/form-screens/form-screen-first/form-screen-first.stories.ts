@@ -2,6 +2,8 @@ import { CommonModule } from '@angular/common';
 import { Meta, moduleMetadata, Story } from '@storybook/angular';
 import { formInputComponent } from '../../../atoms/inputs/formInput/formInput.component';
 import { FormScreenFirstComponent } from './form-screen-first.component';
+import { SelectInputSimpleComponent } from '../../../atoms/inputs/select-input/select-input-simple/select-input-simple.component';
+import { NgSelectModule } from '@ng-select/ng-select';
 
 const props = {
 };
@@ -10,8 +12,8 @@ export default {
   title: 'Molecules/Form Screen',
   decorators: [
     moduleMetadata({
-      declarations: [FormScreenFirstComponent, formInputComponent],
-      imports: [CommonModule],
+      declarations: [FormScreenFirstComponent, formInputComponent, SelectInputSimpleComponent],
+      imports: [CommonModule, NgSelectModule],
     }),
   ],
   argTypes: props,

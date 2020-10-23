@@ -14,21 +14,21 @@ export default {
   } as Meta;
 
 const Template: Story<formInputComponent> = (args: formInputComponent) => ({
-    component: formInputComponent,
-    props: args,
-  });
+  component: formInputComponent,
+  props: args,
+});
 
-  export const Simple = Template.bind({});
-  Simple.args = {
-    placeholder: "First Name",
-    classes: "form-input-field form-input-field--simple fs-16-sofia-300",
-    wrapperClasses: "form-input__wrapper form-input__wrapper--simple"
-  };
+export const Text = Template.bind({});
+Text.args = {
+  placeholderText: "First Name",
+  classes: "form-input-field form-input-field--simple fs-16-sofia-300",
+  wrapperClasses: "form-input__wrapper form-input__wrapper--simple"
+};
 
-  export const WithIcon = Template.bind({});
-  WithIcon.args = {
-    placeholder: "",
-    classes: "form-input-field form-input-field--icon fs-16-sofia-300",
-    wrapperClasses: "form-input__wrapper form-input__wrapper--icon"
-  };
+export const TextWithIcon = Template.bind({});
+TextWithIcon.args = {
+  placeholderText: "",
+  classes: "form-input-field form-input-field--icon fs-16-sofia-300",
+  wrapperClasses: "form-input__wrapper form-input__wrapper--icon"
+};
 

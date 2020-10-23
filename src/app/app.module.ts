@@ -21,8 +21,18 @@ import { FormScreenThirdComponent } from './molecules/form-screens/form-screen-t
 import { FormScreenFourthComponent } from './molecules/form-screens/form-screen-fourth/form-screen-fourth.component';
 import { FormScreenFifthComponent } from './molecules/form-screens/form-screen-fifth/form-screen-fifth.component';
 import { RegistrationFormComponent } from './organisms/registration-form/registration-form.component';
-import { SelectInputComponent } from './molecules/select-input/select-input.component';
+import { SelectInputSimpleComponent } from './atoms/inputs/select-input/select-input-simple/select-input-simple.component';
 import { NgSelectModule } from '@ng-select/ng-select';
+import { CheckboxInputSwitchComponent } from './atoms/inputs/checkbox/checkbox-input-switch/checkbox-input-switch.component';
+import { CompositeMenuComponent } from './molecules/menu/composite-menu/composite-menu.component';
+import { IconButtonComponent } from './atoms/buttons/icon-button/icon-button.component';
+import { AngularSvgIconModule } from 'angular-svg-icon';
+import { HttpClientModule } from '@angular/common/http';
+import { ScanAnimationComponent } from './atoms/scan-animation/scan-animation.component';
+import { CheckboxInputSimpleComponent } from './atoms/inputs/checkbox/checkbox-input-simple/checkbox-input-simple.component';
+import { ScanReportComponent } from './organisms/scan-report/scan-report.component';
+import { SelectInputSearchComponent } from './atoms/inputs/select-input/select-input-search/select-input-search.component';
+import { MainNavigationMenuComponent } from './molecules/menu/main-navigation-menu/main-navigation-menu.component';
 
 
 @NgModule({
@@ -47,12 +57,22 @@ import { NgSelectModule } from '@ng-select/ng-select';
     FormScreenFourthComponent,
     FormScreenFifthComponent,
     RegistrationFormComponent,
-    SelectInputComponent
+    SelectInputSimpleComponent,
+    CheckboxInputSwitchComponent,
+    CompositeMenuComponent,
+    IconButtonComponent,
+    ScanAnimationComponent,
+    CheckboxInputSimpleComponent,
+    ScanReportComponent,
+    SelectInputSearchComponent,
+    MainNavigationMenuComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    NgSelectModule
+    NgSelectModule,
+    AngularSvgIconModule.forRoot(),
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

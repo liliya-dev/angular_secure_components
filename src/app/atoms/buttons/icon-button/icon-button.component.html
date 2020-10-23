@@ -1,1 +1,13 @@
-<p>icon-button works!</p>
+<button class="app-icon-button fs-10-sofia-500" type="button" 
+    (mouseenter)="onHover()"
+    (mouseleave)="onLeave()"
+>
+    <svg-icon 
+        [src]="svgPath"
+        [svgStyle]="{'fill':fillColor }">
+    >
+    </svg-icon>
+    <p class="app-icon-button__title" [ngStyle]="{ 'color': fillColor }">
+        {{title}}
+    </p>     
+</button>

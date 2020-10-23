@@ -1,0 +1,61 @@
+.app-scan-report {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--layout-bg-color);
+    color: var(--secondary-color);
+
+    &__title {
+        margin-bottom: 35px;
+    }
+
+    &__logo {
+        width: 117px;
+        height: 46px;   
+    }
+
+    &__wrapper {
+        width: 100%;
+        background: rgba(var(--text-color-code), 0.5);
+        display: flex;
+        justify-content: center;
+    }
+
+    &__nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 64px;
+        width: 100%;
+        max-width: 1280px;
+    }
+
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        max-width: 1280px;
+        padding: 22px 45px 220px 45px;
+
+        &--left {
+            width: 260px;
+        }
+
+        &--right {
+            width: 72%;
+        }
+    }
+
+    &__box {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        margin-bottom: 34px;
+    }
+}
+
+.ng-select.custom-icon {
+    width: 200px;
+}

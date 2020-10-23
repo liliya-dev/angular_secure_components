@@ -1,0 +1,13 @@
+.app-icon-button {
+    text-transform: capitalize;
+    border: none;
+    background: transparent;
+    padding: 2px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__title {
+        margin-top: 6px;
+    }
+}

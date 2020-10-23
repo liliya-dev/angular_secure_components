@@ -1,0 +1,28 @@
+<ul class="app-composite-menu">
+    <li 
+        class="app-composite-menu__item"
+        *ngFor="let item of items; let i = index" 
+    >   
+        <app-nav-link
+        [isActive]="active === i + item.title"
+        [title]="item.title" 
+        classes="nav-link-secondary fs-12-gramm-400"
+        (click)="handlClick($event, i + item.title)"
+        >
+        </app-nav-link>
+            <ul class="app-composite-menu__section">
+                <li 
+                    class="app-composite-menu__item"
+                    *ngFor="let section of item.sections; let i = index" 
+                >
+                    <app-nav-link
+                    [isActive]="active === i + section"
+                    [title]="section" 
+                    classes="nav-link-secondary fs-12-gramm-400"
+                    (click)="handlClick($event, i + section)"
+                    >
+                    </app-nav-link>
+                </li>
+            </ul>
+    </li>
+</ul>
