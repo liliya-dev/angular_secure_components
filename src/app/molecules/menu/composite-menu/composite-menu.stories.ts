@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Meta, moduleMetadata, Story } from '@storybook/angular';
-import { navLinkComponent } from '../../../atoms/navLink/navLink.component';
+import { navLinkComponent } from '../../../atoms/navLink/textLinks/navLink.component';
 import { CompositeMenuComponent } from './composite-menu.component';
 
 const props = {

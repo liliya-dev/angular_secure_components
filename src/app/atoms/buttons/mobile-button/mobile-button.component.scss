@@ -1,0 +1,26 @@
+.module-border-wrap {
+    height: 46px;
+    box-sizing: border-box;
+    background: var(--success-grad-light);
+    padding: 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    border-radius: 6px;
+}
+
+.btn-mobile.btn-app {
+    height: 44px;
+    border-radius: 5px;  
+}
+
+.module-opacity-wrap {
+    background: var(--text-color);
+    border-radius: 5px;
+}
+
+.btn-mobile {
+    border: none;
+    background-color: var(--text-color);;
+}

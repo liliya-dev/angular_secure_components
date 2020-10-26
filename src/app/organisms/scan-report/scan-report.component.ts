@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, ElementRef, OnInit, HostListener, ViewEncapsulation, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-scan-report',
@@ -21,10 +21,43 @@ export class ScanReportComponent implements OnInit {
     { title: 'languages'},
     { title: 'coverage'},
     { title: 'installation'},
-]
-  constructor() { }
+  ]
+  mobileMenuItems=[
+    { title: 'Reports', svgPath: 'assets/images/menu/Reports.svg',   isActive: false,},
+    { title: 'Domains', svgPath: 'assets/images/menu/Domains.svg',   isActive: false,},
+    { title: 'Account', svgPath: 'assets/images/menu/Account.svg',   isActive: false,},
+    { title: 'Options', svgPath: 'assets/images/menu/Options.svg',   isActive: false,},
+  ]
+  isMobile=false;
+  isSideMenuVisible=false;
+  marginMenu=156;
 
-  ngOnInit(): void {
+  toggleSideMenu() {
+    this.isSideMenuVisible = !this.isSideMenuVisible;
   }
 
+  @HostListener('window:resize', ['$event'])
+  onResize(event: any) {
+    if (event.target.innerWidth < 800) {
+      this.isMobile = true;
+    }
+    if (event.target.innerWidth > 800) {
+      this.isMobile = false;
+    }
+  }
+
+  @ViewChild('nav') element: ElementRef;
+
+  @HostListener('document:click', ['$event'])
+	onClick(event: Event) {
+    if (!this.element.nativeElement.contains(event.target)){
+      this.isSideMenuVisible=false;
+    }
+  }
+  
+  ngOnInit(): void {
+    if (window.innerWidth < 800) {
+      this.isMobile = true;
+    }
+  }
 }

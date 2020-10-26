@@ -924,21 +924,65 @@
             "templateData": "<button\n  class=\"btn-app--asimetric btn-app btn-grad fs-16-sofia-800\"\n  [ngStyle]=\"{ 'background': backgroundColor, 'color': color }\"\n>\n  {{ title }}\n  <img src='assets/images/next.svg' alt=\"arrow\" />\n</button>\n\n"
         },
         {
-            "name": "IconButtonComponent",
-            "id": "component-IconButtonComponent-5346dd344af9052b9097e5464b81ab30",
-            "file": "src/app/atoms/buttons/icon-button/icon-button.component.ts",
+            "name": "IconContainerComponent",
+            "id": "component-IconContainerComponent-d73cfc4ef07f33757fef4d60b68a9605",
+            "file": "src/app/atoms/iconContainer/iconContainer.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
             "outputs": [],
             "providers": [],
-            "selector": "app-icon-button",
+            "selector": "app-icon-container",
             "styleUrls": [
-                "./icon-button.component.scss"
+                "iconContainer.component.scss"
             ],
             "styles": [],
             "templateUrl": [
-                "./icon-button.component.html"
+                "./iconContainer.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "backgroundColor",
+                    "line": 12,
+                    "type": "string"
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component, Input } from '@angular/core';\n\n@Component({\n    selector: 'app-icon-container',\n    templateUrl: './iconContainer.component.html',\n    styleUrls: ['iconContainer.component.scss'],\n})\n\n\n\nexport class IconContainerComponent {\n    @Input() backgroundColor: string;\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".icons-container {\n  width: 100%;\n\n  &-box {\n    \n    display: grid;\n    grid-template-columns: repeat(3, 1fr);\n    align-items: center;\n    opacity: 0.3;\n\n    & > img {\n      max-width: 80%;\n    }\n  }\n}",
+                    "styleUrl": "iconContainer.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<div \n  [ngStyle]=\"{ 'background': backgroundColor }\"\n  class=\"icons-container\"\n>\n  <div class=\"icons-container-box\">\n      <img src=\"assets/images/companies/logo1.png\" alt=\"company logo\">\n      <img src=\"assets/images/companies/logo2.png\" alt=\"company logo\">\n      <img src=\"assets/images/companies/logo3.png\" alt=\"company logo\">\n  </div>\n  <div class=\"icons-container-box\">\n      <img src=\"assets/images/companies/logo4.png\" alt=\"company logo\">\n      <img src=\"assets/images/companies/logo5.png\" alt=\"company logo\">\n      <img src=\"assets/images/companies/logo6.png\" alt=\"company logo\">\n  </div>\n</div>\n"
+        },
+        {
+            "name": "IconLinksComponent",
+            "id": "component-IconLinksComponent-33cd0d0f6fa9db9630154b8dd3e3788f",
+            "file": "src/app/atoms/navLink/icon-links/icon-links.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-icon-links",
+            "styleUrls": [
+                "./icon-links.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./icon-links.component.html"
             ],
             "viewProviders": [],
             "inputsClass": [
@@ -999,12 +1043,12 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { OnChanges, Component, Input } from '@angular/core';\n\n@Component({\n  selector: 'app-icon-button',\n  templateUrl: './icon-button.component.html',\n  styleUrls: ['./icon-button.component.scss']\n})\nexport class IconButtonComponent implements OnChanges {\n  @Input() isActive: boolean;\n  @Input() title: string;\n  @Input() svgPath: string;\n  \n  fillColor;\n\n\n  onHover() {\n    if (!this.isActive) {\n      this.fillColor = 'rgba(1, 25, 73, 1)';\n    }\n  }\n\n  onLeave() {\n    if (!this.isActive) {\n      this.fillColor = 'rgba(1, 25, 73, 0.5)';\n    }\n  }\n  constructor() { }\n\n  ngOnChanges(): void {\n    this.fillColor = this.isActive ? '#24B04B' : 'rgba(1, 25, 73, 0.5)'\n  }\n}\n",
+            "sourceCode": "import { Component, Input, OnChanges } from '@angular/core';\n\n@Component({\n  selector: 'app-icon-links',\n  templateUrl: './icon-links.component.html',\n  styleUrls: ['./icon-links.component.scss']\n})\nexport class IconLinksComponent implements OnChanges {\n  @Input() isActive: boolean;\n  @Input() title: string;\n  @Input() svgPath: string;\n  \n  fillColor;\n\n\n  onHover() {\n    if (!this.isActive) {\n      this.fillColor = 'rgba(1, 25, 73, 1)';\n    }\n  }\n\n  onLeave() {\n    if (!this.isActive) {\n      this.fillColor = 'rgba(1, 25, 73, 0.5)';\n    }\n  }\n  constructor() { }\n\n  ngOnChanges(): void {\n    this.fillColor = this.isActive ? '#24B04B' : 'rgba(1, 25, 73, 0.5)'\n  }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".app-icon-button {\n    text-transform: capitalize;\n    border: none;\n    background: transparent;\n    padding: 2px;\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n\n    &__title {\n        margin-top: 6px;\n    }\n}\n",
-                    "styleUrl": "./icon-button.component.scss"
+                    "data": ".app-icon-link {\n    text-transform: capitalize;\n    border: none;\n    background: transparent;\n    padding: 2px;\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n\n    &__title {\n        margin-top: 6px;\n    }\n}",
+                    "styleUrl": "./icon-links.component.scss"
                 }
             ],
             "stylesData": "",
@@ -1017,51 +1061,7 @@
             "implements": [
                 "OnChanges"
             ],
-            "templateData": "<button class=\"app-icon-button fs-10-sofia-500\" type=\"button\" \n    (mouseenter)=\"onHover()\"\n    (mouseleave)=\"onLeave()\"\n>\n    <svg-icon \n        [src]=\"svgPath\"\n        [svgStyle]=\"{'fill':fillColor }\">\n    >\n    </svg-icon>\n    <p class=\"app-icon-button__title\" [ngStyle]=\"{ 'color': fillColor }\">\n        {{title}}\n    </p>     \n</button>\n"
-        },
-        {
-            "name": "IconContainerComponent",
-            "id": "component-IconContainerComponent-d73cfc4ef07f33757fef4d60b68a9605",
-            "file": "src/app/atoms/iconContainer/iconContainer.component.ts",
-            "encapsulation": [],
-            "entryComponents": [],
-            "inputs": [],
-            "outputs": [],
-            "providers": [],
-            "selector": "app-icon-container",
-            "styleUrls": [
-                "iconContainer.component.scss"
-            ],
-            "styles": [],
-            "templateUrl": [
-                "./iconContainer.component.html"
-            ],
-            "viewProviders": [],
-            "inputsClass": [
-                {
-                    "name": "backgroundColor",
-                    "line": 12,
-                    "type": "string"
-                }
-            ],
-            "outputsClass": [],
-            "propertiesClass": [],
-            "methodsClass": [],
-            "hostBindings": [],
-            "hostListeners": [],
-            "description": "",
-            "rawdescription": "",
-            "type": "component",
-            "sourceCode": "import { Component, Input } from '@angular/core';\n\n@Component({\n    selector: 'app-icon-container',\n    templateUrl: './iconContainer.component.html',\n    styleUrls: ['iconContainer.component.scss'],\n})\n\n\n\nexport class IconContainerComponent {\n    @Input() backgroundColor: string;\n}\n",
-            "assetsDirs": [],
-            "styleUrlsData": [
-                {
-                    "data": ".icons-container {\n  width: 100%;\n\n  &-box {\n    \n    display: grid;\n    grid-template-columns: repeat(3, 1fr);\n    align-items: center;\n    opacity: 0.3;\n\n    & > img {\n      max-width: 80%;\n    }\n  }\n}",
-                    "styleUrl": "iconContainer.component.scss"
-                }
-            ],
-            "stylesData": "",
-            "templateData": "<div \n  [ngStyle]=\"{ 'background': backgroundColor }\"\n  class=\"icons-container\"\n>\n  <div class=\"icons-container-box\">\n      <img src=\"assets/images/companies/logo1.png\" alt=\"company logo\">\n      <img src=\"assets/images/companies/logo2.png\" alt=\"company logo\">\n      <img src=\"assets/images/companies/logo3.png\" alt=\"company logo\">\n  </div>\n  <div class=\"icons-container-box\">\n      <img src=\"assets/images/companies/logo4.png\" alt=\"company logo\">\n      <img src=\"assets/images/companies/logo5.png\" alt=\"company logo\">\n      <img src=\"assets/images/companies/logo6.png\" alt=\"company logo\">\n  </div>\n</div>\n"
+            "templateData": "<a class=\"app-icon-link fs-10-sofia-500\"\n    href=\"#\"\n    (mouseenter)=\"onHover()\"\n    (mouseleave)=\"onLeave()\"\n>\n    <svg-icon \n        [src]=\"svgPath\"\n        [svgStyle]=\"{'fill':fillColor }\">\n    >\n    </svg-icon>\n    <p class=\"app-icon-link__title\" [ngStyle]=\"{ 'color': fillColor }\">\n        {{title}}\n    </p>     \n</a>\n"
         },
         {
             "name": "infoButtonComponent",
@@ -1350,9 +1350,157 @@
             "templateData": "<ul class=\"app-main-navigation-menu\">\n    <li \n    class=\"app-main-navigation-menu__item\"\n    *ngFor=\"let item of items; let i = index\" \n    >\n    <app-nav-link\n        [isActive]=\"active === i\"\n        [title]=\"item\" \n        classes=\"nav-link-secondary fs-16-sofia-800 \"\n        (click)=\"handlClick($event, i)\"\n    >\n    </app-nav-link>\n    </li>\n</ul>\n\n"
         },
         {
+            "name": "MobileButtonComponent",
+            "id": "component-MobileButtonComponent-d621ced3eea1928b7912fe0d725c25de",
+            "file": "src/app/atoms/buttons/mobile-button/mobile-button.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-mobile-button",
+            "styleUrls": [
+                "./mobile-button.component.scss",
+                "../button.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./mobile-button.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "isOpen",
+                    "line": 9,
+                    "type": "boolean"
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 11
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-mobile-button',\n  templateUrl: './mobile-button.component.html',\n  styleUrls: ['./mobile-button.component.scss', '../button.component.scss']\n})\nexport class MobileButtonComponent implements OnInit {\n  @Input() isOpen: boolean;\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".module-border-wrap {\n    height: 46px;\n    box-sizing: border-box;\n    background: var(--success-grad-light);\n    padding: 1px;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    width: fit-content;\n    border-radius: 6px;\n}\n\n.btn-mobile.btn-app {\n    height: 44px;\n    border-radius: 5px;  \n}\n\n.module-opacity-wrap {\n    background: var(--text-color);\n    border-radius: 5px;\n}\n\n.btn-mobile {\n    border: none;\n    background-color: var(--text-color);;\n}",
+                    "styleUrl": "./mobile-button.component.scss"
+                },
+                {
+                    "data": ".btn-app {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  box-sizing: border-box;\n  outline: none;\n  transition: 0.3s;\n  border-radius: 8px;\n  &--h36 {\n    height: 36px;\n    padding: 10px 18px 8px 18px;\n  }\n  \n  &--asimetric {\n    border-radius: 20px 5px;\n    height: 52px;\n    padding: 18px 41px 18px 44px;\n  }\n\n  &--h46 {\n    height: 46px;\n    padding: 13px 15px 12px 15px;\n  }\n\n  &--h53 {\n    padding: 9px 10px;\n    height: 53px;\n  }\n}\n",
+                    "styleUrl": "../button.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<div class=\"module-border-wrap\">\n    <div class=\"module-opacity-wrap \">\n        <button type=\"button\" class=\"btn-app btn-app--h46 btn-mobile\">\n            <svg width=\"16\" height=\"16\" viewBox=\"0 0 20 12\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\" *ngIf=\"!isOpen\">\n                <path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M0 1C0 0.447715 0.447715 0 1 0H19C19.5523 0 20 0.447715 20 1C20 1.55228 19.5523 2 19 2H1C0.447715 2 0 1.55228 0 1ZM0 6C0 5.44772 0.447715 5 1 5H19C19.5523 5 20 5.44772 20 6C20 6.55228 19.5523 7 19 7H1C0.447715 7 0 6.55228 0 6ZM1 10C0.447715 10 0 10.4477 0 11C0 11.5523 0.447715 12 1 12H19C19.5523 12 20 11.5523 20 11C20 10.4477 19.5523 10 19 10H1Z\" fill=\"url(#paint0_linear)\"/>\n                <defs>\n                <linearGradient id=\"paint0_linear\" x1=\"-9.10937\" y1=\"26.4157\" x2=\"37.9049\" y2=\"25.7578\" gradientUnits=\"userSpaceOnUse\">\n                <stop stop-color=\"#24B04B\"/>\n                <stop offset=\"1\" stop-color=\"#0263BC\"/>\n                </linearGradient>\n                </defs>\n            </svg>\n            <svg width=\"16\" height=\"16\" viewBox=\"0 0 16 16\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\" *ngIf=\"isOpen\">\n                <path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M1.12132 13.4351C0.730792 13.8256 0.730792 14.4588 1.12132 14.8493C1.51184 15.2399 2.14501 15.2399 2.53553 14.8493L7.91405 9.47081L13.435 14.9918C13.8256 15.3823 14.4587 15.3823 14.8492 14.9918C15.2398 14.6013 15.2398 13.9681 14.8492 13.5776L9.32827 8.0566L15.2635 2.12141C15.654 1.73089 15.654 1.09772 15.2635 0.7072C14.8729 0.316675 14.2398 0.316676 13.8492 0.7072L7.91405 6.64239L2.12132 0.849655C1.7308 0.459131 1.09763 0.459131 0.707108 0.849655C0.316584 1.24018 0.316584 1.87334 0.707108 2.26387L6.49984 8.0566L1.12132 13.4351Z\" fill=\"url(#paint0_linear)\"/>\n                <defs>\n                <linearGradient id=\"paint0_linear\" x1=\"-6.48255\" y1=\"33.1485\" x2=\"29.1166\" y2=\"32.8442\" gradientUnits=\"userSpaceOnUse\">\n                <stop stop-color=\"#24B04B\"/>\n                <stop offset=\"1\" stop-color=\"#0263BC\"/>\n                </linearGradient>\n                </defs>\n            </svg>\n        </button>\n    </div>\n</div>\n"
+        },
+        {
+            "name": "MobileMainNavigationMenuComponent",
+            "id": "component-MobileMainNavigationMenuComponent-0cc66fd373bdd97f62fa8025bb113360",
+            "file": "src/app/molecules/menu/mobile-main-navigation-menu/mobile-main-navigation-menu.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-mobile-main-navigation-menu",
+            "styleUrls": [
+                "./mobile-main-navigation-menu.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./mobile-main-navigation-menu.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "items",
+                    "line": 10,
+                    "type": "string[]"
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "active",
+                    "defaultValue": "0",
+                    "type": "number",
+                    "optional": false,
+                    "description": "",
+                    "line": 12
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "handlClick",
+                    "args": [
+                        {
+                            "name": "event",
+                            "type": "any"
+                        },
+                        {
+                            "name": "i",
+                            "type": "number"
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 14,
+                    "jsdoctags": [
+                        {
+                            "name": "event",
+                            "type": "any",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        },
+                        {
+                            "name": "i",
+                            "type": "number",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component, Input } from '@angular/core';\n\n@Component({\n  selector: 'app-mobile-main-navigation-menu',\n  templateUrl: './mobile-main-navigation-menu.component.html',\n  styleUrls: ['./mobile-main-navigation-menu.component.scss']\n})\nexport class MobileMainNavigationMenuComponent {\n\n  @Input() items: string[];\n\n  active = 0;\n\n  handlClick(event: any, i: number) {\n    event.preventDefault();\n    this.active = i;\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./mobile-main-navigation-menu.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<ul class=\"app-main-navigation-menu\">\n    <li \n    class=\"app-main-navigation-menu__item\"\n    *ngFor=\"let item of items; let i = index\" \n    >\n    <app-icon-links\n        [isActive]=\"active === i\"\n        [title]=\"item.title\" \n        [svgPath]=\"item.svgPath\"\n        (click)=\"handlClick($event, i)\"\n    >\n    </app-icon-links>\n    </li>\n</ul>\n\n"
+        },
+        {
             "name": "navLinkComponent",
             "id": "component-navLinkComponent-e858f214b4e7e9828f22f4c10df812e4",
-            "file": "src/app/atoms/navLink/navLink.component.ts",
+            "file": "src/app/atoms/navLink/textLinks/navLink.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -1624,7 +1772,7 @@
         },
         {
             "name": "ScanReportComponent",
-            "id": "component-ScanReportComponent-75bc63bcf57c309a59aa09250f919bc7",
+            "id": "component-ScanReportComponent-d9b462f833d16b022eb2e12204d560aa",
             "file": "src/app/organisms/scan-report/scan-report.component.ts",
             "encapsulation": [
                 "ViewEncapsulation.None"
@@ -1646,6 +1794,35 @@
             "outputsClass": [],
             "propertiesClass": [
                 {
+                    "name": "element",
+                    "type": "ElementRef",
+                    "optional": false,
+                    "description": "",
+                    "line": 43,
+                    "decorators": [
+                        {
+                            "name": "ViewChild",
+                            "stringifiedArguments": "'nav'"
+                        }
+                    ]
+                },
+                {
+                    "name": "isMobile",
+                    "defaultValue": "false",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 25
+                },
+                {
+                    "name": "isSideMenuVisible",
+                    "defaultValue": "false",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 26
+                },
+                {
                     "name": "items",
                     "defaultValue": "['reports', 'domains', 'users', 'account', 'request portal']",
                     "type": "[]",
@@ -1663,11 +1840,19 @@
                 },
                 {
                     "name": "leftSideMenuItems",
-                    "defaultValue": "[\n    { title: 'scan'},\n    { title: 'style'},\n    { title: 'cookie banner'},\n    { title: 'IAB 2.0 settings'},\n    { title: 'Preference Center', sections: ['GDPR/ePrivacy', 'CCPA', 'LGPD']},\n    { title: 'data request form'},\n    { title: 'Preference Center', sections: ['Privacy Policy', 'Cookie Declaration', 'Embed On Website']},\n    { title: 'cookie classification'},\n    { title: 'languages'},\n    { title: 'coverage'},\n    { title: 'installation'},\n]",
+                    "defaultValue": "[\n    { title: 'scan'},\n    { title: 'style'},\n    { title: 'cookie banner'},\n    { title: 'IAB 2.0 settings'},\n    { title: 'Preference Center', sections: ['GDPR/ePrivacy', 'CCPA', 'LGPD']},\n    { title: 'data request form'},\n    { title: 'Preference Center', sections: ['Privacy Policy', 'Cookie Declaration', 'Embed On Website']},\n    { title: 'cookie classification'},\n    { title: 'languages'},\n    { title: 'coverage'},\n    { title: 'installation'},\n  ]",
                     "type": "[]",
                     "optional": false,
                     "description": "",
                     "line": 12
+                },
+                {
+                    "name": "marginMenu",
+                    "defaultValue": "156",
+                    "type": "number",
+                    "optional": false,
+                    "description": "",
+                    "line": 27
                 }
             ],
             "methodsClass": [
@@ -1677,33 +1862,62 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 27
+                    "line": 52
+                },
+                {
+                    "name": "toggleSideMenu",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 29
                 }
             ],
             "hostBindings": [],
-            "hostListeners": [],
+            "hostListeners": [
+                {
+                    "name": "document:click",
+                    "args": [
+                        {
+                            "name": "event",
+                            "type": "Event"
+                        }
+                    ],
+                    "argsDecorator": [
+                        "$event"
+                    ],
+                    "line": 46
+                },
+                {
+                    "name": "window:resize",
+                    "args": [
+                        {
+                            "name": "event",
+                            "type": "any"
+                        }
+                    ],
+                    "argsDecorator": [
+                        "$event"
+                    ],
+                    "line": 34
+                }
+            ],
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, OnInit, ViewEncapsulation } from '@angular/core';\n\n@Component({\n  selector: 'app-scan-report',\n  templateUrl: './scan-report.component.html',\n  styleUrls: ['./scan-report.component.scss'],\n  encapsulation: ViewEncapsulation.None\n})\nexport class ScanReportComponent implements OnInit {\n  items=['reports', 'domains', 'users', 'account', 'request portal'];\n  itemsToSearch=['My current company', 'My clients company', 'secure privacy', 'secure privacy2', 'secure privacy3'];\n  leftSideMenuItems=[\n    { title: 'scan'},\n    { title: 'style'},\n    { title: 'cookie banner'},\n    { title: 'IAB 2.0 settings'},\n    { title: 'Preference Center', sections: ['GDPR/ePrivacy', 'CCPA', 'LGPD']},\n    { title: 'data request form'},\n    { title: 'Preference Center', sections: ['Privacy Policy', 'Cookie Declaration', 'Embed On Website']},\n    { title: 'cookie classification'},\n    { title: 'languages'},\n    { title: 'coverage'},\n    { title: 'installation'},\n]\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "sourceCode": "import { Component, ElementRef, OnInit, HostListener, ViewEncapsulation, ViewChild } from '@angular/core';\n\n@Component({\n  selector: 'app-scan-report',\n  templateUrl: './scan-report.component.html',\n  styleUrls: ['./scan-report.component.scss'],\n  encapsulation: ViewEncapsulation.None\n})\nexport class ScanReportComponent implements OnInit {\n  items=['reports', 'domains', 'users', 'account', 'request portal'];\n  itemsToSearch=['My current company', 'My clients company', 'secure privacy', 'secure privacy2', 'secure privacy3'];\n  leftSideMenuItems=[\n    { title: 'scan'},\n    { title: 'style'},\n    { title: 'cookie banner'},\n    { title: 'IAB 2.0 settings'},\n    { title: 'Preference Center', sections: ['GDPR/ePrivacy', 'CCPA', 'LGPD']},\n    { title: 'data request form'},\n    { title: 'Preference Center', sections: ['Privacy Policy', 'Cookie Declaration', 'Embed On Website']},\n    { title: 'cookie classification'},\n    { title: 'languages'},\n    { title: 'coverage'},\n    { title: 'installation'},\n  ]\n  isMobile=false;\n  isSideMenuVisible=false;\n  marginMenu=156;\n\n  toggleSideMenu() {\n    this.isSideMenuVisible = !this.isSideMenuVisible;\n  }\n\n  @HostListener('window:resize', ['$event'])\n  onResize(event: any) {\n    if (event.target.innerWidth < 800) {\n      this.isMobile = true;\n    }\n    if (event.target.innerWidth > 800) {\n      this.isMobile = false;\n    }\n  }\n\n  @ViewChild('nav') element: ElementRef;\n\n  @HostListener('document:click', ['$event'])\n\tonClick(event: Event) {\n    if (!this.element.nativeElement.contains(event.target)){\n      this.isSideMenuVisible=false;\n    }\n  }\n  \n  ngOnInit(): void {\n    if (window.innerWidth < 800) {\n      this.isMobile = true;\n    }\n  }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".app-scan-report {\n    width: 100%;\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    background-color: var(--layout-bg-color);\n\n    &__logo {\n        width: 117px;\n        height: 46px;   \n    }\n\n    &__wrapper {\n        width: 100%;\n        background: rgba(var(--text-color-code), 0.5);\n        display: flex;\n        justify-content: center;\n    }\n\n    &__nav {\n        display: flex;\n        justify-content: space-between;\n        align-items: center;\n        padding: 20px 64px;\n        width: 100%;\n        max-width: 1280px;\n    }\n\n    &__container {\n        display: flex;\n        justify-content: space-between;\n        width: 100%;\n        max-width: 1280px;\n        padding: 22px 45px 220px 45px;\n\n        &__left {\n            width: 260px;\n        }\n\n        &__right {\n            width: 72%;\n        }\n    }\n\n    &__box {\n        display: flex;\n        justify-content: space-between;\n        align-items: center;\n        width: 100%;\n        margin-bottom: 34px;\n    }\n}\n\n.ng-select.custom-icon {\n    width: 200px;\n}",
+                    "data": ".app-scan-report {\n    width: 100%;\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    background-color: var(--layout-bg-color);\n    color: var(--secondary-color);\n\n    &__title {\n        margin-bottom: 35px;\n    }\n\n    &__logo {\n        width: 117px;\n        height: 46px;   \n    }\n\n    &__wrapper {\n        width: 100%;\n        background: rgba(var(--text-color-code), 0.5);\n        display: flex;\n        justify-content: center;\n    }\n\n    &__nav {\n        display: flex;\n        justify-content: space-between;\n        align-items: center;\n        padding: 20px 64px;\n        width: 100%;\n        max-width: 1280px;\n    }\n\n    &__container {\n        display: flex;\n        justify-content: space-between;\n        width: 100%;\n        max-width: 1280px;\n        padding: 22px 45px 220px 45px;\n\n        &--left {\n            width: 260px;\n        }\n\n        &--right {\n            width: 72%;\n        }\n    }\n\n    &__box {\n        display: flex;\n        justify-content: space-between;\n        align-items: center;\n        width: 100%;\n        margin-bottom: 34px;\n    }\n}\n\napp-select-input-search {\n    width: 80%;\n}\n\n@media screen and (max-width: 1150px) {\n    .app-scan-report {\n        &__nav {\n            padding: 20px;\n        }\n        &__container {\n            padding: 20px;\n            &--right {\n                width: 60%;\n            }\n        }\n    }\n}\n\n@media screen and (max-width: 800px) {\n    .app-scan-report {\n        &__nav {\n            padding: 20px;\n            position: relative;\n        }\n        &__container {\n            padding: 20px;\n            &--right {\n                width: 100%;\n            }\n        }\n    }\n\n    app-composite-menu {\n        position: absolute; \n        top: 90px;\n        left: 0;\n        z-index: 2;\n\n        transition: margin-left 1s;\n    }\n}\n",
                     "styleUrl": "./scan-report.component.scss"
                 }
             ],
             "stylesData": "",
-            "constructorObj": {
-                "name": "constructor",
-                "description": "",
-                "args": [],
-                "line": 24
-            },
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<div class=\"app-scan-report\">\n    <div class=\"app-scan-report__wrapper\">\n        <nav class=\"app-scan-report__nav\">\n            <img class=\"app-scan-report__logo\" src=\"assets/images/logo.png\" alt=\"logo\">\n            <app-main-navigation-menu [items]=\"items\"></app-main-navigation-menu>\n            <app-info-button [title]=\"'support'\"></app-info-button>\n        </nav>\n    </div>\n    <div class=\"app-scan-report__container\">\n        <div class=\"app-scan-report__container--left\">\n            <div class=\"app-scan-report__box\">\n                <app-light-button></app-light-button>\n                <app-select-input-search\n                    [classes]=\"'custom-icon fs-16-sofia-300'\"\n                    [placeholderText]=\"'Search for'\"\n                    [items]=\"itemsToSearch\" \n                >\n                </app-select-input-search>\n            </div>\n            <app-composite-menu [items]=\"leftSideMenuItems\"></app-composite-menu>\n        </div>\n        <div class=\"app-scan-report__container--right\">\n            <h1 class=\"app-scan-report__title fs-h1\">Latest Scan Report</h1>\n        </div>\n    </div>\n</div>\n"
+            "templateData": "<div id=\"block\" class=\"app-scan-report\">\n    <div class=\"app-scan-report__wrapper\">\n        <nav class=\"app-scan-report__nav\" *ngIf=\"!isMobile\">\n            <img class=\"app-scan-report__logo\" src=\"assets/images/logo.png\" alt=\"logo\">\n            <app-main-navigation-menu [items]=\"items\"></app-main-navigation-menu>\n            <app-info-button [title]=\"'support'\"></app-info-button>\n        </nav>\n        <nav class=\"app-scan-report__nav\" #nav *ngIf=\"isMobile\">\n\n            <app-mobile-button [isOpen]=\"isSideMenuVisible\" (click)=\"toggleSideMenu()\"></app-mobile-button>\n            <app-select-input-search\n                [classes]=\"'custom-icon fs-16-sofia-300'\"\n                [placeholderText]=\"'Search for'\"\n                [items]=\"itemsToSearch\" \n            >\n            </app-select-input-search>\n            <app-composite-menu \n                [items]=\"leftSideMenuItems\" \n                *ngIf=\"isSideMenuVisible\"\n            >\n            </app-composite-menu>\n        </nav>\n    </div>\n    <div class=\"app-scan-report__container\">\n        <div class=\"app-scan-report__container--left\" *ngIf=\"!isMobile\">\n            <div class=\"app-scan-report__box\">\n                <app-light-button></app-light-button>\n                <app-select-input-search\n                    [classes]=\"'custom-icon fs-16-sofia-300'\"\n                    [placeholderText]=\"'Search for'\"\n                    [items]=\"itemsToSearch\" \n                >\n                </app-select-input-search>\n            </div>\n            <app-composite-menu [items]=\"leftSideMenuItems\"></app-composite-menu>\n        </div>\n        <div class=\"app-scan-report__container--right\">\n            <h1 class=\"app-scan-report__title fs-h1\">Latest Scan Report</h1>\n            <app-scan-screens></app-scan-screens>\n        </div>\n    </div>\n</div>\n"
         },
         {
             "name": "ScanScreensComponent",
@@ -2299,13 +2513,19 @@
                             "name": "FormScreenThirdComponent"
                         },
                         {
-                            "name": "IconButtonComponent"
-                        },
-                        {
                             "name": "IconContainerComponent"
                         },
                         {
+                            "name": "IconLinksComponent"
+                        },
+                        {
                             "name": "MainNavigationMenuComponent"
+                        },
+                        {
+                            "name": "MobileButtonComponent"
+                        },
+                        {
+                            "name": "MobileMainNavigationMenuComponent"
                         },
                         {
                             "name": "RegistrationFormComponent"
@@ -2431,17 +2651,17 @@
                 "name": "environment",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/environments/environment.prod.ts",
+                "file": "src/environments/environment.ts",
                 "type": "object",
-                "defaultValue": "{\n  production: true\n}"
+                "defaultValue": "{\n  production: false\n}"
             },
             {
                 "name": "environment",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/environments/environment.ts",
+                "file": "src/environments/environment.prod.ts",
                 "type": "object",
-                "defaultValue": "{\n  production: false\n}"
+                "defaultValue": "{\n  production: true\n}"
             },
             {
                 "name": "Fifth",
@@ -2487,7 +2707,7 @@
                 "name": "Highlited",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/atoms/navLink/navLink.stories.ts",
+                "file": "src/app/atoms/navLink/textLinks/navLink.stories.ts",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
@@ -2495,7 +2715,7 @@
                 "name": "Icon",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/atoms/buttons/icon-button/icon-button.component.stories.ts",
+                "file": "src/app/atoms/navLink/icon-links/icon-links.component.stories.ts",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
@@ -2527,7 +2747,7 @@
                 "name": "Main",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/atoms/navLink/navLink.stories.ts",
+                "file": "src/app/atoms/navLink/textLinks/navLink.stories.ts",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
@@ -2544,6 +2764,22 @@
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/app/organisms/registration-form/registration-form.stories.ts",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Mobile",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/atoms/buttons/mobile-button/mobile-button.component.stories.ts",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "MobileNavigation",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/molecules/menu/mobile-main-navigation-menu/mobile-main-navigation-menu.component.stories.ts",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
@@ -2583,6 +2819,22 @@
                 "name": "props",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "src/app/organisms/scan-report/scan-report.component.stories.ts",
+                "type": "object",
+                "defaultValue": "{\n}"
+            },
+            {
+                "name": "props",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/organisms/registration-form/registration-form.stories.ts",
+                "type": "object",
+                "defaultValue": "{\n}"
+            },
+            {
+                "name": "props",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "src/app/atoms/card/card.stories.ts",
                 "type": "object",
                 "defaultValue": "{\n  backgroundColor: { control: 'color' },\n  color: { control: 'color' },\n  src: { control: 'text'},\n  title: { control: 'text'},\n  text: { control: 'text' },\n  isActive: { control: 'boolean'}\n}"
@@ -2594,14 +2846,6 @@
                 "file": "src/app/atoms/iconContainer/iconContainer.stories.ts",
                 "type": "object",
                 "defaultValue": "{\n  backgroundColor: { control: 'color' },\n}"
-            },
-            {
-                "name": "props",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/atoms/navLink/navLink.stories.ts",
-                "type": "object",
-                "defaultValue": "{\n  title: { control: 'text' },\n  isActive: { control: 'boolean'}\n}"
             },
             {
                 "name": "props",
@@ -2631,23 +2875,55 @@
                 "name": "props",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/organisms/registration-form/registration-form.stories.ts",
+                "file": "src/app/molecules/menu/composite-menu/composite-menu.stories.ts",
                 "type": "object",
-                "defaultValue": "{\n}"
+                "defaultValue": "{\n  items: { control: 'object'}\n}"
             },
             {
                 "name": "props",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/organisms/scan-report/scan-report.component.stories.ts",
+                "file": "src/app/molecules/menu/date-menu/date-menu.stories.ts",
                 "type": "object",
-                "defaultValue": "{\n}"
+                "defaultValue": "{\n  backgroundColor: { control: 'color' },\n  items: { control: 'array'}\n}"
+            },
+            {
+                "name": "props",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/molecules/menu/main-navigation-menu/main-navigation-menu.component.stories.ts",
+                "type": "object",
+                "defaultValue": "{\n  backgroundColor: { control: 'color' },\n  items: { control: 'array'}\n}"
+            },
+            {
+                "name": "props",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/molecules/menu/mobile-main-navigation-menu/mobile-main-navigation-menu.component.stories.ts",
+                "type": "object",
+                "defaultValue": "{\n  items: { control: 'object'}\n}"
+            },
+            {
+                "name": "props",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/molecules/menu/side-menu/side-menu.stories.ts",
+                "type": "object",
+                "defaultValue": "{\n  backgroundColor: { control: 'color' },\n  items: { control: 'array'}\n}"
             },
             {
                 "name": "props",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/app/molecules/form-screens/form-screen-fifth/form-screen-fifth.stories.ts",
+                "type": "object",
+                "defaultValue": "{\n}"
+            },
+            {
+                "name": "props",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/molecules/form-screens/form-screen-first/form-screen-first.stories.ts",
                 "type": "object",
                 "defaultValue": "{\n}"
             },
@@ -2671,65 +2947,9 @@
                 "name": "props",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/molecules/form-screens/form-screen-first/form-screen-first.stories.ts",
-                "type": "object",
-                "defaultValue": "{\n}"
-            },
-            {
-                "name": "props",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "src/app/molecules/form-screens/form-screen-third/form-screen-third.stories.ts",
                 "type": "object",
                 "defaultValue": "{\n}"
-            },
-            {
-                "name": "props",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/molecules/menu/composite-menu/composite-menu.stories.ts",
-                "type": "object",
-                "defaultValue": "{\n  items: { control: 'object'}\n}"
-            },
-            {
-                "name": "props",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/molecules/menu/date-menu/date-menu.stories.ts",
-                "type": "object",
-                "defaultValue": "{\n  backgroundColor: { control: 'color' },\n  items: { control: 'array'}\n}"
-            },
-            {
-                "name": "props",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/molecules/menu/side-menu/side-menu.stories.ts",
-                "type": "object",
-                "defaultValue": "{\n  backgroundColor: { control: 'color' },\n  items: { control: 'array'}\n}"
-            },
-            {
-                "name": "props",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/molecules/menu/main-navigation-menu/main-navigation-menu.component.stories.ts",
-                "type": "object",
-                "defaultValue": "{\n  backgroundColor: { control: 'color' },\n  items: { control: 'array'}\n}"
-            },
-            {
-                "name": "props",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/atoms/inputs/formInput/formInput.stories.ts",
-                "type": "object",
-                "defaultValue": "{\n  backgroundColor: { control: 'color' },\n  color: { control: 'color' },\n  placeholder: { control: 'text'},\n}"
-            },
-            {
-                "name": "props",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/atoms/buttons/icon-button/icon-button.component.stories.ts",
-                "type": "object",
-                "defaultValue": "{\n  svgPath: { control: 'text' },\n  isActive: { control: 'boolean' },\n  title: { control: 'text'},\n}"
             },
             {
                 "name": "props",
@@ -2743,7 +2963,39 @@
                 "name": "props",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "src/app/atoms/buttons/largeButton/largeButton.stories.ts",
+                "type": "object",
+                "defaultValue": "{\n  backgroundColor: { control: 'color' },\n  color: { control: 'color' },\n  title: { control: 'text'},\n}"
+            },
+            {
+                "name": "props",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/atoms/buttons/gradientButton/gradientButton.stories.ts",
+                "type": "object",
+                "defaultValue": "{\n  backgroundColor: { control: 'color' },\n  color: { control: 'color' },\n  title: { control: 'text'},\n}"
+            },
+            {
+                "name": "props",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "src/app/atoms/buttons/lightButton/lightButton.stories.ts",
+                "type": "object",
+                "defaultValue": "{\n  backgroundColor: { control: 'color' },\n  color: { control: 'color' },\n  title: { control: 'text'},\n}"
+            },
+            {
+                "name": "props",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/atoms/buttons/mobile-button/mobile-button.component.stories.ts",
+                "type": "object",
+                "defaultValue": "{\n  isOpen: {control: 'boolean'}\n}"
+            },
+            {
+                "name": "props",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/atoms/buttons/simpleButton/simpleButton.stories.ts",
                 "type": "object",
                 "defaultValue": "{\n  backgroundColor: { control: 'color' },\n  color: { control: 'color' },\n  title: { control: 'text'},\n}"
             },
@@ -2767,33 +3019,25 @@
                 "name": "props",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/atoms/buttons/largeButton/largeButton.stories.ts",
+                "file": "src/app/atoms/inputs/formInput/formInput.stories.ts",
                 "type": "object",
-                "defaultValue": "{\n  backgroundColor: { control: 'color' },\n  color: { control: 'color' },\n  title: { control: 'text'},\n}"
+                "defaultValue": "{\n  backgroundColor: { control: 'color' },\n  color: { control: 'color' },\n  placeholder: { control: 'text'},\n}"
             },
             {
                 "name": "props",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/atoms/buttons/simpleButton/simpleButton.stories.ts",
+                "file": "src/app/atoms/navLink/icon-links/icon-links.component.stories.ts",
                 "type": "object",
-                "defaultValue": "{\n  backgroundColor: { control: 'color' },\n  color: { control: 'color' },\n  title: { control: 'text'},\n}"
+                "defaultValue": "{\n  title: { control: 'text' },\n  isActive: { control: 'boolean'}\n}"
             },
             {
                 "name": "props",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/atoms/buttons/gradientButton/gradientButton.stories.ts",
+                "file": "src/app/atoms/navLink/textLinks/navLink.stories.ts",
                 "type": "object",
-                "defaultValue": "{\n  backgroundColor: { control: 'color' },\n  color: { control: 'color' },\n  title: { control: 'text'},\n}"
-            },
-            {
-                "name": "props",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/atoms/inputs/checkbox/checkbox-input-simple/checkbox-input-simple.stories.ts",
-                "type": "object",
-                "defaultValue": "{\n    isChecked: { control: 'boolean' },\n    title: { control: 'text'}\n}"
+                "defaultValue": "{\n  title: { control: 'text' },\n  isActive: { control: 'boolean'}\n}"
             },
             {
                 "name": "props",
@@ -2802,6 +3046,14 @@
                 "file": "src/app/atoms/inputs/checkbox/checkbox-input-switch/checkbox-input-switch.stories.ts",
                 "type": "object",
                 "defaultValue": "{\n    isChecked: { control: 'boolean' },\n}"
+            },
+            {
+                "name": "props",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/atoms/inputs/checkbox/checkbox-input-simple/checkbox-input-simple.stories.ts",
+                "type": "object",
+                "defaultValue": "{\n    isChecked: { control: 'boolean' },\n    title: { control: 'text'}\n}"
             },
             {
                 "name": "props",
@@ -2870,7 +3122,7 @@
                 "name": "Secondary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/atoms/navLink/navLink.stories.ts",
+                "file": "src/app/atoms/buttons/secondaryButton/secondaryButton.stories.ts",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
@@ -2878,7 +3130,7 @@
                 "name": "Secondary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/atoms/buttons/secondaryButton/secondaryButton.stories.ts",
+                "file": "src/app/atoms/navLink/textLinks/navLink.stories.ts",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
@@ -2982,6 +3234,22 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "src/app/organisms/scan-report/scan-report.component.stories.ts",
+                "type": "Story<ScanReportComponent>",
+                "defaultValue": "(args: ScanReportComponent) => ({\n    component: ScanReportComponent,\n    props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/organisms/registration-form/registration-form.stories.ts",
+                "type": "Story<RegistrationFormComponent>",
+                "defaultValue": "(args: RegistrationFormComponent) => ({\n    component: RegistrationFormComponent,\n    props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "src/app/atoms/card/card.stories.ts",
                 "type": "Story<CardComponent>",
                 "defaultValue": "(args: CardComponent) => ({\n  component: CardComponent,\n  props: args,\n})"
@@ -2993,14 +3261,6 @@
                 "file": "src/app/atoms/iconContainer/iconContainer.stories.ts",
                 "type": "Story<IconContainerComponent>",
                 "defaultValue": "(args: IconContainerComponent) => ({\n  component: IconContainerComponent,\n  props: args,\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/atoms/navLink/navLink.stories.ts",
-                "type": "Story<navLinkComponent>",
-                "defaultValue": "(args: navLinkComponent) => ({\n  component: navLinkComponent,\n  props: args,\n})"
             },
             {
                 "name": "Template",
@@ -3030,17 +3290,41 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/organisms/registration-form/registration-form.stories.ts",
-                "type": "Story<RegistrationFormComponent>",
-                "defaultValue": "(args: RegistrationFormComponent) => ({\n    component: RegistrationFormComponent,\n    props: args,\n})"
+                "file": "src/app/molecules/menu/composite-menu/composite-menu.stories.ts",
+                "type": "Story<CompositeMenuComponent>",
+                "defaultValue": "(args: CompositeMenuComponent) => ({\n  component: CompositeMenuComponent,\n  props: args,\n})"
             },
             {
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/organisms/scan-report/scan-report.component.stories.ts",
-                "type": "Story<ScanReportComponent>",
-                "defaultValue": "(args: ScanReportComponent) => ({\n    component: ScanReportComponent,\n    props: args,\n})"
+                "file": "src/app/molecules/menu/date-menu/date-menu.stories.ts",
+                "type": "Story<DateMenuComponent>",
+                "defaultValue": "(args: DateMenuComponent) => ({\n  component: DateMenuComponent,\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/molecules/menu/main-navigation-menu/main-navigation-menu.component.stories.ts",
+                "type": "Story<MainNavigationMenuComponent>",
+                "defaultValue": "(args: MainNavigationMenuComponent) => ({\n  component: MainNavigationMenuComponent,\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/molecules/menu/mobile-main-navigation-menu/mobile-main-navigation-menu.component.stories.ts",
+                "type": "Story<MobileMainNavigationMenuComponent>",
+                "defaultValue": "(args: MobileMainNavigationMenuComponent) => ({\n  component: MobileMainNavigationMenuComponent,\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/molecules/menu/side-menu/side-menu.stories.ts",
+                "type": "Story<SideMenuComponent>",
+                "defaultValue": "(args: SideMenuComponent) => ({\n  component: SideMenuComponent,\n  props: args,\n})"
             },
             {
                 "name": "Template",
@@ -3049,6 +3333,14 @@
                 "file": "src/app/molecules/form-screens/form-screen-fifth/form-screen-fifth.stories.ts",
                 "type": "Story<FormScreenFifthComponent>",
                 "defaultValue": "(args: FormScreenFifthComponent) => ({\n    component: FormScreenFifthComponent,\n    props: args,\n  })"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/molecules/form-screens/form-screen-first/form-screen-first.stories.ts",
+                "type": "Story<FormScreenFirstComponent>",
+                "defaultValue": "(args: FormScreenFirstComponent) => ({\n  component: FormScreenFirstComponent,\n  props: args,\n})"
             },
             {
                 "name": "Template",
@@ -3070,65 +3362,9 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/molecules/form-screens/form-screen-first/form-screen-first.stories.ts",
-                "type": "Story<FormScreenFirstComponent>",
-                "defaultValue": "(args: FormScreenFirstComponent) => ({\n  component: FormScreenFirstComponent,\n  props: args,\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "src/app/molecules/form-screens/form-screen-third/form-screen-third.stories.ts",
                 "type": "Story<FormScreenThirdComponent>",
                 "defaultValue": "(args: FormScreenThirdComponent) => ({\n  component: FormScreenThirdComponent,\n  props: args,\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/molecules/menu/composite-menu/composite-menu.stories.ts",
-                "type": "Story<CompositeMenuComponent>",
-                "defaultValue": "(args: CompositeMenuComponent) => ({\n  component: CompositeMenuComponent,\n  props: args,\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/molecules/menu/date-menu/date-menu.stories.ts",
-                "type": "Story<DateMenuComponent>",
-                "defaultValue": "(args: DateMenuComponent) => ({\n  component: DateMenuComponent,\n  props: args,\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/molecules/menu/side-menu/side-menu.stories.ts",
-                "type": "Story<SideMenuComponent>",
-                "defaultValue": "(args: SideMenuComponent) => ({\n  component: SideMenuComponent,\n  props: args,\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/molecules/menu/main-navigation-menu/main-navigation-menu.component.stories.ts",
-                "type": "Story<MainNavigationMenuComponent>",
-                "defaultValue": "(args: MainNavigationMenuComponent) => ({\n  component: MainNavigationMenuComponent,\n  props: args,\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/atoms/inputs/formInput/formInput.stories.ts",
-                "type": "Story<formInputComponent>",
-                "defaultValue": "(args: formInputComponent) => ({\n  component: formInputComponent,\n  props: args,\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/atoms/buttons/icon-button/icon-button.component.stories.ts",
-                "type": "Story<IconButtonComponent>",
-                "defaultValue": "(args: IconButtonComponent) => ({\n  component: IconButtonComponent,\n  props: args,\n})"
             },
             {
                 "name": "Template",
@@ -3142,9 +3378,41 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "src/app/atoms/buttons/largeButton/largeButton.stories.ts",
+                "type": "Story<largeButtonComponent>",
+                "defaultValue": "(args: largeButtonComponent) => ({\n  component: largeButtonComponent,\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/atoms/buttons/gradientButton/gradientButton.stories.ts",
+                "type": "Story<gradientButtonComponent>",
+                "defaultValue": "(args: gradientButtonComponent) => ({\n  component: gradientButtonComponent,\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "src/app/atoms/buttons/lightButton/lightButton.stories.ts",
                 "type": "Story<lightButtonComponent>",
                 "defaultValue": "(args: lightButtonComponent) => ({\n  component: lightButtonComponent,\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/atoms/buttons/mobile-button/mobile-button.component.stories.ts",
+                "type": "Story<MobileButtonComponent>",
+                "defaultValue": "(args: MobileButtonComponent) => ({\n  component: MobileButtonComponent,\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/atoms/buttons/simpleButton/simpleButton.stories.ts",
+                "type": "Story<simpleButtonComponent>",
+                "defaultValue": "(args: simpleButtonComponent) => ({\n  component: simpleButtonComponent,\n  props: args,\n})"
             },
             {
                 "name": "Template",
@@ -3166,33 +3434,25 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/atoms/buttons/largeButton/largeButton.stories.ts",
-                "type": "Story<largeButtonComponent>",
-                "defaultValue": "(args: largeButtonComponent) => ({\n  component: largeButtonComponent,\n  props: args,\n})"
+                "file": "src/app/atoms/inputs/formInput/formInput.stories.ts",
+                "type": "Story<formInputComponent>",
+                "defaultValue": "(args: formInputComponent) => ({\n  component: formInputComponent,\n  props: args,\n})"
             },
             {
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/atoms/buttons/simpleButton/simpleButton.stories.ts",
-                "type": "Story<simpleButtonComponent>",
-                "defaultValue": "(args: simpleButtonComponent) => ({\n  component: simpleButtonComponent,\n  props: args,\n})"
+                "file": "src/app/atoms/navLink/icon-links/icon-links.component.stories.ts",
+                "type": "Story<IconLinksComponent>",
+                "defaultValue": "(args: IconLinksComponent) => ({\n  component: IconLinksComponent,\n  props: args,\n})"
             },
             {
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/atoms/buttons/gradientButton/gradientButton.stories.ts",
-                "type": "Story<gradientButtonComponent>",
-                "defaultValue": "(args: gradientButtonComponent) => ({\n  component: gradientButtonComponent,\n  props: args,\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/atoms/inputs/checkbox/checkbox-input-simple/checkbox-input-simple.stories.ts",
-                "type": "Story<CheckboxInputSimpleComponent>",
-                "defaultValue": "(args: CheckboxInputSimpleComponent) => ({\n    component: CheckboxInputSimpleComponent,\n    props: args,\n})"
+                "file": "src/app/atoms/navLink/textLinks/navLink.stories.ts",
+                "type": "Story<navLinkComponent>",
+                "defaultValue": "(args: navLinkComponent) => ({\n  component: navLinkComponent,\n  props: args,\n})"
             },
             {
                 "name": "Template",
@@ -3201,6 +3461,14 @@
                 "file": "src/app/atoms/inputs/checkbox/checkbox-input-switch/checkbox-input-switch.stories.ts",
                 "type": "Story<CheckboxInputSwitchComponent>",
                 "defaultValue": "(args: CheckboxInputSwitchComponent) => ({\n    component: CheckboxInputSwitchComponent,\n    props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/atoms/inputs/checkbox/checkbox-input-simple/checkbox-input-simple.stories.ts",
+                "type": "Story<CheckboxInputSimpleComponent>",
+                "defaultValue": "(args: CheckboxInputSimpleComponent) => ({\n    component: CheckboxInputSimpleComponent,\n    props: args,\n})"
             },
             {
                 "name": "Template",
@@ -3471,16 +3739,6 @@
                     "defaultValue": "(args: RegistrationFormComponent) => ({\n    component: RegistrationFormComponent,\n    props: args,\n})"
                 }
             ],
-            "src/environments/environment.prod.ts": [
-                {
-                    "name": "environment",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/environments/environment.prod.ts",
-                    "type": "object",
-                    "defaultValue": "{\n  production: true\n}"
-                }
-            ],
             "src/environments/environment.ts": [
                 {
                     "name": "environment",
@@ -3489,6 +3747,16 @@
                     "file": "src/environments/environment.ts",
                     "type": "object",
                     "defaultValue": "{\n  production: false\n}"
+                }
+            ],
+            "src/environments/environment.prod.ts": [
+                {
+                    "name": "environment",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/environments/environment.prod.ts",
+                    "type": "object",
+                    "defaultValue": "{\n  production: true\n}"
                 }
             ],
             "src/app/molecules/form-screens/form-screen-fifth/form-screen-fifth.stories.ts": [
@@ -3621,12 +3889,12 @@
                     "defaultValue": "(args: gradientButtonComponent) => ({\n  component: gradientButtonComponent,\n  props: args,\n})"
                 }
             ],
-            "src/app/atoms/navLink/navLink.stories.ts": [
+            "src/app/atoms/navLink/textLinks/navLink.stories.ts": [
                 {
                     "name": "Highlited",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/atoms/navLink/navLink.stories.ts",
+                    "file": "src/app/atoms/navLink/textLinks/navLink.stories.ts",
                     "type": "",
                     "defaultValue": "Template.bind({})"
                 },
@@ -3634,7 +3902,7 @@
                     "name": "Main",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/atoms/navLink/navLink.stories.ts",
+                    "file": "src/app/atoms/navLink/textLinks/navLink.stories.ts",
                     "type": "",
                     "defaultValue": "Template.bind({})"
                 },
@@ -3642,7 +3910,7 @@
                     "name": "props",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/atoms/navLink/navLink.stories.ts",
+                    "file": "src/app/atoms/navLink/textLinks/navLink.stories.ts",
                     "type": "object",
                     "defaultValue": "{\n  title: { control: 'text' },\n  isActive: { control: 'boolean'}\n}"
                 },
@@ -3650,7 +3918,7 @@
                     "name": "Secondary",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/atoms/navLink/navLink.stories.ts",
+                    "file": "src/app/atoms/navLink/textLinks/navLink.stories.ts",
                     "type": "",
                     "defaultValue": "Template.bind({})"
                 },
@@ -3658,17 +3926,17 @@
                     "name": "Template",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/atoms/navLink/navLink.stories.ts",
+                    "file": "src/app/atoms/navLink/textLinks/navLink.stories.ts",
                     "type": "Story<navLinkComponent>",
                     "defaultValue": "(args: navLinkComponent) => ({\n  component: navLinkComponent,\n  props: args,\n})"
                 }
             ],
-            "src/app/atoms/buttons/icon-button/icon-button.component.stories.ts": [
+            "src/app/atoms/navLink/icon-links/icon-links.component.stories.ts": [
                 {
                     "name": "Icon",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/atoms/buttons/icon-button/icon-button.component.stories.ts",
+                    "file": "src/app/atoms/navLink/icon-links/icon-links.component.stories.ts",
                     "type": "",
                     "defaultValue": "Template.bind({})"
                 },
@@ -3676,17 +3944,17 @@
                     "name": "props",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/atoms/buttons/icon-button/icon-button.component.stories.ts",
+                    "file": "src/app/atoms/navLink/icon-links/icon-links.component.stories.ts",
                     "type": "object",
-                    "defaultValue": "{\n  svgPath: { control: 'text' },\n  isActive: { control: 'boolean' },\n  title: { control: 'text'},\n}"
+                    "defaultValue": "{\n  title: { control: 'text' },\n  isActive: { control: 'boolean'}\n}"
                 },
                 {
                     "name": "Template",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/atoms/buttons/icon-button/icon-button.component.stories.ts",
-                    "type": "Story<IconButtonComponent>",
-                    "defaultValue": "(args: IconButtonComponent) => ({\n  component: IconButtonComponent,\n  props: args,\n})"
+                    "file": "src/app/atoms/navLink/icon-links/icon-links.component.stories.ts",
+                    "type": "Story<IconLinksComponent>",
+                    "defaultValue": "(args: IconLinksComponent) => ({\n  component: IconLinksComponent,\n  props: args,\n})"
                 }
             ],
             "src/app/atoms/buttons/infoButton/infoButton.stories.ts": [
@@ -3767,6 +4035,58 @@
                     "defaultValue": "(args: lightButtonComponent) => ({\n  component: lightButtonComponent,\n  props: args,\n})"
                 }
             ],
+            "src/app/atoms/buttons/mobile-button/mobile-button.component.stories.ts": [
+                {
+                    "name": "Mobile",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/atoms/buttons/mobile-button/mobile-button.component.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "props",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/atoms/buttons/mobile-button/mobile-button.component.stories.ts",
+                    "type": "object",
+                    "defaultValue": "{\n  isOpen: {control: 'boolean'}\n}"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/atoms/buttons/mobile-button/mobile-button.component.stories.ts",
+                    "type": "Story<MobileButtonComponent>",
+                    "defaultValue": "(args: MobileButtonComponent) => ({\n  component: MobileButtonComponent,\n  props: args,\n})"
+                }
+            ],
+            "src/app/molecules/menu/mobile-main-navigation-menu/mobile-main-navigation-menu.component.stories.ts": [
+                {
+                    "name": "MobileNavigation",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/molecules/menu/mobile-main-navigation-menu/mobile-main-navigation-menu.component.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "props",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/molecules/menu/mobile-main-navigation-menu/mobile-main-navigation-menu.component.stories.ts",
+                    "type": "object",
+                    "defaultValue": "{\n  items: { control: 'object'}\n}"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/molecules/menu/mobile-main-navigation-menu/mobile-main-navigation-menu.component.stories.ts",
+                    "type": "Story<MobileMainNavigationMenuComponent>",
+                    "defaultValue": "(args: MobileMainNavigationMenuComponent) => ({\n  component: MobileMainNavigationMenuComponent,\n  props: args,\n})"
+                }
+            ],
             "src/app/molecules/menu/main-navigation-menu/main-navigation-menu.component.stories.ts": [
                 {
                     "name": "Navigation",
@@ -3817,6 +4137,32 @@
                     "file": "src/app/atoms/buttons/primaryButton/primaryButton.stories.ts",
                     "type": "Story<primaryButtonComponent>",
                     "defaultValue": "(args: primaryButtonComponent) => ({\n  component: primaryButtonComponent,\n  props: args,\n})"
+                }
+            ],
+            "src/app/organisms/scan-report/scan-report.component.stories.ts": [
+                {
+                    "name": "props",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/organisms/scan-report/scan-report.component.stories.ts",
+                    "type": "object",
+                    "defaultValue": "{\n}"
+                },
+                {
+                    "name": "ScanReport",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/organisms/scan-report/scan-report.component.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/organisms/scan-report/scan-report.component.stories.ts",
+                    "type": "Story<ScanReportComponent>",
+                    "defaultValue": "(args: ScanReportComponent) => ({\n    component: ScanReportComponent,\n    props: args,\n})"
                 }
             ],
             "src/app/atoms/card/card.stories.ts": [
@@ -3957,20 +4303,20 @@
                     "defaultValue": "(args: StepsComponent) => ({\n  component: StepsComponent,\n  props: args,\n})"
                 }
             ],
-            "src/app/organisms/scan-report/scan-report.component.stories.ts": [
+            "src/app/molecules/menu/side-menu/side-menu.stories.ts": [
                 {
                     "name": "props",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/organisms/scan-report/scan-report.component.stories.ts",
+                    "file": "src/app/molecules/menu/side-menu/side-menu.stories.ts",
                     "type": "object",
-                    "defaultValue": "{\n}"
+                    "defaultValue": "{\n  backgroundColor: { control: 'color' },\n  items: { control: 'array'}\n}"
                 },
                 {
-                    "name": "ScanReport",
+                    "name": "Side",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/organisms/scan-report/scan-report.component.stories.ts",
+                    "file": "src/app/molecules/menu/side-menu/side-menu.stories.ts",
                     "type": "",
                     "defaultValue": "Template.bind({})"
                 },
@@ -3978,9 +4324,9 @@
                     "name": "Template",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/organisms/scan-report/scan-report.component.stories.ts",
-                    "type": "Story<ScanReportComponent>",
-                    "defaultValue": "(args: ScanReportComponent) => ({\n    component: ScanReportComponent,\n    props: args,\n})"
+                    "file": "src/app/molecules/menu/side-menu/side-menu.stories.ts",
+                    "type": "Story<SideMenuComponent>",
+                    "defaultValue": "(args: SideMenuComponent) => ({\n  component: SideMenuComponent,\n  props: args,\n})"
                 }
             ],
             "src/app/molecules/form-screens/form-screen-second/form-screen-second.stories.ts": [
@@ -4035,20 +4381,20 @@
                     "defaultValue": "Template.bind({})"
                 }
             ],
-            "src/app/molecules/menu/side-menu/side-menu.stories.ts": [
+            "src/app/atoms/buttons/secondaryButton/secondaryButton.stories.ts": [
                 {
                     "name": "props",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/molecules/menu/side-menu/side-menu.stories.ts",
+                    "file": "src/app/atoms/buttons/secondaryButton/secondaryButton.stories.ts",
                     "type": "object",
-                    "defaultValue": "{\n  backgroundColor: { control: 'color' },\n  items: { control: 'array'}\n}"
+                    "defaultValue": "{\n  backgroundColor: { control: 'color' },\n  color: { control: 'color' },\n  title: { control: 'text'},\n}"
                 },
                 {
-                    "name": "Side",
+                    "name": "Secondary",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/molecules/menu/side-menu/side-menu.stories.ts",
+                    "file": "src/app/atoms/buttons/secondaryButton/secondaryButton.stories.ts",
                     "type": "",
                     "defaultValue": "Template.bind({})"
                 },
@@ -4056,9 +4402,9 @@
                     "name": "Template",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/molecules/menu/side-menu/side-menu.stories.ts",
-                    "type": "Story<SideMenuComponent>",
-                    "defaultValue": "(args: SideMenuComponent) => ({\n  component: SideMenuComponent,\n  props: args,\n})"
+                    "file": "src/app/atoms/buttons/secondaryButton/secondaryButton.stories.ts",
+                    "type": "Story<secondaryButtonComponent>",
+                    "defaultValue": "(args: secondaryButtonComponent) => ({\n  component: secondaryButtonComponent,\n  props: args,\n})"
                 }
             ],
             "src/app/atoms/inputs/formInput/formInput.stories.ts": [
@@ -4095,20 +4441,20 @@
                     "defaultValue": "Template.bind({})"
                 }
             ],
-            "src/app/atoms/buttons/secondaryButton/secondaryButton.stories.ts": [
+            "src/app/atoms/inputs/checkbox/checkbox-input-switch/checkbox-input-switch.stories.ts": [
                 {
                     "name": "props",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/atoms/buttons/secondaryButton/secondaryButton.stories.ts",
+                    "file": "src/app/atoms/inputs/checkbox/checkbox-input-switch/checkbox-input-switch.stories.ts",
                     "type": "object",
-                    "defaultValue": "{\n  backgroundColor: { control: 'color' },\n  color: { control: 'color' },\n  title: { control: 'text'},\n}"
+                    "defaultValue": "{\n    isChecked: { control: 'boolean' },\n}"
                 },
                 {
-                    "name": "Secondary",
+                    "name": "Switch",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/atoms/buttons/secondaryButton/secondaryButton.stories.ts",
+                    "file": "src/app/atoms/inputs/checkbox/checkbox-input-switch/checkbox-input-switch.stories.ts",
                     "type": "",
                     "defaultValue": "Template.bind({})"
                 },
@@ -4116,9 +4462,9 @@
                     "name": "Template",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/atoms/buttons/secondaryButton/secondaryButton.stories.ts",
-                    "type": "Story<secondaryButtonComponent>",
-                    "defaultValue": "(args: secondaryButtonComponent) => ({\n  component: secondaryButtonComponent,\n  props: args,\n})"
+                    "file": "src/app/atoms/inputs/checkbox/checkbox-input-switch/checkbox-input-switch.stories.ts",
+                    "type": "Story<CheckboxInputSwitchComponent>",
+                    "defaultValue": "(args: CheckboxInputSwitchComponent) => ({\n    component: CheckboxInputSwitchComponent,\n    props: args,\n})"
                 }
             ],
             "src/app/atoms/inputs/checkbox/checkbox-input-simple/checkbox-input-simple.stories.ts": [
@@ -4145,32 +4491,6 @@
                     "file": "src/app/atoms/inputs/checkbox/checkbox-input-simple/checkbox-input-simple.stories.ts",
                     "type": "Story<CheckboxInputSimpleComponent>",
                     "defaultValue": "(args: CheckboxInputSimpleComponent) => ({\n    component: CheckboxInputSimpleComponent,\n    props: args,\n})"
-                }
-            ],
-            "src/app/atoms/inputs/checkbox/checkbox-input-switch/checkbox-input-switch.stories.ts": [
-                {
-                    "name": "props",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/atoms/inputs/checkbox/checkbox-input-switch/checkbox-input-switch.stories.ts",
-                    "type": "object",
-                    "defaultValue": "{\n    isChecked: { control: 'boolean' },\n}"
-                },
-                {
-                    "name": "Switch",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/atoms/inputs/checkbox/checkbox-input-switch/checkbox-input-switch.stories.ts",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/atoms/inputs/checkbox/checkbox-input-switch/checkbox-input-switch.stories.ts",
-                    "type": "Story<CheckboxInputSwitchComponent>",
-                    "defaultValue": "(args: CheckboxInputSwitchComponent) => ({\n    component: CheckboxInputSwitchComponent,\n    props: args,\n})"
                 }
             ],
             "src/app/atoms/inputs/select-input/select-input-search/select-input-search.component.stories.ts": [
@@ -4364,45 +4684,6 @@
                 "status": "low"
             },
             {
-                "filePath": "src/app/atoms/buttons/icon-button/icon-button.component.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Icon",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/atoms/buttons/icon-button/icon-button.component.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "props",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/atoms/buttons/icon-button/icon-button.component.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Template",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/atoms/buttons/icon-button/icon-button.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "IconButtonComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/9",
-                "status": "low"
-            },
-            {
                 "filePath": "src/app/atoms/buttons/infoButton/infoButton.component.ts",
                 "type": "component",
                 "linktype": "component",
@@ -4517,6 +4798,45 @@
                 "name": "Template",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/atoms/buttons/mobile-button/mobile-button.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Mobile",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/atoms/buttons/mobile-button/mobile-button.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "props",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/atoms/buttons/mobile-button/mobile-button.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/atoms/buttons/mobile-button/mobile-button.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "MobileButtonComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
                 "status": "low"
             },
             {
@@ -4960,36 +5280,17 @@
                 "status": "low"
             },
             {
-                "filePath": "src/app/atoms/navLink/navLink.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "navLinkComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/6",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/atoms/navLink/navLink.stories.ts",
+                "filePath": "src/app/atoms/navLink/icon-links/icon-links.component.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "Highlited",
+                "name": "Icon",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
             },
             {
-                "filePath": "src/app/atoms/navLink/navLink.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Main",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/atoms/navLink/navLink.stories.ts",
+                "filePath": "src/app/atoms/navLink/icon-links/icon-links.component.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -4999,7 +5300,65 @@
                 "status": "low"
             },
             {
-                "filePath": "src/app/atoms/navLink/navLink.stories.ts",
+                "filePath": "src/app/atoms/navLink/icon-links/icon-links.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/atoms/navLink/icon-links/icon-links.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "IconLinksComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/9",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/atoms/navLink/textLinks/navLink.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "navLinkComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/6",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/atoms/navLink/textLinks/navLink.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Highlited",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/atoms/navLink/textLinks/navLink.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Main",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/atoms/navLink/textLinks/navLink.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "props",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/atoms/navLink/textLinks/navLink.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -5009,7 +5368,7 @@
                 "status": "low"
             },
             {
-                "filePath": "src/app/atoms/navLink/navLink.stories.ts",
+                "filePath": "src/app/atoms/navLink/textLinks/navLink.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -5476,6 +5835,45 @@
                 "status": "low"
             },
             {
+                "filePath": "src/app/molecules/menu/mobile-main-navigation-menu/mobile-main-navigation-menu.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "MobileNavigation",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/molecules/menu/mobile-main-navigation-menu/mobile-main-navigation-menu.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "props",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/molecules/menu/mobile-main-navigation-menu/mobile-main-navigation-menu.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/molecules/menu/mobile-main-navigation-menu/mobile-main-navigation-menu.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "MobileMainNavigationMenuComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
                 "filePath": "src/app/molecules/menu/side-menu/side-menu.component.ts",
                 "type": "component",
                 "linktype": "component",
@@ -5638,7 +6036,7 @@
                 "linktype": "component",
                 "name": "ScanReportComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/6",
+                "coverageCount": "0/12",
                 "status": "low"
             },
             {

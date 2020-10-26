@@ -1,29 +1,28 @@
-import { CommonModule } from '@angular/common';
 import { Meta, moduleMetadata, Story } from '@storybook/angular';
-import { IconButtonComponent } from './icon-button.component';
+import { IconLinksComponent } from './icon-links.component';
 import { AngularSvgIconModule } from 'angular-svg-icon';
 import { HttpClientModule } from '@angular/common/http';
-
+import { CommonModule } from '@angular/common';
 
 const props = {
-  svgPath: { control: 'text' },
-  isActive: { control: 'boolean' },
-  title: { control: 'text'},
+  title: { control: 'text' },
+  isActive: { control: 'boolean'}
 };
 
 export default {
-  title: 'Atoms/Button',
+  title: 'Atoms/NavLink',
   decorators: [
     moduleMetadata({
-      declarations: [IconButtonComponent],
+      declarations: [IconLinksComponent],
       imports: [CommonModule, HttpClientModule, AngularSvgIconModule.forRoot()]
     }),
   ],
   argTypes: props,
 } as Meta;
 
-const Template: Story<IconButtonComponent> = (args: IconButtonComponent) => ({
-  component: IconButtonComponent,
+
+const Template: Story<IconLinksComponent> = (args: IconLinksComponent) => ({
+  component: IconLinksComponent,
   props: args,
 });
 
@@ -33,5 +32,3 @@ Icon.args = {
   isActive: false,
   svgPath: 'assets/images/menu/Domains.svg'
 };
-
-

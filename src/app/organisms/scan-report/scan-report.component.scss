@@ -56,6 +56,48 @@
     }
 }
 
-.ng-select.custom-icon {
-    width: 200px;
+app-select-input-search {
+    width: 80%;
+}
+
+@media screen and (max-width: 1150px) {
+    .app-scan-report {
+        &__nav {
+            padding: 20px;
+        }
+        &__container {
+            padding: 20px;
+            &--right {
+                width: 60%;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .app-scan-report {
+        &__nav {
+            padding: 20px;
+            position: relative;
+        }
+        &__container {
+            padding: 20px;
+            &--right {
+                width: 100%;
+            }
+        }
+    }
+
+    app-mobile-main-navigation-menu {
+        width: 100%;
+    }
+
+    app-composite-menu {
+        position: absolute; 
+        top: 90px;
+        left: 0;
+        z-index: 2;
+
+        transition: margin-left 1s;
+    }
 }

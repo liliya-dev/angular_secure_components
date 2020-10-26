@@ -1,11 +1,11 @@
-import { OnChanges, Component, Input } from '@angular/core';
+import { Component, Input, OnChanges } from '@angular/core';
 
 @Component({
-  selector: 'app-icon-button',
-  templateUrl: './icon-button.component.html',
-  styleUrls: ['./icon-button.component.scss']
+  selector: 'app-icon-links',
+  templateUrl: './icon-links.component.html',
+  styleUrls: ['./icon-links.component.scss']
 })
-export class IconButtonComponent implements OnChanges {
+export class IconLinksComponent implements OnChanges {
   @Input() isActive: boolean;
   @Input() title: string;
   @Input() svgPath: string;

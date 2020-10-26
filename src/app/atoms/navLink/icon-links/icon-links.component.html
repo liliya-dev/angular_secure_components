@@ -1,4 +1,5 @@
-<button class="app-icon-button fs-10-sofia-500" type="button" 
+<a class="app-icon-link fs-10-sofia-500"
+    href="#"
     (mouseenter)="onHover()"
     (mouseleave)="onLeave()"
 >
@@ -7,7 +8,7 @@
         [svgStyle]="{'fill':fillColor }">
     >
     </svg-icon>
-    <p class="app-icon-button__title" [ngStyle]="{ 'color': fillColor }">
+    <p class="app-icon-link__title" [ngStyle]="{ 'color': fillColor }">
         {{title}}
     </p>     
-</button>
+</a>
