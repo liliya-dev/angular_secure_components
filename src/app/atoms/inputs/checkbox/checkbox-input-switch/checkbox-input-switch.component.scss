@@ -20,7 +20,6 @@
             top: -3px;
             left: 0;
 
-            padding-bottom: 3px;
             box-sizing: border-box;
             width: 19px;
             height: 19px;
@@ -36,11 +35,26 @@
     background: linear-gradient(89.52deg, hsla(137, 66%, 42%, 0.2) -46.17%, rgba(2, 99, 188, 0.2) 186.99%);
 
     &:after {
-        content: url('../../../../../assets/images/checkbox.svg');
-        position: absolute;
-        top: -3px;
-        right: 0;
+        // content: url('../../../../../assets/images/checkbox.svg');
+        // position: absolute;
+        // top: -3px;
+        // right: 0;
         transform: translateX(17px);
         background: var(--success-grad-light);
+    }
+
+    &:before {
+        content: '';
+        position: absolute;
+        top: -3px;
+        left: 17px;
+        z-index: 2;
+
+        box-sizing: border-box;
+        width: 19px;
+        height: 19px;
+        border-radius: 50%;
+
+        background: no-repeat center url('../../../../../assets/images/checkbox.svg');
     }
 }

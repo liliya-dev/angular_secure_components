@@ -25,10 +25,4 @@ Text.args = {
   wrapperClasses: "form-input__wrapper form-input__wrapper--simple"
 };
 
-export const TextWithIcon = Template.bind({});
-TextWithIcon.args = {
-  placeholderText: "",
-  classes: "form-input-field form-input-field--icon fs-16-sofia-300",
-  wrapperClasses: "form-input__wrapper form-input__wrapper--icon"
-};
 

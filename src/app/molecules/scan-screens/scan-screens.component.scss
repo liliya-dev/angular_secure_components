@@ -1,3 +1,4 @@
+
 .app-scan-screen {
     padding: 32px 32px 72px 32px;
     background: var(--text-color);
@@ -7,6 +8,20 @@
 
     &__title {
         margin-bottom: 90px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        & > h4 {
+          flex: 0 0 150px;  
+        }
+    }
+
+    &__line {
+        background: var(--success-grad-light);
+        opacity: 0.1;
+        height: 1px;
+        width: 75%;
     }
 
     &__container {
@@ -22,6 +37,7 @@
 
         & > .fs-16-sofia-300 {
             margin-bottom: 57px;
+            opacity: 0.75;
         }
     }
 }

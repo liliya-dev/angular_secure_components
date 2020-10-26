@@ -18,6 +18,6 @@ const Template: Story<CheckboxInputSwitchComponent> = (args: CheckboxInputSwitch
 
 export const Switch = Template.bind({});
 Switch.args = {
-    isChecked: false,
+    isChecked: true,
 };
 

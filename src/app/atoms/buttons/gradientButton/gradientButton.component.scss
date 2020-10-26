@@ -2,12 +2,11 @@
   background: var(--higlited-grad-light);
   border: none;
   color: var(--text-color);
+  display: flex;
+  align-items: center;
 
-  & > img {
+  &__img {
      margin-left: 27px;
-     height: 8px;
-     width: 4px;
-     margin-bottom: 2px;
   }
 
   &:hover {

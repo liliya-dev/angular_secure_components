@@ -10,18 +10,31 @@
         position: relative;
         
         &::after {
-          content: url('../../../assets/images/checkbox.svg');
+          content: "";
           width: 19px;
           height: 19px;
           position: absolute;
-          display: flex;
-          align-items: center;
-          justify-content: center;
+
           top: 8px;
           right: 8px;
           background: var(--success-grad-light);
           border-radius: 50%;
         }
+
+        &:before {
+          content: '';
+          position: absolute;
+          top: 8px;
+          right: 8px;
+          z-index: 2;
+  
+          box-sizing: border-box;
+          width: 19px;
+          height: 19px;
+          border-radius: 50%;
+  
+          background: no-repeat center url('../../../assets/images/checkbox.svg');
+      }
     }
 
     &:hover {

@@ -15,7 +15,7 @@
     &:after {
         content: url('../../../../../assets/images/select.png');
         position: absolute;
-        top: calc(50% - 8px);
+        top: calc(50% - 11px);
         right: 21px;
     }
 
@@ -24,13 +24,13 @@
             content: url('../../../../../assets/images/select.png');
             transform: rotate(180deg);
             position: absolute;
-            top: calc(50% - 8px);
+            top: calc(50% - 11px);
             right: 21px;
         }
     }
 
     &-container {
-        padding: 17px 21px 15px 16px;
+        padding: 15px 21px 15px 16px;
         width: 100%;
         height: 46px;
         margin-bottom: 4px;

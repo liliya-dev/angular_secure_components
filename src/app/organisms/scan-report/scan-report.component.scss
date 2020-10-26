@@ -52,7 +52,7 @@
         justify-content: space-between;
         align-items: center;
         width: 100%;
-        margin-bottom: 34px;
+        margin-bottom: 42px;
     }
 }
 
@@ -76,6 +76,7 @@ app-select-input-search {
 
 @media screen and (max-width: 800px) {
     .app-scan-report {
+        text-align: center;
         &__nav {
             padding: 20px;
             position: relative;
@@ -90,6 +91,10 @@ app-select-input-search {
 
     app-mobile-main-navigation-menu {
         width: 100%;
+    }
+
+    app-checkbox-input-simple {
+        text-align: left;
     }
 
     app-composite-menu {

@@ -22,7 +22,7 @@ const Template: Story<simpleButtonComponent> = (args: simpleButtonComponent) => 
 export const Danger = Template.bind({});
 Danger.args = {
   title: "clear",
-  classes: "btn-danger fs-16-gramm-300 btn-app btn-app--h36"
+  classes: "btn-danger fs-12-sofia-800 btn-app btn-app--h36"
 };
 
 export const Transparent = Template.bind({});
@@ -34,11 +34,11 @@ Transparent.args = {
 export const Success = Template.bind({});
 Success.args = {
   title: "save",
-  classes: "btn-app--h36 btn-app btn-success fs-12-gramm-400 "
+  classes: "btn-app--h36 btn-app btn-success fs-12-sofia-800"
 };
 
 export const SuccessAsimetric = Template.bind({});
 SuccessAsimetric.args = {
   title: "notify me",
-  classes: "btn-app--asimetric  btn-success-asimetric fs-12-gramm-400 "
+  classes: "btn-app--asimetric  btn-success-asimetric fs-16-sofia-800"
 };
