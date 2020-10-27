@@ -5,5 +5,6 @@ import { Component } from '@angular/core';
   templateUrl: './form-screen-second.component.html',
   styleUrls: ['./form-screen-second.component.scss']
 })
+
 export class FormScreenSecondComponent {
 }

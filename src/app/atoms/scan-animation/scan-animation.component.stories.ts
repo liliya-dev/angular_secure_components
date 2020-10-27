@@ -1,8 +1,7 @@
 import { Meta, Story } from '@storybook/angular';
 import { ScanAnimationComponent } from './scan-animation.component';
 
-const props = {
-};
+const props = {};
 
 export default {
   title: 'Atoms/Animation',
@@ -16,7 +15,5 @@ const Template: Story<ScanAnimationComponent> = (args: ScanAnimationComponent) =
 });
 
 export const Scan = Template.bind({});
-Scan.args = {
-
-};
+Scan.args = {};
 

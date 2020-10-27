@@ -6,7 +6,7 @@ import { AngularSvgIconModule } from 'angular-svg-icon';
 import { HttpClientModule } from '@angular/common/http';
 
 const props = {
-  items: { control: 'object'}
+  items: { control: 'object' }
 };
 
 export default {
@@ -28,9 +28,9 @@ const Template: Story<MobileMainNavigationMenuComponent> = (args: MobileMainNavi
 export const MobileNavigation = Template.bind({});
 MobileNavigation.args = {
   items: [
-      { title: 'Reports', svgPath: 'assets/images/menu/Reports.svg',   isActive: false,},
-      { title: 'Domains', svgPath: 'assets/images/menu/Domains.svg',   isActive: false,},
-      { title: 'Account', svgPath: 'assets/images/menu/Account.svg',   isActive: false,},
-      { title: 'Options', svgPath: 'assets/images/menu/Options.svg',   isActive: false,},
+    { title: 'Reports', svgPath: 'assets/images/menu/Reports.svg', isActive: false },
+    { title: 'Domains', svgPath: 'assets/images/menu/Domains.svg', isActive: false },
+    { title: 'Account', svgPath: 'assets/images/menu/Account.svg', isActive: false },
+    { title: 'Options', svgPath: 'assets/images/menu/Options.svg', isActive: false },
   ]
 };

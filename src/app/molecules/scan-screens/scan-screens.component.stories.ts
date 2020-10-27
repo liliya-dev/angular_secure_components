@@ -5,8 +5,7 @@ import { simpleButtonComponent } from '../../atoms/buttons/simpleButton/simpleBu
 import { ScanAnimationComponent } from '../../atoms/scan-animation/scan-animation.component';
 import { CheckboxInputSimpleComponent } from '../../atoms/inputs/checkbox/checkbox-input-simple/checkbox-input-simple.component';
 
-const props = {
-};
+const props = {};
 
 export default {
   title: 'Molecules/Scan Screen',
@@ -30,6 +29,5 @@ const Template: Story<ScanScreensComponent> = (args: ScanScreensComponent) => ({
 });
 
 export const First = Template.bind({});
-First.args = {
-};
+First.args = {};
 

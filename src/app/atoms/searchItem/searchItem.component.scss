@@ -1,11 +1,11 @@
 .search-list__item {
-  box-sizing: border-box;
-  list-style: none;
   width: 100%;
   height: 46px;
   padding: 15px 53px;
-  background: var(--input-bg-color);
+
+  list-style: none;
   transition: 0.3s;
+  background: var(--input-bg-color);
   color: var(--secondary-color);
   opacity: 0.75;
 
@@ -16,9 +16,10 @@
 }
 
 .list-item-icon {
-  padding: 19px 53px;
   width: 100%;
   height: auto;
+  padding: 19px 53px;
+
   border: 1px solid rgba(var(--secondary-color-code), 0.1);
   border-radius: 8px;
   position: relative;

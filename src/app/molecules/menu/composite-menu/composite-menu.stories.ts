@@ -4,7 +4,7 @@ import { navLinkComponent } from '../../../atoms/navLink/textLinks/navLink.compo
 import { CompositeMenuComponent } from './composite-menu.component';
 
 const props = {
-  items: { control: 'object'}
+  items: { control: 'object' }
 };
 
 export default {
@@ -26,16 +26,16 @@ const Template: Story<CompositeMenuComponent> = (args: CompositeMenuComponent) =
 export const CompositeMenu = Template.bind({});
 CompositeMenu.args = {
   items: [
-      { title: 'scan'},
-      { title: 'style'},
-      { title: 'cookie banner'},
-      { title: 'IAB 2.0 settings'},
-      { title: 'Preference Center', sections: ['GDPR/ePrivacy', 'CCPA', 'LGPD']},
-      { title: 'data request form'},
-      { title: 'Preference Center', sections: ['Privacy Policy', 'Cookie Declaration', 'Embed On Website']},
-      { title: 'cookie classification'},
-      { title: 'languages'},
-      { title: 'coverage'},
-      { title: 'installation'},
+    { title: 'scan'},
+    { title: 'style'},
+    { title: 'cookie banner'},
+    { title: 'IAB 2.0 settings'},
+    { title: 'Preference Center', sections: ['GDPR/ePrivacy', 'CCPA', 'LGPD']},
+    { title: 'data request form'},
+    { title: 'Preference Center', sections: ['Privacy Policy', 'Cookie Declaration', 'Embed On Website']},
+    { title: 'cookie classification'},
+    { title: 'languages'},
+    { title: 'coverage'},
+    { title: 'installation'},
   ]
 };

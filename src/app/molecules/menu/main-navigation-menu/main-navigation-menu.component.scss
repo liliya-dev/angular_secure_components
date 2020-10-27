@@ -1,11 +1,12 @@
 .app-main-navigation-menu {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 
-    &__item {
-        margin-right: 20px;
-    }
+  &__item {
+    margin-right: 20px;
+  }
 }
+
 .nav-link-secondary {
-    text-transform: capitalize!important;
+  text-transform: capitalize!important;
 }

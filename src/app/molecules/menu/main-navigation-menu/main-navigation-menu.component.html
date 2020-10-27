@@ -1,15 +1,15 @@
 <ul class="app-main-navigation-menu">
-    <li 
+  <li 
     class="app-main-navigation-menu__item"
     *ngFor="let item of items; let i = index" 
-    >
+  >
     <app-nav-link
-        [isActive]="active === i"
-        [title]="item" 
-        classes="nav-link-secondary fs-16-sofia-800 "
-        (click)="handlClick($event, i)"
+      [isActive]="active === i"
+      [title]="item" 
+      classes="nav-link-secondary fs-16-sofia-800 "
+      (click)="handlClick($event, i)"
     >
     </app-nav-link>
-    </li>
+  </li>
 </ul>
 

@@ -6,8 +6,8 @@ import { Component, Input, ViewEncapsulation } from '@angular/core';
   styleUrls: ['./select-input-search.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
-export class SelectInputSearchComponent {
 
+export class SelectInputSearchComponent {
   @Input() items: string[];
   @Input() placeholderText: string;
   @Input() classes: string;

@@ -12,16 +12,13 @@ interface Item {
   encapsulation: ViewEncapsulation.None
 })
 
-
 export class CompositeMenuComponent {
-
   @Input() items: Item[];
 
-  active = '';
+  active: string = '';
 
   handlClick(event: any, i: string) {
     event.preventDefault();
     this.active = i;
-    console.log(this.active)
   }
 }

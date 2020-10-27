@@ -5,10 +5,11 @@ import { Component, Input } from '@angular/core';
   templateUrl: './side-menu.component.html',
   styleUrls: ['./side-menu.component.scss']
 })
+
 export class SideMenuComponent {
   @Input() items: string[];
 
-  active = 0;
+  active: number = 0;
   
   handlClick(event: any, i: number) {
     event.preventDefault();

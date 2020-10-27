@@ -3,8 +3,7 @@ import { Meta, moduleMetadata, Story } from '@storybook/angular';
 import { largeButtonComponent } from '../../../atoms/buttons/largeButton/largeButton.component';
 import { FormScreenFourthComponent } from './form-screen-fourth.component';
 
-const props = {
-};
+const props = {};
 
 export default {
     title: 'Molecules/Form Screen',
@@ -23,6 +22,5 @@ const Template: Story<FormScreenFourthComponent> = (args: FormScreenFourthCompon
 });
 
 export const Fourth = Template.bind({});
-Fourth.args = {
-};
+Fourth.args = {};
 

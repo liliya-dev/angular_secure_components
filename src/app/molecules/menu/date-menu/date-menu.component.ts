@@ -5,9 +5,11 @@ import { Component, Input } from '@angular/core';
   templateUrl: './date-menu.component.html',
   styleUrls: ['./date-menu.component.scss']
 })
+
 export class DateMenuComponent {
   @Input() items: string[];
-  active = 0;
+
+  active: number = 0;
 
   handlClick(event: any, i: number) {
     event.preventDefault();

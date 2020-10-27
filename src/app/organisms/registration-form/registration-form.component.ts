@@ -1,4 +1,4 @@
-import { Component, Input, ViewEncapsulation } from '@angular/core';
+import { Component, HostListener, OnInit, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-registration-form',
@@ -6,14 +6,20 @@ import { Component, Input, ViewEncapsulation } from '@angular/core';
   styleUrls: ['./registration-form.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
-export class RegistrationFormComponent {
-  activeScreen=1;
-  @Input() isMobile: boolean;
-  isStarted=false;
+
+export class RegistrationFormComponent implements OnInit {
+  activeScreen: number = 1;
+  isStarted: boolean = false;
+  isMobile: boolean;
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event: any) {
+    this.isMobile = (window.innerWidth < 950) ? true : false;
+  }
 
   changeScreen() {
     if (this.activeScreen === 5) {
-      return
+      return;
     } else {
       this.activeScreen = this.activeScreen + 1;
     }
@@ -21,7 +27,7 @@ export class RegistrationFormComponent {
 
   changeScreenToPrevious() {
     if (this.activeScreen === 1) {
-      return
+      return;
     } else {
       this.activeScreen = this.activeScreen - 1;
     }
@@ -29,5 +35,9 @@ export class RegistrationFormComponent {
 
   setIsStarted() {
     this.isStarted = true;
+  }
+
+  ngOnInit(): void {
+    this.isMobile = (window.innerWidth < 950) ? true : false;
   }
 }

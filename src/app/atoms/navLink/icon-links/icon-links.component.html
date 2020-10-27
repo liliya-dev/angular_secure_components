@@ -1,14 +1,14 @@
 <a class="app-icon-link fs-10-sofia-500"
-    href="#"
-    (mouseenter)="onHover()"
-    (mouseleave)="onLeave()"
+  href="#"
+  (mouseenter)="onHover()"
+  (mouseleave)="onLeave()"
 >
-    <svg-icon 
-        [src]="svgPath"
-        [svgStyle]="{'fill':fillColor }">
-    >
-    </svg-icon>
-    <p class="app-icon-link__title" [ngStyle]="{ 'color': fillColor }">
-        {{title}}
-    </p>     
+  <svg-icon 
+    [src]="svgPath"
+    [svgStyle]="{'fill':fillColor }"
+  >
+  </svg-icon>
+  <p class="app-icon-link__title" [ngStyle]="{ 'color': fillColor }">
+    {{title}}
+  </p>     
 </a>

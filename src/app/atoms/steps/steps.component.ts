@@ -6,12 +6,12 @@ import { detectClasses } from './helpers';
   templateUrl: './steps.component.html',
   styleUrls: ['./steps.component.scss']
 })
+
 export class StepsComponent implements OnChanges {
   @Input() activePoints: number;
-  classes=[];
+  classes: string[] = [];
   
   ngOnChanges(): void {
     this.classes = detectClasses(this.activePoints);
   }
-
 }

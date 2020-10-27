@@ -1,15 +1,27 @@
 import { Component, ElementRef, OnInit, HostListener, ViewEncapsulation, ViewChild } from '@angular/core';
 
+interface SideItems {
+  title: string;
+  sections?: string[],
+}
+
+interface MobileItems {
+  title: string;
+  svgPath: string,
+  isActive: boolean
+}
+
 @Component({
   selector: 'app-scan-report',
   templateUrl: './scan-report.component.html',
   styleUrls: ['./scan-report.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
+
 export class ScanReportComponent implements OnInit {
-  items=['reports', 'domains', 'users', 'account', 'request portal'];
-  itemsToSearch=['My current company', 'My clients company', 'secure privacy', 'secure privacy2', 'secure privacy3'];
-  leftSideMenuItems=[
+  items: string[] = ['reports', 'domains', 'users', 'account', 'request portal'];
+  itemsToSearch: string[] = ['My current company', 'My clients company', 'secure privacy', 'secure privacy2', 'secure privacy3'];
+  leftSideMenuItems: SideItems[] = [
     { title: 'scan'},
     { title: 'style'},
     { title: 'cookie banner'},
@@ -22,15 +34,14 @@ export class ScanReportComponent implements OnInit {
     { title: 'coverage'},
     { title: 'installation'},
   ]
-  mobileMenuItems=[
+  mobileMenuItems: MobileItems[] = [
     { title: 'Reports', svgPath: 'assets/images/menu/Reports.svg',   isActive: false,},
     { title: 'Domains', svgPath: 'assets/images/menu/Domains.svg',   isActive: false,},
     { title: 'Account', svgPath: 'assets/images/menu/Account.svg',   isActive: false,},
     { title: 'Options', svgPath: 'assets/images/menu/Options.svg',   isActive: false,},
   ]
-  isMobile=false;
-  isSideMenuVisible=false;
-  marginMenu=156;
+  isMobile: boolean = false;
+  isSideMenuVisible: boolean = false;
 
   toggleSideMenu() {
     this.isSideMenuVisible = !this.isSideMenuVisible;
@@ -38,26 +49,19 @@ export class ScanReportComponent implements OnInit {
 
   @HostListener('window:resize', ['$event'])
   onResize(event: any) {
-    if (event.target.innerWidth < 800) {
-      this.isMobile = true;
-    }
-    if (event.target.innerWidth > 800) {
-      this.isMobile = false;
-    }
+    this.isMobile = (event.target.innerWidth < 800) ? true : false;
   }
 
   @ViewChild('nav') element: ElementRef;
 
   @HostListener('document:click', ['$event'])
 	onClick(event: Event) {
-    if (!this.element.nativeElement.contains(event.target)){
-      this.isSideMenuVisible=false;
+    if (!this.element.nativeElement.contains(event.target)) {
+      this.isSideMenuVisible = false;
     }
   }
   
   ngOnInit(): void {
-    if (window.innerWidth < 800) {
-      this.isMobile = true;
-    }
+    this.isMobile = (window.innerWidth < 800) ? true : false;
   }
 }

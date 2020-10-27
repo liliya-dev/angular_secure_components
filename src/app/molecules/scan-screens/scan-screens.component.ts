@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-scan-screens',
@@ -6,11 +6,6 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
   styleUrls: ['./scan-screens.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
-export class ScanScreensComponent implements OnInit {
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+export class ScanScreensComponent {
 }

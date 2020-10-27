@@ -18,43 +18,39 @@ import { IconLinksComponent } from '../../atoms/navLink/icon-links/icon-links.co
 import { AngularSvgIconModule } from 'angular-svg-icon';
 import { HttpClientModule } from '@angular/common/http';
 
-const props = {
-};
+const props = {};
 
 export default {
-    title: 'Organisms/Scan Report',
-    decorators: [
-        moduleMetadata({
-        declarations: [
-          navLinkComponent,
-          infoButtonComponent,
-          lightButtonComponent,
-          CompositeMenuComponent,
-          ScanAnimationComponent,
-          CheckboxInputSimpleComponent,
-          MainNavigationMenuComponent, 
-          SelectInputSearchComponent,
-          ScanScreensComponent,
-          simpleButtonComponent,
-          MobileButtonComponent,
-          MobileMainNavigationMenuComponent,
-          IconLinksComponent
-        ],
-        imports: [CommonModule, NgSelectModule, HttpClientModule, AngularSvgIconModule.forRoot()],
-        }),
-    ],
-    argTypes: props,
+  title: 'Organisms/Scan Report',
+  decorators: [
+    moduleMetadata({
+      declarations: [
+        navLinkComponent,
+        infoButtonComponent,
+        lightButtonComponent,
+        CompositeMenuComponent,
+        ScanAnimationComponent,
+        CheckboxInputSimpleComponent,
+        MainNavigationMenuComponent, 
+        SelectInputSearchComponent,
+        ScanScreensComponent,
+        simpleButtonComponent,
+        MobileButtonComponent,
+        MobileMainNavigationMenuComponent,
+        IconLinksComponent
+      ],
+      imports: [CommonModule, NgSelectModule, HttpClientModule, AngularSvgIconModule.forRoot()],
+    }),
+  ],
+  argTypes: props,
 } as Meta;
 
-
 const Template: Story<ScanReportComponent> = (args: ScanReportComponent) => ({
-    component: ScanReportComponent,
-    props: args,
+  component: ScanReportComponent,
+  props: args,
 });
 
 export const ScanReport = Template.bind({});
-ScanReport.args = {
-
-};
+ScanReport.args = {};
 
 

@@ -18,51 +18,41 @@ import { FormScreenFifthComponent } from '../../molecules/form-screens/form-scre
 import { RegistrationFormComponent } from './registration-form.component';
 import { NgSelectModule } from '@ng-select/ng-select';
 
-
-const props = {
-};
+const props = {};
 
 export default {
-    title: 'Organisms/Registration form',
-    decorators: [
-        moduleMetadata({
-        declarations: [
-            RegistrationFormComponent, 
-            infoButtonComponent,
-            searchItemComponent,
-            gradientButtonComponent,
-            StepsComponent,
-            largeButtonComponent,
-            formInputComponent,
-            IconContainerComponent,
-            FormScreenFirstComponent,
-            FormScreenSecondComponent,
-            FormScreenThirdComponent,
-            FormScreenFourthComponent,
-            FormScreenFifthComponent,
-            CardComponent,
-            simpleButtonComponent,
-            SelectInputSimpleComponent
-        ],
-        imports: [CommonModule, NgSelectModule],
-        }),
+  title: 'Organisms/Registration form',
+  decorators: [
+    moduleMetadata({
+    declarations: [
+      RegistrationFormComponent, 
+      infoButtonComponent,
+      searchItemComponent,
+      gradientButtonComponent,
+      StepsComponent,
+      largeButtonComponent,
+      formInputComponent,
+      IconContainerComponent,
+      FormScreenFirstComponent,
+      FormScreenSecondComponent,
+      FormScreenThirdComponent,
+      FormScreenFourthComponent,
+      FormScreenFifthComponent,
+      CardComponent,
+      simpleButtonComponent,
+      SelectInputSimpleComponent
     ],
-    argTypes: props,
+    imports: [CommonModule, NgSelectModule],
+    }),
+  ],
+  argTypes: props,
 } as Meta;
 
 const Template: Story<RegistrationFormComponent> = (args: RegistrationFormComponent) => ({
-    component: RegistrationFormComponent,
-    props: args,
+  component: RegistrationFormComponent,
+  props: args,
 });
 
-export const Mobile = Template.bind({});
-Mobile.args = {
-    isMobile: true,
-};
-
-
-export const Desktop = Template.bind({});
-Desktop.args = {
-    isMobile: false,
-};
+export const RegistrationForm = Template.bind({});
+RegistrationForm.args = {};
 

@@ -1,13 +1,19 @@
 import { Component } from '@angular/core';
 
+interface Module {
+  title: string,
+  text: string
+}
+
 @Component({
   selector: 'app-form-screen-fifth',
   templateUrl: './form-screen-fifth.component.html',
   styleUrls: ['./form-screen-fifth.component.scss']
 })
+
 export class FormScreenFifthComponent {
-  selectedModules: string[]=[];
-  modules=[
+  selectedModules: string[] = [];
+  modules: Module[] = [
     {
       title: "GDPR, eprivacy",
       text: "Europe",

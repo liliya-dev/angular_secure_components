@@ -12,7 +12,7 @@ export class CardComponent implements OnChanges {
   @Input() src: string;
   @Input() isActive: string;
 
-  classes;
+  classes: string;
 
   ngOnChanges() {
     this.classes = this.isActive ? "app-card active" : "app-card";

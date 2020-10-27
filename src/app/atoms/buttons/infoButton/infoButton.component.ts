@@ -1,13 +1,13 @@
 import { Component, Input } from '@angular/core';
 
 @Component({
-    selector: 'app-info-button',
-    templateUrl: './infoButton.component.html',
-    styleUrls: ['../button.component.scss', 'infoButton.component.scss'],
+  selector: 'app-info-button',
+  templateUrl: './infoButton.component.html',
+  styleUrls: ['../button.component.scss', 'infoButton.component.scss'],
 })
 
 export class infoButtonComponent {
-    @Input() title: string;
-    @Input() backgroundColor: string;
-    @Input() color: string;
+  @Input() title: string;
+  @Input() backgroundColor: string;
+  @Input() color: string;
 }

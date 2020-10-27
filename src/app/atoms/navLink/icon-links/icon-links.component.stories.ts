@@ -6,7 +6,7 @@ import { CommonModule } from '@angular/common';
 
 const props = {
   title: { control: 'text' },
-  isActive: { control: 'boolean'}
+  isActive: { control: 'boolean' }
 };
 
 export default {
@@ -19,7 +19,6 @@ export default {
   ],
   argTypes: props,
 } as Meta;
-
 
 const Template: Story<IconLinksComponent> = (args: IconLinksComponent) => ({
   component: IconLinksComponent,

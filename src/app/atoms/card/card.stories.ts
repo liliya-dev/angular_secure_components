@@ -4,10 +4,10 @@ import { CardComponent } from './card.component';
 const props = {
   backgroundColor: { control: 'color' },
   color: { control: 'color' },
-  src: { control: 'text'},
-  title: { control: 'text'},
+  src: { control: 'text' },
+  title: { control: 'text' },
   text: { control: 'text' },
-  isActive: { control: 'boolean'}
+  isActive: { control: 'boolean' }
 };
 
 export default {

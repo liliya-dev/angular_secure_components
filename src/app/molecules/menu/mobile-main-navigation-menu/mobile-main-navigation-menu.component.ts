@@ -5,11 +5,11 @@ import { Component, Input } from '@angular/core';
   templateUrl: './mobile-main-navigation-menu.component.html',
   styleUrls: ['./mobile-main-navigation-menu.component.scss']
 })
-export class MobileMainNavigationMenuComponent {
 
+export class MobileMainNavigationMenuComponent {
   @Input() items: string[];
 
-  active = 0;
+  active: number = 0;
 
   handlClick(event: any, i: number) {
     event.preventDefault();

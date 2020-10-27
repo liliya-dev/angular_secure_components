@@ -1,5 +1,10 @@
 import { Component } from '@angular/core';
 
+interface Module {
+  title: string,
+  text: string
+}
+
 @Component({
   selector: 'app-form-screen-fourth',
   templateUrl: './form-screen-fourth.component.html',
@@ -7,8 +12,8 @@ import { Component } from '@angular/core';
 })
 export class FormScreenFourthComponent {
 
-  selectedModules: string[]=[];
-  modules=[
+  selectedModules: string[] = [];
+  modules: Module[] = [
     {
       title: "GDPR, eprivacy",
       text: "Europe",

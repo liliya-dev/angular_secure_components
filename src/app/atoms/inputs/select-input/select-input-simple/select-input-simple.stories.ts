@@ -4,8 +4,8 @@ import { SelectInputSimpleComponent } from './select-input-simple.component';
 import { NgSelectModule } from '@ng-select/ng-select';
 
 const props = {
-  initialValue: { control: 'text'},
-  items: { control: 'array'}
+  initialValue: { control: 'text' },
+  items: { control: 'array' }
 };
 
 export default {

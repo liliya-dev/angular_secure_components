@@ -4,7 +4,7 @@ import { lightButtonComponent } from './lightButton.component';
 const props = {
   backgroundColor: { control: 'color' },
   color: { control: 'color' },
-  title: { control: 'text'},
+  title: { control: 'text' },
 };
 
 export default {
@@ -19,7 +19,5 @@ const Template: Story<lightButtonComponent> = (args: lightButtonComponent) => ({
 });
 
 export const Light = Template.bind({});
-Light.args = {
-  
-};
+Light.args = {};
 

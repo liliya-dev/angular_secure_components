@@ -1,22 +1,21 @@
 <div class="app-scan-screen">
-    <div class="app-scan-screen__title">
-        <h4 class="fs-h4--bold">scan report</h4> 
-        <div class="app-scan-screen__line"></div>
-    </div>
-   <div class="app-scan-screen__container">
-       <app-scan-animation></app-scan-animation>
-       <h3 class="fs-h3">Scaning halo-lab.com</h3>
-       <p class="fs-16-sofia-300">The site is being scanned, it will take 5-7 minutes. </p>
-       <app-checkbox-input-simple
-        [isChecked]="true"
-        [title]="'Send me an e-mail once the scan is completed'"
-       >
-       </app-checkbox-input-simple>
-       <app-simple-button
-        [title]="'notify me'"
-        [classes]="'btn-app--asimetric  btn-success-asimetric fs-16-sofia-800'"
-       >
-
-       </app-simple-button>
-   </div>
+  <div class="app-scan-screen__title">
+    <h4 class="fs-h4--bold">scan report</h4> 
+    <div class="app-scan-screen__line"></div>
+  </div>
+  <div class="app-scan-screen__container">
+    <app-scan-animation></app-scan-animation>
+    <h3 class="fs-h3">Scaning halo-lab.com</h3>
+    <p class="fs-16-sofia-300">The site is being scanned, it will take 5-7 minutes. </p>
+    <app-checkbox-input-simple
+      [isChecked]="true"
+      [title]="'Send me an e-mail once the scan is completed'"
+    >
+    </app-checkbox-input-simple>
+    <app-simple-button
+      [title]="'notify me'"
+      [classes]="'btn-app--asimetric  btn-success-asimetric fs-16-sofia-800'"
+    >
+    </app-simple-button>
+  </div>
 </div>

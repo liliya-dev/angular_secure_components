@@ -5,8 +5,7 @@ import { FormScreenFirstComponent } from './form-screen-first.component';
 import { SelectInputSimpleComponent } from '../../../atoms/inputs/select-input/select-input-simple/select-input-simple.component';
 import { NgSelectModule } from '@ng-select/ng-select';
 
-const props = {
-};
+const props = {};
 
 export default {
   title: 'Molecules/Form Screen',
@@ -25,6 +24,5 @@ const Template: Story<FormScreenFirstComponent> = (args: FormScreenFirstComponen
 });
 
 export const First = Template.bind({});
-First.args = {
-};
+First.args = {};
 

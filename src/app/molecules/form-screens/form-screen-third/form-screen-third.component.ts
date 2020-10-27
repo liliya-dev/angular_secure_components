@@ -1,5 +1,11 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 
+interface Module {
+  title: string,
+  text: string,
+  src: string
+}
+
 @Component({
   selector: 'app-form-screen-third',
   templateUrl: './form-screen-third.component.html',
@@ -7,8 +13,8 @@ import { Component, ViewEncapsulation } from '@angular/core';
   encapsulation: ViewEncapsulation.None
 })
 export class FormScreenThirdComponent {
-  selectedModules: string[]=[];
-  modules=[
+  selectedModules: string[] = [];
+  modules: Module[] = [
     {
       title: "GDPR, eprivacy",
       text: "Europe",

@@ -2,15 +2,16 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-sizing: border-box;
-  outline: none;
+
   transition: 0.3s;
   border-radius: 8px;
+
   &--h36 {
-    height: 36px;
-    padding: 0 18px 0 18px;
     display: flex;
     align-items: center;
+
+    height: 36px;
+    padding: 0 18px 0 18px;
   }
   
   &--asimetric {
@@ -25,7 +26,7 @@
   }
 
   &--h53 {
-    padding: 9px 10px;
     height: 53px;
+    padding: 9px 10px;
   }
 }

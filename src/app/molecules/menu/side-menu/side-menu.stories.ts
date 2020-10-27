@@ -5,7 +5,7 @@ import { SideMenuComponent } from './side-menu.component';
 
 const props = {
   backgroundColor: { control: 'color' },
-  items: { control: 'array'}
+  items: { control: 'array' }
 };
 
 export default {

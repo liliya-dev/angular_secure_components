@@ -24,6 +24,7 @@ import { RegistrationFormComponent } from './organisms/registration-form/registr
 import { SelectInputSimpleComponent } from './atoms/inputs/select-input/select-input-simple/select-input-simple.component';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { CheckboxInputSwitchComponent } from './atoms/inputs/checkbox/checkbox-input-switch/checkbox-input-switch.component';
+import { ScanScreensComponent } from '../app/molecules/scan-screens/scan-screens.component';
 import { CompositeMenuComponent } from './molecules/menu/composite-menu/composite-menu.component';
 import { AngularSvgIconModule } from 'angular-svg-icon';
 import { HttpClientModule } from '@angular/common/http';
@@ -69,7 +70,8 @@ import { MobileMainNavigationMenuComponent } from './molecules/menu/mobile-main-
     MainNavigationMenuComponent,
     MobileButtonComponent,
     IconLinksComponent,
-    MobileMainNavigationMenuComponent
+    MobileMainNavigationMenuComponent,
+    ScanScreensComponent
   ],
   imports: [
     BrowserModule,

@@ -3,8 +3,7 @@ import { Meta, moduleMetadata, Story } from '@storybook/angular';
 import { formInputComponent } from '../../../atoms/inputs/formInput/formInput.component';
 import { FormScreenSecondComponent } from './form-screen-second.component';
 
-const props = {
-};
+const props = {};
 
 export default {
   title: 'Molecules/Form Screen',
@@ -23,6 +22,5 @@ const Template: Story<FormScreenSecondComponent> = (args: FormScreenSecondCompon
 });
 
 export const Second = Template.bind({});
-Second.args = {
-};
+Second.args = {};
 

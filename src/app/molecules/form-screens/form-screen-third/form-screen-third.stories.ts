@@ -3,8 +3,7 @@ import { Meta, moduleMetadata, Story } from '@storybook/angular';
 import { CardComponent } from '../../../atoms/card/card.component';
 import { FormScreenThirdComponent } from './form-screen-third.component';
 
-const props = {
-};
+const props = {};
 
 export default {
   title: 'Molecules/Form Screen',
@@ -23,6 +22,5 @@ const Template: Story<FormScreenThirdComponent> = (args: FormScreenThirdComponen
 });
 
 export const Third = Template.bind({});
-Third.args = {
-};
+Third.args = {};
 

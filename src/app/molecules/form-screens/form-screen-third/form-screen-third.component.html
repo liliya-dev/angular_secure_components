@@ -1,16 +1,16 @@
 <h3 class="fs-h3">Select your compliance modules</h3>
 <ul class="app-form-screen-third__container">
-    <li 
-        class="app-form-screen-third__item"
-        *ngFor="let module of modules; let i = index" 
+  <li 
+    class="app-form-screen-third__item"
+    *ngFor="let module of modules; let i = index" 
+  >
+    <app-card
+      (click)="selectModule(module.title)"
+      [title]="module.title"
+      [text]="module.text"
+      [src]="module.src"
+      [isActive]="selectedModules.includes(module.title)"
     >
-        <app-card
-            (click)="selectModule(module.title)"
-            [title]="module.title"
-            [text]="module.text"
-            [src]="module.src"
-            [isActive]="selectedModules.includes(module.title)"
-        >
-        </app-card>
-    </li>
+    </app-card>
+  </li>
 </ul>

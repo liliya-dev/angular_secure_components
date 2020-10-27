@@ -1,47 +1,47 @@
 <h3 class="fs-h3">Select your compliance modules</h3>
 <div class="app-form-screen-fifth">
-    <ul class="app-form-screen-fifth__list">
-        <li 
-            class="app-form-screen-fifth__item"
-            *ngFor="let module of modules.slice(0, 3); let i = index" 
-        >
-            <app-large-button
-                (click)="selectModule(module.title)"
-                [title]="module.title"
-                [text]="module.text"
-                [isActive]="selectedModules.includes(module.title)"
-            >
-            </app-large-button>
-        </li>
-    </ul>
-    <ul class="app-form-screen-fifth__list">
-        <li 
-            class="app-form-screen-fifth__item"
-            *ngFor="let module of modules.slice(3, 6); let i = index" 
-        >
-            <app-large-button
-                (click)="selectModule(module.title)"
-                [title]="module.title"
-                [text]="module.text"
-                [isActive]="selectedModules.includes(module.title)"
-            >
-            </app-large-button>
-        </li>
-    </ul>
-    <ul class="app-form-screen-fifth__list">
-        <li 
-            class="app-form-screen-fifth__item"
-            *ngFor="let module of modules.slice(6); let i = index" 
-        >
-            <app-large-button
-                (click)="selectModule(module.title)"
-                [title]="module.title"
-                [text]="module.text"
-                [isActive]="selectedModules.includes(module.title)"
-            >
-            </app-large-button>
-        </li>
-    </ul>
+  <ul class="app-form-screen-fifth__list">
+    <li 
+      class="app-form-screen-fifth__item"
+      *ngFor="let module of modules.slice(0, 3); let i = index" 
+    >
+      <app-large-button
+        (click)="selectModule(module.title)"
+        [title]="module.title"
+        [text]="module.text"
+        [isActive]="selectedModules.includes(module.title)"
+      >
+      </app-large-button>
+    </li>
+  </ul>
+  <ul class="app-form-screen-fifth__list">
+    <li 
+      class="app-form-screen-fifth__item"
+      *ngFor="let module of modules.slice(3, 6); let i = index" 
+    >
+      <app-large-button
+        (click)="selectModule(module.title)"
+        [title]="module.title"
+        [text]="module.text"
+        [isActive]="selectedModules.includes(module.title)"
+      >
+      </app-large-button>
+    </li>
+  </ul>
+  <ul class="app-form-screen-fifth__list">
+    <li 
+      class="app-form-screen-fifth__item"
+      *ngFor="let module of modules.slice(6); let i = index" 
+    >
+      <app-large-button
+        (click)="selectModule(module.title)"
+        [title]="module.title"
+        [text]="module.text"
+        [isActive]="selectedModules.includes(module.title)"
+      >
+      </app-large-button>
+    </li>
+  </ul>
 </div>
 
 

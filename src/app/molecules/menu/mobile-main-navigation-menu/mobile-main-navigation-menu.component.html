@@ -1,15 +1,15 @@
 <ul class="app-mobile-main-navigation-menu">
-    <li 
-    class="app-mobile-main-navigation-menu__item"
-    *ngFor="let item of items; let i = index" 
-    >
+  <li 
+  class="app-mobile-main-navigation-menu__item"
+  *ngFor="let item of items; let i = index" 
+  >
     <app-icon-links
-        [isActive]="active === i"
-        [title]="item.title" 
-        [svgPath]="item.svgPath"
-        (click)="handlClick($event, i)"
+      [isActive]="active === i"
+      [title]="item.title" 
+      [svgPath]="item.svgPath"
+      (click)="handlClick($event, i)"
     >
     </app-icon-links>
-    </li>
+  </li>
 </ul>
 

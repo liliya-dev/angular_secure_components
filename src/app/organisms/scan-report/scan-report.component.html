@@ -1,43 +1,42 @@
 <div id="block" class="app-scan-report">
-    <div class="app-scan-report__wrapper">
-        <nav class="app-scan-report__nav" *ngIf="!isMobile">
-            <img class="app-scan-report__logo" src="assets/images/logo.png" alt="logo">
-            <app-main-navigation-menu [items]="items"></app-main-navigation-menu>
-            <app-info-button [title]="'support'"></app-info-button>
-        </nav>
-        <nav class="app-scan-report__nav" #nav *ngIf="isMobile">
-
-            <app-mobile-button [isOpen]="isSideMenuVisible" (click)="toggleSideMenu()"></app-mobile-button>
-            <app-select-input-search
-                [classes]="'custom-icon fs-16-sofia-300'"
-                [placeholderText]="'Search for'"
-                [items]="itemsToSearch" 
-            >
-            </app-select-input-search>
-            <app-composite-menu 
-                [items]="leftSideMenuItems" 
-                *ngIf="isSideMenuVisible"
-            >
-            </app-composite-menu>
-        </nav>
+  <div class="app-scan-report__wrapper">
+    <nav class="app-scan-report__nav" *ngIf="!isMobile">
+      <img class="app-scan-report__logo" src="assets/images/logo.png" alt="logo">
+      <app-main-navigation-menu [items]="items"></app-main-navigation-menu>
+      <app-info-button [title]="'support'"></app-info-button>
+    </nav>
+    <nav class="app-scan-report__nav" #nav *ngIf="isMobile">
+      <app-mobile-button [isOpen]="isSideMenuVisible" (click)="toggleSideMenu()"></app-mobile-button>
+      <app-select-input-search
+        [classes]="'custom-icon fs-16-sofia-300'"
+        [placeholderText]="'Search for'"
+        [items]="itemsToSearch" 
+      >
+      </app-select-input-search>
+      <app-composite-menu 
+        [items]="leftSideMenuItems" 
+        *ngIf="isSideMenuVisible"
+      >
+      </app-composite-menu>
+    </nav>
+  </div>
+  <div class="app-scan-report__container">
+    <div class="app-scan-report__container--left" *ngIf="!isMobile">
+      <div class="app-scan-report__box">
+        <app-light-button></app-light-button>
+        <app-select-input-search
+          [classes]="'custom-icon fs-16-sofia-300'"
+          [placeholderText]="'Search for'"
+          [items]="itemsToSearch" 
+        >
+        </app-select-input-search>
+      </div>
+      <app-composite-menu [items]="leftSideMenuItems"></app-composite-menu>
     </div>
-    <div class="app-scan-report__container">
-        <div class="app-scan-report__container--left" *ngIf="!isMobile">
-            <div class="app-scan-report__box">
-                <app-light-button></app-light-button>
-                <app-select-input-search
-                    [classes]="'custom-icon fs-16-sofia-300'"
-                    [placeholderText]="'Search for'"
-                    [items]="itemsToSearch" 
-                >
-                </app-select-input-search>
-            </div>
-            <app-composite-menu [items]="leftSideMenuItems"></app-composite-menu>
-        </div>
-        <div class="app-scan-report__container--right">
-            <h1 class="app-scan-report__title fs-h1">Scan Report</h1>
-            <app-scan-screens></app-scan-screens>
-        </div>
+    <div class="app-scan-report__container--right">
+      <h1 class="app-scan-report__title fs-h1">Scan Report</h1>
+      <app-scan-screens></app-scan-screens>
     </div>
-    <app-mobile-main-navigation-menu *ngIf="isMobile" [items]="mobileMenuItems"></app-mobile-main-navigation-menu>
+  </div>
+  <app-mobile-main-navigation-menu *ngIf="isMobile" [items]="mobileMenuItems"></app-mobile-main-navigation-menu>
 </div>

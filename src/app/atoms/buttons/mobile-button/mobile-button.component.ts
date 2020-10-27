@@ -1,14 +1,11 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-mobile-button',
   templateUrl: './mobile-button.component.html',
   styleUrls: ['./mobile-button.component.scss', '../button.component.scss']
 })
-export class MobileButtonComponent implements OnInit {
+
+export class MobileButtonComponent {
   @Input() isOpen: boolean;
-
-  ngOnInit(): void {
-  }
-
 }

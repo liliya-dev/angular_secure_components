@@ -2,7 +2,7 @@ import { Meta, Story } from '@storybook/angular';
 import { StepsComponent } from './steps.component';
 
 const props = {
-  activePoints: { control: 'number'}
+  activePoints: { control: 'number' }
 };
 
 export default {

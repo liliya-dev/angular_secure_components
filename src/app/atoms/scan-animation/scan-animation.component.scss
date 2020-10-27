@@ -1,37 +1,39 @@
 .scan-animation {
-    position: relative;
-    width: fit-content;
+  position: relative;
+  width: fit-content;
 
-    &__loader {
-        width: 106px;
-        height: 40px;
-        background: linear-gradient(180deg, rgba(255, 255, 255, 0) -20px, #FFFFFF 81.25%, #FFFFFF 40px);
-        position: absolute;
-        left: -13px;
-        overflow: hidden;
-    
-        -webkit-animation: 2s linear 0s infinite alternate loading;
-        -moz-animation: 2s linear 0s infinite alternate loading;
-        -o-animation: 2s linear 0s infinite alternate loading;
-        animation: 2s linear 0s infinite alternate loading;
+  &__loader {
+    position: absolute;
+    left: -13px;
 
-        &:after {
-            content: "";
-            width: 112px;
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            height: 2px;
-            
-            background: var(--success-grad-dark);
-            border-radius: 50%;
-        }
+    width: 106px;
+    height: 40px;
+    overflow: hidden;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) -20px, #FFFFFF 81.25%, #FFFFFF 40px);
+  
+    -webkit-animation: 2s linear 0s infinite alternate loading;
+    -moz-animation: 2s linear 0s infinite alternate loading;
+    -o-animation: 2s linear 0s infinite alternate loading;
+    animation: 2s linear 0s infinite alternate loading;
+
+    &:after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+
+      width: 112px;
+      height: 2px;
+      
+      background: var(--success-grad-dark);
+      border-radius: 50%;
     }
+  }
 
-    &__img {
-        width: 80px;
-        height: 95px;
-    }
+  &__img {
+    width: 80px;
+    height: 95px;
+  }
 }
 
 @-webkit-keyframes loading { from { top:-30px; } to { top:55px; }  }

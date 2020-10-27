@@ -2,7 +2,7 @@ import { Meta, Story } from '@storybook/angular';
 import { MobileButtonComponent } from './mobile-button.component';
 
 const props = {
-  isOpen: {control: 'boolean'}
+  isOpen: { control: 'boolean' }
 };
 
 export default {

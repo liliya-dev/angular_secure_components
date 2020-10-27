@@ -2,19 +2,19 @@
   background: var(--higlited-grad-light);
   border: none;
   color: var(--text-color);
+  
   display: flex;
   align-items: center;
 
   &__img {
-     margin-left: 27px;
+    margin-left: 27px;
   }
 
   &:hover {
-      background: var(--highlited-grad-dark);
+    background: var(--highlited-grad-dark);
   }
 
   &:active {
-      background: var(--higlited-grad-light);
+    background: var(--higlited-grad-light);
   }
-
 }

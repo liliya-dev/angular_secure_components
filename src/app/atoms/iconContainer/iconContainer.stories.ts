@@ -1,4 +1,3 @@
-import { action } from '@storybook/addon-actions';
 import { Meta, Story } from '@storybook/angular';
 import { IconContainerComponent } from './iconContainer.component';
 
@@ -18,7 +17,5 @@ const Template: Story<IconContainerComponent> = (args: IconContainerComponent) =
 });
 
 export const Simple = Template.bind({});
-Simple.args = {
-  
-};
+Simple.args = {};
 

@@ -5,13 +5,13 @@ import { Component, Input, OnChanges } from '@angular/core';
   templateUrl: './icon-links.component.html',
   styleUrls: ['./icon-links.component.scss']
 })
+
 export class IconLinksComponent implements OnChanges {
   @Input() isActive: boolean;
   @Input() title: string;
   @Input() svgPath: string;
   
-  fillColor;
-
+  fillColor: string;
 
   onHover() {
     if (!this.isActive) {
@@ -24,7 +24,6 @@ export class IconLinksComponent implements OnChanges {
       this.fillColor = 'rgba(1, 25, 73, 0.5)';
     }
   }
-  constructor() { }
 
   ngOnChanges(): void {
     this.fillColor = this.isActive ? '#24B04B' : 'rgba(1, 25, 73, 0.5)'

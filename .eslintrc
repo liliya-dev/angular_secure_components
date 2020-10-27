@@ -1,0 +1,9 @@
+{
+  "plugins": [
+      "storybook"
+  ],
+  "rules": {
+    "storybook/prefer-csf": "error"
+  },
+  "extends": "angular"
+}

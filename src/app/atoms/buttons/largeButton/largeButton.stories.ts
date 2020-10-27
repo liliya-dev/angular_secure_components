@@ -4,7 +4,7 @@ import { largeButtonComponent } from './largeButton.component';
 const props = {
   backgroundColor: { control: 'color' },
   color: { control: 'color' },
-  title: { control: 'text'},
+  title: { control: 'text' },
 };
 
 export default {

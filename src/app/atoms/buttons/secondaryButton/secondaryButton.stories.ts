@@ -1,11 +1,10 @@
-import { action } from '@storybook/addon-actions';
 import { Meta, Story } from '@storybook/angular';
 import { secondaryButtonComponent } from './secondaryButton.component';
 
 const props = {
   backgroundColor: { control: 'color' },
   color: { control: 'color' },
-  title: { control: 'text'},
+  title: { control: 'text' },
 };
 
 export default {
@@ -20,7 +19,7 @@ const Template: Story<secondaryButtonComponent> = (args: secondaryButtonComponen
 });
 
 export const Secondary = Template.bind({});
-  Secondary.args = {
-    title: "Filters"
+Secondary.args = {
+  title: "Filters"
 };
 

@@ -3,7 +3,7 @@ import { navLinkComponent } from './navLink.component';
 
 const props = {
   title: { control: 'text' },
-  isActive: { control: 'boolean'}
+  isActive: { control: 'boolean' }
 };
 
 export default {

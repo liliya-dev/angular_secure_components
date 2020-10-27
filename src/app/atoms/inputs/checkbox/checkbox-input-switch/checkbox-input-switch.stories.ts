@@ -6,18 +6,18 @@ const props = {
 };
 
 export default {
-    title: 'Atoms/Input/Checkbox',
-    component: CheckboxInputSwitchComponent,
-    argTypes: props,
+  title: 'Atoms/Input/Checkbox',
+  component: CheckboxInputSwitchComponent,
+  argTypes: props,
 } as Meta;
 
 const Template: Story<CheckboxInputSwitchComponent> = (args: CheckboxInputSwitchComponent) => ({
-    component: CheckboxInputSwitchComponent,
-    props: args,
+  component: CheckboxInputSwitchComponent,
+  props: args,
 });
 
 export const Switch = Template.bind({});
 Switch.args = {
-    isChecked: true,
+  isChecked: true,
 };
 

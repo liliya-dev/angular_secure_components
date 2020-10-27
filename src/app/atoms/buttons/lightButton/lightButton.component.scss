@@ -1,13 +1,13 @@
 .btn-light {
-    border: none;
-    padding: 16px;
-    background: var(--input-bg-color);
+  border: none;
+  padding: 16px;
+  background: var(--input-bg-color);
 
-    &:hover {
-        background: var(--light-btn-hover);
-    }
+  &:hover {
+    background: var(--light-btn-hover);
+  }
 
-    &:active {
-        background: var(--light-btn-hover);
-    }
+  &:active {
+    background: var(--light-btn-hover);
+  }
 }

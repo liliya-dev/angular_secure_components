@@ -1,11 +1,10 @@
-import { action } from '@storybook/addon-actions';
 import { Meta, Story } from '@storybook/angular';
 import { simpleButtonComponent } from './simpleButton.component';
 
 const props = {
   backgroundColor: { control: 'color' },
   color: { control: 'color' },
-  title: { control: 'text'},
+  title: { control: 'text' },
 };
 
 export default {

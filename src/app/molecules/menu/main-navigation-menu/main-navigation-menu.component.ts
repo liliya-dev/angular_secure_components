@@ -6,14 +6,14 @@ import { Component, Input, ViewEncapsulation } from '@angular/core';
   styleUrls: ['./main-navigation-menu.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
+
 export class MainNavigationMenuComponent  {
   @Input() items: string[];
 
-  active = 0;
+  active: number = 0;
 
   handlClick(event: any, i: number) {
     event.preventDefault();
     this.active = i;
   }
-
 }
