@@ -1,0 +1,12 @@
+
+<div class="wrapper">
+  <div id="chart" class="chart">
+    <apx-chart
+      [series]="percent"
+      [chart]="chartOptions.chart"
+      [plotOptions]="chartOptions.plotOptions"
+      [fill]="chartOptions.fill"
+    ></apx-chart>
+    <span class="chart__value fs-12-gramm-400">{{ percent[0] }}/100</span>
+  </div>
+</div>

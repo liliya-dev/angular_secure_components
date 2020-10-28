@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { largeButtonComponent} from './atoms/buttons/largeButton/largeButton.component';
@@ -36,6 +37,13 @@ import { MainNavigationMenuComponent } from './molecules/menu/main-navigation-me
 import { MobileButtonComponent } from './atoms/buttons/mobile-button/mobile-button.component';
 import { IconLinksComponent } from './atoms/navLink/icon-links/icon-links.component';
 import { MobileMainNavigationMenuComponent } from './molecules/menu/mobile-main-navigation-menu/mobile-main-navigation-menu.component';
+import { TextWithGradientBackComponent } from './atoms/text/text-with-gradient-back/text-with-gradient-back.component';
+import * as PlotlyJS from 'plotly.js/dist/plotly.js';
+import { PlotlyModule } from 'angular-plotly.js';
+import { NgApexchartsModule } from "ng-apexcharts";
+import { SemicircleChartComponent } from './atoms/semicircle-chart/semicircle-chart.component';
+
+PlotlyModule.plotlyjs = PlotlyJS;
 
 
 @NgModule({
@@ -71,16 +79,22 @@ import { MobileMainNavigationMenuComponent } from './molecules/menu/mobile-main-
     MobileButtonComponent,
     IconLinksComponent,
     MobileMainNavigationMenuComponent,
-    ScanScreensComponent
+    ScanScreensComponent,
+    TextWithGradientBackComponent,
+    SemicircleChartComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     NgSelectModule,
     AngularSvgIconModule.forRoot(),
-    HttpClientModule
+    HttpClientModule,
+    PlotlyModule,
+    CommonModule,
+    NgApexchartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }

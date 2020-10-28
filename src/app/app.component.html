@@ -1,2 +1,16 @@
-<svg-icon src="assets/images/menu/Domains.svg"></svg-icon>
-<h1>nujlu</h1>
+<div id="chart">
+  <apx-chart
+  [series]="chartOptions.series"
+  [chart]="chartOptions.chart"
+  [plotOptions]="chartOptions.plotOptions"
+  [labels]="chartOptions.labels"
+  [fill]="chartOptions.fill"
+  ></apx-chart>
+</div>
+<plotly-plot (plotlyClick)="func($event)"[data]="data" [layout]="layout"></plotly-plot>
+<div class="semi-donut margin" 
+   [style.--fill]="'red'"
+   [style.--percentage]="per"
+>
+  HTML5
+</div>

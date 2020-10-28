@@ -1,0 +1,9 @@
+.round {
+  width: 10em;
+  height: 5em;  /* высота в два раза меньше ширины, иначе получится полуовал */
+  border: 2px solid red;
+  border-bottom: none;
+  mask-border-slice: 13px;
+  border-radius: 50% 50% 0 0 / 100% 100% 0 0;  /* угол состоит из половины ширины (50% от 10em = 10em : 2 = 5em) и всей высоты (100% от 5em = 5em) */
+  background: mistyrose;
+}

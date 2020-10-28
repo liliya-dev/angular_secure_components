@@ -25,8 +25,12 @@
     "@angular/router": "~10.1.5",
     "@ng-select/ng-select": "^5.0.8",
     "@storybook/addon-storysource": "^6.0.26",
+    "angular-plotly.js": "^3.0.0",
     "angular-svg-icon": "^10.0.0",
+    "apexcharts": "^3.22.0",
     "eslint-config-angular": "^0.5.0",
+    "ng-apexcharts": "^1.5.4",
+    "plotly.js": "^1.57.1",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.2"

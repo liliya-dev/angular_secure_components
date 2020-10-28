@@ -1,0 +1,31 @@
+.chart {
+  width: 145px;
+  height: 120px;
+  position: absolute;
+  top: 0;
+  left: -33.5px;
+  background: white;
+  z-index: 5;
+
+  &__value {
+    color: var(--secondary-color);
+    position: absolute;
+    top: 30px;
+    left: 37%;
+  }
+
+}
+
+.wrapper {
+  width: 80px;
+  height: 80px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  position: relative;
+}
+
+.apexcharts-pie-label, .apexcharts-datalabels, .apexcharts-datalabel, .apexcharts-datalabel-label, .apexcharts-datalabel-value {
+  display: none!important;
+}
