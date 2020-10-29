@@ -5,6 +5,14 @@
   font-weight: 100;
 }
 
+
+@font-face {
+  font-family: 'Sofia pro';
+  src: url("../assets/fonts/sofia/Sofia\ Pro\ Light\ Az.otf");
+  font-weight: 300;
+}
+
+
 @font-face {
   font-family: 'Sofia pro';
   src: url("../assets/fonts/sofia/Sofia\ Pro\ Bold\ Az.otf");
@@ -44,6 +52,14 @@
 
 .fs-h2 {
   font-family: 'Gramatica Regular', 'open-sans';
+  font-size: 38px;
+  line-height: 120%;
+  text-transform: capitalize;
+  color: var(--secondary-color);
+}
+
+.fs-h2-b {
+  font-family: 'Gramatica Bold', 'open-sans';
   font-size: 38px;
   line-height: 120%;
   text-transform: capitalize;
@@ -149,6 +165,14 @@
   line-height: 100%;
 }
 
+.fs-14-gramm-400 {
+  font-family: 'Gramatica Bold', 'open-sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 100%;
+}
+
 .fs-14-sofia-normal {
   font-family: 'Sofia pro', 'open-sans';
   font-style: normal;
@@ -164,6 +188,15 @@
   font-weight: 400;
   font-size: 12px;
 }
+
+
+.fs-12-sofia-300 {
+  font-family: 'Sofia pro', 'open-sans';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 12px;
+}
+
 
 .fs-12-sofia-800 {
   text-transform: uppercase;

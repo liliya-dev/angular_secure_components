@@ -1,16 +1,29 @@
-<div id="chart">
-  <apx-chart
-  [series]="chartOptions.series"
-  [chart]="chartOptions.chart"
-  [plotOptions]="chartOptions.plotOptions"
-  [labels]="chartOptions.labels"
-  [fill]="chartOptions.fill"
-  ></apx-chart>
-</div>
-<plotly-plot (plotlyClick)="func($event)"[data]="data" [layout]="layout"></plotly-plot>
-<div class="semi-donut margin" 
-   [style.--fill]="'red'"
-   [style.--percentage]="per"
->
-  HTML5
+
+<div class="g">
+  <div id="chart" class="chart">
+    <div class="chart__title fs-14-gramm-400">
+      {{ title }}
+    </div>
+    <plotly-plot 
+      (plotlyClick)="changeNumberOnCharts($event)"
+      [data]="data" 
+      [layout]="layout"
+    ></plotly-plot>
+    <div class="chart__value fs-h3">{{ activeValue }}</div>
+    <ul class="chart__legend">
+      <li 
+        class="chart__legend-item fs-12-sofia-300" 
+        *ngFor="let item of data[0].labels; let i = index"
+        (click)="han(i)"
+      >
+        <div 
+          class="chart__marker" 
+          [ngStyle]="{ 'background-color': data[0].marker.colors[i] }"
+
+        >
+        </div>
+        {{ item }}
+      </li>
+    </ul>
+  </div>
 </div>

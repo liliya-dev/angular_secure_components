@@ -38,10 +38,12 @@ import { MobileButtonComponent } from './atoms/buttons/mobile-button/mobile-butt
 import { IconLinksComponent } from './atoms/navLink/icon-links/icon-links.component';
 import { MobileMainNavigationMenuComponent } from './molecules/menu/mobile-main-navigation-menu/mobile-main-navigation-menu.component';
 import { TextWithGradientBackComponent } from './atoms/text/text-with-gradient-back/text-with-gradient-back.component';
-import * as PlotlyJS from 'plotly.js/dist/plotly.js';
-import { PlotlyModule } from 'angular-plotly.js';
 import { NgApexchartsModule } from "ng-apexcharts";
 import { SemicircleChartComponent } from './atoms/semicircle-chart/semicircle-chart.component';
+import { CardWithDonutChartComponent } from './atoms/card/card-with-donut-chart/card-with-donut-chart.component';
+import * as PlotlyJS from 'plotly.js/dist/plotly.js';
+import { PlotlyModule } from 'angular-plotly.js';
+import { SemicircleChartCardComponent } from './atoms/card/semicircle-chart-card/semicircle-chart-card.component';
 
 PlotlyModule.plotlyjs = PlotlyJS;
 
@@ -81,7 +83,9 @@ PlotlyModule.plotlyjs = PlotlyJS;
     MobileMainNavigationMenuComponent,
     ScanScreensComponent,
     TextWithGradientBackComponent,
-    SemicircleChartComponent
+    SemicircleChartComponent,
+    CardWithDonutChartComponent,
+    SemicircleChartCardComponent
   ],
   imports: [
     BrowserModule,

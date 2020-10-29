@@ -6,7 +6,6 @@ const props = {
   percent: { control: 'array' },
 };
 
-
 export default {
   title: 'Atoms/Charts',
   decorators: [

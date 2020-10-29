@@ -1,26 +1,21 @@
-#chart {
-  background-color: violet;
+
+.chart {
+  position: relative;
   width: 256px;
   height: 152px;
   overflow: hidden;
-  background-color: white;
+
   border-radius: 12px 30px;
-  position: relative;
-  margin-top: 50px;
-}
-
-.g {
-  background: #8F8F8F;
-  padding: 80px;
-  height: 800px;
-  width: 800px;
-}
-
-.chart {
   color: var(--secondary-color);
+  background-color: white;
+
+  &:hover {
+    box-shadow: 0px 40px 70px rgba(var(--secondary-color-code), 0.3);
+  }
+
   &__title {
     position: absolute;
-    top: 6px;
+    top: 10px;
     left: 16px;
     width: 88px;
   }
@@ -39,9 +34,10 @@
 
   &__legend {
     position: absolute;
-    z-index: 3;
     top: 0;
     left: 120px;
+    z-index: 3;
+
     width: 144px;
     height: 152px;
     padding: 8px 16px;
@@ -62,10 +58,12 @@
     width: 10px;
     height: 10px;
     min-width: 10px;
-    border-radius: 50%;
     margin-right: 8px;
+    border-radius: 50%;
   }
 }
+
+/* ####### override css rules for plotify module ###### */
 
 .pielayer {
   transform: scale(0.30) translateX(-245px) translateY(110px)!important;
@@ -97,12 +95,6 @@
 }
 
 .bg {
-  // fill: rgba(var(--secondary-color-code), 0.05)!important;
   width: 116px !important;
-}
-
-.legend {
-  width: 40px!important;
-  transform: translate(120px, 20px)!important;
 }
 

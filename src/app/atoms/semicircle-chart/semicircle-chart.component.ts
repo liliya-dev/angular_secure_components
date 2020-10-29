@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, Input, OnChanges, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-semicircle-chart',
@@ -6,13 +6,14 @@ import { Component, Input, OnChanges, OnInit, ViewEncapsulation } from '@angular
   styleUrls: ['./semicircle-chart.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
+
 export class SemicircleChartComponent implements OnChanges {
   @Input() percent: number;
 
   chartOptions = {
     chart: {
       type: "radialBar",
-      offsetY: -20
+      offsetY: 0
     },
     plotOptions: {
       radialBar: {
@@ -23,6 +24,24 @@ export class SemicircleChartComponent implements OnChanges {
           strokeWidth: "97%",
         },
       }
+    },
+    states: {
+      normal: {
+        filter: {
+          type: 'none',
+        }
+      },
+      hover: {
+        filter: {
+          type: 'none',
+        }
+      },
+      active: {
+        allowMultipleDataPointsSelection: false,
+        filter: {
+          type: 'none',
+        }
+      },
     },
     fill: {
       type: "gradient",
