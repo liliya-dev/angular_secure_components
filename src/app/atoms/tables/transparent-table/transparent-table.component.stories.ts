@@ -28,25 +28,26 @@ const Template: Story<TransparentTableComponent> = (args: TransparentTableCompon
   props: args,
 });
 
-export const Transparent = Template.bind({});
-Transparent.args = {
-  heads: ["name", "host", "expirity", "service", "type", "blocking", "hq", "purpose", "certifications"],
+export const First = Template.bind({});
+First.args = {
+  heads: ["name", "host", "expirity", "service", "type", "blocking", "purpose"],
   data: [{
     name: "IDE",
     host: ".doubleclick.net",
     expirity: "1 year",
     service: "Doubleclick",
     type: "Third party",
+    blocking: true,
+    purpose: "This cookie carries out information about how the end user uses the website and any advertising that the and user may have seen before visiting the said website."
+  },
+  {
+    name: "fr",
+    host: "facebook.com",
+    expirity: "2 month",
+    service: "Facebook",
+    type: "Third party",
     blocking: false,
-    hq: {
-      type: 'image',
-      path: 'assets/images/usaFlag.png'
-    },
-    certifications: {
-      type: 'gradientText',
-      data: ['EU-U.S. Privacy Shield', 'Swiss-U.SPrivacy Shield']
-    },
-    purpose: "This cookie carries out information about how the end user uses the website and any advertising that the and user may have seen before visiting the said website."
+    purpose: "Contains browser and user unique ID combinator, used for targeted advertising."
   },
   {
     name: "IDE",
@@ -55,33 +56,147 @@ Transparent.args = {
     service: "Doubleclick",
     type: "Third party",
     blocking: true,
-    hq: {
-      type: 'image',
-      path: 'assets/images/usaFlag.png'
-    },
-    certifications: {
-      type: 'gradientText',
-      data: ['EU-U.S. Privacy Shield', 'Swiss-U.SPrivacy Shield']
-    },
-    purpose: "This cookie carries out information about how the end user uses the website and any advertising that the and user may have seen before visiting the said website."
-  },
-  {
-    name: "IDE",
-    host: ".doubleclick.net",
-    expirity: "1 year",
-    service: "Doubleclick",
-    type: "Third party",
-    blocking: true,
-    hq: {
-      type: 'image',
-      path: 'assets/images/usaFlag.png'
-    },
-    certifications: {
-      type: 'gradientText',
-      data: ['EU-U.S', 'Swis']
-    },
     purpose: "This cookie carries out information about how the end user uses the website and any advertising that the and user may have seen before visiting the said website."
   }
 ],
-  mainColumn: "host",
+  mainColumn: "name",
+};
+
+export const Second = Template.bind({});
+Second.args = {
+  heads: ["name", "hq", "privacy", "DPA", "subprocessors", "hosting patterns", "data centers", "certifications"],
+  data: [{
+      name: "WhatsApp",
+      hq: {
+        type: 'image',
+        path: 'assets/images/usaFlag.png'
+      },
+      privacy: "Privacy",
+      DPA: "DPA",
+      subprocessors: "",
+      'hosting patterns': {
+        type: 'gradientText',
+        data: ['Facebook']
+      },
+      'data centers': {
+        type: 'gradientText',
+        data: ['EU', 'US']
+      },
+      certifications: {
+        type: 'gradientText',
+        data: ['EU-U.S. Privacy Shield', 'Swiss-U.SPrivacy Shield']
+      },
+    },
+    {
+      name: "Zoho",
+      hq: {
+        type: 'image',
+        path: 'assets/images/usaFlag.png'
+      },
+      privacy: "Privacy",
+      DPA: "",
+      subprocessors: "Subprocessors",
+      'hosting patterns': {
+        type: 'gradientText',
+        data: ['AWS', 'Google Cloud']
+      },
+      'data centers': {
+        type: 'gradientText',
+        data: ['EU', 'US']
+      },
+      certifications: {
+        type: 'gradientText',
+        data: ['ISO 27001']
+      },
+    },
+    {
+      name: "Zendesk",
+      hq: {
+        type: 'image',
+        path: 'assets/images/usaFlag.png'
+      },
+      privacy: "Privacy",
+      DPA: "",
+      subprocessors: "Subprocessors",
+      'hosting patterns': {
+        type: 'gradientText',
+        data: []
+      },
+      'data centers': {
+        type: 'gradientText',
+        data: ['EU', 'US']
+      },
+      certifications: {
+        type: 'gradientText',
+        data: []
+      },
+    },
+    {
+      name: "UVdesk Helpdesk",
+      hq: {
+        type: 'image',
+        path: 'assets/images/usaFlag.png'
+      },
+      privacy: "Privacy",
+      DPA: "",
+      subprocessors: "",
+      'hosting patterns': {
+        type: 'gradientText',
+        data: []
+      },
+      'data centers': {
+        type: 'gradientText',
+        data: []
+      },
+      certifications: {
+        type: 'gradientText',
+        data: ['EU-U.S. Privacy Shield']
+      },
+    },
+    {
+      name: "Woodpecker.co",
+      hq: {
+        type: 'image',
+        path: 'assets/images/usaFlag.png'
+      },
+      privacy: "Privacy",
+      DPA: "DPA",
+      subprocessors: "Subprocessors",
+      'hosting patterns': {
+        type: 'gradientText',
+        data: ['AWS']
+      },
+      'data centers': {
+        type: 'gradientText',
+        data: ['EU', 'US']
+      },
+      certifications: {
+        type: 'gradientText',
+        data: ['EU-U.S. Privacy Shield']
+      },
+    },
+    {
+      name: "WhatElse",
+      hq: {
+        type: 'image',
+        path: 'assets/images/usaFlag.png'
+      },
+      privacy: "Privacy",
+      DPA: "DPA",
+      subprocessors: "Subprocessors",
+      'hosting patterns': {
+        type: 'gradientText',
+        data: ['AWS']
+      },
+      'data centers': {
+        type: 'gradientText',
+        data: ['US']
+      },
+      certifications: {
+        type: 'gradientText',
+        data: []
+      },
+    },
+  ],
+  mainColumn: "name",
 };
