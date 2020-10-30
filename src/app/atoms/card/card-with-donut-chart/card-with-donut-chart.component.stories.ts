@@ -5,7 +5,6 @@ import { PlotlyModule } from 'angular-plotly.js';
 
 PlotlyModule.plotlyjs = PlotlyJS;
 
-
 const props = {
   title: { control: 'text' },
   labels: { control: 'array' },
@@ -30,10 +29,10 @@ const Template: Story<CardWithDonutChartComponent> = (args: CardWithDonutChartCo
   props: args,
 });
 
-export const DonutChart = Template.bind({});
-DonutChart.args = {
+export const DonutChartCard = Template.bind({});
+DonutChartCard.args = {
   title: 'Cookies by category',
-  labels: ['in advertisement ', 'local storage objects', 'in social media', 'in analytics', 'in preferences', 'in preferences' ],
+  labels: ['in advertisement storage objects ', 'local storage objects local storage objects', 'in social media', 'in analytics', 'in preferences', 'in preferences' ],
   values: [13, 6, 1, 4, 6, 7],
 };
 

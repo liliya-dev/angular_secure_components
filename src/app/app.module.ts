@@ -44,6 +44,9 @@ import { CardWithDonutChartComponent } from './atoms/card/card-with-donut-chart/
 import * as PlotlyJS from 'plotly.js/dist/plotly.js';
 import { PlotlyModule } from 'angular-plotly.js';
 import { SemicircleChartCardComponent } from './atoms/card/semicircle-chart-card/semicircle-chart-card.component';
+import { RoundIconComponent } from './atoms/icons/round-icon/round-icon.component';
+import { CardWithColumnsTextComponent } from './atoms/card/card-with-columns-text/card-with-columns-text.component';
+import { CardWithCenterTextComponent } from './atoms/card/card-with-center-text/card-with-center-text.component';
 
 PlotlyModule.plotlyjs = PlotlyJS;
 
@@ -85,7 +88,10 @@ PlotlyModule.plotlyjs = PlotlyJS;
     TextWithGradientBackComponent,
     SemicircleChartComponent,
     CardWithDonutChartComponent,
-    SemicircleChartCardComponent
+    SemicircleChartCardComponent,
+    RoundIconComponent,
+    CardWithColumnsTextComponent,
+    CardWithCenterTextComponent
   ],
   imports: [
     BrowserModule,

@@ -22,7 +22,7 @@
 
   &__value {
     position: absolute;
-    top: 83px;
+    top: 75px;
     left: 49px;
     width: 30px;
     text-align: center;
@@ -38,12 +38,16 @@
     left: 120px;
     z-index: 3;
 
-    width: 144px;
+    width: 154px;
     height: 152px;
-    padding: 8px 16px;
+    padding: 8px 26px 8px 16px;
     background-color: rgba(var(--secondary-color-code), 0.05);
     overflow-y: scroll;
 
+    &::-webkit-scrollbar { 
+      display: none; 
+    }
+    
     &-item {
       display: flex;
       margin-bottom: 6px;

@@ -18,5 +18,5 @@ const Template: Story<TextWithGradientBackComponent> = (args: TextWithGradientBa
 
 export const Green = Template.bind({});
 Green.args = {
-  title: "dashboard",
+  title: "EU-U.S. Privacy Shield",
 };

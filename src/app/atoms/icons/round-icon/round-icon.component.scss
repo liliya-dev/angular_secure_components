@@ -1,0 +1,30 @@
+.app-round-icon {
+  width: 19px;
+  height: 19px;
+  border-radius: 50%;
+  position: relative;
+
+  &__positive {
+    background: var(--success-grad-light);
+
+    &:after {
+      content: "";
+      width: 19px;
+      height: 19px;
+      position: absolute;
+      background: no-repeat center url("../../../../assets/images/checkbox.svg");
+    }
+  }
+
+  &__negative {
+    background: rgba(var(--danger-color-code), 0.2);
+
+    &:after {
+      content: "";
+      width: 19px;
+      height: 19px;
+      position: absolute;
+      background: no-repeat center url("../../../../assets/images/close.svg");
+    }
+  }
+}

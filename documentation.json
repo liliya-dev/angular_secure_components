@@ -88,11 +88,18 @@
         },
         {
             "name": "Module",
-            "id": "interface-Module-aca7099c3a068b1af5bdf9dc534fb0c5-1",
-            "file": "src/app/molecules/form-screens/form-screen-fourth/form-screen-fourth.component.ts",
+            "id": "interface-Module-ae34384e6e13eceb75d03fb11c334547-1",
+            "file": "src/app/molecules/form-screens/form-screen-third/form-screen-third.component.ts",
             "type": "interface",
-            "sourceCode": "import { Component } from '@angular/core';\n\ninterface Module {\n  title: string,\n  text: string\n}\n\n@Component({\n  selector: 'app-form-screen-fourth',\n  templateUrl: './form-screen-fourth.component.html',\n  styleUrls: ['./form-screen-fourth.component.scss']\n})\nexport class FormScreenFourthComponent {\n\n  selectedModules: string[] = [];\n  modules: Module[] = [\n    {\n      title: \"GDPR, eprivacy\",\n      text: \"Europe\",\n    },\n    {\n      title: \"Thailand\",\n      text: \"Bangkok\",\n    },\n    {\n      title: \"Calofornia\",\n      text: \"Europe \",\n    },\n    {\n      title: \"CCPA\",\n      text: \"Europe\",\n    },\n    {\n      title: \"Canada\",\n      text: \"Ottawa\",\n    },\n    {\n      title: \"Dubai\",\n      text: \"Dubai \",\n    },\n  ]\n\n  selectModule(title: string) {\n    if (this.selectedModules.includes(title)) {\n      this.selectedModules = this.selectedModules.filter(module => module !== title);\n    } else {\n      this.selectedModules = [...this.selectedModules, title];\n    }\n  }\n}\n",
+            "sourceCode": "import { Component, ViewEncapsulation } from '@angular/core';\n\ninterface Module {\n  title: string,\n  text: string,\n  src: string\n}\n\n@Component({\n  selector: 'app-form-screen-third',\n  templateUrl: './form-screen-third.component.html',\n  styleUrls: ['./form-screen-third.component.scss'],\n  encapsulation: ViewEncapsulation.None\n})\nexport class FormScreenThirdComponent {\n  selectedModules: string[] = [];\n  modules: Module[] = [\n    {\n      title: \"GDPR, eprivacy\",\n      text: \"Europe\",\n      src: \"assets/images/flags/euro.png\"\n    },\n    {\n      title: \"CCPA\",\n      text: \"California\",\n      src: \"assets/images/flags/ccpa.png\"\n    },\n    {\n      title: \"LGPD\",\n      text: \"Brasil \",\n      src: \"assets/images/flags/lgpd.png\"\n    }\n  ]\n\n  selectModule(title: string) {\n    if (this.selectedModules.includes(title)) {\n      this.selectedModules = this.selectedModules.filter(module => module !== title);\n    } else {\n      this.selectedModules = [...this.selectedModules, title];\n    }\n  }\n}\n",
             "properties": [
+                {
+                    "name": "src",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 6
+                },
                 {
                     "name": "text",
                     "type": "string",
@@ -117,18 +124,11 @@
         },
         {
             "name": "Module",
-            "id": "interface-Module-ae34384e6e13eceb75d03fb11c334547-2",
-            "file": "src/app/molecules/form-screens/form-screen-third/form-screen-third.component.ts",
+            "id": "interface-Module-aca7099c3a068b1af5bdf9dc534fb0c5-2",
+            "file": "src/app/molecules/form-screens/form-screen-fourth/form-screen-fourth.component.ts",
             "type": "interface",
-            "sourceCode": "import { Component, ViewEncapsulation } from '@angular/core';\n\ninterface Module {\n  title: string,\n  text: string,\n  src: string\n}\n\n@Component({\n  selector: 'app-form-screen-third',\n  templateUrl: './form-screen-third.component.html',\n  styleUrls: ['./form-screen-third.component.scss'],\n  encapsulation: ViewEncapsulation.None\n})\nexport class FormScreenThirdComponent {\n  selectedModules: string[] = [];\n  modules: Module[] = [\n    {\n      title: \"GDPR, eprivacy\",\n      text: \"Europe\",\n      src: \"assets/images/flags/euro.png\"\n    },\n    {\n      title: \"CCPA\",\n      text: \"California\",\n      src: \"assets/images/flags/ccpa.png\"\n    },\n    {\n      title: \"LGPD\",\n      text: \"Brasil \",\n      src: \"assets/images/flags/lgpd.png\"\n    }\n  ]\n\n  selectModule(title: string) {\n    if (this.selectedModules.includes(title)) {\n      this.selectedModules = this.selectedModules.filter(module => module !== title);\n    } else {\n      this.selectedModules = [...this.selectedModules, title];\n    }\n  }\n}\n",
+            "sourceCode": "import { Component } from '@angular/core';\n\ninterface Module {\n  title: string,\n  text: string\n}\n\n@Component({\n  selector: 'app-form-screen-fourth',\n  templateUrl: './form-screen-fourth.component.html',\n  styleUrls: ['./form-screen-fourth.component.scss']\n})\nexport class FormScreenFourthComponent {\n\n  selectedModules: string[] = [];\n  modules: Module[] = [\n    {\n      title: \"GDPR, eprivacy\",\n      text: \"Europe\",\n    },\n    {\n      title: \"Thailand\",\n      text: \"Bangkok\",\n    },\n    {\n      title: \"Calofornia\",\n      text: \"Europe \",\n    },\n    {\n      title: \"CCPA\",\n      text: \"Europe\",\n    },\n    {\n      title: \"Canada\",\n      text: \"Ottawa\",\n    },\n    {\n      title: \"Dubai\",\n      text: \"Dubai \",\n    },\n  ]\n\n  selectModule(title: string) {\n    if (this.selectedModules.includes(title)) {\n      this.selectedModules = this.selectedModules.filter(module => module !== title);\n    } else {\n      this.selectedModules = [...this.selectedModules, title];\n    }\n  }\n}\n",
             "properties": [
-                {
-                    "name": "src",
-                    "type": "string",
-                    "optional": false,
-                    "description": "",
-                    "line": 6
-                },
                 {
                     "name": "text",
                     "type": "string",
@@ -583,7 +583,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "\n.chart {\n  position: relative;\n  width: 256px;\n  height: 152px;\n  overflow: hidden;\n\n  border-radius: 12px 30px;\n  margin-top: 50px;\n\n  color: var(--secondary-color);\n  background-color: white;\n\n  &:hover {\n    box-shadow: 0px 40px 70px rgba(var(--secondary-color-code), 0.3);\n  }\n\n  &__title {\n    position: absolute;\n    top: 6px;\n    left: 16px;\n    width: 88px;\n  }\n\n  &__value {\n    position: absolute;\n    top: 83px;\n    left: 49px;\n    width: 30px;\n    text-align: center;\n\n    &.fs-h3 {\n      font-weight: 800;\n    }\n  }\n\n  &__legend {\n    position: absolute;\n    top: 0;\n    left: 120px;\n    z-index: 3;\n\n    width: 144px;\n    height: 152px;\n    padding: 8px 16px;\n    background-color: rgba(var(--secondary-color-code), 0.05);\n    overflow-y: scroll;\n\n    &-item {\n      display: flex;\n      margin-bottom: 6px;\n\n      &:hover {\n        cursor: pointer;\n      }\n    }\n  }\n\n  &__marker {\n    width: 10px;\n    height: 10px;\n    min-width: 10px;\n    margin-right: 8px;\n    border-radius: 50%;\n  }\n}\n\n/* ####### override css rules for plotify module ###### */\n\n.pielayer {\n  transform: scale(0.30) translateX(-245px) translateY(110px)!important;\n}\n\n.js-plotly-plot .plotly .modebar--hover > :not(.watermark) {\n  display: none;\n}\n\n.surface {\n  stroke-width: 8!important;\n  stroke: white!important;\n  \n  &:hover {\n    cursor: pointer;\n    stroke-width: 12px!important;\n    stroke-dasharray: 550 0!important;\n    opacity: 0.8!important;\n    background:linear-gradient(to right, #e5405e 0%, #e5405e 15%, rgba(46,2014,113,0.8) 30%, rgba(39,174,96,0.3)45%,#3fffa2 60%, #1a9be0 73%, #ba68ed 100%)!important;\n  }\n}\n\n.slicetext {\n  display: none!important;\n}\n\n.main-svg {\n  background-color: transparent!important;\n}\n\n.bg {\n  width: 116px !important;\n}\n\n",
+                    "data": "\n.chart {\n  position: relative;\n  width: 256px;\n  height: 152px;\n  overflow: hidden;\n\n  border-radius: 12px 30px;\n  color: var(--secondary-color);\n  background-color: white;\n\n  &:hover {\n    box-shadow: 0px 40px 70px rgba(var(--secondary-color-code), 0.3);\n  }\n\n  &__title {\n    position: absolute;\n    top: 10px;\n    left: 16px;\n    width: 88px;\n  }\n\n  &__value {\n    position: absolute;\n    top: 75px;\n    left: 49px;\n    width: 30px;\n    text-align: center;\n\n    &.fs-h3 {\n      font-weight: 800;\n    }\n  }\n\n  &__legend {\n    position: absolute;\n    top: 0;\n    left: 120px;\n    z-index: 3;\n\n    width: 154px;\n    height: 152px;\n    padding: 8px 26px 8px 16px;\n    background-color: rgba(var(--secondary-color-code), 0.05);\n    overflow-y: scroll;\n\n    &::-webkit-scrollbar { \n      display: none; \n    }\n    \n    &-item {\n      display: flex;\n      margin-bottom: 6px;\n\n      &:hover {\n        cursor: pointer;\n      }\n    }\n  }\n\n  &__marker {\n    width: 10px;\n    height: 10px;\n    min-width: 10px;\n    margin-right: 8px;\n    border-radius: 50%;\n  }\n}\n\n/* ####### override css rules for plotify module ###### */\n\n.pielayer {\n  transform: scale(0.30) translateX(-245px) translateY(110px)!important;\n}\n\n.js-plotly-plot .plotly .modebar--hover > :not(.watermark) {\n  display: none;\n}\n\n.surface {\n  stroke-width: 8!important;\n  stroke: white!important;\n  \n  &:hover {\n    cursor: pointer;\n    stroke-width: 12px!important;\n    stroke-dasharray: 550 0!important;\n    opacity: 0.8!important;\n    background:linear-gradient(to right, #e5405e 0%, #e5405e 15%, rgba(46,2014,113,0.8) 30%, rgba(39,174,96,0.3)45%,#3fffa2 60%, #1a9be0 73%, #ba68ed 100%)!important;\n  }\n}\n\n.slicetext {\n  display: none!important;\n}\n\n.main-svg {\n  background-color: transparent!important;\n}\n\n.bg {\n  width: 116px !important;\n}\n\n",
                     "styleUrl": "./card-with-donut-chart.component.scss"
                 }
             ],
@@ -591,7 +591,7 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<div id=\"chart\" class=\"chart\">\n  <div class=\"chart__title fs-14-gramm-400\">\n    {{ title }}\n  </div>\n  <plotly-plot \n    (plotlyClick)=\"changeNumberOnChartsClick($event)\"\n    [data]=\"data\" \n    [layout]=\"layout\"\n  ></plotly-plot>\n  <div class=\"chart__value fs-h3\">{{ activeValue }}</div>\n  <ul class=\"chart__legend\">\n    <li \n      class=\"chart__legend-item fs-12-sofia-300\" \n      *ngFor=\"let item of data[0].labels; let i = index\"\n      (click)=\"changeNumberOnLegendClick(i)\"\n    >\n      <div \n        class=\"chart__marker\" \n        [ngStyle]=\"{ 'background-color': data[0].marker.colors[i] }\"\n      >\n      </div>\n      {{ data[0].values[i ]}} {{ item }} \n    </li>\n  </ul>\n</div>\n\n\n"
+            "templateData": "<div id=\"chart\" class=\"chart\">\n  <div class=\"chart__title fs-14-gramm-400\">\n    {{ title }}\n  </div>\n  <plotly-plot \n    (plotlyClick)=\"changeNumberOnChartsClick($event)\"\n    [data]=\"data\" \n    [layout]=\"layout\"\n  ></plotly-plot>\n  <div class=\"chart__value fs-h3-b\"><p>{{ activeValue }}</p></div>\n  <ul class=\"chart__legend\">\n    <li \n      class=\"chart__legend-item fs-12-sofia-300\" \n      *ngFor=\"let item of data[0].labels; let i = index\"\n      (click)=\"changeNumberOnLegendClick(i)\"\n    >\n      <div \n        class=\"chart__marker\" \n        [ngStyle]=\"{ 'background-color': data[0].marker.colors[i] }\"\n      >\n      </div>\n      {{ data[0].values[i ]}} {{ item }} \n    </li>\n  </ul>\n</div>\n\n\n"
         },
         {
             "name": "CheckboxInputSimpleComponent",
@@ -2099,6 +2099,62 @@
             "templateData": "<div class=\"registration-form\" *ngIf=\"!isMobile\">\n  <div class=\"registration-form__header\">\n    <img class=\"registration-form__logo\" src=\"assets/images/logo.png\" alt=\"logo secure privacy\">\n    <app-info-button [title]=\"'support'\"></app-info-button>\n  </div>\n  <div class=\"registration-form__body\">\n    <div class=\"registration-form__body--left\">\n      <h2 class=\"fs-h2\">\n        Register now and receive 100% no-risk\n        <span class=\"fs-h2--bold\">Free Trial</span>\n      </h2>\n      <ul class=\"registration-form__list\">\n        <app-search-item \n          [title]=\"'Get access to all features.'\"\n          [classes]=\"'list-item-icon fs-16-sofia-300'\"\n        >\n        </app-search-item>\n        <app-search-item \n          [title]=\"'Pay NOTHING for the first 7-days.'\"\n          [classes]=\"'list-item-icon fs-16-sofia-300'\"\n        >\n        </app-search-item>\n        <app-search-item \n          [title]=\"'Cancel at ANY time during your trial.'\"\n          [classes]=\"'list-item-icon fs-16-sofia-300'\"\n        >\n        </app-search-item>\n      </ul>\n      <h5 class=\"fs-h5\">These awesome companies are using Secure Privacy</h5>\n      <app-icon-container></app-icon-container>\n    </div>\n    <div class=\"registration-form__body--right\">\n      <div class=\"registration-form__wrapper-top\" [ngSwitch]=\"activeScreen\">\n        <app-form-screen-first *ngSwitchCase=\"1\"></app-form-screen-first>\n        <app-form-screen-second *ngSwitchCase=\"2\"></app-form-screen-second>\n        <app-form-screen-third *ngSwitchCase=\"3\"></app-form-screen-third>\n        <app-form-screen-fourth *ngSwitchCase=\"4\"></app-form-screen-fourth>\n        <app-form-screen-fifth *ngSwitchCase=\"5\"></app-form-screen-fifth>\n      </div>\n      <div class=\"registration-form__wrapper-bottom\">\n        <div class=\"registration-form__wrapper-bottom--left\">\n          <app-steps [activePoints]=\"activeScreen\"></app-steps>\n        </div>\n        <app-gradient-button \n          [title]=\"'Next'\"\n          (click)=\"changeScreen()\"\n        >\n        </app-gradient-button>\n      </div>\n    </div>\n  </div>  \n</div>\n<div class=\"registration-form\" *ngIf=\"isMobile\">\n<div class=\"registration-form__header\">\n    <img class=\"registration-form__logo\" src=\"assets/images/logo.png\" alt=\"logo secure privacy\">\n    <app-info-button [title]=\"'support'\"></app-info-button>\n</div>\n<div class=\"registration-form__body\" [ngStyle]=\"{'padding-top':'10px'}\">\n  <div \n    class=\"registration-form__body--left\" \n    *ngIf=\"!isStarted\"\n    [ngStyle]=\"{'width':'100%', 'align-items': 'center'}\"\n  >\n    <h2 class=\"fs-h2\">\n      Register now and receive 100% no-risk\n      <span class=\"fs-h2--bold\">Free Trial</span>\n    </h2>\n    <ul class=\"registration-form__list\">\n      <app-search-item \n        [title]=\"'Get access to all features.'\"\n        [classes]=\"'list-item-icon fs-16-sofia-300'\"\n      >\n      </app-search-item>\n      <app-search-item \n        [title]=\"'Pay NOTHING for the first 7-days.'\"\n        [classes]=\"'list-item-icon fs-16-sofia-300'\"\n      >\n      </app-search-item>\n      <app-search-item \n        [title]=\"'Cancel at ANY time during your trial.'\"\n        [classes]=\"'list-item-icon fs-16-sofia-300'\"\n      >\n      </app-search-item>\n    </ul>\n    <h5 class=\"fs-h5\">These awesome companies are using Secure Privacy</h5>\n    <app-icon-container></app-icon-container>\n    <div [ngStyle]=\"{'margin-bottom':'32px'}\"></div>\n    <app-gradient-button \n      [title]=\"'get started'\"\n      (click)=\"setIsStarted()\"\n    >\n    </app-gradient-button>\n  </div>\n  <div \n    class=\"registration-form__body--right\" \n    *ngIf=\"isStarted\"\n    [ngStyle]=\"{'width':'100%'}\"\n  >\n    <div class=\"registration-form__wrapper-top\" [ngSwitch]=\"activeScreen\">\n      <app-form-screen-first *ngSwitchCase=\"1\"></app-form-screen-first>\n      <app-form-screen-second *ngSwitchCase=\"2\"></app-form-screen-second>\n      <app-form-screen-third *ngSwitchCase=\"3\"></app-form-screen-third>\n      <app-form-screen-fourth *ngSwitchCase=\"4\"></app-form-screen-fourth>\n      <app-form-screen-fifth *ngSwitchCase=\"5\"></app-form-screen-fifth>\n    </div>\n    <div class=\"registration-form__wrapper-bottom\">\n        <app-simple-button \n          [classes]=\"'btn-app fs-16-sofia-500 btn-transparent'\"\n          [title]=\"'back'\"\n          (click)=\"changeScreenToPrevious()\"\n        >\n        </app-simple-button>\n        <app-gradient-button \n          [title]=\"'Next'\"\n          (click)=\"changeScreen()\"\n        >\n        </app-gradient-button>\n      </div>\n    </div>\n  </div>\n</div>\n"
         },
         {
+            "name": "RoundIconComponent",
+            "id": "component-RoundIconComponent-e23af811d12132e61751e191ecc228de",
+            "file": "src/app/atoms/icons/round-icon/round-icon.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-round-icon",
+            "styleUrls": [
+                "./round-icon.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./round-icon.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 12
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-round-icon',\n  templateUrl: './round-icon.component.html',\n  styleUrls: ['./round-icon.component.scss']\n})\nexport class RoundIconComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".app-round-icon {\n  width: 19px;\n  height: 19px;\n  border-radius: 50%;\n\n  &__positive {\n    background: var(--success-grad-light);\n  }\n}",
+                    "styleUrl": "./round-icon.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [],
+                "line": 8
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<div class=\"app-round-icon\">\n  \n</div>\n"
+        },
+        {
             "name": "ScanAnimationComponent",
             "id": "component-ScanAnimationComponent-4e1169f6dab08960767b6591d56655d7",
             "file": "src/app/atoms/scan-animation/scan-animation.component.ts",
@@ -2593,7 +2649,7 @@
         },
         {
             "name": "SemicircleChartCardComponent",
-            "id": "component-SemicircleChartCardComponent-481c499d387e61ad2cf871cf5660afa9",
+            "id": "component-SemicircleChartCardComponent-f5b57447a99cf580b8dede8748e95caa",
             "file": "src/app/atoms/card/semicircle-chart-card/semicircle-chart-card.component.ts",
             "encapsulation": [
                 "ViewEncapsulation.None"
@@ -2618,9 +2674,19 @@
                     "type": "number"
                 },
                 {
+                    "name": "text",
+                    "line": 12,
+                    "type": "string"
+                },
+                {
                     "name": "title",
                     "line": 10,
                     "type": "string"
+                },
+                {
+                    "name": "value",
+                    "line": 13,
+                    "type": "number"
                 }
             ],
             "outputsClass": [],
@@ -2632,7 +2698,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 15
+                    "line": 16
                 }
             ],
             "hostBindings": [],
@@ -2640,11 +2706,11 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';\n\n@Component({\n  selector: 'app-semicircle-chart-card',\n  templateUrl: './semicircle-chart-card.component.html',\n  styleUrls: ['./semicircle-chart-card.component.scss'],\n  encapsulation: ViewEncapsulation.None\n})\nexport class SemicircleChartCardComponent implements OnInit {\n  @Input() title: string;\n  @Input() percent: number;\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "sourceCode": "import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';\n\n@Component({\n  selector: 'app-semicircle-chart-card',\n  templateUrl: './semicircle-chart-card.component.html',\n  styleUrls: ['./semicircle-chart-card.component.scss'],\n  encapsulation: ViewEncapsulation.None\n})\nexport class SemicircleChartCardComponent implements OnInit {\n  @Input() title: string;\n  @Input() percent: number;\n  @Input() text: string;\n  @Input() value: number;\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "",
+                    "data": ".semicircle-card {\n  width: 256px;\n  height: 152px;\n  overflow: hidden;\n  display: flex;\n\n  border-radius: 12px 30px;\n  color: var(--secondary-color);\n\n  &:hover {\n    box-shadow: 0px 40px 70px rgba(var(--secondary-color-code), 0.3);\n  }\n\n  &__left {\n    width: 44.4%;\n    padding: 10px 16px;\n  }\n\n  &__right {\n    width: 55.6%;\n    padding: 43px 25px 8px 9px;\n    background-color: rgba(var(--secondary-color-code), 0.05);\n  }\n\n  &__title {\n    margin-bottom: 24px;\n  }\n}",
                     "styleUrl": "./semicircle-chart-card.component.scss"
                 }
             ],
@@ -2653,12 +2719,12 @@
                 "name": "constructor",
                 "description": "",
                 "args": [],
-                "line": 11
+                "line": 13
             },
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<div class=\"semicircle-card\">\n  <div>\n    <h1>uniuhuhuihuih</h1>\n    <app-semicircle-chart [percent]=\"[percent]\"></app-semicircle-chart>\n  </div>\n</div>\n"
+            "templateData": "<div class=\"semicircle-card\">\n  <div class=\"semicircle-card__left\">\n    <p class=\"semicircle-card__title fs-14-gramm-400\">{{ title }}</p>\n    <app-semicircle-chart [percent]=\"[percent]\"></app-semicircle-chart>\n  </div>\n  <div class=\"semicircle-card__right\">\n    <span class=\"semicircle-card__value fs-h2-b\">{{ value }}</span>\n    <p class=\"semicircle-card__text fs-12-sofia-300\">{{ text }}</p>\n  </div>\n</div>\n"
         },
         {
             "name": "SemicircleChartComponent",
@@ -3054,6 +3120,9 @@
                             "name": "RegistrationFormComponent"
                         },
                         {
+                            "name": "RoundIconComponent"
+                        },
+                        {
                             "name": "ScanAnimationComponent"
                         },
                         {
@@ -3311,12 +3380,36 @@
                 "defaultValue": "Template.bind({})"
             },
             {
+                "name": "Negative",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/atoms/icons/round-icon/round-icon.component.stories.ts",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Positive",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/atoms/icons/round-icon/round-icon.component.stories.ts",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
                 "name": "Primary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/app/atoms/buttons/primaryButton/primaryButton.stories.ts",
                 "type": "",
                 "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "props",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/molecules/scan-screens/scan-screens.component.stories.ts",
+                "type": "object",
+                "defaultValue": "{}"
             },
             {
                 "name": "props",
@@ -3370,7 +3463,7 @@
                 "name": "props",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/molecules/scan-screens/scan-screens.component.stories.ts",
+                "file": "src/app/organisms/scan-report/scan-report.component.stories.ts",
                 "type": "object",
                 "defaultValue": "{}"
             },
@@ -3386,126 +3479,6 @@
                 "name": "props",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/organisms/scan-report/scan-report.component.stories.ts",
-                "type": "object",
-                "defaultValue": "{}"
-            },
-            {
-                "name": "props",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/atoms/buttons/gradientButton/gradientButton.stories.ts",
-                "type": "object",
-                "defaultValue": "{\n  backgroundColor: { control: 'color' },\n  color: { control: 'color' },\n  title: { control: 'text' },\n}"
-            },
-            {
-                "name": "props",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/atoms/buttons/largeButton/largeButton.stories.ts",
-                "type": "object",
-                "defaultValue": "{\n  backgroundColor: { control: 'color' },\n  color: { control: 'color' },\n  title: { control: 'text' },\n}"
-            },
-            {
-                "name": "props",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/atoms/buttons/lightButton/lightButton.stories.ts",
-                "type": "object",
-                "defaultValue": "{\n  backgroundColor: { control: 'color' },\n  color: { control: 'color' },\n  title: { control: 'text' },\n}"
-            },
-            {
-                "name": "props",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/atoms/buttons/infoButton/infoButton.stories.ts",
-                "type": "object",
-                "defaultValue": "{\n  backgroundColor: { control: 'color' },\n  color: { control: 'color' },\n  title: { control: 'text' },\n}"
-            },
-            {
-                "name": "props",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/atoms/buttons/mobile-button/mobile-button.component.stories.ts",
-                "type": "object",
-                "defaultValue": "{\n  isOpen: { control: 'boolean' }\n}"
-            },
-            {
-                "name": "props",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/atoms/buttons/primaryButton/primaryButton.stories.ts",
-                "type": "object",
-                "defaultValue": "{\n  backgroundColor: { control: 'color' },\n  title: { control: 'text' },\n}"
-            },
-            {
-                "name": "props",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/atoms/buttons/secondaryButton/secondaryButton.stories.ts",
-                "type": "object",
-                "defaultValue": "{\n  backgroundColor: { control: 'color' },\n  color: { control: 'color' },\n  title: { control: 'text' },\n}"
-            },
-            {
-                "name": "props",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/atoms/buttons/simpleButton/simpleButton.stories.ts",
-                "type": "object",
-                "defaultValue": "{\n  backgroundColor: { control: 'color' },\n  color: { control: 'color' },\n  title: { control: 'text' },\n}"
-            },
-            {
-                "name": "props",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/atoms/card/card-with-donut-chart/card-with-donut-chart.component.stories.ts",
-                "type": "object",
-                "defaultValue": "{\n  title: { control: 'text' },\n  labels: { control: 'array' },\n  values: { control: 'array' }\n}"
-            },
-            {
-                "name": "props",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/atoms/card/semicircle-chart-card/semicircle-chart-card.component.stories.ts",
-                "type": "object",
-                "defaultValue": "{\n  title: { control: 'text' },\n  labels: { control: 'array' },\n  values: { control: 'array' }\n}"
-            },
-            {
-                "name": "props",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/atoms/inputs/formInput/formInput.stories.ts",
-                "type": "object",
-                "defaultValue": "{\n  backgroundColor: { control: 'color' },\n  color: { control: 'color' },\n  placeholder: { control: 'text' },\n}"
-            },
-            {
-                "name": "props",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/atoms/navLink/icon-links/icon-links.component.stories.ts",
-                "type": "object",
-                "defaultValue": "{\n  title: { control: 'text' },\n  isActive: { control: 'boolean' }\n}"
-            },
-            {
-                "name": "props",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/atoms/navLink/textLinks/navLink.stories.ts",
-                "type": "object",
-                "defaultValue": "{\n  title: { control: 'text' },\n  isActive: { control: 'boolean' }\n}"
-            },
-            {
-                "name": "props",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/atoms/text/text-with-gradient-back/text-with-gradient-back.component.stories.ts",
-                "type": "object",
-                "defaultValue": "{\n  title: { control: 'text' },\n}"
-            },
-            {
-                "name": "props",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "src/app/molecules/form-screens/form-screen-fifth/form-screen-fifth.stories.ts",
                 "type": "object",
                 "defaultValue": "{}"
@@ -3515,14 +3488,6 @@
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/app/molecules/form-screens/form-screen-first/form-screen-first.stories.ts",
-                "type": "object",
-                "defaultValue": "{}"
-            },
-            {
-                "name": "props",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/molecules/form-screens/form-screen-fourth/form-screen-fourth.stories.ts",
                 "type": "object",
                 "defaultValue": "{}"
             },
@@ -3586,9 +3551,137 @@
                 "name": "props",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/atoms/inputs/checkbox/checkbox-input-simple/checkbox-input-simple.stories.ts",
+                "file": "src/app/atoms/card/card-with-donut-chart/card-with-donut-chart.component.stories.ts",
                 "type": "object",
-                "defaultValue": "{\n  isChecked: { control: 'boolean' },\n  title: { control: 'text' }\n}"
+                "defaultValue": "{\n  title: { control: 'text' },\n  labels: { control: 'array' },\n  values: { control: 'array' }\n}"
+            },
+            {
+                "name": "props",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/atoms/card/semicircle-chart-card/semicircle-chart-card.component.stories.ts",
+                "type": "object",
+                "defaultValue": "{\n  title: { control: 'text' },\n  labels: { control: 'array' },\n  values: { control: 'array' }\n}"
+            },
+            {
+                "name": "props",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/atoms/buttons/gradientButton/gradientButton.stories.ts",
+                "type": "object",
+                "defaultValue": "{\n  backgroundColor: { control: 'color' },\n  color: { control: 'color' },\n  title: { control: 'text' },\n}"
+            },
+            {
+                "name": "props",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/atoms/buttons/infoButton/infoButton.stories.ts",
+                "type": "object",
+                "defaultValue": "{\n  backgroundColor: { control: 'color' },\n  color: { control: 'color' },\n  title: { control: 'text' },\n}"
+            },
+            {
+                "name": "props",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/atoms/buttons/largeButton/largeButton.stories.ts",
+                "type": "object",
+                "defaultValue": "{\n  backgroundColor: { control: 'color' },\n  color: { control: 'color' },\n  title: { control: 'text' },\n}"
+            },
+            {
+                "name": "props",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/atoms/buttons/lightButton/lightButton.stories.ts",
+                "type": "object",
+                "defaultValue": "{\n  backgroundColor: { control: 'color' },\n  color: { control: 'color' },\n  title: { control: 'text' },\n}"
+            },
+            {
+                "name": "props",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/atoms/buttons/mobile-button/mobile-button.component.stories.ts",
+                "type": "object",
+                "defaultValue": "{\n  isOpen: { control: 'boolean' }\n}"
+            },
+            {
+                "name": "props",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/atoms/buttons/primaryButton/primaryButton.stories.ts",
+                "type": "object",
+                "defaultValue": "{\n  backgroundColor: { control: 'color' },\n  title: { control: 'text' },\n}"
+            },
+            {
+                "name": "props",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/atoms/buttons/secondaryButton/secondaryButton.stories.ts",
+                "type": "object",
+                "defaultValue": "{\n  backgroundColor: { control: 'color' },\n  color: { control: 'color' },\n  title: { control: 'text' },\n}"
+            },
+            {
+                "name": "props",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/atoms/buttons/simpleButton/simpleButton.stories.ts",
+                "type": "object",
+                "defaultValue": "{\n  backgroundColor: { control: 'color' },\n  color: { control: 'color' },\n  title: { control: 'text' },\n}"
+            },
+            {
+                "name": "props",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/atoms/icons/round-icon/round-icon.component.stories.ts",
+                "type": "object",
+                "defaultValue": "{\n\n}"
+            },
+            {
+                "name": "props",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/atoms/navLink/icon-links/icon-links.component.stories.ts",
+                "type": "object",
+                "defaultValue": "{\n  title: { control: 'text' },\n  isActive: { control: 'boolean' }\n}"
+            },
+            {
+                "name": "props",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/atoms/navLink/textLinks/navLink.stories.ts",
+                "type": "object",
+                "defaultValue": "{\n  title: { control: 'text' },\n  isActive: { control: 'boolean' }\n}"
+            },
+            {
+                "name": "props",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/atoms/inputs/formInput/formInput.stories.ts",
+                "type": "object",
+                "defaultValue": "{\n  backgroundColor: { control: 'color' },\n  color: { control: 'color' },\n  placeholder: { control: 'text' },\n}"
+            },
+            {
+                "name": "props",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/atoms/text/text-with-gradient-back/text-with-gradient-back.component.stories.ts",
+                "type": "object",
+                "defaultValue": "{\n  title: { control: 'text' },\n}"
+            },
+            {
+                "name": "props",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/molecules/form-screens/form-screen-fourth/form-screen-fourth.stories.ts",
+                "type": "object",
+                "defaultValue": "{}"
+            },
+            {
+                "name": "props",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/atoms/inputs/select-input/select-input-simple/select-input-simple.stories.ts",
+                "type": "object",
+                "defaultValue": "{\n  initialValue: { control: 'text' },\n  items: { control: 'array' }\n}"
             },
             {
                 "name": "props",
@@ -3602,9 +3695,9 @@
                 "name": "props",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/atoms/inputs/select-input/select-input-simple/select-input-simple.stories.ts",
+                "file": "src/app/atoms/inputs/checkbox/checkbox-input-simple/checkbox-input-simple.stories.ts",
                 "type": "object",
-                "defaultValue": "{\n  initialValue: { control: 'text' },\n  items: { control: 'array' }\n}"
+                "defaultValue": "{\n  isChecked: { control: 'boolean' },\n  title: { control: 'text' }\n}"
             },
             {
                 "name": "props",
@@ -3745,7 +3838,7 @@
                 "name": "Simple",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/atoms/inputs/checkbox/checkbox-input-simple/checkbox-input-simple.stories.ts",
+                "file": "src/app/atoms/inputs/select-input/select-input-simple/select-input-simple.stories.ts",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
@@ -3753,7 +3846,7 @@
                 "name": "Simple",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/atoms/inputs/select-input/select-input-simple/select-input-simple.stories.ts",
+                "file": "src/app/atoms/inputs/checkbox/checkbox-input-simple/checkbox-input-simple.stories.ts",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
@@ -3780,6 +3873,14 @@
                 "file": "src/app/atoms/inputs/checkbox/checkbox-input-switch/checkbox-input-switch.stories.ts",
                 "type": "",
                 "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/molecules/scan-screens/scan-screens.component.stories.ts",
+                "type": "Story<ScanScreensComponent>",
+                "defaultValue": "(args: ScanScreensComponent) => ({\n  component: ScanScreensComponent,\n  props: args,\n})"
             },
             {
                 "name": "Template",
@@ -3833,22 +3934,6 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/molecules/scan-screens/scan-screens.component.stories.ts",
-                "type": "Story<ScanScreensComponent>",
-                "defaultValue": "(args: ScanScreensComponent) => ({\n  component: ScanScreensComponent,\n  props: args,\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/organisms/registration-form/registration-form.stories.ts",
-                "type": "Story<RegistrationFormComponent>",
-                "defaultValue": "(args: RegistrationFormComponent) => ({\n  component: RegistrationFormComponent,\n  props: args,\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "src/app/organisms/scan-report/scan-report.component.stories.ts",
                 "type": "Story<ScanReportComponent>",
                 "defaultValue": "(args: ScanReportComponent) => ({\n  component: ScanReportComponent,\n  props: args,\n})"
@@ -3857,113 +3942,9 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/atoms/buttons/gradientButton/gradientButton.stories.ts",
-                "type": "Story<gradientButtonComponent>",
-                "defaultValue": "(args: gradientButtonComponent) => ({\n  component: gradientButtonComponent,\n  props: args,\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/atoms/buttons/largeButton/largeButton.stories.ts",
-                "type": "Story<largeButtonComponent>",
-                "defaultValue": "(args: largeButtonComponent) => ({\n  component: largeButtonComponent,\n  props: args,\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/atoms/buttons/lightButton/lightButton.stories.ts",
-                "type": "Story<lightButtonComponent>",
-                "defaultValue": "(args: lightButtonComponent) => ({\n  component: lightButtonComponent,\n  props: args,\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/atoms/buttons/infoButton/infoButton.stories.ts",
-                "type": "Story<infoButtonComponent>",
-                "defaultValue": "(args: infoButtonComponent) => ({\n  component: infoButtonComponent,\n  props: args,\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/atoms/buttons/mobile-button/mobile-button.component.stories.ts",
-                "type": "Story<MobileButtonComponent>",
-                "defaultValue": "(args: MobileButtonComponent) => ({\n  component: MobileButtonComponent,\n  props: args,\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/atoms/buttons/primaryButton/primaryButton.stories.ts",
-                "type": "Story<primaryButtonComponent>",
-                "defaultValue": "(args: primaryButtonComponent) => ({\n  component: primaryButtonComponent,\n  props: args,\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/atoms/buttons/secondaryButton/secondaryButton.stories.ts",
-                "type": "Story<secondaryButtonComponent>",
-                "defaultValue": "(args: secondaryButtonComponent) => ({\n  component: secondaryButtonComponent,\n  props: args,\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/atoms/buttons/simpleButton/simpleButton.stories.ts",
-                "type": "Story<simpleButtonComponent>",
-                "defaultValue": "(args: simpleButtonComponent) => ({\n  component: simpleButtonComponent,\n  props: args,\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/atoms/card/card-with-donut-chart/card-with-donut-chart.component.stories.ts",
-                "type": "Story<CardWithDonutChartComponent>",
-                "defaultValue": "(args: CardWithDonutChartComponent) => ({\n  component: CardWithDonutChartComponent,\n  props: args,\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/atoms/card/semicircle-chart-card/semicircle-chart-card.component.stories.ts",
-                "type": "Story<SemicircleChartCardComponent>",
-                "defaultValue": "(args: SemicircleChartCardComponent) => ({\n  component: SemicircleChartCardComponent,\n  props: args,\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/atoms/inputs/formInput/formInput.stories.ts",
-                "type": "Story<formInputComponent>",
-                "defaultValue": "(args: formInputComponent) => ({\n  component: formInputComponent,\n  props: args,\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/atoms/navLink/icon-links/icon-links.component.stories.ts",
-                "type": "Story<IconLinksComponent>",
-                "defaultValue": "(args: IconLinksComponent) => ({\n  component: IconLinksComponent,\n  props: args,\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/atoms/navLink/textLinks/navLink.stories.ts",
-                "type": "Story<navLinkComponent>",
-                "defaultValue": "(args: navLinkComponent) => ({\n  component: navLinkComponent,\n  props: args,\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/atoms/text/text-with-gradient-back/text-with-gradient-back.component.stories.ts",
-                "type": "Story<TextWithGradientBackComponent>",
-                "defaultValue": "(args: TextWithGradientBackComponent) => ({\n  component: TextWithGradientBackComponent,\n  props: args,\n})"
+                "file": "src/app/organisms/registration-form/registration-form.stories.ts",
+                "type": "Story<RegistrationFormComponent>",
+                "defaultValue": "(args: RegistrationFormComponent) => ({\n  component: RegistrationFormComponent,\n  props: args,\n})"
             },
             {
                 "name": "Template",
@@ -3980,14 +3961,6 @@
                 "file": "src/app/molecules/form-screens/form-screen-first/form-screen-first.stories.ts",
                 "type": "Story<FormScreenFirstComponent>",
                 "defaultValue": "(args: FormScreenFirstComponent) => ({\n  component: FormScreenFirstComponent,\n  props: args,\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/molecules/form-screens/form-screen-fourth/form-screen-fourth.stories.ts",
-                "type": "Story<FormScreenFourthComponent>",
-                "defaultValue": "(args: FormScreenFourthComponent) => ({\n  component: FormScreenFourthComponent,\n  props: args,\n})"
             },
             {
                 "name": "Template",
@@ -4049,9 +4022,137 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/atoms/inputs/checkbox/checkbox-input-simple/checkbox-input-simple.stories.ts",
-                "type": "Story<CheckboxInputSimpleComponent>",
-                "defaultValue": "(args: CheckboxInputSimpleComponent) => ({\n  component: CheckboxInputSimpleComponent,\n  props: args,\n})"
+                "file": "src/app/atoms/card/card-with-donut-chart/card-with-donut-chart.component.stories.ts",
+                "type": "Story<CardWithDonutChartComponent>",
+                "defaultValue": "(args: CardWithDonutChartComponent) => ({\n  component: CardWithDonutChartComponent,\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/atoms/card/semicircle-chart-card/semicircle-chart-card.component.stories.ts",
+                "type": "Story<SemicircleChartCardComponent>",
+                "defaultValue": "(args: SemicircleChartCardComponent) => ({\n  component: SemicircleChartCardComponent,\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/atoms/buttons/gradientButton/gradientButton.stories.ts",
+                "type": "Story<gradientButtonComponent>",
+                "defaultValue": "(args: gradientButtonComponent) => ({\n  component: gradientButtonComponent,\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/atoms/buttons/infoButton/infoButton.stories.ts",
+                "type": "Story<infoButtonComponent>",
+                "defaultValue": "(args: infoButtonComponent) => ({\n  component: infoButtonComponent,\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/atoms/buttons/largeButton/largeButton.stories.ts",
+                "type": "Story<largeButtonComponent>",
+                "defaultValue": "(args: largeButtonComponent) => ({\n  component: largeButtonComponent,\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/atoms/buttons/lightButton/lightButton.stories.ts",
+                "type": "Story<lightButtonComponent>",
+                "defaultValue": "(args: lightButtonComponent) => ({\n  component: lightButtonComponent,\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/atoms/buttons/mobile-button/mobile-button.component.stories.ts",
+                "type": "Story<MobileButtonComponent>",
+                "defaultValue": "(args: MobileButtonComponent) => ({\n  component: MobileButtonComponent,\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/atoms/buttons/primaryButton/primaryButton.stories.ts",
+                "type": "Story<primaryButtonComponent>",
+                "defaultValue": "(args: primaryButtonComponent) => ({\n  component: primaryButtonComponent,\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/atoms/buttons/secondaryButton/secondaryButton.stories.ts",
+                "type": "Story<secondaryButtonComponent>",
+                "defaultValue": "(args: secondaryButtonComponent) => ({\n  component: secondaryButtonComponent,\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/atoms/buttons/simpleButton/simpleButton.stories.ts",
+                "type": "Story<simpleButtonComponent>",
+                "defaultValue": "(args: simpleButtonComponent) => ({\n  component: simpleButtonComponent,\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/atoms/icons/round-icon/round-icon.component.stories.ts",
+                "type": "Story<RoundIconComponent>",
+                "defaultValue": "(args: RoundIconComponent) => ({\n  component: RoundIconComponent,\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/atoms/navLink/icon-links/icon-links.component.stories.ts",
+                "type": "Story<IconLinksComponent>",
+                "defaultValue": "(args: IconLinksComponent) => ({\n  component: IconLinksComponent,\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/atoms/navLink/textLinks/navLink.stories.ts",
+                "type": "Story<navLinkComponent>",
+                "defaultValue": "(args: navLinkComponent) => ({\n  component: navLinkComponent,\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/atoms/inputs/formInput/formInput.stories.ts",
+                "type": "Story<formInputComponent>",
+                "defaultValue": "(args: formInputComponent) => ({\n  component: formInputComponent,\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/atoms/text/text-with-gradient-back/text-with-gradient-back.component.stories.ts",
+                "type": "Story<TextWithGradientBackComponent>",
+                "defaultValue": "(args: TextWithGradientBackComponent) => ({\n  component: TextWithGradientBackComponent,\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/molecules/form-screens/form-screen-fourth/form-screen-fourth.stories.ts",
+                "type": "Story<FormScreenFourthComponent>",
+                "defaultValue": "(args: FormScreenFourthComponent) => ({\n  component: FormScreenFourthComponent,\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/atoms/inputs/select-input/select-input-simple/select-input-simple.stories.ts",
+                "type": "Story<SelectInputSimpleComponent>",
+                "defaultValue": "(args: SelectInputSimpleComponent) => ({\n  component: SelectInputSimpleComponent,\n  props: args,\n})"
             },
             {
                 "name": "Template",
@@ -4065,9 +4166,9 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/atoms/inputs/select-input/select-input-simple/select-input-simple.stories.ts",
-                "type": "Story<SelectInputSimpleComponent>",
-                "defaultValue": "(args: SelectInputSimpleComponent) => ({\n  component: SelectInputSimpleComponent,\n  props: args,\n})"
+                "file": "src/app/atoms/inputs/checkbox/checkbox-input-simple/checkbox-input-simple.stories.ts",
+                "type": "Story<CheckboxInputSimpleComponent>",
+                "defaultValue": "(args: CheckboxInputSimpleComponent) => ({\n  component: CheckboxInputSimpleComponent,\n  props: args,\n})"
             },
             {
                 "name": "Template",
@@ -4680,6 +4781,40 @@
                     "defaultValue": "(args: MainNavigationMenuComponent) => ({\n  component: MainNavigationMenuComponent,\n  props: args,\n})"
                 }
             ],
+            "src/app/atoms/icons/round-icon/round-icon.component.stories.ts": [
+                {
+                    "name": "Negative",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/atoms/icons/round-icon/round-icon.component.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Positive",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/atoms/icons/round-icon/round-icon.component.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "props",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/atoms/icons/round-icon/round-icon.component.stories.ts",
+                    "type": "object",
+                    "defaultValue": "{\n\n}"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/atoms/icons/round-icon/round-icon.component.stories.ts",
+                    "type": "Story<RoundIconComponent>",
+                    "defaultValue": "(args: RoundIconComponent) => ({\n  component: RoundIconComponent,\n  props: args,\n})"
+                }
+            ],
             "src/app/atoms/buttons/primaryButton/primaryButton.stories.ts": [
                 {
                     "name": "Primary",
@@ -4870,32 +5005,6 @@
                     "defaultValue": "(args: StepsComponent) => ({\n  component: StepsComponent,\n  props: args,\n})"
                 }
             ],
-            "src/app/organisms/registration-form/registration-form.stories.ts": [
-                {
-                    "name": "props",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/organisms/registration-form/registration-form.stories.ts",
-                    "type": "object",
-                    "defaultValue": "{}"
-                },
-                {
-                    "name": "RegistrationForm",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/organisms/registration-form/registration-form.stories.ts",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/organisms/registration-form/registration-form.stories.ts",
-                    "type": "Story<RegistrationFormComponent>",
-                    "defaultValue": "(args: RegistrationFormComponent) => ({\n  component: RegistrationFormComponent,\n  props: args,\n})"
-                }
-            ],
             "src/app/organisms/scan-report/scan-report.component.stories.ts": [
                 {
                     "name": "props",
@@ -4922,20 +5031,20 @@
                     "defaultValue": "(args: ScanReportComponent) => ({\n  component: ScanReportComponent,\n  props: args,\n})"
                 }
             ],
-            "src/app/atoms/buttons/secondaryButton/secondaryButton.stories.ts": [
+            "src/app/organisms/registration-form/registration-form.stories.ts": [
                 {
                     "name": "props",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/atoms/buttons/secondaryButton/secondaryButton.stories.ts",
+                    "file": "src/app/organisms/registration-form/registration-form.stories.ts",
                     "type": "object",
-                    "defaultValue": "{\n  backgroundColor: { control: 'color' },\n  color: { control: 'color' },\n  title: { control: 'text' },\n}"
+                    "defaultValue": "{}"
                 },
                 {
-                    "name": "Secondary",
+                    "name": "RegistrationForm",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/atoms/buttons/secondaryButton/secondaryButton.stories.ts",
+                    "file": "src/app/organisms/registration-form/registration-form.stories.ts",
                     "type": "",
                     "defaultValue": "Template.bind({})"
                 },
@@ -4943,61 +5052,9 @@
                     "name": "Template",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/atoms/buttons/secondaryButton/secondaryButton.stories.ts",
-                    "type": "Story<secondaryButtonComponent>",
-                    "defaultValue": "(args: secondaryButtonComponent) => ({\n  component: secondaryButtonComponent,\n  props: args,\n})"
-                }
-            ],
-            "src/app/atoms/card/semicircle-chart-card/semicircle-chart-card.component.stories.ts": [
-                {
-                    "name": "props",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/atoms/card/semicircle-chart-card/semicircle-chart-card.component.stories.ts",
-                    "type": "object",
-                    "defaultValue": "{\n  title: { control: 'text' },\n  labels: { control: 'array' },\n  values: { control: 'array' }\n}"
-                },
-                {
-                    "name": "SemicircleChart",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/atoms/card/semicircle-chart-card/semicircle-chart-card.component.stories.ts",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/atoms/card/semicircle-chart-card/semicircle-chart-card.component.stories.ts",
-                    "type": "Story<SemicircleChartCardComponent>",
-                    "defaultValue": "(args: SemicircleChartCardComponent) => ({\n  component: SemicircleChartCardComponent,\n  props: args,\n})"
-                }
-            ],
-            "src/app/atoms/inputs/formInput/formInput.stories.ts": [
-                {
-                    "name": "props",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/atoms/inputs/formInput/formInput.stories.ts",
-                    "type": "object",
-                    "defaultValue": "{\n  backgroundColor: { control: 'color' },\n  color: { control: 'color' },\n  placeholder: { control: 'text' },\n}"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/atoms/inputs/formInput/formInput.stories.ts",
-                    "type": "Story<formInputComponent>",
-                    "defaultValue": "(args: formInputComponent) => ({\n  component: formInputComponent,\n  props: args,\n})"
-                },
-                {
-                    "name": "Text",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/atoms/inputs/formInput/formInput.stories.ts",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
+                    "file": "src/app/organisms/registration-form/registration-form.stories.ts",
+                    "type": "Story<RegistrationFormComponent>",
+                    "defaultValue": "(args: RegistrationFormComponent) => ({\n  component: RegistrationFormComponent,\n  props: args,\n})"
                 }
             ],
             "src/app/molecules/form-screens/form-screen-second/form-screen-second.stories.ts": [
@@ -5078,20 +5135,20 @@
                     "defaultValue": "(args: SideMenuComponent) => ({\n  component: SideMenuComponent,\n  props: args,\n})"
                 }
             ],
-            "src/app/atoms/inputs/checkbox/checkbox-input-simple/checkbox-input-simple.stories.ts": [
+            "src/app/atoms/card/semicircle-chart-card/semicircle-chart-card.component.stories.ts": [
                 {
                     "name": "props",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/atoms/inputs/checkbox/checkbox-input-simple/checkbox-input-simple.stories.ts",
+                    "file": "src/app/atoms/card/semicircle-chart-card/semicircle-chart-card.component.stories.ts",
                     "type": "object",
-                    "defaultValue": "{\n  isChecked: { control: 'boolean' },\n  title: { control: 'text' }\n}"
+                    "defaultValue": "{\n  title: { control: 'text' },\n  labels: { control: 'array' },\n  values: { control: 'array' }\n}"
                 },
                 {
-                    "name": "Simple",
+                    "name": "SemicircleChart",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/atoms/inputs/checkbox/checkbox-input-simple/checkbox-input-simple.stories.ts",
+                    "file": "src/app/atoms/card/semicircle-chart-card/semicircle-chart-card.component.stories.ts",
                     "type": "",
                     "defaultValue": "Template.bind({})"
                 },
@@ -5099,9 +5156,87 @@
                     "name": "Template",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/atoms/inputs/checkbox/checkbox-input-simple/checkbox-input-simple.stories.ts",
-                    "type": "Story<CheckboxInputSimpleComponent>",
-                    "defaultValue": "(args: CheckboxInputSimpleComponent) => ({\n  component: CheckboxInputSimpleComponent,\n  props: args,\n})"
+                    "file": "src/app/atoms/card/semicircle-chart-card/semicircle-chart-card.component.stories.ts",
+                    "type": "Story<SemicircleChartCardComponent>",
+                    "defaultValue": "(args: SemicircleChartCardComponent) => ({\n  component: SemicircleChartCardComponent,\n  props: args,\n})"
+                }
+            ],
+            "src/app/atoms/buttons/secondaryButton/secondaryButton.stories.ts": [
+                {
+                    "name": "props",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/atoms/buttons/secondaryButton/secondaryButton.stories.ts",
+                    "type": "object",
+                    "defaultValue": "{\n  backgroundColor: { control: 'color' },\n  color: { control: 'color' },\n  title: { control: 'text' },\n}"
+                },
+                {
+                    "name": "Secondary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/atoms/buttons/secondaryButton/secondaryButton.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/atoms/buttons/secondaryButton/secondaryButton.stories.ts",
+                    "type": "Story<secondaryButtonComponent>",
+                    "defaultValue": "(args: secondaryButtonComponent) => ({\n  component: secondaryButtonComponent,\n  props: args,\n})"
+                }
+            ],
+            "src/app/atoms/inputs/formInput/formInput.stories.ts": [
+                {
+                    "name": "props",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/atoms/inputs/formInput/formInput.stories.ts",
+                    "type": "object",
+                    "defaultValue": "{\n  backgroundColor: { control: 'color' },\n  color: { control: 'color' },\n  placeholder: { control: 'text' },\n}"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/atoms/inputs/formInput/formInput.stories.ts",
+                    "type": "Story<formInputComponent>",
+                    "defaultValue": "(args: formInputComponent) => ({\n  component: formInputComponent,\n  props: args,\n})"
+                },
+                {
+                    "name": "Text",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/atoms/inputs/formInput/formInput.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                }
+            ],
+            "src/app/atoms/inputs/select-input/select-input-simple/select-input-simple.stories.ts": [
+                {
+                    "name": "props",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/atoms/inputs/select-input/select-input-simple/select-input-simple.stories.ts",
+                    "type": "object",
+                    "defaultValue": "{\n  initialValue: { control: 'text' },\n  items: { control: 'array' }\n}"
+                },
+                {
+                    "name": "Simple",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/atoms/inputs/select-input/select-input-simple/select-input-simple.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/atoms/inputs/select-input/select-input-simple/select-input-simple.stories.ts",
+                    "type": "Story<SelectInputSimpleComponent>",
+                    "defaultValue": "(args: SelectInputSimpleComponent) => ({\n  component: SelectInputSimpleComponent,\n  props: args,\n})"
                 }
             ],
             "src/app/atoms/inputs/checkbox/checkbox-input-switch/checkbox-input-switch.stories.ts": [
@@ -5130,20 +5265,20 @@
                     "defaultValue": "(args: CheckboxInputSwitchComponent) => ({\n  component: CheckboxInputSwitchComponent,\n  props: args,\n})"
                 }
             ],
-            "src/app/atoms/inputs/select-input/select-input-simple/select-input-simple.stories.ts": [
+            "src/app/atoms/inputs/checkbox/checkbox-input-simple/checkbox-input-simple.stories.ts": [
                 {
                     "name": "props",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/atoms/inputs/select-input/select-input-simple/select-input-simple.stories.ts",
+                    "file": "src/app/atoms/inputs/checkbox/checkbox-input-simple/checkbox-input-simple.stories.ts",
                     "type": "object",
-                    "defaultValue": "{\n  initialValue: { control: 'text' },\n  items: { control: 'array' }\n}"
+                    "defaultValue": "{\n  isChecked: { control: 'boolean' },\n  title: { control: 'text' }\n}"
                 },
                 {
                     "name": "Simple",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/atoms/inputs/select-input/select-input-simple/select-input-simple.stories.ts",
+                    "file": "src/app/atoms/inputs/checkbox/checkbox-input-simple/checkbox-input-simple.stories.ts",
                     "type": "",
                     "defaultValue": "Template.bind({})"
                 },
@@ -5151,9 +5286,9 @@
                     "name": "Template",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/atoms/inputs/select-input/select-input-simple/select-input-simple.stories.ts",
-                    "type": "Story<SelectInputSimpleComponent>",
-                    "defaultValue": "(args: SelectInputSimpleComponent) => ({\n  component: SelectInputSimpleComponent,\n  props: args,\n})"
+                    "file": "src/app/atoms/inputs/checkbox/checkbox-input-simple/checkbox-input-simple.stories.ts",
+                    "type": "Story<CheckboxInputSimpleComponent>",
+                    "defaultValue": "(args: CheckboxInputSimpleComponent) => ({\n  component: CheckboxInputSimpleComponent,\n  props: args,\n})"
                 }
             ],
             "src/app/atoms/inputs/select-input/select-input-search/select-input-search.component.stories.ts": [
@@ -5697,7 +5832,7 @@
                 "linktype": "component",
                 "name": "SemicircleChartCardComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/5",
+                "coverageCount": "0/7",
                 "status": "low"
             },
             {
@@ -5737,6 +5872,55 @@
                 "name": "Template",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/atoms/icons/round-icon/round-icon.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Negative",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/atoms/icons/round-icon/round-icon.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Positive",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/atoms/icons/round-icon/round-icon.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "props",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/atoms/icons/round-icon/round-icon.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/atoms/icons/round-icon/round-icon.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "RoundIconComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
                 "status": "low"
             },
             {
