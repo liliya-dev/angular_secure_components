@@ -47,6 +47,7 @@ import { SemicircleChartCardComponent } from './atoms/card/semicircle-chart-card
 import { RoundIconComponent } from './atoms/icons/round-icon/round-icon.component';
 import { CardWithColumnsTextComponent } from './atoms/card/card-with-columns-text/card-with-columns-text.component';
 import { CardWithCenterTextComponent } from './atoms/card/card-with-center-text/card-with-center-text.component';
+import { TransparentTableComponent } from './atoms/tables/transparent-table/transparent-table.component';
 
 PlotlyModule.plotlyjs = PlotlyJS;
 
@@ -91,7 +92,8 @@ PlotlyModule.plotlyjs = PlotlyJS;
     SemicircleChartCardComponent,
     RoundIconComponent,
     CardWithColumnsTextComponent,
-    CardWithCenterTextComponent
+    CardWithCenterTextComponent,
+    TransparentTableComponent
   ],
   imports: [
     BrowserModule,

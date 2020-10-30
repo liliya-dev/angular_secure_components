@@ -1,0 +1,72 @@
+<div class="wrapper">
+<table 
+  id="table" 
+  *ngIf="isMobile" 
+  class="app-transparent-table fs-12-sofia-400"
+>
+  <tr class="app-transparent-table__head">
+   <th 
+      class="app-transparent-table__head-item app-transparent-table__main-column"
+    >
+     {{ mainColumn }}
+   </th>
+   <th 
+      class="app-transparent-table__head-item"
+    >
+     {{ activeColumn }}
+   </th>
+  </tr>
+  <tr 
+    class="app-transparent-table__row fs-12-sofia-300" 
+    *ngFor="let item of data; let i = index"
+  >
+    <td>
+      <p *ngIf="!checkBoolean(item[mainColumn])">
+        {{ item[mainColumn] }}
+      </p>
+      <span *ngIf="checkBoolean(item[mainColumn])">
+        <app-round-icon
+          [classes]="item[mainColumn] ? 'app-round-icon app-round-icon__positive' : 'app-round-icon app-round-icon__negative'"
+          [ngStyle]="{'display': 'flex', 'justify-content': 'center'}"
+        ></app-round-icon>
+      </span>
+    </td>
+    <td>
+      <p *ngIf="!checkBoolean(item[activeColumn])">
+        {{ item[activeColumn] }}
+      </p>
+      <span *ngIf="checkBoolean(item[activeColumn])">
+        <app-round-icon
+          [classes]="item[activeColumn] ? 'app-round-icon app-round-icon__positive' : 'app-round-icon app-round-icon__negative'"
+        ></app-round-icon>
+      </span>
+    </td>
+  </tr>
+  <button class="prev app-transparent-table__button" type="button" (click)="showNext('back')"></button>
+  <button class="next app-transparent-table__button"type="button" (click)="showNext('forward')"></button>
+ </table> 
+</div>
+
+<table id="table" class="app-transparent-table fs-12-sofia-400"  *ngIf="!isMobile">
+  <tr class="app-transparent-table__head">
+   <th 
+      class="app-transparent-table__head-item"
+      *ngFor="let head of heads; let i = index"
+    >
+     {{ head }}
+   </th>
+  </tr>
+  <tr class="app-transparent-table__row fs-12-sofia-300" *ngFor="let item of data; let i = index">
+    <td *ngFor="let head of heads; let j = index">
+      <p *ngIf="!checkBoolean(item[head])">
+        {{ item[head] }}
+      </p>
+      <span *ngIf="checkBoolean(item[head])">
+        <app-round-icon
+          [classes]="item[head] ? 'app-round-icon app-round-icon__positive' : 'app-round-icon app-round-icon__negative'"
+          [ngStyle]="{'display': 'flex', 'justify-content': 'center'}"
+        ></app-round-icon>
+      </span>
+    </td>
+  </tr>
+</table>

@@ -46,13 +46,13 @@ export class ScanReportComponent implements OnInit {
   toggleSideMenu() {
     this.isSideMenuVisible = !this.isSideMenuVisible;
   }
+  
+  @ViewChild('nav') element: ElementRef;
 
   @HostListener('window:resize', ['$event'])
   onResize(event: any) {
     this.isMobile = (event.target.innerWidth < 800) ? true : false;
   }
-
-  @ViewChild('nav') element: ElementRef;
 
   @HostListener('document:click', ['$event'])
 	onClick(event: Event) {
