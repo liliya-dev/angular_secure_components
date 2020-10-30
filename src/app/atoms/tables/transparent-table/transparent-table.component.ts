@@ -1,10 +1,12 @@
-import { Component, HostListener, Input, OnInit } from '@angular/core';
+import { Component, HostListener, Input, OnInit, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-transparent-table',
   templateUrl: './transparent-table.component.html',
-  styleUrls: ['./transparent-table.component.scss']
+  styleUrls: ['./transparent-table.component.scss'],
+  encapsulation: ViewEncapsulation.None,
 })
+
 export class TransparentTableComponent implements OnInit {
   @Input() heads: string[];
   @Input() data: any[];
@@ -31,8 +33,15 @@ export class TransparentTableComponent implements OnInit {
     this.activeColumn = this.headsListWithoutMain[nextIndex]
   }
 
-  checkBoolean (value: any) {
-    return typeof value === 'boolean';
+  checkType (value: any) {
+    switch (typeof value) {
+      case 'boolean':
+        return 'boolean';
+      case 'string':
+        return 'string';
+      case 'object': 
+        return value.type
+    }
   }
 
   ngOnInit(): void {

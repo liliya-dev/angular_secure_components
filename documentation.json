@@ -29,10 +29,10 @@
         },
         {
             "name": "MobileItems",
-            "id": "interface-MobileItems-9a5bca39c2664ab3081e1f394c9b82bd",
+            "id": "interface-MobileItems-0be84ba3302bfca6feae500bc9a9d3e4",
             "file": "src/app/organisms/scan-report/scan-report.component.ts",
             "type": "interface",
-            "sourceCode": "import { Component, ElementRef, OnInit, HostListener, ViewEncapsulation, ViewChild } from '@angular/core';\n\ninterface SideItems {\n  title: string;\n  sections?: string[],\n}\n\ninterface MobileItems {\n  title: string;\n  svgPath: string,\n  isActive: boolean\n}\n\n@Component({\n  selector: 'app-scan-report',\n  templateUrl: './scan-report.component.html',\n  styleUrls: ['./scan-report.component.scss'],\n  encapsulation: ViewEncapsulation.None\n})\n\nexport class ScanReportComponent implements OnInit {\n  items: string[] = ['reports', 'domains', 'users', 'account', 'request portal'];\n  itemsToSearch: string[] = ['My current company', 'My clients company', 'secure privacy', 'secure privacy2', 'secure privacy3'];\n  leftSideMenuItems: SideItems[] = [\n    { title: 'scan'},\n    { title: 'style'},\n    { title: 'cookie banner'},\n    { title: 'IAB 2.0 settings'},\n    { title: 'Preference Center', sections: ['GDPR/ePrivacy', 'CCPA', 'LGPD']},\n    { title: 'data request form'},\n    { title: 'Preference Center', sections: ['Privacy Policy', 'Cookie Declaration', 'Embed On Website']},\n    { title: 'cookie classification'},\n    { title: 'languages'},\n    { title: 'coverage'},\n    { title: 'installation'},\n  ]\n  mobileMenuItems: MobileItems[] = [\n    { title: 'Reports', svgPath: 'assets/images/menu/Reports.svg',   isActive: false,},\n    { title: 'Domains', svgPath: 'assets/images/menu/Domains.svg',   isActive: false,},\n    { title: 'Account', svgPath: 'assets/images/menu/Account.svg',   isActive: false,},\n    { title: 'Options', svgPath: 'assets/images/menu/Options.svg',   isActive: false,},\n  ]\n  isMobile: boolean = false;\n  isSideMenuVisible: boolean = false;\n\n  toggleSideMenu() {\n    this.isSideMenuVisible = !this.isSideMenuVisible;\n  }\n\n  @HostListener('window:resize', ['$event'])\n  onResize(event: any) {\n    this.isMobile = (event.target.innerWidth < 800) ? true : false;\n  }\n\n  @ViewChild('nav') element: ElementRef;\n\n  @HostListener('document:click', ['$event'])\n\tonClick(event: Event) {\n    if (!this.element.nativeElement.contains(event.target)) {\n      this.isSideMenuVisible = false;\n    }\n  }\n  \n  ngOnInit(): void {\n    this.isMobile = (window.innerWidth < 800) ? true : false;\n  }\n}\n",
+            "sourceCode": "import { Component, ElementRef, OnInit, HostListener, ViewEncapsulation, ViewChild } from '@angular/core';\n\ninterface SideItems {\n  title: string;\n  sections?: string[],\n}\n\ninterface MobileItems {\n  title: string;\n  svgPath: string,\n  isActive: boolean\n}\n\n@Component({\n  selector: 'app-scan-report',\n  templateUrl: './scan-report.component.html',\n  styleUrls: ['./scan-report.component.scss'],\n  encapsulation: ViewEncapsulation.None\n})\n\nexport class ScanReportComponent implements OnInit {\n  items: string[] = ['reports', 'domains', 'users', 'account', 'request portal'];\n  itemsToSearch: string[] = ['My current company', 'My clients company', 'secure privacy', 'secure privacy2', 'secure privacy3'];\n  leftSideMenuItems: SideItems[] = [\n    { title: 'scan'},\n    { title: 'style'},\n    { title: 'cookie banner'},\n    { title: 'IAB 2.0 settings'},\n    { title: 'Preference Center', sections: ['GDPR/ePrivacy', 'CCPA', 'LGPD']},\n    { title: 'data request form'},\n    { title: 'Preference Center', sections: ['Privacy Policy', 'Cookie Declaration', 'Embed On Website']},\n    { title: 'cookie classification'},\n    { title: 'languages'},\n    { title: 'coverage'},\n    { title: 'installation'},\n  ]\n  mobileMenuItems: MobileItems[] = [\n    { title: 'Reports', svgPath: 'assets/images/menu/Reports.svg',   isActive: false,},\n    { title: 'Domains', svgPath: 'assets/images/menu/Domains.svg',   isActive: false,},\n    { title: 'Account', svgPath: 'assets/images/menu/Account.svg',   isActive: false,},\n    { title: 'Options', svgPath: 'assets/images/menu/Options.svg',   isActive: false,},\n  ]\n  isMobile: boolean = false;\n  isSideMenuVisible: boolean = false;\n\n  toggleSideMenu() {\n    this.isSideMenuVisible = !this.isSideMenuVisible;\n  }\n  \n  @ViewChild('nav') element: ElementRef;\n\n  @HostListener('window:resize', ['$event'])\n  onResize(event: any) {\n    this.isMobile = (event.target.innerWidth < 800) ? true : false;\n  }\n\n  @HostListener('document:click', ['$event'])\n\tonClick(event: Event) {\n    if (!this.element.nativeElement.contains(event.target)) {\n      this.isSideMenuVisible = false;\n    }\n  }\n  \n  ngOnInit(): void {\n    this.isMobile = (window.innerWidth < 800) ? true : false;\n  }\n}\n",
             "properties": [
                 {
                     "name": "isActive",
@@ -153,10 +153,10 @@
         },
         {
             "name": "SideItems",
-            "id": "interface-SideItems-9a5bca39c2664ab3081e1f394c9b82bd",
+            "id": "interface-SideItems-0be84ba3302bfca6feae500bc9a9d3e4",
             "file": "src/app/organisms/scan-report/scan-report.component.ts",
             "type": "interface",
-            "sourceCode": "import { Component, ElementRef, OnInit, HostListener, ViewEncapsulation, ViewChild } from '@angular/core';\n\ninterface SideItems {\n  title: string;\n  sections?: string[],\n}\n\ninterface MobileItems {\n  title: string;\n  svgPath: string,\n  isActive: boolean\n}\n\n@Component({\n  selector: 'app-scan-report',\n  templateUrl: './scan-report.component.html',\n  styleUrls: ['./scan-report.component.scss'],\n  encapsulation: ViewEncapsulation.None\n})\n\nexport class ScanReportComponent implements OnInit {\n  items: string[] = ['reports', 'domains', 'users', 'account', 'request portal'];\n  itemsToSearch: string[] = ['My current company', 'My clients company', 'secure privacy', 'secure privacy2', 'secure privacy3'];\n  leftSideMenuItems: SideItems[] = [\n    { title: 'scan'},\n    { title: 'style'},\n    { title: 'cookie banner'},\n    { title: 'IAB 2.0 settings'},\n    { title: 'Preference Center', sections: ['GDPR/ePrivacy', 'CCPA', 'LGPD']},\n    { title: 'data request form'},\n    { title: 'Preference Center', sections: ['Privacy Policy', 'Cookie Declaration', 'Embed On Website']},\n    { title: 'cookie classification'},\n    { title: 'languages'},\n    { title: 'coverage'},\n    { title: 'installation'},\n  ]\n  mobileMenuItems: MobileItems[] = [\n    { title: 'Reports', svgPath: 'assets/images/menu/Reports.svg',   isActive: false,},\n    { title: 'Domains', svgPath: 'assets/images/menu/Domains.svg',   isActive: false,},\n    { title: 'Account', svgPath: 'assets/images/menu/Account.svg',   isActive: false,},\n    { title: 'Options', svgPath: 'assets/images/menu/Options.svg',   isActive: false,},\n  ]\n  isMobile: boolean = false;\n  isSideMenuVisible: boolean = false;\n\n  toggleSideMenu() {\n    this.isSideMenuVisible = !this.isSideMenuVisible;\n  }\n\n  @HostListener('window:resize', ['$event'])\n  onResize(event: any) {\n    this.isMobile = (event.target.innerWidth < 800) ? true : false;\n  }\n\n  @ViewChild('nav') element: ElementRef;\n\n  @HostListener('document:click', ['$event'])\n\tonClick(event: Event) {\n    if (!this.element.nativeElement.contains(event.target)) {\n      this.isSideMenuVisible = false;\n    }\n  }\n  \n  ngOnInit(): void {\n    this.isMobile = (window.innerWidth < 800) ? true : false;\n  }\n}\n",
+            "sourceCode": "import { Component, ElementRef, OnInit, HostListener, ViewEncapsulation, ViewChild } from '@angular/core';\n\ninterface SideItems {\n  title: string;\n  sections?: string[],\n}\n\ninterface MobileItems {\n  title: string;\n  svgPath: string,\n  isActive: boolean\n}\n\n@Component({\n  selector: 'app-scan-report',\n  templateUrl: './scan-report.component.html',\n  styleUrls: ['./scan-report.component.scss'],\n  encapsulation: ViewEncapsulation.None\n})\n\nexport class ScanReportComponent implements OnInit {\n  items: string[] = ['reports', 'domains', 'users', 'account', 'request portal'];\n  itemsToSearch: string[] = ['My current company', 'My clients company', 'secure privacy', 'secure privacy2', 'secure privacy3'];\n  leftSideMenuItems: SideItems[] = [\n    { title: 'scan'},\n    { title: 'style'},\n    { title: 'cookie banner'},\n    { title: 'IAB 2.0 settings'},\n    { title: 'Preference Center', sections: ['GDPR/ePrivacy', 'CCPA', 'LGPD']},\n    { title: 'data request form'},\n    { title: 'Preference Center', sections: ['Privacy Policy', 'Cookie Declaration', 'Embed On Website']},\n    { title: 'cookie classification'},\n    { title: 'languages'},\n    { title: 'coverage'},\n    { title: 'installation'},\n  ]\n  mobileMenuItems: MobileItems[] = [\n    { title: 'Reports', svgPath: 'assets/images/menu/Reports.svg',   isActive: false,},\n    { title: 'Domains', svgPath: 'assets/images/menu/Domains.svg',   isActive: false,},\n    { title: 'Account', svgPath: 'assets/images/menu/Account.svg',   isActive: false,},\n    { title: 'Options', svgPath: 'assets/images/menu/Options.svg',   isActive: false,},\n  ]\n  isMobile: boolean = false;\n  isSideMenuVisible: boolean = false;\n\n  toggleSideMenu() {\n    this.isSideMenuVisible = !this.isSideMenuVisible;\n  }\n  \n  @ViewChild('nav') element: ElementRef;\n\n  @HostListener('window:resize', ['$event'])\n  onResize(event: any) {\n    this.isMobile = (event.target.innerWidth < 800) ? true : false;\n  }\n\n  @HostListener('document:click', ['$event'])\n\tonClick(event: Event) {\n    if (!this.element.nativeElement.contains(event.target)) {\n      this.isSideMenuVisible = false;\n    }\n  }\n  \n  ngOnInit(): void {\n    this.isMobile = (window.innerWidth < 800) ? true : false;\n  }\n}\n",
             "properties": [
                 {
                     "name": "sections",
@@ -2290,7 +2290,7 @@
         },
         {
             "name": "ScanReportComponent",
-            "id": "component-ScanReportComponent-9a5bca39c2664ab3081e1f394c9b82bd",
+            "id": "component-ScanReportComponent-0be84ba3302bfca6feae500bc9a9d3e4",
             "file": "src/app/organisms/scan-report/scan-report.component.ts",
             "encapsulation": [
                 "ViewEncapsulation.None"
@@ -2316,7 +2316,7 @@
                     "type": "ElementRef",
                     "optional": false,
                     "description": "",
-                    "line": 55,
+                    "line": 50,
                     "decorators": [
                         {
                             "name": "ViewChild",
@@ -2417,13 +2417,13 @@
                     "argsDecorator": [
                         "$event"
                     ],
-                    "line": 51
+                    "line": 53
                 }
             ],
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, ElementRef, OnInit, HostListener, ViewEncapsulation, ViewChild } from '@angular/core';\n\ninterface SideItems {\n  title: string;\n  sections?: string[],\n}\n\ninterface MobileItems {\n  title: string;\n  svgPath: string,\n  isActive: boolean\n}\n\n@Component({\n  selector: 'app-scan-report',\n  templateUrl: './scan-report.component.html',\n  styleUrls: ['./scan-report.component.scss'],\n  encapsulation: ViewEncapsulation.None\n})\n\nexport class ScanReportComponent implements OnInit {\n  items: string[] = ['reports', 'domains', 'users', 'account', 'request portal'];\n  itemsToSearch: string[] = ['My current company', 'My clients company', 'secure privacy', 'secure privacy2', 'secure privacy3'];\n  leftSideMenuItems: SideItems[] = [\n    { title: 'scan'},\n    { title: 'style'},\n    { title: 'cookie banner'},\n    { title: 'IAB 2.0 settings'},\n    { title: 'Preference Center', sections: ['GDPR/ePrivacy', 'CCPA', 'LGPD']},\n    { title: 'data request form'},\n    { title: 'Preference Center', sections: ['Privacy Policy', 'Cookie Declaration', 'Embed On Website']},\n    { title: 'cookie classification'},\n    { title: 'languages'},\n    { title: 'coverage'},\n    { title: 'installation'},\n  ]\n  mobileMenuItems: MobileItems[] = [\n    { title: 'Reports', svgPath: 'assets/images/menu/Reports.svg',   isActive: false,},\n    { title: 'Domains', svgPath: 'assets/images/menu/Domains.svg',   isActive: false,},\n    { title: 'Account', svgPath: 'assets/images/menu/Account.svg',   isActive: false,},\n    { title: 'Options', svgPath: 'assets/images/menu/Options.svg',   isActive: false,},\n  ]\n  isMobile: boolean = false;\n  isSideMenuVisible: boolean = false;\n\n  toggleSideMenu() {\n    this.isSideMenuVisible = !this.isSideMenuVisible;\n  }\n\n  @HostListener('window:resize', ['$event'])\n  onResize(event: any) {\n    this.isMobile = (event.target.innerWidth < 800) ? true : false;\n  }\n\n  @ViewChild('nav') element: ElementRef;\n\n  @HostListener('document:click', ['$event'])\n\tonClick(event: Event) {\n    if (!this.element.nativeElement.contains(event.target)) {\n      this.isSideMenuVisible = false;\n    }\n  }\n  \n  ngOnInit(): void {\n    this.isMobile = (window.innerWidth < 800) ? true : false;\n  }\n}\n",
+            "sourceCode": "import { Component, ElementRef, OnInit, HostListener, ViewEncapsulation, ViewChild } from '@angular/core';\n\ninterface SideItems {\n  title: string;\n  sections?: string[],\n}\n\ninterface MobileItems {\n  title: string;\n  svgPath: string,\n  isActive: boolean\n}\n\n@Component({\n  selector: 'app-scan-report',\n  templateUrl: './scan-report.component.html',\n  styleUrls: ['./scan-report.component.scss'],\n  encapsulation: ViewEncapsulation.None\n})\n\nexport class ScanReportComponent implements OnInit {\n  items: string[] = ['reports', 'domains', 'users', 'account', 'request portal'];\n  itemsToSearch: string[] = ['My current company', 'My clients company', 'secure privacy', 'secure privacy2', 'secure privacy3'];\n  leftSideMenuItems: SideItems[] = [\n    { title: 'scan'},\n    { title: 'style'},\n    { title: 'cookie banner'},\n    { title: 'IAB 2.0 settings'},\n    { title: 'Preference Center', sections: ['GDPR/ePrivacy', 'CCPA', 'LGPD']},\n    { title: 'data request form'},\n    { title: 'Preference Center', sections: ['Privacy Policy', 'Cookie Declaration', 'Embed On Website']},\n    { title: 'cookie classification'},\n    { title: 'languages'},\n    { title: 'coverage'},\n    { title: 'installation'},\n  ]\n  mobileMenuItems: MobileItems[] = [\n    { title: 'Reports', svgPath: 'assets/images/menu/Reports.svg',   isActive: false,},\n    { title: 'Domains', svgPath: 'assets/images/menu/Domains.svg',   isActive: false,},\n    { title: 'Account', svgPath: 'assets/images/menu/Account.svg',   isActive: false,},\n    { title: 'Options', svgPath: 'assets/images/menu/Options.svg',   isActive: false,},\n  ]\n  isMobile: boolean = false;\n  isSideMenuVisible: boolean = false;\n\n  toggleSideMenu() {\n    this.isSideMenuVisible = !this.isSideMenuVisible;\n  }\n  \n  @ViewChild('nav') element: ElementRef;\n\n  @HostListener('window:resize', ['$event'])\n  onResize(event: any) {\n    this.isMobile = (event.target.innerWidth < 800) ? true : false;\n  }\n\n  @HostListener('document:click', ['$event'])\n\tonClick(event: Event) {\n    if (!this.element.nativeElement.contains(event.target)) {\n      this.isSideMenuVisible = false;\n    }\n  }\n  \n  ngOnInit(): void {\n    this.isMobile = (window.innerWidth < 800) ? true : false;\n  }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -3107,7 +3107,7 @@
         },
         {
             "name": "TextWithGradientBackComponent",
-            "id": "component-TextWithGradientBackComponent-7c53ab13e1f1f6842b713d4db4a64419",
+            "id": "component-TextWithGradientBackComponent-573d6d4c08bd5d9f6f87117c9919d70b",
             "file": "src/app/atoms/text/text-with-gradient-back/text-with-gradient-back.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -3125,9 +3125,9 @@
             "viewProviders": [],
             "inputsClass": [
                 {
-                    "name": "title",
+                    "name": "titles",
                     "line": 10,
-                    "type": "string"
+                    "type": "string[]"
                 }
             ],
             "outputsClass": [],
@@ -3138,22 +3138,24 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, Input } from '@angular/core';\n\n@Component({\n  selector: 'app-text-with-gradient-back',\n  templateUrl: './text-with-gradient-back.component.html',\n  styleUrls: ['./text-with-gradient-back.component.scss']\n})\n\nexport class TextWithGradientBackComponent {\n  @Input() title: string;\n}\n",
+            "sourceCode": "import { Component, Input } from '@angular/core';\n\n@Component({\n  selector: 'app-text-with-gradient-back',\n  templateUrl: './text-with-gradient-back.component.html',\n  styleUrls: ['./text-with-gradient-back.component.scss']\n})\n\nexport class TextWithGradientBackComponent {\n  @Input() titles: string[];\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".text-with-gradient-back {\n  background: var(--success-grad-light);\n  color: var(--text-color);\n  border-radius: 21px;\n  line-height: 19px;\n  padding: 1px 8px 0 8px;\n  width: fit-content;\n}",
+                    "data": ".text-with-gradient-back {\n  display: flex;\n  flex-wrap: wrap;\n  width: 100%;\n\n  &__wrapper {\n    background: var(--success-grad-light);\n    color: var(--text-color);\n    height: 19px;\n    border-radius: 21px;\n    line-height: 19px;\n    padding: 1px 8px 0 8px;\n    width: fit-content;\n  }\n}",
                     "styleUrl": "./text-with-gradient-back.component.scss"
                 }
             ],
             "stylesData": "",
-            "templateData": "<div class=\"text-with-gradient-back fs-12-sofia-300\">{{ title }}</div>\n\n"
+            "templateData": "<div class=\"text-with-gradient-back fs-12-sofia-300\">\n  <div class=\"text-with-gradient-back__wrapper\" *ngFor=\"let title of titles; let i = index\">\n    {{ title }}\n  </div>\n</div>\n\n"
         },
         {
             "name": "TransparentTableComponent",
-            "id": "component-TransparentTableComponent-00ef125394361f248ce4ad9a73880cda",
+            "id": "component-TransparentTableComponent-3986056b542ef5070d6ba0e90c48f0b6",
             "file": "src/app/atoms/tables/transparent-table/transparent-table.component.ts",
-            "encapsulation": [],
+            "encapsulation": [
+                "ViewEncapsulation.None"
+            ],
             "entryComponents": [],
             "inputs": [],
             "outputs": [],
@@ -3170,22 +3172,17 @@
             "inputsClass": [
                 {
                     "name": "data",
-                    "line": 10,
+                    "line": 12,
                     "type": "any[]"
                 },
                 {
                     "name": "heads",
-                    "line": 9,
+                    "line": 11,
                     "type": "string[]"
                 },
                 {
-                    "name": "isMobile",
-                    "line": 11,
-                    "type": "boolean"
-                },
-                {
                     "name": "mainColumn",
-                    "line": 12,
+                    "line": 13,
                     "type": "string"
                 }
             ],
@@ -3196,11 +3193,18 @@
                     "type": "string",
                     "optional": false,
                     "description": "",
-                    "line": 14
+                    "line": 16
                 },
                 {
                     "name": "headsListWithoutMain",
                     "type": "string[]",
+                    "optional": false,
+                    "description": "",
+                    "line": 17
+                },
+                {
+                    "name": "isMobile",
+                    "type": "boolean",
                     "optional": false,
                     "description": "",
                     "line": 15
@@ -3208,7 +3212,7 @@
             ],
             "methodsClass": [
                 {
-                    "name": "checkBoolean",
+                    "name": "checkType",
                     "args": [
                         {
                             "name": "value",
@@ -3216,9 +3220,9 @@
                         }
                     ],
                     "optional": false,
-                    "returnType": "boolean",
+                    "returnType": "any",
                     "typeParameters": [],
-                    "line": 34,
+                    "line": 36,
                     "jsdoctags": [
                         {
                             "name": "value",
@@ -3235,7 +3239,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 44
+                    "line": 47
                 },
                 {
                     "name": "showNext",
@@ -3248,7 +3252,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 17,
+                    "line": 24,
                     "jsdoctags": [
                         {
                             "name": "direction",
@@ -3261,29 +3265,37 @@
                 }
             ],
             "hostBindings": [],
-            "hostListeners": [],
+            "hostListeners": [
+                {
+                    "name": "window:resize",
+                    "args": [
+                        {
+                            "name": "event",
+                            "type": "any"
+                        }
+                    ],
+                    "argsDecorator": [
+                        "$event"
+                    ],
+                    "line": 20
+                }
+            ],
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-transparent-table',\n  templateUrl: './transparent-table.component.html',\n  styleUrls: ['./transparent-table.component.scss']\n})\nexport class TransparentTableComponent implements OnInit {\n  @Input() heads: string[];\n  @Input() data: any[];\n  @Input() isMobile: boolean;\n  @Input() mainColumn: string;\n\n  activeColumn: string;\n  headsListWithoutMain: string[];\n\n  showNext(direction: string) {\n    console.log(direction)\n    const currentIndex = this.headsListWithoutMain.findIndex(head => head === this.activeColumn);\n    let nextIndex;\n    const next = <HTMLElement>(document.querySelector('.next'));\n    const active = <HTMLElement>(document.querySelector('.active'));\n    next.style.width = '0%'\n\n    if (direction =='forward') {\n      nextIndex = (currentIndex + 1 > this.headsListWithoutMain.length - 1) ? 0 : currentIndex + 1; \n    } else if (direction =='back') {\n      nextIndex = (currentIndex - 1 < 0) ? this.headsListWithoutMain.length - 1 : currentIndex - 1; \n    }\n\n    this.activeColumn = this.headsListWithoutMain[nextIndex];\n  }\n\n  checkBoolean (value: any) {\n    if (typeof value === 'boolean') {\n      return true;\n    }\n\n    return false;\n  }\n\n  constructor() { }\n\n  ngOnInit(): void {\n    this.headsListWithoutMain = this.heads.filter(head => head !== this.mainColumn);\n    this.activeColumn = this.headsListWithoutMain[0];\n  }\n\n}\n",
+            "sourceCode": "import { Component, HostListener, Input, OnInit, ViewEncapsulation } from '@angular/core';\n\n@Component({\n  selector: 'app-transparent-table',\n  templateUrl: './transparent-table.component.html',\n  styleUrls: ['./transparent-table.component.scss'],\n  encapsulation: ViewEncapsulation.None,\n})\n\nexport class TransparentTableComponent implements OnInit {\n  @Input() heads: string[];\n  @Input() data: any[];\n  @Input() mainColumn: string;\n  \n  isMobile: boolean;\n  activeColumn: string;\n  headsListWithoutMain: string[];\n\n  @HostListener('window:resize', ['$event'])\n  onResize(event: any) {\n    this.isMobile = (event.target.innerWidth < 800) ? true : false;\n  }\n\n  showNext(direction: string) {\n    const currentIndex = this.headsListWithoutMain.findIndex(head => head === this.activeColumn);\n    let nextIndex;\n    \n    if (direction =='forward') {\n      nextIndex = (currentIndex + 1 > this.headsListWithoutMain.length - 1) ? 0 : currentIndex + 1; \n    } else if (direction =='back') {\n      nextIndex = (currentIndex - 1 < 0) ? this.headsListWithoutMain.length - 1 : currentIndex - 1; \n    }\n    this.activeColumn = this.headsListWithoutMain[nextIndex]\n  }\n\n  checkType (value: any) {\n    switch (typeof value) {\n      case 'boolean':\n        return 'boolean';\n      case 'string':\n        return 'string';\n      case 'object': \n        return value.type\n    }\n  }\n\n  ngOnInit(): void {\n    this.headsListWithoutMain = this.heads.filter(head => head !== this.mainColumn);\n    this.activeColumn = this.headsListWithoutMain[0];\n    this.isMobile = (window.innerWidth < 800) ? true : false;\n  }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".app-transparent-table {\n  width: 100%;\n  border-radius: 12px;\n  overflow: hidden;\n  color: var(--secondary-color);\n  border: 1px solid rgba(var(--secondary-color-code), 0.6);\n  border-spacing: 0;\n\n  &__head {\n    position: relative;\n    padding: 13px 16px;\n    height: 38px;\n    text-transform: capitalize;\n    color: rgba(var(--secondary-color-code), 0.75);\n    background-color: rgba(var(--secondary-color-code), 0.2);\n  }\n\n  &__head-item {\n    margin-left: 24px;\n  }\n\n  &__row {\n    margin-bottom: 20px;\n    padding: 13px 16px;\n  }\n}\n\ntd, th {\n  padding: 10px;\n  text-align: left;\n  transition: width 5s;\n}\n\n.tt {\n  width: 30%;\n}\n\n\n.app-transparent-table__button {\n  width: 24px;\n  height: 24px;\n  border-radius: 50%;\n  background-color: rgba(var(--secondary-color-code), 1);\n  border: none;\n  position: absolute;\n  top: 23px;\n}\n\n.prev {\n  left: 25%;\n  transform: rotate(180deg);\n  &:after {\n    content: '';\n    position: absolute;\n    top: 0px;\n    left: 1px;\n    width: 24px;\n    height: 24px;\n    border-radius: 50%;\n    background: center no-repeat url('../../../../assets/images/next.svg');\n\n    &:hover {\n      border:1px solid violet;\n    }\n  }\n}\n\n.next {\n  &:after {\n    content: '';\n    position: absolute;\n    top: 0;\n    left: 1px;\n    width: 24px;\n    height: 24px;\n    border-radius: 50%;\n    background: center no-repeat url('../../../../assets/images/next.svg');\n  }\n  right: 30%;\n}",
+                    "data": ".app-transparent-table {\n  width: 100%;\n  border-radius: 12px;\n  overflow: hidden;\n  color: var(--secondary-color);\n  border: 1px solid rgba(var(--secondary-color-code), 0.6);\n  border-spacing: 0;\n  transition: margin 3s;\n\n  &__head {\n    position: relative;\n    padding: 13px 16px;\n    height: 38px;\n    text-transform: capitalize;\n    color: rgba(var(--secondary-color-code), 0.75);\n    background-color: rgba(var(--secondary-color-code), 0.2);\n  }\n\n  &__head-item {\n    margin-left: 24px;\n  }\n\n  &__row {\n    margin-bottom: 20px;\n    padding: 13px 16px;\n  }\n\n  &__main-column {\n    width: 30%;\n  }\n}\n\ntd, th {\n  padding: 10px;\n  text-align: left;;\n}\n\n.text-with-gradient-back__wrapper {\n  margin: 0 5px 5px 0;\n}\n\n.app-transparent-table__button {\n  width: 24px;\n  height: 24px;\n  border-radius: 50%;\n  background-color: rgba(var(--secondary-color-code), 1);\n  border: none;\n  position: absolute;\n  top: 23px;\n  z-index: 2;\n}\n\n.prev {\n  left: 25%;\n  transform: rotate(180deg);\n  &:after {\n    content: '';\n    position: absolute;\n    top: 0px;\n    left: 1px;\n    width: 24px;\n    height: 24px;\n    border-radius: 50%;\n    background: center no-repeat url('../../../../assets/images/next.svg');\n  }\n}\n\n.next {\n  &:after {\n    content: '';\n    position: absolute;\n    top: 0;\n    left: 1px;\n    width: 24px;\n    height: 24px;\n    border-radius: 50%;\n    background: center no-repeat url('../../../../assets/images/next.svg');\n  }\n  right: 30%;\n}",
                     "styleUrl": "./transparent-table.component.scss"
                 }
             ],
             "stylesData": "",
-            "constructorObj": {
-                "name": "constructor",
-                "description": "",
-                "args": [],
-                "line": 40
-            },
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<table \n  id=\"table\" \n  *ngIf=\"isMobile\" \n  class=\"app-transparent-table fs-12-sofia-400\"\n>\n  <tr class=\"app-transparent-table__head\">\n   <th \n      class=\"app-transparent-table__head-item tt\"\n    >\n     {{ mainColumn }}\n   </th>\n   <th \n      class=\"app-transparent-table__head-item\"\n    >\n     {{ activeColumn }}\n   </th>\n  </tr>\n  <tr \n    class=\"app-transparent-table__row fs-12-sofia-300\" \n    *ngFor=\"let item of data; let i = index\"\n  >\n    <td>\n      <p *ngIf=\"!checkBoolean(item[mainColumn])\">\n        {{ item[mainColumn] }}\n      </p>\n      <span *ngIf=\"checkBoolean(item[mainColumn])\">\n        <app-round-icon\n          [classes]=\"item[mainColumn] ? 'app-round-icon app-round-icon__positive' : 'app-round-icon app-round-icon__negative'\"\n          [ngStyle]=\"{'display': 'flex', 'justify-content': 'center'}\"\n        ></app-round-icon>\n      </span>\n    </td>\n    <td>\n      <p *ngIf=\"!checkBoolean(item[activeColumn])\">\n        {{ item[activeColumn] }}\n      </p>\n      <span *ngIf=\"checkBoolean(item[activeColumn])\">\n        <app-round-icon\n          [classes]=\"item[activeColumn] ? 'app-round-icon app-round-icon__positive' : 'app-round-icon app-round-icon__negative'\"\n        ></app-round-icon>\n      </span>\n    </td>\n  </tr>\n  <button class=\"prev app-transparent-table__button\" type=\"button\" (click)=\"showNext('back')\">-</button>\n  <button class=\"next app-transparent-table__button\"type=\"button\" (click)=\"showNext('forward')\">+</button>\n </table>\n\n<table id=\"table\" class=\"app-transparent-table fs-12-sofia-400\"  *ngIf=\"!isMobile\">\n  <tr class=\"app-transparent-table__head\">\n   <th \n      class=\"app-transparent-table__head-item\"\n      *ngFor=\"let head of heads; let i = index\"\n    >\n     {{ head }}\n   </th>\n  </tr>\n  <tr class=\"app-transparent-table__row fs-12-sofia-300\" *ngFor=\"let item of data; let i = index\">\n    <td *ngFor=\"let head of heads; let j = index\">\n      <p *ngIf=\"!checkBoolean(item[head])\">\n        {{ item[head] }}\n      </p>\n      <span *ngIf=\"checkBoolean(item[head])\">\n        <app-round-icon\n          [classes]=\"item[head] ? 'app-round-icon app-round-icon__positive' : 'app-round-icon app-round-icon__negative'\"\n          [ngStyle]=\"{'display': 'flex', 'justify-content': 'center'}\"\n        ></app-round-icon>\n      </span>\n    </td>\n  </tr>\n</table>"
+            "templateData": "<div class=\"wrapper\">\n<table \n  id=\"table\" \n  *ngIf=\"isMobile\" \n  class=\"app-transparent-table fs-12-sofia-400\"\n>\n  <tr class=\"app-transparent-table__head\">\n   <th \n      class=\"app-transparent-table__head-item app-transparent-table__main-column\"\n    >\n     {{ mainColumn }}\n   </th>\n   <th \n      class=\"app-transparent-table__head-item\"\n    >\n     {{ activeColumn }}\n   </th>\n  </tr>\n  <tr \n    class=\"app-transparent-table__row fs-12-sofia-300\" \n    *ngFor=\"let item of data; let i = index\"\n  >\n    <td>\n      <p *ngIf=\"checkType(item[mainColumn])==='string'\">\n        {{ item[mainColumn] }}\n      </p>\n      <app-text-with-gradient-back \n        [titles]=\"item[mainColumn].data\"\n        *ngIf=\"checkType(item[head])==='gradientText'\"\n      >\n      </app-text-with-gradient-back>\n      <img [src]=\"item[head].path\" *ngIf=\"checkType(item[mainColumn])==='image'\">\n      <span *ngIf=\"checkType(item[mainColumn])==='boolean'\">\n        <app-round-icon\n          [classes]=\"item[mainColumn] ? 'app-round-icon app-round-icon__positive' : 'app-round-icon app-round-icon__negative'\"\n          [ngStyle]=\"{'display': 'flex', 'justify-content': 'center'}\"\n        ></app-round-icon>\n      </span>\n    </td>\n    <td>\n      <p *ngIf=\"checkType(item[activeColumn])==='string'\">\n        {{ item[activeColumn] }}\n      </p>\n      <app-text-with-gradient-back \n        [titles]=\"item[head].data\"\n        *ngIf=\"checkType(item[activeColumn])==='gradientText'\"\n      >\n      </app-text-with-gradient-back>\n      <img [src]=\"item[head].path\" *ngIf=\"checkType(item[activeColumn])==='image'\">\n      <span *ngIf=\"checkType(item[activeColumn])==='boolean'\">\n        <app-round-icon\n          [classes]=\"item[activeColumn] ? 'app-round-icon app-round-icon__positive' : 'app-round-icon app-round-icon__negative'\"\n        ></app-round-icon>\n      </span>\n    </td>\n  </tr>\n  <button class=\"prev app-transparent-table__button\" type=\"button\" (click)=\"showNext('back')\"></button>\n  <button class=\"next app-transparent-table__button\"type=\"button\" (click)=\"showNext('forward')\"></button>\n </table> \n</div>\n\n<table id=\"table\" class=\"app-transparent-table fs-12-sofia-400\"  *ngIf=\"!isMobile\">\n  <tr class=\"app-transparent-table__head\">\n   <th \n      class=\"app-transparent-table__head-item\"\n      *ngFor=\"let head of heads; let i = index\"\n    >\n     {{ head }}\n   </th>\n  </tr>\n  <tr class=\"app-transparent-table__row fs-12-sofia-300\" *ngFor=\"let item of data; let i = index\">\n    <td *ngFor=\"let head of heads; let j = index\">\n      <p *ngIf=\"checkType(item[head])==='string'\">\n        {{ item[head] }}\n      </p>\n      <app-text-with-gradient-back \n        [titles]=\"item[head].data\"\n        *ngIf=\"checkType(item[head])==='gradientText'\"\n      >\n      </app-text-with-gradient-back>\n      <img [src]=\"item[head].path\" *ngIf=\"checkType(item[head])==='image'\">\n      <span *ngIf=\"checkType(item[head])=='boolean'\">\n        <app-round-icon\n          [classes]=\"item[head] ? 'app-round-icon app-round-icon__positive' : 'app-round-icon app-round-icon__negative'\"\n          [ngStyle]=\"{'display': 'flex', 'justify-content': 'center'}\"\n        ></app-round-icon>\n      </span>\n    </td>\n  </tr>\n</table>"
         }
     ],
     "modules": [
@@ -3664,49 +3676,9 @@
                 "name": "props",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/organisms/scan-report/scan-report.component.stories.ts",
-                "type": "object",
-                "defaultValue": "{}"
-            },
-            {
-                "name": "props",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/organisms/registration-form/registration-form.stories.ts",
-                "type": "object",
-                "defaultValue": "{}"
-            },
-            {
-                "name": "props",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/molecules/scan-screens/scan-screens.component.stories.ts",
-                "type": "object",
-                "defaultValue": "{}"
-            },
-            {
-                "name": "props",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "src/app/atoms/card/card.stories.ts",
                 "type": "object",
                 "defaultValue": "{\n  backgroundColor: { control: 'color' },\n  color: { control: 'color' },\n  src: { control: 'text' },\n  title: { control: 'text' },\n  text: { control: 'text' },\n  isActive: { control: 'boolean' }\n}"
-            },
-            {
-                "name": "props",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/atoms/iconContainer/iconContainer.stories.ts",
-                "type": "object",
-                "defaultValue": "{\n  backgroundColor: { control: 'color' },\n}"
-            },
-            {
-                "name": "props",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/atoms/scan-animation/scan-animation.component.stories.ts",
-                "type": "object",
-                "defaultValue": "{}"
             },
             {
                 "name": "props",
@@ -3728,6 +3700,14 @@
                 "name": "props",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "src/app/atoms/scan-animation/scan-animation.component.stories.ts",
+                "type": "object",
+                "defaultValue": "{}"
+            },
+            {
+                "name": "props",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "src/app/atoms/steps/steps.stories.ts",
                 "type": "object",
                 "defaultValue": "{\n  activePoints: { control: 'number' }\n}"
@@ -3736,7 +3716,7 @@
                 "name": "props",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/molecules/form-screens/form-screen-first/form-screen-first.stories.ts",
+                "file": "src/app/molecules/scan-screens/scan-screens.component.stories.ts",
                 "type": "object",
                 "defaultValue": "{}"
             },
@@ -3744,7 +3724,7 @@
                 "name": "props",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/molecules/form-screens/form-screen-fifth/form-screen-fifth.stories.ts",
+                "file": "src/app/organisms/registration-form/registration-form.stories.ts",
                 "type": "object",
                 "defaultValue": "{}"
             },
@@ -3752,65 +3732,17 @@
                 "name": "props",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/molecules/form-screens/form-screen-fourth/form-screen-fourth.stories.ts",
+                "file": "src/app/atoms/iconContainer/iconContainer.stories.ts",
+                "type": "object",
+                "defaultValue": "{\n  backgroundColor: { control: 'color' },\n}"
+            },
+            {
+                "name": "props",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/organisms/scan-report/scan-report.component.stories.ts",
                 "type": "object",
                 "defaultValue": "{}"
-            },
-            {
-                "name": "props",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/molecules/form-screens/form-screen-second/form-screen-second.stories.ts",
-                "type": "object",
-                "defaultValue": "{}"
-            },
-            {
-                "name": "props",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/molecules/form-screens/form-screen-third/form-screen-third.stories.ts",
-                "type": "object",
-                "defaultValue": "{}"
-            },
-            {
-                "name": "props",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/molecules/menu/composite-menu/composite-menu.stories.ts",
-                "type": "object",
-                "defaultValue": "{\n  items: { control: 'object' }\n}"
-            },
-            {
-                "name": "props",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/molecules/menu/date-menu/date-menu.stories.ts",
-                "type": "object",
-                "defaultValue": "{\n  backgroundColor: { control: 'color' },\n  items: { control: 'array' }\n}"
-            },
-            {
-                "name": "props",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/molecules/menu/main-navigation-menu/main-navigation-menu.component.stories.ts",
-                "type": "object",
-                "defaultValue": "{\n  backgroundColor: { control: 'color' },\n  items: { control: 'array' }\n}"
-            },
-            {
-                "name": "props",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/molecules/menu/side-menu/side-menu.stories.ts",
-                "type": "object",
-                "defaultValue": "{\n  backgroundColor: { control: 'color' },\n  items: { control: 'array' }\n}"
-            },
-            {
-                "name": "props",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/molecules/menu/mobile-main-navigation-menu/mobile-main-navigation-menu.component.stories.ts",
-                "type": "object",
-                "defaultValue": "{\n  items: { control: 'object' }\n}"
             },
             {
                 "name": "props",
@@ -3824,7 +3756,7 @@
                 "name": "props",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/atoms/buttons/infoButton/infoButton.stories.ts",
+                "file": "src/app/atoms/buttons/lightButton/lightButton.stories.ts",
                 "type": "object",
                 "defaultValue": "{\n  backgroundColor: { control: 'color' },\n  color: { control: 'color' },\n  title: { control: 'text' },\n}"
             },
@@ -3832,7 +3764,7 @@
                 "name": "props",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/atoms/buttons/lightButton/lightButton.stories.ts",
+                "file": "src/app/atoms/buttons/largeButton/largeButton.stories.ts",
                 "type": "object",
                 "defaultValue": "{\n  backgroundColor: { control: 'color' },\n  color: { control: 'color' },\n  title: { control: 'text' },\n}"
             },
@@ -3864,6 +3796,14 @@
                 "name": "props",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "src/app/atoms/buttons/infoButton/infoButton.stories.ts",
+                "type": "object",
+                "defaultValue": "{\n  backgroundColor: { control: 'color' },\n  color: { control: 'color' },\n  title: { control: 'text' },\n}"
+            },
+            {
+                "name": "props",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "src/app/atoms/buttons/simpleButton/simpleButton.stories.ts",
                 "type": "object",
                 "defaultValue": "{\n  backgroundColor: { control: 'color' },\n  color: { control: 'color' },\n  title: { control: 'text' },\n}"
@@ -3875,14 +3815,6 @@
                 "file": "src/app/atoms/card/card-with-center-text/card-with-center-text.component.stories.ts",
                 "type": "object",
                 "defaultValue": "{\n  backgroundColor: { control: 'color' },\n  color: { control: 'color' },\n  src: { control: 'text' },\n  title: { control: 'text' },\n  text: { control: 'text' },\n  isActive: { control: 'boolean' }\n}"
-            },
-            {
-                "name": "props",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/atoms/buttons/largeButton/largeButton.stories.ts",
-                "type": "object",
-                "defaultValue": "{\n  backgroundColor: { control: 'color' },\n  color: { control: 'color' },\n  title: { control: 'text' },\n}"
             },
             {
                 "name": "props",
@@ -3928,14 +3860,6 @@
                 "name": "props",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/atoms/navLink/icon-links/icon-links.component.stories.ts",
-                "type": "object",
-                "defaultValue": "{\n  title: { control: 'text' },\n  isActive: { control: 'boolean' }\n}"
-            },
-            {
-                "name": "props",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "src/app/atoms/navLink/textLinks/navLink.stories.ts",
                 "type": "object",
                 "defaultValue": "{\n  title: { control: 'text' },\n  isActive: { control: 'boolean' }\n}"
@@ -3944,9 +3868,17 @@
                 "name": "props",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/atoms/text/text-with-gradient-back/text-with-gradient-back.component.stories.ts",
+                "file": "src/app/atoms/navLink/icon-links/icon-links.component.stories.ts",
                 "type": "object",
-                "defaultValue": "{\n  title: { control: 'text' },\n}"
+                "defaultValue": "{\n  title: { control: 'text' },\n  isActive: { control: 'boolean' }\n}"
+            },
+            {
+                "name": "props",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/molecules/form-screens/form-screen-fifth/form-screen-fifth.stories.ts",
+                "type": "object",
+                "defaultValue": "{}"
             },
             {
                 "name": "props",
@@ -3960,9 +3892,81 @@
                 "name": "props",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/atoms/inputs/checkbox/checkbox-input-switch/checkbox-input-switch.stories.ts",
+                "file": "src/app/molecules/form-screens/form-screen-fourth/form-screen-fourth.stories.ts",
                 "type": "object",
-                "defaultValue": "{\n    isChecked: { control: 'boolean' },\n}"
+                "defaultValue": "{}"
+            },
+            {
+                "name": "props",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/molecules/form-screens/form-screen-second/form-screen-second.stories.ts",
+                "type": "object",
+                "defaultValue": "{}"
+            },
+            {
+                "name": "props",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/molecules/form-screens/form-screen-third/form-screen-third.stories.ts",
+                "type": "object",
+                "defaultValue": "{}"
+            },
+            {
+                "name": "props",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/molecules/menu/composite-menu/composite-menu.stories.ts",
+                "type": "object",
+                "defaultValue": "{\n  items: { control: 'object' }\n}"
+            },
+            {
+                "name": "props",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/molecules/form-screens/form-screen-first/form-screen-first.stories.ts",
+                "type": "object",
+                "defaultValue": "{}"
+            },
+            {
+                "name": "props",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/molecules/menu/date-menu/date-menu.stories.ts",
+                "type": "object",
+                "defaultValue": "{\n  backgroundColor: { control: 'color' },\n  items: { control: 'array' }\n}"
+            },
+            {
+                "name": "props",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/molecules/menu/main-navigation-menu/main-navigation-menu.component.stories.ts",
+                "type": "object",
+                "defaultValue": "{\n  backgroundColor: { control: 'color' },\n  items: { control: 'array' }\n}"
+            },
+            {
+                "name": "props",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/molecules/menu/side-menu/side-menu.stories.ts",
+                "type": "object",
+                "defaultValue": "{\n  backgroundColor: { control: 'color' },\n  items: { control: 'array' }\n}"
+            },
+            {
+                "name": "props",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/atoms/text/text-with-gradient-back/text-with-gradient-back.component.stories.ts",
+                "type": "object",
+                "defaultValue": "{\n  title: { control: 'text' },\n}"
+            },
+            {
+                "name": "props",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/molecules/menu/mobile-main-navigation-menu/mobile-main-navigation-menu.component.stories.ts",
+                "type": "object",
+                "defaultValue": "{\n  items: { control: 'object' }\n}"
             },
             {
                 "name": "props",
@@ -3971,6 +3975,14 @@
                 "file": "src/app/atoms/inputs/checkbox/checkbox-input-simple/checkbox-input-simple.stories.ts",
                 "type": "object",
                 "defaultValue": "{\n  isChecked: { control: 'boolean' },\n  title: { control: 'text' }\n}"
+            },
+            {
+                "name": "props",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/atoms/inputs/checkbox/checkbox-input-switch/checkbox-input-switch.stories.ts",
+                "type": "object",
+                "defaultValue": "{\n    isChecked: { control: 'boolean' },\n}"
             },
             {
                 "name": "props",
@@ -4095,14 +4107,6 @@
                 "name": "Simple",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/atoms/iconContainer/iconContainer.stories.ts",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "Simple",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "src/app/atoms/searchItem/searchItem.stories.ts",
                 "type": "",
                 "defaultValue": "Template.bind({})"
@@ -4112,6 +4116,14 @@
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/app/atoms/steps/steps.stories.ts",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Simple",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/atoms/iconContainer/iconContainer.stories.ts",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
@@ -4159,49 +4171,9 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/organisms/scan-report/scan-report.component.stories.ts",
-                "type": "Story<ScanReportComponent>",
-                "defaultValue": "(args: ScanReportComponent) => ({\n  component: ScanReportComponent,\n  props: args,\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/organisms/registration-form/registration-form.stories.ts",
-                "type": "Story<RegistrationFormComponent>",
-                "defaultValue": "(args: RegistrationFormComponent) => ({\n  component: RegistrationFormComponent,\n  props: args,\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/molecules/scan-screens/scan-screens.component.stories.ts",
-                "type": "Story<ScanScreensComponent>",
-                "defaultValue": "(args: ScanScreensComponent) => ({\n  component: ScanScreensComponent,\n  props: args,\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "src/app/atoms/card/card.stories.ts",
                 "type": "Story<CardComponent>",
                 "defaultValue": "(args: CardComponent) => ({\n  component: CardComponent,\n  props: args,\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/atoms/iconContainer/iconContainer.stories.ts",
-                "type": "Story<IconContainerComponent>",
-                "defaultValue": "(args: IconContainerComponent) => ({\n  component: IconContainerComponent,\n  props: args,\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/atoms/scan-animation/scan-animation.component.stories.ts",
-                "type": "Story<ScanAnimationComponent>",
-                "defaultValue": "(args: ScanAnimationComponent) => ({\n  component: ScanAnimationComponent,\n  props: args,\n})"
             },
             {
                 "name": "Template",
@@ -4223,6 +4195,14 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "src/app/atoms/scan-animation/scan-animation.component.stories.ts",
+                "type": "Story<ScanAnimationComponent>",
+                "defaultValue": "(args: ScanAnimationComponent) => ({\n  component: ScanAnimationComponent,\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "src/app/atoms/steps/steps.stories.ts",
                 "type": "Story<StepsComponent>",
                 "defaultValue": "(args: StepsComponent) => ({\n  component: StepsComponent,\n  props: args,\n})"
@@ -4231,81 +4211,33 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/molecules/form-screens/form-screen-first/form-screen-first.stories.ts",
-                "type": "Story<FormScreenFirstComponent>",
-                "defaultValue": "(args: FormScreenFirstComponent) => ({\n  component: FormScreenFirstComponent,\n  props: args,\n})"
+                "file": "src/app/molecules/scan-screens/scan-screens.component.stories.ts",
+                "type": "Story<ScanScreensComponent>",
+                "defaultValue": "(args: ScanScreensComponent) => ({\n  component: ScanScreensComponent,\n  props: args,\n})"
             },
             {
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/molecules/form-screens/form-screen-fifth/form-screen-fifth.stories.ts",
-                "type": "Story<FormScreenFifthComponent>",
-                "defaultValue": "(args: FormScreenFifthComponent) => ({\n    component: FormScreenFifthComponent,\n    props: args,\n  })"
+                "file": "src/app/organisms/registration-form/registration-form.stories.ts",
+                "type": "Story<RegistrationFormComponent>",
+                "defaultValue": "(args: RegistrationFormComponent) => ({\n  component: RegistrationFormComponent,\n  props: args,\n})"
             },
             {
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/molecules/form-screens/form-screen-fourth/form-screen-fourth.stories.ts",
-                "type": "Story<FormScreenFourthComponent>",
-                "defaultValue": "(args: FormScreenFourthComponent) => ({\n  component: FormScreenFourthComponent,\n  props: args,\n})"
+                "file": "src/app/atoms/iconContainer/iconContainer.stories.ts",
+                "type": "Story<IconContainerComponent>",
+                "defaultValue": "(args: IconContainerComponent) => ({\n  component: IconContainerComponent,\n  props: args,\n})"
             },
             {
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/molecules/form-screens/form-screen-second/form-screen-second.stories.ts",
-                "type": "Story<FormScreenSecondComponent>",
-                "defaultValue": "(args: FormScreenSecondComponent) => ({\n  component: FormScreenSecondComponent,\n  props: args,\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/molecules/form-screens/form-screen-third/form-screen-third.stories.ts",
-                "type": "Story<FormScreenThirdComponent>",
-                "defaultValue": "(args: FormScreenThirdComponent) => ({\n  component: FormScreenThirdComponent,\n  props: args,\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/molecules/menu/composite-menu/composite-menu.stories.ts",
-                "type": "Story<CompositeMenuComponent>",
-                "defaultValue": "(args: CompositeMenuComponent) => ({\n  component: CompositeMenuComponent,\n  props: args,\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/molecules/menu/date-menu/date-menu.stories.ts",
-                "type": "Story<DateMenuComponent>",
-                "defaultValue": "(args: DateMenuComponent) => ({\n  component: DateMenuComponent,\n  props: args,\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/molecules/menu/main-navigation-menu/main-navigation-menu.component.stories.ts",
-                "type": "Story<MainNavigationMenuComponent>",
-                "defaultValue": "(args: MainNavigationMenuComponent) => ({\n  component: MainNavigationMenuComponent,\n  props: args,\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/molecules/menu/side-menu/side-menu.stories.ts",
-                "type": "Story<SideMenuComponent>",
-                "defaultValue": "(args: SideMenuComponent) => ({\n  component: SideMenuComponent,\n  props: args,\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/molecules/menu/mobile-main-navigation-menu/mobile-main-navigation-menu.component.stories.ts",
-                "type": "Story<MobileMainNavigationMenuComponent>",
-                "defaultValue": "(args: MobileMainNavigationMenuComponent) => ({\n  component: MobileMainNavigationMenuComponent,\n  props: args,\n})"
+                "file": "src/app/organisms/scan-report/scan-report.component.stories.ts",
+                "type": "Story<ScanReportComponent>",
+                "defaultValue": "(args: ScanReportComponent) => ({\n  component: ScanReportComponent,\n  props: args,\n})"
             },
             {
                 "name": "Template",
@@ -4319,17 +4251,17 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/atoms/buttons/infoButton/infoButton.stories.ts",
-                "type": "Story<infoButtonComponent>",
-                "defaultValue": "(args: infoButtonComponent) => ({\n  component: infoButtonComponent,\n  props: args,\n})"
+                "file": "src/app/atoms/buttons/lightButton/lightButton.stories.ts",
+                "type": "Story<lightButtonComponent>",
+                "defaultValue": "(args: lightButtonComponent) => ({\n  component: lightButtonComponent,\n  props: args,\n})"
             },
             {
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/atoms/buttons/lightButton/lightButton.stories.ts",
-                "type": "Story<lightButtonComponent>",
-                "defaultValue": "(args: lightButtonComponent) => ({\n  component: lightButtonComponent,\n  props: args,\n})"
+                "file": "src/app/atoms/buttons/largeButton/largeButton.stories.ts",
+                "type": "Story<largeButtonComponent>",
+                "defaultValue": "(args: largeButtonComponent) => ({\n  component: largeButtonComponent,\n  props: args,\n})"
             },
             {
                 "name": "Template",
@@ -4359,6 +4291,14 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "src/app/atoms/buttons/infoButton/infoButton.stories.ts",
+                "type": "Story<infoButtonComponent>",
+                "defaultValue": "(args: infoButtonComponent) => ({\n  component: infoButtonComponent,\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "src/app/atoms/buttons/simpleButton/simpleButton.stories.ts",
                 "type": "Story<simpleButtonComponent>",
                 "defaultValue": "(args: simpleButtonComponent) => ({\n  component: simpleButtonComponent,\n  props: args,\n})"
@@ -4370,14 +4310,6 @@
                 "file": "src/app/atoms/card/card-with-center-text/card-with-center-text.component.stories.ts",
                 "type": "Story<CardWithCenterTextComponent>",
                 "defaultValue": "(args: CardWithCenterTextComponent) => ({\n  component: CardWithCenterTextComponent,\n  props: args,\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/atoms/buttons/largeButton/largeButton.stories.ts",
-                "type": "Story<largeButtonComponent>",
-                "defaultValue": "(args: largeButtonComponent) => ({\n  component: largeButtonComponent,\n  props: args,\n})"
             },
             {
                 "name": "Template",
@@ -4423,14 +4355,6 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/atoms/navLink/icon-links/icon-links.component.stories.ts",
-                "type": "Story<IconLinksComponent>",
-                "defaultValue": "(args: IconLinksComponent) => ({\n  component: IconLinksComponent,\n  props: args,\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "src/app/atoms/navLink/textLinks/navLink.stories.ts",
                 "type": "Story<navLinkComponent>",
                 "defaultValue": "(args: navLinkComponent) => ({\n  component: navLinkComponent,\n  props: args,\n})"
@@ -4439,9 +4363,17 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/atoms/text/text-with-gradient-back/text-with-gradient-back.component.stories.ts",
-                "type": "Story<TextWithGradientBackComponent>",
-                "defaultValue": "(args: TextWithGradientBackComponent) => ({\n  component: TextWithGradientBackComponent,\n  props: args,\n})"
+                "file": "src/app/atoms/navLink/icon-links/icon-links.component.stories.ts",
+                "type": "Story<IconLinksComponent>",
+                "defaultValue": "(args: IconLinksComponent) => ({\n  component: IconLinksComponent,\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/molecules/form-screens/form-screen-fifth/form-screen-fifth.stories.ts",
+                "type": "Story<FormScreenFifthComponent>",
+                "defaultValue": "(args: FormScreenFifthComponent) => ({\n    component: FormScreenFifthComponent,\n    props: args,\n  })"
             },
             {
                 "name": "Template",
@@ -4455,9 +4387,81 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/atoms/inputs/checkbox/checkbox-input-switch/checkbox-input-switch.stories.ts",
-                "type": "Story<CheckboxInputSwitchComponent>",
-                "defaultValue": "(args: CheckboxInputSwitchComponent) => ({\n  component: CheckboxInputSwitchComponent,\n  props: args,\n})"
+                "file": "src/app/molecules/form-screens/form-screen-fourth/form-screen-fourth.stories.ts",
+                "type": "Story<FormScreenFourthComponent>",
+                "defaultValue": "(args: FormScreenFourthComponent) => ({\n  component: FormScreenFourthComponent,\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/molecules/form-screens/form-screen-second/form-screen-second.stories.ts",
+                "type": "Story<FormScreenSecondComponent>",
+                "defaultValue": "(args: FormScreenSecondComponent) => ({\n  component: FormScreenSecondComponent,\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/molecules/form-screens/form-screen-third/form-screen-third.stories.ts",
+                "type": "Story<FormScreenThirdComponent>",
+                "defaultValue": "(args: FormScreenThirdComponent) => ({\n  component: FormScreenThirdComponent,\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/molecules/menu/composite-menu/composite-menu.stories.ts",
+                "type": "Story<CompositeMenuComponent>",
+                "defaultValue": "(args: CompositeMenuComponent) => ({\n  component: CompositeMenuComponent,\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/molecules/form-screens/form-screen-first/form-screen-first.stories.ts",
+                "type": "Story<FormScreenFirstComponent>",
+                "defaultValue": "(args: FormScreenFirstComponent) => ({\n  component: FormScreenFirstComponent,\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/molecules/menu/date-menu/date-menu.stories.ts",
+                "type": "Story<DateMenuComponent>",
+                "defaultValue": "(args: DateMenuComponent) => ({\n  component: DateMenuComponent,\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/molecules/menu/main-navigation-menu/main-navigation-menu.component.stories.ts",
+                "type": "Story<MainNavigationMenuComponent>",
+                "defaultValue": "(args: MainNavigationMenuComponent) => ({\n  component: MainNavigationMenuComponent,\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/molecules/menu/side-menu/side-menu.stories.ts",
+                "type": "Story<SideMenuComponent>",
+                "defaultValue": "(args: SideMenuComponent) => ({\n  component: SideMenuComponent,\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/atoms/text/text-with-gradient-back/text-with-gradient-back.component.stories.ts",
+                "type": "Story<TextWithGradientBackComponent>",
+                "defaultValue": "(args: TextWithGradientBackComponent) => ({\n  component: TextWithGradientBackComponent,\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/molecules/menu/mobile-main-navigation-menu/mobile-main-navigation-menu.component.stories.ts",
+                "type": "Story<MobileMainNavigationMenuComponent>",
+                "defaultValue": "(args: MobileMainNavigationMenuComponent) => ({\n  component: MobileMainNavigationMenuComponent,\n  props: args,\n})"
             },
             {
                 "name": "Template",
@@ -4466,6 +4470,14 @@
                 "file": "src/app/atoms/inputs/checkbox/checkbox-input-simple/checkbox-input-simple.stories.ts",
                 "type": "Story<CheckboxInputSimpleComponent>",
                 "defaultValue": "(args: CheckboxInputSimpleComponent) => ({\n  component: CheckboxInputSimpleComponent,\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/atoms/inputs/checkbox/checkbox-input-switch/checkbox-input-switch.stories.ts",
+                "type": "Story<CheckboxInputSwitchComponent>",
+                "defaultValue": "(args: CheckboxInputSwitchComponent) => ({\n  component: CheckboxInputSwitchComponent,\n  props: args,\n})"
             },
             {
                 "name": "Template",
@@ -5206,58 +5218,6 @@
                     "defaultValue": "(args: primaryButtonComponent) => ({\n  component: primaryButtonComponent,\n  props: args,\n})"
                 }
             ],
-            "src/app/organisms/scan-report/scan-report.component.stories.ts": [
-                {
-                    "name": "props",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/organisms/scan-report/scan-report.component.stories.ts",
-                    "type": "object",
-                    "defaultValue": "{}"
-                },
-                {
-                    "name": "ScanReport",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/organisms/scan-report/scan-report.component.stories.ts",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/organisms/scan-report/scan-report.component.stories.ts",
-                    "type": "Story<ScanReportComponent>",
-                    "defaultValue": "(args: ScanReportComponent) => ({\n  component: ScanReportComponent,\n  props: args,\n})"
-                }
-            ],
-            "src/app/organisms/registration-form/registration-form.stories.ts": [
-                {
-                    "name": "props",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/organisms/registration-form/registration-form.stories.ts",
-                    "type": "object",
-                    "defaultValue": "{}"
-                },
-                {
-                    "name": "RegistrationForm",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/organisms/registration-form/registration-form.stories.ts",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/organisms/registration-form/registration-form.stories.ts",
-                    "type": "Story<RegistrationFormComponent>",
-                    "defaultValue": "(args: RegistrationFormComponent) => ({\n  component: RegistrationFormComponent,\n  props: args,\n})"
-                }
-            ],
             "src/app/atoms/card/card.stories.ts": [
                 {
                     "name": "props",
@@ -5282,58 +5242,6 @@
                     "file": "src/app/atoms/card/card.stories.ts",
                     "type": "Story<CardComponent>",
                     "defaultValue": "(args: CardComponent) => ({\n  component: CardComponent,\n  props: args,\n})"
-                }
-            ],
-            "src/app/atoms/iconContainer/iconContainer.stories.ts": [
-                {
-                    "name": "props",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/atoms/iconContainer/iconContainer.stories.ts",
-                    "type": "object",
-                    "defaultValue": "{\n  backgroundColor: { control: 'color' },\n}"
-                },
-                {
-                    "name": "Simple",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/atoms/iconContainer/iconContainer.stories.ts",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/atoms/iconContainer/iconContainer.stories.ts",
-                    "type": "Story<IconContainerComponent>",
-                    "defaultValue": "(args: IconContainerComponent) => ({\n  component: IconContainerComponent,\n  props: args,\n})"
-                }
-            ],
-            "src/app/atoms/scan-animation/scan-animation.component.stories.ts": [
-                {
-                    "name": "props",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/atoms/scan-animation/scan-animation.component.stories.ts",
-                    "type": "object",
-                    "defaultValue": "{}"
-                },
-                {
-                    "name": "Scan",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/atoms/scan-animation/scan-animation.component.stories.ts",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/atoms/scan-animation/scan-animation.component.stories.ts",
-                    "type": "Story<ScanAnimationComponent>",
-                    "defaultValue": "(args: ScanAnimationComponent) => ({\n  component: ScanAnimationComponent,\n  props: args,\n})"
                 }
             ],
             "src/app/atoms/searchItem/searchItem.stories.ts": [
@@ -5396,6 +5304,32 @@
                     "defaultValue": "(args: SemicircleChartComponent) => ({\n  component: SemicircleChartComponent,\n  props: args,\n})"
                 }
             ],
+            "src/app/atoms/scan-animation/scan-animation.component.stories.ts": [
+                {
+                    "name": "props",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/atoms/scan-animation/scan-animation.component.stories.ts",
+                    "type": "object",
+                    "defaultValue": "{}"
+                },
+                {
+                    "name": "Scan",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/atoms/scan-animation/scan-animation.component.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/atoms/scan-animation/scan-animation.component.stories.ts",
+                    "type": "Story<ScanAnimationComponent>",
+                    "defaultValue": "(args: ScanAnimationComponent) => ({\n  component: ScanAnimationComponent,\n  props: args,\n})"
+                }
+            ],
             "src/app/atoms/steps/steps.stories.ts": [
                 {
                     "name": "props",
@@ -5422,20 +5356,20 @@
                     "defaultValue": "(args: StepsComponent) => ({\n  component: StepsComponent,\n  props: args,\n})"
                 }
             ],
-            "src/app/molecules/form-screens/form-screen-second/form-screen-second.stories.ts": [
+            "src/app/organisms/registration-form/registration-form.stories.ts": [
                 {
                     "name": "props",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/molecules/form-screens/form-screen-second/form-screen-second.stories.ts",
+                    "file": "src/app/organisms/registration-form/registration-form.stories.ts",
                     "type": "object",
                     "defaultValue": "{}"
                 },
                 {
-                    "name": "Second",
+                    "name": "RegistrationForm",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/molecules/form-screens/form-screen-second/form-screen-second.stories.ts",
+                    "file": "src/app/organisms/registration-form/registration-form.stories.ts",
                     "type": "",
                     "defaultValue": "Template.bind({})"
                 },
@@ -5443,51 +5377,51 @@
                     "name": "Template",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/molecules/form-screens/form-screen-second/form-screen-second.stories.ts",
-                    "type": "Story<FormScreenSecondComponent>",
-                    "defaultValue": "(args: FormScreenSecondComponent) => ({\n  component: FormScreenSecondComponent,\n  props: args,\n})"
+                    "file": "src/app/organisms/registration-form/registration-form.stories.ts",
+                    "type": "Story<RegistrationFormComponent>",
+                    "defaultValue": "(args: RegistrationFormComponent) => ({\n  component: RegistrationFormComponent,\n  props: args,\n})"
                 }
             ],
-            "src/app/molecules/form-screens/form-screen-third/form-screen-third.stories.ts": [
+            "src/app/atoms/iconContainer/iconContainer.stories.ts": [
                 {
                     "name": "props",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/molecules/form-screens/form-screen-third/form-screen-third.stories.ts",
+                    "file": "src/app/atoms/iconContainer/iconContainer.stories.ts",
+                    "type": "object",
+                    "defaultValue": "{\n  backgroundColor: { control: 'color' },\n}"
+                },
+                {
+                    "name": "Simple",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/atoms/iconContainer/iconContainer.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/atoms/iconContainer/iconContainer.stories.ts",
+                    "type": "Story<IconContainerComponent>",
+                    "defaultValue": "(args: IconContainerComponent) => ({\n  component: IconContainerComponent,\n  props: args,\n})"
+                }
+            ],
+            "src/app/organisms/scan-report/scan-report.component.stories.ts": [
+                {
+                    "name": "props",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/organisms/scan-report/scan-report.component.stories.ts",
                     "type": "object",
                     "defaultValue": "{}"
                 },
                 {
-                    "name": "Template",
+                    "name": "ScanReport",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/molecules/form-screens/form-screen-third/form-screen-third.stories.ts",
-                    "type": "Story<FormScreenThirdComponent>",
-                    "defaultValue": "(args: FormScreenThirdComponent) => ({\n  component: FormScreenThirdComponent,\n  props: args,\n})"
-                },
-                {
-                    "name": "Third",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/molecules/form-screens/form-screen-third/form-screen-third.stories.ts",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                }
-            ],
-            "src/app/molecules/menu/side-menu/side-menu.stories.ts": [
-                {
-                    "name": "props",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/molecules/menu/side-menu/side-menu.stories.ts",
-                    "type": "object",
-                    "defaultValue": "{\n  backgroundColor: { control: 'color' },\n  items: { control: 'array' }\n}"
-                },
-                {
-                    "name": "Side",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/molecules/menu/side-menu/side-menu.stories.ts",
+                    "file": "src/app/organisms/scan-report/scan-report.component.stories.ts",
                     "type": "",
                     "defaultValue": "Template.bind({})"
                 },
@@ -5495,9 +5429,9 @@
                     "name": "Template",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/molecules/menu/side-menu/side-menu.stories.ts",
-                    "type": "Story<SideMenuComponent>",
-                    "defaultValue": "(args: SideMenuComponent) => ({\n  component: SideMenuComponent,\n  props: args,\n})"
+                    "file": "src/app/organisms/scan-report/scan-report.component.stories.ts",
+                    "type": "Story<ScanReportComponent>",
+                    "defaultValue": "(args: ScanReportComponent) => ({\n  component: ScanReportComponent,\n  props: args,\n})"
                 }
             ],
             "src/app/atoms/buttons/secondaryButton/secondaryButton.stories.ts": [
@@ -5604,20 +5538,20 @@
                     "defaultValue": "Template.bind({})"
                 }
             ],
-            "src/app/atoms/inputs/checkbox/checkbox-input-switch/checkbox-input-switch.stories.ts": [
+            "src/app/molecules/form-screens/form-screen-second/form-screen-second.stories.ts": [
                 {
                     "name": "props",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/atoms/inputs/checkbox/checkbox-input-switch/checkbox-input-switch.stories.ts",
+                    "file": "src/app/molecules/form-screens/form-screen-second/form-screen-second.stories.ts",
                     "type": "object",
-                    "defaultValue": "{\n    isChecked: { control: 'boolean' },\n}"
+                    "defaultValue": "{}"
                 },
                 {
-                    "name": "Switch",
+                    "name": "Second",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/atoms/inputs/checkbox/checkbox-input-switch/checkbox-input-switch.stories.ts",
+                    "file": "src/app/molecules/form-screens/form-screen-second/form-screen-second.stories.ts",
                     "type": "",
                     "defaultValue": "Template.bind({})"
                 },
@@ -5625,9 +5559,61 @@
                     "name": "Template",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/atoms/inputs/checkbox/checkbox-input-switch/checkbox-input-switch.stories.ts",
-                    "type": "Story<CheckboxInputSwitchComponent>",
-                    "defaultValue": "(args: CheckboxInputSwitchComponent) => ({\n  component: CheckboxInputSwitchComponent,\n  props: args,\n})"
+                    "file": "src/app/molecules/form-screens/form-screen-second/form-screen-second.stories.ts",
+                    "type": "Story<FormScreenSecondComponent>",
+                    "defaultValue": "(args: FormScreenSecondComponent) => ({\n  component: FormScreenSecondComponent,\n  props: args,\n})"
+                }
+            ],
+            "src/app/molecules/form-screens/form-screen-third/form-screen-third.stories.ts": [
+                {
+                    "name": "props",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/molecules/form-screens/form-screen-third/form-screen-third.stories.ts",
+                    "type": "object",
+                    "defaultValue": "{}"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/molecules/form-screens/form-screen-third/form-screen-third.stories.ts",
+                    "type": "Story<FormScreenThirdComponent>",
+                    "defaultValue": "(args: FormScreenThirdComponent) => ({\n  component: FormScreenThirdComponent,\n  props: args,\n})"
+                },
+                {
+                    "name": "Third",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/molecules/form-screens/form-screen-third/form-screen-third.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                }
+            ],
+            "src/app/molecules/menu/side-menu/side-menu.stories.ts": [
+                {
+                    "name": "props",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/molecules/menu/side-menu/side-menu.stories.ts",
+                    "type": "object",
+                    "defaultValue": "{\n  backgroundColor: { control: 'color' },\n  items: { control: 'array' }\n}"
+                },
+                {
+                    "name": "Side",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/molecules/menu/side-menu/side-menu.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/molecules/menu/side-menu/side-menu.stories.ts",
+                    "type": "Story<SideMenuComponent>",
+                    "defaultValue": "(args: SideMenuComponent) => ({\n  component: SideMenuComponent,\n  props: args,\n})"
                 }
             ],
             "src/app/atoms/inputs/checkbox/checkbox-input-simple/checkbox-input-simple.stories.ts": [
@@ -5654,6 +5640,32 @@
                     "file": "src/app/atoms/inputs/checkbox/checkbox-input-simple/checkbox-input-simple.stories.ts",
                     "type": "Story<CheckboxInputSimpleComponent>",
                     "defaultValue": "(args: CheckboxInputSimpleComponent) => ({\n  component: CheckboxInputSimpleComponent,\n  props: args,\n})"
+                }
+            ],
+            "src/app/atoms/inputs/checkbox/checkbox-input-switch/checkbox-input-switch.stories.ts": [
+                {
+                    "name": "props",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/atoms/inputs/checkbox/checkbox-input-switch/checkbox-input-switch.stories.ts",
+                    "type": "object",
+                    "defaultValue": "{\n    isChecked: { control: 'boolean' },\n}"
+                },
+                {
+                    "name": "Switch",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/atoms/inputs/checkbox/checkbox-input-switch/checkbox-input-switch.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/atoms/inputs/checkbox/checkbox-input-switch/checkbox-input-switch.stories.ts",
+                    "type": "Story<CheckboxInputSwitchComponent>",
+                    "defaultValue": "(args: CheckboxInputSwitchComponent) => ({\n  component: CheckboxInputSwitchComponent,\n  props: args,\n})"
                 }
             ],
             "src/app/atoms/inputs/select-input/select-input-search/select-input-search.component.stories.ts": [

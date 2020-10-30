@@ -1,18 +1,14 @@
-<div class="wrapper">
+<!-- !!!!!!!!!desktop version of table!!!!!!!!!!!!  -->
 <table 
   id="table" 
   *ngIf="isMobile" 
   class="app-transparent-table fs-12-sofia-400"
 >
   <tr class="app-transparent-table__head">
-   <th 
-      class="app-transparent-table__head-item app-transparent-table__main-column"
-    >
+   <th class="app-transparent-table__head-item app-transparent-table__main-column">
      {{ mainColumn }}
    </th>
-   <th 
-      class="app-transparent-table__head-item"
-    >
+   <th  class="app-transparent-table__head-item">
      {{ activeColumn }}
    </th>
   </tr>
@@ -21,10 +17,16 @@
     *ngFor="let item of data; let i = index"
   >
     <td>
-      <p *ngIf="!checkBoolean(item[mainColumn])">
+      <p *ngIf="checkType(item[mainColumn])==='string'">
         {{ item[mainColumn] }}
       </p>
-      <span *ngIf="checkBoolean(item[mainColumn])">
+      <app-text-with-gradient-back 
+        [titles]="item[mainColumn].data"
+        *ngIf="checkType(item[mainColumn])==='gradientText'"
+      >
+      </app-text-with-gradient-back>
+      <img [src]="item[mainColumn].path" *ngIf="checkType(item[mainColumn])==='image'">
+      <span *ngIf="checkType(item[mainColumn])==='boolean'">
         <app-round-icon
           [classes]="item[mainColumn] ? 'app-round-icon app-round-icon__positive' : 'app-round-icon app-round-icon__negative'"
           [ngStyle]="{'display': 'flex', 'justify-content': 'center'}"
@@ -32,10 +34,16 @@
       </span>
     </td>
     <td>
-      <p *ngIf="!checkBoolean(item[activeColumn])">
+      <p *ngIf="checkType(item[activeColumn])==='string'">
         {{ item[activeColumn] }}
       </p>
-      <span *ngIf="checkBoolean(item[activeColumn])">
+      <img [src]="item[activeColumn].path" *ngIf="checkType(item[activeColumn])==='image'" >
+      <app-text-with-gradient-back 
+        [titles]="item[activeColumn].data"
+        *ngIf="checkType(item[activeColumn])==='gradientText'"
+      >
+      </app-text-with-gradient-back>
+      <span *ngIf="checkType(item[activeColumn])==='boolean'">
         <app-round-icon
           [classes]="item[activeColumn] ? 'app-round-icon app-round-icon__positive' : 'app-round-icon app-round-icon__negative'"
         ></app-round-icon>
@@ -44,9 +52,10 @@
   </tr>
   <button class="prev app-transparent-table__button" type="button" (click)="showNext('back')"></button>
   <button class="next app-transparent-table__button"type="button" (click)="showNext('forward')"></button>
- </table> 
-</div>
+</table> 
 
+
+<!-- !!!!!!!!!desktop version of table!!!!!!!!!!!!  -->
 <table id="table" class="app-transparent-table fs-12-sofia-400"  *ngIf="!isMobile">
   <tr class="app-transparent-table__head">
    <th 
@@ -58,10 +67,16 @@
   </tr>
   <tr class="app-transparent-table__row fs-12-sofia-300" *ngFor="let item of data; let i = index">
     <td *ngFor="let head of heads; let j = index">
-      <p *ngIf="!checkBoolean(item[head])">
+      <p *ngIf="checkType(item[head])==='string'">
         {{ item[head] }}
       </p>
-      <span *ngIf="checkBoolean(item[head])">
+      <app-text-with-gradient-back 
+        [titles]="item[head].data"
+        *ngIf="checkType(item[head])==='gradientText'"
+      >
+      </app-text-with-gradient-back>
+      <img [src]="item[head].path" *ngIf="checkType(item[head])==='image'">
+      <span *ngIf="checkType(item[head])=='boolean'">
         <app-round-icon
           [classes]="item[head] ? 'app-round-icon app-round-icon__positive' : 'app-round-icon app-round-icon__negative'"
           [ngStyle]="{'display': 'flex', 'justify-content': 'center'}"

@@ -7,5 +7,5 @@ import { Component, Input } from '@angular/core';
 })
 
 export class TextWithGradientBackComponent {
-  @Input() title: string;
+  @Input() titles: string[];
 }
