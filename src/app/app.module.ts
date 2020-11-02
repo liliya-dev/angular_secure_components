@@ -48,6 +48,7 @@ import { RoundIconComponent } from './atoms/icons/round-icon/round-icon.componen
 import { CardWithColumnsTextComponent } from './atoms/card/card-with-columns-text/card-with-columns-text.component';
 import { CardWithCenterTextComponent } from './atoms/card/card-with-center-text/card-with-center-text.component';
 import { TransparentTableComponent } from './atoms/tables/transparent-table/transparent-table.component';
+import { RollUpComponent } from './molecules/roll-up/roll-up.component';
 
 PlotlyModule.plotlyjs = PlotlyJS;
 
@@ -93,7 +94,8 @@ PlotlyModule.plotlyjs = PlotlyJS;
     RoundIconComponent,
     CardWithColumnsTextComponent,
     CardWithCenterTextComponent,
-    TransparentTableComponent
+    TransparentTableComponent,
+    RollUpComponent
   ],
   imports: [
     BrowserModule,

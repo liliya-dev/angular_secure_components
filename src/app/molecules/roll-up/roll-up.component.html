@@ -1,0 +1,18 @@
+<div class="roll-up">
+    <div class="roll-up__header">
+        <p class="roll-up__text fs-14-gramm-400">
+            {{ title }} 
+            <span class="fs-14-gramm-400-light">{{ number }}</span>
+        </p>
+        <img 
+            (click)="toggleContent()"
+            class="roll-up__button" 
+            src="assets/images/roll-up.png" 
+            [ngStyle]="isOpen ? {'transform': 'rotate(0deg)'} : {'transform': 'rotate(180deg)'}"
+            alt=""
+        >
+    </div>
+    <div class="roll-up__content" *ngIf="isOpen">
+        <ng-content></ng-content>
+    </div>
+</div>

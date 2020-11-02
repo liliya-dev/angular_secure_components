@@ -1,0 +1,32 @@
+.roll-up {
+  width: 100%;
+  height: auto;
+  padding: 12px 16px;
+  background-color: rgba(var(--secondary-color-code), 0.05);
+  border-radius: 8px;
+
+  &__header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__text {
+    color: var(--secondary-color);
+  }
+
+  &__content {
+    margin: 16px 0 6px 0;
+  }
+
+  &__button {
+    width: 13px;
+    height: 7px;
+    transition: 0.3s;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
