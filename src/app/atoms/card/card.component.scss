@@ -40,8 +40,13 @@
   }
 
   &:hover {
-    background: var(--success-grad-light);
     cursor: pointer;
+    background: var(--success-grad-light);
+    box-shadow: 0px 30px 70px rgba(46, 45, 79, 0.15);
+  }
+
+  &__title {
+    margin-bottom: 6px;
   }
 
   &__wrapper {

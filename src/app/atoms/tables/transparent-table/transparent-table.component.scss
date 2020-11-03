@@ -66,6 +66,7 @@ td, th {
 }
 
 .next {
+  right: 40px;
   &:after {
     content: '';
     position: absolute;
@@ -76,5 +77,4 @@ td, th {
     border-radius: 50%;
     background: center no-repeat url('../../../../assets/images/next.svg');
   }
-  right: 30%;
 }

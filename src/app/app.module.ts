@@ -49,6 +49,7 @@ import { CardWithColumnsTextComponent } from './atoms/card/card-with-columns-tex
 import { CardWithCenterTextComponent } from './atoms/card/card-with-center-text/card-with-center-text.component';
 import { TransparentTableComponent } from './atoms/tables/transparent-table/transparent-table.component';
 import { RollUpComponent } from './molecules/roll-up/roll-up.component';
+import { CardRowComponent } from './molecules/card-row/card-row.component';
 
 PlotlyModule.plotlyjs = PlotlyJS;
 
@@ -95,7 +96,8 @@ PlotlyModule.plotlyjs = PlotlyJS;
     CardWithColumnsTextComponent,
     CardWithCenterTextComponent,
     TransparentTableComponent,
-    RollUpComponent
+    RollUpComponent,
+    CardRowComponent
   ],
   imports: [
     BrowserModule,

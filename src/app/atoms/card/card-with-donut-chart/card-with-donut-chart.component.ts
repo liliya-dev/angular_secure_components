@@ -1,5 +1,6 @@
 import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
 
+
 @Component({
   selector: 'app-card-with-donut-chart',
   templateUrl: './card-with-donut-chart.component.html',
@@ -37,7 +38,8 @@ export class CardWithDonutChartComponent implements OnInit {
         text: '',
       },
     ],
-    height: 400,
+    position: 'absolute',
+    height: 150,
     width: 600,
     showlegend: false,
     grid: {rows: 1, columns: 2}

@@ -8,7 +8,7 @@
     [layout]="layout"
   ></plotly-plot>
   <div class="chart__value fs-h3-b"><p>{{ activeValue }}</p></div>
-  <ul class="chart__legend">
+  <ul class="chart__legend" #legend>
     <li 
       class="chart__legend-item fs-12-sofia-300" 
       *ngFor="let item of data[0].labels; let i = index"
@@ -23,5 +23,3 @@
     </li>
   </ul>
 </div>
-
-

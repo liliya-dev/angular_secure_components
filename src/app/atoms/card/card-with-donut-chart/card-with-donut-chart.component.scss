@@ -2,8 +2,9 @@
 .chart {
   position: relative;
   width: 256px;
-  height: 152px;
-  overflow: hidden;
+  min-height: 152px;
+  overflow-x: hidden;
+  display: flex;
 
   border-radius: 12px 30px;
   color: var(--secondary-color);
@@ -11,6 +12,10 @@
 
   &:hover {
     box-shadow: 0px 40px 70px rgba(var(--secondary-color-code), 0.3);
+  }
+
+  .user-select-none .svg-container {
+    position: absolute!important;
   }
 
   &__title {
@@ -33,14 +38,17 @@
   }
 
   &__legend {
-    position: absolute;
+    position: relative;
     top: 0;
-    left: 120px;
+    left: -485px;
     z-index: 3;
 
+    min-width: 154px;
     width: 154px;
-    height: 152px;
-    padding: 8px 26px 8px 16px;
+    height: 100%;
+    min-height: 152px;
+    
+    padding: 10px 26px 8px 16px;
     background-color: rgba(var(--secondary-color-code), 0.05);
     overflow-y: scroll;
 
@@ -70,7 +78,7 @@
 /* ####### override css rules for plotify module ###### */
 
 .pielayer {
-  transform: scale(0.30) translateX(-245px) translateY(110px)!important;
+  transform: scale(0.6) translateX(-355px) translateY(80px)!important;
 }
 
 .js-plotly-plot .plotly .modebar--hover > :not(.watermark) {
