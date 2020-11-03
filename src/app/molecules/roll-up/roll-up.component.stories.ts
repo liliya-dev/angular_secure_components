@@ -38,8 +38,8 @@ const Template: Story<RollUpComponent> = (args: RollUpComponent) => ({
   `,
 });
 
-export const First = Template.bind({});
-First.args = {
+export const WithTable = Template.bind({});
+WithTable.args = {
   title: 'Cookies',
   number: 6,
   heads: ["name", "host", "expirity", "service", "type", "blocking", "hq", "purpose", "certifications"],

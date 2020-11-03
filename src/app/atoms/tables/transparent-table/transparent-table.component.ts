@@ -45,8 +45,6 @@ export class TransparentTableComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    
-        console.log('enter', this.heads, this.data, this.mainColumn)
     this.headsListWithoutMain = this.heads.filter(head => head !== this.mainColumn);
     this.activeColumn = this.headsListWithoutMain[0];
     this.isMobile = (window.innerWidth < 800) ? true : false;
