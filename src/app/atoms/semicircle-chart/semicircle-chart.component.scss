@@ -1,10 +1,10 @@
-.chart {
+.semicircle-chart {
   position: absolute;
   top: -20px;
   left: -33.5px;
   width: 145px;
   height: 80px;
-  background: white;
+  background: var(--card-bg-color);
 
   &__value {
     position: absolute;

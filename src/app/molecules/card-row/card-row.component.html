@@ -11,10 +11,17 @@
     [values]="[1, 3, 1, 4, 2, 4]"
   >
   </app-card-with-donut-chart>
-  <app-card-with-donut-chart
-    [title]="'Cookies by category'"
-    [labels]="['local storage objects local storage objects', 'in social media', 'in analytics', 'in preferences', 'in second preferenses' ]"
-    [values]="[16, 17, 12, 6, 7]"
+  <app-semicircle-chart-card
+    [title]="'Overall score'"
+    [percent]='80'
+    [text]="'Remaining recommendations'"
+    [value]="5"
   >
-  </app-card-with-donut-chart>
+  </app-semicircle-chart-card>
+  <app-card-with-center-text
+  [text]="'Pages scanned'"
+  [value]="313"
+  [title]="'Pages'"
+  >
+  </app-card-with-center-text>
 </div>

@@ -1,12 +1,14 @@
 .card-with-center-text  {
   width: 256px;
   height: 152px;
+  min-height: 152px;
   overflow: hidden;
 
   border-radius: 12px 30px;
   color: var(--secondary-color);
   padding: 8px 16px;
   text-align: center;
+  background-color: var(--card-bg-color);
 
   &:hover {
     box-shadow: 0px 40px 70px rgba(var(--secondary-color-code), 0.3);

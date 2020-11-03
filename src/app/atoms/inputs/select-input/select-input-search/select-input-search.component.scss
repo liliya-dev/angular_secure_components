@@ -50,6 +50,12 @@
 .ng-option {
   background-color: var(--input-bg-color);
   padding: 17px 21px 15px 16px;  
+
+  &:hover {
+    background-color: var(--light-btn-hover);
+    font-weight: bold;
+
+  }
 } 
 
 .custom {

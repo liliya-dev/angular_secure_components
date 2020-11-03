@@ -1,13 +1,13 @@
 
-<div class="wrapper">
-  <div id="chart" class="chart">
+<div class="wrapper card" >
+  <div class="semicircle-chart">
     <apx-chart
-    [states]="chartOptions.states"
+      [states]="chartOptions.states"
       [series]="percent"
       [chart]="chartOptions.chart"
       [plotOptions]="chartOptions.plotOptions"
       [fill]="chartOptions.fill"
     ></apx-chart>
   </div>
-  <span class="chart__value fs-12-gramm-400">{{ percent[0] }}/100</span>
+  <span class="semicircle-chart__value fs-12-gramm-400">{{ percent[0] }}/100</span>
 </div>

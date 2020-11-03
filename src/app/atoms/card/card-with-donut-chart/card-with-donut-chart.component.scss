@@ -8,7 +8,7 @@
 
   border-radius: 12px 30px;
   color: var(--secondary-color);
-  background-color: white;
+  background-color: var(--card-bg-color);
 
   &:hover {
     box-shadow: 0px 40px 70px rgba(var(--secondary-color-code), 0.3);
@@ -28,7 +28,7 @@
   &__value {
     position: absolute;
     top: 75px;
-    left: 49px;
+    left: 46px;
     width: 30px;
     text-align: center;
 
@@ -87,7 +87,7 @@
 
 .surface {
   stroke-width: 8!important;
-  stroke: white!important;
+  stroke: var(--card-bg-color)!important;
   
   &:hover {
     cursor: pointer;
