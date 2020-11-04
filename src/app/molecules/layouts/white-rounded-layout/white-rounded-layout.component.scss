@@ -1,8 +1,8 @@
 .app-white-rounded-layout {
   width: 100%;
+  z-index: 2;
 
   &__content {
-    z-index: 25;
     width: 100%;
     position: relative;
     top: -2px;

@@ -26,4 +26,24 @@ Negative.args = {
   classes: "app-round-icon app-round-icon__negative"
 };
 
+export const withBoldText = Template.bind({});
+withBoldText.args = {
+  classes: "app-round-icon app-round-icon__positive",
+  boldText: "Remove use of vendors with low rating"
+};
+
+export const withRegularText = Template.bind({});
+withRegularText.args = {
+  classes: "app-round-icon app-round-icon__positive",
+  regularText: "Remove use of vendors with low rating"
+};
+
+export const withBoldTextAndLink = Template.bind({});
+withBoldTextAndLink.args = {
+  classes: "app-round-icon app-round-icon__positive",
+  boldText: "Remove use of vendors with low rating",
+  linkText: 'Learn more',
+  link: '#'
+};
+
 

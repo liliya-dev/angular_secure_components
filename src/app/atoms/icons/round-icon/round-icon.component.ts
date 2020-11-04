@@ -8,4 +8,8 @@ import { Component, Input } from '@angular/core';
 
 export class RoundIconComponent {
   @Input() classes: string;
+  @Input() boldText?: string;
+  @Input() regularText?: string;
+  @Input() linkText?: string;
+  @Input() link?: string;
 }

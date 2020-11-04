@@ -53,6 +53,8 @@ import { CardRowComponent } from './molecules/card-row/card-row.component';
 import { TextWithAfterGradientLineComponent } from './atoms/text/text-with-after-gradient-line/text-with-after-gradient-line.component';
 import { TabMenuComponent } from './molecules/menu/tab-menu/tab-menu.component';
 import { WhiteRoundedLayoutComponent } from './molecules/layouts/white-rounded-layout/white-rounded-layout.component';
+import { GradientTextComponent } from './atoms/text/gradient-text/gradient-text.component';
+import { SelectInputWithInitialValueComponent } from './atoms/inputs/select-input/select-input-with-initial-value/select-input-with-initial-value.component';
 
 PlotlyModule.plotlyjs = PlotlyJS;
 
@@ -103,7 +105,9 @@ PlotlyModule.plotlyjs = PlotlyJS;
     CardRowComponent,
     TextWithAfterGradientLineComponent,
     TabMenuComponent,
-    WhiteRoundedLayoutComponent
+    WhiteRoundedLayoutComponent,
+    GradientTextComponent,
+    SelectInputWithInitialValueComponent
   ],
   imports: [
     BrowserModule,

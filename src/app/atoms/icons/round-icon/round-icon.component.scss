@@ -4,6 +4,20 @@
   border-radius: 50%;
   position: relative;
 
+  &-wrapper {
+    display: flex;
+    align-items: center;
+    color: var(--secondary-color);
+  }
+
+  &__text {
+    margin-left: 16px;
+  }
+
+  &__link {
+    margin-left: 8px;
+  }
+
   &__positive {
     background: var(--success-grad-light);
 

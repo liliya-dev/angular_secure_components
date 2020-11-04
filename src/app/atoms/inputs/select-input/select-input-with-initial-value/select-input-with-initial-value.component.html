@@ -1,0 +1,11 @@
+<ng-select 
+    [(ngModel)]="selectedItem"
+    class="custom fs-12-sofia-600" 
+    [hideSelected]="true"
+    [searchable]="false"
+>
+  <ng-option class="option" *ngFor="let item of items" [value]="item">
+    {{ item }}
+  </ng-option>
+</ng-select>
+

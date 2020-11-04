@@ -1,1 +1,22 @@
-<div [ngClass]="classes"></div>
+<div class="app-round-icon-wrapper">
+  <div [ngClass]="classes"></div>
+  <p 
+    class="app-round-icon__text fs-12-sofia-600" 
+    *ngIf="boldText"
+  >
+    {{ boldText }}
+  </p>
+  <a 
+    [href]="link" 
+    class="app-round-icon__link fs-12-sofia-300" 
+    *ngIf="link && linkText"
+  >
+    {{ linkText }}
+  </a>
+  <p 
+    class="app-round-icon__text fs-12-sofia-300" 
+    *ngIf="regularText"
+  >
+    {{ regularText }}
+  </p>
+</div>
