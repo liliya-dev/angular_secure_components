@@ -265,7 +265,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "#chart {\n  background-color: violet;\n  width: 256px;\n  height: 152px;\n  overflow: hidden;\n  background-color: white;\n  border-radius: 12px 30px;\n  position: relative;\n  margin-top: 50px;\n}\n\n.g {\n  background: #8F8F8F;\n  padding: 80px;\n  height: 800px;\n  width: 800px;\n}\n\n.chart {\n  color: var(--secondary-color);\n  &__title {\n    position: absolute;\n    top: 6px;\n    left: 16px;\n    width: 88px;\n  }\n\n  &__value {\n    position: absolute;\n    top: 83px;\n    left: 49px;\n    width: 30px;\n    text-align: center;\n\n    &.fs-h3 {\n      font-weight: 800;\n    }\n  }\n\n  &__legend {\n    position: absolute;\n    z-index: 3;\n    top: 0;\n    left: 120px;\n    width: 144px;\n    height: 152px;\n    padding: 8px 16px;\n    background-color: rgba(var(--secondary-color-code), 0.05);\n    overflow-y: scroll;\n\n    &-item {\n      display: flex;\n      margin-bottom: 6px;\n\n      &:hover {\n        cursor: pointer;\n      }\n    }\n  }\n\n  &__marker {\n    width: 10px;\n    height: 10px;\n    min-width: 10px;\n    border-radius: 50%;\n    margin-right: 8px;\n  }\n}\n\n.pielayer {\n  transform: scale(0.30) translateX(-245px) translateY(110px)!important;\n}\n\n.js-plotly-plot .plotly .modebar--hover > :not(.watermark) {\n  display: none;\n}\n\n.surface {\n  stroke-width: 8!important;\n  stroke: white!important;\n  \n  &:hover {\n    cursor: pointer;\n    stroke-width: 12px!important;\n    stroke-dasharray: 550 0!important;\n    opacity: 0.8!important;\n    background:linear-gradient(to right, #e5405e 0%, #e5405e 15%, rgba(46,2014,113,0.8) 30%, rgba(39,174,96,0.3)45%,#3fffa2 60%, #1a9be0 73%, #ba68ed 100%)!important;\n  }\n}\n\n.slicetext {\n  display: none!important;\n}\n\n.main-svg {\n  background-color: transparent!important;\n}\n\n.bg {\n  // fill: rgba(var(--secondary-color-code), 0.05)!important;\n  width: 116px !important;\n}\n\n.legend {\n  width: 40px!important;\n  transform: translate(120px, 20px)!important;\n}\n\n",
+                    "data": ".buttons {\n  display: flex;\n  align-items: center;\n  justify-content: space-evenly;\n}",
                     "styleUrl": "./app.component.scss"
                 }
             ],
@@ -273,7 +273,7 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<app-roll-up>\n  <h2>content</h2>\n</app-roll-up>"
+            "templateData": "<div class=\"buttons\">\n  <app-gradient-button [title]=\"'next'\"></app-gradient-button>\n  <app-info-button [title]=\"'Support'\"></app-info-button>\n</div>"
         },
         {
             "name": "CardComponent",
@@ -659,7 +659,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "\n.chart {\n  position: relative;\n  width: 256px;\n  min-height: 152px;\n  overflow-x: hidden;\n  display: flex;\n\n  border-radius: 12px 30px;\n  color: var(--secondary-color);\n  background-color: var(--card-bg-color);\n\n  &:hover {\n    box-shadow: 0px 40px 70px rgba(var(--secondary-color-code), 0.3);\n  }\n\n  .user-select-none .svg-container {\n    position: absolute!important;\n  }\n\n  &__title {\n    position: absolute;\n    top: 10px;\n    left: 16px;\n    width: 88px;\n  }\n\n  &__value {\n    position: absolute;\n    top: 75px;\n    left: 46px;\n    width: 30px;\n    text-align: center;\n\n    &.fs-h3 {\n      font-weight: 800;\n    }\n  }\n\n  &__legend {\n    position: relative;\n    top: 0;\n    left: -485px;\n    z-index: 3;\n\n    min-width: 154px;\n    width: 154px;\n    height: 100%;\n    min-height: 152px;\n    \n    padding: 10px 26px 8px 16px;\n    background-color: rgba(var(--secondary-color-code), 0.05);\n    overflow-y: scroll;\n\n    &::-webkit-scrollbar { \n      display: none; \n    }\n    \n    &-item {\n      display: flex;\n      margin-bottom: 6px;\n\n      &:hover {\n        cursor: pointer;\n      }\n    }\n  }\n\n  &__marker {\n    width: 10px;\n    height: 10px;\n    min-width: 10px;\n    margin-right: 8px;\n    border-radius: 50%;\n  }\n}\n\n/* ####### override css rules for plotify module ###### */\n\n.pielayer {\n  transform: scale(0.6) translateX(-355px) translateY(80px)!important;\n}\n\n.js-plotly-plot .plotly .modebar--hover > :not(.watermark) {\n  display: none;\n}\n\n.surface {\n  stroke-width: 8!important;\n  stroke: var(--card-bg-color)!important;\n  \n  &:hover {\n    cursor: pointer;\n    stroke-width: 12px!important;\n    stroke-dasharray: 550 0!important;\n    opacity: 0.8!important;\n    background:linear-gradient(to right, #e5405e 0%, #e5405e 15%, rgba(46,2014,113,0.8) 30%, rgba(39,174,96,0.3)45%,#3fffa2 60%, #1a9be0 73%, #ba68ed 100%)!important;\n  }\n}\n\n.slicetext {\n  display: none!important;\n}\n\n.main-svg {\n  background-color: transparent!important;\n}\n\n.bg {\n  width: 116px !important;\n}\n\n",
+                    "data": "\n.chart {\n  position: relative;\n  width: 256px;\n  min-height: 152px;\n  overflow-x: hidden;\n  display: flex;\n\n  border-radius: 12px 30px;\n  color: var(--secondary-color);\n  background-color: var(--card-bg-color);\n\n  &:hover {\n    box-shadow: 0px 40px 70px rgba(var(--secondary-color-code), 0.3);\n  }\n\n  .user-select-none .svg-container {\n    position: absolute!important;\n  }\n\n  &__title {\n    position: absolute;\n    top: 10px;\n    left: 16px;\n    width: 88px;\n  }\n\n  &__value {\n    position: absolute;\n    top: 75px;\n    left: 46px;\n    width: 30px;\n    text-align: center;\n\n    &.fs-h3 {\n      font-weight: 800;\n    }\n  }\n\n  &__legend {\n    position: relative;\n    top: 0;\n    left: -485px;\n    z-index: 3;\n\n    min-width: 154px;\n    width: 154px;\n    height: 100%;\n    min-height: 152px;\n    \n    padding: 10px 26px 8px 16px;\n    background-color: rgba(var(--secondary-color-code), 0.05);\n    \n    &-item {\n      display: flex;\n      margin-bottom: 6px;\n\n      &:hover {\n        cursor: pointer;\n      }\n    }\n  }\n\n  &__marker {\n    width: 10px;\n    height: 10px;\n    min-width: 10px;\n    margin-right: 8px;\n    border-radius: 50%;\n  }\n}\n\n/* ####### override css rules for plotify module ###### */\n\n.pielayer {\n  transform: scale(0.6) translateX(-355px) translateY(80px)!important;\n}\n\n.js-plotly-plot .plotly .modebar--hover > :not(.watermark) {\n  display: none;\n}\n\n.surface {\n  stroke-width: 8!important;\n  stroke: var(--card-bg-color)!important;\n  \n  &:hover {\n    cursor: pointer;\n    stroke-width: 12px!important;\n    stroke-dasharray: 550 0!important;\n    opacity: 0.8!important;\n    background:linear-gradient(to right, #e5405e 0%, #e5405e 15%, rgba(46,2014,113,0.8) 30%, rgba(39,174,96,0.3)45%,#3fffa2 60%, #1a9be0 73%, #ba68ed 100%)!important;\n  }\n}\n\n.slicetext {\n  display: none!important;\n}\n\n.main-svg {\n  background-color: transparent!important;\n}\n\n",
                     "styleUrl": "./card-with-donut-chart.component.scss"
                 }
             ],
@@ -2987,7 +2987,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "\n.ng-select {\n  position: relative;\n  box-sizing: border-box;\n  height: 48px; \n  width: 100%;\n\n  background: rgba(var(--secondary-color-code), 0.05);\n  border-radius: 8px;\n  color: rgba(var(--secondary-color-code), 1);\n  text-transform: uppercase;\n\n  &:hover {\n    background: rgba(var(--secondary-color-code), 0.1);\n  }\n\n  &:after {\n    content: url('../../../../../assets/images/roll-up.png');\n    position: absolute;\n    top: 17px;\n    right: 21px;\n    transform: rotate(180deg);\n  }\n\n  &.ng-select-opened{\n    &:after {\n      content: url('../../../../../assets/images/roll-up.png');\n      position: absolute;\n      top: 17px;\n      right: 21px;\n      transform: rotate(0deg);\n    }\n  }\n\n  &-container {\n    width: 100%;\n    height: 46px;\n    padding: 18px 21px 18px 16px;\n    margin-bottom: 4px;\n  }\n}\n\n.ng-option {\n  background-color: var(--input-bg-color);\n  padding: 16px 21px 16px 16px;  \n\n  &:hover {\n    background-color: var(--light-btn-hover);\n  }\n}\n\n.ng-dropdown-panel {\n  position: absolute;\n}\n\n.scroll-host {\n  color: rgba(var(--secondary-color-code), 1);\n  position: absolute;\n  box-shadow: 0px 30px 70px rgba(46, 45, 79, 0.15);\n  border-radius: 8px;\n}\n\n.ng-clear-wrapper {\n  display: none;\n}",
+                    "data": "\n.ng-select {\n  position: relative;\n  box-sizing: border-box;\n  height: 48px; \n  width: 100%;\n\n  background: rgba(var(--secondary-color-code), 0.05);\n  border-radius: 8px;\n  color: rgba(var(--secondary-color-code), 1);\n  text-transform: uppercase;\n\n  &:hover {\n    background: rgba(var(--secondary-color-code), 0.1);\n  }\n\n  &:after {\n    content: url('../../../../../assets/images/roll-up.png');\n    position: absolute;\n    top: 17px;\n    right: 21px;\n    transform: rotate(180deg);\n  }\n\n  &.ng-select-opened{\n    &:after {\n      content: url('../../../../../assets/images/roll-up.png');\n      position: absolute;\n      top: 17px;\n      right: 21px;\n      transform: rotate(0deg);\n    }\n  }\n\n  &-container {\n    width: 100%;\n    height: 46px;\n    padding: 17px 21px 16px 16px;  \n    margin-bottom: 4px;\n  }\n}\n\n.ng-option {\n  background-color: var(--input-bg-color);\n  padding: 17px 21px 16px 16px;  \n\n  &:hover {\n    background-color: var(--light-btn-hover);\n  }\n}\n\n.ng-dropdown-panel {\n  position: absolute;\n}\n\n.scroll-host {\n  color: rgba(var(--secondary-color-code), 1);\n  position: absolute;\n  box-shadow: 0px 30px 70px rgba(46, 45, 79, 0.15);\n  border-radius: 8px;\n}\n\n.ng-clear-wrapper {\n  display: none;\n}",
                     "styleUrl": "./select-input-with-initial-value.component.scss"
                 }
             ],
@@ -3516,7 +3516,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".text-with-gradient-back {\n  display: flex;\n  flex-wrap: wrap;\n  width: 100%;\n\n  &__wrapper {\n    background: var(--success-grad-light);\n    color: var(--text-color);\n    height: 19px;\n    border-radius: 21px;\n    line-height: 19px;\n    padding: 1px 8px 0 8px;\n    width: fit-content;\n  }\n}",
+                    "data": ".text-with-gradient-back {\n  display: flex;\n  flex-wrap: wrap;\n  width: 100%;\n\n  &__wrapper {\n    background: var(--success-grad-light);\n    color: var(--text-color);\n    height: auto;\n    border-radius: 21px;\n    padding: 3.5px 8px 3.5px 8px;\n    text-align: center;\n    width: fit-content;\n  }\n}",
                     "styleUrl": "./text-with-gradient-back.component.scss"
                 }
             ],
@@ -3912,6 +3912,14 @@
                 "defaultValue": "Template.bind({})"
             },
             {
+                "name": "Components",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/app.component.stories.ts",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
                 "name": "CompositeMenu",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -3987,7 +3995,7 @@
                 "name": "First",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/atoms/tables/transparent-table/transparent-table.component.stories.ts",
+                "file": "src/app/molecules/form-screens/form-screen-first/form-screen-first.stories.ts",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
@@ -3995,7 +4003,7 @@
                 "name": "First",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/molecules/form-screens/form-screen-first/form-screen-first.stories.ts",
+                "file": "src/app/atoms/tables/transparent-table/transparent-table.component.stories.ts",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
@@ -4019,7 +4027,7 @@
                 "name": "Green",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/atoms/text/gradient-text/gradient-text.component.stories.ts",
+                "file": "src/app/atoms/text/text-with-after-gradient-line/text-with-after-gradient-line.component.stories.ts",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
@@ -4027,7 +4035,7 @@
                 "name": "Green",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/atoms/text/text-with-after-gradient-line/text-with-after-gradient-line.component.stories.ts",
+                "file": "src/app/atoms/text/gradient-text/gradient-text.component.stories.ts",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
@@ -4139,9 +4147,33 @@
                 "name": "props",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/atoms/card/card.stories.ts",
+                "file": "src/app/app.component.stories.ts",
                 "type": "object",
-                "defaultValue": "{\n  backgroundColor: { control: 'color' },\n  color: { control: 'color' },\n  src: { control: 'text' },\n  title: { control: 'text' },\n  text: { control: 'text' },\n  isActive: { control: 'boolean' }\n}"
+                "defaultValue": "{}"
+            },
+            {
+                "name": "props",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/molecules/card-row/card-row.component.stories.ts",
+                "type": "object",
+                "defaultValue": "{}"
+            },
+            {
+                "name": "props",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/molecules/roll-up/roll-up.component.stories.ts",
+                "type": "object",
+                "defaultValue": "{}"
+            },
+            {
+                "name": "props",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/molecules/scan-screens/scan-screens.component.stories.ts",
+                "type": "object",
+                "defaultValue": "{}"
             },
             {
                 "name": "props",
@@ -4150,6 +4182,14 @@
                 "file": "src/app/atoms/iconContainer/iconContainer.stories.ts",
                 "type": "object",
                 "defaultValue": "{\n  backgroundColor: { control: 'color' },\n}"
+            },
+            {
+                "name": "props",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/atoms/card/card.stories.ts",
+                "type": "object",
+                "defaultValue": "{\n  backgroundColor: { control: 'color' },\n  color: { control: 'color' },\n  src: { control: 'text' },\n  title: { control: 'text' },\n  text: { control: 'text' },\n  isActive: { control: 'boolean' }\n}"
             },
             {
                 "name": "props",
@@ -4203,185 +4243,9 @@
                 "name": "props",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/molecules/card-row/card-row.component.stories.ts",
+                "file": "src/app/molecules/layouts/white-rounded-layout/white-rounded-layout.component.stories.ts",
                 "type": "object",
                 "defaultValue": "{}"
-            },
-            {
-                "name": "props",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/molecules/roll-up/roll-up.component.stories.ts",
-                "type": "object",
-                "defaultValue": "{}"
-            },
-            {
-                "name": "props",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/molecules/scan-screens/scan-screens.component.stories.ts",
-                "type": "object",
-                "defaultValue": "{}"
-            },
-            {
-                "name": "props",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/atoms/buttons/gradientButton/gradientButton.stories.ts",
-                "type": "object",
-                "defaultValue": "{\n  backgroundColor: { control: 'color' },\n  color: { control: 'color' },\n  title: { control: 'text' },\n}"
-            },
-            {
-                "name": "props",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/atoms/buttons/infoButton/infoButton.stories.ts",
-                "type": "object",
-                "defaultValue": "{\n  backgroundColor: { control: 'color' },\n  color: { control: 'color' },\n  title: { control: 'text' },\n}"
-            },
-            {
-                "name": "props",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/atoms/buttons/largeButton/largeButton.stories.ts",
-                "type": "object",
-                "defaultValue": "{\n  backgroundColor: { control: 'color' },\n  color: { control: 'color' },\n  title: { control: 'text' },\n}"
-            },
-            {
-                "name": "props",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/atoms/buttons/lightButton/lightButton.stories.ts",
-                "type": "object",
-                "defaultValue": "{\n  backgroundColor: { control: 'color' },\n  color: { control: 'color' },\n  title: { control: 'text' },\n}"
-            },
-            {
-                "name": "props",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/atoms/buttons/mobile-button/mobile-button.component.stories.ts",
-                "type": "object",
-                "defaultValue": "{\n  isOpen: { control: 'boolean' }\n}"
-            },
-            {
-                "name": "props",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/atoms/buttons/primaryButton/primaryButton.stories.ts",
-                "type": "object",
-                "defaultValue": "{\n  backgroundColor: { control: 'color' },\n  title: { control: 'text' },\n}"
-            },
-            {
-                "name": "props",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/atoms/buttons/secondaryButton/secondaryButton.stories.ts",
-                "type": "object",
-                "defaultValue": "{\n  backgroundColor: { control: 'color' },\n  color: { control: 'color' },\n  title: { control: 'text' },\n}"
-            },
-            {
-                "name": "props",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/atoms/buttons/simpleButton/simpleButton.stories.ts",
-                "type": "object",
-                "defaultValue": "{\n  backgroundColor: { control: 'color' },\n  color: { control: 'color' },\n  title: { control: 'text' },\n}"
-            },
-            {
-                "name": "props",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/atoms/card/card-with-center-text/card-with-center-text.component.stories.ts",
-                "type": "object",
-                "defaultValue": "{\n  backgroundColor: { control: 'color' },\n  color: { control: 'color' },\n  src: { control: 'text' },\n  title: { control: 'text' },\n  text: { control: 'text' },\n  isActive: { control: 'boolean' }\n}"
-            },
-            {
-                "name": "props",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/atoms/card/card-with-columns-text/card-with-columns-text.component.stories.ts",
-                "type": "object",
-                "defaultValue": "{}"
-            },
-            {
-                "name": "props",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/atoms/card/card-with-donut-chart/card-with-donut-chart.component.stories.ts",
-                "type": "object",
-                "defaultValue": "{}"
-            },
-            {
-                "name": "props",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/atoms/card/semicircle-chart-card/semicircle-chart-card.component.stories.ts",
-                "type": "object",
-                "defaultValue": "{\n  title: { control: 'text' },\n  labels: { control: 'array' },\n  values: { control: 'array' }\n}"
-            },
-            {
-                "name": "props",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/atoms/icons/round-icon/round-icon.component.stories.ts",
-                "type": "object",
-                "defaultValue": "{\n\n}"
-            },
-            {
-                "name": "props",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/atoms/inputs/formInput/formInput.stories.ts",
-                "type": "object",
-                "defaultValue": "{\n  backgroundColor: { control: 'color' },\n  color: { control: 'color' },\n  placeholder: { control: 'text' },\n}"
-            },
-            {
-                "name": "props",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/atoms/navLink/icon-links/icon-links.component.stories.ts",
-                "type": "object",
-                "defaultValue": "{\n  title: { control: 'text' },\n  isActive: { control: 'boolean' }\n}"
-            },
-            {
-                "name": "props",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/atoms/navLink/textLinks/navLink.stories.ts",
-                "type": "object",
-                "defaultValue": "{\n  title: { control: 'text' },\n  isActive: { control: 'boolean' }\n}"
-            },
-            {
-                "name": "props",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/atoms/tables/transparent-table/transparent-table.component.stories.ts",
-                "type": "object",
-                "defaultValue": "{}"
-            },
-            {
-                "name": "props",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/atoms/text/gradient-text/gradient-text.component.stories.ts",
-                "type": "object",
-                "defaultValue": "{\n  title: { control: 'text' },\n}"
-            },
-            {
-                "name": "props",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/atoms/text/text-with-after-gradient-line/text-with-after-gradient-line.component.stories.ts",
-                "type": "object",
-                "defaultValue": "{\n  title: { control: 'text' },\n}"
-            },
-            {
-                "name": "props",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/atoms/text/text-with-gradient-back/text-with-gradient-back.component.stories.ts",
-                "type": "object",
-                "defaultValue": "{\n  titles: { control: 'array' },\n}"
             },
             {
                 "name": "props",
@@ -4419,33 +4283,9 @@
                 "name": "props",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/molecules/layouts/white-rounded-layout/white-rounded-layout.component.stories.ts",
-                "type": "object",
-                "defaultValue": "{}"
-            },
-            {
-                "name": "props",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "src/app/molecules/form-screens/form-screen-third/form-screen-third.stories.ts",
                 "type": "object",
                 "defaultValue": "{}"
-            },
-            {
-                "name": "props",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/molecules/menu/composite-menu/composite-menu.stories.ts",
-                "type": "object",
-                "defaultValue": "{\n  items: { control: 'object' }\n}"
-            },
-            {
-                "name": "props",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/molecules/menu/date-menu/date-menu.stories.ts",
-                "type": "object",
-                "defaultValue": "{\n  backgroundColor: { control: 'color' },\n  items: { control: 'array' }\n}"
             },
             {
                 "name": "props",
@@ -4467,6 +4307,22 @@
                 "name": "props",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "src/app/molecules/menu/date-menu/date-menu.stories.ts",
+                "type": "object",
+                "defaultValue": "{\n  backgroundColor: { control: 'color' },\n  items: { control: 'array' }\n}"
+            },
+            {
+                "name": "props",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/molecules/menu/composite-menu/composite-menu.stories.ts",
+                "type": "object",
+                "defaultValue": "{\n  items: { control: 'object' }\n}"
+            },
+            {
+                "name": "props",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "src/app/molecules/menu/side-menu/side-menu.stories.ts",
                 "type": "object",
                 "defaultValue": "{\n  backgroundColor: { control: 'color' },\n  items: { control: 'array' }\n}"
@@ -4478,6 +4334,166 @@
                 "file": "src/app/molecules/menu/tab-menu/tab-menu.component.stories.ts",
                 "type": "object",
                 "defaultValue": "{\n  items: { control: 'object' }\n}"
+            },
+            {
+                "name": "props",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/atoms/card/card-with-center-text/card-with-center-text.component.stories.ts",
+                "type": "object",
+                "defaultValue": "{\n  backgroundColor: { control: 'color' },\n  color: { control: 'color' },\n  src: { control: 'text' },\n  title: { control: 'text' },\n  text: { control: 'text' },\n  isActive: { control: 'boolean' }\n}"
+            },
+            {
+                "name": "props",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/atoms/card/card-with-donut-chart/card-with-donut-chart.component.stories.ts",
+                "type": "object",
+                "defaultValue": "{}"
+            },
+            {
+                "name": "props",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/atoms/card/card-with-columns-text/card-with-columns-text.component.stories.ts",
+                "type": "object",
+                "defaultValue": "{}"
+            },
+            {
+                "name": "props",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/atoms/card/semicircle-chart-card/semicircle-chart-card.component.stories.ts",
+                "type": "object",
+                "defaultValue": "{\n  title: { control: 'text' },\n  labels: { control: 'array' },\n  values: { control: 'array' }\n}"
+            },
+            {
+                "name": "props",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/atoms/icons/round-icon/round-icon.component.stories.ts",
+                "type": "object",
+                "defaultValue": "{\n\n}"
+            },
+            {
+                "name": "props",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/atoms/buttons/gradientButton/gradientButton.stories.ts",
+                "type": "object",
+                "defaultValue": "{\n  backgroundColor: { control: 'color' },\n  color: { control: 'color' },\n  title: { control: 'text' },\n}"
+            },
+            {
+                "name": "props",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/atoms/buttons/lightButton/lightButton.stories.ts",
+                "type": "object",
+                "defaultValue": "{\n  backgroundColor: { control: 'color' },\n  color: { control: 'color' },\n  title: { control: 'text' },\n}"
+            },
+            {
+                "name": "props",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/atoms/buttons/infoButton/infoButton.stories.ts",
+                "type": "object",
+                "defaultValue": "{\n  backgroundColor: { control: 'color' },\n  color: { control: 'color' },\n  title: { control: 'text' },\n}"
+            },
+            {
+                "name": "props",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/atoms/buttons/largeButton/largeButton.stories.ts",
+                "type": "object",
+                "defaultValue": "{\n  backgroundColor: { control: 'color' },\n  color: { control: 'color' },\n  title: { control: 'text' },\n}"
+            },
+            {
+                "name": "props",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/atoms/buttons/mobile-button/mobile-button.component.stories.ts",
+                "type": "object",
+                "defaultValue": "{\n  isOpen: { control: 'boolean' }\n}"
+            },
+            {
+                "name": "props",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/atoms/buttons/primaryButton/primaryButton.stories.ts",
+                "type": "object",
+                "defaultValue": "{\n  backgroundColor: { control: 'color' },\n  title: { control: 'text' },\n}"
+            },
+            {
+                "name": "props",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/atoms/buttons/simpleButton/simpleButton.stories.ts",
+                "type": "object",
+                "defaultValue": "{\n  backgroundColor: { control: 'color' },\n  color: { control: 'color' },\n  title: { control: 'text' },\n}"
+            },
+            {
+                "name": "props",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/atoms/buttons/secondaryButton/secondaryButton.stories.ts",
+                "type": "object",
+                "defaultValue": "{\n  backgroundColor: { control: 'color' },\n  color: { control: 'color' },\n  title: { control: 'text' },\n}"
+            },
+            {
+                "name": "props",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/atoms/inputs/formInput/formInput.stories.ts",
+                "type": "object",
+                "defaultValue": "{\n  backgroundColor: { control: 'color' },\n  color: { control: 'color' },\n  placeholder: { control: 'text' },\n}"
+            },
+            {
+                "name": "props",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/atoms/navLink/textLinks/navLink.stories.ts",
+                "type": "object",
+                "defaultValue": "{\n  title: { control: 'text' },\n  isActive: { control: 'boolean' }\n}"
+            },
+            {
+                "name": "props",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/atoms/navLink/icon-links/icon-links.component.stories.ts",
+                "type": "object",
+                "defaultValue": "{\n  title: { control: 'text' },\n  isActive: { control: 'boolean' }\n}"
+            },
+            {
+                "name": "props",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/atoms/text/text-with-after-gradient-line/text-with-after-gradient-line.component.stories.ts",
+                "type": "object",
+                "defaultValue": "{\n  title: { control: 'text' },\n}"
+            },
+            {
+                "name": "props",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/atoms/tables/transparent-table/transparent-table.component.stories.ts",
+                "type": "object",
+                "defaultValue": "{}"
+            },
+            {
+                "name": "props",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/atoms/text/gradient-text/gradient-text.component.stories.ts",
+                "type": "object",
+                "defaultValue": "{\n  title: { control: 'text' },\n}"
+            },
+            {
+                "name": "props",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/atoms/text/text-with-gradient-back/text-with-gradient-back.component.stories.ts",
+                "type": "object",
+                "defaultValue": "{\n  titles: { control: 'array' },\n}"
             },
             {
                 "name": "props",
@@ -4578,7 +4594,7 @@
                 "name": "Second",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/atoms/tables/transparent-table/transparent-table.component.stories.ts",
+                "file": "src/app/molecules/form-screens/form-screen-second/form-screen-second.stories.ts",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
@@ -4586,7 +4602,7 @@
                 "name": "Second",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/molecules/form-screens/form-screen-second/form-screen-second.stories.ts",
+                "file": "src/app/atoms/tables/transparent-table/transparent-table.component.stories.ts",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
@@ -4634,7 +4650,7 @@
                 "name": "Simple",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/atoms/card/card.stories.ts",
+                "file": "src/app/atoms/iconContainer/iconContainer.stories.ts",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
@@ -4642,7 +4658,7 @@
                 "name": "Simple",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/atoms/iconContainer/iconContainer.stories.ts",
+                "file": "src/app/atoms/card/card.stories.ts",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
@@ -4714,9 +4730,33 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/atoms/card/card.stories.ts",
-                "type": "Story<CardComponent>",
-                "defaultValue": "(args: CardComponent) => ({\n  component: CardComponent,\n  props: args,\n})"
+                "file": "src/app/app.component.stories.ts",
+                "type": "Story<AppComponent>",
+                "defaultValue": "(args: AppComponent) => ({\n  component: AppComponent,\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/molecules/card-row/card-row.component.stories.ts",
+                "type": "Story<CardRowComponent>",
+                "defaultValue": "(args: CardRowComponent) => ({\n  component: CardRowComponent,\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/molecules/roll-up/roll-up.component.stories.ts",
+                "type": "Story<RollUpComponent>",
+                "defaultValue": "(args: RollUpComponent) => ({\n  component: RollUpComponent,\n  props: args,\n  template: `\n  <app-roll-up [title]=\"title\" [number]=\"number\">\n    <app-transparent-table \n      [mainColumn]=\"mainColum\"\n      [data]=\"data\"\n      [heads]=\"heads\"\n    >\n      </app-transparent-table>\n  </app-roll-up>\n  `,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/molecules/scan-screens/scan-screens.component.stories.ts",
+                "type": "Story<ScanScreensComponent>",
+                "defaultValue": "(args: ScanScreensComponent) => ({\n  component: ScanScreensComponent,\n  props: args,\n})"
             },
             {
                 "name": "Template",
@@ -4725,6 +4765,14 @@
                 "file": "src/app/atoms/iconContainer/iconContainer.stories.ts",
                 "type": "Story<IconContainerComponent>",
                 "defaultValue": "(args: IconContainerComponent) => ({\n  component: IconContainerComponent,\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/atoms/card/card.stories.ts",
+                "type": "Story<CardComponent>",
+                "defaultValue": "(args: CardComponent) => ({\n  component: CardComponent,\n  props: args,\n})"
             },
             {
                 "name": "Template",
@@ -4778,185 +4826,9 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/molecules/card-row/card-row.component.stories.ts",
-                "type": "Story<CardRowComponent>",
-                "defaultValue": "(args: CardRowComponent) => ({\n  component: CardRowComponent,\n  props: args,\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/molecules/roll-up/roll-up.component.stories.ts",
-                "type": "Story<RollUpComponent>",
-                "defaultValue": "(args: RollUpComponent) => ({\n  component: RollUpComponent,\n  props: args,\n  template: `\n  <app-roll-up [title]=\"title\" [number]=\"number\">\n    <app-transparent-table \n      [mainColumn]=\"mainColumn\"\n      [data]=\"data\"\n      [heads]=\"heads\"\n    >\n      </app-transparent-table>\n  </app-roll-up>\n  `,\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/molecules/scan-screens/scan-screens.component.stories.ts",
-                "type": "Story<ScanScreensComponent>",
-                "defaultValue": "(args: ScanScreensComponent) => ({\n  component: ScanScreensComponent,\n  props: args,\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/atoms/buttons/gradientButton/gradientButton.stories.ts",
-                "type": "Story<gradientButtonComponent>",
-                "defaultValue": "(args: gradientButtonComponent) => ({\n  component: gradientButtonComponent,\n  props: args,\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/atoms/buttons/infoButton/infoButton.stories.ts",
-                "type": "Story<infoButtonComponent>",
-                "defaultValue": "(args: infoButtonComponent) => ({\n  component: infoButtonComponent,\n  props: args,\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/atoms/buttons/largeButton/largeButton.stories.ts",
-                "type": "Story<largeButtonComponent>",
-                "defaultValue": "(args: largeButtonComponent) => ({\n  component: largeButtonComponent,\n  props: args,\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/atoms/buttons/lightButton/lightButton.stories.ts",
-                "type": "Story<lightButtonComponent>",
-                "defaultValue": "(args: lightButtonComponent) => ({\n  component: lightButtonComponent,\n  props: args,\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/atoms/buttons/mobile-button/mobile-button.component.stories.ts",
-                "type": "Story<MobileButtonComponent>",
-                "defaultValue": "(args: MobileButtonComponent) => ({\n  component: MobileButtonComponent,\n  props: args,\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/atoms/buttons/primaryButton/primaryButton.stories.ts",
-                "type": "Story<primaryButtonComponent>",
-                "defaultValue": "(args: primaryButtonComponent) => ({\n  component: primaryButtonComponent,\n  props: args,\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/atoms/buttons/secondaryButton/secondaryButton.stories.ts",
-                "type": "Story<secondaryButtonComponent>",
-                "defaultValue": "(args: secondaryButtonComponent) => ({\n  component: secondaryButtonComponent,\n  props: args,\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/atoms/buttons/simpleButton/simpleButton.stories.ts",
-                "type": "Story<simpleButtonComponent>",
-                "defaultValue": "(args: simpleButtonComponent) => ({\n  component: simpleButtonComponent,\n  props: args,\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/atoms/card/card-with-center-text/card-with-center-text.component.stories.ts",
-                "type": "Story<CardWithCenterTextComponent>",
-                "defaultValue": "(args: CardWithCenterTextComponent) => ({\n  component: CardWithCenterTextComponent,\n  props: args,\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/atoms/card/card-with-columns-text/card-with-columns-text.component.stories.ts",
-                "type": "Story<CardWithColumnsTextComponent>",
-                "defaultValue": "(args: CardWithColumnsTextComponent) => ({\n  component: CardWithColumnsTextComponent,\n  props: args,\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/atoms/card/card-with-donut-chart/card-with-donut-chart.component.stories.ts",
-                "type": "Story<CardWithDonutChartComponent>",
-                "defaultValue": "(args: CardWithDonutChartComponent) => ({\n  component: CardWithDonutChartComponent,\n  props: args,\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/atoms/card/semicircle-chart-card/semicircle-chart-card.component.stories.ts",
-                "type": "Story<SemicircleChartCardComponent>",
-                "defaultValue": "(args: SemicircleChartCardComponent) => ({\n  component: SemicircleChartCardComponent,\n  props: args,\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/atoms/icons/round-icon/round-icon.component.stories.ts",
-                "type": "Story<RoundIconComponent>",
-                "defaultValue": "(args: RoundIconComponent) => ({\n  component: RoundIconComponent,\n  props: args,\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/atoms/inputs/formInput/formInput.stories.ts",
-                "type": "Story<formInputComponent>",
-                "defaultValue": "(args: formInputComponent) => ({\n  component: formInputComponent,\n  props: args,\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/atoms/navLink/icon-links/icon-links.component.stories.ts",
-                "type": "Story<IconLinksComponent>",
-                "defaultValue": "(args: IconLinksComponent) => ({\n  component: IconLinksComponent,\n  props: args,\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/atoms/navLink/textLinks/navLink.stories.ts",
-                "type": "Story<navLinkComponent>",
-                "defaultValue": "(args: navLinkComponent) => ({\n  component: navLinkComponent,\n  props: args,\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/atoms/tables/transparent-table/transparent-table.component.stories.ts",
-                "type": "Story<TransparentTableComponent>",
-                "defaultValue": "(args: TransparentTableComponent) => ({\n  component: TransparentTableComponent,\n  props: args,\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/atoms/text/gradient-text/gradient-text.component.stories.ts",
-                "type": "Story<GradientTextComponent>",
-                "defaultValue": "(args: GradientTextComponent) => ({\n  component: GradientTextComponent,\n  props: args,\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/atoms/text/text-with-after-gradient-line/text-with-after-gradient-line.component.stories.ts",
-                "type": "Story<TextWithAfterGradientLineComponent>",
-                "defaultValue": "(args: TextWithAfterGradientLineComponent) => ({\n  component: TextWithAfterGradientLineComponent,\n  props: args,\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/atoms/text/text-with-gradient-back/text-with-gradient-back.component.stories.ts",
-                "type": "Story<TextWithGradientBackComponent>",
-                "defaultValue": "(args: TextWithGradientBackComponent) => ({\n  component: TextWithGradientBackComponent,\n  props: args,\n})"
+                "file": "src/app/molecules/layouts/white-rounded-layout/white-rounded-layout.component.stories.ts",
+                "type": "Story<WhiteRoundedLayoutComponent>",
+                "defaultValue": "(args: WhiteRoundedLayoutComponent) => ({\n  component: WhiteRoundedLayoutComponent,\n  props: args,\n  template: `\n  <app-white-rounded-layout [titles]=\"titles\">\n    <app-text-with-after-gradient-line [title]=\"'scan report'\"></app-text-with-after-gradient-line>\n  </app-white-rounded-layout>\n  `,\n})"
             },
             {
                 "name": "Template",
@@ -4994,33 +4866,9 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/molecules/layouts/white-rounded-layout/white-rounded-layout.component.stories.ts",
-                "type": "Story<WhiteRoundedLayoutComponent>",
-                "defaultValue": "(args: WhiteRoundedLayoutComponent) => ({\n  component: WhiteRoundedLayoutComponent,\n  props: args,\n  template: `\n  <app-white-rounded-layout [titles]=\"titles\">\n    <app-text-with-after-gradient-line [title]=\"'scan report'\"></app-text-with-after-gradient-line>\n  </app-white-rounded-layout>\n  `,\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "src/app/molecules/form-screens/form-screen-third/form-screen-third.stories.ts",
                 "type": "Story<FormScreenThirdComponent>",
                 "defaultValue": "(args: FormScreenThirdComponent) => ({\n  component: FormScreenThirdComponent,\n  props: args,\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/molecules/menu/composite-menu/composite-menu.stories.ts",
-                "type": "Story<CompositeMenuComponent>",
-                "defaultValue": "(args: CompositeMenuComponent) => ({\n  component: CompositeMenuComponent,\n  props: args,\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/molecules/menu/date-menu/date-menu.stories.ts",
-                "type": "Story<DateMenuComponent>",
-                "defaultValue": "(args: DateMenuComponent) => ({\n  component: DateMenuComponent,\n  props: args,\n})"
             },
             {
                 "name": "Template",
@@ -5042,6 +4890,22 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "src/app/molecules/menu/date-menu/date-menu.stories.ts",
+                "type": "Story<DateMenuComponent>",
+                "defaultValue": "(args: DateMenuComponent) => ({\n  component: DateMenuComponent,\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/molecules/menu/composite-menu/composite-menu.stories.ts",
+                "type": "Story<CompositeMenuComponent>",
+                "defaultValue": "(args: CompositeMenuComponent) => ({\n  component: CompositeMenuComponent,\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "src/app/molecules/menu/side-menu/side-menu.stories.ts",
                 "type": "Story<SideMenuComponent>",
                 "defaultValue": "(args: SideMenuComponent) => ({\n  component: SideMenuComponent,\n  props: args,\n})"
@@ -5053,6 +4917,166 @@
                 "file": "src/app/molecules/menu/tab-menu/tab-menu.component.stories.ts",
                 "type": "Story<TabMenuComponent>",
                 "defaultValue": "(args: TabMenuComponent) => ({\n  component: TabMenuComponent,\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/atoms/card/card-with-center-text/card-with-center-text.component.stories.ts",
+                "type": "Story<CardWithCenterTextComponent>",
+                "defaultValue": "(args: CardWithCenterTextComponent) => ({\n  component: CardWithCenterTextComponent,\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/atoms/card/card-with-donut-chart/card-with-donut-chart.component.stories.ts",
+                "type": "Story<CardWithDonutChartComponent>",
+                "defaultValue": "(args: CardWithDonutChartComponent) => ({\n  component: CardWithDonutChartComponent,\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/atoms/card/card-with-columns-text/card-with-columns-text.component.stories.ts",
+                "type": "Story<CardWithColumnsTextComponent>",
+                "defaultValue": "(args: CardWithColumnsTextComponent) => ({\n  component: CardWithColumnsTextComponent,\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/atoms/card/semicircle-chart-card/semicircle-chart-card.component.stories.ts",
+                "type": "Story<SemicircleChartCardComponent>",
+                "defaultValue": "(args: SemicircleChartCardComponent) => ({\n  component: SemicircleChartCardComponent,\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/atoms/icons/round-icon/round-icon.component.stories.ts",
+                "type": "Story<RoundIconComponent>",
+                "defaultValue": "(args: RoundIconComponent) => ({\n  component: RoundIconComponent,\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/atoms/buttons/gradientButton/gradientButton.stories.ts",
+                "type": "Story<gradientButtonComponent>",
+                "defaultValue": "(args: gradientButtonComponent) => ({\n  component: gradientButtonComponent,\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/atoms/buttons/lightButton/lightButton.stories.ts",
+                "type": "Story<lightButtonComponent>",
+                "defaultValue": "(args: lightButtonComponent) => ({\n  component: lightButtonComponent,\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/atoms/buttons/infoButton/infoButton.stories.ts",
+                "type": "Story<infoButtonComponent>",
+                "defaultValue": "(args: infoButtonComponent) => ({\n  component: infoButtonComponent,\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/atoms/buttons/largeButton/largeButton.stories.ts",
+                "type": "Story<largeButtonComponent>",
+                "defaultValue": "(args: largeButtonComponent) => ({\n  component: largeButtonComponent,\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/atoms/buttons/mobile-button/mobile-button.component.stories.ts",
+                "type": "Story<MobileButtonComponent>",
+                "defaultValue": "(args: MobileButtonComponent) => ({\n  component: MobileButtonComponent,\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/atoms/buttons/primaryButton/primaryButton.stories.ts",
+                "type": "Story<primaryButtonComponent>",
+                "defaultValue": "(args: primaryButtonComponent) => ({\n  component: primaryButtonComponent,\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/atoms/buttons/simpleButton/simpleButton.stories.ts",
+                "type": "Story<simpleButtonComponent>",
+                "defaultValue": "(args: simpleButtonComponent) => ({\n  component: simpleButtonComponent,\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/atoms/buttons/secondaryButton/secondaryButton.stories.ts",
+                "type": "Story<secondaryButtonComponent>",
+                "defaultValue": "(args: secondaryButtonComponent) => ({\n  component: secondaryButtonComponent,\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/atoms/inputs/formInput/formInput.stories.ts",
+                "type": "Story<formInputComponent>",
+                "defaultValue": "(args: formInputComponent) => ({\n  component: formInputComponent,\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/atoms/navLink/textLinks/navLink.stories.ts",
+                "type": "Story<navLinkComponent>",
+                "defaultValue": "(args: navLinkComponent) => ({\n  component: navLinkComponent,\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/atoms/navLink/icon-links/icon-links.component.stories.ts",
+                "type": "Story<IconLinksComponent>",
+                "defaultValue": "(args: IconLinksComponent) => ({\n  component: IconLinksComponent,\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/atoms/text/text-with-after-gradient-line/text-with-after-gradient-line.component.stories.ts",
+                "type": "Story<TextWithAfterGradientLineComponent>",
+                "defaultValue": "(args: TextWithAfterGradientLineComponent) => ({\n  component: TextWithAfterGradientLineComponent,\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/atoms/tables/transparent-table/transparent-table.component.stories.ts",
+                "type": "Story<TransparentTableComponent>",
+                "defaultValue": "(args: TransparentTableComponent) => ({\n  component: TransparentTableComponent,\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/atoms/text/gradient-text/gradient-text.component.stories.ts",
+                "type": "Story<GradientTextComponent>",
+                "defaultValue": "(args: GradientTextComponent) => ({\n  component: GradientTextComponent,\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/atoms/text/text-with-gradient-back/text-with-gradient-back.component.stories.ts",
+                "type": "Story<TextWithGradientBackComponent>",
+                "defaultValue": "(args: TextWithGradientBackComponent) => ({\n  component: TextWithGradientBackComponent,\n  props: args,\n})"
             },
             {
                 "name": "Template",
@@ -5250,6 +5274,32 @@
                     "file": "src/app/atoms/card/card-with-columns-text/card-with-columns-text.component.stories.ts",
                     "type": "Story<CardWithColumnsTextComponent>",
                     "defaultValue": "(args: CardWithColumnsTextComponent) => ({\n  component: CardWithColumnsTextComponent,\n  props: args,\n})"
+                }
+            ],
+            "src/app/app.component.stories.ts": [
+                {
+                    "name": "Components",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/app.component.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "props",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/app.component.stories.ts",
+                    "type": "object",
+                    "defaultValue": "{}"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/app.component.stories.ts",
+                    "type": "Story<AppComponent>",
+                    "defaultValue": "(args: AppComponent) => ({\n  component: AppComponent,\n  props: args,\n})"
                 }
             ],
             "src/app/molecules/menu/composite-menu/composite-menu.stories.ts": [
@@ -5469,6 +5519,32 @@
                     "defaultValue": "(args: ScanScreensComponent) => ({\n  component: ScanScreensComponent,\n  props: args,\n})"
                 }
             ],
+            "src/app/molecules/form-screens/form-screen-first/form-screen-first.stories.ts": [
+                {
+                    "name": "First",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/molecules/form-screens/form-screen-first/form-screen-first.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "props",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/molecules/form-screens/form-screen-first/form-screen-first.stories.ts",
+                    "type": "object",
+                    "defaultValue": "{}"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/molecules/form-screens/form-screen-first/form-screen-first.stories.ts",
+                    "type": "Story<FormScreenFirstComponent>",
+                    "defaultValue": "(args: FormScreenFirstComponent) => ({\n  component: FormScreenFirstComponent,\n  props: args,\n})"
+                }
+            ],
             "src/app/atoms/tables/transparent-table/transparent-table.component.stories.ts": [
                 {
                     "name": "First",
@@ -5501,32 +5577,6 @@
                     "file": "src/app/atoms/tables/transparent-table/transparent-table.component.stories.ts",
                     "type": "Story<TransparentTableComponent>",
                     "defaultValue": "(args: TransparentTableComponent) => ({\n  component: TransparentTableComponent,\n  props: args,\n})"
-                }
-            ],
-            "src/app/molecules/form-screens/form-screen-first/form-screen-first.stories.ts": [
-                {
-                    "name": "First",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/molecules/form-screens/form-screen-first/form-screen-first.stories.ts",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "props",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/molecules/form-screens/form-screen-first/form-screen-first.stories.ts",
-                    "type": "object",
-                    "defaultValue": "{}"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/molecules/form-screens/form-screen-first/form-screen-first.stories.ts",
-                    "type": "Story<FormScreenFirstComponent>",
-                    "defaultValue": "(args: FormScreenFirstComponent) => ({\n  component: FormScreenFirstComponent,\n  props: args,\n})"
                 }
             ],
             "src/app/molecules/form-screens/form-screen-fourth/form-screen-fourth.stories.ts": [
@@ -5581,32 +5631,6 @@
                     "defaultValue": "(args: gradientButtonComponent) => ({\n  component: gradientButtonComponent,\n  props: args,\n})"
                 }
             ],
-            "src/app/atoms/text/gradient-text/gradient-text.component.stories.ts": [
-                {
-                    "name": "Green",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/atoms/text/gradient-text/gradient-text.component.stories.ts",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "props",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/atoms/text/gradient-text/gradient-text.component.stories.ts",
-                    "type": "object",
-                    "defaultValue": "{\n  title: { control: 'text' },\n}"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/atoms/text/gradient-text/gradient-text.component.stories.ts",
-                    "type": "Story<GradientTextComponent>",
-                    "defaultValue": "(args: GradientTextComponent) => ({\n  component: GradientTextComponent,\n  props: args,\n})"
-                }
-            ],
             "src/app/atoms/text/text-with-after-gradient-line/text-with-after-gradient-line.component.stories.ts": [
                 {
                     "name": "Green",
@@ -5631,6 +5655,32 @@
                     "file": "src/app/atoms/text/text-with-after-gradient-line/text-with-after-gradient-line.component.stories.ts",
                     "type": "Story<TextWithAfterGradientLineComponent>",
                     "defaultValue": "(args: TextWithAfterGradientLineComponent) => ({\n  component: TextWithAfterGradientLineComponent,\n  props: args,\n})"
+                }
+            ],
+            "src/app/atoms/text/gradient-text/gradient-text.component.stories.ts": [
+                {
+                    "name": "Green",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/atoms/text/gradient-text/gradient-text.component.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "props",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/atoms/text/gradient-text/gradient-text.component.stories.ts",
+                    "type": "object",
+                    "defaultValue": "{\n  title: { control: 'text' },\n}"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/atoms/text/gradient-text/gradient-text.component.stories.ts",
+                    "type": "Story<GradientTextComponent>",
+                    "defaultValue": "(args: GradientTextComponent) => ({\n  component: GradientTextComponent,\n  props: args,\n})"
                 }
             ],
             "src/app/atoms/text/text-with-gradient-back/text-with-gradient-back.component.stories.ts": [
@@ -5967,20 +6017,20 @@
                     "defaultValue": "(args: primaryButtonComponent) => ({\n  component: primaryButtonComponent,\n  props: args,\n})"
                 }
             ],
-            "src/app/atoms/card/card.stories.ts": [
+            "src/app/molecules/card-row/card-row.component.stories.ts": [
                 {
                     "name": "props",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/atoms/card/card.stories.ts",
+                    "file": "src/app/molecules/card-row/card-row.component.stories.ts",
                     "type": "object",
-                    "defaultValue": "{\n  backgroundColor: { control: 'color' },\n  color: { control: 'color' },\n  src: { control: 'text' },\n  title: { control: 'text' },\n  text: { control: 'text' },\n  isActive: { control: 'boolean' }\n}"
+                    "defaultValue": "{}"
                 },
                 {
-                    "name": "Simple",
+                    "name": "Row",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/atoms/card/card.stories.ts",
+                    "file": "src/app/molecules/card-row/card-row.component.stories.ts",
                     "type": "",
                     "defaultValue": "Template.bind({})"
                 },
@@ -5988,9 +6038,35 @@
                     "name": "Template",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/atoms/card/card.stories.ts",
-                    "type": "Story<CardComponent>",
-                    "defaultValue": "(args: CardComponent) => ({\n  component: CardComponent,\n  props: args,\n})"
+                    "file": "src/app/molecules/card-row/card-row.component.stories.ts",
+                    "type": "Story<CardRowComponent>",
+                    "defaultValue": "(args: CardRowComponent) => ({\n  component: CardRowComponent,\n  props: args,\n})"
+                }
+            ],
+            "src/app/molecules/roll-up/roll-up.component.stories.ts": [
+                {
+                    "name": "props",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/molecules/roll-up/roll-up.component.stories.ts",
+                    "type": "object",
+                    "defaultValue": "{}"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/molecules/roll-up/roll-up.component.stories.ts",
+                    "type": "Story<RollUpComponent>",
+                    "defaultValue": "(args: RollUpComponent) => ({\n  component: RollUpComponent,\n  props: args,\n  template: `\n  <app-roll-up [title]=\"title\" [number]=\"number\">\n    <app-transparent-table \n      [mainColumn]=\"mainColum\"\n      [data]=\"data\"\n      [heads]=\"heads\"\n    >\n      </app-transparent-table>\n  </app-roll-up>\n  `,\n})"
+                },
+                {
+                    "name": "WithTable",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/molecules/roll-up/roll-up.component.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
                 }
             ],
             "src/app/atoms/iconContainer/iconContainer.stories.ts": [
@@ -6017,6 +6093,32 @@
                     "file": "src/app/atoms/iconContainer/iconContainer.stories.ts",
                     "type": "Story<IconContainerComponent>",
                     "defaultValue": "(args: IconContainerComponent) => ({\n  component: IconContainerComponent,\n  props: args,\n})"
+                }
+            ],
+            "src/app/atoms/card/card.stories.ts": [
+                {
+                    "name": "props",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/atoms/card/card.stories.ts",
+                    "type": "object",
+                    "defaultValue": "{\n  backgroundColor: { control: 'color' },\n  color: { control: 'color' },\n  src: { control: 'text' },\n  title: { control: 'text' },\n  text: { control: 'text' },\n  isActive: { control: 'boolean' }\n}"
+                },
+                {
+                    "name": "Simple",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/atoms/card/card.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/atoms/card/card.stories.ts",
+                    "type": "Story<CardComponent>",
+                    "defaultValue": "(args: CardComponent) => ({\n  component: CardComponent,\n  props: args,\n})"
                 }
             ],
             "src/app/atoms/scan-animation/scan-animation.component.stories.ts": [
@@ -6183,38 +6285,12 @@
                     "defaultValue": "(args: ScanReportComponent) => ({\n  component: ScanReportComponent,\n  props: args,\n})"
                 }
             ],
-            "src/app/molecules/card-row/card-row.component.stories.ts": [
+            "src/app/molecules/layouts/white-rounded-layout/white-rounded-layout.component.stories.ts": [
                 {
                     "name": "props",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/molecules/card-row/card-row.component.stories.ts",
-                    "type": "object",
-                    "defaultValue": "{}"
-                },
-                {
-                    "name": "Row",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/molecules/card-row/card-row.component.stories.ts",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/molecules/card-row/card-row.component.stories.ts",
-                    "type": "Story<CardRowComponent>",
-                    "defaultValue": "(args: CardRowComponent) => ({\n  component: CardRowComponent,\n  props: args,\n})"
-                }
-            ],
-            "src/app/molecules/roll-up/roll-up.component.stories.ts": [
-                {
-                    "name": "props",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/molecules/roll-up/roll-up.component.stories.ts",
+                    "file": "src/app/molecules/layouts/white-rounded-layout/white-rounded-layout.component.stories.ts",
                     "type": "object",
                     "defaultValue": "{}"
                 },
@@ -6222,93 +6298,15 @@
                     "name": "Template",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/molecules/roll-up/roll-up.component.stories.ts",
-                    "type": "Story<RollUpComponent>",
-                    "defaultValue": "(args: RollUpComponent) => ({\n  component: RollUpComponent,\n  props: args,\n  template: `\n  <app-roll-up [title]=\"title\" [number]=\"number\">\n    <app-transparent-table \n      [mainColumn]=\"mainColumn\"\n      [data]=\"data\"\n      [heads]=\"heads\"\n    >\n      </app-transparent-table>\n  </app-roll-up>\n  `,\n})"
+                    "file": "src/app/molecules/layouts/white-rounded-layout/white-rounded-layout.component.stories.ts",
+                    "type": "Story<WhiteRoundedLayoutComponent>",
+                    "defaultValue": "(args: WhiteRoundedLayoutComponent) => ({\n  component: WhiteRoundedLayoutComponent,\n  props: args,\n  template: `\n  <app-white-rounded-layout [titles]=\"titles\">\n    <app-text-with-after-gradient-line [title]=\"'scan report'\"></app-text-with-after-gradient-line>\n  </app-white-rounded-layout>\n  `,\n})"
                 },
                 {
-                    "name": "WithTable",
+                    "name": "WhiteRounded",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/molecules/roll-up/roll-up.component.stories.ts",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                }
-            ],
-            "src/app/atoms/buttons/secondaryButton/secondaryButton.stories.ts": [
-                {
-                    "name": "props",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/atoms/buttons/secondaryButton/secondaryButton.stories.ts",
-                    "type": "object",
-                    "defaultValue": "{\n  backgroundColor: { control: 'color' },\n  color: { control: 'color' },\n  title: { control: 'text' },\n}"
-                },
-                {
-                    "name": "Secondary",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/atoms/buttons/secondaryButton/secondaryButton.stories.ts",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/atoms/buttons/secondaryButton/secondaryButton.stories.ts",
-                    "type": "Story<secondaryButtonComponent>",
-                    "defaultValue": "(args: secondaryButtonComponent) => ({\n  component: secondaryButtonComponent,\n  props: args,\n})"
-                }
-            ],
-            "src/app/atoms/card/semicircle-chart-card/semicircle-chart-card.component.stories.ts": [
-                {
-                    "name": "props",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/atoms/card/semicircle-chart-card/semicircle-chart-card.component.stories.ts",
-                    "type": "object",
-                    "defaultValue": "{\n  title: { control: 'text' },\n  labels: { control: 'array' },\n  values: { control: 'array' }\n}"
-                },
-                {
-                    "name": "SemicircleChart",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/atoms/card/semicircle-chart-card/semicircle-chart-card.component.stories.ts",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/atoms/card/semicircle-chart-card/semicircle-chart-card.component.stories.ts",
-                    "type": "Story<SemicircleChartCardComponent>",
-                    "defaultValue": "(args: SemicircleChartCardComponent) => ({\n  component: SemicircleChartCardComponent,\n  props: args,\n})"
-                }
-            ],
-            "src/app/atoms/inputs/formInput/formInput.stories.ts": [
-                {
-                    "name": "props",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/atoms/inputs/formInput/formInput.stories.ts",
-                    "type": "object",
-                    "defaultValue": "{\n  backgroundColor: { control: 'color' },\n  color: { control: 'color' },\n  placeholder: { control: 'text' },\n}"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/atoms/inputs/formInput/formInput.stories.ts",
-                    "type": "Story<formInputComponent>",
-                    "defaultValue": "(args: formInputComponent) => ({\n  component: formInputComponent,\n  props: args,\n})"
-                },
-                {
-                    "name": "Text",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/atoms/inputs/formInput/formInput.stories.ts",
+                    "file": "src/app/molecules/layouts/white-rounded-layout/white-rounded-layout.component.stories.ts",
                     "type": "",
                     "defaultValue": "Template.bind({})"
                 }
@@ -6337,32 +6335,6 @@
                     "file": "src/app/molecules/form-screens/form-screen-second/form-screen-second.stories.ts",
                     "type": "Story<FormScreenSecondComponent>",
                     "defaultValue": "(args: FormScreenSecondComponent) => ({\n  component: FormScreenSecondComponent,\n  props: args,\n})"
-                }
-            ],
-            "src/app/molecules/layouts/white-rounded-layout/white-rounded-layout.component.stories.ts": [
-                {
-                    "name": "props",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/molecules/layouts/white-rounded-layout/white-rounded-layout.component.stories.ts",
-                    "type": "object",
-                    "defaultValue": "{}"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/molecules/layouts/white-rounded-layout/white-rounded-layout.component.stories.ts",
-                    "type": "Story<WhiteRoundedLayoutComponent>",
-                    "defaultValue": "(args: WhiteRoundedLayoutComponent) => ({\n  component: WhiteRoundedLayoutComponent,\n  props: args,\n  template: `\n  <app-white-rounded-layout [titles]=\"titles\">\n    <app-text-with-after-gradient-line [title]=\"'scan report'\"></app-text-with-after-gradient-line>\n  </app-white-rounded-layout>\n  `,\n})"
-                },
-                {
-                    "name": "WhiteRounded",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/molecules/layouts/white-rounded-layout/white-rounded-layout.component.stories.ts",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
                 }
             ],
             "src/app/molecules/form-screens/form-screen-third/form-screen-third.stories.ts": [
@@ -6441,6 +6413,84 @@
                     "file": "src/app/molecules/menu/tab-menu/tab-menu.component.stories.ts",
                     "type": "Story<TabMenuComponent>",
                     "defaultValue": "(args: TabMenuComponent) => ({\n  component: TabMenuComponent,\n  props: args,\n})"
+                }
+            ],
+            "src/app/atoms/card/semicircle-chart-card/semicircle-chart-card.component.stories.ts": [
+                {
+                    "name": "props",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/atoms/card/semicircle-chart-card/semicircle-chart-card.component.stories.ts",
+                    "type": "object",
+                    "defaultValue": "{\n  title: { control: 'text' },\n  labels: { control: 'array' },\n  values: { control: 'array' }\n}"
+                },
+                {
+                    "name": "SemicircleChart",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/atoms/card/semicircle-chart-card/semicircle-chart-card.component.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/atoms/card/semicircle-chart-card/semicircle-chart-card.component.stories.ts",
+                    "type": "Story<SemicircleChartCardComponent>",
+                    "defaultValue": "(args: SemicircleChartCardComponent) => ({\n  component: SemicircleChartCardComponent,\n  props: args,\n})"
+                }
+            ],
+            "src/app/atoms/buttons/secondaryButton/secondaryButton.stories.ts": [
+                {
+                    "name": "props",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/atoms/buttons/secondaryButton/secondaryButton.stories.ts",
+                    "type": "object",
+                    "defaultValue": "{\n  backgroundColor: { control: 'color' },\n  color: { control: 'color' },\n  title: { control: 'text' },\n}"
+                },
+                {
+                    "name": "Secondary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/atoms/buttons/secondaryButton/secondaryButton.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/atoms/buttons/secondaryButton/secondaryButton.stories.ts",
+                    "type": "Story<secondaryButtonComponent>",
+                    "defaultValue": "(args: secondaryButtonComponent) => ({\n  component: secondaryButtonComponent,\n  props: args,\n})"
+                }
+            ],
+            "src/app/atoms/inputs/formInput/formInput.stories.ts": [
+                {
+                    "name": "props",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/atoms/inputs/formInput/formInput.stories.ts",
+                    "type": "object",
+                    "defaultValue": "{\n  backgroundColor: { control: 'color' },\n  color: { control: 'color' },\n  placeholder: { control: 'text' },\n}"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/atoms/inputs/formInput/formInput.stories.ts",
+                    "type": "Story<formInputComponent>",
+                    "defaultValue": "(args: formInputComponent) => ({\n  component: formInputComponent,\n  props: args,\n})"
+                },
+                {
+                    "name": "Text",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/atoms/inputs/formInput/formInput.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
                 }
             ],
             "src/app/atoms/inputs/checkbox/checkbox-input-switch/checkbox-input-switch.stories.ts": [
@@ -6621,6 +6671,36 @@
                 "name": "AppPage",
                 "coveragePercent": 0,
                 "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/app.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Components",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/app.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "props",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/app.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
                 "status": "low"
             },
             {

@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-roll-up',
@@ -6,7 +6,7 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./roll-up.component.scss']
 })
 
-export class RollUpComponent implements OnInit {
+export class RollUpComponent {
   @Input() title: string;
   @Input() number: number;
 
@@ -14,10 +14,4 @@ export class RollUpComponent implements OnInit {
   toggleContent() {
     this.isOpen = !this.isOpen;
   }
-  constructor() { }
-
-  ngOnInit(): void {
-    console.log(this.title, 11)
-  }
-
 }

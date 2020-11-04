@@ -29,7 +29,7 @@ const Template: Story<RollUpComponent> = (args: RollUpComponent) => ({
   template: `
   <app-roll-up [title]="title" [number]="number">
     <app-transparent-table 
-      [mainColumn]="mainColum"
+      [mainColumn]="mainColumn"
       [data]="data"
       [heads]="heads"
     >
@@ -40,61 +40,142 @@ const Template: Story<RollUpComponent> = (args: RollUpComponent) => ({
 
 export const WithTable = Template.bind({});
 WithTable.args = {
+  mainColumn: 'name',
   title: 'Cookies',
   number: 6,
-  heads: ["name", "host", "expirity", "service", "type", "blocking", "hq", "purpose", "certifications"],
+  heads: ["name", "hq", "privacy", "DPA", "subprocessors", "hosting patterns", "data centers", "certifications"],
   data: [{
-      name: "IDE",
-      host: ".doubleclick.net",
-      expirity: "1 year",
-      service: "Doubleclick",
-      type: "Third party",
-      blocking: false,
+      name: "WhatsApp",
       hq: {
         type: 'image',
         path: 'assets/images/usaFlag.png'
+      },
+      privacy: "Privacy",
+      DPA: "DPA",
+      subprocessors: "",
+      'hosting patterns': {
+        type: 'gradientText',
+        data: ['Facebook']
+      },
+      'data centers': {
+        type: 'gradientText',
+        data: ['EU', 'US']
       },
       certifications: {
         type: 'gradientText',
         data: ['EU-U.S. Privacy Shield', 'Swiss-U.SPrivacy Shield']
       },
-      purpose: "This cookie carries out information about how the end user uses the website and any advertising that the and user may have seen before visiting the said website."
     },
     {
-      name: "IDE",
-      host: ".doubleclick.net",
-      expirity: "1 year",
-      service: "Doubleclick",
-      type: "Third party",
-      blocking: true,
+      name: "Zoho",
       hq: {
         type: 'image',
         path: 'assets/images/usaFlag.png'
       },
+      privacy: "Privacy",
+      DPA: "",
+      subprocessors: "Subprocessors",
+      'hosting patterns': {
+        type: 'gradientText',
+        data: ['AWS', 'Google Cloud']
+      },
+      'data centers': {
+        type: 'gradientText',
+        data: ['EU', 'US']
+      },
       certifications: {
         type: 'gradientText',
-        data: ['EU-U.S. Privacy Shield', 'Swiss-U.SPrivacy Shield']
+        data: ['ISO 27001']
       },
-      purpose: "This cookie carries out information about how the end user uses the website and any advertising that the and user may have seen before visiting the said website."
     },
     {
-      name: "IDE",
-      host: ".doubleclick.net",
-      expirity: "1 year",
-      service: "Doubleclick",
-      type: "Third party",
-      blocking: true,
+      name: "Zendesk",
       hq: {
         type: 'image',
         path: 'assets/images/usaFlag.png'
       },
+      privacy: "Privacy",
+      DPA: "",
+      subprocessors: "Subprocessors",
+      'hosting patterns': {
+        type: 'gradientText',
+        data: []
+      },
+      'data centers': {
+        type: 'gradientText',
+        data: ['EU', 'US']
+      },
       certifications: {
         type: 'gradientText',
-        data: ['EU-U.S', 'Swis']
+        data: []
       },
-      purpose: "This cookie carries out information about how the end user uses the website and any advertising that the and user may have seen before visiting the said website."
-    }
+    },
+    {
+      name: "UVdesk Helpdesk",
+      hq: {
+        type: 'image',
+        path: 'assets/images/usaFlag.png'
+      },
+      privacy: "Privacy",
+      DPA: "",
+      subprocessors: "",
+      'hosting patterns': {
+        type: 'gradientText',
+        data: []
+      },
+      'data centers': {
+        type: 'gradientText',
+        data: []
+      },
+      certifications: {
+        type: 'gradientText',
+        data: ['EU-U.S. Privacy Shield']
+      },
+    },
+    {
+      name: "Woodpecker.co",
+      hq: {
+        type: 'image',
+        path: 'assets/images/usaFlag.png'
+      },
+      privacy: "Privacy",
+      DPA: "DPA",
+      subprocessors: "Subprocessors",
+      'hosting patterns': {
+        type: 'gradientText',
+        data: ['AWS']
+      },
+      'data centers': {
+        type: 'gradientText',
+        data: ['EU', 'US']
+      },
+      certifications: {
+        type: 'gradientText',
+        data: ['EU-U.S. Privacy Shield']
+      },
+    },
+    {
+      name: "WhatElse",
+      hq: {
+        type: 'image',
+        path: 'assets/images/usaFlag.png'
+      },
+      privacy: "Privacy",
+      DPA: "DPA",
+      subprocessors: "Subprocessors",
+      'hosting patterns': {
+        type: 'gradientText',
+        data: ['AWS']
+      },
+      'data centers': {
+        type: 'gradientText',
+        data: ['US']
+      },
+      certifications: {
+        type: 'gradientText',
+        data: []
+      },
+    },
   ],
-  mainColumn: "host",
 };
 

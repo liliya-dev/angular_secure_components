@@ -6,10 +6,10 @@
   &__wrapper {
     background: var(--success-grad-light);
     color: var(--text-color);
-    height: 19px;
+    height: auto;
     border-radius: 21px;
-    line-height: 19px;
-    padding: 1px 8px 0 8px;
+    padding: 3.5px 8px 3.5px 8px;
+    text-align: center;
     width: fit-content;
   }
 }
