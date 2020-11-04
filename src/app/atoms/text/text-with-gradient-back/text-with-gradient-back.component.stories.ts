@@ -2,7 +2,7 @@ import { Meta, Story } from '@storybook/angular';
 import { TextWithGradientBackComponent } from './text-with-gradient-back.component';
 
 const props = {
-  title: { control: 'text' },
+  titles: { control: 'array' },
 };
 
 export default {

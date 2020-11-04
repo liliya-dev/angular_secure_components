@@ -8,4 +8,6 @@ import { Component, Input } from '@angular/core';
 
 export class MobileButtonComponent {
   @Input() isOpen: boolean;
+  @Input() svgPathNonActive: string;
+  @Input() svgPathActive: string;
 }

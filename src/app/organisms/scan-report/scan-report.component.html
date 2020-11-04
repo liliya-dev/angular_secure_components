@@ -6,7 +6,13 @@
       <app-info-button [title]="'support'"></app-info-button>
     </nav>
     <nav class="app-scan-report__nav" #nav *ngIf="isMobile">
-      <app-mobile-button [isOpen]="isSideMenuVisible" (click)="toggleSideMenu()"></app-mobile-button>
+      <app-mobile-button 
+        [isOpen]="isSideMenuVisible" 
+        (click)="toggleSideMenu()"
+        [svgPathActive]="'assets/images/closeMobileMenu.svg'"
+        [svgPathNonActive]="'assets/images/mobileMenu.svg'"
+      >
+      </app-mobile-button>
       <app-select-input-search
         [classes]="'custom-icon fs-16-sofia-300'"
         [placeholderText]="'Search for'"

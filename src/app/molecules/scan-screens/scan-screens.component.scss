@@ -5,24 +5,6 @@
   border-radius: 20px;
   color: var(--secondary-color);
 
-  &__title {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 90px;
-
-    & > h4 {
-      flex: 0 0 150px;  
-    }
-  }
-
-  &__line {
-    height: 1px;
-    width: 75%;
-    background: var(--success-grad-light);
-    opacity: 0.1;
-  }
-
   &__container {
     display: flex;
     flex-direction: column;

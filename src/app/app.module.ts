@@ -50,6 +50,9 @@ import { CardWithCenterTextComponent } from './atoms/card/card-with-center-text/
 import { TransparentTableComponent } from './atoms/tables/transparent-table/transparent-table.component';
 import { RollUpComponent } from './molecules/roll-up/roll-up.component';
 import { CardRowComponent } from './molecules/card-row/card-row.component';
+import { TextWithAfterGradientLineComponent } from './atoms/text/text-with-after-gradient-line/text-with-after-gradient-line.component';
+import { TabMenuComponent } from './molecules/menu/tab-menu/tab-menu.component';
+import { WhiteRoundedLayoutComponent } from './molecules/layouts/white-rounded-layout/white-rounded-layout.component';
 
 PlotlyModule.plotlyjs = PlotlyJS;
 
@@ -97,7 +100,10 @@ PlotlyModule.plotlyjs = PlotlyJS;
     CardWithCenterTextComponent,
     TransparentTableComponent,
     RollUpComponent,
-    CardRowComponent
+    CardRowComponent,
+    TextWithAfterGradientLineComponent,
+    TabMenuComponent,
+    WhiteRoundedLayoutComponent
   ],
   imports: [
     BrowserModule,

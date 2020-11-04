@@ -1,0 +1,17 @@
+.app-text-with-after-gradient-line {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 90px;
+
+  & > h4 {
+    flex: 0 0 150px;  
+  }
+  
+  &__line {
+    height: 1px;
+    width: 75%;
+    background: var(--success-grad-light);
+    opacity: 0.1;
+  }
+}

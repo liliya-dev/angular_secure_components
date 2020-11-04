@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Meta, moduleMetadata, Story } from '@storybook/angular';
+import { TextWithAfterGradientLineComponent } from '../../atoms/text/text-with-after-gradient-line/text-with-after-gradient-line.component';
 import { ScanScreensComponent } from './scan-screens.component';
 import { simpleButtonComponent } from '../../atoms/buttons/simpleButton/simpleButton.component';
 import { ScanAnimationComponent } from '../../atoms/scan-animation/scan-animation.component';
@@ -15,7 +16,8 @@ export default {
         ScanScreensComponent, 
         simpleButtonComponent, 
         CheckboxInputSimpleComponent,
-        ScanAnimationComponent
+        ScanAnimationComponent,
+        TextWithAfterGradientLineComponent
       ],
       imports: [CommonModule],
     }),

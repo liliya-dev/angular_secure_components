@@ -17,6 +17,7 @@ import { MobileMainNavigationMenuComponent } from '../../molecules/menu/mobile-m
 import { IconLinksComponent } from '../../atoms/navLink/icon-links/icon-links.component';
 import { AngularSvgIconModule } from 'angular-svg-icon';
 import { HttpClientModule } from '@angular/common/http';
+import { TextWithAfterGradientLineComponent } from '../../atoms/text/text-with-after-gradient-line/text-with-after-gradient-line.component';
 
 const props = {};
 
@@ -37,7 +38,8 @@ export default {
         simpleButtonComponent,
         MobileButtonComponent,
         MobileMainNavigationMenuComponent,
-        IconLinksComponent
+        IconLinksComponent,
+        TextWithAfterGradientLineComponent
       ],
       imports: [CommonModule, NgSelectModule, HttpClientModule, AngularSvgIconModule.forRoot()],
     }),

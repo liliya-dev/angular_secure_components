@@ -3,9 +3,7 @@ import { TransparentTableComponent } from './transparent-table.component';
 import { RoundIconComponent } from '../../icons/round-icon/round-icon.component';
 import { TextWithGradientBackComponent } from '../../text/text-with-gradient-back/text-with-gradient-back.component';
 
-const props = {
-  percent: { control: 'array' },
-};
+const props = {};
 
 export default {
   title: 'Atoms/Tables',
