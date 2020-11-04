@@ -29,7 +29,7 @@ const Template: Story<RollUpComponent> = (args: RollUpComponent) => ({
   template: `
   <app-roll-up [title]="title" [number]="number">
     <app-transparent-table 
-      [mainColumn]="mainColumn"
+      [mainColumn]="mainColum"
       [data]="data"
       [heads]="heads"
     >

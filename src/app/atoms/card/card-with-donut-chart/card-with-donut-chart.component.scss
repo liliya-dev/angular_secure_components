@@ -50,11 +50,6 @@
     
     padding: 10px 26px 8px 16px;
     background-color: rgba(var(--secondary-color-code), 0.05);
-    overflow-y: scroll;
-
-    &::-webkit-scrollbar { 
-      display: none; 
-    }
     
     &-item {
       display: flex;
@@ -104,9 +99,5 @@
 
 .main-svg {
   background-color: transparent!important;
-}
-
-.bg {
-  width: 116px !important;
 }
 
