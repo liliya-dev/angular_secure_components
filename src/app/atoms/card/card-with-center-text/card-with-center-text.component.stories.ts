@@ -2,12 +2,9 @@ import { Meta, Story } from '@storybook/angular';
 import { CardWithCenterTextComponent } from './card-with-center-text.component';
 
 const props = {
-  backgroundColor: { control: 'color' },
-  color: { control: 'color' },
-  src: { control: 'text' },
   title: { control: 'text' },
+  value: { control: 'text' },
   text: { control: 'text' },
-  isActive: { control: 'boolean' }
 };
 
 export default {

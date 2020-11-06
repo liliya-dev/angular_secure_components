@@ -1,0 +1,36 @@
+.card-reports {
+  padding: 16px 16px 11px;
+  width: 188px;
+  background-color: beige;
+  border-radius: 12px;
+  color: var(--secondary-color);
+
+  &__title {
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    line-height: 130%;
+    margin-bottom: 2px;
+  }
+
+  &__text {
+    line-height: 110%;
+    margin-bottom: 7px;
+  }
+
+  &__container {
+    padding-top: 14px;
+    border-top: 0.580318px solid rgba(var(--secondary-color-code), 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__img {
+    width: 20px;
+    height: 20px;
+  }
+
+  &__value {
+    opacity: 0.75;
+  }
+}

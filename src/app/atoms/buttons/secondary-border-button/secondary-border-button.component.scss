@@ -1,0 +1,17 @@
+.secondary-border-button {
+  padding: 12px 11px 11px 12px;
+  height: 44px;
+  border-radius: 12px;
+  border: 1px solid rgba(var(--secondary-color-code), 0.3);
+  background-color: transparent;
+  transition: 0.3s;
+
+  &:hover {
+    border: 1px solid rgba(var(--secondary-color-code), 1);
+  }
+
+  &:active {
+    border: 1px solid rgba(var(--secondary-color-code), 0);
+    background-color: rgba(var(--secondary-color-code), 0.3);
+  }
+}

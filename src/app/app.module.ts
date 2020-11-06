@@ -55,6 +55,9 @@ import { TabMenuComponent } from './molecules/menu/tab-menu/tab-menu.component';
 import { WhiteRoundedLayoutComponent } from './molecules/layouts/white-rounded-layout/white-rounded-layout.component';
 import { GradientTextComponent } from './atoms/text/gradient-text/gradient-text.component';
 import { SelectInputWithInitialValueComponent } from './atoms/inputs/select-input/select-input-with-initial-value/select-input-with-initial-value.component';
+import { CardReportsComponent } from './atoms/card/card-reports/card-reports.component';
+import { SecondaryBorderButtonComponent } from './atoms/buttons/secondary-border-button/secondary-border-button.component';
+import { SelectedItemComponent } from './atoms/filter-components/selected-item/selected-item.component';
 
 PlotlyModule.plotlyjs = PlotlyJS;
 
@@ -107,7 +110,10 @@ PlotlyModule.plotlyjs = PlotlyJS;
     TabMenuComponent,
     WhiteRoundedLayoutComponent,
     GradientTextComponent,
-    SelectInputWithInitialValueComponent
+    SelectInputWithInitialValueComponent,
+    CardReportsComponent,
+    SecondaryBorderButtonComponent,
+    SelectedItemComponent
   ],
   imports: [
     BrowserModule,
