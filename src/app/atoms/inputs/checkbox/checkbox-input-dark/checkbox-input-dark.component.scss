@@ -1,4 +1,5 @@
-.app-checkbox-input-simple {
+
+.app-checkbox-input-dark {
   display: none;
 
   &__title {
@@ -25,9 +26,23 @@
   }
 }
 
-.app-checkbox-input-simple:checked + .app-checkbox-input-simple__label {
+.app-checkbox-input-dark:checked + .app-checkbox-input-dark__label {
   &:after {
-    background: center no-repeat url('../../../../../assets/images/checkboxDark.svg');
-    border: 1px solid rgba(var(--secondary-color-code), 1);
+    background-color: var(--secondary-color);
+  }
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    z-index: 2;
+
+    box-sizing: border-box;
+    width: 16px;
+    height: 16px;
+    background: center no-repeat url('../../../../../assets/images/checkbox.svg');
+    background-size: contain;
   }
 }
+

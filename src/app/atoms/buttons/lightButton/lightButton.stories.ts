@@ -19,5 +19,7 @@ const Template: Story<lightButtonComponent> = (args: lightButtonComponent) => ({
 });
 
 export const Light = Template.bind({});
-Light.args = {};
+Light.args = {
+  srcPath: "assets/images/back-icon.png"
+};
 

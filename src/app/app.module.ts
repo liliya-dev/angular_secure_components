@@ -58,6 +58,11 @@ import { SelectInputWithInitialValueComponent } from './atoms/inputs/select-inpu
 import { CardReportsComponent } from './atoms/card/card-reports/card-reports.component';
 import { SecondaryBorderButtonComponent } from './atoms/buttons/secondary-border-button/secondary-border-button.component';
 import { SelectedItemComponent } from './atoms/filter-components/selected-item/selected-item.component';
+import { CardReportStatusComponent } from './atoms/card/card-report-status/card-report-status.component';
+import { SimpleCounterComponent } from './atoms/counters/simple-counter/simple-counter.component';
+import { CheckboxCircleInputComponent } from './atoms/inputs/checkbox/checkbox-circle-input/checkbox-circle-input.component';
+import { CheckboxInputDarkComponent } from './atoms/inputs/checkbox/checkbox-input-dark/checkbox-input-dark.component';
+import { SimpleTextareaComponent } from './atoms/inputs/textarea/simple-textarea/simple-textarea.component';
 
 PlotlyModule.plotlyjs = PlotlyJS;
 
@@ -113,7 +118,12 @@ PlotlyModule.plotlyjs = PlotlyJS;
     SelectInputWithInitialValueComponent,
     CardReportsComponent,
     SecondaryBorderButtonComponent,
-    SelectedItemComponent
+    SelectedItemComponent,
+    CardReportStatusComponent,
+    SimpleCounterComponent,
+    CheckboxCircleInputComponent,
+    CheckboxInputDarkComponent,
+    SimpleTextareaComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,25 @@
+.app-simple-counter {
+  display: flex;
+  gap: 8px;
+  width: 202px;
+
+  &__value-container {
+    width: 100%;
+    text-align: center;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    border: none;
+    border-radius: 8px;
+    background: rgba(var(--secondary-color-code), 0.05);
+    color: var(--secondary-color);
+  }
+}
+.next {
+  & > app-light-button > .btn-light {
+    transform: rotate(180deg)!important;
+  }
+}
+

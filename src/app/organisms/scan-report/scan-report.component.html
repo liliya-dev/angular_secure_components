@@ -29,7 +29,7 @@
   <div class="app-scan-report__container">
     <div class="app-scan-report__container--left" *ngIf="!isMobile">
       <div class="app-scan-report__box">
-        <app-light-button></app-light-button>
+        <app-light-button [srcPath]="'assets/images/back-icon.png'"></app-light-button>
         <app-select-input-search
           [classes]="'custom-icon fs-16-sofia-300'"
           [placeholderText]="'Search for'"

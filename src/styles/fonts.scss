@@ -33,6 +33,10 @@
   font-weight: 400;
 }
 
+@font-face {
+  font-family: 'Gramatica Light';
+  src: url("../assets/fonts/Gramatica-Light.ttf");
+}
 
 @font-face {
   font-family: 'Gramatica Regular';
@@ -109,6 +113,12 @@
   font-size: 18px;
   color: var(--secondary-color);
   text-transform: capitalize;
+}
+
+.fs-18-gramm-light {
+  font-family: 'Gramatica Light', 'open-sans';
+  font-size: 18px;
+  line-height: 100%;
 }
 
 .fs-18-sofia-300 {
@@ -197,6 +207,12 @@
   line-height: 100%;
 }
 
+.fs-14-sofia-800 {
+  font-family: 'Sofia pro', 'open-sans';
+  font-weight: 800;
+  font-size: 14px;
+  line-height: 100%;
+}
 
 .fs-12-sofia-400 {
   font-family: 'Sofia pro', 'open-sans';

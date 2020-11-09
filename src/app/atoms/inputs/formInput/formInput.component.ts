@@ -7,9 +7,6 @@ import { Component, Input } from '@angular/core';
 })
 
 export class formInputComponent {
-  @Input() backgroundColor: string;
   @Input() placeholderText: string;
-  @Input() color: string;
-  @Input() classes: string;
-  @Input() wrapperClasses: string;
+  @Input() name: string;
 }
