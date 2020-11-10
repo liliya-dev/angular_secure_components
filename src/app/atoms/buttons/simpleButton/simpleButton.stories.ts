@@ -39,5 +39,12 @@ Success.args = {
 export const SuccessAsimetric = Template.bind({});
 SuccessAsimetric.args = {
   title: "notify me",
-  classes: "btn-app--asimetric  btn-success-asimetric fs-16-sofia-800"
+  classes: "btn-app--asimetric btn-success-asimetric fs-16-sofia-800"
+};
+
+export const SuccessAsimetricWithIcon = Template.bind({});
+SuccessAsimetricWithIcon.args = {
+  title: "next",
+  classes: "btn-app--asimetric btn-success-asimetric fs-16-sofia-800",
+  srcPath: 'assets/images/next.svg'
 };

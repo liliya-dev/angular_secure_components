@@ -1,0 +1,15 @@
+.app-button-light-assimetric {
+  background: var(--asimetric-bg-color);
+  border-radius: 20px 5px;
+  border: none;
+  padding: 14px 20px;
+  transition: 0.3s;
+
+  &:hover {
+    background-color: var(--asimetric-bg-color-dark);
+  }
+
+  &:active {
+    background-color: var(--secondary-color-dark);
+  }
+}

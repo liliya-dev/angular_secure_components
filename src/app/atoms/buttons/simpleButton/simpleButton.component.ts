@@ -11,4 +11,5 @@ export class simpleButtonComponent {
   @Input() classes: string;
   @Input() backgroundColor: string;
   @Input() color: string;
+  @Input() srcPath?: string;
 }

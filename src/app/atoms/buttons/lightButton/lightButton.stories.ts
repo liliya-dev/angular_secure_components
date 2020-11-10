@@ -8,7 +8,7 @@ const props = {
 };
 
 export default {
-  title: 'Atoms/Button',
+  title: 'Atoms/Button/Light',
   component: lightButtonComponent,
   argTypes: props,
 } as Meta;
@@ -18,8 +18,13 @@ const Template: Story<lightButtonComponent> = (args: lightButtonComponent) => ({
   props: args,
 });
 
-export const Light = Template.bind({});
-Light.args = {
+export const Back = Template.bind({});
+Back.args = {
   srcPath: "assets/images/back-icon.png"
+};
+
+export const Plus = Template.bind({});
+Plus.args = {
+  srcPath: "assets/images/plus.svg"
 };
 
