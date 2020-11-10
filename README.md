@@ -4,7 +4,7 @@ demo link https://liliya-dev.github.io/angular_secure_components/?path=/story/mo
 ## Developed components: 
 
 ### Atoms:
-  ### Buttons:
+  * Buttons:
   Primary
   Success 
   Success Asimetric
@@ -14,40 +14,40 @@ demo link https://liliya-dev.github.io/angular_secure_components/?path=/story/mo
   Light Back
   Secondary Border
   
-  ### Counters
+  * Counters
     Simple
   
-  ### Filter Components
+  * Filter Components
     Selected Item
 
-  ### Card
+  * Card
     Report Status
     Card Reports
     Donut Chart Card
   
-  ### Icon
+  * Icon
     Positive
     Negative
     With Bold Text
     With Bold Text and Link
 
-  ### Input 
+  * Input 
     Checkbox
       - Circle
       - Dark 
     TextArea
     Text
 
-  ### Tables
+  * Tables
     First
     Second
 
 ### Molecules:
-  ### Card Row
-  ### Layouts
-  ### Menu
+  * Card Row
+  * Layouts
+  * Menu
     Tab
-  ### Roll up
+  * Roll up
 
 
 
