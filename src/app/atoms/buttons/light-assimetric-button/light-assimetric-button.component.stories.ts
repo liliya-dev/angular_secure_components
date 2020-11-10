@@ -2,9 +2,6 @@ import { Meta, Story } from '@storybook/angular';
 import { LightAssimetricButtonComponent } from './light-assimetric-button.component';
 
 const props = {
-  backgroundColor: { control: 'color' },
-  color: { control: 'color' },
-  title: { control: 'text' },
 };
 
 export default {

@@ -2,8 +2,6 @@ import { Meta, Story } from '@storybook/angular';
 import { gradientButtonComponent } from './gradientButton.component';
 
 const props = {
-  backgroundColor: { control: 'color' },
-  color: { control: 'color' },
   title: { control: 'text' },
 };
 
