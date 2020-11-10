@@ -32,12 +32,6 @@ withBoldText.args = {
   boldText: "Remove use of vendors with low rating"
 };
 
-export const withRegularText = Template.bind({});
-withRegularText.args = {
-  classes: "app-round-icon app-round-icon__positive",
-  regularText: "Remove use of vendors with low rating"
-};
-
 export const withBoldTextAndLink = Template.bind({});
 withBoldTextAndLink.args = {
   classes: "app-round-icon app-round-icon__positive",

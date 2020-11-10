@@ -63,6 +63,7 @@ import { SimpleCounterComponent } from './atoms/counters/simple-counter/simple-c
 import { CheckboxCircleInputComponent } from './atoms/inputs/checkbox/checkbox-circle-input/checkbox-circle-input.component';
 import { CheckboxInputDarkComponent } from './atoms/inputs/checkbox/checkbox-input-dark/checkbox-input-dark.component';
 import { SimpleTextareaComponent } from './atoms/inputs/textarea/simple-textarea/simple-textarea.component';
+import { LightAssimetricButtonComponent } from './atoms/buttons/light-assimetric-button/light-assimetric-button.component';
 
 PlotlyModule.plotlyjs = PlotlyJS;
 
@@ -124,6 +125,7 @@ PlotlyModule.plotlyjs = PlotlyJS;
     CheckboxCircleInputComponent,
     CheckboxInputDarkComponent,
     SimpleTextareaComponent,
+    LightAssimetricButtonComponent,
   ],
   imports: [
     BrowserModule,

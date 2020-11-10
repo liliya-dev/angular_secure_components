@@ -5,6 +5,7 @@
   --danger-color-code: 234, 45, 45;
   --secondary-color: rgb(var(--secondary-color-code));
   --secondary-color-code: 1, 25, 73;
+  --secondary-color-dark: rgb(9, 45, 104);
   --info-color: rgb(var(--info-color-code));
   --info-color-code: 36, 176, 75;
   --success-grad-dark: linear-gradient(89.52deg, #1D973F -46.17%, #05539A 186.99%);
@@ -16,6 +17,8 @@
   --layout-bg-color: rgb(248, 250, 252);
   --card-bg-color: rgb(242, 243, 246);
   --tab-bg-color: rgb(226, 226, 226);
+  --asimetric-bg-color: rgb(208, 218, 235);
+  --asimetric-bg-color-dark:  rgb(157, 174, 202); 
 }
 
 
