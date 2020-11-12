@@ -11,7 +11,9 @@ import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
 export class AppComponent implements OnInit {
 
   title="Cookies by category"
-
+  check = (a) => {
+    console.log(a,11)
+  }
   ngOnInit() {
 
   }

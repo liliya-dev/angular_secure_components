@@ -54,7 +54,6 @@
     
     background: var(--success-grad-light);
     border-radius: 8px;
-    transition: 0.3s;
   }
 
   &::after {
@@ -69,7 +68,6 @@
 
     background: var(--success-grad-dark);
     border-radius: 8px;
-    transition: 0.3s;
     opacity: 0;
   }
 
@@ -116,7 +114,6 @@
     
     background: var(--success-grad-light);
     border-radius: 20px 5px;
-    transition: 0.3s;
   }
   
   &::after {
@@ -131,7 +128,6 @@
 
     background: var(--success-grad-dark);
     border-radius: 20px 5px;
-    transition: 0.3s;
     opacity: 0;
   }
   

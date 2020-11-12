@@ -2,9 +2,7 @@ import { Meta, Story } from '@storybook/angular';
 import { lightButtonComponent } from './lightButton.component';
 
 const props = {
-  backgroundColor: { control: 'color' },
-  color: { control: 'color' },
-  title: { control: 'text' },
+  backgroundColor: { control: 'color' }
 };
 
 export default {

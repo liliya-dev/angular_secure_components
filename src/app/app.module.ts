@@ -64,6 +64,17 @@ import { CheckboxCircleInputComponent } from './atoms/inputs/checkbox/checkbox-c
 import { CheckboxInputDarkComponent } from './atoms/inputs/checkbox/checkbox-input-dark/checkbox-input-dark.component';
 import { SimpleTextareaComponent } from './atoms/inputs/textarea/simple-textarea/simple-textarea.component';
 import { LightAssimetricButtonComponent } from './atoms/buttons/light-assimetric-button/light-assimetric-button.component';
+import { ColorSketchModule } from 'ngx-color/sketch';
+import { gradientButtonComponent } from './atoms/buttons/gradientButton/gradientButton.component';
+import { ColorPickerComponent } from './atoms/color-picker/color-picker.component';
+import { StatusStepsDynamicComponent } from './atoms/status-steps-dynamic/status-steps-dynamic.component';
+import { StatusBarComponent } from './molecules/status-bar/status-bar.component';
+import { MutableLightButtonComponent } from './atoms/buttons/domains-card-buttons/mutable-light-button/mutable-light-button.component';
+import { MutablePrimaryButtonComponent } from './atoms/buttons/domains-card-buttons/mutable-primary-button/mutable-primary-button.component';
+import { MutableDangerButtonComponent } from './atoms/buttons/domains-card-buttons/mutable-danger-button/mutable-danger-button.component';
+import { MutableGradientIconButtonComponent } from './atoms/buttons/domains-card-buttons/mutable-gradient-icon-button/mutable-gradient-icon-button.component';
+import { CheckboxMutableGradientComponent } from './atoms/inputs/checkbox/checkbox-mutable-gradient/checkbox-mutable-gradient.component';
+import { OnboardingCardComponent } from './atoms/card/onboarding-card/onboarding-card.component';
 
 PlotlyModule.plotlyjs = PlotlyJS;
 
@@ -72,6 +83,7 @@ PlotlyModule.plotlyjs = PlotlyJS;
   declarations: [
     AppComponent,
     IconContainerComponent,
+    gradientButtonComponent,
     DateMenuComponent,
     navLinkComponent,
     formInputComponent,
@@ -126,8 +138,18 @@ PlotlyModule.plotlyjs = PlotlyJS;
     CheckboxInputDarkComponent,
     SimpleTextareaComponent,
     LightAssimetricButtonComponent,
+    ColorPickerComponent,
+    StatusStepsDynamicComponent,
+    StatusBarComponent,
+    MutableLightButtonComponent,
+    MutablePrimaryButtonComponent,
+    MutableDangerButtonComponent,
+    MutableGradientIconButtonComponent,
+    CheckboxMutableGradientComponent,
+    OnboardingCardComponent,
   ],
   imports: [
+    ColorSketchModule,
     BrowserModule,
     FormsModule,
     NgSelectModule,

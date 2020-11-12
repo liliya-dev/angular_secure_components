@@ -1,0 +1,36 @@
+<div class="app-onboarding-card"
+  (mouseenter)="setOnActive(true)"
+  (mouseleave)="setOnActive(false)"
+>
+  <div class="app-onboarding-card__wrapper">
+    <app-checkbox-mutable-gradient
+      [onActive]="onActive"
+      [isChecked]="isSelected"
+    >
+    </app-checkbox-mutable-gradient>
+    <p class="app-onboarding-card__title fs-18-sofia-600">{{ title }}</p>
+    <p class="app-onboarding-card__text fs-18-sofia-300-simple">{{ text }}</p>
+  </div>
+  <div class="app-onboarding-card__wrapper">
+    <app-mutable-primary-button
+      [title]="'edit'"
+      [onActive]="onActive"
+    >
+    </app-mutable-primary-button>
+    <app-mutable-primary-button
+      [title]="'reports'"
+      [onActive]="onActive"
+    >
+    </app-mutable-primary-button>
+    <app-mutable-gradient-icon-button
+      [svgPath]="'assets/images/copy.svg'"
+      [onActive]="onActive"
+    >
+    </app-mutable-gradient-icon-button>
+    <app-mutable-danger-button
+      [svgPath]="'assets/images/basket.svg'"
+      [onActive]="onActive"
+    >
+    </app-mutable-danger-button>
+  </div>
+</div>

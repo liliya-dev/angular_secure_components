@@ -1,8 +1,7 @@
 import { Meta, Story } from '@storybook/angular';
 import { LightAssimetricButtonComponent } from './light-assimetric-button.component';
 
-const props = {
-};
+const props = {};
 
 export default {
   title: 'Atoms/Button/Light Assimetric',

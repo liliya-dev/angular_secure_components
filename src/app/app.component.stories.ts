@@ -56,6 +56,7 @@ import { WhiteRoundedLayoutComponent } from './molecules/layouts/white-rounded-l
 import { GradientTextComponent } from './atoms/text/gradient-text/gradient-text.component';
 import { SelectInputWithInitialValueComponent } from './atoms/inputs/select-input/select-input-with-initial-value/select-input-with-initial-value.component';
 import { moduleMetadata, Story, Meta } from '@storybook/angular';
+import { ColorSketchModule } from 'ngx-color/sketch';
 
 
 const props = {};
@@ -116,6 +117,7 @@ export default {
         SelectInputWithInitialValueComponent
       ],
       imports: [
+        ColorSketchModule,
         FormsModule,
         NgSelectModule,
         AngularSvgIconModule.forRoot(),

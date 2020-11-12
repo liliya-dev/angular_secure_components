@@ -1,0 +1,40 @@
+.app-onboarding-card {
+  padding: 14px 24px;
+  width: 100%;
+  background: transparent;
+  border: 1px solid rgba(var(--secondary-color-code), 0.15);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--secondary-color);
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &:hover {
+    cursor: pointer;
+    background: var(--success-grad-light);
+    color: var(--text-color);
+  }
+
+  &__title {
+    margin-left: 26px;
+    margin-right: 16px;
+  }
+
+  &__text {
+    opacity: 0.6;
+  }
+}
+
+app-mutable-primary-button {
+  margin-right: 16px;
+}
+
+app-mutable-gradient-icon-button {
+  margin-right: 14px;
+}
