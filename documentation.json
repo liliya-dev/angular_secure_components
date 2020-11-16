@@ -436,7 +436,7 @@
                 }
             ],
             "stylesData": "",
-            "templateData": "<div class=\"approve-modal\" (click)=\"handleClick($event)\">\n  <div class=\"approve-modal__form\">\n    <p class=\"approve-modal__title fs-h3\">{{ title }}</p>\n    <ng-content></ng-content>\n    <div class=\"approve-modal__buttons\">\n      <app-simple-button \n        [classes]=\"'btn-app--h46--wide btn-app btn-success fs-12-gramm-400'\"\n        [title]=\"primaryButtonTitle\"\n        (click)=\"primaryButtonFunction.emit()\"\n      >\n      </app-simple-button>\n      <app-simple-button\n        *ngIf=\"dangerButtonTitle!==''\" \n        [classes]=\"'btn-danger fs-12-sofia-800 btn-app btn-app--h46--wide'\"\n        [title]=\"dangerButtonTitle\"\n        (click)=\"dangerButtonFunction.emit()\"\n      >\n      </app-simple-button>\n    </div>\n  </div>\n</div>\n"
+            "templateData": "<div class=\"approve-modal\" (click)=\"handleClick($event)\">\n  <div class=\"approve-modal__form\">\n    <p class=\"approve-modal__title fs-h3\">{{ title }}</p>\n    <ng-content></ng-content>\n    <div class=\"approve-modal__buttons\">\n      <app-simple-button \n        [classes]=\"'btn-app--h46--wide btn-app btn-success fs-12-sofia-800'\"\n        [title]=\"primaryButtonTitle\"\n        (click)=\"primaryButtonFunction.emit()\"\n      >\n      </app-simple-button>\n      <app-simple-button\n        *ngIf=\"dangerButtonTitle!==''\" \n        [classes]=\"'btn-danger fs-12-sofia-800 btn-app btn-app--h46--wide'\"\n        [title]=\"dangerButtonTitle\"\n        (click)=\"dangerButtonFunction.emit()\"\n      >\n      </app-simple-button>\n    </div>\n  </div>\n</div>\n"
         },
         {
             "name": "CardComponent",
@@ -6277,22 +6277,6 @@
                 "name": "props",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/organisms/registration-form/registration-form.stories.ts",
-                "type": "object",
-                "defaultValue": "{}"
-            },
-            {
-                "name": "props",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/organisms/scan-report/scan-report.component.stories.ts",
-                "type": "object",
-                "defaultValue": "{}"
-            },
-            {
-                "name": "props",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "src/app/molecules/card-row/card-row.component.stories.ts",
                 "type": "object",
                 "defaultValue": "{}"
@@ -6333,6 +6317,22 @@
                 "name": "props",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "src/app/organisms/registration-form/registration-form.stories.ts",
+                "type": "object",
+                "defaultValue": "{}"
+            },
+            {
+                "name": "props",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/organisms/scan-report/scan-report.component.stories.ts",
+                "type": "object",
+                "defaultValue": "{}"
+            },
+            {
+                "name": "props",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "src/app/atoms/buttons/gradientButton/gradientButton.stories.ts",
                 "type": "object",
                 "defaultValue": "{\n  title: { control: 'text' },\n}"
@@ -6365,17 +6365,17 @@
                 "name": "props",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/atoms/buttons/lightButton/lightButton.stories.ts",
+                "file": "src/app/atoms/buttons/mobile-button/mobile-button.component.stories.ts",
                 "type": "object",
-                "defaultValue": "{\n  backgroundColor: { control: 'color' }\n}"
+                "defaultValue": "{\n  isOpen: { control: 'boolean' }\n}"
             },
             {
                 "name": "props",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/atoms/buttons/mobile-button/mobile-button.component.stories.ts",
+                "file": "src/app/atoms/buttons/lightButton/lightButton.stories.ts",
                 "type": "object",
-                "defaultValue": "{\n  isOpen: { control: 'boolean' }\n}"
+                "defaultValue": "{\n  backgroundColor: { control: 'color' }\n}"
             },
             {
                 "name": "props",
@@ -6453,6 +6453,14 @@
                 "name": "props",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "src/app/atoms/card/onboarding-card/onboarding-card.component.stories.ts",
+                "type": "object",
+                "defaultValue": "{\n}"
+            },
+            {
+                "name": "props",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "src/app/atoms/card/semicircle-chart-card/semicircle-chart-card.component.stories.ts",
                 "type": "object",
                 "defaultValue": "{\n  title: { control: 'text' },\n  labels: { control: 'array' },\n  values: { control: 'array' }\n}"
@@ -6461,7 +6469,7 @@
                 "name": "props",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/atoms/card/onboarding-card/onboarding-card.component.stories.ts",
+                "file": "src/app/atoms/counters/simple-counter/simple-counter.component.stories.ts",
                 "type": "object",
                 "defaultValue": "{\n}"
             },
@@ -6472,14 +6480,6 @@
                 "file": "src/app/atoms/filter-components/selected-item/selected-item.component.stories.ts",
                 "type": "object",
                 "defaultValue": "{\n  backgroundColor: { control: 'color' },\n}"
-            },
-            {
-                "name": "props",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/atoms/counters/simple-counter/simple-counter.component.stories.ts",
-                "type": "object",
-                "defaultValue": "{\n}"
             },
             {
                 "name": "props",
@@ -6501,17 +6501,17 @@
                 "name": "props",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/atoms/modals/approve-modal/approve-modal.component.stories.ts",
+                "file": "src/app/atoms/navLink/icon-links/icon-links.component.stories.ts",
                 "type": "object",
-                "defaultValue": "{}"
+                "defaultValue": "{\n  title: { control: 'text' },\n  isActive: { control: 'boolean' }\n}"
             },
             {
                 "name": "props",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/atoms/navLink/icon-links/icon-links.component.stories.ts",
+                "file": "src/app/atoms/modals/approve-modal/approve-modal.component.stories.ts",
                 "type": "object",
-                "defaultValue": "{\n  title: { control: 'text' },\n  isActive: { control: 'boolean' }\n}"
+                "defaultValue": "{}"
             },
             {
                 "name": "props",
@@ -6573,14 +6573,6 @@
                 "name": "props",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/molecules/form-screens/form-screen-fourth/form-screen-fourth.stories.ts",
-                "type": "object",
-                "defaultValue": "{}"
-            },
-            {
-                "name": "props",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "src/app/molecules/form-screens/form-screen-second/form-screen-second.stories.ts",
                 "type": "object",
                 "defaultValue": "{}"
@@ -6589,7 +6581,7 @@
                 "name": "props",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/molecules/form-screens/form-screen-third/form-screen-third.stories.ts",
+                "file": "src/app/molecules/form-screens/form-screen-fourth/form-screen-fourth.stories.ts",
                 "type": "object",
                 "defaultValue": "{}"
             },
@@ -6597,7 +6589,7 @@
                 "name": "props",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/molecules/layouts/white-rounded-layout/white-rounded-layout.component.stories.ts",
+                "file": "src/app/molecules/form-screens/form-screen-third/form-screen-third.stories.ts",
                 "type": "object",
                 "defaultValue": "{}"
             },
@@ -6653,6 +6645,14 @@
                 "name": "props",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "src/app/molecules/layouts/white-rounded-layout/white-rounded-layout.component.stories.ts",
+                "type": "object",
+                "defaultValue": "{}"
+            },
+            {
+                "name": "props",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "src/app/atoms/buttons/domains-card-buttons/mutable-danger-button/mutable-danger-button.component.stories.ts",
                 "type": "object",
                 "defaultValue": "{\n  backgroundColor: { control: 'color' },\n  title: { control: 'text' },\n}"
@@ -6669,17 +6669,17 @@
                 "name": "props",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/atoms/buttons/domains-card-buttons/mutable-light-button/mutable-light-button.component.stories.ts",
+                "file": "src/app/atoms/buttons/domains-card-buttons/mutable-primary-button/mutable-primary-button.component.stories.ts",
                 "type": "object",
-                "defaultValue": "{}"
+                "defaultValue": "{\n  onActive: { control: 'boolean' }\n}"
             },
             {
                 "name": "props",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/atoms/buttons/domains-card-buttons/mutable-primary-button/mutable-primary-button.component.stories.ts",
+                "file": "src/app/atoms/buttons/domains-card-buttons/mutable-light-button/mutable-light-button.component.stories.ts",
                 "type": "object",
-                "defaultValue": "{\n  onActive: { control: 'boolean' }\n}"
+                "defaultValue": "{}"
             },
             {
                 "name": "props",
@@ -6701,17 +6701,17 @@
                 "name": "props",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/atoms/inputs/checkbox/checkbox-input-simple/checkbox-input-simple.stories.ts",
+                "file": "src/app/atoms/inputs/checkbox/checkbox-input-switch/checkbox-input-switch.stories.ts",
                 "type": "object",
-                "defaultValue": "{\n  isChecked: { control: 'boolean' },\n  title: { control: 'text' }\n}"
+                "defaultValue": "{\n    isChecked: { control: 'boolean' },\n}"
             },
             {
                 "name": "props",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/atoms/inputs/checkbox/checkbox-input-switch/checkbox-input-switch.stories.ts",
+                "file": "src/app/atoms/inputs/checkbox/checkbox-input-simple/checkbox-input-simple.stories.ts",
                 "type": "object",
-                "defaultValue": "{\n    isChecked: { control: 'boolean' },\n}"
+                "defaultValue": "{\n  isChecked: { control: 'boolean' },\n  title: { control: 'text' }\n}"
             },
             {
                 "name": "props",
@@ -6916,7 +6916,7 @@
                 "name": "Simple",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/atoms/filter-components/selected-item/selected-item.component.stories.ts",
+                "file": "src/app/atoms/counters/simple-counter/simple-counter.component.stories.ts",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
@@ -6924,7 +6924,7 @@
                 "name": "Simple",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/atoms/counters/simple-counter/simple-counter.component.stories.ts",
+                "file": "src/app/atoms/filter-components/selected-item/selected-item.component.stories.ts",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
@@ -7068,22 +7068,6 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/organisms/registration-form/registration-form.stories.ts",
-                "type": "Story<RegistrationFormComponent>",
-                "defaultValue": "(args: RegistrationFormComponent) => ({\n  component: RegistrationFormComponent,\n  props: args,\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/organisms/scan-report/scan-report.component.stories.ts",
-                "type": "Story<ScanReportComponent>",
-                "defaultValue": "(args: ScanReportComponent) => ({\n  component: ScanReportComponent,\n  props: args,\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "src/app/molecules/card-row/card-row.component.stories.ts",
                 "type": "Story<CardRowComponent>",
                 "defaultValue": "(args: CardRowComponent) => ({\n  component: CardRowComponent,\n  props: args,\n})"
@@ -7124,6 +7108,22 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "src/app/organisms/registration-form/registration-form.stories.ts",
+                "type": "Story<RegistrationFormComponent>",
+                "defaultValue": "(args: RegistrationFormComponent) => ({\n  component: RegistrationFormComponent,\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/organisms/scan-report/scan-report.component.stories.ts",
+                "type": "Story<ScanReportComponent>",
+                "defaultValue": "(args: ScanReportComponent) => ({\n  component: ScanReportComponent,\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "src/app/atoms/buttons/gradientButton/gradientButton.stories.ts",
                 "type": "Story<gradientButtonComponent>",
                 "defaultValue": "(args: gradientButtonComponent) => ({\n  component: gradientButtonComponent,\n  props: args,\n})"
@@ -7156,17 +7156,17 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/atoms/buttons/lightButton/lightButton.stories.ts",
-                "type": "Story<lightButtonComponent>",
-                "defaultValue": "(args: lightButtonComponent) => ({\n  component: lightButtonComponent,\n  props: args,\n})"
+                "file": "src/app/atoms/buttons/mobile-button/mobile-button.component.stories.ts",
+                "type": "Story<MobileButtonComponent>",
+                "defaultValue": "(args: MobileButtonComponent) => ({\n  component: MobileButtonComponent,\n  props: args,\n})"
             },
             {
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/atoms/buttons/mobile-button/mobile-button.component.stories.ts",
-                "type": "Story<MobileButtonComponent>",
-                "defaultValue": "(args: MobileButtonComponent) => ({\n  component: MobileButtonComponent,\n  props: args,\n})"
+                "file": "src/app/atoms/buttons/lightButton/lightButton.stories.ts",
+                "type": "Story<lightButtonComponent>",
+                "defaultValue": "(args: lightButtonComponent) => ({\n  component: lightButtonComponent,\n  props: args,\n})"
             },
             {
                 "name": "Template",
@@ -7244,14 +7244,6 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/atoms/card/semicircle-chart-card/semicircle-chart-card.component.stories.ts",
-                "type": "Story<SemicircleChartCardComponent>",
-                "defaultValue": "(args: SemicircleChartCardComponent) => ({\n  component: SemicircleChartCardComponent,\n  props: args,\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "src/app/atoms/card/onboarding-card/onboarding-card.component.stories.ts",
                 "type": "Story<OnboardingCardComponent>",
                 "defaultValue": "(args: OnboardingCardComponent) => ({\n  component: OnboardingCardComponent,\n  props: args,\n})"
@@ -7260,9 +7252,9 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/atoms/filter-components/selected-item/selected-item.component.stories.ts",
-                "type": "Story<SelectedItemComponent>",
-                "defaultValue": "(args: SelectedItemComponent) => ({\n  component: SelectedItemComponent,\n  props: args,\n})"
+                "file": "src/app/atoms/card/semicircle-chart-card/semicircle-chart-card.component.stories.ts",
+                "type": "Story<SemicircleChartCardComponent>",
+                "defaultValue": "(args: SemicircleChartCardComponent) => ({\n  component: SemicircleChartCardComponent,\n  props: args,\n})"
             },
             {
                 "name": "Template",
@@ -7271,6 +7263,14 @@
                 "file": "src/app/atoms/counters/simple-counter/simple-counter.component.stories.ts",
                 "type": "Story<SimpleCounterComponent>",
                 "defaultValue": "(args: SimpleCounterComponent) => ({\n  component: SimpleCounterComponent,\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/atoms/filter-components/selected-item/selected-item.component.stories.ts",
+                "type": "Story<SelectedItemComponent>",
+                "defaultValue": "(args: SelectedItemComponent) => ({\n  component: SelectedItemComponent,\n  props: args,\n})"
             },
             {
                 "name": "Template",
@@ -7292,17 +7292,17 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/atoms/modals/approve-modal/approve-modal.component.stories.ts",
-                "type": "Story<ApproveModalComponent>",
-                "defaultValue": "(args: ApproveModalComponent) => ({\n  component: ApproveModalComponent,\n  props: args,\n  template: `\n  <app-approve-modal \n    [title]=\"title\" \n    [primaryButtonTitle]=\"primaryButtonTitle\"\n    [dangerButtonTitle]=\"dangerButtonTitle\"\n    (primaryButtonFunction)=\"primaryButtonFunction()\"\n    (dangerButtonFunction)=\"dangerButtonFunction()\"\n    (closeModal)=\"closeModal()\"\n  >\n    <p class=\"fs-16-sofia-300\">Do you really want to delete the <strong>Secure Privacy</strong></p>\n  </app-approve-modal>\n  `,\n})"
+                "file": "src/app/atoms/navLink/icon-links/icon-links.component.stories.ts",
+                "type": "Story<IconLinksComponent>",
+                "defaultValue": "(args: IconLinksComponent) => ({\n  component: IconLinksComponent,\n  props: args,\n})"
             },
             {
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/atoms/navLink/icon-links/icon-links.component.stories.ts",
-                "type": "Story<IconLinksComponent>",
-                "defaultValue": "(args: IconLinksComponent) => ({\n  component: IconLinksComponent,\n  props: args,\n})"
+                "file": "src/app/atoms/modals/approve-modal/approve-modal.component.stories.ts",
+                "type": "Story<ApproveModalComponent>",
+                "defaultValue": "(args: ApproveModalComponent) => ({\n  component: ApproveModalComponent,\n  props: args,\n  template: `\n  <app-approve-modal \n    [title]=\"title\" \n    [primaryButtonTitle]=\"primaryButtonTitle\"\n    [dangerButtonTitle]=\"dangerButtonTitle\"\n    (primaryButtonFunction)=\"primaryButtonFunction()\"\n    (dangerButtonFunction)=\"dangerButtonFunction()\"\n    (closeModal)=\"closeModal()\"\n  >\n    <p class=\"fs-16-sofia-300\">Do you really want to delete the <strong>Secure Privacy</strong></p>\n  </app-approve-modal>\n  `,\n})"
             },
             {
                 "name": "Template",
@@ -7364,14 +7364,6 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/molecules/form-screens/form-screen-fourth/form-screen-fourth.stories.ts",
-                "type": "Story<FormScreenFourthComponent>",
-                "defaultValue": "(args: FormScreenFourthComponent) => ({\n  component: FormScreenFourthComponent,\n  props: args,\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "src/app/molecules/form-screens/form-screen-second/form-screen-second.stories.ts",
                 "type": "Story<FormScreenSecondComponent>",
                 "defaultValue": "(args: FormScreenSecondComponent) => ({\n  component: FormScreenSecondComponent,\n  props: args,\n})"
@@ -7380,17 +7372,17 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/molecules/form-screens/form-screen-third/form-screen-third.stories.ts",
-                "type": "Story<FormScreenThirdComponent>",
-                "defaultValue": "(args: FormScreenThirdComponent) => ({\n  component: FormScreenThirdComponent,\n  props: args,\n})"
+                "file": "src/app/molecules/form-screens/form-screen-fourth/form-screen-fourth.stories.ts",
+                "type": "Story<FormScreenFourthComponent>",
+                "defaultValue": "(args: FormScreenFourthComponent) => ({\n  component: FormScreenFourthComponent,\n  props: args,\n})"
             },
             {
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/molecules/layouts/white-rounded-layout/white-rounded-layout.component.stories.ts",
-                "type": "Story<WhiteRoundedLayoutComponent>",
-                "defaultValue": "(args: WhiteRoundedLayoutComponent) => ({\n  component: WhiteRoundedLayoutComponent,\n  props: args,\n  template: `\n  <app-white-rounded-layout [titles]=\"titles\">\n    <app-text-with-after-gradient-line [title]=\"'scan report'\"></app-text-with-after-gradient-line>\n  </app-white-rounded-layout>\n  `,\n})"
+                "file": "src/app/molecules/form-screens/form-screen-third/form-screen-third.stories.ts",
+                "type": "Story<FormScreenThirdComponent>",
+                "defaultValue": "(args: FormScreenThirdComponent) => ({\n  component: FormScreenThirdComponent,\n  props: args,\n})"
             },
             {
                 "name": "Template",
@@ -7444,6 +7436,14 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "src/app/molecules/layouts/white-rounded-layout/white-rounded-layout.component.stories.ts",
+                "type": "Story<WhiteRoundedLayoutComponent>",
+                "defaultValue": "(args: WhiteRoundedLayoutComponent) => ({\n  component: WhiteRoundedLayoutComponent,\n  props: args,\n  template: `\n  <app-white-rounded-layout [titles]=\"titles\">\n    <app-text-with-after-gradient-line [title]=\"'scan report'\"></app-text-with-after-gradient-line>\n  </app-white-rounded-layout>\n  `,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "src/app/atoms/buttons/domains-card-buttons/mutable-danger-button/mutable-danger-button.component.stories.ts",
                 "type": "Story<MutableDangerButtonComponent>",
                 "defaultValue": "(args: MutableDangerButtonComponent) => ({\n  component: MutableDangerButtonComponent,\n  props: args,\n})"
@@ -7460,17 +7460,17 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/atoms/buttons/domains-card-buttons/mutable-light-button/mutable-light-button.component.stories.ts",
-                "type": "Story<MutableLightButtonComponent>",
-                "defaultValue": "(args: MutableLightButtonComponent) => ({\n  component: MutableLightButtonComponent,\n  props: args,\n})"
+                "file": "src/app/atoms/buttons/domains-card-buttons/mutable-primary-button/mutable-primary-button.component.stories.ts",
+                "type": "Story<MutablePrimaryButtonComponent>",
+                "defaultValue": "(args: MutablePrimaryButtonComponent) => ({\n  component: MutablePrimaryButtonComponent,\n  props: args,\n})"
             },
             {
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/atoms/buttons/domains-card-buttons/mutable-primary-button/mutable-primary-button.component.stories.ts",
-                "type": "Story<MutablePrimaryButtonComponent>",
-                "defaultValue": "(args: MutablePrimaryButtonComponent) => ({\n  component: MutablePrimaryButtonComponent,\n  props: args,\n})"
+                "file": "src/app/atoms/buttons/domains-card-buttons/mutable-light-button/mutable-light-button.component.stories.ts",
+                "type": "Story<MutableLightButtonComponent>",
+                "defaultValue": "(args: MutableLightButtonComponent) => ({\n  component: MutableLightButtonComponent,\n  props: args,\n})"
             },
             {
                 "name": "Template",
@@ -7492,17 +7492,17 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/atoms/inputs/checkbox/checkbox-input-simple/checkbox-input-simple.stories.ts",
-                "type": "Story<CheckboxInputSimpleComponent>",
-                "defaultValue": "(args: CheckboxInputSimpleComponent) => ({\n  component: CheckboxInputSimpleComponent,\n  props: args,\n})"
+                "file": "src/app/atoms/inputs/checkbox/checkbox-input-switch/checkbox-input-switch.stories.ts",
+                "type": "Story<CheckboxInputSwitchComponent>",
+                "defaultValue": "(args: CheckboxInputSwitchComponent) => ({\n  component: CheckboxInputSwitchComponent,\n  props: args,\n})"
             },
             {
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/atoms/inputs/checkbox/checkbox-input-switch/checkbox-input-switch.stories.ts",
-                "type": "Story<CheckboxInputSwitchComponent>",
-                "defaultValue": "(args: CheckboxInputSwitchComponent) => ({\n  component: CheckboxInputSwitchComponent,\n  props: args,\n})"
+                "file": "src/app/atoms/inputs/checkbox/checkbox-input-simple/checkbox-input-simple.stories.ts",
+                "type": "Story<CheckboxInputSimpleComponent>",
+                "defaultValue": "(args: CheckboxInputSimpleComponent) => ({\n  component: CheckboxInputSimpleComponent,\n  props: args,\n})"
             },
             {
                 "name": "Template",
@@ -9123,58 +9123,6 @@
                     "defaultValue": "(args: StepsComponent) => ({\n  component: StepsComponent,\n  props: args,\n})"
                 }
             ],
-            "src/app/organisms/registration-form/registration-form.stories.ts": [
-                {
-                    "name": "props",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/organisms/registration-form/registration-form.stories.ts",
-                    "type": "object",
-                    "defaultValue": "{}"
-                },
-                {
-                    "name": "RegistrationForm",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/organisms/registration-form/registration-form.stories.ts",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/organisms/registration-form/registration-form.stories.ts",
-                    "type": "Story<RegistrationFormComponent>",
-                    "defaultValue": "(args: RegistrationFormComponent) => ({\n  component: RegistrationFormComponent,\n  props: args,\n})"
-                }
-            ],
-            "src/app/organisms/scan-report/scan-report.component.stories.ts": [
-                {
-                    "name": "props",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/organisms/scan-report/scan-report.component.stories.ts",
-                    "type": "object",
-                    "defaultValue": "{}"
-                },
-                {
-                    "name": "ScanReport",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/organisms/scan-report/scan-report.component.stories.ts",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/organisms/scan-report/scan-report.component.stories.ts",
-                    "type": "Story<ScanReportComponent>",
-                    "defaultValue": "(args: ScanReportComponent) => ({\n  component: ScanReportComponent,\n  props: args,\n})"
-                }
-            ],
             "src/app/molecules/card-row/card-row.component.stories.ts": [
                 {
                     "name": "props",
@@ -9225,6 +9173,58 @@
                     "file": "src/app/molecules/roll-up/roll-up.component.stories.ts",
                     "type": "",
                     "defaultValue": "Template.bind({})"
+                }
+            ],
+            "src/app/organisms/registration-form/registration-form.stories.ts": [
+                {
+                    "name": "props",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/organisms/registration-form/registration-form.stories.ts",
+                    "type": "object",
+                    "defaultValue": "{}"
+                },
+                {
+                    "name": "RegistrationForm",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/organisms/registration-form/registration-form.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/organisms/registration-form/registration-form.stories.ts",
+                    "type": "Story<RegistrationFormComponent>",
+                    "defaultValue": "(args: RegistrationFormComponent) => ({\n  component: RegistrationFormComponent,\n  props: args,\n})"
+                }
+            ],
+            "src/app/organisms/scan-report/scan-report.component.stories.ts": [
+                {
+                    "name": "props",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/organisms/scan-report/scan-report.component.stories.ts",
+                    "type": "object",
+                    "defaultValue": "{}"
+                },
+                {
+                    "name": "ScanReport",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/organisms/scan-report/scan-report.component.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/organisms/scan-report/scan-report.component.stories.ts",
+                    "type": "Story<ScanReportComponent>",
+                    "defaultValue": "(args: ScanReportComponent) => ({\n  component: ScanReportComponent,\n  props: args,\n})"
                 }
             ],
             "src/app/atoms/buttons/secondary-border-button/secondary-border-button.component.stories.ts": [
@@ -9339,32 +9339,6 @@
                     "defaultValue": "(args: SemicircleChartCardComponent) => ({\n  component: SemicircleChartCardComponent,\n  props: args,\n})"
                 }
             ],
-            "src/app/atoms/filter-components/selected-item/selected-item.component.stories.ts": [
-                {
-                    "name": "props",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/atoms/filter-components/selected-item/selected-item.component.stories.ts",
-                    "type": "object",
-                    "defaultValue": "{\n  backgroundColor: { control: 'color' },\n}"
-                },
-                {
-                    "name": "Simple",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/atoms/filter-components/selected-item/selected-item.component.stories.ts",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/atoms/filter-components/selected-item/selected-item.component.stories.ts",
-                    "type": "Story<SelectedItemComponent>",
-                    "defaultValue": "(args: SelectedItemComponent) => ({\n  component: SelectedItemComponent,\n  props: args,\n})"
-                }
-            ],
             "src/app/atoms/counters/simple-counter/simple-counter.component.stories.ts": [
                 {
                     "name": "props",
@@ -9389,6 +9363,32 @@
                     "file": "src/app/atoms/counters/simple-counter/simple-counter.component.stories.ts",
                     "type": "Story<SimpleCounterComponent>",
                     "defaultValue": "(args: SimpleCounterComponent) => ({\n  component: SimpleCounterComponent,\n  props: args,\n})"
+                }
+            ],
+            "src/app/atoms/filter-components/selected-item/selected-item.component.stories.ts": [
+                {
+                    "name": "props",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/atoms/filter-components/selected-item/selected-item.component.stories.ts",
+                    "type": "object",
+                    "defaultValue": "{\n  backgroundColor: { control: 'color' },\n}"
+                },
+                {
+                    "name": "Simple",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/atoms/filter-components/selected-item/selected-item.component.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/atoms/filter-components/selected-item/selected-item.component.stories.ts",
+                    "type": "Story<SelectedItemComponent>",
+                    "defaultValue": "(args: SelectedItemComponent) => ({\n  component: SelectedItemComponent,\n  props: args,\n})"
                 }
             ],
             "src/app/atoms/inputs/formInput/formInput.stories.ts": [
@@ -9469,32 +9469,6 @@
                     "defaultValue": "Template.bind({})"
                 }
             ],
-            "src/app/molecules/layouts/white-rounded-layout/white-rounded-layout.component.stories.ts": [
-                {
-                    "name": "props",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/molecules/layouts/white-rounded-layout/white-rounded-layout.component.stories.ts",
-                    "type": "object",
-                    "defaultValue": "{}"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/molecules/layouts/white-rounded-layout/white-rounded-layout.component.stories.ts",
-                    "type": "Story<WhiteRoundedLayoutComponent>",
-                    "defaultValue": "(args: WhiteRoundedLayoutComponent) => ({\n  component: WhiteRoundedLayoutComponent,\n  props: args,\n  template: `\n  <app-white-rounded-layout [titles]=\"titles\">\n    <app-text-with-after-gradient-line [title]=\"'scan report'\"></app-text-with-after-gradient-line>\n  </app-white-rounded-layout>\n  `,\n})"
-                },
-                {
-                    "name": "WhiteRounded",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/molecules/layouts/white-rounded-layout/white-rounded-layout.component.stories.ts",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                }
-            ],
             "src/app/molecules/menu/side-menu/side-menu.stories.ts": [
                 {
                     "name": "props",
@@ -9547,30 +9521,30 @@
                     "defaultValue": "(args: TabMenuComponent) => ({\n  component: TabMenuComponent,\n  props: args,\n})"
                 }
             ],
-            "src/app/atoms/inputs/checkbox/checkbox-input-simple/checkbox-input-simple.stories.ts": [
+            "src/app/molecules/layouts/white-rounded-layout/white-rounded-layout.component.stories.ts": [
                 {
                     "name": "props",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/atoms/inputs/checkbox/checkbox-input-simple/checkbox-input-simple.stories.ts",
+                    "file": "src/app/molecules/layouts/white-rounded-layout/white-rounded-layout.component.stories.ts",
                     "type": "object",
-                    "defaultValue": "{\n  isChecked: { control: 'boolean' },\n  title: { control: 'text' }\n}"
-                },
-                {
-                    "name": "Simple",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/atoms/inputs/checkbox/checkbox-input-simple/checkbox-input-simple.stories.ts",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
+                    "defaultValue": "{}"
                 },
                 {
                     "name": "Template",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/atoms/inputs/checkbox/checkbox-input-simple/checkbox-input-simple.stories.ts",
-                    "type": "Story<CheckboxInputSimpleComponent>",
-                    "defaultValue": "(args: CheckboxInputSimpleComponent) => ({\n  component: CheckboxInputSimpleComponent,\n  props: args,\n})"
+                    "file": "src/app/molecules/layouts/white-rounded-layout/white-rounded-layout.component.stories.ts",
+                    "type": "Story<WhiteRoundedLayoutComponent>",
+                    "defaultValue": "(args: WhiteRoundedLayoutComponent) => ({\n  component: WhiteRoundedLayoutComponent,\n  props: args,\n  template: `\n  <app-white-rounded-layout [titles]=\"titles\">\n    <app-text-with-after-gradient-line [title]=\"'scan report'\"></app-text-with-after-gradient-line>\n  </app-white-rounded-layout>\n  `,\n})"
+                },
+                {
+                    "name": "WhiteRounded",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/molecules/layouts/white-rounded-layout/white-rounded-layout.component.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
                 }
             ],
             "src/app/atoms/inputs/checkbox/checkbox-input-switch/checkbox-input-switch.stories.ts": [
@@ -9597,6 +9571,32 @@
                     "file": "src/app/atoms/inputs/checkbox/checkbox-input-switch/checkbox-input-switch.stories.ts",
                     "type": "Story<CheckboxInputSwitchComponent>",
                     "defaultValue": "(args: CheckboxInputSwitchComponent) => ({\n  component: CheckboxInputSwitchComponent,\n  props: args,\n})"
+                }
+            ],
+            "src/app/atoms/inputs/checkbox/checkbox-input-simple/checkbox-input-simple.stories.ts": [
+                {
+                    "name": "props",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/atoms/inputs/checkbox/checkbox-input-simple/checkbox-input-simple.stories.ts",
+                    "type": "object",
+                    "defaultValue": "{\n  isChecked: { control: 'boolean' },\n  title: { control: 'text' }\n}"
+                },
+                {
+                    "name": "Simple",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/atoms/inputs/checkbox/checkbox-input-simple/checkbox-input-simple.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/atoms/inputs/checkbox/checkbox-input-simple/checkbox-input-simple.stories.ts",
+                    "type": "Story<CheckboxInputSimpleComponent>",
+                    "defaultValue": "(args: CheckboxInputSimpleComponent) => ({\n  component: CheckboxInputSimpleComponent,\n  props: args,\n})"
                 }
             ],
             "src/app/atoms/inputs/select-input/select-input-search/select-input-search.component.stories.ts": [
