@@ -45,7 +45,7 @@ Success.args = {
 export const SuccessBig = Template.bind({});
 SuccessBig.args = {
   title: "got it",
-  classes: "btn-app--h46--wide btn-app btn-success fs-12-gramm-400"
+  classes: "btn-app--h46--wide btn-app btn-success ffs-12-sofia-800"
 };
 
 export const SuccessAsimetric = Template.bind({});
