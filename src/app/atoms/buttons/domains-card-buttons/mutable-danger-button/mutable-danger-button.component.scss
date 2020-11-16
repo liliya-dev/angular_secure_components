@@ -8,7 +8,6 @@
 
 .app-mutable-danger-button.active {
   background-color: rgba(var(--text-color-code), 0.1);
-  transition: 0.3s;
 
   &:hover {
     background-color: rgba(var(--text-color-code), 1);

@@ -1,4 +1,4 @@
-import { Component, Input, ViewEncapsulation, ViewChild, ElementRef, OnChanges, HostListener } from '@angular/core';
+import { Component, Input, ViewEncapsulation, ViewChild, ElementRef, OnChanges, HostListener, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-onboarding-card',
@@ -10,9 +10,15 @@ export class OnboardingCardComponent implements OnChanges {
   @Input() isSelected: boolean;
   @Input() title: string;
   @Input() text: string;
+  @Input() id: string;
   
+  @Output() delete: EventEmitter<any> = new EventEmitter();
+  @Output() edit: EventEmitter<any> = new EventEmitter();
+  @Output() select: EventEmitter<any> = new EventEmitter();
+
   onActive = false;
   isMobile: boolean;
+  isSmallMobile: boolean;
   isVisibleOptions = false;
   cardColor = this.onActive ? 'linear-gradient(89.52deg, #24B04B -46.17%, #0263BC 186.99%)' : 'rgb(255, 255, 255)';
   textColor = this.onActive ? 'rgb(255, 255, 255)' : '#011949';
@@ -22,14 +28,14 @@ export class OnboardingCardComponent implements OnChanges {
     if (this.isMobile) {
       this.isVisibleOptions = false;
     }
-    // your logic on press this button
+    this.delete.emit(this.id);
   }
 
   handleEdit = () => {
     if (this.isMobile) {
       this.isVisibleOptions = false;
     }
-    // your logic on press this button
+    this.edit.emit(this.id);
   }
 
   handleShowReports = () => {
@@ -63,6 +69,7 @@ export class OnboardingCardComponent implements OnChanges {
   onResize(event: any) {
     const width = this.block.nativeElement.clientWidth;
     this.isMobile = width < 750;
+    this.isSmallMobile = width < 420;
   }
 
 
@@ -76,5 +83,6 @@ export class OnboardingCardComponent implements OnChanges {
   ngOnChanges() {
     const width = document.querySelector('.app-onboarding-card').clientWidth;
     this.isMobile = width < 750;
+    this.isSmallMobile = width < 420;
   }
 }

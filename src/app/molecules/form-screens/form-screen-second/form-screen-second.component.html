@@ -2,5 +2,6 @@
 <p class="fs-18-sofia-300">You can add more domains inside the app</p>
 <app-form-input
   [placeholderText]="'yourwebsite.com'"
+  (changeValueParentFunction)="handleInputChange($event)"
 > 
 </app-form-input>

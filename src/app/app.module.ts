@@ -75,6 +75,8 @@ import { MutableDangerButtonComponent } from './atoms/buttons/domains-card-butto
 import { MutableGradientIconButtonComponent } from './atoms/buttons/domains-card-buttons/mutable-gradient-icon-button/mutable-gradient-icon-button.component';
 import { CheckboxMutableGradientComponent } from './atoms/inputs/checkbox/checkbox-mutable-gradient/checkbox-mutable-gradient.component';
 import { OnboardingCardComponent } from './atoms/card/onboarding-card/onboarding-card.component';
+import { OnboardingListComponent } from './molecules/onboarding-list/onboarding-list.component';
+import { ApproveModalComponent } from './atoms/modals/approve-modal/approve-modal.component';
 
 PlotlyModule.plotlyjs = PlotlyJS;
 
@@ -147,6 +149,8 @@ PlotlyModule.plotlyjs = PlotlyJS;
     MutableGradientIconButtonComponent,
     CheckboxMutableGradientComponent,
     OnboardingCardComponent,
+    OnboardingListComponent,
+    ApproveModalComponent,
   ],
   imports: [
     ColorSketchModule,

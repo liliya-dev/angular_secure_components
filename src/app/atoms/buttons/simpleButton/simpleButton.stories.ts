@@ -24,6 +24,12 @@ Danger.args = {
   classes: "btn-danger fs-12-sofia-800 btn-app btn-app--h36"
 };
 
+export const DangerBig = Template.bind({});
+DangerBig.args = {
+  title: "clear",
+  classes: "btn-danger fs-12-sofia-800 btn-app btn-app--h46--wide"
+};
+
 export const Transparent = Template.bind({});
 Transparent.args = {
   title: "back",

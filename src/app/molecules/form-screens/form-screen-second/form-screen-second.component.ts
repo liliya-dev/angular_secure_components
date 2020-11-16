@@ -7,4 +7,5 @@ import { Component } from '@angular/core';
 })
 
 export class FormScreenSecondComponent {
+  handleInputChange = (value) => console.log('changeValueParentFunction works', value)
 }

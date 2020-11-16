@@ -19,6 +19,9 @@ const Template: Story<formInputComponent> = (args: formInputComponent) => ({
 export const Text = Template.bind({});
 Text.args = {
   placeholderText: "First Name",
+  isBold: true,
+  initialValue: "Secure Privacy",
+  changeValueParentFunction: (value) => console.log('changeValueParentFunction works', value)
 };
 
 

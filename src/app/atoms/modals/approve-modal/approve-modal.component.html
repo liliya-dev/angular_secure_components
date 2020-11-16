@@ -1,0 +1,21 @@
+<div class="approve-modal" (click)="handleClick($event)">
+  <div class="approve-modal__form">
+    <p class="approve-modal__title fs-h3">{{ title }}</p>
+    <ng-content></ng-content>
+    <div class="approve-modal__buttons">
+      <app-simple-button 
+        [classes]="'btn-app--h46--wide btn-app btn-success fs-12-gramm-400'"
+        [title]="primaryButtonTitle"
+        (click)="primaryButtonFunction.emit()"
+      >
+      </app-simple-button>
+      <app-simple-button
+        *ngIf="dangerButtonTitle!==''" 
+        [classes]="'btn-danger fs-12-sofia-800 btn-app btn-app--h46--wide'"
+        [title]="dangerButtonTitle"
+        (click)="dangerButtonFunction.emit()"
+      >
+      </app-simple-button>
+    </div>
+  </div>
+</div>

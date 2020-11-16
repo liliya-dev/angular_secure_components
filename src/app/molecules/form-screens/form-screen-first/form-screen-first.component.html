@@ -3,20 +3,24 @@
   <div class="app-form-screen-first__column">   
     <app-form-input
       [placeholderText]="'First Name'"
+      (changeValueParentFunction)="handleInputChange($event)"
     > 
     </app-form-input> 
     <app-form-input
       [placeholderText]="'Email'"
+      (changeValueParentFunction)="handleInputChange($event)"
     > 
     </app-form-input>    
     <app-form-input
       [placeholderText]="'Password'"
+      (changeValueParentFunction)="handleInputChange($event)"
     > 
     </app-form-input>        
   </div>
   <div class="app-form-screen-first__column">   
     <app-form-input
       [placeholderText]="'Last Name'"
+      (changeValueParentFunction)="handleInputChange($event)"
     > 
     </app-form-input> 
     <app-select-input-simple
@@ -26,6 +30,7 @@
     </app-select-input-simple>   
     <app-form-input
       [placeholderText]="'Confirm Password'"
+      (changeValueParentFunction)="handleInputChange($event)"
     > 
     </app-form-input> 
   </div>

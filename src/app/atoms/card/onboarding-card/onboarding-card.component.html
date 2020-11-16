@@ -8,10 +8,12 @@
     <app-checkbox-mutable-gradient
       [onActive]="onActive"
       [isChecked]="isSelected"
+      [id]="id"
+      (handleChange)="select.emit($event)"
     >
     </app-checkbox-mutable-gradient>
     <div class="app-onboarding-card__text-box"
-      [ngStyle]="{'flex-direction': isMobile ? 'column' : 'row' }"
+      [ngStyle]="{'flex-direction': isSmallMobile ? 'column' : 'row' }"
     >
       <p [ngStyle]="{'color': textColor}" class="app-onboarding-card__title fs-18-sofia-600">{{ title }}</p>
       <p [ngStyle]="{'color': textColor}" class="app-onboarding-card__text fs-18-sofia-300-simple">{{ text }}</p>

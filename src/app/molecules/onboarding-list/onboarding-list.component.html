@@ -1,0 +1,45 @@
+<div class="app-onboarding-component">
+
+<ng-template #deleteModalContent let-titleActiveDomain="titleActiveDomain">
+  <p class="fs-16-sofia-300">Do you really want to delete the <strong>{{titleActiveDomain}}</strong></p>
+</ng-template>
+<ng-template #editModalContent let-initialValue="initialValue">
+  <app-form-input
+    [placeholderText]="''"
+    [isBold]="true"
+    [initialValue]="initialValue"
+    [name]="initialValue"
+    (changeValueParentFunction)="setValue($event)"
+  >
+  </app-form-input>
+</ng-template>
+  <ul class="app-onboarding-component__list">
+    <li class="app-onboarding-component__item" *ngFor="let domain of domains">
+      <app-onboarding-card
+        [title]="domain.title"
+        [text]="domain.text"
+        [isSelected]="checkIsSelected(domain.id)"
+        (delete)="handleDelete($event)"
+        (edit)="handleEdit($event)"
+        (select)="changeSelectedList($event)"
+        [id]="domain.id"
+      >
+      </app-onboarding-card>
+    </li>
+  </ul>
+  <div *ngIf="isModalVisible">
+    <app-approve-modal
+      [title]="modalTitle"
+      [dangerButtonTitle]="modalDangerButtonTitle"
+      [primaryButtonTitle]="modalPrimaryButtonTitle"
+      (closeModal)="closeModal()"
+      (primaryButtonFunction)="modalPrimaryButtonFunction()"
+      (dangerButtonFunction)="modalDangerButtonFunction()"
+    >
+    <ng-container 
+        *ngTemplateOutlet="modalComponent;context:ctx">
+    </ng-container>
+    </app-approve-modal>
+  </div>
+
+</div>

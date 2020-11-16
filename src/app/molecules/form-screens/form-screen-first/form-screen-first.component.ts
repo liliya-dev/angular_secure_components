@@ -8,5 +8,5 @@ import { Component, ViewEncapsulation } from '@angular/core';
 })
 
 export class FormScreenFirstComponent {
-
+  handleInputChange = (value) => console.log('changeValueParentFunction works', value)
 }

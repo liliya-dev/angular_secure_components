@@ -1,6 +1,8 @@
 <input 
-  class="app-form-input-field fs-16-sofia-300"
+  [ngClass]="classes"
   [placeholder]="placeholderText"
   type="text"
   [name]="name"
+  [value]="value"
+  (input)="handleChangeValue($event)"
 >

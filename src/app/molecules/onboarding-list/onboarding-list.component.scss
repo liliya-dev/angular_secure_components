@@ -1,0 +1,10 @@
+.app-onboarding-component {
+  position: relative;
+  color: var(--secondary-color);
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 23px;
+  }
+}
