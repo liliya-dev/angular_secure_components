@@ -1,11 +1,7 @@
 import { Meta, Story } from '@storybook/angular';
 import { SimpleTextareaComponent } from './simple-textarea.component';
 
-const props = {
-  backgroundColor: { control: 'color' },
-  color: { control: 'color' },
-  placeholder: { control: 'text' },
-};
+const props = {};
 
 export default {
   title: 'Atoms/Input',

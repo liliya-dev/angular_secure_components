@@ -5,6 +5,7 @@ import { Component, Input } from '@angular/core';
   templateUrl: './selected-item.component.html',
   styleUrls: ['./selected-item.component.scss']
 })
+
 export class SelectedItemComponent {
   @Input() title: string;
 }

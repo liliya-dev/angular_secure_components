@@ -1,21 +1,22 @@
 .selected-filter-item {
-  border-radius: 43px;
-  padding: 7px 13px 5px 8px;
-  border: none;
-  height: 28px;
-  color: rgba(var(--secondary-color-code), 0.5);
-  background: #EAEDF2;
-  transition: 0.3s;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  height: 28px;
+  padding: 7px 13px 5px 8px;
+  
+  border-radius: 43px;
+  border: none;
+  color: rgba(var(--secondary-color-code), 0.5);
+  background: var(--status-bar-bg-color);
+  transition: 0.3s;
 
   &__img {
     margin-left: 17px;
   }
 
   &:hover {
-    background: #D0DAEB;
+    background: var(--asimetric-bg-color);
 
     & > .fs-16-sofia-300 {
       font-weight: 500;

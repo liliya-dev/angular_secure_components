@@ -5,6 +5,7 @@ import { Component, Input } from '@angular/core';
   templateUrl: './card-with-columns-text.component.html',
   styleUrls: ['./card-with-columns-text.component.scss']
 })
+
 export class CardWithColumnsTextComponent {
   @Input() values: string[];
   @Input() texts: string[];

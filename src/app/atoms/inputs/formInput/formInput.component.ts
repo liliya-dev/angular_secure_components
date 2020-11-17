@@ -11,6 +11,7 @@ export class formInputComponent implements OnInit {
   @Input() name?: string = '';
   @Input() initialValue?: string;
   @Input() isBold?: string;
+  @Input() id?: number = Math.random();
 
   @Output() changeValueParentFunction?: EventEmitter<any> = new EventEmitter();
 

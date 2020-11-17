@@ -11,7 +11,9 @@ export class CheckboxMutableGradientComponent implements OnChanges {
   @Input() onActive: boolean;
   @Input() isChecked: boolean;
   @Input() id: string;
+
   @Output() handleChange: EventEmitter<any> = new EventEmitter();
+  
   classes='';
 
   onToggle = () => {

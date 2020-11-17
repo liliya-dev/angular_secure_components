@@ -2,7 +2,7 @@ import { Meta, Story } from '@storybook/angular';
 import { CheckboxInputSwitchComponent } from './checkbox-input-switch.component';
 
 const props = {
-    isChecked: { control: 'boolean' },
+  isChecked: { control: 'boolean' },
 };
 
 export default {

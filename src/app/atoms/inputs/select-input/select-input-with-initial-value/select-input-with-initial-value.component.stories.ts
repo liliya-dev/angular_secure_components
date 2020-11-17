@@ -3,10 +3,7 @@ import { Meta, moduleMetadata, Story } from '@storybook/angular';
 import { SelectInputWithInitialValueComponent } from './select-input-with-initial-value.component';
 import { NgSelectModule } from '@ng-select/ng-select';
 
-const props = {
-  initialValue: { control: 'text' },
-  items: { control: 'array' }
-};
+const props = {};
 
 export default {
   title: 'Atoms/Input/Select',

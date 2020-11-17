@@ -1,6 +1,5 @@
 import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
 
-
 @Component({
   selector: 'app-card-with-donut-chart',
   templateUrl: './card-with-donut-chart.component.html',

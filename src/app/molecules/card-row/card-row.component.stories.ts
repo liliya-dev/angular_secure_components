@@ -36,6 +36,4 @@ const Template: Story<CardRowComponent> = (args: CardRowComponent) => ({
 });
 
 export const Row = Template.bind({});
-Row.args = {
-
-};
+Row.args = {};

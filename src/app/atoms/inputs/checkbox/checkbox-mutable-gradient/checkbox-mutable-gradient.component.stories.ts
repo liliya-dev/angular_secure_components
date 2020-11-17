@@ -2,7 +2,6 @@ import { Meta, moduleMetadata, Story } from '@storybook/angular';
 import { CheckboxMutableGradientComponent } from './checkbox-mutable-gradient.component';
 
 const props = {
-  title: { control: 'text' },
   isChecked: { control: 'boolean' },
   onActive: { control: 'boolean' },
 };

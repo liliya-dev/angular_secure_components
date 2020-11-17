@@ -3,12 +3,7 @@ import { SemicircleChartCardComponent } from './semicircle-chart-card.component'
 import { NgApexchartsModule } from "ng-apexcharts";
 import { SemicircleChartComponent } from '../../semicircle-chart/semicircle-chart.component';
 
-
-const props = {
-  title: { control: 'text' },
-  labels: { control: 'array' },
-  values: { control: 'array' }
-};
+const props = {};
 
 export default {
   title: 'Atoms/Card',

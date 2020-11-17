@@ -8,8 +8,7 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { AngularSvgIconModule } from 'angular-svg-icon';
 
-const props = {
-};
+const props = {};
 
 export default {
   title: 'Atoms/Card',

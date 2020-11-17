@@ -4,10 +4,7 @@ import { Meta, moduleMetadata, Story } from '@storybook/angular';
 import { AngularSvgIconModule } from 'angular-svg-icon';
 import { MutableGradientIconButtonComponent } from './mutable-gradient-icon-button.component';
 
-const props = {
-  backgroundColor: { control: 'color' },
-  title: { control: 'text' },
-};
+const props = {};
 
 export default {
   title: 'Atoms/Button/Mutable Gradient Icon',

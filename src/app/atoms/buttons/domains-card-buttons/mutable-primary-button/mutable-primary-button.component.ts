@@ -9,9 +9,10 @@ import { Component, Input, OnChanges } from '@angular/core';
 export class MutablePrimaryButtonComponent implements OnChanges {
   @Input() title: string;
   @Input() onActive: boolean;
+
   classes = '';
 
-  ngOnChanges(): void {
+  ngOnChanges() {
     this.classes = this.onActive ? 'app-mutable-primary-button active' : 'app-mutable-primary-button';
   }
 }

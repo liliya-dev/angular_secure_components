@@ -1,7 +1,7 @@
 <div class="app-onboarding-card"
   (mouseenter)="setOnActive(true)"
   (mouseleave)="setOnActive(false)"
-  [ngStyle]="{'background': cardColor }"
+  [ngStyle]="{ 'background': cardColor }"
   #block
 >
   <div class="app-onboarding-card__wrapper">
@@ -13,10 +13,10 @@
     >
     </app-checkbox-mutable-gradient>
     <div class="app-onboarding-card__text-box"
-      [ngStyle]="{'flex-direction': isSmallMobile ? 'column' : 'row' }"
+      [ngStyle]="{ 'flex-direction': isSmallMobile ? 'column' : 'row' }"
     >
-      <p [ngStyle]="{'color': textColor}" class="app-onboarding-card__title fs-18-sofia-600">{{ title }}</p>
-      <p [ngStyle]="{'color': textColor}" class="app-onboarding-card__text fs-18-sofia-300-simple">{{ text }}</p>
+      <p [ngStyle]="{ 'color': textColor }" class="app-onboarding-card__title fs-18-sofia-600">{{ title }}</p>
+      <p [ngStyle]="{ 'color': textColor }" class="app-onboarding-card__text fs-18-sofia-300-simple">{{ text }}</p>
     </div>
   </div>
   <div class="app-ondoarding-card__wrapper" *ngIf="isMobile">
@@ -27,7 +27,7 @@
     >
       <svg-icon 
         [src]="'assets/images/menu/Options.svg'"
-        [svgStyle]="{'fill': '#011949' }"
+        [svgStyle]="{ 'fill': '#011949' }"
       >
       </svg-icon>
     </button>

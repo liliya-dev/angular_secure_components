@@ -1,27 +1,30 @@
 .approve-modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  background-color: rgba(var(--secondary-color-code), 0.5);
   width: 100vw;
   height: 100vh;
+
   display: flex;
   justify-content: center;
   align-items: center;
-  text-align: center;
+
+  position: fixed;
+  top: 0;
+  left: 0;
   z-index: 3;
+
+  background-color: rgba(var(--secondary-color-code), 0.5);
+  text-align: center;
 
   &__title {
     margin-bottom: 32px;
   }
 
   &__form {
-    background: var(--card-bg-color);
     position: relative;
     top: -10%;
-    border-radius: 12px 30px;
-    padding: 32px 64px;
     min-width: 588px;
+    padding: 32px 64px;
+    background: var(--card-bg-color);
+    border-radius: 12px 30px;
   }
 
   &__buttons {

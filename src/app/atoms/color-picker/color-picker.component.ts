@@ -9,6 +9,7 @@ import { Component, ViewEncapsulation } from '@angular/core';
 
 export class ColorPickerComponent {
   consoleColor = (event) => {
+    // your logic on color change
     console.log(event);
   }
 }

@@ -1,14 +1,14 @@
 .card-reports {
-  padding: 16px 16px 11px;
   width: 188px;
+  padding: 16px 16px 11px;
   border-radius: 12px;
   color: var(--secondary-color);
 
   &__title {
+    margin-bottom: 2px;
     letter-spacing: 0.05em;
     text-transform: uppercase;
     line-height: 130%;
-    margin-bottom: 2px;
   }
 
   &__text {
@@ -17,11 +17,11 @@
   }
 
   &__container {
-    padding-top: 14px;
-    border-top: 0.580318px solid rgba(var(--secondary-color-code), 0.1);
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding-top: 14px;
+    border-top: 0.580318px solid rgba(var(--secondary-color-code), 0.1);
   }
 
   &__img {

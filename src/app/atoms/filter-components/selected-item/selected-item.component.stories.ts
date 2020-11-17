@@ -1,9 +1,7 @@
 import { Meta, Story } from '@storybook/angular';
 import { SelectedItemComponent } from './selected-item.component';
 
-const props = {
-  backgroundColor: { control: 'color' },
-};
+const props = {};
 
 export default {
   title: 'Atoms/Filter Components/Selected Item',

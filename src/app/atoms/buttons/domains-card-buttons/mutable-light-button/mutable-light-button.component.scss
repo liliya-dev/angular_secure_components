@@ -1,11 +1,12 @@
 .app-button-mutable-light {
-  padding: 17px 29px;
-  border: 1px solid var(--asimetric-bg-color);
-  box-sizing: border-box;
-  border-radius: 8px;
   width: fit-content;
-  text-transform: uppercase;
+  padding: 17px 29px;
+  box-sizing: border-box;
+
+  border: 1px solid var(--asimetric-bg-color);
+  border-radius: 8px;
   background-color: transparent;
+  text-transform: uppercase;
   letter-spacing: 0.05em;
   color: var(--secondary-color);
 

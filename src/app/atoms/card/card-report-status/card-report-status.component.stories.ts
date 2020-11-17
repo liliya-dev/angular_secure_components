@@ -1,12 +1,7 @@
 import { Meta, Story } from '@storybook/angular';
 import { CardReportStatusComponent } from './card-report-status.component';
 
-const props = {
-  title: { control: 'text' },
-  value: { control: 'text' },
-  text: { control: 'text' },
-  iconSrc: { control: 'text' }
-};
+const props = {};
 
 export default {
   title: 'Atoms/Card',

@@ -1,14 +1,14 @@
 <div class="card-report-status">
   <p class="card-report-status__title fs-18-gramm-light">
-    {{title}}
+    {{ title }}
   </p>
   <ul class="card-report-status__list">
     <li
       class="card-report-status__item fs-14-sofia-normal"
       *ngFor="let text of texts"
     >
-      <span class="card-report-status__value fs-14-sofia-800">{{text.value}}</span>
-      {{text.text}}
+      <span class="card-report-status__value fs-14-sofia-800">{{ text.value }}</span>
+      {{ text.text }}
     </li>
   </ul>
 </div>

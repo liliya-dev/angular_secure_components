@@ -8,4 +8,5 @@ import { Component, Input } from '@angular/core';
 
 export class CheckboxInputSwitchComponent {
   @Input() isChecked: boolean;
+  @Input() id?: number = Math.random();
 }

@@ -5,6 +5,7 @@ import { Component, Input, OnInit } from '@angular/core';
   templateUrl: './card-with-center-text.component.html',
   styleUrls: ['./card-with-center-text.component.scss']
 })
+
 export class CardWithCenterTextComponent {
   @Input() value: string;
   @Input() text: string;

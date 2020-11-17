@@ -9,4 +9,5 @@ import { Component, Input } from '@angular/core';
 export class CheckboxInputSimpleComponent {
   @Input() isChecked: boolean;
   @Input() title: string;
+  @Input() id?: number = Math.random();
 }

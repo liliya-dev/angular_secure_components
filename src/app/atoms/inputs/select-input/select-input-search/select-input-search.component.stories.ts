@@ -3,10 +3,7 @@ import { Meta, moduleMetadata, Story } from '@storybook/angular';
 import { SelectInputSearchComponent } from './select-input-search.component';
 import { NgSelectModule } from '@ng-select/ng-select';
 
-const props = {
-  initialValue: { control: 'text'},
-  items: { control: 'array'}
-};
+const props = {};
 
 export default {
   title: 'Atoms/Input/Select',

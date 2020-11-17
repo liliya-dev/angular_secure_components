@@ -2,9 +2,7 @@ import { Meta, moduleMetadata, Story } from '@storybook/angular';
 import { ColorPickerComponent } from './color-picker.component';
 import { ColorSketchModule } from 'ngx-color/sketch';
 
-const props = {
-  percent: { control: 'array' },
-};
+const props = {};
 
 export default {
   title: 'Atoms/Color Picker',
@@ -19,13 +17,10 @@ export default {
   argTypes: props,
 } as Meta;
 
-
 const Template: Story<ColorPickerComponent> = (args: ColorPickerComponent) => ({
   component: ColorPickerComponent,
   props: args,
 });
 
 export const Circled = Template.bind({});
-Circled.args = {
-  percent: [90],
-};
+Circled.args = {};

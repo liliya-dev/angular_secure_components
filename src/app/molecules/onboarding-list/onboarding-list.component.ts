@@ -1,5 +1,4 @@
-import { Component, ComponentFactoryResolver, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
-import { domain } from 'process';
+import { Component, ElementRef, Input, ViewChild } from '@angular/core';
 
 interface Domain {
   title: string,
@@ -82,5 +81,6 @@ export class OnboardingListComponent {
   deleteDomain() {
     this.domains = this.domains.filter(domain => domain.id !== this.activeId);
     this.isModalVisible = false;
+    this.selected = this.selected.filter(domain => domain !== this.activeId);
   }
 }

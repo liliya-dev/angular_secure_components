@@ -1,9 +1,7 @@
 import { Meta, Story } from '@storybook/angular';
 import { RoundIconComponent } from './round-icon.component';
 
-const props = {
-
-};
+const props = {};
 
 export default {
   title: 'Atoms/Icon',

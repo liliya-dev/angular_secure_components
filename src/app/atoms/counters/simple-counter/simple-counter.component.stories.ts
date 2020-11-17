@@ -3,8 +3,7 @@ import { SimpleCounterComponent } from './simple-counter.component';
 import { formInputComponent } from '../../inputs/formInput/formInput.component';
 import { lightButtonComponent } from '../../buttons/lightButton/lightButton.component';
 
-const props = {
-};
+const props = {};
 
 export default {
   title: 'Atoms/Counters',

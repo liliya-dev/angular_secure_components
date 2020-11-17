@@ -16,7 +16,7 @@ export class StatusStepsDynamicComponent implements OnChanges {
   list = [];
   classesDots: string[] = [];
   classesLines: string[] = [];
-  sectionWidth='';
+  sectionWidth = '';
 
   ngOnChanges(): void {
     const newList = [];

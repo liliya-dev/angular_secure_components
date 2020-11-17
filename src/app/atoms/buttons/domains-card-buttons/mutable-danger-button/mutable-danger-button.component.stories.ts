@@ -4,10 +4,7 @@ import { Meta, moduleMetadata, Story } from '@storybook/angular';
 import { AngularSvgIconModule } from 'angular-svg-icon';
 import { MutableDangerButtonComponent } from './mutable-danger-button.component';
 
-const props = {
-  backgroundColor: { control: 'color' },
-  title: { control: 'text' },
-};
+const props = {};
 
 export default {
   title: 'Atoms/Button/Mutable Danger',

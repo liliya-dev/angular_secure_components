@@ -14,7 +14,7 @@ export class SelectInputSearchComponent {
 
   selectedItem: string;
   
-  onChange(ev) {
-    this.selectedItem=ev
+  onChange(item) {
+    this.selectedItem = item;
   }
 }

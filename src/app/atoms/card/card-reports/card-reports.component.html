@@ -1,8 +1,8 @@
 <div class="card-reports">
-  <p class="card-reports__title fs-12-gramm-400">{{title}}</p>
-  <p class="card-reports__text fs-12-sofia-300">{{text}}</p>
+  <p class="card-reports__title fs-12-gramm-400">{{ title }}</p>
+  <p class="card-reports__text fs-12-sofia-300">{{ text }}</p>
   <div class="card-reports__container">
-    <img class="card-reports__img" [src]="iconSrc" alt="">
-    <span class="card-reports__value fs-h3-b">{{value}}</span>
+    <img class="card-reports__img" [src]="iconSrc" [alt]="title">
+    <span class="card-reports__value fs-h3-b">{{ value }}</span>
   </div>
 </div>

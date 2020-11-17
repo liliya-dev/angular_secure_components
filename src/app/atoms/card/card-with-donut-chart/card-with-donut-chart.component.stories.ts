@@ -28,8 +28,11 @@ const Template: Story<CardWithDonutChartComponent> = (args: CardWithDonutChartCo
 export const DonutChartCard = Template.bind({});
 DonutChartCard.args = {
   title: 'Cookies by category',
-  labels: ['in advertisement storajnknnjkjnkj njnknkjnkjnknge objects ', 'local storage objects local storage objects', 'in social media', 'in analytics', 'in preferences', 'in preferences' ],
-  values: [13, 6, 1, 4, 6, 7],
+  labels: [
+    'in advertisement storajnknnjkjnkj njnknkjnkjnknge objects ', 'local storage objects local storage objects', 
+    'in social media', 'in analytics', 'in preferences', 'in preferences' 
+  ],
+  values: [ 13, 6, 1, 4, 6, 7 ],
 };
 
 

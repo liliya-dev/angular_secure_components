@@ -6,6 +6,7 @@ import { Component, Input, ViewEncapsulation, ViewChild, ElementRef, OnChanges, 
   styleUrls: ['./onboarding-card.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
+
 export class OnboardingCardComponent implements OnChanges {
   @Input() isSelected: boolean;
   @Input() title: string;
@@ -20,8 +21,11 @@ export class OnboardingCardComponent implements OnChanges {
   isMobile: boolean;
   isSmallMobile: boolean;
   isVisibleOptions = false;
-  cardColor = this.onActive ? 'linear-gradient(89.52deg, #24B04B -46.17%, #0263BC 186.99%)' : 'rgb(255, 255, 255)';
-  textColor = this.onActive ? 'rgb(255, 255, 255)' : '#011949';
+  highlitedColor = 'linear-gradient(89.52deg, #24B04B -46.17%, #0263BC 186.99%)';
+  staticColor = 'rgb(255, 255, 255)';
+  textStaticColor = '#011949'
+  cardColor = this.onActive ? this.highlitedColor : this.staticColor;
+  textColor = this.onActive ? this.staticColor : this.textStaticColor;
   textDirection = '';
 
   handleDelete = () => {
@@ -59,8 +63,8 @@ export class OnboardingCardComponent implements OnChanges {
   setOnActive = (value: boolean) => {
     if (!this.isMobile) {
       this.onActive = value;
-      this.cardColor = value ? 'linear-gradient(89.52deg, #24B04B -46.17%, #0263BC 186.99%)' : 'rgb(255, 255, 255)';
-      this.textColor = value ? 'rgb(255, 255, 255)' : '#011949';
+      this.cardColor = value ? this.highlitedColor : this.staticColor;
+      this.textColor = value ? this.staticColor : this.textStaticColor;
     }
   }
 

@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, Input, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-semicircle-chart-card',
@@ -6,14 +6,10 @@ import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
   styleUrls: ['./semicircle-chart-card.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
-export class SemicircleChartCardComponent implements OnInit {
+
+export class SemicircleChartCardComponent {
   @Input() title: string;
   @Input() percent: number;
   @Input() text: string;
   @Input() value: number;
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
 }
