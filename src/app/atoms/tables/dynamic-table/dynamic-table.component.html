@@ -1,0 +1,70 @@
+<!-- !!!!!!!!!mobile version of table!!!!!!!!!!!!  -->
+<table 
+  id="table" 
+  *ngIf="isMobile" 
+  class="app-dynamic-table fs-12-sofia-400"
+>
+  <tr class="app-dynamic-table__head">
+   <th class="app-dynamic-table__head-item app-transparent-table__main-column">
+     {{ mainColumn }}
+   </th>
+   <th  class="app-dynamic-table__head-item">
+     {{ activeColumn }}
+   </th>
+  </tr>
+  <tr 
+    class="app-dynamic-table__row fs-12-sofia-300"
+    *ngFor="let item of data; let i = index"
+  >
+    <td>
+       {{ item[mainColumn ]}}
+    </td>
+    <td>
+        {{ item[activeColumn] }}
+    </td>
+  </tr>
+  <button class="prev app-dynamic-table__button" type="button" (click)="showNext('back')"></button>
+  <button class="next app-dynamic-table__button"type="button" (click)="showNext('forward')"></button>
+  <div class="app-dynamic-table__add-row-button">
+    <app-small-light-add-button
+      (click)="addRow()"
+      [title]="'Add row'"
+      [classes]="'app-big-light-add-button fs-14-gramm-400-light'"
+    ></app-small-light-add-button>
+  </div>
+</table> 
+
+
+<!-- !!!!!!!!!desktop version of table!!!!!!!!!!!!  -->
+<table #table class="app-dynamic-table fs-12-sofia-400" *ngIf="!isMobile" >
+  <div class="app-dynamic-table__add-column-button">
+    <app-dark-add-button (click)="addColumn()"></app-dark-add-button>
+  </div>
+  <tr class="app-dynamic-table__head">
+    <th class="app-dynamic-table__head-item" *ngFor="let head of heads; let i = index">
+      <input 
+        class="app-dynamic-table__head-input fs-12-sofia-400" 
+        type="text" 
+        [value]="head"
+        (change)="editHead($event, head)"
+      >
+    </th>
+  </tr>
+  <tr class="app-dynamic-table__row fs-12-sofia-300" *ngFor="let item of data; let i = index">
+    <td *ngFor="let head of heads; let j = index">
+      <input 
+        type="text"
+        class="app-dynamic-table__ceil-input fs-12-sofia-400" 
+        [value]="item[head]"
+        (change)="editCeil($event, i, head)"
+      >
+    </td>
+  </tr>
+  <div class="app-dynamic-table__add-row-button">
+    <app-small-light-add-button
+      (click)="addRow()"
+      [title]="'Add row'"
+      [classes]="'app-big-light-add-button fs-14-gramm-400-light'"
+    ></app-small-light-add-button>
+  </div>
+</table>

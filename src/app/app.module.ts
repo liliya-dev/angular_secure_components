@@ -77,6 +77,9 @@ import { CheckboxMutableGradientComponent } from './atoms/inputs/checkbox/checkb
 import { OnboardingCardComponent } from './atoms/card/onboarding-card/onboarding-card.component';
 import { OnboardingListComponent } from './molecules/onboarding-list/onboarding-list.component';
 import { ApproveModalComponent } from './atoms/modals/approve-modal/approve-modal.component';
+import { SmallLightAddButtonComponent } from './atoms/buttons/add-buttons/small-light-add-button/small-light-add-button.component';
+import { DynamicTableComponent } from './atoms/tables/dynamic-table/dynamic-table.component';
+import { DarkAddButtonComponent } from './atoms/buttons/add-buttons/dark-add-button/dark-add-button.component';
 
 PlotlyModule.plotlyjs = PlotlyJS;
 
@@ -151,6 +154,9 @@ PlotlyModule.plotlyjs = PlotlyJS;
     OnboardingCardComponent,
     OnboardingListComponent,
     ApproveModalComponent,
+    SmallLightAddButtonComponent,
+    DynamicTableComponent,
+    DarkAddButtonComponent,
   ],
   imports: [
     ColorSketchModule,
