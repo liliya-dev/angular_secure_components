@@ -6,9 +6,9 @@ import { Component, HostListener, ElementRef, ViewChild, OnChanges } from '@angu
   styleUrls: ['./dynamic-table.component.scss']
 })
 export class DynamicTableComponent implements OnChanges {
-  heads = ['first'];
+  heads = ['text 1'];
   data: any =  [ 
-    {'first' : 'one' }
+    {'text 1' : '1.1. Text' }
   ]
   rows = 1;
   columns = 1;
@@ -28,7 +28,6 @@ export class DynamicTableComponent implements OnChanges {
     }
     this.activeColumn = headsListWithoutMain[nextIndex];
   }
-
 
   addRow = () => {
     this.rows = this.rows + 1;
@@ -68,14 +67,17 @@ export class DynamicTableComponent implements OnChanges {
     if (event.target.value.length) {
       this.data[index][head] = event.target.value;
     }
+    console.log(this.data)
   }
 
 
   @ViewChild('table') table: ElementRef;
   @HostListener('window:resize', ['$event'])
   onResize(event: any) {
+    console.log('resize')
     const width = this.table.nativeElement.clientWidth;
     this.isMobile = (width / this.columns) < 200;
+    console.log(this.isMobile)
   }
 
   ngOnChanges() {

@@ -1,15 +1,29 @@
 <!-- !!!!!!!!!mobile version of table!!!!!!!!!!!!  -->
 <table 
+  #table
   id="table" 
   *ngIf="isMobile" 
   class="app-dynamic-table fs-12-sofia-400"
 >
+  <div class="app-dynamic-table__add-column-button">
+    <app-dark-add-button (click)="addColumn()"></app-dark-add-button>
+  </div>
   <tr class="app-dynamic-table__head">
    <th class="app-dynamic-table__head-item app-transparent-table__main-column">
-     {{ mainColumn }}
+    <input 
+      class="app-dynamic-table__head-input fs-12-sofia-400" 
+      type="text" 
+      [value]="mainColumn"
+      (change)="editHead($event, mainColumn)"
+    >
    </th>
    <th  class="app-dynamic-table__head-item">
-     {{ activeColumn }}
+    <input 
+      class="app-dynamic-table__head-input fs-12-sofia-400" 
+      type="text" 
+      [value]="activeColumn"
+      (change)="editHead($event, activeColumn)"
+    >
    </th>
   </tr>
   <tr 
@@ -17,10 +31,20 @@
     *ngFor="let item of data; let i = index"
   >
     <td>
-       {{ item[mainColumn ]}}
+      <input 
+        type="text"
+        class="app-dynamic-table__ceil-input fs-12-sofia-400" 
+        [value]="item[mainColumn]"
+        (change)="editCeil($event, i, mainColumn)"
+      >
     </td>
     <td>
-        {{ item[activeColumn] }}
+      <input 
+        type="text"
+        class="app-dynamic-table__ceil-input fs-12-sofia-400" 
+        [value]="item[mainColumn]"
+        (change)="editCeil($event, i, activeColumn)"
+      >
     </td>
   </tr>
   <button class="prev app-dynamic-table__button" type="button" (click)="showNext('back')"></button>
