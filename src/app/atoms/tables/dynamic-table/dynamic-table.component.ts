@@ -8,7 +8,7 @@ import { Component, HostListener, ElementRef, ViewChild, OnChanges } from '@angu
 export class DynamicTableComponent implements OnChanges {
   heads = ['text 1'];
   data: any =  [ 
-    {'text 1' : '1.1. Text' }
+    { 'text 1' : '1.1. Text' }
   ]
   rows = 1;
   columns = 1;

@@ -25,9 +25,7 @@ const Template: Story<DynamicTableComponent> = (args: DynamicTableComponent) => 
 });
 
 export const Dynamic = Template.bind({});
-Dynamic.args = {
-  
-};
+Dynamic.args = {};
 
 
 

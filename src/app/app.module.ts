@@ -80,11 +80,16 @@ import { ApproveModalComponent } from './atoms/modals/approve-modal/approve-moda
 import { SmallLightAddButtonComponent } from './atoms/buttons/add-buttons/small-light-add-button/small-light-add-button.component';
 import { DynamicTableComponent } from './atoms/tables/dynamic-table/dynamic-table.component';
 import { DarkAddButtonComponent } from './atoms/buttons/add-buttons/dark-add-button/dark-add-button.component';
+import { CustomizedElementComponent } from './molecules/customized-element/customized-element.component';
+
 
 PlotlyModule.plotlyjs = PlotlyJS;
 
 
 @NgModule({
+  entryComponents: [
+    DynamicTableComponent
+ ],
   declarations: [
     AppComponent,
     IconContainerComponent,
@@ -157,6 +162,7 @@ PlotlyModule.plotlyjs = PlotlyJS;
     SmallLightAddButtonComponent,
     DynamicTableComponent,
     DarkAddButtonComponent,
+    CustomizedElementComponent,
   ],
   imports: [
     ColorSketchModule,
