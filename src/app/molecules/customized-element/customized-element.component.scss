@@ -15,13 +15,25 @@
     margin-bottom: 18px;
   }
 
+  &__text{
+    margin-bottom: 18px;
+  }
+
   &__buttons-container {
     display: flex;
     gap: 16px;
-    margin-top: 16px;
   }
 }
 
-app-dynamic-table {
-  margin-top: 16px;
+.app-dynamic-table, .app-dynamic-list__container {
+  margin-bottom: 16px!important;
+}
+
+@media screen and (max-width: 550px) {
+  .app-customized-element {
+
+    &__buttons-container {
+      flex-direction: column;
+    }
+  }
 }

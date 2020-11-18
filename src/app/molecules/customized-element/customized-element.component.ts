@@ -1,5 +1,6 @@
-import { Component, ComponentRef, ComponentFactoryResolver, ViewEncapsulation, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
+import { Component, ComponentFactoryResolver, ViewEncapsulation, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
 import { DynamicTableComponent } from '../../atoms/tables/dynamic-table/dynamic-table.component';
+import { DynamicListComponent } from '../../atoms/tables/dynamic-list/dynamic-list.component';
 
 @Component({
   selector: 'app-customized-element',
@@ -15,15 +16,21 @@ export class CustomizedElementComponent implements OnInit {
     this.isVisibleButtonsBlock = value;
   }
 
+  constructor(
+    private componentFactoryResolver: ComponentFactoryResolver,
+    private viewContainerRef: ViewContainerRef
+    ){}
+
   @ViewChild('content' , {read: ViewContainerRef}) content:ViewContainerRef;
-    
-  constructor(private componentFactoryResolver: ComponentFactoryResolver){}
-  private componentRef: ComponentRef<any>;
 
   addTable(){
     let tableComponent = this.componentFactoryResolver.resolveComponentFactory(DynamicTableComponent);
     this.content.createComponent(tableComponent);
-    console.log(tableComponent.componentType)
+  }
+
+  addList(){
+    let listComponent = this.componentFactoryResolver.resolveComponentFactory(DynamicListComponent);
+    this.content.createComponent(listComponent);
   }
 
   ngOnInit(): void {

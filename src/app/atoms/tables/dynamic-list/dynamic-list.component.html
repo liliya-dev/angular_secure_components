@@ -1,0 +1,18 @@
+<div class="app-dynamic-list__container">
+  <input 
+    class="app-dynamic-list__title fs-16-sofia-600"
+    type="text"
+    [(ngModel)]="listTitle"  
+  />
+  <ul class="app-dynamic-list">
+    <li class="app-dynamic-list__item" *ngFor="let title of titles; let i = index; trackBy:indexTracker">
+      <div class="app-dynamic-list__dot"></div>
+      <input 
+        class="app-dynamic-list__input fs-16-sofia-300" 
+        type="text" 
+        [(ngModel)]="titles[i]" 
+        (keypress)="handlePressKey($event, i)"
+      >
+    </li>
+  </ul>
+</div>

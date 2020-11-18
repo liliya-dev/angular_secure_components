@@ -2,6 +2,7 @@ import { Meta, moduleMetadata, Story } from '@storybook/angular';
 import { CustomizedElementComponent } from './customized-element.component';
 import { DynamicTableComponent } from '../../atoms/tables/dynamic-table/dynamic-table.component';
 import { DarkAddButtonComponent } from '../../atoms/buttons/add-buttons/dark-add-button/dark-add-button.component';
+import { DynamicListComponent } from '../../atoms/tables/dynamic-list/dynamic-list.component';
 import { SmallLightAddButtonComponent } from '../../atoms/buttons/add-buttons/small-light-add-button/small-light-add-button.component';
 
 const props = {};
@@ -14,10 +15,12 @@ export default {
         CustomizedElementComponent,
         DynamicTableComponent,
         SmallLightAddButtonComponent,
-        DarkAddButtonComponent
+        DarkAddButtonComponent,
+        DynamicListComponent
       ],
       entryComponents: [
-        DynamicTableComponent
+        DynamicTableComponent,
+        DynamicListComponent
      ],
       imports: [],
     }),

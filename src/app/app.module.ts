@@ -81,6 +81,7 @@ import { SmallLightAddButtonComponent } from './atoms/buttons/add-buttons/small-
 import { DynamicTableComponent } from './atoms/tables/dynamic-table/dynamic-table.component';
 import { DarkAddButtonComponent } from './atoms/buttons/add-buttons/dark-add-button/dark-add-button.component';
 import { CustomizedElementComponent } from './molecules/customized-element/customized-element.component';
+import { DynamicListComponent } from './atoms/tables/dynamic-list/dynamic-list.component';
 
 
 PlotlyModule.plotlyjs = PlotlyJS;
@@ -163,6 +164,7 @@ PlotlyModule.plotlyjs = PlotlyJS;
     DynamicTableComponent,
     DarkAddButtonComponent,
     CustomizedElementComponent,
+    DynamicListComponent,
   ],
   imports: [
     ColorSketchModule,
