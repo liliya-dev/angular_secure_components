@@ -51,6 +51,9 @@ export class DynamicTableComponent implements OnChanges {
 
   editHead = (event, headTitle) => {
     const index = this.heads.findIndex(head => head === headTitle);
+    if (index === 0) {
+      this.mainColumn = event.target.value;
+    }
     const value = event.target.value;
     if (event.target.value.length) {
       this.heads[index] = value;
@@ -67,7 +70,6 @@ export class DynamicTableComponent implements OnChanges {
     if (event.target.value.length) {
       this.data[index][head] = event.target.value;
     }
-    console.log(this.data)
   }
 
 

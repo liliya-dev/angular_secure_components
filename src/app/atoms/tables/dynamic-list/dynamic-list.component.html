@@ -4,7 +4,7 @@
     type="text"
     [(ngModel)]="listTitle"  
   />
-  <ul class="app-dynamic-list">
+  <ul class="app-dynamic-list" #dynamicList>
     <li class="app-dynamic-list__item" *ngFor="let title of titles; let i = index; trackBy:indexTracker">
       <div class="app-dynamic-list__dot"></div>
       <input 
