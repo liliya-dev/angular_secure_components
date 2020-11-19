@@ -82,16 +82,27 @@ import { DynamicTableComponent } from './atoms/tables/dynamic-table/dynamic-tabl
 import { DarkAddButtonComponent } from './atoms/buttons/add-buttons/dark-add-button/dark-add-button.component';
 import { CustomizedElementComponent } from './molecules/customized-element/customized-element.component';
 import { DynamicListComponent } from './atoms/tables/dynamic-list/dynamic-list.component';
-
+import { AddComponent } from './molecules/customized-element/add-dynamic-component/add-dynamic.component';
+import { AddDirective } from './molecules/customized-element/add-dynamic-component/add.directive';
+import { AddService } from './molecules/customized-element/add-dynamic-component/add.service';
+import { TextareaAutosizeModule } from 'ngx-textarea-autosize';
+import { DynamicTextComponent } from './atoms/text/dynamic-text/dynamic-text.component';
+import { DynamicSectionsListComponent } from './organisms/dynamic-sections-list/dynamic-sections-list.component';
 
 PlotlyModule.plotlyjs = PlotlyJS;
 
 
 @NgModule({
   entryComponents: [
-    DynamicTableComponent
+    DynamicTableComponent,
+    DynamicListComponent,
+    DynamicTextComponent
  ],
+  providers: [AddService],
   declarations: [
+    DynamicTableComponent,
+    AddComponent,
+    AddDirective,
     AppComponent,
     IconContainerComponent,
     gradientButtonComponent,
@@ -165,6 +176,8 @@ PlotlyModule.plotlyjs = PlotlyJS;
     DarkAddButtonComponent,
     CustomizedElementComponent,
     DynamicListComponent,
+    DynamicTextComponent,
+    DynamicSectionsListComponent,
   ],
   imports: [
     ColorSketchModule,
@@ -175,9 +188,9 @@ PlotlyModule.plotlyjs = PlotlyJS;
     HttpClientModule,
     PlotlyModule,
     CommonModule,
-    NgApexchartsModule
+    NgApexchartsModule,
+    TextareaAutosizeModule
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 

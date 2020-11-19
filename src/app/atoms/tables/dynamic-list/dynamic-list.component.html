@@ -7,12 +7,14 @@
   <ul class="app-dynamic-list" #dynamicList>
     <li class="app-dynamic-list__item" *ngFor="let title of titles; let i = index; trackBy:indexTracker">
       <div class="app-dynamic-list__dot"></div>
-      <input 
+      <textarea
+        autosize
         class="app-dynamic-list__input fs-16-sofia-300" 
-        type="text" 
         [(ngModel)]="titles[i]" 
         (keypress)="handlePressKey($event, i)"
+        spellcheck="false"
       >
+      </textarea>
     </li>
   </ul>
 </div>

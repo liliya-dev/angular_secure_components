@@ -1,0 +1,36 @@
+.app-dynamic-sections-list {
+  width: 100%;
+  padding: 32px;
+  display: flex;
+  justify-content: space-between;
+
+  &__navigation {
+    width: 24%;
+    color: rgba(var(--secondary-color-code), 0.7);
+    border: 1px solid #EAEDF2;
+    padding: 16px;
+  }
+
+  &__content {
+    width: 74%;
+    border: 1px solid #EAEDF2;
+  }
+
+  &__titles {
+    margin-top: 19px;
+  }
+
+  &__title {
+    color: rgba(var(--secondary-color-code), 0.7);
+
+    &.active {
+      color: rgba(var(--secondary-color-code), 1);
+      font-weight: bold;
+    }
+  }
+
+  &__main-title {
+    line-height: 180%;
+    margin-left: 18px;
+  }
+}

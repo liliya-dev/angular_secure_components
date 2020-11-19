@@ -1,37 +1,45 @@
-<div 
-  class="app-customized-element"
-  (mouseenter)="setIsVisibleButtonsBlock(true)"
-  (mouseleave)="setIsVisibleButtonsBlock(false)"
->
-  <h3 class="app-customized-element__title fs-h3">Privacy policy overview</h3>
-  <p class="app-customized-element__text fs-16-sofia-300">
-    We are committed to protecting and respecting your privacy. This policy explains how we use any personal 
-    information that you provide to us through our Secure Privacy.
-  </p>
-  <div class="app-customized-element__content" #content>
-    <ng-content></ng-content>
-    <p></p>
-  </div>
-  <div
-    class="app-customized-element__buttons-container"
-    *ngIf="isVisibleButtonsBlock"
-  >
-    <app-small-light-add-button
-      [title]="'Add table'"
-      [classes]="'app-small-light-add-button fs-14-gramm-400-light'"
-      (click)="addTable()"
-    >
-    </app-small-light-add-button>
-    <app-small-light-add-button
-      [title]="'Add a paragraph'"
-      [classes]="'app-small-light-add-button fs-14-gramm-400-light'"
-    >
-    </app-small-light-add-button>
-    <app-small-light-add-button
-      [title]="'Add list'"
-      [classes]="'app-small-light-add-button fs-14-gramm-400-light'"
-      (click)="addList()"
-    >
-    </app-small-light-add-button>
+<div class="app-customized-element">
+  <div *ngIf="componentsList.length">
+    <div *ngFor="let component of componentsList; let i = index;">
+      <div 
+        (mouseenter)="setActiveBlockNumber(i)"
+        (mouseleave)="setActiveBlockNumber(-1)"
+      >
+        <div class="app-customized-element__container">
+          <app-add-dynamic [component]="component"></app-add-dynamic>
+          <button 
+            type="button"
+            class="app-customized-element__button-delete"
+            (click)="deleteComponent(i)"
+            *ngIf="activeBlockNumber === i"
+          >
+            <img src="assets/images/deleteX.png" alt="delete">
+          </button>
+        </div>
+        <div
+          class="app-customized-element__buttons-container"
+          *ngIf="activeBlockNumber === i"
+        >
+          <app-small-light-add-button
+            [title]="'Add table'"
+            [classes]="'app-small-light-add-button fs-14-gramm-400-light'"
+            (click)="addTable(i)"
+          >
+          </app-small-light-add-button>
+          <app-small-light-add-button
+            [title]="'Add a paragraph'"
+            [classes]="'app-small-light-add-button fs-14-gramm-400-light'"
+            (click)="addText(i)"
+          >
+          </app-small-light-add-button>
+          <app-small-light-add-button
+            [title]="'Add list'"
+            [classes]="'app-small-light-add-button fs-14-gramm-400-light'"
+            (click)="addList(i)"
+          >
+          </app-small-light-add-button>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

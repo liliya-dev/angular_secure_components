@@ -11,6 +11,33 @@
     border-radius: 8px;
   }
 
+  &__container {
+    border: 1px dashed transparent;
+    border-radius: 8px;
+    transition: 0.3s;
+    position: relative;
+    width: 97%;
+    padding-right: 3%;
+
+
+    &:hover {
+      cursor: pointer;
+      // border: 1px dashed rgba(var(--secondary-color-code), 0.5);
+      // border-radius: 8px;
+    }
+  }
+
+  &__button-delete {
+    width: 6px;
+    height: 6px;
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    top: calc(50% - 21px);
+    right: 2%;
+    z-index: 2;
+  }
+
   &__title {
     margin-bottom: 18px;
   }
@@ -21,6 +48,7 @@
 
   &__buttons-container {
     display: flex;
+    margin-bottom: 10px;
     
     & * {
       margin-right: 16px;

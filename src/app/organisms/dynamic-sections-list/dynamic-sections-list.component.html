@@ -1,0 +1,26 @@
+<div class="app-dynamic-sections-list">
+  <div class="app-dynamic-sections-list__navigation fs-14-gramm-400-light">
+    <app-small-light-add-button
+      [title]="'Add section'"
+      [classes]="'app-small-light-add-button fs-14-gramm-400-light'"
+      (click)="addSection(sections.length)"
+    >
+    </app-small-light-add-button>
+    <ul *ngFor="let section of sections; let i = index;" class="app-dynamic-sections-list__titles">
+      <li [ngClass]="i===activeSection ? 'app-dynamic-sections-list__title active' : 'app-dynamic-sections-list__title'">
+        {{ section.title }}
+      </li>
+    </ul>
+  </div>
+  <div class="app-dynamic-sections-list__content">
+    <ul *ngFor="let section of sections; let i = index;">
+      <li 
+        (mouseenter)="setActiveSectionNumber(i)"
+        (mouseleave)="setActiveSectionNumber(-1)"
+      >
+        <p class="app-dynamic-sections-list__main-title fs-h3">{{ section.title }}</p>
+        <app-customized-element [initialState]="section.initialState"></app-customized-element>
+      </li>
+    </ul>
+  </div>
+</div>

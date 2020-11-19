@@ -1,6 +1,18 @@
-import { Component, ComponentFactoryResolver, ViewEncapsulation, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
-import { DynamicTableComponent } from '../../atoms/tables/dynamic-table/dynamic-table.component';
-import { DynamicListComponent } from '../../atoms/tables/dynamic-list/dynamic-list.component';
+import { Component, Input, ViewEncapsulation, OnInit, OnChanges } from '@angular/core';
+import { AddItem } from './add-dynamic-component/add-item';
+import { AddService } from './add-dynamic-component/add.service';
+
+const standartListData =  {
+  listTitle: 'Put list title',
+  titles: ['Type text here']
+}
+
+const standartTableData = {
+  heads: ['text 1'],
+  tableData: [{ 'text 1' : '1.1. Text', }]
+}
+
+const standartTextData = { title: 'Your new paragraph' }
 
 @Component({
   selector: 'app-customized-element',
@@ -8,32 +20,49 @@ import { DynamicListComponent } from '../../atoms/tables/dynamic-list/dynamic-li
   styleUrls: ['./customized-element.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
-export class CustomizedElementComponent implements OnInit {
 
+export class CustomizedElementComponent implements OnInit, OnChanges {
+  @Input() initialState: any[];
+
+  componentsList: AddItem[] = [];
   isVisibleButtonsBlock = false;
+  activeBlockNumber = -1;
+  constructor(private addService: AddService) {}
 
   setIsVisibleButtonsBlock = (value: boolean) => {
     this.isVisibleButtonsBlock = value;
   }
 
-  constructor(
-    private componentFactoryResolver: ComponentFactoryResolver,
-    private viewContainerRef: ViewContainerRef
-    ){}
-
-  @ViewChild('content' , {read: ViewContainerRef}) content:ViewContainerRef;
-
-  addTable(){
-    let tableComponent = this.componentFactoryResolver.resolveComponentFactory(DynamicTableComponent);
-    this.content.createComponent(tableComponent);
+  setActiveBlockNumber = (index: number) => {
+    this.activeBlockNumber = index;
   }
 
-  addList(){
-    let listComponent = this.componentFactoryResolver.resolveComponentFactory(DynamicListComponent);
-    this.content.createComponent(listComponent);
+  addTable(index: number){
+    const newAdItem = this.addService.getAds('table', standartTableData);
+    this.componentsList.splice(index + 1, 0, newAdItem)
+  }
+
+  addList(index: number) {
+    const newAdItem = this.addService.getAds('list', standartListData);
+    this.componentsList.splice(index + 1, 0, newAdItem)
+  }
+
+  addText(index: number) {
+    const newAdItem = this.addService.getAds('text', standartTextData);
+    this.componentsList.splice(index + 1, 0, newAdItem)
+  }
+
+  deleteComponent(index: number) {
+    this.componentsList.splice(index, 1);
   }
 
   ngOnInit(): void {
+    const initialComponentsList = this.initialState.map(component => this.addService.getAds(component.type, component.dataFromParent));
+    this.componentsList = [...initialComponentsList];
   }
 
+  ngOnChanges(): void {
+    const initialComponentsList = this.initialState.map(component => this.addService.getAds(component.type, component.dataFromParent));
+    this.componentsList = [...initialComponentsList];
+  }
 }

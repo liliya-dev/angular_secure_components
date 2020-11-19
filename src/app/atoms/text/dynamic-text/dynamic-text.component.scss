@@ -1,0 +1,18 @@
+.app-dynamic-text {
+  width: 100%;
+  overflow-x: hidden;
+  margin-bottom: 16px;
+
+  &__input {
+    width: 100%;
+    padding-right: 15px;
+    border: none;
+    background-color: transparent;
+    color: var(--secondary-color);
+  }
+
+  &__wrapper {
+    margin-right: -15px;
+    margin-bottom: 18px;
+  }
+}

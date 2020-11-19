@@ -1,9 +1,14 @@
 .app-dynamic-list {
+  width: 95%;
+  overflow-x: hidden;
+
   &__input {
     border: none;
     background-color: transparent;
     color: var(--secondary-color);
-    width: 90%;
+    font-style: italic;
+    width: 100%;
+    padding-right: 15px;
   }
 
   &__title {
@@ -11,12 +16,14 @@
     color: var(--secondary-color);
     border: none;
     background-color: transparent;
+    text-transform: capitalize;
   }
 
   &__item {
     display: flex;
     align-items: center;
-    margin: 6px 0;
+    margin: 12px 0;
+    margin-right: -15px;
   }
 
   &__dot {

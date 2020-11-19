@@ -2,6 +2,25 @@
     "pipes": [],
     "interfaces": [
         {
+            "name": "AdComponent",
+            "id": "interface-AdComponent-27c910778ebaae49187e27b78495a004",
+            "file": "src/app/molecules/customized-element/add-dynamic-component/add-dynamic.component.ts",
+            "type": "interface",
+            "sourceCode": "import { Component, Input, OnInit, ViewChild, ComponentFactoryResolver, OnDestroy, OnChanges } from '@angular/core';\n\nimport { AddDirective } from './add.directive';\nimport { AddItem } from './add-item';\n\nexport interface AdComponent {\n  data: any;\n}\n\n@Component({\n  selector: 'app-add-dynamic',\n  template: `\n              <div class=\"add-dynamic-component\">\n                <ng-template adHost></ng-template>\n              </div>\n            `\n})\n\nexport class AddComponent implements OnInit {\n  @Input() component: AddItem;\n  currentAdIndex = -1;\n  @ViewChild(AddDirective, {static: true}) adHost: AddDirective;\n  interval: any;\n\n  constructor(private componentFactoryResolver: ComponentFactoryResolver) { }\n\n  ngOnInit() {\n    this.loadComponent();\n  }\n\n  loadComponent() {\n    const adItem = this.component;\n    const componentFactory = this.componentFactoryResolver.resolveComponentFactory(adItem.component);\n    const viewContainerRef = this.adHost.viewContainerRef;\n    const componentRef = viewContainerRef.createComponent<AdComponent>(componentFactory);\n    componentRef.instance.data = adItem.dataFromParent;\n  }\n}",
+            "properties": [
+                {
+                    "name": "data",
+                    "type": "any",
+                    "optional": false,
+                    "description": "",
+                    "line": 7
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 150,
+            "methods": []
+        },
+        {
             "name": "Domain",
             "id": "interface-Domain-31eb191976ce3ee47327acf5510d3b30",
             "file": "src/app/molecules/onboarding-list/onboarding-list.component.ts",
@@ -121,11 +140,18 @@
         },
         {
             "name": "Module",
-            "id": "interface-Module-aca7099c3a068b1af5bdf9dc534fb0c5-1",
-            "file": "src/app/molecules/form-screens/form-screen-fourth/form-screen-fourth.component.ts",
+            "id": "interface-Module-ae34384e6e13eceb75d03fb11c334547-1",
+            "file": "src/app/molecules/form-screens/form-screen-third/form-screen-third.component.ts",
             "type": "interface",
-            "sourceCode": "import { Component } from '@angular/core';\n\ninterface Module {\n  title: string,\n  text: string\n}\n\n@Component({\n  selector: 'app-form-screen-fourth',\n  templateUrl: './form-screen-fourth.component.html',\n  styleUrls: ['./form-screen-fourth.component.scss']\n})\nexport class FormScreenFourthComponent {\n\n  selectedModules: string[] = [];\n  modules: Module[] = [\n    {\n      title: \"GDPR, eprivacy\",\n      text: \"Europe\",\n    },\n    {\n      title: \"Thailand\",\n      text: \"Bangkok\",\n    },\n    {\n      title: \"Calofornia\",\n      text: \"Europe \",\n    },\n    {\n      title: \"CCPA\",\n      text: \"Europe\",\n    },\n    {\n      title: \"Canada\",\n      text: \"Ottawa\",\n    },\n    {\n      title: \"Dubai\",\n      text: \"Dubai \",\n    },\n  ]\n\n  selectModule(title: string) {\n    if (this.selectedModules.includes(title)) {\n      this.selectedModules = this.selectedModules.filter(module => module !== title);\n    } else {\n      this.selectedModules = [...this.selectedModules, title];\n    }\n  }\n}\n",
+            "sourceCode": "import { Component, ViewEncapsulation } from '@angular/core';\n\ninterface Module {\n  title: string,\n  text: string,\n  src: string\n}\n\n@Component({\n  selector: 'app-form-screen-third',\n  templateUrl: './form-screen-third.component.html',\n  styleUrls: ['./form-screen-third.component.scss'],\n  encapsulation: ViewEncapsulation.None\n})\nexport class FormScreenThirdComponent {\n  selectedModules: string[] = [];\n  modules: Module[] = [\n    {\n      title: \"GDPR, eprivacy\",\n      text: \"Europe\",\n      src: \"assets/images/flags/euro.png\"\n    },\n    {\n      title: \"CCPA\",\n      text: \"California\",\n      src: \"assets/images/flags/ccpa.png\"\n    },\n    {\n      title: \"LGPD\",\n      text: \"Brasil \",\n      src: \"assets/images/flags/lgpd.png\"\n    }\n  ]\n\n  selectModule(title: string) {\n    if (this.selectedModules.includes(title)) {\n      this.selectedModules = this.selectedModules.filter(module => module !== title);\n    } else {\n      this.selectedModules = [...this.selectedModules, title];\n    }\n  }\n}\n",
             "properties": [
+                {
+                    "name": "src",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 6
+                },
                 {
                     "name": "text",
                     "type": "string",
@@ -150,18 +176,11 @@
         },
         {
             "name": "Module",
-            "id": "interface-Module-ae34384e6e13eceb75d03fb11c334547-2",
-            "file": "src/app/molecules/form-screens/form-screen-third/form-screen-third.component.ts",
+            "id": "interface-Module-aca7099c3a068b1af5bdf9dc534fb0c5-2",
+            "file": "src/app/molecules/form-screens/form-screen-fourth/form-screen-fourth.component.ts",
             "type": "interface",
-            "sourceCode": "import { Component, ViewEncapsulation } from '@angular/core';\n\ninterface Module {\n  title: string,\n  text: string,\n  src: string\n}\n\n@Component({\n  selector: 'app-form-screen-third',\n  templateUrl: './form-screen-third.component.html',\n  styleUrls: ['./form-screen-third.component.scss'],\n  encapsulation: ViewEncapsulation.None\n})\nexport class FormScreenThirdComponent {\n  selectedModules: string[] = [];\n  modules: Module[] = [\n    {\n      title: \"GDPR, eprivacy\",\n      text: \"Europe\",\n      src: \"assets/images/flags/euro.png\"\n    },\n    {\n      title: \"CCPA\",\n      text: \"California\",\n      src: \"assets/images/flags/ccpa.png\"\n    },\n    {\n      title: \"LGPD\",\n      text: \"Brasil \",\n      src: \"assets/images/flags/lgpd.png\"\n    }\n  ]\n\n  selectModule(title: string) {\n    if (this.selectedModules.includes(title)) {\n      this.selectedModules = this.selectedModules.filter(module => module !== title);\n    } else {\n      this.selectedModules = [...this.selectedModules, title];\n    }\n  }\n}\n",
+            "sourceCode": "import { Component } from '@angular/core';\n\ninterface Module {\n  title: string,\n  text: string\n}\n\n@Component({\n  selector: 'app-form-screen-fourth',\n  templateUrl: './form-screen-fourth.component.html',\n  styleUrls: ['./form-screen-fourth.component.scss']\n})\nexport class FormScreenFourthComponent {\n\n  selectedModules: string[] = [];\n  modules: Module[] = [\n    {\n      title: \"GDPR, eprivacy\",\n      text: \"Europe\",\n    },\n    {\n      title: \"Thailand\",\n      text: \"Bangkok\",\n    },\n    {\n      title: \"Calofornia\",\n      text: \"Europe \",\n    },\n    {\n      title: \"CCPA\",\n      text: \"Europe\",\n    },\n    {\n      title: \"Canada\",\n      text: \"Ottawa\",\n    },\n    {\n      title: \"Dubai\",\n      text: \"Dubai \",\n    },\n  ]\n\n  selectModule(title: string) {\n    if (this.selectedModules.includes(title)) {\n      this.selectedModules = this.selectedModules.filter(module => module !== title);\n    } else {\n      this.selectedModules = [...this.selectedModules, title];\n    }\n  }\n}\n",
             "properties": [
-                {
-                    "name": "src",
-                    "type": "string",
-                    "optional": false,
-                    "description": "",
-                    "line": 6
-                },
                 {
                     "name": "text",
                     "type": "string",
@@ -237,8 +256,121 @@
             "methods": []
         }
     ],
-    "injectables": [],
+    "injectables": [
+        {
+            "name": "AddService",
+            "id": "injectable-AddService-28e81b0775d5b8f57816895d3621f5be",
+            "file": "src/app/molecules/customized-element/add-dynamic-component/add.service.ts",
+            "properties": [],
+            "methods": [
+                {
+                    "name": "getAds",
+                    "args": [
+                        {
+                            "name": "type",
+                            "type": "string"
+                        },
+                        {
+                            "name": "data",
+                            "type": "any",
+                            "optional": true
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "any",
+                    "typeParameters": [],
+                    "line": 9,
+                    "jsdoctags": [
+                        {
+                            "name": "type",
+                            "type": "string",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        },
+                        {
+                            "name": "data",
+                            "type": "any",
+                            "optional": true,
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "description": "",
+            "sourceCode": "import { Injectable } from '@angular/core';\nimport { DynamicTableComponent } from '../../../atoms/tables/dynamic-table/dynamic-table.component';\nimport { DynamicListComponent } from '../../../atoms/tables/dynamic-list/dynamic-list.component';\nimport { DynamicTextComponent } from '../../../atoms/text/dynamic-text/dynamic-text.component';\nimport { AddItem } from './add-item';\n\n@Injectable()\nexport class AddService {\n  getAds(type: string, data?: any) {\n    if(type === 'table' && data) {\n      return (\n        new AddItem(DynamicTableComponent, data)\n      ) \n    } else if (type ==='list' && data) {\n       return new AddItem(DynamicListComponent, data)\n    } else if (type === 'text' && data) {\n      console.log(45, data)\n      return new AddItem(DynamicTextComponent, data)\n    }\n  }\n}",
+            "type": "injectable"
+        }
+    ],
     "classes": [
+        {
+            "name": "AddItem",
+            "id": "class-AddItem-b0564f0b8830119074df440cf85cf1ab",
+            "file": "src/app/molecules/customized-element/add-dynamic-component/add-item.ts",
+            "type": "class",
+            "sourceCode": "import { Type } from '@angular/core';\n\nexport class AddItem {\n  constructor(public component: Type<any>, public dataFromParent: any) {}\n}\n",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [
+                    {
+                        "name": "component",
+                        "type": "Type<any>"
+                    },
+                    {
+                        "name": "dataFromParent",
+                        "type": "any"
+                    }
+                ],
+                "line": 3,
+                "jsdoctags": [
+                    {
+                        "name": "component",
+                        "type": "Type<any>",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    },
+                    {
+                        "name": "dataFromParent",
+                        "type": "any",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "properties": [
+                {
+                    "name": "component",
+                    "type": "Type<any>",
+                    "optional": false,
+                    "description": "",
+                    "line": 4,
+                    "modifierKind": [
+                        114
+                    ]
+                },
+                {
+                    "name": "dataFromParent",
+                    "type": "any",
+                    "optional": false,
+                    "description": "",
+                    "line": 4,
+                    "modifierKind": [
+                        114
+                    ]
+                }
+            ],
+            "methods": [],
+            "indexSignatures": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "hostBindings": [],
+            "hostListeners": []
+        },
         {
             "name": "AppPage",
             "id": "class-AppPage-a0db91bfa3b9914e9048612074084ee6",
@@ -271,11 +403,163 @@
             "hostListeners": []
         }
     ],
-    "directives": [],
+    "directives": [
+        {
+            "name": "AddDirective",
+            "id": "directive-AddDirective-611723920efcd1e770f65ac2f7afd6dd",
+            "file": "src/app/molecules/customized-element/add-dynamic-component/add.directive.ts",
+            "type": "directive",
+            "description": "",
+            "sourceCode": "import { Directive, ViewContainerRef } from '@angular/core';\n\n@Directive({\n  selector: '[adHost]',\n})\n\nexport class AddDirective {\n  constructor(public viewContainerRef: ViewContainerRef) { }\n}",
+            "selector": "[adHost]",
+            "providers": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "hostBindings": [],
+            "hostListeners": [],
+            "propertiesClass": [
+                {
+                    "name": "viewContainerRef",
+                    "type": "ViewContainerRef",
+                    "optional": false,
+                    "description": "",
+                    "line": 8,
+                    "modifierKind": [
+                        114
+                    ]
+                }
+            ],
+            "methodsClass": [],
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [
+                    {
+                        "name": "viewContainerRef",
+                        "type": "ViewContainerRef"
+                    }
+                ],
+                "line": 7,
+                "jsdoctags": [
+                    {
+                        "name": "viewContainerRef",
+                        "type": "ViewContainerRef",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            }
+        }
+    ],
     "components": [
         {
+            "name": "AddComponent",
+            "id": "component-AddComponent-27c910778ebaae49187e27b78495a004",
+            "file": "src/app/molecules/customized-element/add-dynamic-component/add-dynamic.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-add-dynamic",
+            "styleUrls": [],
+            "styles": [],
+            "template": "<div class=\"add-dynamic-component\">\n  <ng-template adHost></ng-template>\n</div>\n",
+            "templateUrl": [],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "component",
+                    "line": 20,
+                    "type": "AddItem"
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "adHost",
+                    "type": "AddDirective",
+                    "optional": false,
+                    "description": "",
+                    "line": 22,
+                    "decorators": [
+                        {
+                            "name": "ViewChild",
+                            "stringifiedArguments": "AddDirective, {static: true}"
+                        }
+                    ]
+                },
+                {
+                    "name": "currentAdIndex",
+                    "defaultValue": "-1",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 21
+                },
+                {
+                    "name": "interval",
+                    "type": "any",
+                    "optional": false,
+                    "description": "",
+                    "line": 23
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "loadComponent",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 31
+                },
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 27
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component, Input, OnInit, ViewChild, ComponentFactoryResolver, OnDestroy, OnChanges } from '@angular/core';\n\nimport { AddDirective } from './add.directive';\nimport { AddItem } from './add-item';\n\nexport interface AdComponent {\n  data: any;\n}\n\n@Component({\n  selector: 'app-add-dynamic',\n  template: `\n              <div class=\"add-dynamic-component\">\n                <ng-template adHost></ng-template>\n              </div>\n            `\n})\n\nexport class AddComponent implements OnInit {\n  @Input() component: AddItem;\n  currentAdIndex = -1;\n  @ViewChild(AddDirective, {static: true}) adHost: AddDirective;\n  interval: any;\n\n  constructor(private componentFactoryResolver: ComponentFactoryResolver) { }\n\n  ngOnInit() {\n    this.loadComponent();\n  }\n\n  loadComponent() {\n    const adItem = this.component;\n    const componentFactory = this.componentFactoryResolver.resolveComponentFactory(adItem.component);\n    const viewContainerRef = this.adHost.viewContainerRef;\n    const componentRef = viewContainerRef.createComponent<AdComponent>(componentFactory);\n    componentRef.instance.data = adItem.dataFromParent;\n  }\n}",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [
+                    {
+                        "name": "componentFactoryResolver",
+                        "type": "ComponentFactoryResolver"
+                    }
+                ],
+                "line": 23,
+                "jsdoctags": [
+                    {
+                        "name": "componentFactoryResolver",
+                        "type": "ComponentFactoryResolver",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "implements": [
+                "OnInit"
+            ]
+        },
+        {
             "name": "AppComponent",
-            "id": "component-AppComponent-278f03f54de89fc449176607d5c76fa6",
+            "id": "component-AppComponent-87c79a4eb160715900105e3810554597",
             "file": "src/app/app.component.ts",
             "encapsulation": [
                 "ViewEncapsulation.None"
@@ -297,38 +581,37 @@
             "outputsClass": [],
             "propertiesClass": [
                 {
-                    "name": "check",
+                    "name": "isVisibleButtonsBlock",
+                    "defaultValue": "false",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 13
+                },
+                {
+                    "name": "setIsVisibleButtonsBlock",
                     "defaultValue": "() => {...}",
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 14
+                    "line": 15
                 },
                 {
                     "name": "title",
-                    "defaultValue": "\"Cookies by category\"",
+                    "defaultValue": "\"\"",
                     "type": "string",
                     "optional": false,
                     "description": "",
-                    "line": 13
+                    "line": 14
                 }
             ],
-            "methodsClass": [
-                {
-                    "name": "ngOnInit",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 17
-                }
-            ],
+            "methodsClass": [],
             "hostBindings": [],
             "hostListeners": [],
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';\n\n@Component({\n  selector: 'app-root',\n  templateUrl: './app.component.html',\n  styleUrls: ['./app.component.scss'],\n  encapsulation: ViewEncapsulation.None\n})\n\n\nexport class AppComponent implements OnInit {\n\n  title=\"Cookies by category\"\n  check = (a) => {\n    console.log(a,11)\n  }\n  ngOnInit() {\n\n  }\n}\n",
+            "sourceCode": "import { Component, ComponentFactoryResolver, Input, OnInit, ViewChild, ViewContainerRef, ViewEncapsulation } from '@angular/core';\nimport { DynamicTableComponent } from './atoms/tables/dynamic-table/dynamic-table.component';\nimport { DynamicListComponent } from './atoms/tables/dynamic-list/dynamic-list.component';\n@Component({\n  selector: 'app-root',\n  templateUrl: './app.component.html',\n  styleUrls: ['./app.component.scss'],\n  encapsulation: ViewEncapsulation.None\n})\n\n\nexport class AppComponent  {\n  isVisibleButtonsBlock = false;\ntitle=\"\"\n  setIsVisibleButtonsBlock = (value: boolean) => {\n    this.isVisibleButtonsBlock = value;\n  }\n\n\n\n\n \n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -337,10 +620,7 @@
                 }
             ],
             "stylesData": "",
-            "implements": [
-                "OnInit"
-            ],
-            "templateData": "<div class=\"container\">\n  <color-sketch (onChange)=\"check($event)\"></color-sketch>\n</div>"
+            "templateData": "<app-customized-element></app-customized-element>"
         },
         {
             "name": "ApproveModalComponent",
@@ -431,7 +711,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".approve-modal {\n  width: 100vw;\n  height: 100vh;\n\n  display: flex;\n  justify-content: center;\n  align-items: center;\n\n  position: fixed;\n  top: 0;\n  left: 0;\n  z-index: 3;\n\n  background-color: rgba(var(--secondary-color-code), 0.5);\n  text-align: center;\n\n  &__title {\n    margin-bottom: 32px;\n  }\n\n  &__form {\n    position: relative;\n    top: -10%;\n    min-width: 588px;\n    padding: 32px 64px;\n    background: var(--card-bg-color);\n    border-radius: 12px 30px;\n  }\n\n  &__buttons {\n    display: flex;\n    justify-content: center;\n    gap: 32px;\n    margin-top: 24px;\n  }\n}\n\n@media screen and (max-width: 600px) {\n  .approve-modal {\n    &__form {\n      min-width: 90%;\n      max-width: 90%;\n      padding: 20px;\n    }\n  }\n}",
+                    "data": ".approve-modal {\n  width: 100vw;\n  height: 100vh;\n\n  display: flex;\n  justify-content: center;\n  align-items: center;\n\n  position: fixed;\n  top: 0;\n  left: 0;\n  z-index: 3;\n\n  background-color: rgba(var(--secondary-color-code), 0.5);\n  text-align: center;\n\n  &__title {\n    margin-bottom: 32px;\n  }\n\n  &__form {\n    position: relative;\n    top: -10%;\n    min-width: 588px;\n    padding: 32px 64px;\n    background: var(--card-bg-color);\n    border-radius: 12px 30px;\n  }\n\n  &__buttons {\n    display: flex;\n    justify-content: center;\n    margin-top: 24px;\n\n    & * {\n      margin-right: 30px;;\n    }\n  \n    & :last-child {\n      margin-right: 0;\n    }\n  }\n}\n\n@media screen and (max-width: 600px) {\n  .approve-modal {\n    &__form {\n      min-width: 90%;\n      max-width: 90%;\n      padding: 20px;\n    }\n  }\n}",
                     "styleUrl": "./approve-modal.component.scss"
                 }
             ],
@@ -658,7 +938,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".app-card-row {\n  display: flex;\n  justify-content: space-between;\n  flex-wrap: wrap;\n  gap: 10px;\n  width: 100%;\n\n  & .card {\n    height: 100%!important;\n  }\n}\n",
+                    "data": ".app-card-row {\n  display: flex;\n  justify-content: space-between;\n  flex-wrap: wrap;\n  width: 100%;\n\n  & * {\n    margin-bottom: 10px;\n    margin-right: 10px;\n  }\n\n  & :last-child {\n    margin-bottom: 0;\n    margin-right: 0;\n  }\n\n  & .card {\n    height: 100%!important;\n  }\n}\n",
                     "styleUrl": "./card-row.component.scss"
                 }
             ],
@@ -1369,7 +1649,7 @@
         },
         {
             "name": "CustomizedElementComponent",
-            "id": "component-CustomizedElementComponent-09921abb9326a2ec7d0e566b3139aa3d",
+            "id": "component-CustomizedElementComponent-0b2388bf6a5b6582b50106e068c662ab",
             "file": "src/app/molecules/customized-element/customized-element.component.ts",
             "encapsulation": [
                 "ViewEncapsulation.None"
@@ -1387,21 +1667,30 @@
                 "./customized-element.component.html"
             ],
             "viewProviders": [],
-            "inputsClass": [],
+            "inputsClass": [
+                {
+                    "name": "initialState",
+                    "line": 25,
+                    "type": "any[]"
+                }
+            ],
             "outputsClass": [],
             "propertiesClass": [
                 {
-                    "name": "content",
-                    "type": "ViewContainerRef",
+                    "name": "activeBlockNumber",
+                    "defaultValue": "-1",
+                    "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 24,
-                    "decorators": [
-                        {
-                            "name": "ViewChild",
-                            "stringifiedArguments": "'content', {read: ViewContainerRef}"
-                        }
-                    ]
+                    "line": 29
+                },
+                {
+                    "name": "componentsList",
+                    "defaultValue": "[]",
+                    "type": "AddItem[]",
+                    "optional": false,
+                    "description": "",
+                    "line": 27
                 },
                 {
                     "name": "isVisibleButtonsBlock",
@@ -1409,7 +1698,15 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 13
+                    "line": 28
+                },
+                {
+                    "name": "setActiveBlockNumber",
+                    "defaultValue": "() => {...}",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 36
                 },
                 {
                     "name": "setIsVisibleButtonsBlock",
@@ -1417,25 +1714,105 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 15
+                    "line": 32
                 }
             ],
             "methodsClass": [
                 {
                     "name": "addList",
-                    "args": [],
+                    "args": [
+                        {
+                            "name": "index",
+                            "type": "number"
+                        }
+                    ],
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 31
+                    "line": 45,
+                    "jsdoctags": [
+                        {
+                            "name": "index",
+                            "type": "number",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
                 },
                 {
                     "name": "addTable",
+                    "args": [
+                        {
+                            "name": "index",
+                            "type": "number"
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 40,
+                    "jsdoctags": [
+                        {
+                            "name": "index",
+                            "type": "number",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "addText",
+                    "args": [
+                        {
+                            "name": "index",
+                            "type": "number"
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 50,
+                    "jsdoctags": [
+                        {
+                            "name": "index",
+                            "type": "number",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "deleteComponent",
+                    "args": [
+                        {
+                            "name": "index",
+                            "type": "number"
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 55,
+                    "jsdoctags": [
+                        {
+                            "name": "index",
+                            "type": "number",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "ngOnChanges",
                     "args": [],
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 26
+                    "line": 64
                 },
                 {
                     "name": "ngOnInit",
@@ -1443,7 +1820,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 36
+                    "line": 59
                 }
             ],
             "hostBindings": [],
@@ -1451,11 +1828,11 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, ComponentFactoryResolver, ViewEncapsulation, OnInit, ViewChild, ViewContainerRef } from '@angular/core';\nimport { DynamicTableComponent } from '../../atoms/tables/dynamic-table/dynamic-table.component';\nimport { DynamicListComponent } from '../../atoms/tables/dynamic-list/dynamic-list.component';\n\n@Component({\n  selector: 'app-customized-element',\n  templateUrl: './customized-element.component.html',\n  styleUrls: ['./customized-element.component.scss'],\n  encapsulation: ViewEncapsulation.None\n})\nexport class CustomizedElementComponent implements OnInit {\n\n  isVisibleButtonsBlock = false;\n\n  setIsVisibleButtonsBlock = (value: boolean) => {\n    this.isVisibleButtonsBlock = value;\n  }\n\n  constructor(\n    private componentFactoryResolver: ComponentFactoryResolver,\n    private viewContainerRef: ViewContainerRef\n    ){}\n\n  @ViewChild('content' , {read: ViewContainerRef}) content:ViewContainerRef;\n\n  addTable(){\n    let tableComponent = this.componentFactoryResolver.resolveComponentFactory(DynamicTableComponent);\n    this.content.createComponent(tableComponent);\n  }\n\n  addList(){\n    let listComponent = this.componentFactoryResolver.resolveComponentFactory(DynamicListComponent);\n    this.content.createComponent(listComponent);\n  }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "sourceCode": "import { Component, Input, ViewEncapsulation, OnInit, OnChanges } from '@angular/core';\nimport { AddItem } from './add-dynamic-component/add-item';\nimport { AddService } from './add-dynamic-component/add.service';\n\nconst standartListData =  {\n  listTitle: 'Put list title',\n  titles: ['Type text here']\n}\n\nconst standartTableData = {\n  heads: ['text 1'],\n  tableData: [{ 'text 1' : '1.1. Text', }]\n}\n\nconst standartTextData = { title: 'Your new paragraph' }\n\n@Component({\n  selector: 'app-customized-element',\n  templateUrl: './customized-element.component.html',\n  styleUrls: ['./customized-element.component.scss'],\n  encapsulation: ViewEncapsulation.None\n})\n\nexport class CustomizedElementComponent implements OnInit, OnChanges {\n  @Input() initialState: any[];\n\n  componentsList: AddItem[] = [];\n  isVisibleButtonsBlock = false;\n  activeBlockNumber = -1;\n  constructor(private addService: AddService) {}\n\n  setIsVisibleButtonsBlock = (value: boolean) => {\n    this.isVisibleButtonsBlock = value;\n  }\n\n  setActiveBlockNumber = (index: number) => {\n    this.activeBlockNumber = index;\n  }\n\n  addTable(index: number){\n    const newAdItem = this.addService.getAds('table', standartTableData);\n    this.componentsList.splice(index + 1, 0, newAdItem)\n  }\n\n  addList(index: number) {\n    const newAdItem = this.addService.getAds('list', standartListData);\n    this.componentsList.splice(index + 1, 0, newAdItem)\n  }\n\n  addText(index: number) {\n    const newAdItem = this.addService.getAds('text', standartTextData);\n    this.componentsList.splice(index + 1, 0, newAdItem)\n  }\n\n  deleteComponent(index: number) {\n    this.componentsList.splice(index, 1);\n  }\n\n  ngOnInit(): void {\n    const initialComponentsList = this.initialState.map(component => this.addService.getAds(component.type, component.dataFromParent));\n    this.componentsList = [...initialComponentsList];\n  }\n\n  ngOnChanges(): void {\n    const initialComponentsList = this.initialState.map(component => this.addService.getAds(component.type, component.dataFromParent));\n    this.componentsList = [...initialComponentsList];\n  }\n}",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".app-customized-element {\n  color: var(--secondary-color);\n  padding: 10px 11px 8px 18px;\n  border: 1px dashed transparent;\n  border-radius: 8px;\n  transition: 0.3s;\n\n  &:hover {\n    cursor: pointer;\n    border: 1px dashed rgba(var(--secondary-color-code), 0.5);\n    border-radius: 8px;\n  }\n\n  &__title {\n    margin-bottom: 18px;\n  }\n\n  &__text{\n    margin-bottom: 18px;\n  }\n\n  &__buttons-container {\n    display: flex;\n    gap: 16px;\n  }\n}\n\n.app-dynamic-table, .app-dynamic-list__container {\n  margin-bottom: 16px!important;\n}\n\n@media screen and (max-width: 550px) {\n  .app-customized-element {\n\n    &__buttons-container {\n      flex-direction: column;\n    }\n  }\n}",
+                    "data": ".app-customized-element {\n  color: var(--secondary-color);\n  padding: 10px 11px 8px 18px;\n  border: 1px dashed transparent;\n  border-radius: 8px;\n  transition: 0.3s;\n\n  &:hover {\n    cursor: pointer;\n    border: 1px dashed rgba(var(--secondary-color-code), 0.5);\n    border-radius: 8px;\n  }\n\n  &__container {\n    border: 1px dashed transparent;\n    border-radius: 8px;\n    transition: 0.3s;\n    position: relative;\n    width: 97%;\n    padding-right: 3%;\n\n\n    &:hover {\n      cursor: pointer;\n      // border: 1px dashed rgba(var(--secondary-color-code), 0.5);\n      // border-radius: 8px;\n    }\n  }\n\n  &__button-delete {\n    width: 6px;\n    height: 6px;\n    background-color: transparent;\n    border: none;\n    position: absolute;\n    top: calc(50% - 21px);\n    right: 2%;\n    z-index: 2;\n  }\n\n  &__title {\n    margin-bottom: 18px;\n  }\n\n  &__text{\n    margin-bottom: 18px;\n  }\n\n  &__buttons-container {\n    display: flex;\n    margin-bottom: 10px;\n    \n    & * {\n      margin-right: 16px;\n    }\n  \n    & :last-child {\n      margin-right: 0;\n    }\n  }\n}\n\n.app-dynamic-table, .app-dynamic-list__container {\n  margin-bottom: 16px!important;\n}\n\n@media screen and (max-width: 550px) {\n  .app-customized-element {\n\n    &__buttons-container {\n      flex-direction: column;\n    }\n  }\n}",
                     "styleUrl": "./customized-element.component.scss"
                 }
             ],
@@ -1465,26 +1842,15 @@
                 "description": "",
                 "args": [
                     {
-                        "name": "componentFactoryResolver",
-                        "type": "ComponentFactoryResolver"
-                    },
-                    {
-                        "name": "viewContainerRef",
-                        "type": "ViewContainerRef"
+                        "name": "addService",
+                        "type": "AddService"
                     }
                 ],
-                "line": 17,
+                "line": 29,
                 "jsdoctags": [
                     {
-                        "name": "componentFactoryResolver",
-                        "type": "ComponentFactoryResolver",
-                        "tagName": {
-                            "text": "param"
-                        }
-                    },
-                    {
-                        "name": "viewContainerRef",
-                        "type": "ViewContainerRef",
+                        "name": "addService",
+                        "type": "AddService",
                         "tagName": {
                             "text": "param"
                         }
@@ -1492,9 +1858,10 @@
                 ]
             },
             "implements": [
-                "OnInit"
+                "OnInit",
+                "OnChanges"
             ],
-            "templateData": "<div \n  class=\"app-customized-element\"\n  (mouseenter)=\"setIsVisibleButtonsBlock(true)\"\n  (mouseleave)=\"setIsVisibleButtonsBlock(false)\"\n>\n  <h3 class=\"app-customized-element__title fs-h3\">Privacy policy overview</h3>\n  <p class=\"app-customized-element__text fs-16-sofia-300\">\n    We are committed to protecting and respecting your privacy. This policy explains how we use any personal \n    information that you provide to us through our Secure Privacy.\n  </p>\n  <div class=\"app-customized-element__content\" #content>\n    <ng-content></ng-content>\n    <p></p>\n  </div>\n  <div\n    class=\"app-customized-element__buttons-container\"\n    *ngIf=\"isVisibleButtonsBlock\"\n  >\n    <app-small-light-add-button\n      [title]=\"'Add table'\"\n      [classes]=\"'app-small-light-add-button fs-14-gramm-400-light'\"\n      (click)=\"addTable()\"\n    >\n    </app-small-light-add-button>\n    <app-small-light-add-button\n      [title]=\"'Add a paragraph'\"\n      [classes]=\"'app-small-light-add-button fs-14-gramm-400-light'\"\n    >\n    </app-small-light-add-button>\n    <app-small-light-add-button\n      [title]=\"'Add list'\"\n      [classes]=\"'app-small-light-add-button fs-14-gramm-400-light'\"\n      (click)=\"addList()\"\n    >\n    </app-small-light-add-button>\n  </div>\n</div>\n"
+            "templateData": "<div class=\"app-customized-element\">\n  <div *ngIf=\"componentsList.length\">\n    <div *ngFor=\"let component of componentsList; let i = index;\">\n      <div \n        (mouseenter)=\"setActiveBlockNumber(i)\"\n        (mouseleave)=\"setActiveBlockNumber(-1)\"\n      >\n        <div class=\"app-customized-element__container\">\n          <app-add-dynamic [component]=\"component\"></app-add-dynamic>\n          <button \n            type=\"button\"\n            class=\"app-customized-element__button-delete\"\n            (click)=\"deleteComponent(i)\"\n            *ngIf=\"activeBlockNumber === i\"\n          >\n            <img src=\"assets/images/deleteX.png\" alt=\"delete\">\n          </button>\n        </div>\n        <div\n          class=\"app-customized-element__buttons-container\"\n          *ngIf=\"activeBlockNumber === i\"\n        >\n          <app-small-light-add-button\n            [title]=\"'Add table'\"\n            [classes]=\"'app-small-light-add-button fs-14-gramm-400-light'\"\n            (click)=\"addTable(i)\"\n          >\n          </app-small-light-add-button>\n          <app-small-light-add-button\n            [title]=\"'Add a paragraph'\"\n            [classes]=\"'app-small-light-add-button fs-14-gramm-400-light'\"\n            (click)=\"addText(i)\"\n          >\n          </app-small-light-add-button>\n          <app-small-light-add-button\n            [title]=\"'Add list'\"\n            [classes]=\"'app-small-light-add-button fs-14-gramm-400-light'\"\n            (click)=\"addList(i)\"\n          >\n          </app-small-light-add-button>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n"
         },
         {
             "name": "DarkAddButtonComponent",
@@ -1641,7 +2008,7 @@
         },
         {
             "name": "DynamicListComponent",
-            "id": "component-DynamicListComponent-2b76e500004ed66c94ce75d3531a4615",
+            "id": "component-DynamicListComponent-f3f36eff6dd120e9af771043b725d7d6",
             "file": "src/app/atoms/tables/dynamic-list/dynamic-list.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1657,23 +2024,21 @@
                 "./dynamic-list.component.html"
             ],
             "viewProviders": [],
-            "inputsClass": [],
+            "inputsClass": [
+                {
+                    "name": "data",
+                    "line": 10,
+                    "type": "any"
+                }
+            ],
             "outputsClass": [],
             "propertiesClass": [
-                {
-                    "name": "active",
-                    "defaultValue": "0",
-                    "type": "number",
-                    "optional": false,
-                    "description": "",
-                    "line": 14
-                },
                 {
                     "name": "dynamicList",
                     "type": "ElementRef",
                     "optional": false,
                     "description": "",
-                    "line": 17,
+                    "line": 14,
                     "decorators": [
                         {
                             "name": "ViewChild",
@@ -1687,23 +2052,29 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 19
+                    "line": 16
                 },
                 {
                     "name": "listTitle",
-                    "defaultValue": "'Put your title'",
                     "type": "string",
                     "optional": false,
                     "description": "",
-                    "line": 13
+                    "line": 12
+                },
+                {
+                    "name": "setData",
+                    "defaultValue": "() => {...}",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 31
                 },
                 {
                     "name": "titles",
-                    "defaultValue": "['Type text here']",
-                    "type": "[]",
+                    "type": "string[]",
                     "optional": false,
                     "description": "",
-                    "line": 12
+                    "line": 11
                 }
             ],
             "methodsClass": [
@@ -1722,7 +2093,7 @@
                     "optional": false,
                     "returnType": "number",
                     "typeParameters": [],
-                    "line": 32,
+                    "line": 27,
                     "jsdoctags": [
                         {
                             "name": "index",
@@ -1739,6 +2110,22 @@
                             }
                         }
                     ]
+                },
+                {
+                    "name": "ngOnChanges",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 36
+                },
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 40
                 }
             ],
             "hostBindings": [],
@@ -1746,20 +2133,89 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, ViewChild, OnChanges, ElementRef, KeyValueDiffer, DoCheck, EventEmitter, Output } from '@angular/core';\nimport { title } from 'process';\n\n@Component({\n  selector: 'app-dynamic-list',\n  templateUrl: './dynamic-list.component.html',\n  styleUrls: ['./dynamic-list.component.scss'],\n  \n})\n\nexport class DynamicListComponent {\n  titles = ['Type text here'];\n  listTitle = 'Put your title';\n  active = 0;\n\n\n  @ViewChild('dynamicList') dynamicList: ElementRef; \n\n  handlePressKey = (event, i) => {\n    if (event.keyCode === 13) {\n      this.active = i+1\n      const newTitlesList = [...this.titles];\n      newTitlesList.splice(i + 1, 0, 'Type text here');\n      this.titles = [...newTitlesList];\n      setTimeout(() => {\n        const inputs = this.dynamicList.nativeElement.querySelectorAll('.app-dynamic-list__input');\n        (inputs[i + 1]as HTMLElement).focus();\n      }, 100)\n    }\n  }\n\n  indexTracker(index: number, value: any) {\n    return index;\n  }\n}\n",
+            "sourceCode": "import { Component, ViewChild, OnChanges, ElementRef, Input, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-dynamic-list',\n  templateUrl: './dynamic-list.component.html',\n  styleUrls: ['./dynamic-list.component.scss'],\n})\n\nexport class DynamicListComponent implements OnInit, OnChanges {\n  @Input() data: any;\n  titles: string[];\n  listTitle: string;\n\n  @ViewChild('dynamicList') dynamicList: ElementRef; \n\n  handlePressKey = (event, i) => {\n    if (event.key === 'Enter') {\n      event.preventDefault();\n      this.titles.splice(i + 1, 0, 'Type text here');\n      setTimeout(() => {\n        const inputs = this.dynamicList.nativeElement.querySelectorAll('.app-dynamic-list__input');\n        (inputs[i + 1]as HTMLElement).focus();\n      }, 100)\n    }\n  }\n\n  indexTracker(index: number, value: any) {\n    return index;\n  }\n\n  setData = () => {\n    this.listTitle = this.data.listTitle || 'Put title';\n    this.titles = this.data.titles || ['Text'];\n  }\n\n  ngOnChanges() {\n    this.setData();\n  }\n\n  ngOnInit() {\n    this.setData();\n  }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".app-dynamic-list {\n  &__input {\n    border: none;\n    background-color: transparent;\n    color: var(--secondary-color);\n    width: 90%;\n  }\n\n  &__title {\n    margin-bottom: 18px;\n    color: var(--secondary-color);\n    border: none;\n    background-color: transparent;\n  }\n\n  &__item {\n    display: flex;\n    align-items: center;\n    margin: 6px 0;\n  }\n\n  &__dot {\n    width: 6px;\n    height: 6px;\n    border-radius: 50%;\n    background-color: var(--secondary-color);\n    margin-right: 18px;\n  }\n}",
+                    "data": ".app-dynamic-list {\n  width: 95%;\n  overflow-x: hidden;\n\n  &__input {\n    border: none;\n    background-color: transparent;\n    color: var(--secondary-color);\n    font-style: italic;\n    width: 100%;\n    padding-right: 15px;\n  }\n\n  &__title {\n    margin-bottom: 18px;\n    color: var(--secondary-color);\n    border: none;\n    background-color: transparent;\n    text-transform: capitalize;\n  }\n\n  &__item {\n    display: flex;\n    align-items: center;\n    margin: 12px 0;\n    margin-right: -15px;\n  }\n\n  &__dot {\n    width: 6px;\n    height: 6px;\n    border-radius: 50%;\n    background-color: var(--secondary-color);\n    margin-right: 18px;\n  }\n}",
                     "styleUrl": "./dynamic-list.component.scss"
                 }
             ],
             "stylesData": "",
-            "templateData": "<div class=\"app-dynamic-list__container\">\n  <input \n    class=\"app-dynamic-list__title fs-16-sofia-600\"\n    type=\"text\"\n    [(ngModel)]=\"listTitle\"  \n  />\n  <ul class=\"app-dynamic-list\" #dynamicList>\n    <li class=\"app-dynamic-list__item\" *ngFor=\"let title of titles; let i = index; trackBy:indexTracker\">\n      <div class=\"app-dynamic-list__dot\"></div>\n      <input \n        class=\"app-dynamic-list__input fs-16-sofia-300\" \n        type=\"text\" \n        [(ngModel)]=\"titles[i]\" \n        (keypress)=\"handlePressKey($event, i)\"\n      >\n    </li>\n  </ul>\n</div>\n"
+            "implements": [
+                "OnInit",
+                "OnChanges"
+            ],
+            "templateData": "<div class=\"app-dynamic-list__container\">\n  <input \n    class=\"app-dynamic-list__title fs-16-sofia-600\"\n    type=\"text\"\n    [(ngModel)]=\"listTitle\"  \n  />\n  <ul class=\"app-dynamic-list\" #dynamicList>\n    <li class=\"app-dynamic-list__item\" *ngFor=\"let title of titles; let i = index; trackBy:indexTracker\">\n      <div class=\"app-dynamic-list__dot\"></div>\n      <textarea\n        autosize\n        class=\"app-dynamic-list__input fs-16-sofia-300\" \n        [(ngModel)]=\"titles[i]\" \n        (keypress)=\"handlePressKey($event, i)\"\n        spellcheck=\"false\"\n      >\n      </textarea>\n    </li>\n  </ul>\n</div>\n"
+        },
+        {
+            "name": "DynamicSectionsListComponent",
+            "id": "component-DynamicSectionsListComponent-7544c52908bc2252cd4c507e5a926402",
+            "file": "src/app/organisms/dynamic-sections-list/dynamic-sections-list.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-dynamic-sections-list",
+            "styleUrls": [
+                "./dynamic-sections-list.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./dynamic-sections-list.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "initialState",
+                    "defaultValue": "[\n    {\n      type: 'text',\n      dataFromParent: {\n        title: `For the purpose of this Privacy Policy, we are a Data Controller of your personal information. Our legal basis for collecting and using your personal information, as described in this Privacy Policy, depends on the information we collect and the specific context in which we collect it. We may process your personal information because:`\n      }\n    },\n    {\n      type: 'list',\n      dataFromParent: {\n        listTitle: 'list title',\n        titles: ['first item', 'second item']\n      }\n    },\n    {\n      type: 'list',\n      dataFromParent: {\n        titles: ['first item', 'second item']\n      }\n    },\n    {\n      type: 'table',\n      dataFromParent: {\n        heads: ['text 1', 'text 2'],\n        tableData: [ \n          { 'text 1' : '1.1. Text', 'text 2' : '1.1. Text'},\n          { 'text 1' : '2.1. Text', 'text 2' : '2.1. Text'},\n          { 'text 1' : '2.1. Text', 'text 2' : '2.1. Text'}\n        ]\n      }\n    }\n  ]",
+                    "type": "[]",
+                    "optional": false,
+                    "description": "",
+                    "line": 9
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 43
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-dynamic-sections-list',\n  templateUrl: './dynamic-sections-list.component.html',\n  styleUrls: ['./dynamic-sections-list.component.scss']\n})\nexport class DynamicSectionsListComponent implements OnInit {\n  initialState = [\n    {\n      type: 'text',\n      dataFromParent: {\n        title: `For the purpose of this Privacy Policy, we are a Data Controller of your personal information. Our legal basis for collecting and using your personal information, as described in this Privacy Policy, depends on the information we collect and the specific context in which we collect it. We may process your personal information because:`\n      }\n    },\n    {\n      type: 'list',\n      dataFromParent: {\n        listTitle: 'list title',\n        titles: ['first item', 'second item']\n      }\n    },\n    {\n      type: 'list',\n      dataFromParent: {\n        titles: ['first item', 'second item']\n      }\n    },\n    {\n      type: 'table',\n      dataFromParent: {\n        heads: ['text 1', 'text 2'],\n        tableData: [ \n          { 'text 1' : '1.1. Text', 'text 2' : '1.1. Text'},\n          { 'text 1' : '2.1. Text', 'text 2' : '2.1. Text'},\n          { 'text 1' : '2.1. Text', 'text 2' : '2.1. Text'}\n        ]\n      }\n    }\n  ]\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./dynamic-sections-list.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [],
+                "line": 40
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<app-customized-element [initialState]=\"initialState\"></app-customized-element>\n"
         },
         {
             "name": "DynamicTableComponent",
-            "id": "component-DynamicTableComponent-0d984cd1290974d300fa5100a2928458",
+            "id": "component-DynamicTableComponent-f897c0b371a401c93fc89f9433343ee8",
             "file": "src/app/atoms/tables/dynamic-table/dynamic-table.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1775,7 +2231,13 @@
                 "./dynamic-table.component.html"
             ],
             "viewProviders": [],
-            "inputsClass": [],
+            "inputsClass": [
+                {
+                    "name": "data",
+                    "line": 9,
+                    "type": "any"
+                }
+            ],
             "outputsClass": [],
             "propertiesClass": [
                 {
@@ -1784,7 +2246,7 @@
                     "type": "string",
                     "optional": false,
                     "description": "",
-                    "line": 17
+                    "line": 18
                 },
                 {
                     "name": "addColumn",
@@ -1792,7 +2254,7 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 41
+                    "line": 42
                 },
                 {
                     "name": "addRow",
@@ -1800,7 +2262,7 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 32
+                    "line": 33
                 },
                 {
                     "name": "columns",
@@ -1808,15 +2270,7 @@
                     "type": "number",
                     "optional": false,
                     "description": "",
-                    "line": 14
-                },
-                {
-                    "name": "data",
-                    "defaultValue": "[ \n    { 'text 1' : '1.1. Text' }\n  ]",
-                    "type": "any",
-                    "optional": false,
-                    "description": "",
-                    "line": 10
+                    "line": 17
                 },
                 {
                     "name": "editCeil",
@@ -1824,7 +2278,7 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 69
+                    "line": 75
                 },
                 {
                     "name": "editHead",
@@ -1832,30 +2286,28 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 52
+                    "line": 54
                 },
                 {
                     "name": "heads",
-                    "defaultValue": "['text 1']",
-                    "type": "[]",
+                    "type": "string[]",
                     "optional": false,
                     "description": "",
-                    "line": 9
+                    "line": 11
                 },
                 {
                     "name": "isMobile",
                     "type": "boolean",
                     "optional": false,
                     "description": "",
-                    "line": 16
+                    "line": 13
                 },
                 {
                     "name": "mainColumn",
-                    "defaultValue": "this.heads[0]",
-                    "type": "",
+                    "type": "string",
                     "optional": false,
                     "description": "",
-                    "line": 15
+                    "line": 14
                 },
                 {
                     "name": "rows",
@@ -1863,20 +2315,35 @@
                     "type": "number",
                     "optional": false,
                     "description": "",
-                    "line": 13
+                    "line": 16
+                },
+                {
+                    "name": "setData",
+                    "defaultValue": "() => {...}",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 88
                 },
                 {
                     "name": "table",
                     "type": "ElementRef",
                     "optional": false,
                     "description": "",
-                    "line": 76,
+                    "line": 81,
                     "decorators": [
                         {
                             "name": "ViewChild",
                             "stringifiedArguments": "'table'"
                         }
                     ]
+                },
+                {
+                    "name": "tableData",
+                    "type": "any[]",
+                    "optional": false,
+                    "description": "",
+                    "line": 12
                 }
             ],
             "methodsClass": [
@@ -1886,7 +2353,15 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 85
+                    "line": 96
+                },
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 102
                 },
                 {
                     "name": "showNext",
@@ -1899,7 +2374,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 19,
+                    "line": 20,
                     "jsdoctags": [
                         {
                             "name": "direction",
@@ -1924,13 +2399,13 @@
                     "argsDecorator": [
                         "$event"
                     ],
-                    "line": 78
+                    "line": 83
                 }
             ],
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, HostListener, ElementRef, ViewChild, OnChanges } from '@angular/core';\n\n@Component({\n  selector: 'app-dynamic-table',\n  templateUrl: './dynamic-table.component.html',\n  styleUrls: ['./dynamic-table.component.scss']\n})\nexport class DynamicTableComponent implements OnChanges {\n  heads = ['text 1'];\n  data: any =  [ \n    { 'text 1' : '1.1. Text' }\n  ]\n  rows = 1;\n  columns = 1;\n  mainColumn = this.heads[0];\n  isMobile: boolean;\n  activeColumn = '';\n\n  showNext(direction: string) {\n    const headsListWithoutMain = this.heads.filter(head => head !== this.mainColumn);\n    const currentIndex = headsListWithoutMain.findIndex(head => head === this.activeColumn);\n    let nextIndex;\n    \n    if (direction =='forward') {\n      nextIndex = (currentIndex + 1 > headsListWithoutMain.length - 1) ? 0 : currentIndex + 1; \n    } else if (direction =='back') {\n      nextIndex = (currentIndex - 1 < 0) ? headsListWithoutMain.length - 1 : currentIndex - 1; \n    }\n    this.activeColumn = headsListWithoutMain[nextIndex];\n  }\n\n  addRow = () => {\n    this.rows = this.rows + 1;\n    let newDataItem = {};\n    const newRow = this.heads.forEach((head, i) => {\n      newDataItem[head]=`${this.rows}.${i + 1}. Text`\n    });\n    this.data = [...this.data, newDataItem];\n  }\n\n  addColumn = () => {\n    this.columns = this.columns + 1;\n    this.heads = [...this.heads, `Text ${this.columns}`];\n    this.data.forEach((item, i )=> {\n      item[`Text ${this.columns}`] = `${i + 1}.${this.columns}. Text`;\n    })\n    this.activeColumn = this.heads[1];\n    const width = document.querySelector('.app-dynamic-table').clientWidth;\n    this.isMobile = (width / this.columns) < 200;\n  }\n\n  editHead = (event, headTitle) => {\n    const index = this.heads.findIndex(head => head === headTitle);\n    if (index === 0) {\n      this.mainColumn = event.target.value;\n    }\n    const value = event.target.value;\n    if (event.target.value.length) {\n      this.heads[index] = value;\n      this.data.forEach(item => {\n        item[`${value}`] = item[headTitle];\n        delete item[headTitle];\n      })\n    } else {\n      this.heads[index] = headTitle;\n    }\n  }\n\n  editCeil = (event, index, head) => {\n    if (event.target.value.length) {\n      this.data[index][head] = event.target.value;\n    }\n  }\n\n\n  @ViewChild('table') table: ElementRef;\n  @HostListener('window:resize', ['$event'])\n  onResize(event: any) {\n    console.log('resize')\n    const width = this.table.nativeElement.clientWidth;\n    this.isMobile = (width / this.columns) < 200;\n    console.log(this.isMobile)\n  }\n\n  ngOnChanges() {\n    const width = document.querySelector('.app-dynamic-table').clientWidth;\n    this.isMobile = (width / this.columns) < 200;\n  }\n}\n\n\n// need to add some verification on empty strings and number of columns",
+            "sourceCode": "import { Component, HostListener, ElementRef, ViewChild, OnChanges, Input, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-dynamic-table',\n  templateUrl: './dynamic-table.component.html',\n  styleUrls: ['./dynamic-table.component.scss']\n})\nexport class DynamicTableComponent implements OnChanges, OnInit {\n  @Input() data: any;\n\n  heads: string[];\n  tableData: any[];\n  isMobile: boolean;\n  mainColumn: string;\n\n  rows = 1;\n  columns = 1;\n  activeColumn = '';\n\n  showNext(direction: string) {\n    const headsListWithoutMain = this.heads.filter(head => head !== this.mainColumn);\n    const currentIndex = headsListWithoutMain.findIndex(head => head === this.activeColumn);\n    let nextIndex;\n    \n    if (direction =='forward') {\n      nextIndex = (currentIndex + 1 > headsListWithoutMain.length - 1) ? 0 : currentIndex + 1; \n    } else if (direction =='back') {\n      nextIndex = (currentIndex - 1 < 0) ? headsListWithoutMain.length - 1 : currentIndex - 1; \n    }\n    this.activeColumn = headsListWithoutMain[nextIndex];\n  }\n\n  addRow = () => {\n    this.rows = this.rows + 1;\n    let newDataItem = {};\n    const newRow = this.heads.forEach((head, i) => {\n      newDataItem[head]=`${this.rows}.${i + 1}. Text`\n    });\n    this.tableData = [...this.tableData, newDataItem];\n  }\n\n  addColumn = () => {\n    this.columns = this.columns + 1;\n    this.heads = [...this.heads, `Text ${this.columns}`];\n    this.tableData.forEach((item, i )=> {\n      item[`Text ${this.columns}`] = `${i + 1}.${this.columns}. Text`;\n    })\n    this.activeColumn = this.heads[1];\n    const width = document.querySelector('.app-dynamic-table').clientWidth;\n    this.isMobile = (width / this.columns) < 200;\n    console.log(this.tableData)\n  }\n\n  editHead = (event, headTitle) => {\n    const index = this.heads.findIndex(head => head === headTitle);\n    const activeIndex = this.heads.findIndex(head => head === this.activeColumn);\n    const value = event.target.value;\n    if (index === activeIndex) {\n      this.activeColumn = value;\n    }\n    if (index === 0) {\n      this.mainColumn = value;\n    }\n    if (event.target.value.length) {\n      this.heads[index] = value;\n      this.tableData.forEach(item => {\n        item[`${value}`] = item[headTitle];\n        delete item[headTitle];\n      })\n    } else {\n      this.heads[index] = headTitle;\n    }\n  }\n\n  editCeil = (event, index, head) => {\n    if (event.target.value.length) {\n      this.tableData[index][head] = event.target.value;\n    }\n  }\n\n  @ViewChild('table') table: ElementRef;\n  @HostListener('window:resize', ['$event'])\n  onResize(event: any) {\n    const width = this.table.nativeElement.clientWidth;\n    this.isMobile = (width / this.columns) < 200;\n  }\n\n  setData = () => {\n    this.heads = this.data.heads || ['text 1'];\n    this.mainColumn = this.heads[0];\n    this.tableData = this.data.tableData || [{ 'text 1' : '1.1. Text' }];\n    this.rows = this.tableData.length;\n    this.columns = Object.keys(this.tableData[0]).length;\n  }\n\n  ngOnChanges() {\n    const width = document.querySelector('.app-dynamic-table').clientWidth;\n    this.isMobile = (width / this.columns) < 200;\n    this.setData();\n  }\n\n  ngOnInit() {\n    this.setData();\n  }\n}",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -1940,9 +2415,89 @@
             ],
             "stylesData": "",
             "implements": [
+                "OnChanges",
+                "OnInit"
+            ],
+            "templateData": "<div>\n  <!-- !!!!!!!!!mobile version of table!!!!!!!!!!!!  -->\n  <table \n    #table\n    id=\"table\" \n    *ngIf=\"isMobile\" \n    class=\"app-dynamic-table fs-12-sofia-400\"\n  >\n    <div class=\"app-dynamic-table__add-column-button\">\n      <app-dark-add-button (click)=\"addColumn()\"></app-dark-add-button>\n    </div>\n    <tr class=\"app-dynamic-table__head\">\n     <th class=\"app-dynamic-table__head-item app-transparent-table__main-column\">\n      <input \n        class=\"app-dynamic-table__head-input fs-12-sofia-400\" \n        type=\"text\" \n        [value]=\"mainColumn\"\n        (change)=\"editHead($event, mainColumn)\"\n      >\n     </th>\n     <th  class=\"app-dynamic-table__head-item\">\n      <input \n        class=\"app-dynamic-table__head-input fs-12-sofia-400\" \n        type=\"text\" \n        [value]=\"activeColumn\"\n        (change)=\"editHead($event, activeColumn)\"\n      >\n     </th>\n    </tr>\n    <tr \n      class=\"app-dynamic-table__row fs-12-sofia-300\"\n      *ngFor=\"let item of tableData; let i = index\"\n    >\n      <td>\n        <input \n          type=\"text\"\n          class=\"app-dynamic-table__ceil-input fs-12-sofia-400\" \n          [value]=\"item[mainColumn]\"\n          (change)=\"editCeil($event, i, mainColumn)\"\n        >\n      </td>\n      <td>\n        <input \n          type=\"text\"\n          class=\"app-dynamic-table__ceil-input fs-12-sofia-400\" \n          [value]=\"item[activeColumn]\"\n          (change)=\"editCeil($event, i, activeColumn)\"\n        >\n      </td>\n    </tr>\n    <button class=\"prev app-dynamic-table__button\" type=\"button\" (click)=\"showNext('back')\"></button>\n    <button class=\"next app-dynamic-table__button\"type=\"button\" (click)=\"showNext('forward')\"></button>\n    <div class=\"app-dynamic-table__add-row-button\">\n      <app-small-light-add-button\n        (click)=\"addRow()\"\n        [title]=\"'Add row'\"\n        [classes]=\"'app-big-light-add-button fs-14-gramm-400-light'\"\n      ></app-small-light-add-button>\n    </div>\n  </table> \n  \n  \n  <!-- !!!!!!!!!desktop version of table!!!!!!!!!!!!  -->\n  <table #table class=\"app-dynamic-table fs-12-sofia-400\" *ngIf=\"!isMobile\" >\n    <div class=\"app-dynamic-table__add-column-button\">\n      <app-dark-add-button (click)=\"addColumn()\"></app-dark-add-button>\n    </div>\n    <tr class=\"app-dynamic-table__head\">\n      <th class=\"app-dynamic-table__head-item\" *ngFor=\"let head of heads; let i = index\">\n        <input \n          class=\"app-dynamic-table__head-input fs-12-sofia-400\" \n          type=\"text\" \n          [value]=\"head\"\n          (change)=\"editHead($event, head)\"\n        >\n      </th>\n    </tr>\n    <tr class=\"app-dynamic-table__row fs-12-sofia-300\" *ngFor=\"let item of tableData; let i = index\">\n      <td *ngFor=\"let head of heads; let j = index\">\n        <input \n          type=\"text\"\n          class=\"app-dynamic-table__ceil-input fs-12-sofia-400\" \n          [value]=\"item[head]\"\n          (change)=\"editCeil($event, i, head)\"\n        >\n      </td>\n    </tr>\n    <div class=\"app-dynamic-table__add-row-button\">\n      <app-small-light-add-button\n        (click)=\"addRow()\"\n        [title]=\"'Add row'\"\n        [classes]=\"'app-big-light-add-button fs-14-gramm-400-light'\"\n      ></app-small-light-add-button>\n    </div>\n  </table>\n</div>\n"
+        },
+        {
+            "name": "DynamicTextComponent",
+            "id": "component-DynamicTextComponent-4f5485700984365da85dcf4d7c8df3ce",
+            "file": "src/app/atoms/text/dynamic-text/dynamic-text.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-dynamic-text",
+            "styleUrls": [
+                "./dynamic-text.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./dynamic-text.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "data",
+                    "line": 9,
+                    "type": "any"
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "title",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 10
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "ngOnChanges",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 17
+                },
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 13
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component, Input, OnChanges, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-dynamic-text',\n  templateUrl: './dynamic-text.component.html',\n  styleUrls: ['./dynamic-text.component.scss']\n})\nexport class DynamicTextComponent implements OnInit, OnChanges {\n  @Input() data: any;\n  title: string;\n  constructor() { }\n\n  ngOnInit(): void {\n    this.title = this.data.title;\n  }\n\n  ngOnChanges(): void {\n    this.title = this.data.title;\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".app-dynamic-text {\n  width: 100%;\n  overflow-x: hidden;\n  margin-bottom: 16px;\n\n  &__input {\n    width: 100%;\n    padding-right: 15px;\n    border: none;\n    background-color: transparent;\n    color: var(--secondary-color);\n  }\n\n  &__wrapper {\n    margin-right: -15px;\n    margin-bottom: 18px;\n  }\n}",
+                    "styleUrl": "./dynamic-text.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [],
+                "line": 10
+            },
+            "implements": [
+                "OnInit",
                 "OnChanges"
             ],
-            "templateData": "<!-- !!!!!!!!!mobile version of table!!!!!!!!!!!!  -->\n<table \n  #table\n  id=\"table\" \n  *ngIf=\"isMobile\" \n  class=\"app-dynamic-table fs-12-sofia-400\"\n>\n  <div class=\"app-dynamic-table__add-column-button\">\n    <app-dark-add-button (click)=\"addColumn()\"></app-dark-add-button>\n  </div>\n  <tr class=\"app-dynamic-table__head\">\n   <th class=\"app-dynamic-table__head-item app-transparent-table__main-column\">\n    <input \n      class=\"app-dynamic-table__head-input fs-12-sofia-400\" \n      type=\"text\" \n      [value]=\"mainColumn\"\n      (change)=\"editHead($event, mainColumn)\"\n    >\n   </th>\n   <th  class=\"app-dynamic-table__head-item\">\n    <input \n      class=\"app-dynamic-table__head-input fs-12-sofia-400\" \n      type=\"text\" \n      [value]=\"activeColumn\"\n      (change)=\"editHead($event, activeColumn)\"\n    >\n   </th>\n  </tr>\n  <tr \n    class=\"app-dynamic-table__row fs-12-sofia-300\"\n    *ngFor=\"let item of data; let i = index\"\n  >\n    <td>\n      <input \n        type=\"text\"\n        class=\"app-dynamic-table__ceil-input fs-12-sofia-400\" \n        [value]=\"item[mainColumn]\"\n        (change)=\"editCeil($event, i, mainColumn)\"\n      >\n    </td>\n    <td>\n      <input \n        type=\"text\"\n        class=\"app-dynamic-table__ceil-input fs-12-sofia-400\" \n        [value]=\"item[activeColumn]\"\n        (change)=\"editCeil($event, i, activeColumn)\"\n      >\n    </td>\n  </tr>\n  <button class=\"prev app-dynamic-table__button\" type=\"button\" (click)=\"showNext('back')\"></button>\n  <button class=\"next app-dynamic-table__button\"type=\"button\" (click)=\"showNext('forward')\"></button>\n  <div class=\"app-dynamic-table__add-row-button\">\n    <app-small-light-add-button\n      (click)=\"addRow()\"\n      [title]=\"'Add row'\"\n      [classes]=\"'app-big-light-add-button fs-14-gramm-400-light'\"\n    ></app-small-light-add-button>\n  </div>\n</table> \n\n\n<!-- !!!!!!!!!desktop version of table!!!!!!!!!!!!  -->\n<table #table class=\"app-dynamic-table fs-12-sofia-400\" *ngIf=\"!isMobile\" >\n  <div class=\"app-dynamic-table__add-column-button\">\n    <app-dark-add-button (click)=\"addColumn()\"></app-dark-add-button>\n  </div>\n  <tr class=\"app-dynamic-table__head\">\n    <th class=\"app-dynamic-table__head-item\" *ngFor=\"let head of heads; let i = index\">\n      <input \n        class=\"app-dynamic-table__head-input fs-12-sofia-400\" \n        type=\"text\" \n        [value]=\"head\"\n        (change)=\"editHead($event, head)\"\n      >\n    </th>\n  </tr>\n  <tr class=\"app-dynamic-table__row fs-12-sofia-300\" *ngFor=\"let item of data; let i = index\">\n    <td *ngFor=\"let head of heads; let j = index\">\n      <input \n        type=\"text\"\n        class=\"app-dynamic-table__ceil-input fs-12-sofia-400\" \n        [value]=\"item[head]\"\n        (change)=\"editCeil($event, i, head)\"\n      >\n    </td>\n  </tr>\n  <div class=\"app-dynamic-table__add-row-button\">\n    <app-small-light-add-button\n      (click)=\"addRow()\"\n      [title]=\"'Add row'\"\n      [classes]=\"'app-big-light-add-button fs-14-gramm-400-light'\"\n    ></app-small-light-add-button>\n  </div>\n</table>\n"
+            "templateData": "<div class=\"app-dynamic-text\">\n  <div class=\"app-dynamic-text__wrapper\">\n    <textarea\n      autosize\n      class=\"app-dynamic-text__input fs-16-sofia-300\" \n      [(ngModel)]=\"title\" \n      spellcheck=\"false\"\n    >\n    </textarea>\n  </div>\n</div>\n"
         },
         {
             "name": "formInputComponent",
@@ -4032,7 +4587,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".app-onboarding-component {\n  position: relative;\n  color: var(--secondary-color);\n\n  &__list {\n    display: flex;\n    flex-direction: column;\n    gap: 23px;\n  }\n}",
+                    "data": ".app-onboarding-component {\n  position: relative;\n  color: var(--secondary-color);\n\n  &__list {\n    display: flex;\n    flex-direction: column;\n    \n    & * {\n      margin-bottom: 23px;\n    }\n  \n    & :last-child {\n      margin-bottom: 0;\n    }\n  }\n}",
                     "styleUrl": "./onboarding-list.component.scss"
                 }
             ],
@@ -5404,7 +5959,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".app-simple-counter {\n  display: flex;\n  gap: 8px;\n  width: 202px;\n\n  &__value-container {\n    width: 100%;\n    text-align: center;\n    height: 48px;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n  \n    border: none;\n    border-radius: 8px;\n    background: rgba(var(--secondary-color-code), 0.05);\n    color: var(--secondary-color);\n  }\n}\n.next {\n  & > app-light-button > .btn-light {\n    transform: rotate(180deg)!important;\n  }\n}\n\n",
+                    "data": ".app-simple-counter {\n  display: flex;\n  width: 202px;\n\n  & * {\n    margin-right: 8px;\n  }\n\n  & :last-child {\n    margin-right: 0;\n  }\n\n  &__value-container {\n    width: 100%;\n    text-align: center;\n    height: 48px;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n  \n    border: none;\n    border-radius: 8px;\n    background: rgba(var(--secondary-color-code), 0.05);\n    color: var(--secondary-color);\n  }\n}\n.next {\n  & > app-light-button > .btn-light {\n    transform: rotate(180deg)!important;\n  }\n}\n\n\n\n",
                     "styleUrl": "./simple-counter.component.scss"
                 }
             ],
@@ -6130,11 +6685,21 @@
             "children": [
                 {
                     "type": "providers",
-                    "elements": []
+                    "elements": [
+                        {
+                            "name": "AddService"
+                        }
+                    ]
                 },
                 {
                     "type": "declarations",
                     "elements": [
+                        {
+                            "name": "AddComponent"
+                        },
+                        {
+                            "name": "AddDirective"
+                        },
                         {
                             "name": "AppComponent"
                         },
@@ -6196,7 +6761,13 @@
                             "name": "DynamicListComponent"
                         },
                         {
+                            "name": "DynamicSectionsListComponent"
+                        },
+                        {
                             "name": "DynamicTableComponent"
+                        },
+                        {
+                            "name": "DynamicTextComponent"
                         },
                         {
                             "name": "FormScreenFifthComponent"
@@ -6529,7 +7100,23 @@
                 "name": "Dynamic",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "src/app/organisms/dynamic-sections-list/dynamic-sections-list.component.stories.ts",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Dynamic",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "src/app/atoms/tables/dynamic-table/dynamic-table.component.stories.ts",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Dynamic",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/atoms/text/dynamic-text/dynamic-text.component.stories.ts",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
@@ -6657,14 +7244,6 @@
                 "name": "Green",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/atoms/text/text-with-after-gradient-line/text-with-after-gradient-line.component.stories.ts",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "Green",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "src/app/atoms/text/gradient-text/gradient-text.component.stories.ts",
                 "type": "",
                 "defaultValue": "Template.bind({})"
@@ -6674,6 +7253,14 @@
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/app/atoms/text/text-with-gradient-back/text-with-gradient-back.component.stories.ts",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Green",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/atoms/text/text-with-after-gradient-line/text-with-after-gradient-line.component.stories.ts",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
@@ -6809,6 +7396,14 @@
                 "name": "props",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "src/app/atoms/card/card.stories.ts",
+                "type": "object",
+                "defaultValue": "{\n  backgroundColor: { control: 'color' },\n  color: { control: 'color' },\n  src: { control: 'text' },\n  title: { control: 'text' },\n  text: { control: 'text' },\n  isActive: { control: 'boolean' }\n}"
+            },
+            {
+                "name": "props",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "src/app/atoms/color-picker/color-picker.component.stories.ts",
                 "type": "object",
                 "defaultValue": "{}"
@@ -6820,14 +7415,6 @@
                 "file": "src/app/atoms/iconContainer/iconContainer.stories.ts",
                 "type": "object",
                 "defaultValue": "{\n  backgroundColor: { control: 'color' },\n}"
-            },
-            {
-                "name": "props",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/atoms/card/card.stories.ts",
-                "type": "object",
-                "defaultValue": "{\n  backgroundColor: { control: 'color' },\n  color: { control: 'color' },\n  src: { control: 'text' },\n  title: { control: 'text' },\n  text: { control: 'text' },\n  isActive: { control: 'boolean' }\n}"
             },
             {
                 "name": "props",
@@ -6873,7 +7460,31 @@
                 "name": "props",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "src/app/organisms/registration-form/registration-form.stories.ts",
+                "type": "object",
+                "defaultValue": "{}"
+            },
+            {
+                "name": "props",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/organisms/dynamic-sections-list/dynamic-sections-list.component.stories.ts",
+                "type": "object",
+                "defaultValue": "{}"
+            },
+            {
+                "name": "props",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "src/app/molecules/card-row/card-row.component.stories.ts",
+                "type": "object",
+                "defaultValue": "{}"
+            },
+            {
+                "name": "props",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/organisms/scan-report/scan-report.component.stories.ts",
                 "type": "object",
                 "defaultValue": "{}"
             },
@@ -6897,7 +7508,7 @@
                 "name": "props",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/molecules/roll-up/roll-up.component.stories.ts",
+                "file": "src/app/molecules/scan-screens/scan-screens.component.stories.ts",
                 "type": "object",
                 "defaultValue": "{}"
             },
@@ -6905,7 +7516,7 @@
                 "name": "props",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/molecules/scan-screens/scan-screens.component.stories.ts",
+                "file": "src/app/molecules/roll-up/roll-up.component.stories.ts",
                 "type": "object",
                 "defaultValue": "{}"
             },
@@ -6921,30 +7532,6 @@
                 "name": "props",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/organisms/registration-form/registration-form.stories.ts",
-                "type": "object",
-                "defaultValue": "{}"
-            },
-            {
-                "name": "props",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/organisms/scan-report/scan-report.component.stories.ts",
-                "type": "object",
-                "defaultValue": "{}"
-            },
-            {
-                "name": "props",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/atoms/buttons/gradientButton/gradientButton.stories.ts",
-                "type": "object",
-                "defaultValue": "{\n  title: { control: 'text' },\n}"
-            },
-            {
-                "name": "props",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "src/app/atoms/buttons/infoButton/infoButton.stories.ts",
                 "type": "object",
                 "defaultValue": "{\n  backgroundColor: { control: 'color' },\n  color: { control: 'color' },\n  title: { control: 'text' },\n}"
@@ -6953,17 +7540,9 @@
                 "name": "props",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/atoms/buttons/light-assimetric-button/light-assimetric-button.component.stories.ts",
+                "file": "src/app/atoms/buttons/gradientButton/gradientButton.stories.ts",
                 "type": "object",
-                "defaultValue": "{}"
-            },
-            {
-                "name": "props",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/atoms/buttons/lightButton/lightButton.stories.ts",
-                "type": "object",
-                "defaultValue": "{\n  backgroundColor: { control: 'color' }\n}"
+                "defaultValue": "{\n  title: { control: 'text' },\n}"
             },
             {
                 "name": "props",
@@ -6993,6 +7572,22 @@
                 "name": "props",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "src/app/atoms/buttons/light-assimetric-button/light-assimetric-button.component.stories.ts",
+                "type": "object",
+                "defaultValue": "{}"
+            },
+            {
+                "name": "props",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/atoms/buttons/lightButton/lightButton.stories.ts",
+                "type": "object",
+                "defaultValue": "{\n  backgroundColor: { control: 'color' }\n}"
+            },
+            {
+                "name": "props",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "src/app/atoms/buttons/secondary-border-button/secondary-border-button.component.stories.ts",
                 "type": "object",
                 "defaultValue": "{\n  backgroundColor: { control: 'color' },\n  color: { control: 'color' },\n  title: { control: 'text' },\n}"
@@ -7012,14 +7607,6 @@
                 "file": "src/app/atoms/buttons/simpleButton/simpleButton.stories.ts",
                 "type": "object",
                 "defaultValue": "{\n  backgroundColor: { control: 'color' },\n  color: { control: 'color' },\n  title: { control: 'text' },\n}"
-            },
-            {
-                "name": "props",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/atoms/filter-components/selected-item/selected-item.component.stories.ts",
-                "type": "object",
-                "defaultValue": "{}"
             },
             {
                 "name": "props",
@@ -7049,7 +7636,7 @@
                 "name": "props",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/atoms/card/card-with-donut-chart/card-with-donut-chart.component.stories.ts",
+                "file": "src/app/atoms/card/card-with-columns-text/card-with-columns-text.component.stories.ts",
                 "type": "object",
                 "defaultValue": "{}"
             },
@@ -7057,7 +7644,7 @@
                 "name": "props",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/atoms/card/card-with-columns-text/card-with-columns-text.component.stories.ts",
+                "file": "src/app/atoms/card/card-with-donut-chart/card-with-donut-chart.component.stories.ts",
                 "type": "object",
                 "defaultValue": "{}"
             },
@@ -7081,6 +7668,14 @@
                 "name": "props",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "src/app/atoms/filter-components/selected-item/selected-item.component.stories.ts",
+                "type": "object",
+                "defaultValue": "{}"
+            },
+            {
+                "name": "props",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "src/app/atoms/counters/simple-counter/simple-counter.component.stories.ts",
                 "type": "object",
                 "defaultValue": "{}"
@@ -7097,14 +7692,6 @@
                 "name": "props",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/atoms/inputs/formInput/formInput.stories.ts",
-                "type": "object",
-                "defaultValue": "{\n  placeholder: { control: 'text' },\n}"
-            },
-            {
-                "name": "props",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "src/app/atoms/modals/approve-modal/approve-modal.component.stories.ts",
                 "type": "object",
                 "defaultValue": "{}"
@@ -7113,7 +7700,15 @@
                 "name": "props",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/atoms/navLink/textLinks/navLink.stories.ts",
+                "file": "src/app/atoms/inputs/formInput/formInput.stories.ts",
+                "type": "object",
+                "defaultValue": "{\n  placeholder: { control: 'text' },\n}"
+            },
+            {
+                "name": "props",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/atoms/navLink/icon-links/icon-links.component.stories.ts",
                 "type": "object",
                 "defaultValue": "{\n  title: { control: 'text' },\n  isActive: { control: 'boolean' }\n}"
             },
@@ -7121,7 +7716,7 @@
                 "name": "props",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/atoms/navLink/icon-links/icon-links.component.stories.ts",
+                "file": "src/app/atoms/navLink/textLinks/navLink.stories.ts",
                 "type": "object",
                 "defaultValue": "{\n  title: { control: 'text' },\n  isActive: { control: 'boolean' }\n}"
             },
@@ -7153,9 +7748,9 @@
                 "name": "props",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/atoms/text/text-with-after-gradient-line/text-with-after-gradient-line.component.stories.ts",
+                "file": "src/app/atoms/text/dynamic-text/dynamic-text.component.stories.ts",
                 "type": "object",
-                "defaultValue": "{\n  title: { control: 'text' },\n}"
+                "defaultValue": "{}"
             },
             {
                 "name": "props",
@@ -7177,6 +7772,14 @@
                 "name": "props",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "src/app/atoms/text/text-with-after-gradient-line/text-with-after-gradient-line.component.stories.ts",
+                "type": "object",
+                "defaultValue": "{\n  title: { control: 'text' },\n}"
+            },
+            {
+                "name": "props",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "src/app/molecules/form-screens/form-screen-fifth/form-screen-fifth.stories.ts",
                 "type": "object",
                 "defaultValue": "{}"
@@ -7193,7 +7796,7 @@
                 "name": "props",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/molecules/form-screens/form-screen-fourth/form-screen-fourth.stories.ts",
+                "file": "src/app/molecules/form-screens/form-screen-second/form-screen-second.stories.ts",
                 "type": "object",
                 "defaultValue": "{}"
             },
@@ -7209,25 +7812,9 @@
                 "name": "props",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/molecules/form-screens/form-screen-second/form-screen-second.stories.ts",
+                "file": "src/app/molecules/form-screens/form-screen-fourth/form-screen-fourth.stories.ts",
                 "type": "object",
                 "defaultValue": "{}"
-            },
-            {
-                "name": "props",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/molecules/layouts/white-rounded-layout/white-rounded-layout.component.stories.ts",
-                "type": "object",
-                "defaultValue": "{}"
-            },
-            {
-                "name": "props",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/molecules/menu/date-menu/date-menu.stories.ts",
-                "type": "object",
-                "defaultValue": "{\n  backgroundColor: { control: 'color' },\n  items: { control: 'array' }\n}"
             },
             {
                 "name": "props",
@@ -7241,6 +7828,14 @@
                 "name": "props",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "src/app/molecules/menu/date-menu/date-menu.stories.ts",
+                "type": "object",
+                "defaultValue": "{\n  backgroundColor: { control: 'color' },\n  items: { control: 'array' }\n}"
+            },
+            {
+                "name": "props",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "src/app/molecules/menu/mobile-main-navigation-menu/mobile-main-navigation-menu.component.stories.ts",
                 "type": "object",
                 "defaultValue": "{\n  items: { control: 'object' }\n}"
@@ -7249,7 +7844,7 @@
                 "name": "props",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/molecules/menu/side-menu/side-menu.stories.ts",
+                "file": "src/app/molecules/menu/main-navigation-menu/main-navigation-menu.component.stories.ts",
                 "type": "object",
                 "defaultValue": "{\n  backgroundColor: { control: 'color' },\n  items: { control: 'array' }\n}"
             },
@@ -7257,7 +7852,7 @@
                 "name": "props",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/molecules/menu/main-navigation-menu/main-navigation-menu.component.stories.ts",
+                "file": "src/app/molecules/menu/side-menu/side-menu.stories.ts",
                 "type": "object",
                 "defaultValue": "{\n  backgroundColor: { control: 'color' },\n  items: { control: 'array' }\n}"
             },
@@ -7273,6 +7868,14 @@
                 "name": "props",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "src/app/molecules/layouts/white-rounded-layout/white-rounded-layout.component.stories.ts",
+                "type": "object",
+                "defaultValue": "{}"
+            },
+            {
+                "name": "props",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "src/app/atoms/buttons/add-buttons/dark-add-button/dark-add-button.component.stories.ts",
                 "type": "object",
                 "defaultValue": "{}"
@@ -7282,6 +7885,14 @@
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/app/atoms/buttons/domains-card-buttons/mutable-gradient-icon-button/mutable-gradient-icon-button.component.stories.ts",
+                "type": "object",
+                "defaultValue": "{}"
+            },
+            {
+                "name": "props",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/atoms/buttons/domains-card-buttons/mutable-light-button/mutable-light-button.component.stories.ts",
                 "type": "object",
                 "defaultValue": "{}"
             },
@@ -7305,14 +7916,6 @@
                 "name": "props",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/atoms/buttons/domains-card-buttons/mutable-light-button/mutable-light-button.component.stories.ts",
-                "type": "object",
-                "defaultValue": "{}"
-            },
-            {
-                "name": "props",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "src/app/atoms/buttons/domains-card-buttons/mutable-primary-button/mutable-primary-button.component.stories.ts",
                 "type": "object",
                 "defaultValue": "{\n  onActive: { control: 'boolean' }\n}"
@@ -7324,6 +7927,14 @@
                 "file": "src/app/atoms/inputs/checkbox/checkbox-input-dark/checkbox-input-dark.component.stories.ts",
                 "type": "object",
                 "defaultValue": "{\n  isChecked: { control: 'boolean' },\n  title: { control: 'text' }\n}"
+            },
+            {
+                "name": "props",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/atoms/inputs/checkbox/checkbox-input-switch/checkbox-input-switch.stories.ts",
+                "type": "object",
+                "defaultValue": "{\n  isChecked: { control: 'boolean' },\n}"
             },
             {
                 "name": "props",
@@ -7345,14 +7956,6 @@
                 "name": "props",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/atoms/inputs/checkbox/checkbox-input-switch/checkbox-input-switch.stories.ts",
-                "type": "object",
-                "defaultValue": "{\n  isChecked: { control: 'boolean' },\n}"
-            },
-            {
-                "name": "props",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "src/app/atoms/inputs/checkbox/checkbox-mutable-gradient/checkbox-mutable-gradient.component.stories.ts",
                 "type": "object",
                 "defaultValue": "{\n  isChecked: { control: 'boolean' },\n  onActive: { control: 'boolean' },\n}"
@@ -7361,7 +7964,7 @@
                 "name": "props",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/atoms/inputs/textarea/simple-textarea/simple-textarea.component.stories.ts",
+                "file": "src/app/atoms/inputs/select-input/select-input-search/select-input-search.component.stories.ts",
                 "type": "object",
                 "defaultValue": "{}"
             },
@@ -7377,7 +7980,7 @@
                 "name": "props",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/atoms/inputs/select-input/select-input-search/select-input-search.component.stories.ts",
+                "file": "src/app/atoms/inputs/select-input/select-input-with-initial-value/select-input-with-initial-value.component.stories.ts",
                 "type": "object",
                 "defaultValue": "{}"
             },
@@ -7385,7 +7988,7 @@
                 "name": "props",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/atoms/inputs/select-input/select-input-with-initial-value/select-input-with-initial-value.component.stories.ts",
+                "file": "src/app/atoms/inputs/textarea/simple-textarea/simple-textarea.component.stories.ts",
                 "type": "object",
                 "defaultValue": "{}"
             },
@@ -7520,7 +8123,7 @@
                 "name": "Simple",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/atoms/iconContainer/iconContainer.stories.ts",
+                "file": "src/app/atoms/card/card.stories.ts",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
@@ -7528,7 +8131,7 @@
                 "name": "Simple",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/atoms/card/card.stories.ts",
+                "file": "src/app/atoms/iconContainer/iconContainer.stories.ts",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
@@ -7605,6 +8208,30 @@
                 "defaultValue": "Template.bind({})"
             },
             {
+                "name": "standartListData",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/molecules/customized-element/customized-element.component.ts",
+                "type": "object",
+                "defaultValue": "{\n  listTitle: 'Put list title',\n  titles: ['Type text here']\n}"
+            },
+            {
+                "name": "standartTableData",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/molecules/customized-element/customized-element.component.ts",
+                "type": "object",
+                "defaultValue": "{\n  heads: ['text 1'],\n  tableData: [{ 'text 1' : '1.1. Text', }]\n}"
+            },
+            {
+                "name": "standartTextData",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/molecules/customized-element/customized-element.component.ts",
+                "type": "object",
+                "defaultValue": "{ title: 'Your new paragraph' }"
+            },
+            {
                 "name": "Success",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -7664,6 +8291,14 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "src/app/atoms/card/card.stories.ts",
+                "type": "Story<CardComponent>",
+                "defaultValue": "(args: CardComponent) => ({\n  component: CardComponent,\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "src/app/atoms/color-picker/color-picker.component.stories.ts",
                 "type": "Story<ColorPickerComponent>",
                 "defaultValue": "(args: ColorPickerComponent) => ({\n  component: ColorPickerComponent,\n  props: args,\n})"
@@ -7675,14 +8310,6 @@
                 "file": "src/app/atoms/iconContainer/iconContainer.stories.ts",
                 "type": "Story<IconContainerComponent>",
                 "defaultValue": "(args: IconContainerComponent) => ({\n  component: IconContainerComponent,\n  props: args,\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/atoms/card/card.stories.ts",
-                "type": "Story<CardComponent>",
-                "defaultValue": "(args: CardComponent) => ({\n  component: CardComponent,\n  props: args,\n})"
             },
             {
                 "name": "Template",
@@ -7728,9 +8355,33 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "src/app/organisms/registration-form/registration-form.stories.ts",
+                "type": "Story<RegistrationFormComponent>",
+                "defaultValue": "(args: RegistrationFormComponent) => ({\n  component: RegistrationFormComponent,\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/organisms/dynamic-sections-list/dynamic-sections-list.component.stories.ts",
+                "type": "Story<DynamicSectionsListComponent>",
+                "defaultValue": "(args: DynamicSectionsListComponent) => ({\n  component: DynamicSectionsListComponent,\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "src/app/molecules/card-row/card-row.component.stories.ts",
                 "type": "Story<CardRowComponent>",
                 "defaultValue": "(args: CardRowComponent) => ({\n  component: CardRowComponent,\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/organisms/scan-report/scan-report.component.stories.ts",
+                "type": "Story<ScanReportComponent>",
+                "defaultValue": "(args: ScanReportComponent) => ({\n  component: ScanReportComponent,\n  props: args,\n})"
             },
             {
                 "name": "Template",
@@ -7752,17 +8403,17 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/molecules/roll-up/roll-up.component.stories.ts",
-                "type": "Story<RollUpComponent>",
-                "defaultValue": "(args: RollUpComponent) => ({\n  component: RollUpComponent,\n  props: args,\n  template: `\n  <app-roll-up [title]=\"title\" [number]=\"number\">\n    <app-transparent-table \n      [mainColumn]=\"mainColumn\"\n      [data]=\"data\"\n      [heads]=\"heads\"\n    >\n      </app-transparent-table>\n  </app-roll-up>\n  `,\n})"
+                "file": "src/app/molecules/scan-screens/scan-screens.component.stories.ts",
+                "type": "Story<ScanScreensComponent>",
+                "defaultValue": "(args: ScanScreensComponent) => ({\n  component: ScanScreensComponent,\n  props: args,\n})"
             },
             {
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/molecules/scan-screens/scan-screens.component.stories.ts",
-                "type": "Story<ScanScreensComponent>",
-                "defaultValue": "(args: ScanScreensComponent) => ({\n  component: ScanScreensComponent,\n  props: args,\n})"
+                "file": "src/app/molecules/roll-up/roll-up.component.stories.ts",
+                "type": "Story<RollUpComponent>",
+                "defaultValue": "(args: RollUpComponent) => ({\n  component: RollUpComponent,\n  props: args,\n  template: `\n  <app-roll-up [title]=\"title\" [number]=\"number\">\n    <app-transparent-table \n      [mainColumn]=\"mainColumn\"\n      [data]=\"data\"\n      [heads]=\"heads\"\n    >\n      </app-transparent-table>\n  </app-roll-up>\n  `,\n})"
             },
             {
                 "name": "Template",
@@ -7776,30 +8427,6 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/organisms/registration-form/registration-form.stories.ts",
-                "type": "Story<RegistrationFormComponent>",
-                "defaultValue": "(args: RegistrationFormComponent) => ({\n  component: RegistrationFormComponent,\n  props: args,\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/organisms/scan-report/scan-report.component.stories.ts",
-                "type": "Story<ScanReportComponent>",
-                "defaultValue": "(args: ScanReportComponent) => ({\n  component: ScanReportComponent,\n  props: args,\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/atoms/buttons/gradientButton/gradientButton.stories.ts",
-                "type": "Story<gradientButtonComponent>",
-                "defaultValue": "(args: gradientButtonComponent) => ({\n  component: gradientButtonComponent,\n  props: args,\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "src/app/atoms/buttons/infoButton/infoButton.stories.ts",
                 "type": "Story<infoButtonComponent>",
                 "defaultValue": "(args: infoButtonComponent) => ({\n  component: infoButtonComponent,\n  props: args,\n})"
@@ -7808,17 +8435,9 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/atoms/buttons/light-assimetric-button/light-assimetric-button.component.stories.ts",
-                "type": "Story<LightAssimetricButtonComponent>",
-                "defaultValue": "(args: LightAssimetricButtonComponent) => ({\n  component: LightAssimetricButtonComponent,\n  props: args,\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/atoms/buttons/lightButton/lightButton.stories.ts",
-                "type": "Story<lightButtonComponent>",
-                "defaultValue": "(args: lightButtonComponent) => ({\n  component: lightButtonComponent,\n  props: args,\n})"
+                "file": "src/app/atoms/buttons/gradientButton/gradientButton.stories.ts",
+                "type": "Story<gradientButtonComponent>",
+                "defaultValue": "(args: gradientButtonComponent) => ({\n  component: gradientButtonComponent,\n  props: args,\n})"
             },
             {
                 "name": "Template",
@@ -7848,6 +8467,22 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "src/app/atoms/buttons/light-assimetric-button/light-assimetric-button.component.stories.ts",
+                "type": "Story<LightAssimetricButtonComponent>",
+                "defaultValue": "(args: LightAssimetricButtonComponent) => ({\n  component: LightAssimetricButtonComponent,\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/atoms/buttons/lightButton/lightButton.stories.ts",
+                "type": "Story<lightButtonComponent>",
+                "defaultValue": "(args: lightButtonComponent) => ({\n  component: lightButtonComponent,\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "src/app/atoms/buttons/secondary-border-button/secondary-border-button.component.stories.ts",
                 "type": "Story<SecondaryBorderButtonComponent>",
                 "defaultValue": "(args: SecondaryBorderButtonComponent) => ({\n  component: SecondaryBorderButtonComponent,\n  props: args,\n})"
@@ -7867,14 +8502,6 @@
                 "file": "src/app/atoms/buttons/simpleButton/simpleButton.stories.ts",
                 "type": "Story<simpleButtonComponent>",
                 "defaultValue": "(args: simpleButtonComponent) => ({\n  component: simpleButtonComponent,\n  props: args,\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/atoms/filter-components/selected-item/selected-item.component.stories.ts",
-                "type": "Story<SelectedItemComponent>",
-                "defaultValue": "(args: SelectedItemComponent) => ({\n  component: SelectedItemComponent,\n  props: args,\n})"
             },
             {
                 "name": "Template",
@@ -7904,17 +8531,17 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/atoms/card/card-with-donut-chart/card-with-donut-chart.component.stories.ts",
-                "type": "Story<CardWithDonutChartComponent>",
-                "defaultValue": "(args: CardWithDonutChartComponent) => ({\n  component: CardWithDonutChartComponent,\n  props: args,\n})"
+                "file": "src/app/atoms/card/card-with-columns-text/card-with-columns-text.component.stories.ts",
+                "type": "Story<CardWithColumnsTextComponent>",
+                "defaultValue": "(args: CardWithColumnsTextComponent) => ({\n  component: CardWithColumnsTextComponent,\n  props: args,\n})"
             },
             {
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/atoms/card/card-with-columns-text/card-with-columns-text.component.stories.ts",
-                "type": "Story<CardWithColumnsTextComponent>",
-                "defaultValue": "(args: CardWithColumnsTextComponent) => ({\n  component: CardWithColumnsTextComponent,\n  props: args,\n})"
+                "file": "src/app/atoms/card/card-with-donut-chart/card-with-donut-chart.component.stories.ts",
+                "type": "Story<CardWithDonutChartComponent>",
+                "defaultValue": "(args: CardWithDonutChartComponent) => ({\n  component: CardWithDonutChartComponent,\n  props: args,\n})"
             },
             {
                 "name": "Template",
@@ -7936,6 +8563,14 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "src/app/atoms/filter-components/selected-item/selected-item.component.stories.ts",
+                "type": "Story<SelectedItemComponent>",
+                "defaultValue": "(args: SelectedItemComponent) => ({\n  component: SelectedItemComponent,\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "src/app/atoms/counters/simple-counter/simple-counter.component.stories.ts",
                 "type": "Story<SimpleCounterComponent>",
                 "defaultValue": "(args: SimpleCounterComponent) => ({\n  component: SimpleCounterComponent,\n  props: args,\n})"
@@ -7952,14 +8587,6 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/atoms/inputs/formInput/formInput.stories.ts",
-                "type": "Story<formInputComponent>",
-                "defaultValue": "(args: formInputComponent) => ({\n  component: formInputComponent,\n  props: args,\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "src/app/atoms/modals/approve-modal/approve-modal.component.stories.ts",
                 "type": "Story<ApproveModalComponent>",
                 "defaultValue": "(args: ApproveModalComponent) => ({\n  component: ApproveModalComponent,\n  props: args,\n  template: `\n  <app-approve-modal \n    [title]=\"title\" \n    [primaryButtonTitle]=\"primaryButtonTitle\"\n    [dangerButtonTitle]=\"dangerButtonTitle\"\n    (primaryButtonFunction)=\"primaryButtonFunction()\"\n    (dangerButtonFunction)=\"dangerButtonFunction()\"\n    (closeModal)=\"closeModal()\"\n  >\n    <p class=\"fs-16-sofia-300\">Do you really want to delete the <strong>Secure Privacy</strong></p>\n  </app-approve-modal>\n  `,\n})"
@@ -7968,9 +8595,9 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/atoms/navLink/textLinks/navLink.stories.ts",
-                "type": "Story<navLinkComponent>",
-                "defaultValue": "(args: navLinkComponent) => ({\n  component: navLinkComponent,\n  props: args,\n})"
+                "file": "src/app/atoms/inputs/formInput/formInput.stories.ts",
+                "type": "Story<formInputComponent>",
+                "defaultValue": "(args: formInputComponent) => ({\n  component: formInputComponent,\n  props: args,\n})"
             },
             {
                 "name": "Template",
@@ -7979,6 +8606,14 @@
                 "file": "src/app/atoms/navLink/icon-links/icon-links.component.stories.ts",
                 "type": "Story<IconLinksComponent>",
                 "defaultValue": "(args: IconLinksComponent) => ({\n  component: IconLinksComponent,\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/atoms/navLink/textLinks/navLink.stories.ts",
+                "type": "Story<navLinkComponent>",
+                "defaultValue": "(args: navLinkComponent) => ({\n  component: navLinkComponent,\n  props: args,\n})"
             },
             {
                 "name": "Template",
@@ -8008,9 +8643,9 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/atoms/text/text-with-after-gradient-line/text-with-after-gradient-line.component.stories.ts",
-                "type": "Story<TextWithAfterGradientLineComponent>",
-                "defaultValue": "(args: TextWithAfterGradientLineComponent) => ({\n  component: TextWithAfterGradientLineComponent,\n  props: args,\n})"
+                "file": "src/app/atoms/text/dynamic-text/dynamic-text.component.stories.ts",
+                "type": "Story<DynamicTextComponent>",
+                "defaultValue": "(args: DynamicTextComponent) => ({\n  component: DynamicTextComponent,\n  props: args,\n})"
             },
             {
                 "name": "Template",
@@ -8032,6 +8667,14 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "src/app/atoms/text/text-with-after-gradient-line/text-with-after-gradient-line.component.stories.ts",
+                "type": "Story<TextWithAfterGradientLineComponent>",
+                "defaultValue": "(args: TextWithAfterGradientLineComponent) => ({\n  component: TextWithAfterGradientLineComponent,\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "src/app/molecules/form-screens/form-screen-fifth/form-screen-fifth.stories.ts",
                 "type": "Story<FormScreenFifthComponent>",
                 "defaultValue": "(args: FormScreenFifthComponent) => ({\n    component: FormScreenFifthComponent,\n    props: args,\n  })"
@@ -8048,9 +8691,9 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/molecules/form-screens/form-screen-fourth/form-screen-fourth.stories.ts",
-                "type": "Story<FormScreenFourthComponent>",
-                "defaultValue": "(args: FormScreenFourthComponent) => ({\n  component: FormScreenFourthComponent,\n  props: args,\n})"
+                "file": "src/app/molecules/form-screens/form-screen-second/form-screen-second.stories.ts",
+                "type": "Story<FormScreenSecondComponent>",
+                "defaultValue": "(args: FormScreenSecondComponent) => ({\n  component: FormScreenSecondComponent,\n  props: args,\n})"
             },
             {
                 "name": "Template",
@@ -8064,25 +8707,9 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/molecules/form-screens/form-screen-second/form-screen-second.stories.ts",
-                "type": "Story<FormScreenSecondComponent>",
-                "defaultValue": "(args: FormScreenSecondComponent) => ({\n  component: FormScreenSecondComponent,\n  props: args,\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/molecules/layouts/white-rounded-layout/white-rounded-layout.component.stories.ts",
-                "type": "Story<WhiteRoundedLayoutComponent>",
-                "defaultValue": "(args: WhiteRoundedLayoutComponent) => ({\n  component: WhiteRoundedLayoutComponent,\n  props: args,\n  template: `\n  <app-white-rounded-layout [titles]=\"titles\">\n    <app-text-with-after-gradient-line [title]=\"'scan report'\"></app-text-with-after-gradient-line>\n  </app-white-rounded-layout>\n  `,\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/molecules/menu/date-menu/date-menu.stories.ts",
-                "type": "Story<DateMenuComponent>",
-                "defaultValue": "(args: DateMenuComponent) => ({\n  component: DateMenuComponent,\n  props: args,\n})"
+                "file": "src/app/molecules/form-screens/form-screen-fourth/form-screen-fourth.stories.ts",
+                "type": "Story<FormScreenFourthComponent>",
+                "defaultValue": "(args: FormScreenFourthComponent) => ({\n  component: FormScreenFourthComponent,\n  props: args,\n})"
             },
             {
                 "name": "Template",
@@ -8096,17 +8723,17 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/molecules/menu/mobile-main-navigation-menu/mobile-main-navigation-menu.component.stories.ts",
-                "type": "Story<MobileMainNavigationMenuComponent>",
-                "defaultValue": "(args: MobileMainNavigationMenuComponent) => ({\n  component: MobileMainNavigationMenuComponent,\n  props: args,\n})"
+                "file": "src/app/molecules/menu/date-menu/date-menu.stories.ts",
+                "type": "Story<DateMenuComponent>",
+                "defaultValue": "(args: DateMenuComponent) => ({\n  component: DateMenuComponent,\n  props: args,\n})"
             },
             {
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/molecules/menu/side-menu/side-menu.stories.ts",
-                "type": "Story<SideMenuComponent>",
-                "defaultValue": "(args: SideMenuComponent) => ({\n  component: SideMenuComponent,\n  props: args,\n})"
+                "file": "src/app/molecules/menu/mobile-main-navigation-menu/mobile-main-navigation-menu.component.stories.ts",
+                "type": "Story<MobileMainNavigationMenuComponent>",
+                "defaultValue": "(args: MobileMainNavigationMenuComponent) => ({\n  component: MobileMainNavigationMenuComponent,\n  props: args,\n})"
             },
             {
                 "name": "Template",
@@ -8120,9 +8747,25 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "src/app/molecules/menu/side-menu/side-menu.stories.ts",
+                "type": "Story<SideMenuComponent>",
+                "defaultValue": "(args: SideMenuComponent) => ({\n  component: SideMenuComponent,\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "src/app/molecules/menu/tab-menu/tab-menu.component.stories.ts",
                 "type": "Story<TabMenuComponent>",
                 "defaultValue": "(args: TabMenuComponent) => ({\n  component: TabMenuComponent,\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/molecules/layouts/white-rounded-layout/white-rounded-layout.component.stories.ts",
+                "type": "Story<WhiteRoundedLayoutComponent>",
+                "defaultValue": "(args: WhiteRoundedLayoutComponent) => ({\n  component: WhiteRoundedLayoutComponent,\n  props: args,\n  template: `\n  <app-white-rounded-layout [titles]=\"titles\">\n    <app-text-with-after-gradient-line [title]=\"'scan report'\"></app-text-with-after-gradient-line>\n  </app-white-rounded-layout>\n  `,\n})"
             },
             {
                 "name": "Template",
@@ -8144,6 +8787,14 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "src/app/atoms/buttons/domains-card-buttons/mutable-light-button/mutable-light-button.component.stories.ts",
+                "type": "Story<MutableLightButtonComponent>",
+                "defaultValue": "(args: MutableLightButtonComponent) => ({\n  component: MutableLightButtonComponent,\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "src/app/atoms/buttons/domains-card-buttons/mutable-danger-button/mutable-danger-button.component.stories.ts",
                 "type": "Story<MutableDangerButtonComponent>",
                 "defaultValue": "(args: MutableDangerButtonComponent) => ({\n  component: MutableDangerButtonComponent,\n  props: args,\n})"
@@ -8155,14 +8806,6 @@
                 "file": "src/app/atoms/buttons/add-buttons/small-light-add-button/small-light-add-button.component.stories.ts",
                 "type": "Story<SmallLightAddButtonComponent>",
                 "defaultValue": "(args: SmallLightAddButtonComponent) => ({\n  component: SmallLightAddButtonComponent,\n  props: args,\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/atoms/buttons/domains-card-buttons/mutable-light-button/mutable-light-button.component.stories.ts",
-                "type": "Story<MutableLightButtonComponent>",
-                "defaultValue": "(args: MutableLightButtonComponent) => ({\n  component: MutableLightButtonComponent,\n  props: args,\n})"
             },
             {
                 "name": "Template",
@@ -8184,6 +8827,14 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "src/app/atoms/inputs/checkbox/checkbox-input-switch/checkbox-input-switch.stories.ts",
+                "type": "Story<CheckboxInputSwitchComponent>",
+                "defaultValue": "(args: CheckboxInputSwitchComponent) => ({\n  component: CheckboxInputSwitchComponent,\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "src/app/atoms/inputs/checkbox/checkbox-circle-input/checkbox-circle-input.component.stories.ts",
                 "type": "Story<CheckboxCircleInputComponent>",
                 "defaultValue": "(args: CheckboxCircleInputComponent) => ({\n  component: CheckboxCircleInputComponent,\n  props: args,\n})"
@@ -8200,33 +8851,9 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/atoms/inputs/checkbox/checkbox-input-switch/checkbox-input-switch.stories.ts",
-                "type": "Story<CheckboxInputSwitchComponent>",
-                "defaultValue": "(args: CheckboxInputSwitchComponent) => ({\n  component: CheckboxInputSwitchComponent,\n  props: args,\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "src/app/atoms/inputs/checkbox/checkbox-mutable-gradient/checkbox-mutable-gradient.component.stories.ts",
                 "type": "Story<CheckboxMutableGradientComponent>",
                 "defaultValue": "(args: CheckboxMutableGradientComponent) => ({\n  component: CheckboxMutableGradientComponent,\n  props: args,\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/atoms/inputs/textarea/simple-textarea/simple-textarea.component.stories.ts",
-                "type": "Story<SimpleTextareaComponent>",
-                "defaultValue": "(args: SimpleTextareaComponent) => ({\n  component: SimpleTextareaComponent,\n  props: args,\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/atoms/inputs/select-input/select-input-simple/select-input-simple.stories.ts",
-                "type": "Story<SelectInputSimpleComponent>",
-                "defaultValue": "(args: SelectInputSimpleComponent) => ({\n  component: SelectInputSimpleComponent,\n  props: args,\n})"
             },
             {
                 "name": "Template",
@@ -8240,9 +8867,25 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "src/app/atoms/inputs/select-input/select-input-simple/select-input-simple.stories.ts",
+                "type": "Story<SelectInputSimpleComponent>",
+                "defaultValue": "(args: SelectInputSimpleComponent) => ({\n  component: SelectInputSimpleComponent,\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "src/app/atoms/inputs/select-input/select-input-with-initial-value/select-input-with-initial-value.component.stories.ts",
                 "type": "Story<SelectInputWithInitialValueComponent>",
                 "defaultValue": "(args: SelectInputWithInitialValueComponent) => ({\n  component: SelectInputWithInitialValueComponent,\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/atoms/inputs/textarea/simple-textarea/simple-textarea.component.stories.ts",
+                "type": "Story<SimpleTextareaComponent>",
+                "defaultValue": "(args: SimpleTextareaComponent) => ({\n  component: SimpleTextareaComponent,\n  props: args,\n})"
             },
             {
                 "name": "Text",
@@ -8917,6 +9560,32 @@
                     "defaultValue": "(args: CardWithDonutChartComponent) => ({\n  component: CardWithDonutChartComponent,\n  props: args,\n})"
                 }
             ],
+            "src/app/organisms/dynamic-sections-list/dynamic-sections-list.component.stories.ts": [
+                {
+                    "name": "Dynamic",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/organisms/dynamic-sections-list/dynamic-sections-list.component.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "props",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/organisms/dynamic-sections-list/dynamic-sections-list.component.stories.ts",
+                    "type": "object",
+                    "defaultValue": "{}"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/organisms/dynamic-sections-list/dynamic-sections-list.component.stories.ts",
+                    "type": "Story<DynamicSectionsListComponent>",
+                    "defaultValue": "(args: DynamicSectionsListComponent) => ({\n  component: DynamicSectionsListComponent,\n  props: args,\n})"
+                }
+            ],
             "src/app/atoms/tables/dynamic-table/dynamic-table.component.stories.ts": [
                 {
                     "name": "Dynamic",
@@ -8941,6 +9610,32 @@
                     "file": "src/app/atoms/tables/dynamic-table/dynamic-table.component.stories.ts",
                     "type": "Story<DynamicTableComponent>",
                     "defaultValue": "(args: DynamicTableComponent) => ({\n  component: DynamicTableComponent,\n  props: args,\n})"
+                }
+            ],
+            "src/app/atoms/text/dynamic-text/dynamic-text.component.stories.ts": [
+                {
+                    "name": "Dynamic",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/atoms/text/dynamic-text/dynamic-text.component.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "props",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/atoms/text/dynamic-text/dynamic-text.component.stories.ts",
+                    "type": "object",
+                    "defaultValue": "{}"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/atoms/text/dynamic-text/dynamic-text.component.stories.ts",
+                    "type": "Story<DynamicTextComponent>",
+                    "defaultValue": "(args: DynamicTextComponent) => ({\n  component: DynamicTextComponent,\n  props: args,\n})"
                 }
             ],
             "src/app/atoms/tables/dynamic-list/dynamic-list.component.stories.ts": [
@@ -9315,32 +10010,6 @@
                     "defaultValue": "(args: StatusBarComponent) => ({\n  component: StatusBarComponent,\n  props: args\n})"
                 }
             ],
-            "src/app/atoms/text/text-with-after-gradient-line/text-with-after-gradient-line.component.stories.ts": [
-                {
-                    "name": "Green",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/atoms/text/text-with-after-gradient-line/text-with-after-gradient-line.component.stories.ts",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "props",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/atoms/text/text-with-after-gradient-line/text-with-after-gradient-line.component.stories.ts",
-                    "type": "object",
-                    "defaultValue": "{\n  title: { control: 'text' },\n}"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/atoms/text/text-with-after-gradient-line/text-with-after-gradient-line.component.stories.ts",
-                    "type": "Story<TextWithAfterGradientLineComponent>",
-                    "defaultValue": "(args: TextWithAfterGradientLineComponent) => ({\n  component: TextWithAfterGradientLineComponent,\n  props: args,\n})"
-                }
-            ],
             "src/app/atoms/text/gradient-text/gradient-text.component.stories.ts": [
                 {
                     "name": "Green",
@@ -9391,6 +10060,32 @@
                     "file": "src/app/atoms/text/text-with-gradient-back/text-with-gradient-back.component.stories.ts",
                     "type": "Story<TextWithGradientBackComponent>",
                     "defaultValue": "(args: TextWithGradientBackComponent) => ({\n  component: TextWithGradientBackComponent,\n  props: args,\n})"
+                }
+            ],
+            "src/app/atoms/text/text-with-after-gradient-line/text-with-after-gradient-line.component.stories.ts": [
+                {
+                    "name": "Green",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/atoms/text/text-with-after-gradient-line/text-with-after-gradient-line.component.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "props",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/atoms/text/text-with-after-gradient-line/text-with-after-gradient-line.component.stories.ts",
+                    "type": "object",
+                    "defaultValue": "{\n  title: { control: 'text' },\n}"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/atoms/text/text-with-after-gradient-line/text-with-after-gradient-line.component.stories.ts",
+                    "type": "Story<TextWithAfterGradientLineComponent>",
+                    "defaultValue": "(args: TextWithAfterGradientLineComponent) => ({\n  component: TextWithAfterGradientLineComponent,\n  props: args,\n})"
                 }
             ],
             "src/app/atoms/navLink/textLinks/navLink.stories.ts": [
@@ -9745,32 +10440,6 @@
                     "defaultValue": "(args: primaryButtonComponent) => ({\n  component: primaryButtonComponent,\n  props: args,\n})"
                 }
             ],
-            "src/app/atoms/iconContainer/iconContainer.stories.ts": [
-                {
-                    "name": "props",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/atoms/iconContainer/iconContainer.stories.ts",
-                    "type": "object",
-                    "defaultValue": "{\n  backgroundColor: { control: 'color' },\n}"
-                },
-                {
-                    "name": "Simple",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/atoms/iconContainer/iconContainer.stories.ts",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/atoms/iconContainer/iconContainer.stories.ts",
-                    "type": "Story<IconContainerComponent>",
-                    "defaultValue": "(args: IconContainerComponent) => ({\n  component: IconContainerComponent,\n  props: args,\n})"
-                }
-            ],
             "src/app/atoms/card/card.stories.ts": [
                 {
                     "name": "props",
@@ -9795,6 +10464,32 @@
                     "file": "src/app/atoms/card/card.stories.ts",
                     "type": "Story<CardComponent>",
                     "defaultValue": "(args: CardComponent) => ({\n  component: CardComponent,\n  props: args,\n})"
+                }
+            ],
+            "src/app/atoms/iconContainer/iconContainer.stories.ts": [
+                {
+                    "name": "props",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/atoms/iconContainer/iconContainer.stories.ts",
+                    "type": "object",
+                    "defaultValue": "{\n  backgroundColor: { control: 'color' },\n}"
+                },
+                {
+                    "name": "Simple",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/atoms/iconContainer/iconContainer.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/atoms/iconContainer/iconContainer.stories.ts",
+                    "type": "Story<IconContainerComponent>",
+                    "defaultValue": "(args: IconContainerComponent) => ({\n  component: IconContainerComponent,\n  props: args,\n})"
                 }
             ],
             "src/app/atoms/scan-animation/scan-animation.component.stories.ts": [
@@ -9909,6 +10604,32 @@
                     "defaultValue": "(args: StepsComponent) => ({\n  component: StepsComponent,\n  props: args,\n})"
                 }
             ],
+            "src/app/organisms/registration-form/registration-form.stories.ts": [
+                {
+                    "name": "props",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/organisms/registration-form/registration-form.stories.ts",
+                    "type": "object",
+                    "defaultValue": "{}"
+                },
+                {
+                    "name": "RegistrationForm",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/organisms/registration-form/registration-form.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/organisms/registration-form/registration-form.stories.ts",
+                    "type": "Story<RegistrationFormComponent>",
+                    "defaultValue": "(args: RegistrationFormComponent) => ({\n  component: RegistrationFormComponent,\n  props: args,\n})"
+                }
+            ],
             "src/app/molecules/card-row/card-row.component.stories.ts": [
                 {
                     "name": "props",
@@ -9933,6 +10654,32 @@
                     "file": "src/app/molecules/card-row/card-row.component.stories.ts",
                     "type": "Story<CardRowComponent>",
                     "defaultValue": "(args: CardRowComponent) => ({\n  component: CardRowComponent,\n  props: args,\n})"
+                }
+            ],
+            "src/app/organisms/scan-report/scan-report.component.stories.ts": [
+                {
+                    "name": "props",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/organisms/scan-report/scan-report.component.stories.ts",
+                    "type": "object",
+                    "defaultValue": "{}"
+                },
+                {
+                    "name": "ScanReport",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/organisms/scan-report/scan-report.component.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/organisms/scan-report/scan-report.component.stories.ts",
+                    "type": "Story<ScanReportComponent>",
+                    "defaultValue": "(args: ScanReportComponent) => ({\n  component: ScanReportComponent,\n  props: args,\n})"
                 }
             ],
             "src/app/molecules/customized-element/customized-element.component.stories.ts": [
@@ -9985,58 +10732,6 @@
                     "file": "src/app/molecules/roll-up/roll-up.component.stories.ts",
                     "type": "",
                     "defaultValue": "Template.bind({})"
-                }
-            ],
-            "src/app/organisms/registration-form/registration-form.stories.ts": [
-                {
-                    "name": "props",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/organisms/registration-form/registration-form.stories.ts",
-                    "type": "object",
-                    "defaultValue": "{}"
-                },
-                {
-                    "name": "RegistrationForm",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/organisms/registration-form/registration-form.stories.ts",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/organisms/registration-form/registration-form.stories.ts",
-                    "type": "Story<RegistrationFormComponent>",
-                    "defaultValue": "(args: RegistrationFormComponent) => ({\n  component: RegistrationFormComponent,\n  props: args,\n})"
-                }
-            ],
-            "src/app/organisms/scan-report/scan-report.component.stories.ts": [
-                {
-                    "name": "props",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/organisms/scan-report/scan-report.component.stories.ts",
-                    "type": "object",
-                    "defaultValue": "{}"
-                },
-                {
-                    "name": "ScanReport",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/organisms/scan-report/scan-report.component.stories.ts",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/organisms/scan-report/scan-report.component.stories.ts",
-                    "type": "Story<ScanReportComponent>",
-                    "defaultValue": "(args: ScanReportComponent) => ({\n  component: ScanReportComponent,\n  props: args,\n})"
                 }
             ],
             "src/app/atoms/buttons/secondary-border-button/secondary-border-button.component.stories.ts": [
@@ -10099,32 +10794,6 @@
                     "defaultValue": "(args: secondaryButtonComponent) => ({\n  component: secondaryButtonComponent,\n  props: args,\n})"
                 }
             ],
-            "src/app/atoms/filter-components/selected-item/selected-item.component.stories.ts": [
-                {
-                    "name": "props",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/atoms/filter-components/selected-item/selected-item.component.stories.ts",
-                    "type": "object",
-                    "defaultValue": "{}"
-                },
-                {
-                    "name": "Simple",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/atoms/filter-components/selected-item/selected-item.component.stories.ts",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/atoms/filter-components/selected-item/selected-item.component.stories.ts",
-                    "type": "Story<SelectedItemComponent>",
-                    "defaultValue": "(args: SelectedItemComponent) => ({\n  component: SelectedItemComponent,\n  props: args,\n})"
-                }
-            ],
             "src/app/atoms/card/card-report-status/card-report-status.component.stories.ts": [
                 {
                     "name": "props",
@@ -10175,6 +10844,32 @@
                     "file": "src/app/atoms/card/semicircle-chart-card/semicircle-chart-card.component.stories.ts",
                     "type": "Story<SemicircleChartCardComponent>",
                     "defaultValue": "(args: SemicircleChartCardComponent) => ({\n  component: SemicircleChartCardComponent,\n  props: args,\n})"
+                }
+            ],
+            "src/app/atoms/filter-components/selected-item/selected-item.component.stories.ts": [
+                {
+                    "name": "props",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/atoms/filter-components/selected-item/selected-item.component.stories.ts",
+                    "type": "object",
+                    "defaultValue": "{}"
+                },
+                {
+                    "name": "Simple",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/atoms/filter-components/selected-item/selected-item.component.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/atoms/filter-components/selected-item/selected-item.component.stories.ts",
+                    "type": "Story<SelectedItemComponent>",
+                    "defaultValue": "(args: SelectedItemComponent) => ({\n  component: SelectedItemComponent,\n  props: args,\n})"
                 }
             ],
             "src/app/atoms/counters/simple-counter/simple-counter.component.stories.ts": [
@@ -10229,32 +10924,6 @@
                     "defaultValue": "Template.bind({})"
                 }
             ],
-            "src/app/molecules/form-screens/form-screen-third/form-screen-third.stories.ts": [
-                {
-                    "name": "props",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/molecules/form-screens/form-screen-third/form-screen-third.stories.ts",
-                    "type": "object",
-                    "defaultValue": "{}"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/molecules/form-screens/form-screen-third/form-screen-third.stories.ts",
-                    "type": "Story<FormScreenThirdComponent>",
-                    "defaultValue": "(args: FormScreenThirdComponent) => ({\n  component: FormScreenThirdComponent,\n  props: args,\n})"
-                },
-                {
-                    "name": "Third",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/molecules/form-screens/form-screen-third/form-screen-third.stories.ts",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                }
-            ],
             "src/app/molecules/form-screens/form-screen-second/form-screen-second.stories.ts": [
                 {
                     "name": "props",
@@ -10281,12 +10950,12 @@
                     "defaultValue": "(args: FormScreenSecondComponent) => ({\n  component: FormScreenSecondComponent,\n  props: args,\n})"
                 }
             ],
-            "src/app/molecules/layouts/white-rounded-layout/white-rounded-layout.component.stories.ts": [
+            "src/app/molecules/form-screens/form-screen-third/form-screen-third.stories.ts": [
                 {
                     "name": "props",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/molecules/layouts/white-rounded-layout/white-rounded-layout.component.stories.ts",
+                    "file": "src/app/molecules/form-screens/form-screen-third/form-screen-third.stories.ts",
                     "type": "object",
                     "defaultValue": "{}"
                 },
@@ -10294,15 +10963,15 @@
                     "name": "Template",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/molecules/layouts/white-rounded-layout/white-rounded-layout.component.stories.ts",
-                    "type": "Story<WhiteRoundedLayoutComponent>",
-                    "defaultValue": "(args: WhiteRoundedLayoutComponent) => ({\n  component: WhiteRoundedLayoutComponent,\n  props: args,\n  template: `\n  <app-white-rounded-layout [titles]=\"titles\">\n    <app-text-with-after-gradient-line [title]=\"'scan report'\"></app-text-with-after-gradient-line>\n  </app-white-rounded-layout>\n  `,\n})"
+                    "file": "src/app/molecules/form-screens/form-screen-third/form-screen-third.stories.ts",
+                    "type": "Story<FormScreenThirdComponent>",
+                    "defaultValue": "(args: FormScreenThirdComponent) => ({\n  component: FormScreenThirdComponent,\n  props: args,\n})"
                 },
                 {
-                    "name": "WhiteRounded",
+                    "name": "Third",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/molecules/layouts/white-rounded-layout/white-rounded-layout.component.stories.ts",
+                    "file": "src/app/molecules/form-screens/form-screen-third/form-screen-third.stories.ts",
                     "type": "",
                     "defaultValue": "Template.bind({})"
                 }
@@ -10359,6 +11028,32 @@
                     "defaultValue": "(args: TabMenuComponent) => ({\n  component: TabMenuComponent,\n  props: args,\n})"
                 }
             ],
+            "src/app/molecules/layouts/white-rounded-layout/white-rounded-layout.component.stories.ts": [
+                {
+                    "name": "props",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/molecules/layouts/white-rounded-layout/white-rounded-layout.component.stories.ts",
+                    "type": "object",
+                    "defaultValue": "{}"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/molecules/layouts/white-rounded-layout/white-rounded-layout.component.stories.ts",
+                    "type": "Story<WhiteRoundedLayoutComponent>",
+                    "defaultValue": "(args: WhiteRoundedLayoutComponent) => ({\n  component: WhiteRoundedLayoutComponent,\n  props: args,\n  template: `\n  <app-white-rounded-layout [titles]=\"titles\">\n    <app-text-with-after-gradient-line [title]=\"'scan report'\"></app-text-with-after-gradient-line>\n  </app-white-rounded-layout>\n  `,\n})"
+                },
+                {
+                    "name": "WhiteRounded",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/molecules/layouts/white-rounded-layout/white-rounded-layout.component.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                }
+            ],
             "src/app/atoms/buttons/add-buttons/dark-add-button/dark-add-button.component.stories.ts": [
                 {
                     "name": "props",
@@ -10383,32 +11078,6 @@
                     "file": "src/app/atoms/buttons/add-buttons/dark-add-button/dark-add-button.component.stories.ts",
                     "type": "Story<DarkAddButtonComponent>",
                     "defaultValue": "(args: DarkAddButtonComponent) => ({\n  component: DarkAddButtonComponent,\n  props: args,\n})"
-                }
-            ],
-            "src/app/atoms/inputs/checkbox/checkbox-input-simple/checkbox-input-simple.stories.ts": [
-                {
-                    "name": "props",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/atoms/inputs/checkbox/checkbox-input-simple/checkbox-input-simple.stories.ts",
-                    "type": "object",
-                    "defaultValue": "{\n  isChecked: { control: 'boolean' },\n  title: { control: 'text' }\n}"
-                },
-                {
-                    "name": "Simple",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/atoms/inputs/checkbox/checkbox-input-simple/checkbox-input-simple.stories.ts",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/atoms/inputs/checkbox/checkbox-input-simple/checkbox-input-simple.stories.ts",
-                    "type": "Story<CheckboxInputSimpleComponent>",
-                    "defaultValue": "(args: CheckboxInputSimpleComponent) => ({\n  component: CheckboxInputSimpleComponent,\n  props: args,\n})"
                 }
             ],
             "src/app/atoms/inputs/checkbox/checkbox-input-switch/checkbox-input-switch.stories.ts": [
@@ -10437,46 +11106,20 @@
                     "defaultValue": "(args: CheckboxInputSwitchComponent) => ({\n  component: CheckboxInputSwitchComponent,\n  props: args,\n})"
                 }
             ],
-            "src/app/atoms/inputs/textarea/simple-textarea/simple-textarea.component.stories.ts": [
+            "src/app/atoms/inputs/checkbox/checkbox-input-simple/checkbox-input-simple.stories.ts": [
                 {
                     "name": "props",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/atoms/inputs/textarea/simple-textarea/simple-textarea.component.stories.ts",
+                    "file": "src/app/atoms/inputs/checkbox/checkbox-input-simple/checkbox-input-simple.stories.ts",
                     "type": "object",
-                    "defaultValue": "{}"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/atoms/inputs/textarea/simple-textarea/simple-textarea.component.stories.ts",
-                    "type": "Story<SimpleTextareaComponent>",
-                    "defaultValue": "(args: SimpleTextareaComponent) => ({\n  component: SimpleTextareaComponent,\n  props: args,\n})"
-                },
-                {
-                    "name": "Textarea",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/atoms/inputs/textarea/simple-textarea/simple-textarea.component.stories.ts",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                }
-            ],
-            "src/app/atoms/inputs/select-input/select-input-simple/select-input-simple.stories.ts": [
-                {
-                    "name": "props",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/atoms/inputs/select-input/select-input-simple/select-input-simple.stories.ts",
-                    "type": "object",
-                    "defaultValue": "{\n  initialValue: { control: 'text' },\n  items: { control: 'array' }\n}"
+                    "defaultValue": "{\n  isChecked: { control: 'boolean' },\n  title: { control: 'text' }\n}"
                 },
                 {
                     "name": "Simple",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/atoms/inputs/select-input/select-input-simple/select-input-simple.stories.ts",
+                    "file": "src/app/atoms/inputs/checkbox/checkbox-input-simple/checkbox-input-simple.stories.ts",
                     "type": "",
                     "defaultValue": "Template.bind({})"
                 },
@@ -10484,9 +11127,9 @@
                     "name": "Template",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/atoms/inputs/select-input/select-input-simple/select-input-simple.stories.ts",
-                    "type": "Story<SelectInputSimpleComponent>",
-                    "defaultValue": "(args: SelectInputSimpleComponent) => ({\n  component: SelectInputSimpleComponent,\n  props: args,\n})"
+                    "file": "src/app/atoms/inputs/checkbox/checkbox-input-simple/checkbox-input-simple.stories.ts",
+                    "type": "Story<CheckboxInputSimpleComponent>",
+                    "defaultValue": "(args: CheckboxInputSimpleComponent) => ({\n  component: CheckboxInputSimpleComponent,\n  props: args,\n})"
                 }
             ],
             "src/app/atoms/inputs/select-input/select-input-search/select-input-search.component.stories.ts": [
@@ -10523,6 +11166,32 @@
                     "defaultValue": "(args: SelectInputSearchComponent) => ({\n  component: SelectInputSearchComponent,\n  props: args,\n})"
                 }
             ],
+            "src/app/atoms/inputs/select-input/select-input-simple/select-input-simple.stories.ts": [
+                {
+                    "name": "props",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/atoms/inputs/select-input/select-input-simple/select-input-simple.stories.ts",
+                    "type": "object",
+                    "defaultValue": "{\n  initialValue: { control: 'text' },\n  items: { control: 'array' }\n}"
+                },
+                {
+                    "name": "Simple",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/atoms/inputs/select-input/select-input-simple/select-input-simple.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/atoms/inputs/select-input/select-input-simple/select-input-simple.stories.ts",
+                    "type": "Story<SelectInputSimpleComponent>",
+                    "defaultValue": "(args: SelectInputSimpleComponent) => ({\n  component: SelectInputSimpleComponent,\n  props: args,\n})"
+                }
+            ],
             "src/app/atoms/inputs/select-input/select-input-with-initial-value/select-input-with-initial-value.component.stories.ts": [
                 {
                     "name": "props",
@@ -10547,6 +11216,58 @@
                     "file": "src/app/atoms/inputs/select-input/select-input-with-initial-value/select-input-with-initial-value.component.stories.ts",
                     "type": "",
                     "defaultValue": "Template.bind({})"
+                }
+            ],
+            "src/app/atoms/inputs/textarea/simple-textarea/simple-textarea.component.stories.ts": [
+                {
+                    "name": "props",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/atoms/inputs/textarea/simple-textarea/simple-textarea.component.stories.ts",
+                    "type": "object",
+                    "defaultValue": "{}"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/atoms/inputs/textarea/simple-textarea/simple-textarea.component.stories.ts",
+                    "type": "Story<SimpleTextareaComponent>",
+                    "defaultValue": "(args: SimpleTextareaComponent) => ({\n  component: SimpleTextareaComponent,\n  props: args,\n})"
+                },
+                {
+                    "name": "Textarea",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/atoms/inputs/textarea/simple-textarea/simple-textarea.component.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                }
+            ],
+            "src/app/molecules/customized-element/customized-element.component.ts": [
+                {
+                    "name": "standartListData",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/molecules/customized-element/customized-element.component.ts",
+                    "type": "object",
+                    "defaultValue": "{\n  listTitle: 'Put list title',\n  titles: ['Type text here']\n}"
+                },
+                {
+                    "name": "standartTableData",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/molecules/customized-element/customized-element.component.ts",
+                    "type": "object",
+                    "defaultValue": "{\n  heads: ['text 1'],\n  tableData: [{ 'text 1' : '1.1. Text', }]\n}"
+                },
+                {
+                    "name": "standartTextData",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/molecules/customized-element/customized-element.component.ts",
+                    "type": "object",
+                    "defaultValue": "{ title: 'Your new paragraph' }"
                 }
             ]
         },
@@ -12766,7 +13487,7 @@
                 "linktype": "component",
                 "name": "DynamicListComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/7",
+                "coverageCount": "0/10",
                 "status": "low"
             },
             {
@@ -12805,7 +13526,7 @@
                 "linktype": "component",
                 "name": "DynamicTableComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/16",
+                "coverageCount": "0/19",
                 "status": "low"
             },
             {
@@ -12855,6 +13576,45 @@
                 "name": "TransparentTableComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/11",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/atoms/text/dynamic-text/dynamic-text.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Dynamic",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/atoms/text/dynamic-text/dynamic-text.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "props",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/atoms/text/dynamic-text/dynamic-text.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/atoms/text/dynamic-text/dynamic-text.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "DynamicTextComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/6",
                 "status": "low"
             },
             {
@@ -13014,6 +13774,51 @@
                 "status": "low"
             },
             {
+                "filePath": "src/app/molecules/customized-element/add-dynamic-component/add-dynamic.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "AddComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/8",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/molecules/customized-element/add-dynamic-component/add-dynamic.component.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "AdComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/molecules/customized-element/add-dynamic-component/add-item.ts",
+                "type": "class",
+                "linktype": "classe",
+                "name": "AddItem",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/molecules/customized-element/add-dynamic-component/add.directive.ts",
+                "type": "directive",
+                "linktype": "directive",
+                "name": "AddDirective",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/molecules/customized-element/add-dynamic-component/add.service.ts",
+                "type": "injectable",
+                "linktype": "injectable",
+                "name": "AddService",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
                 "filePath": "src/app/molecules/customized-element/customized-element.component.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
@@ -13049,7 +13854,37 @@
                 "linktype": "component",
                 "name": "CustomizedElementComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/8",
+                "coverageCount": "0/14",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/molecules/customized-element/customized-element.component.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "standartListData",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/molecules/customized-element/customized-element.component.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "standartTableData",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/molecules/customized-element/customized-element.component.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "standartTextData",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
                 "status": "low"
             },
             {
@@ -13719,6 +14554,45 @@
                 "name": "StatusBarComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/7",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/organisms/dynamic-sections-list/dynamic-sections-list.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Dynamic",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/organisms/dynamic-sections-list/dynamic-sections-list.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "props",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/organisms/dynamic-sections-list/dynamic-sections-list.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/organisms/dynamic-sections-list/dynamic-sections-list.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "DynamicSectionsListComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
                 "status": "low"
             },
             {

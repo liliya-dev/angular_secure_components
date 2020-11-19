@@ -1,5 +1,6 @@
-import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
-
+import { Component, ComponentFactoryResolver, Input, OnInit, ViewChild, ViewContainerRef, ViewEncapsulation } from '@angular/core';
+import { DynamicTableComponent } from './atoms/tables/dynamic-table/dynamic-table.component';
+import { DynamicListComponent } from './atoms/tables/dynamic-list/dynamic-list.component';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -8,13 +9,15 @@ import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
 })
 
 
-export class AppComponent implements OnInit {
-
-  title="Cookies by category"
-  check = (a) => {
-    console.log(a,11)
+export class AppComponent  {
+  isVisibleButtonsBlock = false;
+title=""
+  setIsVisibleButtonsBlock = (value: boolean) => {
+    this.isVisibleButtonsBlock = value;
   }
-  ngOnInit() {
 
-  }
+
+
+
+ 
 }

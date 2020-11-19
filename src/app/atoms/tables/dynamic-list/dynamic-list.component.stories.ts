@@ -1,5 +1,6 @@
 import { Meta, moduleMetadata, Story } from '@storybook/angular';
 import { DynamicListComponent } from './dynamic-list.component';
+import { TextareaAutosizeModule } from 'ngx-textarea-autosize';
 
 const props = {};
 
@@ -10,7 +11,7 @@ export default {
       declarations: [
         DynamicListComponent
       ],
-      imports: [],
+      imports: [TextareaAutosizeModule],
     }),
   ],
   argTypes: props,
@@ -22,4 +23,9 @@ const Template: Story<DynamicListComponent> = (args: DynamicListComponent) => ({
 });
 
 export const DynamicList = Template.bind({});
-DynamicList.args = {};
+DynamicList.args = {
+  data: {
+    listTitle: 'Put list title',
+    titles: ['Type text here']
+  }
+};
