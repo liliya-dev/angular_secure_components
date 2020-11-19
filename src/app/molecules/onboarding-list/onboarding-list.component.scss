@@ -5,6 +5,13 @@
   &__list {
     display: flex;
     flex-direction: column;
-    gap: 23px;
+    
+    & * {
+      margin-bottom: 23px;
+    }
+  
+    & :last-child {
+      margin-bottom: 0;
+    }
   }
 }

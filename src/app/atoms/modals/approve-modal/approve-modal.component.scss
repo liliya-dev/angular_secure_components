@@ -30,8 +30,15 @@
   &__buttons {
     display: flex;
     justify-content: center;
-    gap: 32px;
     margin-top: 24px;
+
+    & * {
+      margin-right: 30px;;
+    }
+  
+    & :last-child {
+      margin-right: 0;
+    }
   }
 }
 

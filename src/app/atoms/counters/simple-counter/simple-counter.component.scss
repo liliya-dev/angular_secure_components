@@ -1,7 +1,14 @@
 .app-simple-counter {
   display: flex;
-  gap: 8px;
   width: 202px;
+
+  & * {
+    margin-right: 8px;
+  }
+
+  & :last-child {
+    margin-right: 0;
+  }
 
   &__value-container {
     width: 100%;
@@ -22,4 +29,6 @@
     transform: rotate(180deg)!important;
   }
 }
+
+
 
