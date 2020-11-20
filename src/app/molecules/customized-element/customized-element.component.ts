@@ -28,9 +28,9 @@ export class CustomizedElementComponent implements OnInit, OnChanges {
   @Output() setNoHoverElement?: EventEmitter<any> = new EventEmitter();
   @Output() editSection?: EventEmitter<any> = new EventEmitter();
   
-    componentsList: AddItem[] = [];
-    isVisibleButtonsBlock = false;
-    activeBlockNumber = -1;
+  componentsList: AddItem[] = [];
+  isVisibleButtonsBlock = false;
+  activeBlockNumber = -1;
   constructor(private addService: AddService) {
     
   }
@@ -40,7 +40,36 @@ export class CustomizedElementComponent implements OnInit, OnChanges {
   }
 
   editSectionElement(props) {
-    console.log(this.componentsList, 987, props)
+    if (props.sectionId === this.sectionId) {
+      if (props.type === 'table') {
+        const newAdItem = this.addService.getAds('table', {
+          
+          heads: props.heads,
+          tableData: props.tableData,
+        
+          sectionId: this.sectionId,
+          sectionElementId: props.elementId
+        });
+        this.componentsList[props.elementId] = newAdItem;
+      } else if (props.type === 'list') {
+        const newAdItem = this.addService.getAds('list', {
+          listTitle: props.listTitle,
+          titles: props.titles,
+          sectionId: this.sectionId,
+          sectionElementId: props.elementId
+        });
+        this.componentsList[props.elementId] = newAdItem;
+      } else if (props.type === 'text') {
+        const newAdItem = this.addService.getAds('text', {
+          title: props.title,
+          sectionId: this.sectionId,
+          sectionElementId: props.elementId
+        });
+        this.componentsList[props.elementId] = newAdItem;
+      }
+    }
+    console.log(props, 7765783)
+    // here need to passs new section to parent component
   }
 
   setActiveBlockNumber = (index: number) => {
@@ -64,19 +93,26 @@ export class CustomizedElementComponent implements OnInit, OnChanges {
       tableData: standartTableData,
       sectionId: this.sectionId,
       sectionElementId: index + 1
-    }, this.editSectionElement);
+    });
     this.componentsList.splice(index + 1, 0, newAdItem);
-    console.log(this.componentsList)
   }
 
   addList(index: number) {
-    const newAdItem = this.addService.getAds('list', standartListData, this.editSectionElement);
+    const newAdItem = this.addService.getAds('list', 
+    { ...standartListData,
+      sectionId: this.sectionId,
+      sectionElementId: index + 1
+    });
     this.componentsList.splice(index + 1, 0, newAdItem);
     this.callEditSection();
   }
 
   addText(index: number) {
-    const newAdItem = this.addService.getAds('text', standartTextData, this.editSectionElement);
+    const newAdItem = this.addService.getAds('text', 
+    { ...standartTextData,
+      sectionId: this.sectionId,
+      sectionElementId: index + 1
+    });
     this.componentsList.splice(index + 1, 0, newAdItem);
     this.callEditSection();
   }
@@ -87,12 +123,26 @@ export class CustomizedElementComponent implements OnInit, OnChanges {
   }
 
   ngOnInit(): void {
-    const initialComponentsList = this.initialState.map(component => this.addService.getAds(component.type, component.dataFromParent), this.editSectionElement);
+    const initialComponentsList = this.initialState.map(
+      (component, index) => {
+        return this.addService.getAds(component.type, 
+          {...component.dataFromParent, 
+            sectionId: component.sectionId,
+            sectionElementId: index
+          })
+      });
     this.componentsList = [...initialComponentsList];
   }
 
   ngOnChanges(): void {
-    const initialComponentsList = this.initialState.map(component => this.addService.getAds(component.type, component.dataFromParent), this.editSectionElement);
+    const initialComponentsList = this.initialState.map(
+      (component, index) => {
+        return this.addService.getAds(component.type, 
+          {...component.dataFromParent, 
+            sectionId: component.sectionId,
+            sectionElementId: index
+          })
+      });
     this.componentsList = [...initialComponentsList];
   }
 }

@@ -1,4 +1,4 @@
-import { Component, ViewChild, OnChanges, ElementRef, Input, OnInit } from '@angular/core';
+import { Component, ViewChild, OnChanges, ElementRef, Input, OnInit, EventEmitter, Output, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-dynamic-list',
@@ -8,10 +8,33 @@ import { Component, ViewChild, OnChanges, ElementRef, Input, OnInit } from '@ang
 
 export class DynamicListComponent implements OnInit, OnChanges {
   @Input() data: any;
+  @Output() handler: EventEmitter<any> = new EventEmitter()
   titles: string[];
   listTitle: string;
+  isActive: boolean;
+
+  setActive() {
+    this.isActive = true;
+  }
 
   @ViewChild('dynamicList') dynamicList: ElementRef; 
+  @ViewChild('dynamicContainer') dynamicContainer: ElementRef; 
+
+  @HostListener('document:click', ['$event'])
+  onClick(event: Event) {
+    if (!this.dynamicContainer.nativeElement.contains(event.target) && this.isActive) {
+      this.handler.emit(
+        {
+          sectionId: this.data.sectionId,
+          elementId: this.data.sectionElementId,
+          type: 'list',
+          titles: this.titles,
+          listTitle: this.listTitle
+        }
+      )
+      this.isActive = false;
+    }
+  }
 
   handlePressKey = (event, i) => {
     if (event.key === 'Enter') {
@@ -34,6 +57,7 @@ export class DynamicListComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges() {
+
     this.setData();
   }
 

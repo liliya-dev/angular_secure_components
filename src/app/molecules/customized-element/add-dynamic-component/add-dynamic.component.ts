@@ -19,18 +19,13 @@ export interface AdComponent {
 
 export class AddComponent implements OnInit {
   @Input() component: AddItem;
-  @Output() handler: EventEmitter<any> = new EventEmitter()
+  @Output() handler: EventEmitter<any> = new EventEmitter();
 
   currentAdIndex = -1;
   @ViewChild(AddDirective, {static: true}) adHost: AddDirective;
   interval: any;
 
   constructor(private componentFactoryResolver: ComponentFactoryResolver) { }
-
-  ngOnInit() {
-    this.loadComponent();
-    this.handler.emit(567)
-  }
 
   loadComponent() {
     const adItem = this.component;
@@ -39,7 +34,13 @@ export class AddComponent implements OnInit {
     const componentRef = viewContainerRef.createComponent<AdComponent>(componentFactory);
     componentRef.instance.data = adItem.dataFromParent;
     componentRef.instance.handler.subscribe(val => {
-      this.handler.emit(val)
+      this.handler.emit(val);
     });
+    componentRef.changeDetectorRef.detectChanges();
+    return componentRef
+  }
+
+  ngOnInit() {
+    this.loadComponent();
   }
 }

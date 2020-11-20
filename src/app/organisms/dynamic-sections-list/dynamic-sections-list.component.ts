@@ -52,9 +52,10 @@ export class DynamicSectionsListComponent implements OnInit {
       {
         initialState: defaultSectionData,
         title: `New section ${index + 1}`,
-        id: Date.now(),
+        sectionId: Date.now(),
       }
     );
+
   }
 
   indexTracker(index: number, value: any) {
@@ -62,6 +63,7 @@ export class DynamicSectionsListComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    console.log(this.sections)
     if (this.sections.length === 0) {
       this.addSection(0);
     }

@@ -43,8 +43,6 @@ export class DynamicTableComponent implements OnChanges, OnInit {
   }
 
   addColumn = () => {
-    console.log(765432)
-    this.handler.emit(this.heads)
     this.columns = this.columns + 1;
     this.heads = [...this.heads, `Text ${this.columns}`];
     this.tableData.forEach((item, i )=> {
@@ -110,9 +108,9 @@ export class DynamicTableComponent implements OnChanges, OnInit {
   }
 
   setData = () => {
-    this.heads = this.data.tableData.heads || ['text 1'];
+    this.heads = this.data.heads || ['text 1'];
     this.mainColumn = this.heads[0];
-    this.tableData = this.data.tableData.tableData || [{ 'text 1' : '1.1. Text' }];
+    this.tableData = this.data.tableData || [{ 'text 1' : '1.1. Text' }];
     this.rows = this.tableData.length;
     this.columns = Object.keys(this.tableData[0]).length;
   }
