@@ -6,7 +6,7 @@
         (mouseleave)="setActiveBlockNumber(-1)"
       >
         <div class="app-customized-element__container">
-          <app-add-dynamic [component]="component"></app-add-dynamic>
+          <app-add-dynamic (handler)="editSectionElement($event)" [component]="component"></app-add-dynamic>
           <button 
             type="button"
             class="app-customized-element__button-delete"
@@ -15,29 +15,29 @@
           >
             <img src="assets/images/deleteX.png" alt="delete">
           </button>
-        </div>
-        <div
-          class="app-customized-element__buttons-container"
-          *ngIf="activeBlockNumber === i"
-        >
-          <app-small-light-add-button
-            [title]="'Add table'"
-            [classes]="'app-small-light-add-button fs-14-gramm-400-light'"
-            (click)="addTable(i)"
+          <div
+            class="app-customized-element__buttons-container"
+            *ngIf="activeBlockNumber === i"
           >
-          </app-small-light-add-button>
-          <app-small-light-add-button
-            [title]="'Add a paragraph'"
-            [classes]="'app-small-light-add-button fs-14-gramm-400-light'"
-            (click)="addText(i)"
-          >
-          </app-small-light-add-button>
-          <app-small-light-add-button
-            [title]="'Add list'"
-            [classes]="'app-small-light-add-button fs-14-gramm-400-light'"
-            (click)="addList(i)"
-          >
-          </app-small-light-add-button>
+            <app-small-light-add-button
+              [title]="'Add table'"
+              [classes]="'app-small-light-add-button fs-14-gramm-400-light'"
+              (click)="addTable(i)"
+            >
+            </app-small-light-add-button>
+            <app-small-light-add-button
+              [title]="'Add a paragraph'"
+              [classes]="'app-small-light-add-button fs-14-gramm-400-light'"
+              (click)="addText(i)"
+            >
+            </app-small-light-add-button>
+            <app-small-light-add-button
+              [title]="'Add list'"
+              [classes]="'app-small-light-add-button fs-14-gramm-400-light'"
+              (click)="addList(i)"
+            >
+            </app-small-light-add-button>
+          </div>
         </div>
       </div>
     </div>

@@ -1,4 +1,4 @@
-import { Component, HostListener, ElementRef, ViewChild, OnChanges, Input, OnInit } from '@angular/core';
+import { Component, HostListener, ElementRef, ViewChild, OnChanges, Input, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-dynamic-table',
@@ -7,11 +7,14 @@ import { Component, HostListener, ElementRef, ViewChild, OnChanges, Input, OnIni
 })
 export class DynamicTableComponent implements OnChanges, OnInit {
   @Input() data: any;
+  @Output() handler: EventEmitter<any> = new EventEmitter()
 
   heads: string[];
   tableData: any[];
   isMobile: boolean;
   mainColumn: string;
+  editSectionElement;
+  isActive: boolean;
 
   rows = 1;
   columns = 1;
@@ -40,6 +43,8 @@ export class DynamicTableComponent implements OnChanges, OnInit {
   }
 
   addColumn = () => {
+    console.log(765432)
+    this.handler.emit(this.heads)
     this.columns = this.columns + 1;
     this.heads = [...this.heads, `Text ${this.columns}`];
     this.tableData.forEach((item, i )=> {
@@ -48,7 +53,6 @@ export class DynamicTableComponent implements OnChanges, OnInit {
     this.activeColumn = this.heads[1];
     const width = document.querySelector('.app-dynamic-table').clientWidth;
     this.isMobile = (width / this.columns) < 200;
-    console.log(this.tableData)
   }
 
   editHead = (event, headTitle) => {
@@ -78,6 +82,10 @@ export class DynamicTableComponent implements OnChanges, OnInit {
     }
   }
 
+  setIsActive() {
+    this.isActive = true;
+  }
+
   @ViewChild('table') table: ElementRef;
   @HostListener('window:resize', ['$event'])
   onResize(event: any) {
@@ -85,10 +93,26 @@ export class DynamicTableComponent implements OnChanges, OnInit {
     this.isMobile = (width / this.columns) < 200;
   }
 
+  @HostListener('document:click', ['$event'])
+  onClick(event: Event) {
+    if (!this.table.nativeElement.contains(event.target) && this.isActive) {
+      this.handler.emit(
+        {
+          sectionId: this.data.sectionId,
+          elementId: this.data.sectionElementId,
+          heads: this.heads,
+          tableData: this.tableData,
+          type: 'table'
+        }
+      )
+      this.isActive = false;
+    }
+  }
+
   setData = () => {
-    this.heads = this.data.heads || ['text 1'];
+    this.heads = this.data.tableData.heads || ['text 1'];
     this.mainColumn = this.heads[0];
-    this.tableData = this.data.tableData || [{ 'text 1' : '1.1. Text' }];
+    this.tableData = this.data.tableData.tableData || [{ 'text 1' : '1.1. Text' }];
     this.rows = this.tableData.length;
     this.columns = Object.keys(this.tableData[0]).length;
   }

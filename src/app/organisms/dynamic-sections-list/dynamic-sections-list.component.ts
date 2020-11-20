@@ -18,20 +18,47 @@ let defaultSectionData = [{
 export class DynamicSectionsListComponent implements OnInit {
   sections = [];
   activeSection: number;
+  isSectionActive = false;
+  isElementActive = false;
   constructor() { }
 
-  setActiveSectionNumber = (index: number) => {
+  editSection = (event) => {
+  }
+
+  editSectionElement = (event) => {
+  }
+
+  setHoverElement = () => {
+    this.isElementActive = true;
+    this.isSectionActive = false;
+  }
+
+  setNoHoverElement = () => {
+    this.isElementActive = false;
+    this.isSectionActive = true;
+  }
+
+  handleHover = (event: any, index: number) => {
+    if (index !== -1) {
+      this.isSectionActive = true;
+    } else {
+      this.isSectionActive = false;
+    }
     this.activeSection = index;
   }
 
-  addSection(i) {
+  addSection(index: number) {
     this.sections.push(
       {
         initialState: defaultSectionData,
-        title: `New section ${i + 1}`,
+        title: `New section ${index + 1}`,
         id: Date.now(),
       }
     );
+  }
+
+  indexTracker(index: number, value: any) {
+    return index;
   }
 
   ngOnInit(): void {

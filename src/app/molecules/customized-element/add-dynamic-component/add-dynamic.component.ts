@@ -1,10 +1,11 @@
-import { Component, Input, OnInit, ViewChild, ComponentFactoryResolver, OnDestroy, OnChanges } from '@angular/core';
+import { Component, Input, OnInit, ViewChild, ComponentFactoryResolver, OnDestroy, OnChanges, EventEmitter, Output } from '@angular/core';
 
 import { AddDirective } from './add.directive';
 import { AddItem } from './add-item';
 
 export interface AdComponent {
   data: any;
+  handler: any
 }
 
 @Component({
@@ -18,6 +19,8 @@ export interface AdComponent {
 
 export class AddComponent implements OnInit {
   @Input() component: AddItem;
+  @Output() handler: EventEmitter<any> = new EventEmitter()
+
   currentAdIndex = -1;
   @ViewChild(AddDirective, {static: true}) adHost: AddDirective;
   interval: any;
@@ -26,6 +29,7 @@ export class AddComponent implements OnInit {
 
   ngOnInit() {
     this.loadComponent();
+    this.handler.emit(567)
   }
 
   loadComponent() {
@@ -34,5 +38,8 @@ export class AddComponent implements OnInit {
     const viewContainerRef = this.adHost.viewContainerRef;
     const componentRef = viewContainerRef.createComponent<AdComponent>(componentFactory);
     componentRef.instance.data = adItem.dataFromParent;
+    componentRef.instance.handler.subscribe(val => {
+      this.handler.emit(val)
+    });
   }
 }

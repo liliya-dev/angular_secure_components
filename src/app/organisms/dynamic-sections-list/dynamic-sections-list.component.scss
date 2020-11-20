@@ -4,6 +4,14 @@
   display: flex;
   justify-content: space-between;
 
+  &__main-title-input {
+    border: none;
+    background-color: transparent;
+    color: var(--secondary-color);
+    width: 100%;
+    padding-right: 15px;
+  }
+
   &__navigation {
     width: 24%;
     color: rgba(var(--secondary-color-code), 0.7);
@@ -11,9 +19,43 @@
     padding: 16px;
   }
 
+  &__line {
+    margin-top: 15px;
+    width: 100%;
+    border-bottom: 1px solid rgba(var(--secondary-color-code), 0.1);
+  }
+
+  &__section {
+    width: 100%;
+    border: 1px dashed transparent;
+    margin-right: -14px;
+    margin-top: 16px;
+    overflow: hidden;
+    border-radius: 8px;
+  }
+
+  &__sections {
+    padding: 0 14px;
+  }
+
+  &__buttons-container {
+    display: flex;
+    margin-bottom: 10px;
+    margin-left: 18px;
+    
+    & * {
+      margin-right: 16px;
+    }
+  
+    & :last-child {
+      margin-right: 0;
+    }
+  }
+
   &__content {
     width: 74%;
     border: 1px solid #EAEDF2;
+    padding-top: 30px;
   }
 
   &__titles {
@@ -32,5 +74,7 @@
   &__main-title {
     line-height: 180%;
     margin-left: 18px;
+    margin-top: 10px;
+    width: calc(100% + 15px);
   }
 }

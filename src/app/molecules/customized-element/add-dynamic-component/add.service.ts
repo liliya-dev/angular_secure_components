@@ -6,16 +6,14 @@ import { AddItem } from './add-item';
 
 @Injectable()
 export class AddService {
-  getAds(type: string, data?: any) {
-    if(type === 'table' && data) {
-      return (
-        new AddItem(DynamicTableComponent, data)
-      ) 
-    } else if (type ==='list' && data) {
-       return new AddItem(DynamicListComponent, data)
+  getAds(type: string, data?: any, func?) {
+    if (type === 'table' && data) {
+      return new AddItem(DynamicTableComponent, data, func)
+    } 
+    else if (type ==='list' && data) {
+       return new AddItem(DynamicListComponent, data,func)
     } else if (type === 'text' && data) {
-      console.log(45, data)
-      return new AddItem(DynamicTextComponent, data)
+      return new AddItem(DynamicTextComponent, data, func)
     }
   }
 }
