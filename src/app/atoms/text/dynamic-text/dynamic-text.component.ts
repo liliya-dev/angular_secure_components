@@ -10,14 +10,13 @@ export class DynamicTextComponent implements OnInit, OnChanges {
   @Output() handler: EventEmitter<any> = new EventEmitter()
 
   isActive: boolean;
+  title: string;
 
   setIsActive() {
     this.isActive = true;
   }
 
   @ViewChild('text') text: ElementRef;
-
-
   @HostListener('document:click', ['$event'])
   onClick(event: Event) {
     if (!this.text.nativeElement.contains(event.target) && this.isActive) {
@@ -33,10 +32,10 @@ export class DynamicTextComponent implements OnInit, OnChanges {
     }
   }
 
-  title: string;
   constructor() { }
 
   ngOnInit(): void {
+    console.log(this.data)
     this.title = this.data.title;
   }
 

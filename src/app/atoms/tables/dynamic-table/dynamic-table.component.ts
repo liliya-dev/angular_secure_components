@@ -122,6 +122,7 @@ export class DynamicTableComponent implements OnChanges, OnInit {
   }
 
   ngOnInit() {
+    console.log(this.data)
     this.setData();
   }
 }

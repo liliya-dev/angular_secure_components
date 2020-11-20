@@ -22,10 +22,8 @@ export class DynamicSectionsListComponent implements OnInit {
   isElementActive = false;
   constructor() { }
 
-  editSection = (event) => {
-  }
-
-  editSectionElement = (event) => {
+  editSection = (props) => {
+    console.log(props.componentsList)
   }
 
   setHoverElement = () => {

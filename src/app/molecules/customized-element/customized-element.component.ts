@@ -40,6 +40,7 @@ export class CustomizedElementComponent implements OnInit, OnChanges {
   }
 
   editSectionElement(props) {
+    console.log(props)
     if (props.sectionId === this.sectionId) {
       if (props.type === 'table') {
         const newAdItem = this.addService.getAds('table', {
@@ -60,15 +61,17 @@ export class CustomizedElementComponent implements OnInit, OnChanges {
         });
         this.componentsList[props.elementId] = newAdItem;
       } else if (props.type === 'text') {
+        console.log(77)
         const newAdItem = this.addService.getAds('text', {
           title: props.title,
           sectionId: this.sectionId,
           sectionElementId: props.elementId
         });
+        console.log(newAdItem, 71777777)
         this.componentsList[props.elementId] = newAdItem;
       }
     }
-    console.log(props, 7765783)
+    this.callEditSection();
     // here need to passs new section to parent component
   }
 
@@ -82,10 +85,10 @@ export class CustomizedElementComponent implements OnInit, OnChanges {
   }
 
   callEditSection () {
-    // this.editSection.emit({
-    //   sectionId: this.sectionId,
-    //   componentsList: this.componentsList,
-    // })
+    this.editSection.emit({
+      sectionId: this.sectionId,
+      componentsList: this.componentsList,
+    })
   }
 
   addTable(index: number) {
