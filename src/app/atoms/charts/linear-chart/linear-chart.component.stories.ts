@@ -29,7 +29,6 @@ const Template: Story<LinearChartComponent> = (args: LinearChartComponent) => ({
 
 export const Linear = Template.bind({});
 Linear.args = {
-  xaxis: ["JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC", "JAN", "FEB", "MAR"],
   series: [
     {
       name: "OPT-IN",
@@ -40,5 +39,8 @@ Linear.args = {
       data: [1200, 1500, 300, 1000, 200, 800, 1000, 1500, 500, 1000]
     }
   ],
+  date: '12 aug 2020',
+  maxValue: 8000,
   colors: ["#3C814F", "#B01515"],
+  categories: ["JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC", "JAN", "FEB", "MAR"],
 };
