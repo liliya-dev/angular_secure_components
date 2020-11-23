@@ -13,6 +13,7 @@ export class LinearChartComponent  implements OnChanges, OnInit{
 
   chartOptions = {
     tooltip: {
+      shared: false,
       custom: function({ series, seriesIndex, dataPointIndex, w }) {
         const max = 8000;
         const title = '12 aug 2020';
