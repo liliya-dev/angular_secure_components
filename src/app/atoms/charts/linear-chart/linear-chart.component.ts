@@ -17,9 +17,7 @@ export class LinearChartComponent  implements OnChanges, OnInit{
   chartOptions = {
     title: {
       text: '',
-      style: {
-        fontSize:  '0px',
-      },
+      style: { fontSize:  '0px' },
     },
     tooltip: {
       shared: false,

@@ -89,6 +89,7 @@ import { TextareaAutosizeModule } from 'ngx-textarea-autosize';
 import { DynamicTextComponent } from './atoms/text/dynamic-text/dynamic-text.component';
 import { DynamicSectionsListComponent } from './organisms/dynamic-sections-list/dynamic-sections-list.component';
 import { LinearChartComponent } from './atoms/charts/linear-chart/linear-chart.component';
+import { ColumnChartComponent } from './atoms/charts/column-chart/column-chart.component';
 
 PlotlyModule.plotlyjs = PlotlyJS;
 
@@ -180,6 +181,7 @@ PlotlyModule.plotlyjs = PlotlyJS;
     DynamicTextComponent,
     DynamicSectionsListComponent,
     LinearChartComponent,
+    ColumnChartComponent,
   ],
   imports: [
     ColorSketchModule,

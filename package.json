@@ -27,6 +27,7 @@
     "@storybook/addon-storysource": "^6.1.0",
     "angular-plotly.js": "^3.0.0",
     "angular-svg-icon": "^10.0.0",
+    "angular2-chartjs": "^0.5.1",
     "apexcharts": "^3.22.0",
     "eslint-config-angular": "^0.5.0",
     "ng-apexcharts": "^1.5.4",

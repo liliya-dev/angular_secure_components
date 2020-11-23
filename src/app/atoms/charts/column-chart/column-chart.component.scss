@@ -1,0 +1,117 @@
+.chart-column {
+  display: flex;
+  height: 420px;
+
+  &__list {
+    display: flex;
+    align-items: flex-end;
+    position: relative;
+    width: fit-content;
+  }
+
+  &__list-wrapper {
+    max-width: 100%;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    height: auto;
+    display: flex;
+    padding-bottom: 50px;
+  }
+
+  &__item {
+    padding: 0 8px;
+    position: relative;
+  }
+
+  &__value {
+    width: 115px;
+    border-radius: 10px;
+    transition: 0.3s;
+
+    &:hover {
+      cursor: pointer;
+      opacity: 0.8;
+    }
+  }
+
+  &__grid {
+    display: grid;
+    width: calc(100%);
+    position: absolute;
+    left: 0;
+
+    &-ceil {
+      width: 100%;
+      height: 100%;
+      border: 0.1px solid rgba(var(--secondary-color-code), 0.05);
+    }
+  }
+
+  &__yaxis {
+    position: relative;
+    margin-right: 30px;
+  }
+
+  &__yaxis-value {
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+    color: rgba(var(--secondary-color-code), 0.3);
+  }
+
+  &__xaxis-name {
+    position: absolute;
+    text-align: center;
+    bottom: -55px;
+    right: 0px;
+    width: 131px;
+    text-transform: uppercase;
+    height: 40px;
+    color: rgba(var(--secondary-color-code), 0.3);
+  }
+
+  &__tips {
+    background-color: rgba(var(--secondary-color-code), 1);
+    border-radius: 12px;
+    padding: 12px;
+    color: #D0DAEB;
+    width: 228px;
+    position: absolute;
+
+    &:after {
+      content: "";
+      position: absolute;
+      border: 20px solid transparent; border-top: 20px solid rgba(var(--secondary-color-code), 1);;
+      bottom: -40px;
+      right: 95px;
+    }
+
+    &-item {
+      display: flex;
+      align-items: center;
+      margin: 8px 0;
+      width: 100%;
+      justify-content: space-between;
+    }
+
+    &-text {
+      display: flex;
+    }
+
+    &-value {
+
+    }
+
+    &-color {
+      display: block;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      margin-right: 8px;
+    }
+  }
+}
+
+.container {
+  width: 800px;
+}
