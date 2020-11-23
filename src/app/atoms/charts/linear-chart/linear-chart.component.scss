@@ -1,0 +1,49 @@
+.apexcharts-legend-marker {
+  margin-right: 12px!important;
+}
+
+.apexcharts-legend-series {
+  margin-right: 31px!important;
+  display: flex!important;
+  align-items: center!important;
+}
+
+.apexcharts-legend-text {
+  height: 12px!important;
+}
+
+#SvgjsSvg1128 {
+  cursor: pointer!important;
+}
+
+.card-report-status {
+  width: 214px;
+  padding: 16px 16px 6px;
+  border-radius: 12px 12px 12px 0px;
+  background-color: rgba(var(--secondary-color-code), 0.8);
+  color: var(--text-color);
+  box-shadow: 0px 40px 70px rgba(1, 25, 73, 0.3);
+
+  &__title {
+    margin-bottom: 14px;
+    text-transform: uppercase;
+    color: rgba(var(--text-color-code), 0.5);
+  }
+
+  &__list {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  &__item {
+    width: 49%;
+    text-align: start;
+    margin-bottom: 13px;
+
+    &:nth-child(even) {
+      text-align: end;
+    }
+  }
+}
