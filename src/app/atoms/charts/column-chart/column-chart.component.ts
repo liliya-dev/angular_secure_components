@@ -32,7 +32,7 @@ export class ColumnChartComponent implements OnInit, OnChanges {
   showTips = (event, index) => {
     this.tipsLeft = index * this.columnWidth + 47 - this.list.nativeElement.scrollLeft;
     const height = +event.target.style.height.slice(0, -2);
-    this.tipsBottom = height + 60;
+    this.tipsBottom = height + 42;
     this.isTipVisible = true;
   }
 
