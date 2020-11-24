@@ -31,6 +31,9 @@ const Template: Story<ColumnChartComponent> = (args: ColumnChartComponent) => ({
 export const Column = Template.bind({});
 Column.args = {
   maxValue: 8000,
-  data: [3800, 7500, 5000, 6200, 2300, 2800, 6200, 2300, 6500],
+  columnWidth: 131,
+  chartHeight: 350,
+  step: 2000,
+  data: [3800, 500, 5000, 6200, 2300, 2800, 6200, 2300, 6500],
   categories: ["social media", "customer iteraction", "analytics", "comments", "advertisment", "essential", "comments", "advertisment", "essential"],
 };
