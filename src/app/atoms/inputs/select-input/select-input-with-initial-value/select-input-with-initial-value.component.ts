@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, Input, OnInit, Output, ViewEncapsulation, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-select-input-with-initial-value',
@@ -9,8 +9,13 @@ import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
 
 export class SelectInputWithInitialValueComponent implements OnInit {
   @Input() items: string[];
+  @Output() onItemSelect: EventEmitter<any> = new EventEmitter();
 
   selectedItem: string;
+
+  handleValueChange(value) {
+    this.onItemSelect.emit(value)
+  }
 
   ngOnInit(): void {
     this.selectedItem = this.items[0];

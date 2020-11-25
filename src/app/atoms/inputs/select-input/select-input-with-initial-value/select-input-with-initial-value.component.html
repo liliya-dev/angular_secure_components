@@ -3,6 +3,7 @@
     class="custom fs-12-sofia-600" 
     [hideSelected]="true"
     [searchable]="false"
+    (change)="handleValueChange($event)"
 >
   <ng-option class="option" *ngFor="let item of items" [value]="item">
     {{ item }}
