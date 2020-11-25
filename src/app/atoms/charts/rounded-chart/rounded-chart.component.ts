@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, OnInit, ViewEncapsulation } from '@angular/core';
 import * as am4core from '@amcharts/amcharts4/core';
 import * as am4maps from "@amcharts/amcharts4/maps";
 import am4geodata_worldLow from "@amcharts/amcharts4-geodata/worldLow";
@@ -6,19 +6,26 @@ import {
   AfricaCodes, AustraliaCodes, NorthAmericaCodes, SouthAmericaCodes, EuropeCodes, AsiaCodes 
 } from './countriesCodes';
 
+interface Country {
+  id: string, 
+  value: number, 
+  name: string 
+}
+
 interface Countries {
-  europe: { id: string, value: number, name: string }[],
-  northAmerica: { id: string, value: number, name: string }[],
-  southAmerica: { id: string, value: number, name: string }[],
-  asia: { id: string, value: number, name: string }[],
-  australia: { id: string, value: number, name: string }[],
-  africa: { id: string, value: number, name: string }[]
+  europe: Country[],
+  northAmerica: Country[],
+  southAmerica: Country[],
+  asia: Country[],
+  australia: Country[],
+  africa: Country[]
 }
 
 @Component({
   selector: 'app-rounded-chart',
   templateUrl: './rounded-chart.component.html',
-  styleUrls: ['./rounded-chart.component.scss']
+  styleUrls: ['./rounded-chart.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 
 export class RoundedChartComponent implements OnInit, OnChanges {
@@ -43,62 +50,59 @@ export class RoundedChartComponent implements OnInit, OnChanges {
     this.polygonTemplate = this.polygonSeries.mapPolygons.template;
     this.polygonTemplate.tooltipText = "";
     this.polygonTemplate.fill = am4core.color("rgba(1, 25, 73, 0.2)")
-
-    var hs = this.polygonTemplate.states.create("hover");
+    const hs = this.polygonTemplate.states.create("hover");
     hs.properties.fill = am4core.color("rgb(22, 97, 60)");
+
+    const bs = this.polygonTemplate.states.create("blur");
+    bs.properties.fill = am4core.color("red");
+;
 
     switch(region) {
       case 'World': 
-      this.polygonSeries.exclude = ["AQ"]
-      this.polygonSeries.data = [...this.allCountriesData];
-      this.tipsData = [...this.allCountriesData];
+        this.polygonSeries.exclude = ["AQ"]
+        this.polygonSeries.data = [...this.allCountriesData];
+        this.tipsData = [...this.allCountriesData];
       break;
       case 'Europe': 
-      this.polygonSeries.include = [...EuropeCodes];
-      this.polygonSeries.data = [...this.countriesData.europe];
-      this.tipsData = [...this.countriesData.europe];
+        this.polygonSeries.include = [...EuropeCodes];
+        this.polygonSeries.data = [...this.countriesData.europe];
+        this.tipsData = [...this.countriesData.europe];
       break;
       case 'Asia': 
-      this.polygonSeries.include = [...AsiaCodes];
-      this.polygonSeries.data = [...this.countriesData.asia];
-      this.tipsData = [...this.countriesData.asia];
+        this.polygonSeries.include = [...AsiaCodes];
+        this.polygonSeries.data = [...this.countriesData.asia];
+        this.tipsData = [...this.countriesData.asia];
+        this.chart.deltaLongitude = -130;
       break;
       case 'North America': 
-      this.polygonSeries.include = [...NorthAmericaCodes];
-      this.polygonSeries.data = [...this.countriesData.northAmerica];
-      this.tipsData = [...this.countriesData.northAmerica];
+        this.polygonSeries.include = [...NorthAmericaCodes];
+        this.polygonSeries.data = [...this.countriesData.northAmerica];
+        this.tipsData = [...this.countriesData.northAmerica];
       break;
       case 'South America': 
-      this.polygonSeries.include = [...SouthAmericaCodes];
-      this.polygonSeries.data = [...this.countriesData.southAmerica];
-      this.tipsData = [...this.countriesData.southAmerica];
+        this.polygonSeries.include = [...SouthAmericaCodes];
+        this.polygonSeries.data = [...this.countriesData.southAmerica];
+        this.tipsData = [...this.countriesData.southAmerica];
       break;
       case 'Australia': 
-      this.polygonSeries.include = [...AustraliaCodes];
-      this.polygonSeries.data = [...this.countriesData.australia];
-      this.tipsData = [...this.countriesData.australia];
+        this.polygonSeries.include = [...AustraliaCodes];
+        this.polygonSeries.data = [...this.countriesData.australia];
+        this.tipsData = [...this.countriesData.australia];
+        this.chart.deltaLongitude = -160;
       break;
       case 'Africa': 
-      this.polygonSeries.include = [...AfricaCodes];
-      this.polygonSeries.data = [...this.countriesData.africa];
-      this.tipsData = [...this.countriesData.africa];
+        this.polygonSeries.include = [...AfricaCodes];
+        this.polygonSeries.data = [...this.countriesData.africa];
+        this.tipsData = [...this.countriesData.africa];
       break;
     }
 
-    this.polygonSeries.data.forEach(element => {
-      element.fill = am4core.color("rgba(1, 25, 73, 0.75)");
-    });
-
+    this.polygonSeries.data.forEach(element => element.fill = am4core.color("rgba(1, 25, 73, 0.75)"));
     this.polygonTemplate.propertyFields.fill = "fill";
-    this.polygonTemplate.events.on("hit", function(ev) {
-      var data = ev.target.dataItem.dataContext;
-      console.log(ev.target.uid, data)
-      ev.target.isActive = !ev.target.isActive;
-    })
-
+ 
     const setActive = (value, top, left) => {
       const isCountryIncludedToTheList = this.allCountriesData.findIndex(country => country.id === value);
-      if(isCountryIncludedToTheList !== -1) {
+      if (isCountryIncludedToTheList !== -1) {
         this.activeCountry = value;
         this.isTipVisible = true;
         this.tipsTop = top - 24 - (16 * this.tipsData.length + 8 * (this.tipsData.length + 1)) - 10;
@@ -117,12 +121,11 @@ export class RoundedChartComponent implements OnInit, OnChanges {
 
     this.polygonTemplate.events.on("out", function(ev) {
       setIsTipsVisible(false)
-
     })
   }
 
   ngOnChanges() {
-    // this.createChart()
+    this.createChart('World')
   }
 
   ngOnInit() {
