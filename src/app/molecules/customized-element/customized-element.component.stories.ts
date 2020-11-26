@@ -68,11 +68,10 @@ Simple.args = {
     {
       type: 'table',
       dataFromParent: {
-        heads: ['text 1', 'text 2'],
+        heads: ['text 1'],
         tableData: [ 
-          { 'text 1' : '1.1. Text', 'text 2' : '1.1. Text'},
-          { 'text 1' : '2.1. Text', 'text 2' : '2.1. Text'},
-          { 'text 1' : '2.1. Text', 'text 2' : '2.1. Text'}
+          { 'text 1' : '1.1. Text' },
+     
         ]
       }
     }

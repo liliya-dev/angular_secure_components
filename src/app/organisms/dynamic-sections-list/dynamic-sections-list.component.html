@@ -33,6 +33,7 @@
           </textarea>
         </p>
         <app-customized-element 
+          (addComponentToSection)="addComponentToSection($event)"
           (editSection)="editSection($event)"
           (setHoverElement)="setHoverElement()"
           (setNoHoverElement)="setNoHoverElement()"

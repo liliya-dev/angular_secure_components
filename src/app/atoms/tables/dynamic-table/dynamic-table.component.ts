@@ -1,11 +1,11 @@
-import { Component, HostListener, ElementRef, ViewChild, OnChanges, Input, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, HostListener, ElementRef, ViewChild, OnChanges, Input, OnInit, Output, EventEmitter, AfterViewInit } from '@angular/core';
 
 @Component({
   selector: 'app-dynamic-table',
   templateUrl: './dynamic-table.component.html',
   styleUrls: ['./dynamic-table.component.scss']
 })
-export class DynamicTableComponent implements OnChanges, OnInit {
+export class DynamicTableComponent implements OnChanges, OnInit, AfterViewInit {
   @Input() data: any;
   @Output() handler: EventEmitter<any> = new EventEmitter()
 
@@ -14,7 +14,7 @@ export class DynamicTableComponent implements OnChanges, OnInit {
   isMobile: boolean;
   mainColumn: string;
   editSectionElement;
-  isActive: boolean;
+  isActive: boolean = false;
 
   rows = 1;
   columns = 1;
@@ -80,17 +80,6 @@ export class DynamicTableComponent implements OnChanges, OnInit {
     }
   }
 
-  setIsActive() {
-    this.isActive = true;
-  }
-
-  @ViewChild('table') table: ElementRef;
-  @HostListener('window:resize', ['$event'])
-  onResize(event: any) {
-    const width = this.table.nativeElement.clientWidth;
-    this.isMobile = (width / this.columns) < 200;
-  }
-
   @HostListener('document:click', ['$event'])
   onClick(event: Event) {
     if (!this.table.nativeElement.contains(event.target) && this.isActive) {
@@ -107,18 +96,35 @@ export class DynamicTableComponent implements OnChanges, OnInit {
     }
   }
 
+  setIsActive() {
+    this.isActive = true;
+  }
+
+  @ViewChild('table') table: ElementRef;
+  @HostListener('window:resize', ['$event'])
+  onResize(event: any) {
+    const width = this.table.nativeElement.clientWidth;
+    this.isMobile = (width / this.columns) < 200;
+  }
+
   setData = () => {
     this.heads = this.data.heads || ['text 1'];
     this.mainColumn = this.heads[0];
+    if (this.data.heads.length > 1) {
+      this.activeColumn = this.heads[1];
+    }
     this.tableData = this.data.tableData || [{ 'text 1' : '1.1. Text' }];
     this.rows = this.tableData.length;
     this.columns = Object.keys(this.tableData[0]).length;
   }
 
   ngOnChanges() {
+    this.setData();
+  }
+
+  ngAfterViewInit() {
     const width = document.querySelector('.app-dynamic-table').clientWidth;
     this.isMobile = (width / this.columns) < 200;
-    this.setData();
   }
 
   ngOnInit() {

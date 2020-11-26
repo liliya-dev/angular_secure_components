@@ -1,6 +1,6 @@
 <div class="app-customized-element">
   <div *ngIf="componentsList.length">
-    <div *ngFor="let component of componentsList; let i = index;">
+    <div *ngFor="let component of componentsList; let i = index; trackBy: indexTracker">
       <div 
         (mouseenter)="setActiveBlockNumber(i)"
         (mouseleave)="setActiveBlockNumber(-1)"
@@ -43,3 +43,5 @@
     </div>
   </div>
 </div>
+
+

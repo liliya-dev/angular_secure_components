@@ -47,7 +47,7 @@ export class DynamicListComponent implements OnInit, OnChanges {
     }
   }
 
-  indexTracker(index: number, value: any) {
+  indexTracker(index, id) {
     return index;
   }
 
@@ -57,7 +57,6 @@ export class DynamicListComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges() {
-
     this.setData();
   }
 
