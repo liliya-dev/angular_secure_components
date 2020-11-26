@@ -22,13 +22,13 @@ interface Countries {
 }
 
 @Component({
-  selector: 'app-rounded-chart',
-  templateUrl: './rounded-chart.component.html',
-  styleUrls: ['./rounded-chart.component.scss'],
+  selector: 'app-map-chart',
+  templateUrl: './map-chart.component.html',
+  styleUrls: ['./map-chart.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
 
-export class RoundedChartComponent implements OnInit, OnChanges {
+export class MapChartComponent implements OnInit, OnChanges {
   @Input() countriesData: Countries;
   activeCountry = '';
   chart;
@@ -67,6 +67,8 @@ export class RoundedChartComponent implements OnInit, OnChanges {
         this.polygonSeries.include = [...EuropeCodes];
         this.polygonSeries.data = [...this.countriesData.europe];
         this.tipsData = [...this.countriesData.europe];
+        this.chart.deltaLongitude = -120;
+        this.chart.homeZoomLevel = 1.3;
       break;
       case 'Asia': 
         this.polygonSeries.include = [...AsiaCodes];
@@ -89,6 +91,7 @@ export class RoundedChartComponent implements OnInit, OnChanges {
         this.polygonSeries.data = [...this.countriesData.australia];
         this.tipsData = [...this.countriesData.australia];
         this.chart.deltaLongitude = -160;
+        this.chart.homeZoomLevel = 2;
       break;
       case 'Africa': 
         this.polygonSeries.include = [...AfricaCodes];

@@ -1,5 +1,5 @@
 import { Meta, moduleMetadata, Story } from '@storybook/angular';
-import { RoundedChartComponent } from './rounded-chart.component';
+import { MapChartComponent } from './map-chart.component';
 import { NgApexchartsModule } from "ng-apexcharts";
 import { SelectInputWithInitialValueComponent } from '../../inputs/select-input/select-input-with-initial-value/select-input-with-initial-value.component';
 import { NgSelectModule } from '@ng-select/ng-select';
@@ -14,7 +14,7 @@ export default {
   decorators: [
     moduleMetadata({
       declarations: [
-        RoundedChartComponent,
+        MapChartComponent,
         SelectInputWithInitialValueComponent
       ],
       providers: [],
@@ -25,8 +25,8 @@ export default {
 } as Meta;
 
 
-const Template: Story<RoundedChartComponent> = (args: RoundedChartComponent) => ({
-  component: RoundedChartComponent,
+const Template: Story<MapChartComponent> = (args: MapChartComponent) => ({
+  component: MapChartComponent,
   props: args,
 });
 

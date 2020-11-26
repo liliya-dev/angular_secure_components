@@ -90,7 +90,7 @@ import { DynamicTextComponent } from './atoms/text/dynamic-text/dynamic-text.com
 import { DynamicSectionsListComponent } from './organisms/dynamic-sections-list/dynamic-sections-list.component';
 import { LinearChartComponent } from './atoms/charts/linear-chart/linear-chart.component';
 import { ColumnChartComponent } from './atoms/charts/column-chart/column-chart.component';
-import { RoundedChartComponent } from './atoms/charts/rounded-chart/rounded-chart.component';
+import { MapChartComponent } from './atoms/charts/rounded-chart/map-chart.component';
 
 
 PlotlyModule.plotlyjs = PlotlyJS;
@@ -184,7 +184,7 @@ PlotlyModule.plotlyjs = PlotlyJS;
     DynamicSectionsListComponent,
     LinearChartComponent,
     ColumnChartComponent,
-    RoundedChartComponent,
+    MapChartComponent,
   ],
   imports: [
     ColorSketchModule,
