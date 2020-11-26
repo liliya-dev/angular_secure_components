@@ -90,11 +90,10 @@ import { DynamicTextComponent } from './atoms/text/dynamic-text/dynamic-text.com
 import { DynamicSectionsListComponent } from './organisms/dynamic-sections-list/dynamic-sections-list.component';
 import { LinearChartComponent } from './atoms/charts/linear-chart/linear-chart.component';
 import { ColumnChartComponent } from './atoms/charts/column-chart/column-chart.component';
-import { MapChartComponent } from './atoms/charts/rounded-chart/map-chart.component';
-
+import { MapChartComponent } from './atoms/charts/map-chart/map-chart.component';
+import { RoundChartComponent } from './atoms/charts/round-chart/round-chart.component';
 
 PlotlyModule.plotlyjs = PlotlyJS;
-
 
 @NgModule({
   entryComponents: [
@@ -185,6 +184,7 @@ PlotlyModule.plotlyjs = PlotlyJS;
     LinearChartComponent,
     ColumnChartComponent,
     MapChartComponent,
+    RoundChartComponent,
   ],
   imports: [
     ColorSketchModule,

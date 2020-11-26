@@ -4,10 +4,7 @@ import { NgApexchartsModule } from "ng-apexcharts";
 import { SelectInputWithInitialValueComponent } from '../../inputs/select-input/select-input-with-initial-value/select-input-with-initial-value.component';
 import { NgSelectModule } from '@ng-select/ng-select';
 
-
-const props = {
-  percent: { control: 'array' },
-};
+const props = {};
 
 export default {
   title: 'Atoms/Charts',
@@ -23,7 +20,6 @@ export default {
   ],
   argTypes: props,
 } as Meta;
-
 
 const Template: Story<MapChartComponent> = (args: MapChartComponent) => ({
   component: MapChartComponent,
