@@ -1,4 +1,5 @@
 import { Component, ElementRef, HostListener, Input, OnChanges, OnInit, ViewChild } from '@angular/core';
+import { getRandomColor } from './helpers';
 
 @Component({
   selector: 'app-column-chart',
@@ -7,6 +8,7 @@ import { Component, ElementRef, HostListener, Input, OnChanges, OnInit, ViewChil
 })
 export class ColumnChartComponent implements OnInit, OnChanges {
   @Input() categories: string[];
+  @Input() colorsFromUser: string[];
   @Input() data: number[];
   @Input() maxValue: number;
   @Input() chartHeight: number;
@@ -55,6 +57,13 @@ export class ColumnChartComponent implements OnInit, OnChanges {
   }
 
   setStartValues = () => {
+    if (!this.colorsFromUser && this.data.length > this.colors.length) {
+      const updatedColorsList = [];
+      for (let i = 0; i < this.data.length; i++) {
+        updatedColorsList.push(getRandomColor());
+      }
+      this.colors = updatedColorsList;
+    }
     const minColumnsNumber = Math.floor((document.querySelector('.chart-column').clientWidth - 66) / this.columnWidth);
     this.rows = this.maxValue / this.step;
     this.columns = this.data.length > minColumnsNumber ? this.data.length : minColumnsNumber;

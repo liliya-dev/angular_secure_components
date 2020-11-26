@@ -1,35 +1,38 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, OnChanges } from '@angular/core';
 import Chart from 'chart.js';
+import { getRandomColor } from './helpers';
 
+
+// created new chart type with rounded ends based on Chart js
 Chart.defaults.RoundedDoughnut = Chart.helpers.clone(Chart.defaults.doughnut);
 Chart.controllers.RoundedDoughnut = Chart.controllers.doughnut.extend({
-    draw: function(ease) {
-      const ctx = this.chart.ctx;
-      const easingDecimal = ease || 1;
-      const arcs = this.getMeta().data;
-      Chart.helpers.each(arcs, function(arc, i) {
-          arc.transition(easingDecimal).draw();
-          const pArc = arcs[i === 0 ? arcs.length - 1 : i - 1];
-          const pColor = pArc._view.backgroundColor;
-          const vm = arc._view;
-          const radius = (vm.outerRadius + vm.innerRadius) / 2;
-          const thickness = (vm.outerRadius - vm.innerRadius) / 2;
-          const startAngle = Math.PI - vm.startAngle - Math.PI / 2;
-          const angle = Math.PI - vm.endAngle - Math.PI / 2;
+  draw: function(ease) {
+    const ctx = this.chart.ctx;
+    const easingDecimal = ease || 1;
+    const arcs = this.getMeta().data;
+    Chart.helpers.each(arcs, function(arc, i) {
+        arc.transition(easingDecimal).draw();
+        const pArc = arcs[i === 0 ? arcs.length - 1 : i - 1];
+        const pColor = pArc._view.backgroundColor;
+        const vm = arc._view;
+        const radius = (vm.outerRadius + vm.innerRadius) / 2;
+        const thickness = (vm.outerRadius - vm.innerRadius) / 2;
+        const startAngle = Math.PI - vm.startAngle - Math.PI / 2;
+        const angle = Math.PI - vm.endAngle - Math.PI / 2;
 
-          ctx.save();
-          ctx.translate(vm.x, vm.y);
-          ctx.fillStyle = i === 0 ? vm.backgroundColor : pColor;
-          ctx.beginPath();
-          ctx.arc(radius * Math.sin(startAngle), radius * Math.cos(startAngle), thickness, 0, 2 * Math.PI);
-          ctx.fill();
-          ctx.fillStyle = vm.backgroundColor;
-          ctx.beginPath();
-          ctx.arc(radius * Math.sin(angle), radius * Math.cos(angle), thickness, 0, 2 * Math.PI);
-          ctx.fill();
-          ctx.restore();
-      });
-    }
+        ctx.save();
+        ctx.translate(vm.x, vm.y);
+        ctx.fillStyle = i === 0 ? vm.backgroundColor : pColor;
+        ctx.beginPath();
+        ctx.arc(radius * Math.sin(startAngle), radius * Math.cos(startAngle), thickness, 0, 2 * Math.PI);
+        ctx.fill();
+        ctx.fillStyle = vm.backgroundColor;
+        ctx.beginPath();
+        ctx.arc(radius * Math.sin(angle), radius * Math.cos(angle), thickness, 0, 2 * Math.PI);
+        ctx.fill();
+        ctx.restore();
+    });
+  }
 });
 
 interface Data {
@@ -42,19 +45,31 @@ interface Data {
   templateUrl: './round-chart.component.html',
   styleUrls: ['./round-chart.component.scss']
 })
-export class RoundChartComponent implements OnInit {
+export class RoundChartComponent implements OnInit, OnChanges {
   @Input() data: Data[];
+  @Input() colors: string[];
   @Input() addWord: string;
 
   isTipVisible: boolean = false;
   values: number[];
-  colorsList: string[] = ['#9ED0E0', '#612C83', '#509AAF', '#F8BD5A', '#FF9F68', '#645FC'];
+  colorsList: string[] = ['#9ED0E0', '#612C83', '#509AAF', '#F8BD5A', '#FF9F68', '#645FC8'];
   mainValue: number;
   mainLabel: string;
   tipsTop: number = 0;
   tipsLeft : number= 0;
   
   createChart() {
+    if(!this.colors && !(this.colorsList.length >= this.data.length) ) {
+      const updatedColorsList = [];
+      for (let i = 0; i < this.data.length; i++) {
+        updatedColorsList.push(getRandomColor());
+      }
+      this.colorsList = updatedColorsList;
+    }
+    this.values = this.data.map((item) => item.value);
+    this.mainValue = this.values[0];
+    this.mainLabel = this.data[0].title;
+
     const ctx = <HTMLCanvasElement>document.querySelector('.donut-rounded-chart__canvas')
     const passPropsToUpdateMainValue = (index) => {
       this.isTipVisible = true;
@@ -104,10 +119,11 @@ export class RoundChartComponent implements OnInit {
     this.tipsLeft = left - 110;
   }
 
+  ngOnChanges() {
+    this.createChart();
+  }
+
   ngOnInit(): void {
-    this.values = this.data.map((item) => item.value);
-    this.mainValue = this.values[0];
-    this.mainLabel = this.data[0].title;
     this.createChart();
   }
 }

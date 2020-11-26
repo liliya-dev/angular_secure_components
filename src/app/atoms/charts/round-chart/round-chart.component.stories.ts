@@ -34,7 +34,7 @@ Round.args = {
     { title: 'Smartphone', value: 2173 },
     { title: 'Desktop', value: 1514 },
     { title: 'Tablet', value: 918 },
-    { title: 'Other', value: 1934 }
+    { title: 'Other', value: 1934 },
   ],
   addWord: 'users'
 };
