@@ -22,19 +22,19 @@
             <app-small-light-add-button
               [title]="'Add table'"
               [classes]="'app-small-light-add-button fs-14-gramm-400-light'"
-              (click)="addTable(i)"
+              (click)="addItem(i, 'table')"
             >
             </app-small-light-add-button>
             <app-small-light-add-button
               [title]="'Add a paragraph'"
               [classes]="'app-small-light-add-button fs-14-gramm-400-light'"
-              (click)="addText(i)"
+              (click)="addItem(i, 'text')"
             >
             </app-small-light-add-button>
             <app-small-light-add-button
               [title]="'Add list'"
               [classes]="'app-small-light-add-button fs-14-gramm-400-light'"
-              (click)="addList(i)"
+              (click)="addItem(i, 'list')"
             >
             </app-small-light-add-button>
           </div>

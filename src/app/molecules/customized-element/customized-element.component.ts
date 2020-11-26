@@ -1,18 +1,7 @@
 import { Component, EventEmitter, Input, ViewEncapsulation, OnInit, OnChanges, Output } from '@angular/core';
 import { AddItem } from './add-dynamic-component/add-item';
 import { AddService } from './add-dynamic-component/add.service';
-
-const standartListData =  {
-  listTitle: 'Put list title',
-  titles: ['Type text here']
-}
-
-const standartTableData = {
-  heads: ['text 1'],
-  tableData: [{ 'text 1' : '1.1. Text', }, { 'text 1' : '1.1. Text', }]
-}
-
-const standartTextData = { title: 'Your new paragraph' }
+import { getInitialDataByType, getEditedDataByType } from './helpers';
 
 @Component({
   selector: 'app-customized-element',
@@ -41,31 +30,13 @@ export class CustomizedElementComponent implements OnInit, OnChanges {
 
   editSectionElement(props) {
     if (props.sectionId === this.sectionId) {
-      let newAdItem;
-      if (props.type === 'table') {
-        newAdItem = this.addService.getAds('table', {
-          heads: props.heads,
-          tableData: props.tableData,
-          sectionId: this.sectionId,
-          sectionElementId: props.elementId
-        });
-        this.callEditSection(props.elementId, { heads: props.heads, tableData: props.tableData }) 
-      } else if (props.type === 'list') {
-        newAdItem = this.addService.getAds('list', {
-          listTitle: props.listTitle,
-          titles: props.titles,
-          sectionId: this.sectionId,
-          sectionElementId: props.elementId
-        });
-        this.callEditSection(props.elementId, { listTitle: props.listTitle, titles: props.titles }) 
-      } else if (props.type === 'text') {
-        newAdItem = this.addService.getAds('text', {
-          title: props.title,
-          sectionId: this.sectionId,
-          sectionElementId: props.elementId
-        });
-        this.callEditSection(props.elementId, { title: props.title }) 
-      }
+      const editedData = getEditedDataByType(props.type, props)
+      const newAdItem = this.addService.getAds(props.type, {
+        ...editedData,
+        sectionId: this.sectionId,
+        sectionElementId: props.elementId
+      });
+      this.callEditSection(props.elementId, { ...editedData }) 
       this.componentsList[props.elementId] = newAdItem;
     }
   }
@@ -97,38 +68,16 @@ export class CustomizedElementComponent implements OnInit, OnChanges {
     })
   }
 
-  addTable(index: number) {
-    const newAdItem = this.addService.getAds('table', 
+  addItem(index: number, type: string) {
+    let initialData = {...getInitialDataByType(type)};
+    const newAdItem = this.addService.getAds(type, 
     {
-      heads: ['text 1'],
-      tableData: [{ 'text 1' : '1.1. Text', }, { 'text 1' : '1.1. Text', }],
+      ...initialData,
       sectionId: this.sectionId,
       sectionElementId: index + 1
     });
     this.componentsList.splice(index + 1, 0, newAdItem);
-    this.callAddComponentToSection(index, 'table')
-  }
-
-  addList(index: number) {
-    const newAdItem = this.addService.getAds('list', 
-    { 
-      listTitle: 'Put list title',
-      titles: ['Type text here'],
-      sectionId: this.sectionId,
-      sectionElementId: index + 1
-    });
-    this.componentsList.splice(index + 1, 0, newAdItem);
-    this.callAddComponentToSection(index, 'list')
-  }
-
-  addText(index: number) {
-    const newAdItem = this.addService.getAds('text', 
-    { ...standartTextData,
-      sectionId: this.sectionId,
-      sectionElementId: index + 1
-    });
-    this.componentsList.splice(index + 1, 0, newAdItem);
-    this.callAddComponentToSection(index, 'text')
+    this.callAddComponentToSection(index, type)
   }
 
   deleteComponent(index: number) {
@@ -139,7 +88,8 @@ export class CustomizedElementComponent implements OnInit, OnChanges {
     const initialComponentsList = this.initialState.map(
       (component, index) => {
         return this.addService.getAds(component.type, 
-          {...component.dataFromParent, 
+          {
+            ...component.dataFromParent, 
             sectionId: this.sectionId,
             sectionElementId: index
           })

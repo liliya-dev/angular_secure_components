@@ -38,6 +38,7 @@ export class DynamicSectionsListComponent implements OnInit {
   editSection = (props) => {
     const indexOfSectionToEdit = this.sections.findIndex(section => section.sectionId === props.sectionId)
     this.sections[indexOfSectionToEdit].initialState[props.sectionElementId].dataFromParent = props.data;
+    console.log(this.sections)
   }
 
   addComponentToSection = ({sectionId, index, type}) => {
