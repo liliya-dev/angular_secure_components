@@ -54,6 +54,17 @@
   line-height: 130%;
 }
 
+.fs-h1--bold-gradient {
+  font-family: 'Gramatica Bold', 'open-sans';
+  font-size: 42px;
+  line-height: 120%;
+  text-transform: capitalize;
+  background: var(--success-grad-light);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 .fs-h2 {
   font-family: 'Gramatica Regular', 'open-sans';
   font-size: 38px;
@@ -77,6 +88,7 @@
   text-transform: capitalize;
   background: var(--success-grad-light);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -103,6 +115,7 @@
   text-transform: uppercase;
   background: var(--success-grad-light);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -251,6 +264,18 @@
   font-weight: 400;
   font-size: 12px;
   line-height: 100%;
+}
+
+.fs-12-gramm-400-gradient {
+  font-family: 'Gramatica Bold', 'open-sans';
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 100%;
+  text-transform: uppercase;
+  background: var(--success-grad-light);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .fs-12-sofia-300 {

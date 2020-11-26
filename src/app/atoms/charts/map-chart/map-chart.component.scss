@@ -52,8 +52,7 @@
       display: flex;
       align-items: center;
     }
-
-
+    
     &-color {
       display: block;
       width: 6px;
@@ -78,11 +77,3 @@
     cursor: pointer;
   }
 }
-
-// @media screen and (max-width: 750px) {
-//   .map-chart {
-//     &__input-container {
-//       width: 100%
-//     }
-//   }
-// }
