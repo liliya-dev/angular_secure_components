@@ -9,7 +9,7 @@
           <app-add-dynamic (handler)="editSectionElement($event)" [component]="component"></app-add-dynamic>
           <button 
             type="button"
-            class="app-customized-element__button-delete"
+            [ngClass]="component.component.name === 'DynamicTableComponent'?'app-customized-element__button-delete delete-table': 'app-customized-element__button-delete'"
             (click)="deleteComponent(i)"
             *ngIf="activeBlockNumber === i"
           >

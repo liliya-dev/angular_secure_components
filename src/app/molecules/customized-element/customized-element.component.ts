@@ -17,6 +17,7 @@ export class CustomizedElementComponent implements OnInit, OnChanges {
   @Output() setNoHoverElement?: EventEmitter<any> = new EventEmitter();
   @Output() editSection?: EventEmitter<any> = new EventEmitter();
   @Output() addComponentToSection?: EventEmitter<any> = new EventEmitter();
+  @Output() deleteComponentFromSection?: EventEmitter<any> = new EventEmitter()
 
   componentsList: AddItem[] = [];
   isVisibleButtonsBlock = false;
@@ -24,8 +25,35 @@ export class CustomizedElementComponent implements OnInit, OnChanges {
 
   constructor(private addService: AddService) {}
 
+  /// adding buttons during hover
   setIsVisibleButtonsBlock = (value: boolean) => {
     this.isVisibleButtonsBlock = value;
+  }
+
+  setActiveBlockNumber = (index: number) => {
+    this.activeBlockNumber = index;
+    if (index !== -1) {
+      this.setHoverElement.emit();
+    } else {
+      this.setNoHoverElement.emit();
+    }
+  }
+
+  /// managing items(tables. lists, texts) from current component
+  addItem(index: number, type: string) {
+    let initialData = { ...getInitialDataByType(type) };
+    const newAdItem = this.addService.getAds(type, {
+      ...initialData,
+      sectionId: this.sectionId,
+      sectionElementId: index + 1
+    });
+    this.componentsList.splice(index + 1, 0, newAdItem);
+    this.callAddComponentToSection(index, type)
+  }
+
+  deleteComponent(index: number) {
+    this.componentsList.splice(index, 1);
+    this.deleteComponentFromSection.emit({ index: index, sectionId: this.sectionId })
   }
 
   editSectionElement(props) {
@@ -41,16 +69,7 @@ export class CustomizedElementComponent implements OnInit, OnChanges {
     }
   }
 
-  setActiveBlockNumber = (index: number) => {
-    this.activeBlockNumber = index;
-    if (index !== -1) {
-      this.setHoverElement.emit();
-    } else {
-      this.setNoHoverElement.emit();
-    }
-  }
-
-  /// if you want to pass props to sections List
+  /// if you want to pass props to sections List. managing items(tables. lists, texts) from parent component
   callAddComponentToSection(index, type) {
     this.addComponentToSection.emit({
       sectionId: this.sectionId,
@@ -59,7 +78,6 @@ export class CustomizedElementComponent implements OnInit, OnChanges {
     })
   }
 
-  /// if you want to pass props to sections List
   callEditSection (elementId, data) {
     this.editSection.emit({
       sectionId: this.sectionId,
@@ -68,33 +86,18 @@ export class CustomizedElementComponent implements OnInit, OnChanges {
     })
   }
 
-  addItem(index: number, type: string) {
-    let initialData = {...getInitialDataByType(type)};
-    const newAdItem = this.addService.getAds(type, 
-    {
-      ...initialData,
-      sectionId: this.sectionId,
-      sectionElementId: index + 1
-    });
-    this.componentsList.splice(index + 1, 0, newAdItem);
-    this.callAddComponentToSection(index, type)
-  }
-
-  deleteComponent(index: number) {
-    this.componentsList.splice(index, 1);
-  }
-  
+  /// setting initial state of component
   setInitialStateOfComponent() {
     const initialComponentsList = this.initialState.map(
       (component, index) => {
-        return this.addService.getAds(component.type, 
-          {
+        return this.addService.getAds(component.type, {
             ...component.dataFromParent, 
             sectionId: this.sectionId,
             sectionElementId: index
           })
       });
     this.componentsList = [...initialComponentsList];
+    console.log(this.componentsList)
   }
 
   ngOnInit(): void {

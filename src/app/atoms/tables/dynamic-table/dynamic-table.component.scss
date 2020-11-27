@@ -35,7 +35,7 @@
 
   &__add-column-button {
     position: absolute;
-    right: 16px;
+    right: 32px;
     top: 7px;
   }
 
@@ -85,7 +85,8 @@
 }
 
 .next {
-  right: 55px;
+  right: 75px;
+  
   &:after {
     content: '';
     position: absolute;

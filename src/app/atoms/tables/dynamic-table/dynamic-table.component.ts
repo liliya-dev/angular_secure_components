@@ -80,31 +80,30 @@ export class DynamicTableComponent implements OnChanges, OnInit, AfterViewInit {
     }
   }
 
-  @HostListener('document:click', ['$event'])
-  onClick(event: Event) {
-    if (!this.table.nativeElement.contains(event.target) && this.isActive) {
-      this.handler.emit(
-        {
-          sectionId: this.data.sectionId,
-          elementId: this.data.sectionElementId,
-          heads: this.heads,
-          tableData: this.tableData,
-          type: 'table'
-        }
-      )
-      this.isActive = false;
-    }
-  }
-
-  setIsActive() {
-    this.isActive = true;
-  }
 
   @ViewChild('table') table: ElementRef;
   @HostListener('window:resize', ['$event'])
   onResize(event: any) {
     const width = this.table.nativeElement.clientWidth;
     this.isMobile = (width / this.columns) < 200;
+  }
+
+  @HostListener('document:click', ['$event'])
+  onClick(event: Event) {
+    if (!this.table.nativeElement.contains(event.target) && this.isActive) {
+      this.handler.emit({
+        sectionId: this.data.sectionId,
+        elementId: this.data.sectionElementId,
+        heads: this.heads,
+        tableData: this.tableData,
+        type: 'table'
+      })
+      this.isActive = false;
+    }
+  }
+
+  setIsActive() {
+    this.isActive = true;
   }
 
   setData = () => {
@@ -118,7 +117,7 @@ export class DynamicTableComponent implements OnChanges, OnInit, AfterViewInit {
     this.columns = Object.keys(this.tableData[0]).length;
   }
 
-  ngOnChanges() {
+  ngOnInit() {
     this.setData();
   }
 
@@ -127,7 +126,7 @@ export class DynamicTableComponent implements OnChanges, OnInit, AfterViewInit {
     this.isMobile = (width / this.columns) < 200;
   }
 
-  ngOnInit() {
+  ngOnChanges() {
     this.setData();
   }
 }

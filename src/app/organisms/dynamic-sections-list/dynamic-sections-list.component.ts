@@ -38,10 +38,9 @@ export class DynamicSectionsListComponent implements OnInit {
   editSection = (props) => {
     const indexOfSectionToEdit = this.sections.findIndex(section => section.sectionId === props.sectionId)
     this.sections[indexOfSectionToEdit].initialState[props.sectionElementId].dataFromParent = props.data;
-    console.log(this.sections)
   }
 
-  addComponentToSection = ({sectionId, index, type}) => {
+  addComponentToSection = ({ sectionId, index, type }) => {
     let initialData;
     switch(type) {
       case 'text': 
@@ -58,6 +57,13 @@ export class DynamicSectionsListComponent implements OnInit {
     const indexOfSectionToEdit = this.sections.findIndex(section => section.sectionId === sectionId)
     const newState = [...this.sections[indexOfSectionToEdit].initialState];
     newState.splice(index + 1, 0, dataOfNewComponent)
+    this.sections[indexOfSectionToEdit].initialState  = [...newState]
+  }
+
+  deleteComponentFromSection = ({ index, sectionId }) => {
+    const indexOfSectionToEdit = this.sections.findIndex(section => section.sectionId === sectionId);
+    const newState = [...this.sections[indexOfSectionToEdit].initialState];
+    newState.splice(index, 1)
     this.sections[indexOfSectionToEdit].initialState  = [...newState]
   }
 
@@ -104,5 +110,6 @@ export class DynamicSectionsListComponent implements OnInit {
     if (this.sections.length === 0) {
       this.addSection(0);
     }
+    console.log(this.sections)
   }
 }

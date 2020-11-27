@@ -34,6 +34,7 @@
         </p>
         <app-customized-element 
           (addComponentToSection)="addComponentToSection($event)"
+          (deleteComponentFromSection)="deleteComponentFromSection($event)"
           (editSection)="editSection($event)"
           (setHoverElement)="setHoverElement()"
           (setNoHoverElement)="setNoHoverElement()"
@@ -48,19 +49,19 @@
           <app-small-light-add-button
             [title]="'Add table'"
             [classes]="'app-small-light-add-button fs-14-gramm-400-light'"
-            (click)="addTable(i)"
+            (click)="addComponentToSection({ sectionId:section.sectionId, index:section.initialState.length-1, type:'table' })"
           >
           </app-small-light-add-button>
           <app-small-light-add-button
             [title]="'Add a paragraph'"
             [classes]="'app-small-light-add-button fs-14-gramm-400-light'"
-            (click)="addText(i)"
+            (click)="addComponentToSection({ sectionId:section.sectionId, index:section.initialState.length-1, type:'text' })"
           >
           </app-small-light-add-button>
           <app-small-light-add-button
             [title]="'Add list'"
             [classes]="'app-small-light-add-button fs-14-gramm-400-light'"
-            (click)="addList(i)"
+            (click)="addComponentToSection({ sectionId:section.sectionId, index:section.initialState.length-1, type:'list' })"
           >
           </app-small-light-add-button>
         </div>

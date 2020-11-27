@@ -32,8 +32,13 @@
     border: none;
     position: absolute;
     top: calc(50% - 21px);
-    right: -2%;
-    z-index: 2;
+    right: 2%;
+
+    z-index: 20;
+    &.delete-table {
+      top: 22px;
+      right: 25px;
+    }
   }
 
   &__title {
