@@ -29,17 +29,24 @@ export class ColumnChartComponent implements OnInit, OnChanges {
   ];
 
   @ViewChild('list') list: ElementRef;
+  @ViewChild('tips') tips: ElementRef;
   @ViewChild('container') container: ElementRef;
 
   showTips = (event, index) => {
     this.tipsLeft = index * this.columnWidth + 47 - this.list.nativeElement.scrollLeft;
     const height = +event.target.style.height.slice(0, -2);
-    this.tipsBottom = height + 42;
+    this.tipsBottom = height / 2 + 32;
     this.isTipVisible = true;
   }
 
-  hideTips = () => {
-    this.isTipVisible = false;
+  @HostListener('mouseover', ['$event'])
+  onMouseOver(event: any) {
+    const element: HTMLElement = event.target;
+    if (this.tips) {
+      if (!(element.classList.contains('chart-column__value') || this.tips.nativeElement.contains(event.target))) {
+        this.isTipVisible = false;
+      }
+    }
   }
 
   @HostListener('window:resize', ['$event'])

@@ -92,6 +92,7 @@ import { LinearChartComponent } from './atoms/charts/linear-chart/linear-chart.c
 import { ColumnChartComponent } from './atoms/charts/column-chart/column-chart.component';
 import { MapChartComponent } from './atoms/charts/map-chart/map-chart.component';
 import { RoundChartComponent } from './atoms/charts/round-chart/round-chart.component';
+import { TextEditorComponent } from './atoms/text-editor/text-editor.component';
 
 PlotlyModule.plotlyjs = PlotlyJS;
 
@@ -185,6 +186,7 @@ PlotlyModule.plotlyjs = PlotlyJS;
     ColumnChartComponent,
     MapChartComponent,
     RoundChartComponent,
+    TextEditorComponent,
   ],
   imports: [
     ColorSketchModule,

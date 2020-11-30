@@ -23,7 +23,6 @@
         <li class="chart-column__item" *ngFor="let value of data; let i = index;">
           <div 
             (mouseenter)="showTips($event, i)"
-            (mouseleave)="hideTips()"
             class="chart-column__value"
             [ngStyle]="{ 'background-color': colors[i], 'height': chartHeight*value/maxValue+'px', 'width': columnWidth-16+'px' }"
           >
