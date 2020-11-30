@@ -1,4 +1,4 @@
-<div class="app-customized-element">
+<div class="app-customized-element" #customizedElement>
   <div *ngIf="componentsList.length">
     <div *ngFor="let component of componentsList; let i = index; trackBy: indexTracker">
       <div 
@@ -17,6 +17,7 @@
           </button>
           <div
             class="app-customized-element__buttons-container"
+            [ngStyle]="isMobile && {'justify-content': 'space-around'}"
             *ngIf="activeBlockNumber === i"
           >
             <app-small-light-add-button
@@ -26,7 +27,7 @@
             >
             </app-small-light-add-button>
             <app-small-light-add-button
-              [title]="'Add a paragraph'"
+              [title]="'Add paragraph'"
               [classes]="'app-small-light-add-button fs-14-gramm-400-light'"
               (click)="addItem(i, 'text')"
             >

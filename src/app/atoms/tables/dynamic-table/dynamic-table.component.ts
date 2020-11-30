@@ -50,7 +50,7 @@ export class DynamicTableComponent implements OnChanges, OnInit, AfterViewInit {
     })
     this.activeColumn = this.heads[1];
     const width = document.querySelector('.app-dynamic-table').clientWidth;
-    this.isMobile = (width / this.columns) < 200;
+    this.isMobile = (width / this.columns) < 250;
   }
 
   editHead = (event, headTitle) => {
@@ -85,7 +85,7 @@ export class DynamicTableComponent implements OnChanges, OnInit, AfterViewInit {
   @HostListener('window:resize', ['$event'])
   onResize(event: any) {
     const width = this.table.nativeElement.clientWidth;
-    this.isMobile = (width / this.columns) < 200;
+    this.isMobile = (width / this.columns) < 250;
   }
 
   @HostListener('document:click', ['$event'])
@@ -123,7 +123,7 @@ export class DynamicTableComponent implements OnChanges, OnInit, AfterViewInit {
 
   ngAfterViewInit() {
     const width = document.querySelector('.app-dynamic-table').clientWidth;
-    this.isMobile = (width / this.columns) < 200;
+    this.isMobile = (width / this.columns) < 250;
   }
 
   ngOnChanges() {

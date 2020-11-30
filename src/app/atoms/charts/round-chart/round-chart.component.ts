@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, OnChanges } from '@angular/core';
+import { Component, OnInit, Input, OnChanges, HostListener, ElementRef, ViewChild, AfterViewInit } from '@angular/core';
 import Chart from 'chart.js';
 import { getRandomColor } from './helpers';
 
@@ -45,7 +45,7 @@ interface Data {
   templateUrl: './round-chart.component.html',
   styleUrls: ['./round-chart.component.scss']
 })
-export class RoundChartComponent implements OnInit, OnChanges {
+export class RoundChartComponent implements OnInit, OnChanges, AfterViewInit {
   @Input() data: Data[];
   @Input() colors: string[];
   @Input() addWord: string;
@@ -56,7 +56,15 @@ export class RoundChartComponent implements OnInit, OnChanges {
   mainValue: number;
   mainLabel: string;
   tipsTop: number = 0;
-  tipsLeft : number= 0;
+  tipsLeft : number = 0;
+  isMobile: boolean = false;
+
+  @ViewChild('legend') legend: ElementRef;
+  
+  @HostListener('window:resize', ['$event'])
+  onResize(event: any) {
+    this.isMobile = this.legend.nativeElement.clientWidth < 620;
+  }
   
   createChart() {
     if(!this.colors && !(this.colorsList.length >= this.data.length) ) {
@@ -117,6 +125,10 @@ export class RoundChartComponent implements OnInit, OnChanges {
   setCoordinates(top:number, left: number) {
     this.tipsTop = top - 24 - (16 * this.data.length + 8 * (this.data.length + 1)) - 10;
     this.tipsLeft = left - 110;
+  }
+
+  ngAfterViewInit() {
+    this.isMobile = this.legend.nativeElement.clientWidth < 620;
   }
 
   ngOnChanges() {

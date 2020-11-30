@@ -36,4 +36,8 @@
   &:hover {
     background: var(--asimetric-bg-color);
   }
+
+  &:active {
+    background: var(--status-bar-bg-color);
+  }
 }

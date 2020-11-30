@@ -1,9 +1,18 @@
 <div [id]="data.sectionElementId+data.sectionId" class="app-dynamic-list__container" (click)="setActive()" #dynamicContainer>
-  <input 
+  <!-- <input 
     class="app-dynamic-list__title fs-16-sofia-600"
     type="text"
     [(ngModel)]="listTitle"  
-  />
+  /> -->
+  <div class="app-dynamic-list__title-wrapper">
+    <textarea
+      autosize
+      class="app-dynamic-list__title fs-16-sofia-600"
+      [(ngModel)]="listTitle"  
+      spellcheck="false"
+    >
+    </textarea>
+  </div>
   <ul class="app-dynamic-list" #dynamicList>
     <li 
       class="app-dynamic-list__item" 

@@ -12,11 +12,18 @@
   }
 
   &__title {
+    width: calc(100% + 35px);
+    padding-right: 35px;
     margin-bottom: 18px;
     color: var(--secondary-color);
     border: none;
     background-color: transparent;
     text-transform: capitalize;
+  }
+
+  &_title-wrapper {
+    width: 100%;
+    overflow: hidden;
   }
 
   &__item {

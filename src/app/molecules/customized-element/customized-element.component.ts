@@ -1,4 +1,7 @@
-import { Component, EventEmitter, Input, ViewEncapsulation, OnInit, OnChanges, Output } from '@angular/core';
+import { 
+  Component, EventEmitter, Input, ViewEncapsulation, OnInit, OnChanges, 
+  Output, ElementRef, ViewChild, HostListener, AfterViewInit 
+} from '@angular/core';
 import { AddItem } from './add-dynamic-component/add-item';
 import { AddService } from './add-dynamic-component/add.service';
 import { getInitialDataByType, getEditedDataByType } from './helpers';
@@ -10,20 +13,28 @@ import { getInitialDataByType, getEditedDataByType } from './helpers';
   encapsulation: ViewEncapsulation.None
 })
 
-export class CustomizedElementComponent implements OnInit, OnChanges {
+export class CustomizedElementComponent implements OnInit, OnChanges, AfterViewInit {
   @Input() initialState: any[];
   @Input() sectionId: number;
   @Output() setHoverElement?: EventEmitter<any> = new EventEmitter();
   @Output() setNoHoverElement?: EventEmitter<any> = new EventEmitter();
   @Output() editSection?: EventEmitter<any> = new EventEmitter();
   @Output() addComponentToSection?: EventEmitter<any> = new EventEmitter();
-  @Output() deleteComponentFromSection?: EventEmitter<any> = new EventEmitter()
+  @Output() deleteComponentFromSection?: EventEmitter<any> = new EventEmitter();
 
   componentsList: AddItem[] = [];
   isVisibleButtonsBlock = false;
   activeBlockNumber = -1;
+  isMobile: boolean;
 
   constructor(private addService: AddService) {}
+
+  @ViewChild('customizedElement') customizedElement: ElementRef;
+  
+  @HostListener('window:resize', ['$event'])
+  onResize(event: any) {
+    this.isMobile = this.customizedElement.nativeElement.clientWidth < 500;
+  }
 
   /// adding buttons during hover
   setIsVisibleButtonsBlock = (value: boolean) => {
@@ -97,7 +108,11 @@ export class CustomizedElementComponent implements OnInit, OnChanges {
           })
       });
     this.componentsList = [...initialComponentsList];
-    console.log(this.componentsList)
+  }
+
+
+  ngAfterViewInit() {
+    this.isMobile = this.customizedElement.nativeElement.clientWidth < 500;
   }
 
   ngOnInit(): void {

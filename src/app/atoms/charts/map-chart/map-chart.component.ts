@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, OnInit, ViewEncapsulation } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, HostListener, Input, OnChanges, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
 import * as am4core from '@amcharts/amcharts4/core';
 import * as am4maps from "@amcharts/amcharts4/maps";
 import am4geodata_worldLow from "@amcharts/amcharts4-geodata/worldLow";
@@ -28,7 +28,7 @@ interface Countries {
   encapsulation: ViewEncapsulation.None
 })
 
-export class MapChartComponent implements OnInit, OnChanges {
+export class MapChartComponent implements OnInit, OnChanges, AfterViewInit {
   @Input() countriesData: Countries;
   activeCountry = '';
   chart;
@@ -39,6 +39,15 @@ export class MapChartComponent implements OnInit, OnChanges {
   tipsTop = 0;
   tipsLeft = 0;
   tipsData = [];
+  mapHeight: number;
+
+  @ViewChild('mapChart') map: ElementRef;
+  
+  @HostListener('window:resize', ['$event'])
+  onResize(event: any) {
+    const height = this.map.nativeElement.clientWidth * 0.7;
+    this.mapHeight = height > 500 ? 500 : height;
+  }
 
   createChart(region: string) {  
     this.chart = null
@@ -55,7 +64,6 @@ export class MapChartComponent implements OnInit, OnChanges {
 
     const bs = this.polygonTemplate.states.create("blur");
     bs.properties.fill = am4core.color("red");
-;
 
     switch(region) {
       case 'World': 
@@ -125,6 +133,11 @@ export class MapChartComponent implements OnInit, OnChanges {
     this.polygonTemplate.events.on("out", function(ev) {
       setIsTipsVisible(false)
     })
+  }
+
+  ngAfterViewInit() {
+    const height = this.map.nativeElement.clientWidth * 0.7;
+    this.mapHeight = height > 500 ? 500 : height;
   }
 
   ngOnChanges() {

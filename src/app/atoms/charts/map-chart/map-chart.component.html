@@ -1,11 +1,11 @@
-<div class="map-chart">
+<div class="map-chart" #mapChart>
   <div class="map-chart__input-container">
     <app-select-input-with-initial-value
       (onItemSelect)="createChart($event)"
       [items]="['World', 'Europe', 'Asia', 'South America', 'North America', 'Africa', 'Australia']"
     ></app-select-input-with-initial-value>
   </div>
-  <div class="container">
+  <div class="container" [ngStyle]="{ 'height': mapHeight+'px' }">
     <div id="chartdiv"></div>
     <div 
       *ngIf="isTipVisible" 
