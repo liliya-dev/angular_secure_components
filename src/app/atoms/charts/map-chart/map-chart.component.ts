@@ -117,7 +117,15 @@ export class MapChartComponent implements OnInit, OnChanges, AfterViewInit {
         this.activeCountry = value;
         this.isTipVisible = true;
         this.tipsTop = top - 24 - (16 * this.tipsData.length + 8 * (this.tipsData.length + 1)) - 10;
-        this.tipsLeft = left - 110;
+        if (left - 110 > 0) {
+          if (left + 110 > this.map.nativeElement.clientWidth) {
+            this.tipsLeft = this.map.nativeElement.clientWidth - 220;
+          } else {
+            this.tipsLeft = left - 110;
+          }
+        } else {
+          this.tipsLeft = 0;
+        }
       }
     }
 

@@ -56,7 +56,7 @@ export class DynamicSectionsListComponent implements OnInit {
     const dataOfNewComponent = { type, dataFromParent: initialData }
     const indexOfSectionToEdit = this.sections.findIndex(section => section.sectionId === sectionId)
     const newState = [...this.sections[indexOfSectionToEdit].initialState];
-    newState.splice(index + 1, 0, dataOfNewComponent)
+    newState.splice(index + 1, 0, dataOfNewComponent);
     this.sections[indexOfSectionToEdit].initialState  = [...newState]
   }
 

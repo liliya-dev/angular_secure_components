@@ -27,7 +27,7 @@
     </ul>
   </div>
   <div 
-    *ngIf="isTipVisible" 
+    *ngIf="isTipVisible && !isMobile" 
     class="donut-rounded-chart__tips" 
     #tips
     [ngStyle]="{ 'top': tipsTop+'px', 'left': tipsLeft+'px' }"

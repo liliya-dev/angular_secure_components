@@ -26,7 +26,7 @@ export class CustomizedElementComponent implements OnInit, OnChanges, AfterViewI
   isVisibleButtonsBlock = false;
   activeBlockNumber = -1;
   isMobile: boolean;
-
+  
   constructor(private addService: AddService) {}
 
   @ViewChild('customizedElement') customizedElement: ElementRef;
@@ -124,6 +124,7 @@ export class CustomizedElementComponent implements OnInit, OnChanges, AfterViewI
   }
 
   ngOnChanges(): void {
+    console.log('changes')
     this.setInitialStateOfComponent();
   }
 }
