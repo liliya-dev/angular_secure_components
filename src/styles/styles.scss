@@ -6,11 +6,15 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    scroll-behavior: smooth;
 }
+
+html, body { height: 100%; width: 100%; margin: 0; }
 
 body {
     font-family: 'Gramatica Regular', 'open-sans';
     font-size: 20px;
+    scroll-behavior: smooth;
 }
 
 ol, ul, li {

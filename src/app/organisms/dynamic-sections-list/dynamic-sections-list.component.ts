@@ -35,8 +35,14 @@ export class DynamicSectionsListComponent implements OnInit {
   isElementActive = false;
   constructor() { }
 
+  scrollToActive(index) {
+    const id = this.sections[index].sectionId;
+    const element: HTMLElement = document.querySelector('#id'+id);
+    element.scrollIntoView();
+  }
+
   editSection = (props) => {
-    const indexOfSectionToEdit = this.sections.findIndex(section => section.sectionId === props.sectionId)
+    const indexOfSectionToEdit = this.sections.findIndex(section => section.sectionId === props.sectionId);
     this.sections[indexOfSectionToEdit].initialState[props.sectionElementId].dataFromParent = props.data;
   }
 
@@ -47,24 +53,24 @@ export class DynamicSectionsListComponent implements OnInit {
         initialData = { title: 'Your new paragraph' };
         break;
       case 'list': 
-        initialData = { listTitle: 'Put list title', titles: ['Type text here'] };;
+        initialData = { listTitle: 'Put list title', titles: ['Type text here'] };
         break;
       case 'table': 
         initialData = { heads: ['text 1'], tableData: [{ 'text 1' : '1.1. Text', }, { 'text 1' : '1.1. Text', }] };
         break;
     }
-    const dataOfNewComponent = { type, dataFromParent: initialData }
-    const indexOfSectionToEdit = this.sections.findIndex(section => section.sectionId === sectionId)
+    const dataOfNewComponent = { type, dataFromParent: initialData };
+    const indexOfSectionToEdit = this.sections.findIndex(section => section.sectionId === sectionId);
     const newState = [...this.sections[indexOfSectionToEdit].initialState];
     newState.splice(index + 1, 0, dataOfNewComponent);
-    this.sections[indexOfSectionToEdit].initialState  = [...newState]
+    this.sections[indexOfSectionToEdit].initialState  = [...newState];
   }
 
   deleteComponentFromSection = ({ index, sectionId }) => {
     const indexOfSectionToEdit = this.sections.findIndex(section => section.sectionId === sectionId);
     const newState = [...this.sections[indexOfSectionToEdit].initialState];
-    newState.splice(index, 1)
-    this.sections[indexOfSectionToEdit].initialState  = [...newState]
+    newState.splice(index, 1);
+    this.sections[indexOfSectionToEdit].initialState  = [...newState];
   }
 
   setHoverElement = () => {
@@ -110,6 +116,5 @@ export class DynamicSectionsListComponent implements OnInit {
     if (this.sections.length === 0) {
       this.addSection(0);
     }
-    console.log(this.sections)
   }
 }

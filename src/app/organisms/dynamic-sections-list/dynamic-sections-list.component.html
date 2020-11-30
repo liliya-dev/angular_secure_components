@@ -7,7 +7,10 @@
     >
     </app-small-light-add-button>
     <ul *ngFor="let section of sections; let i = index;trackBy:indexTracker" class="app-dynamic-sections-list__titles">
-      <li [ngClass]="i===activeSection ? 'app-dynamic-sections-list__title active' : 'app-dynamic-sections-list__title'">
+      <li 
+        [ngClass]="i===activeSection ? 'app-dynamic-sections-list__title active' : 'app-dynamic-sections-list__title'"
+        (click)="scrollToActive(i)"
+      >
         {{ section.title }}
       </li>
     </ul>
@@ -18,6 +21,7 @@
       class="app-dynamic-sections-list__sections"
     >
       <li 
+        [id]="'id'+section.sectionId"
         (mouseenter)="handleHover($event, i)"
         (mouseleave)="handleHover($event, -1)"
         class="app-dynamic-sections-list__section"
