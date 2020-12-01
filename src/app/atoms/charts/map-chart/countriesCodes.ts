@@ -1,4 +1,3 @@
-
 export const EuropeCodes = ["AD", "AL", "AM", "AT", "AX", "AZ", "BA", "BE", "BG", "BY", "CH", "CY", "CZ", "DE", 
 "DK", "EE", "ES", "FI", "FO", "FR", "GB", "GB-CHA", "GE", "GG", "GI", "GR", "HR", "HU", "IE", "IM", "IS", 
 "IT", "JE", "LI", "LT", "LU", "LV", "MC", "MD", "ME", "MK", "MT", "NL", "NO", "PL", "PT", "RO", "RS",

@@ -57,12 +57,8 @@ export class LinearChartComponent  implements OnChanges, OnInit{
     grid: {
       borderColor: "rgba(1, 25, 73, 0.1)",
       position: 'back',
-      xaxis: {
-        lines: { show: true }
-      },
-      yaxis: {
-        lines: { show: true }
-      },
+      xaxis: { lines: { show: true }},
+      yaxis: { lines: { show: true }},
     },
     markers: {
       size: 0,

@@ -5,7 +5,7 @@
       [items]="['World', 'Europe', 'Asia', 'South America', 'North America', 'Africa', 'Australia']"
     ></app-select-input-with-initial-value>
   </div>
-  <div class="container" [ngStyle]="{ 'height': mapHeight+'px' }">
+  <div class="map-chart__container" [ngStyle]="{ 'height': mapHeight+'px' }">
     <div id="chartdiv"></div>
     <div 
       *ngIf="isTipVisible" 
@@ -16,7 +16,7 @@
       <ul class="map-chart__tips-list">
         <li class="map-chart__tips-item" *ngFor="let item of tipsData; let i=index">
           <div class="map-chart__tips-text fs-12-sofia-300">
-            <div class="map-chart__tips-color" [ngStyle]="{ 'background-color': item.id ===  activeCountry ? 'green' : 'transparent'}"></div>
+            <div class="map-chart__tips-color" [ngStyle]="{ 'background-color': item.id ===  activeCountry ? 'green' : 'transparent' }"></div>
             {{ item.name }}
           </div>
           <div class="map-chart__tips-value fs-16-sofia-600">{{ item.value }}</div>

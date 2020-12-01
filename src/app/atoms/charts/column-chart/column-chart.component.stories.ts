@@ -4,9 +4,7 @@ import { NgApexchartsModule } from "ng-apexcharts";
 import { ChartModule } from 'angular2-chartjs';
 import { CardReportStatusComponent } from '../../card/card-report-status/card-report-status.component';
 
-const props = {
-  percent: { control: 'array' },
-};
+const props = {};
 
 export default {
   title: 'Atoms/Charts',
@@ -21,7 +19,6 @@ export default {
   ],
   argTypes: props,
 } as Meta;
-
 
 const Template: Story<ColumnChartComponent> = (args: ColumnChartComponent) => ({
   component: ColumnChartComponent,

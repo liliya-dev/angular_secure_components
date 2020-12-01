@@ -6,6 +6,7 @@ import { getRandomColor } from './helpers';
   templateUrl: './column-chart.component.html',
   styleUrls: ['./column-chart.component.scss']
 })
+
 export class ColumnChartComponent implements OnInit, OnChanges {
   @Input() categories: string[];
   @Input() colorsFromUser: string[];
@@ -54,9 +55,9 @@ export class ColumnChartComponent implements OnInit, OnChanges {
     const minColumnsNumber = Math.floor((this.container.nativeElement.clientWidth - 66) / this.columnWidth);
     if (minColumnsNumber >= this.data.length) {
       this.columns = minColumnsNumber;
-      const grid=[]
-      for (let i=0; i< this.rows * this.columns; i++) {
-        grid.push(i)
+      const grid = [];
+      for (let i = 0; i < this.rows * this.columns; i++) {
+        grid.push(i);
       }
       this.gridValues = grid;
       this.width = this.columns * this.columnWidth;
@@ -75,14 +76,14 @@ export class ColumnChartComponent implements OnInit, OnChanges {
     this.rows = this.maxValue / this.step;
     this.columns = this.data.length > minColumnsNumber ? this.data.length : minColumnsNumber;
     this.width = this.columns * this.columnWidth;
-    const values =[]
-    for (let i=0; i<= this.rows; i++) {
-      values.push(i * this.step)
+    const values = [];
+    for (let i = 0; i <= this.rows; i++) {
+      values.push(i * this.step);
     }
     this.rowValues = values.reverse();
-    const grid=[]
-    for (let i=0; i< this.rows * this.columns; i++) {
-      grid.push(i)
+    const grid = [];
+    for (let i = 0; i < this.rows * this.columns; i++) {
+      grid.push(i);
     }
     this.gridValues = grid;
   }

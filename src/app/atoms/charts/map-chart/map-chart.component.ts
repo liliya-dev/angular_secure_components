@@ -30,15 +30,16 @@ interface Countries {
 
 export class MapChartComponent implements OnInit, OnChanges, AfterViewInit {
   @Input() countriesData: Countries;
-  activeCountry = '';
+
   chart;
   polygonSeries;
-  polygonTemplate
-  allCountriesData = [];
-  isTipVisible = false;
-  tipsTop = 0;
-  tipsLeft = 0;
-  tipsData = [];
+  polygonTemplate;
+  activeCountry: string = '';
+  allCountriesData: Country[] = [];
+  isTipVisible: boolean = false;
+  tipsTop: number = 0;
+  tipsLeft: number = 0;
+  tipsData: Country[] = [];
   mapHeight: number;
 
   @ViewChild('mapChart') map: ElementRef;
@@ -61,9 +62,6 @@ export class MapChartComponent implements OnInit, OnChanges, AfterViewInit {
     this.polygonTemplate.fill = am4core.color("rgba(1, 25, 73, 0.2)")
     const hs = this.polygonTemplate.states.create("hover");
     hs.properties.fill = am4core.color("rgb(22, 97, 60)");
-
-    const bs = this.polygonTemplate.states.create("blur");
-    bs.properties.fill = am4core.color("red");
 
     switch(region) {
       case 'World': 
@@ -133,13 +131,13 @@ export class MapChartComponent implements OnInit, OnChanges, AfterViewInit {
       this.isTipVisible = value;
     }
 
-     this.polygonTemplate.events.on("over", function(ev) {
+    this.polygonTemplate.events.on("over", function(ev) {
       const active = ev.target.dataItem.dataContext;
-      setActive(active.id, ev.event.pageY,ev.event.pageX)
+      setActive(active.id, ev.event.pageY,ev.event.pageX);
     })
 
     this.polygonTemplate.events.on("out", function(ev) {
-      setIsTipsVisible(false)
+      setIsTipsVisible(false);
     })
   }
 
@@ -149,13 +147,15 @@ export class MapChartComponent implements OnInit, OnChanges, AfterViewInit {
   }
 
   ngOnChanges() {
-    this.createChart('World')
+    this.createChart('World');
   }
 
   ngOnInit() {
-    let formattedCountriesData =[]
-    Object.values(this.countriesData).forEach(region => { formattedCountriesData = [...formattedCountriesData,...region]})
-    this.allCountriesData = formattedCountriesData
-    this.createChart('World')
+    let formattedCountriesData = [];
+    Object.values(this.countriesData).forEach(region => { 
+      formattedCountriesData = [...formattedCountriesData,...region]
+    })
+    this.allCountriesData = formattedCountriesData;
+    this.createChart('World');
   }
 }

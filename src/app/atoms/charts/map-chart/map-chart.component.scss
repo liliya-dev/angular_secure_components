@@ -1,50 +1,53 @@
-
 #chartdiv {
   width: 100%;
   height: 100%;
 }
 
-.container {
-  width: 100%;
-  height: 452px;
-  position: relative;
-}
-
 .map-chart {
   margin-top: 67px;
   width: 100%;
+
+  &__container {
+    width: 100%;
+    height: 452px;
+    position: relative;
+  }
+  
   &__input-container {
     width: 280px;
     margin-bottom: 24px;
   }
 
   &__tips {
-    background-color: rgba(var(--secondary-color-code), 1);
-    border-radius: 12px;
-    z-index: 3;
-    padding: 12px;
-    color: #D0DAEB;
     width: 228px;
     position: fixed;
+    z-index: 3;
+    padding: 12px;
+
+    background-color: rgba(var(--secondary-color-code), 1);
+    border-radius: 12px;
+    color: var(--asimetric-bg-color);
 
     &:after {
       content: '';
       position: absolute;
-      width: 16px;
-      height: 7px;
       bottom: -6px;
       left: calc(50% - 4px);
+      z-index: 4;
+
+      width: 16px;
+      height: 7px;
+
       background: url('../../../../assets/images/triangle.png') center no-repeat;
       background-size: cover;
-      z-index: 4;
     }
 
     &-item {
       display: flex;
       align-items: center;
-      margin: 8px 0;
-      width: 100%;
       justify-content: space-between;
+      width: 100%;
+      margin: 8px 0;
     }
 
     &-text {
@@ -56,19 +59,20 @@
       display: block;
       width: 6px;
       height: 6px;
-      border-radius: 50%;
       margin-right: 8px;
-      border: 1px solid #1A315F;
+      border-radius: 50%;
+      border: 1px solid rgb(26, 49, 95);
     }
   }
 }
+
+/// overriding styles for am4charts module
 
 #chartdiv > div > svg > g > g:nth-child(2) > g:nth-child(2) > g > g:nth-child(3) > g:nth-child(2) > g:nth-child(1) > path,
 #chartdiv > div > svg > g > g:nth-child(2) > g:nth-child(2) > g > g:nth-child(3) > g:nth-child(2) > g:nth-child(2) > path,
 #chartdiv > div > svg > g > g:nth-child(2) > g:nth-child(2) > g > g:nth-child(3) > g:nth-child(1) {
   display: none;
 }
-
 
 #chartdiv > div > svg > g > g:nth-child(2) > g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > g:nth-child(2) > g:nth-child(2) > g > g:nth-child(1),
 #chartdiv > div > svg > g > g:nth-child(2) > g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > g:nth-child(2) > g:nth-child(2) > g > g:nth-child(3) {

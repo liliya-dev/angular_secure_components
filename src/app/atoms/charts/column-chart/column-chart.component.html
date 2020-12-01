@@ -14,8 +14,8 @@
         <div
           class="chart-column__grid"
           [ngStyle]="
-            {'grid-template-columns': 'repeat(' + columns + ', ' + columnWidth+'px)',  
-            'grid-auto-rows': chartHeight/rows+'px', 'height': chartHeight+'px'}"
+            { 'grid-template-columns': 'repeat(' + columns + ', ' + columnWidth+'px)',  
+            'grid-auto-rows': chartHeight/rows+'px', 'height': chartHeight+'px' }"
         >
           <div class="chart-column__grid-ceil" *ngFor="let gridValue of gridValues">
           </div>

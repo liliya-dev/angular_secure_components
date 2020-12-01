@@ -1,23 +1,18 @@
 import { Meta, moduleMetadata, Story } from '@storybook/angular';
 import { RoundChartComponent } from './round-chart.component';
-import { NgApexchartsModule } from "ng-apexcharts";
 import { ChartsModule } from 'ng2-charts';
 import { ChartModule } from 'angular2-chartjs';
-import { CardReportStatusComponent } from '../../card/card-report-status/card-report-status.component';
 
-const props = {
-  percent: { control: 'array' },
-};
+const props = {};
 
 export default {
   title: 'Atoms/Charts',
   decorators: [
     moduleMetadata({
       declarations: [
-        RoundChartComponent,
-        CardReportStatusComponent
+        RoundChartComponent
       ],
-      imports: [NgApexchartsModule, ChartModule, ChartsModule],
+      imports: [ChartModule, ChartsModule],
     }),
   ],
   argTypes: props,

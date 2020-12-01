@@ -1,5 +1,23 @@
 demo link https://liliya-dev.github.io/angular_secure_components/?path=/story/molecules-form-screen--third
 
+01.12.21
+## Developed components: 
+
+### Atoms:
+  * Buttons:
+    * Add buttons
+      - Small Dark
+      - Small Light
+      - Big Light
+
+  * Charts
+    * Column Chart
+    * Linear Chart
+    * Map Chart
+    * Round Chart
+
+!!! All components of Policies Customize are not ready to use them ()
+
 17.11.21
 ## Developed components: 
 

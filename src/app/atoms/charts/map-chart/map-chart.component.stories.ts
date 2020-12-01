@@ -1,6 +1,5 @@
 import { Meta, moduleMetadata, Story } from '@storybook/angular';
 import { MapChartComponent } from './map-chart.component';
-import { NgApexchartsModule } from "ng-apexcharts";
 import { SelectInputWithInitialValueComponent } from '../../inputs/select-input/select-input-with-initial-value/select-input-with-initial-value.component';
 import { NgSelectModule } from '@ng-select/ng-select';
 
@@ -15,7 +14,7 @@ export default {
         SelectInputWithInitialValueComponent
       ],
       providers: [],
-      imports: [NgApexchartsModule, NgSelectModule],
+      imports: [NgSelectModule],
     }),
   ],
   argTypes: props,

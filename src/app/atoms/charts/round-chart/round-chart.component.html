@@ -21,7 +21,7 @@
         class="donut-rounded-chart__legend-item fs-12-gramm-400"
         (click)="updateMainValue(i)"
       >
-        <div class="donut-rounded-chart__legend-color" [ngStyle]="{ 'background-color': colorsList[i]}"></div>
+        <div class="donut-rounded-chart__legend-color" [ngStyle]="{ 'background-color': colorsList[i] }"></div>
         {{ item.title }}
       </li>
     </ul>
@@ -35,7 +35,7 @@
     <ul class="donut-rounded-chart__tips-list">
       <li class="donut-rounded-chart__tips-item" *ngFor="let item of data; let i=index">
         <div class="donut-rounded-chart__tips-text fs-12-sofia-300">
-          <div class="donut-rounded-chart__tips-color" [ngStyle]="{ 'background-color': colorsList[i]}"></div>
+          <div class="donut-rounded-chart__tips-color" [ngStyle]="{ 'background-color': colorsList[i] }"></div>
           {{ item.title }}
         </div>
         <div class="donut-rounded-chart__tips-value fs-16-sofia-600">{{ item.value }}</div>

@@ -1,11 +1,8 @@
 import { Meta, moduleMetadata, Story } from '@storybook/angular';
 import { LinearChartComponent } from './linear-chart.component';
 import { NgApexchartsModule } from "ng-apexcharts";
-import { CardReportStatusComponent } from '../../card/card-report-status/card-report-status.component';
 
-const props = {
-  percent: { control: 'array' },
-};
+const props = {};
 
 export default {
   title: 'Atoms/Charts',
@@ -13,14 +10,12 @@ export default {
     moduleMetadata({
       declarations: [
         LinearChartComponent,
-        CardReportStatusComponent
       ],
       imports: [NgApexchartsModule],
     }),
   ],
   argTypes: props,
 } as Meta;
-
 
 const Template: Story<LinearChartComponent> = (args: LinearChartComponent) => ({
   component: LinearChartComponent,
