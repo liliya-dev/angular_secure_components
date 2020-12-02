@@ -25,7 +25,7 @@
         (mouseenter)="handleHover($event, i)"
         (mouseleave)="handleHover($event, -1)"
         class="app-dynamic-sections-list__section"
-        [ngStyle]="!isElementActive && isSectionActive && activeSection === i && {'border': '1px dashed rgba(var(--secondary-color-code), 0.5)'}"
+        [ngStyle]="(!isElementActive || section.initialState.length === 0) && isSectionActive && activeSection === i && {'border': '1px dashed rgba(var(--secondary-color-code), 0.5)'}"
       >
         <p class="app-dynamic-sections-list__main-title fs-h3">
           <textarea
@@ -48,7 +48,7 @@
         </app-customized-element>
         <div
           class="app-dynamic-sections-list__buttons-container"
-          *ngIf="!isElementActive && isSectionActive && activeSection === i && i===sections.length - 1"
+          *ngIf="((!isElementActive || section.initialState.length === 0) && isSectionActive && activeSection === i && i===sections.length - 1)"
         >
           <app-small-light-add-button
             [title]="'Add table'"
@@ -72,5 +72,10 @@
         <div class="app-dynamic-sections-list__line"></div>
       </li>
     </ul>
+    <app-simple-button
+      [title]="'confirm'"
+      [classes]="'btn-dark fs-16-sofia-800 btn-app--h52'"
+    >
+    </app-simple-button>
   </div>
 </div>

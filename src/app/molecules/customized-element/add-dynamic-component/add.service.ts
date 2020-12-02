@@ -9,8 +9,7 @@ export class AddService {
   getAds(type: string, data?: any) {
     if (type === 'table' && data) {
       return new AddItem(DynamicTableComponent, data)
-    } 
-    else if (type ==='list' && data) {
+    } else if (type ==='list' && data) {
        return new AddItem(DynamicListComponent, data)
     } else if (type === 'text' && data) {
       return new AddItem(DynamicTextComponent, data)

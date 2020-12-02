@@ -1,6 +1,7 @@
 .app-dynamic-table {
   position: relative;
   width: 100%;
+  padding-bottom: 70px;
   overflow: hidden;
   
   border-radius: 12px;
@@ -8,33 +9,36 @@
   border: 1px solid rgba(var(--secondary-color-code), 0.3);
   border-spacing: 0;
   transition: margin 3s;
-  padding-bottom: 70px;
 
   &__head-input {
-    background: transparent;
-    border: none;
-    text-transform: capitalize;
-    color: rgba(var(--secondary-color-code), 0.75);
-    font-weight: 400;
     width: calc(100% + 84px);
     padding-right: 84px;
+
+    background: transparent;
+    border: none;
+
+    color: rgba(var(--secondary-color-code), 0.75);
+    font-weight: 400;
+    text-transform: capitalize;
   }
 
   &__ceil-input {
+    width: calc(100% + 84px);
+    padding-right: 84px;
+
     background: transparent;
     border: none;
+
     text-transform: capitalize;
     color: rgba(var(--secondary-color-code), 1);
     font-weight: 300;
-    width: calc(100% + 84px);
-    padding-right: 84px;
   }
 
   &__add-row-button {
     width: calc(100% - 32px);
+    height: 38px;
     position: absolute;
     margin: 16px 16px 16px;
-    height: 38px;
   }
 
   &__add-column-button {
@@ -44,10 +48,10 @@
   }
 
   &__head {
-    position: relative;
-    box-sizing: border-box;
-    padding: 13px 106px 13px 16px;
     height: auto;
+    padding: 13px 106px 13px 16px;
+    box-sizing: border-box;
+    position: relative;
     text-transform: capitalize;
     color: rgba(var(--secondary-color-code), 0.75);
     background-color: rgba(var(--secondary-color-code), 0.2);
@@ -71,18 +75,20 @@
   &__button {
     width: 24px;
     height: 24px;
-    border-radius: 50%;
-    background-color: rgba(var(--secondary-color-code), 1);
-    border: none;
     position: absolute;
     top: 7px;
     z-index: 2;
+
+    border-radius: 50%;
+    background-color: rgba(var(--secondary-color-code), 1);
+    border: none;
   }
 }
 
 .prev {
-  left:35%;
+  left: 42%;
   transform: rotate(180deg);
+  
   &:after {
     content: '';
     position: absolute;

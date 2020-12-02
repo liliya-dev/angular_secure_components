@@ -11,6 +11,7 @@ import { AddDirective } from '../../molecules/customized-element/add-dynamic-com
 import { AddService } from '../../molecules/customized-element/add-dynamic-component/add.service';
 import { TextareaAutosizeModule } from 'ngx-textarea-autosize';
 import { SmallLightAddButtonComponent } from '../../atoms/buttons/add-buttons/small-light-add-button/small-light-add-button.component';
+import { simpleButtonComponent } from '../../atoms/buttons/simpleButton/simpleButton.component';
 
 const props = {};
 
@@ -27,7 +28,8 @@ export default {
       DynamicTableComponent,
       DarkAddButtonComponent,
       CustomizedElementComponent,
-      DynamicSectionsListComponent
+      DynamicSectionsListComponent,
+      simpleButtonComponent
     ],
     providers: [AddService],
     imports: [CommonModule, TextareaAutosizeModule],

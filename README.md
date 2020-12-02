@@ -16,7 +16,7 @@ demo link https://liliya-dev.github.io/angular_secure_components/?path=/story/mo
     * Map Chart
     * Round Chart
 
-!!! All components of Policies Customize are not ready to use them ()
+!!! All components of Policies Customize are not ready to use them
 
 17.11.21
 ## Developed components: 

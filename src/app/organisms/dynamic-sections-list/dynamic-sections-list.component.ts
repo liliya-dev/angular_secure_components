@@ -31,8 +31,8 @@ let defaultSectionData = [{
 export class DynamicSectionsListComponent implements OnInit {
   sections = [];
   activeSection: number;
-  isSectionActive = false;
-  isElementActive = false;
+  isSectionActive: boolean = false;
+  isElementActive: boolean = false;
   constructor() { }
 
   scrollToActive(index) {
@@ -76,6 +76,7 @@ export class DynamicSectionsListComponent implements OnInit {
   setHoverElement = () => {
     this.isElementActive = true;
     this.isSectionActive = false;
+    console.log(this.activeSection, this.isElementActive, this.isSectionActive, 8)
   }
 
   setNoHoverElement = () => {
@@ -90,6 +91,7 @@ export class DynamicSectionsListComponent implements OnInit {
       this.isSectionActive = false;
     }
     this.activeSection = index;
+    console.log(index, this.activeSection, this.isElementActive, this.isSectionActive)
   }
 
   addSection(index: number) {
