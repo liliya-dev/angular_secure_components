@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
  
 @Component({
   selector: 'app-dynamic-sections-list',
@@ -8,6 +8,7 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 })
 
 export class DynamicSectionsListComponent implements OnInit {
+  @Input() initialSectionsList;
   sections = [];
   activeSection: number;
   isSectionActive: boolean = false;
@@ -88,8 +89,11 @@ export class DynamicSectionsListComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    if (this.sections.length === 0) {
+    if (this.sections.length === 0 && !this.initialSectionsList) {
       this.addSection(0);
+    }
+    if (this.initialSectionsList) {
+      this.sections = this.initialSectionsList
     }
   }
 }

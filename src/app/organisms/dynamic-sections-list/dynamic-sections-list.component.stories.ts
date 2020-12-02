@@ -49,6 +49,57 @@ const Template: Story<DynamicSectionsListComponent> = (args: DynamicSectionsList
   props: args,
 });
 
+const text = `For the purpose of this Privacy Policy, we are a Data Controller of your personal information. 
+Our legal basis for collecting and using your personal information, as described in this Privacy Policy, 
+depends on the information we collect and the specific context in which we collect it. We may process your
+personal information because:`
+
 export const Dynamic = Template.bind({});
-Dynamic.args = {};
+Dynamic.args = {
+  initialSectionsList: [
+  { 
+    initialState: [
+      { type: 'text', dataFromParent: { title: text }},
+      { type: 'list', dataFromParent: { listTitle: 'Put list title', titles: [
+        'We need to perform a contract with you, such as when you create a Policy with us',
+        'You have given us permission to do so',
+        'The processing is in our legitimate interests and its not overridden by your right'
+      ] }},
+      { type: 'text', dataFromParent: { title: text }},
+      { type: 'table', dataFromParent: { heads: ['text 1'], tableData: [{ 'text 1' : '1.1. Text', }, { 'text 1' : '1.1. Text', }] }}
+    ],
+    title: `New section 1`,
+    sectionId: Date.now() + 1,
+  },
+  { 
+    initialState: [
+      { type: 'text', dataFromParent: { title: text }},
+      { type: 'text', dataFromParent: { title: text }},
+      { type: 'text', dataFromParent: { title: text }},
+      { type: 'table', dataFromParent: { heads: ['text 1'], tableData: [{ 'text 1' : '1.1. Text', }, { 'text 1' : '1.1. Text', }] }}
+    ],
+    title: `New section 2`,
+    sectionId: Date.now() + 2,
+  },
+  { 
+    initialState: [
+      { type: 'text', dataFromParent: { title: text }},
+      { type: 'text', dataFromParent: { title: text }},
+      { type: 'text', dataFromParent: { title: text }},
+      { type: 'table', dataFromParent: { heads: ['text 1'], tableData: [{ 'text 1' : '1.1. Text', }, { 'text 1' : '1.1. Text', }] }}
+    ],
+    title: `New section 3`,
+    sectionId: Date.now() + 3,
+  },
+  { 
+    initialState: [
+      { type: 'text', dataFromParent: { title: text }},
+      { type: 'text', dataFromParent: { title: text }},
+      { type: 'list', dataFromParent: { listTitle: 'Put list title', titles: ['Type text here'] }},
+      { type: 'table', dataFromParent: { heads: ['text 1'], tableData: [{ 'text 1' : '1.1. Text', }, { 'text 1' : '1.1. Text', }] }}
+    ],
+    title: `New section 4`,
+    sectionId: Date.now() + 4,
+  }]
+};
 
