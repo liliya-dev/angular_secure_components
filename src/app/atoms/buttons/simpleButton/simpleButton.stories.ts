@@ -60,3 +60,9 @@ SuccessAsimetricWithIcon.args = {
   classes: "btn-app--asimetric btn-success-asimetric fs-16-sofia-800",
   srcPath: 'assets/images/next.svg'
 };
+
+export const Dark = Template.bind({});
+Dark.args = {
+  title: "confirm",
+  classes: "btn-dark fs-16-sofia-800 btn-app--h52"
+};
