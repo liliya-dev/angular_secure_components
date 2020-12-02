@@ -1,26 +1,5 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { defineComponentType } from './helpers';
-
-const standartListData =  {
-  listTitle: 'Put list title',
-  titles: ['Type text here']
-}
-
-const standartTableData = {
-  heads: ['text 1'],
-  tableData: [{ 'text 1' : '1.1. Text', }, { 'text 1' : '1.1. Text', }]
-}
-
-const standartTextData = { title: 'Your new paragraph' }
-
-let defaultSectionData = [{
-    type: 'text',
-    dataFromParent: {
-      title: `For the purpose of this Privacy Policy, we are a Data Controller of your personal information. Our legal basis for collecting and using your personal information, as described in this Privacy Policy, depends on the information we collect and the specific context in which we collect it. We may process your personal information because:`
-    }
-  },]
  
-
 @Component({
   selector: 'app-dynamic-sections-list',
   templateUrl: './dynamic-sections-list.component.html',
@@ -76,7 +55,6 @@ export class DynamicSectionsListComponent implements OnInit {
   setHoverElement = () => {
     this.isElementActive = true;
     this.isSectionActive = false;
-    console.log(this.activeSection, this.isElementActive, this.isSectionActive, 8)
   }
 
   setNoHoverElement = () => {
@@ -85,13 +63,8 @@ export class DynamicSectionsListComponent implements OnInit {
   }
 
   handleHover = (event: any, index: number) => {
-    if (index !== -1) {
-      this.isSectionActive = true;
-    } else {
-      this.isSectionActive = false;
-    }
+    this.isSectionActive = index !== -1;
     this.activeSection = index;
-    console.log(index, this.activeSection, this.isElementActive, this.isSectionActive)
   }
 
   addSection(index: number) {
