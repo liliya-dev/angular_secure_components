@@ -23,5 +23,17 @@ const Template: Story<SelectInputWithInitialValueComponent> = (args: SelectInput
 
 export const WithInitialValue = Template.bind({});
 WithInitialValue.args = {
-  items: ['gdpr', 'ccpa', 'lgpd']
+  items: ['gdpr', 'ccpa', 'lgpd'],
+};
+
+export const ChoosePosition= Template.bind({});
+ChoosePosition.args = {
+  items: ['Left', 'Center', 'Right'],
+  imagesPaths: ['assets/images/positions/position-right.png', 'assets/images/positions/position-center.png', 'assets/images/positions/position-left.png']
+};
+
+export const ChooseShape = Template.bind({});
+ChooseShape.args = {
+  items: ['Flat', 'Fillet Corner', 'Round'],
+  imagesPaths: ['assets/images/button-types/corners.png', 'assets/images/button-types/light-round.png', 'assets/images/button-types/round.png']
 };

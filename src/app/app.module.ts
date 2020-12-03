@@ -93,6 +93,7 @@ import { ColumnChartComponent } from './atoms/charts/column-chart/column-chart.c
 import { MapChartComponent } from './atoms/charts/map-chart/map-chart.component';
 import { RoundChartComponent } from './atoms/charts/round-chart/round-chart.component';
 import { TextEditorComponent } from './atoms/text-editor/text-editor.component';
+import { TextareaCopyToClipboardComponent } from './atoms/inputs/textarea/textarea-copy-to-clipboard/textarea-copy-to-clipboard.component';
 
 PlotlyModule.plotlyjs = PlotlyJS;
 
@@ -187,6 +188,7 @@ PlotlyModule.plotlyjs = PlotlyJS;
     MapChartComponent,
     RoundChartComponent,
     TextEditorComponent,
+    TextareaCopyToClipboardComponent,
   ],
   imports: [
     ColorSketchModule,

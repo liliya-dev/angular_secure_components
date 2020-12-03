@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, ElementRef, HostListener, Input, OnChanges, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-color-picker',
@@ -7,9 +7,41 @@ import { Component, ViewEncapsulation } from '@angular/core';
   encapsulation: ViewEncapsulation.None
 })
 
-export class ColorPickerComponent {
+export class ColorPickerComponent implements OnChanges, OnInit{
+  @Input() startHexColor: string;
+
+  color: string;
+  value: string;
+  isColorPickerVisible: boolean = false;
+
+  @ViewChild('picker') picker: ElementRef;
+
+  @HostListener('document:click', ['$event'])
+  onClick(event: Event) {
+    const clickedElement = event.target as HTMLElement;
+    if (this.picker.nativeElement && !this.picker.nativeElement.contains(event.target) 
+      && !clickedElement.closest('.color-picker__box') && this.isColorPickerVisible) {
+      this.isColorPickerVisible = false;
+    }
+  }
+
+  setColorPickerVisibility() {
+    this.isColorPickerVisible = true;
+  }
+
   consoleColor = (event) => {
-    // your logic on color change
-    console.log(event);
+    const newColor = event.color.rgb;
+    this.color = `rgba(${newColor.r}, ${newColor.g}, ${newColor.b}, ${newColor.a})`;
+    this.value = event.color.hex;
+  }
+
+  ngOnChanges() {
+    this.color = this.startHexColor ? this.startHexColor : '#011949';
+    this.value = this.startHexColor ? this.startHexColor : '#011949';
+  }
+
+  ngOnInit() {
+    this.color = this.startHexColor ? this.startHexColor : '#011949';
+    this.value = this.startHexColor ? this.startHexColor : '#011949';
   }
 }

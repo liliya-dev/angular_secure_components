@@ -9,6 +9,7 @@ import { Component, Input, OnInit, Output, ViewEncapsulation, EventEmitter } fro
 
 export class SelectInputWithInitialValueComponent implements OnInit {
   @Input() items: string[];
+  @Input() imagesPaths?: string[]
   @Output() onItemSelect: EventEmitter<any> = new EventEmitter();
 
   selectedItem: string;

@@ -23,4 +23,6 @@ const Template: Story<ColorPickerComponent> = (args: ColorPickerComponent) => ({
 });
 
 export const Circled = Template.bind({});
-Circled.args = {};
+Circled.args = {
+  startHexColor : '#A5C3B3'
+};

@@ -17,7 +17,7 @@ export class ApproveModalComponent {
 
   handleClick(event) {
     if (!event.target.closest('.approve-modal__form')) {
-      this.closeModal.emit()
+      this.closeModal.emit();
     }
   }
 }

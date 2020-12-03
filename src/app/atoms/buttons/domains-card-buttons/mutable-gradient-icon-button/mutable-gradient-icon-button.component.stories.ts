@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
-import { Meta, moduleMetadata, Story } from '@storybook/angular';
 import { AngularSvgIconModule } from 'angular-svg-icon';
+import { Meta, moduleMetadata, Story } from '@storybook/angular';
 import { MutableGradientIconButtonComponent } from './mutable-gradient-icon-button.component';
 
 const props = {};

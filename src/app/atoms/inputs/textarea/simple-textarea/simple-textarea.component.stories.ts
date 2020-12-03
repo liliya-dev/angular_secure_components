@@ -4,7 +4,7 @@ import { SimpleTextareaComponent } from './simple-textarea.component';
 const props = {};
 
 export default {
-  title: 'Atoms/Input',
+  title: 'Atoms/Input/Textarea',
   component: SimpleTextareaComponent,
   argTypes: props,
 } as Meta;
@@ -14,8 +14,8 @@ const Template: Story<SimpleTextareaComponent> = (args: SimpleTextareaComponent)
   props: args,
 });
 
-export const Textarea = Template.bind({});
-Textarea.args = {
+export const Simple = Template.bind({});
+Simple.args = {
   placeholderText: "Text",
 };
 

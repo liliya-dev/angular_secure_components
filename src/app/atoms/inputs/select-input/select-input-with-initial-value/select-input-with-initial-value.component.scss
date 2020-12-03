@@ -1,3 +1,18 @@
+.select-input-with-initial-value {
+  &__wrapper {
+    display: flex;
+    align-items: center;
+  
+    & > img {
+      margin-right: 15px;
+    }
+  }
+
+  &__text {
+    text-transform: capitalize;
+  }
+}
+
 .ng-select {
   position: relative;
   box-sizing: border-box;
@@ -34,14 +49,19 @@
   &-container {
     width: 100%;
     height: 46px;
-    padding: 17px 21px 16px 16px;  
+    padding: 0 21px 0 16px;  
     margin-bottom: 4px;
+    display: flex;
+    align-items: center;
   }
 }
 
 .ng-option {
   background-color: var(--input-bg-color);
-  padding: 17px 21px 16px 16px;  
+  padding: 0 21px 0 16px;  
+  height: 46px;
+  display: flex!important;
+  align-items: center;
 
   &:hover {
     background-color: var(--light-btn-hover);
