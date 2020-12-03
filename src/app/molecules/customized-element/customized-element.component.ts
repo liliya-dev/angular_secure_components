@@ -124,7 +124,6 @@ export class CustomizedElementComponent implements OnInit, OnChanges, AfterViewI
   }
 
   ngOnChanges(): void {
-    console.log('changes')
     this.setInitialStateOfComponent();
   }
 }

@@ -80,7 +80,6 @@ export class DynamicTableComponent implements OnChanges, OnInit, AfterViewInit {
     }
   }
 
-
   @ViewChild('table') table: ElementRef;
   @HostListener('window:resize', ['$event'])
   onResize(event: any) {

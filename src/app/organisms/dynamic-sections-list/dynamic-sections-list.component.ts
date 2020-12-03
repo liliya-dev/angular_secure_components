@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, Input, OnChanges, OnInit, ViewEncapsulation } from '@angular/core';
  
 @Component({
   selector: 'app-dynamic-sections-list',
@@ -7,7 +7,7 @@ import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
   encapsulation: ViewEncapsulation.None
 })
 
-export class DynamicSectionsListComponent implements OnInit {
+export class DynamicSectionsListComponent implements OnInit, OnChanges {
   @Input() initialSectionsList;
   sections = [];
   activeSection: number;
@@ -86,6 +86,15 @@ export class DynamicSectionsListComponent implements OnInit {
 
   indexTracker(index: number, value: any) {
     return index;
+  }
+
+  ngOnChanges(): void {
+    if (this.sections.length === 0 && !this.initialSectionsList) {
+      this.addSection(0);
+    }
+    if (this.initialSectionsList) {
+      this.sections = this.initialSectionsList
+    }
   }
 
   ngOnInit(): void {

@@ -18,7 +18,9 @@ export class secondaryButtonComponent {
     this.fillColor = 'rgba(1, 25, 73, 0.5)';
   }
 
-  changeToActiveColor() {
+  changeToActiveColor(event) {
+    const targ: HTMLElement = event.target
+    console.log(targ)
     this.fillColor = 'white';
   }
 }

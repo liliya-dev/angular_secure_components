@@ -9,13 +9,13 @@
   }
 
   &__container {
+    width: 100%;
+    padding: 10px 11px 8px 18px;
+    position: relative;
+    
     border: 1px dashed transparent;
     border-radius: 8px;
     transition: 0.3s;
-    position: relative;
-    width: 100%;
-    padding-right: 3%;
-    padding: 10px 11px 8px 18px;
 
 
     &:hover {
@@ -28,11 +28,13 @@
   &__button-delete {
     width: 6px;
     height: 6px;
-    background-color: transparent;
-    border: none;
+
     position: absolute;
     top: calc(50% - 21px);
     right: 2%;
+
+    background-color: transparent;
+    border: none;
 
     z-index: 20;
     &.delete-table {
@@ -70,13 +72,4 @@
 
 app-small-light-add-button {
   margin-bottom: 5px;
-}
-
-@media screen and (max-width: 550px) {
-  // .app-customized-element {
-
-  //   &__buttons-container {
-  //     flex-direction: column;
-  //   }
-  // }
 }

@@ -1,8 +1,8 @@
 <button 
-  [ngStyle]="{'background': backgroundColor, 'color': color }"
+  [ngStyle]="{ 'background': backgroundColor, 'color': color }"
   class="btn-secondary btn-app btn-app--h46 fs-16-sofia-300"
   (mouseleave)="changeToLightColor()"
-  (mousedown)="changeToActiveColor()"
+  (mousedown)="changeToActiveColor($event)"
   (mouseup)="changeToLightColor()"
 > 
   <svg-icon 

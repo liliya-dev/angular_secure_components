@@ -3,18 +3,21 @@
   overflow-x: hidden;
 
   &__input {
+    width: 100%;
+    padding-right: 15px;
+
     border: none;
     background-color: transparent;
     color: var(--secondary-color);
     font-style: italic;
-    width: 100%;
-    padding-right: 15px;
+    line-height: 150%;
   }
 
   &__title {
     width: calc(100% + 35px);
     padding-right: 35px;
     margin-bottom: 18px;
+    
     color: var(--secondary-color);
     border: none;
     background-color: transparent;

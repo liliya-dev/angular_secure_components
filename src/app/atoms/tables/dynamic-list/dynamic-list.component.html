@@ -1,9 +1,9 @@
-<div [id]="data.sectionElementId+data.sectionId" class="app-dynamic-list__container" (click)="setActive()" #dynamicContainer>
-  <!-- <input 
-    class="app-dynamic-list__title fs-16-sofia-600"
-    type="text"
-    [(ngModel)]="listTitle"  
-  /> -->
+<div 
+  [id]="data.sectionElementId+data.sectionId" 
+  class="app-dynamic-list__container" 
+  (click)="setActive()" 
+  #dynamicContainer
+>
   <div class="app-dynamic-list__title-wrapper">
     <textarea
       autosize
@@ -17,7 +17,6 @@
     <li 
       class="app-dynamic-list__item" 
       *ngFor="let title of titles; let i = index; trackBy:indexTracker"
-      [title]="title"
       [id]="data.sectionElementId+data.sectionId + i"
     >
       <div class="app-dynamic-list__dot"></div>

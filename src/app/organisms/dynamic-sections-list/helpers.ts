@@ -1,10 +1,10 @@
 export const defineComponentType = (name: string) => {
-  switch(name) {
+  switch (name) {
     case 'DynamicTextComponent':
       return 'text';
     case 'DynamicTableComponent': 
       return 'table';
     case 'DynamicListComponent':
-      return 'list'
+      return 'list';
   }
 }

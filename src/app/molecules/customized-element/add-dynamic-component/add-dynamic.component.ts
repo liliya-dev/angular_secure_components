@@ -21,9 +21,7 @@ export class AddComponent implements OnInit {
   @Input() component: AddItem;
   @Output() handler: EventEmitter<any> = new EventEmitter();
 
-  currentAdIndex = -1;
   @ViewChild(AddDirective, {static: true}) adHost: AddDirective;
-  interval: any;
 
   constructor(private componentFactoryResolver: ComponentFactoryResolver) { }
 

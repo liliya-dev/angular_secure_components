@@ -32,8 +32,6 @@ export class DynamicTextComponent implements OnInit, OnChanges {
     }
   }
 
-  constructor() { }
-
   ngOnInit(): void {
     this.title = this.data.title;
   }

@@ -8,7 +8,8 @@ import { Component, ViewChild, OnChanges, ElementRef, Input, OnInit, EventEmitte
 
 export class DynamicListComponent implements OnInit, OnChanges {
   @Input() data: any;
-  @Output() handler: EventEmitter<any> = new EventEmitter()
+  @Output() handler: EventEmitter<any> = new EventEmitter();
+  
   titles: string[];
   listTitle: string;
   isActive: boolean;
@@ -48,7 +49,7 @@ export class DynamicListComponent implements OnInit, OnChanges {
   }
 
   indexTracker(index, id) {
-    return index;
+    return index; 
   }
 
   setData = () => {

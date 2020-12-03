@@ -49,10 +49,7 @@ const Template: Story<DynamicSectionsListComponent> = (args: DynamicSectionsList
   props: args,
 });
 
-const text = `For the purpose of this Privacy Policy, we are a Data Controller of your personal information. 
-Our legal basis for collecting and using your personal information, as described in this Privacy Policy, 
-depends on the information we collect and the specific context in which we collect it. We may process your
-personal information because:`
+const text = `For the purpose of this Privacy Policy, we are a Data Controller of your personal information. Our legal basis for collecting and using your personal information, as described in this Privacy Policy, depends on the information we collect and the specific context in which we collect it. We may process your personal information because:`
 
 export const Dynamic = Template.bind({});
 Dynamic.args = {
