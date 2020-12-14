@@ -66,3 +66,9 @@ Dark.args = {
   title: "confirm",
   classes: "btn-dark fs-16-sofia-800 btn-app--h52"
 };
+
+export const Choose = Template.bind({});
+Choose.args = {
+  title: "choose",
+  classes: "btn-choose fs-12-gramm-400 btn-app--h46-p45"
+};

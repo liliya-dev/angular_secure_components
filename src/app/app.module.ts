@@ -92,8 +92,10 @@ import { LinearChartComponent } from './atoms/charts/linear-chart/linear-chart.c
 import { ColumnChartComponent } from './atoms/charts/column-chart/column-chart.component';
 import { MapChartComponent } from './atoms/charts/map-chart/map-chart.component';
 import { RoundChartComponent } from './atoms/charts/round-chart/round-chart.component';
-import { TextEditorComponent } from './atoms/text-editor/text-editor.component';
+import { TextEditorComponent } from './Data_Request_Form/Atoms/text-editor/text-editor.component';
 import { TextareaCopyToClipboardComponent } from './atoms/inputs/textarea/textarea-copy-to-clipboard/textarea-copy-to-clipboard.component';
+import { GradientBorderContainerComponent } from './atoms/containers/gradient-border-container/gradient-border-container.component';
+import { PreviewContainerComponent } from './atoms/containers/preview-container/preview-container.component';
 
 PlotlyModule.plotlyjs = PlotlyJS;
 
@@ -189,6 +191,8 @@ PlotlyModule.plotlyjs = PlotlyJS;
     RoundChartComponent,
     TextEditorComponent,
     TextareaCopyToClipboardComponent,
+    GradientBorderContainerComponent,
+    PreviewContainerComponent,
   ],
   imports: [
     ColorSketchModule,

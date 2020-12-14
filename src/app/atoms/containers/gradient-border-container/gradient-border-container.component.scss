@@ -1,0 +1,55 @@
+.app-container-gradient {
+  position: relative;
+  padding: 2px;
+  width: 147px;
+  height: 70px;
+  border-radius: 8px;
+  transition: 0.3s;
+
+  &:hover {
+    cursor: pointer;
+    background: var(--success-grad-light)!important;
+  }
+
+  &.active {
+    background: var(--success-grad-light)!important;
+
+          
+    &::after {
+      content: "";
+      position: absolute;
+      top: 8px;
+      right: 8px;
+
+      width: 19px;
+      height: 19px;
+
+      background: var(--success-grad-light);
+      border-radius: 50%;
+    }
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      z-index: 2;
+
+      box-sizing: border-box;
+      width: 19px;
+      height: 19px;
+      border-radius: 50%;
+
+      background: no-repeat center url('../../../../assets/images/checkbox.svg');
+    }
+  }
+
+  &__content {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

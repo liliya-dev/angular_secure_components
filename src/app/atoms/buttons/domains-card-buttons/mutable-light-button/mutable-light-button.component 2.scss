@@ -1,0 +1,19 @@
+.app-button-mutable-light {
+  padding: 17px 29px;
+  border: 1px solid var(--asimetric-bg-color);
+  box-sizing: border-box;
+  border-radius: 8px;
+  width: fit-content;
+  text-transform: uppercase;
+  background-color: transparent;
+  letter-spacing: 0.05em;
+  color: var(--secondary-color);
+
+  &:hover {
+    background-color: rgba(var(--text-color-code), 0.15);
+  }
+
+  &:active {
+    background-color: transparent;
+  }
+}

@@ -1,0 +1,109 @@
+.container {
+  width: 700px;
+}
+
+.angular-editor-button {
+  border-radius: 3px;
+  color: var(--secondary-color);
+  border: none!important;
+  background: transparent!important;
+
+  &.active {
+    background: #D0DAEB!important;
+  }
+}
+
+
+.ae-picker-label {
+  border-radius: 3px;
+  color: var(--secondary-color); 
+  background: #D0DAEB!important;
+  color: var(--secondary-color)!important;
+  font-weight: bold;
+  font-family: 'Montserrat', 'open-sans';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px!important;
+
+  &::before {
+    background: #D0DAEB!important;
+  }
+}
+angular-editor-toolbar > div > div:nth-child(7) > ae-select {
+  width: 170px!important;
+}
+
+angular-editor-toolbar > div > div:nth-child(6) > ae-select {
+  width: 120px!important;
+}
+
+.ae-font.ae-picker.ae-expanded{
+  background: transparent;
+  
+  & > .ae-picker-label {
+    background-color: #A7B2C5!important;
+    color: var(--secondary-color);
+    &::before {
+      background: #A7B2C5!important;
+    }
+  }
+}
+
+.ae-picker-options {
+  background-color: #A7B2C5!important;
+  border-radius: 3px;
+  border: none!important;
+}
+
+.ae-picker-item.selected.focused {
+  background-color: #A7B2C5!important;
+  color: var(--secondary-color)!important;
+}
+
+.ae-picker-item {
+  color: var(--secondary-color)!important;
+  font-weight: bold;
+  font-family: 'Montserrat', 'open-sans';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  &:hover {
+    background-color: #A7B2C5!important;
+  }
+}
+
+.angular-editor-toolbar {
+  background: #EAEDF2;
+  border: 1px solid #B3BAC9;
+  border-radius: 12px 12px 0px 0px;
+  padding: 13px 37px 12px 42px!important;
+}
+
+angular-editor-toolbar > div > div:nth-child(1) > button:nth-child(1),
+angular-editor-toolbar > div > div:nth-child(1) > button:nth-child(2),
+angular-editor-toolbar > div > div:nth-child(1) {
+  margin-right: 0!important;
+  display: none;
+}
+
+.angular-editor-toolbar-set {
+  display: flex;
+  align-items: flex-start;
+}
+
+.angular-editor-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.angular-editor-textarea {
+  background: #FFFFFF;
+  border: 1px solid #011949;
+  border-radius: 0px 0px 12px 12px;
+  margin-top: 0!important;
+  outline: none!important;
+}
+
+ae-select > span > button > svg > polygon {
+  stroke: var(--secondary-color)!important;
+}

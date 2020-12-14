@@ -1,4 +1,10 @@
 @font-face {
+  font-family: 'Montserrat';
+  src: url("../assets/fonts/Montserrat/Montserrat-Medium.ttf");
+  font-weight: 500;
+}
+
+@font-face {
   font-family: 'Sofia pro';
   src: url("../assets/fonts/sofiapro-light.otf");
   font-weight: 100;
@@ -196,6 +202,14 @@
   font-weight: 800;
   font-size: 16px;
   text-transform: uppercase;
+  line-height: 100%;
+}
+
+.fs-14-montserrat-300 {
+  font-family: 'Montserrat', 'open-sans';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
   line-height: 100%;
 }
 
