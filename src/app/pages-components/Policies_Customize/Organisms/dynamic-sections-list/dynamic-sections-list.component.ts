@@ -64,6 +64,7 @@ export class PoliciesDynamicSectionsListComponent implements OnInit, OnChanges {
   }
 
   handleHover = (event: any, index: number) => {
+    console.log(index)
     this.isSectionActive = index !== -1;
     this.activeSection = index;
   }

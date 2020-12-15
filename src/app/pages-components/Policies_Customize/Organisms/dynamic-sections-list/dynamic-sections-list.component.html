@@ -48,7 +48,7 @@
         </app-customized-element>
         <div
           class="app-dynamic-sections-list__buttons-container"
-          *ngIf="((!isElementActive || section.initialState.length === 0) && isSectionActive && activeSection === i && i===sections.length - 1)"
+          *ngIf="(!isElementActive || section.initialState.length === 0) && isSectionActive && activeSection === i"
         >
           <app-small-light-add-button
             [title]="'Add table'"
