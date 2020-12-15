@@ -1,0 +1,81 @@
+<div class="app-dynamic-sections-list">
+  <div class="app-dynamic-sections-list__navigation fs-14-gramm-400-light">
+    <app-small-light-add-button
+      [title]="'Add section'"
+      [classes]="'app-small-light-add-button fs-14-gramm-400-light'"
+      (click)="addSection(sections.length)"
+    >
+    </app-small-light-add-button>
+    <ul *ngFor="let section of sections; let i = index;trackBy:indexTracker" class="app-dynamic-sections-list__titles">
+      <li 
+        [ngClass]="i===activeSection ? 'app-dynamic-sections-list__title active' : 'app-dynamic-sections-list__title'"
+        (click)="scrollToActive(i)"
+      >
+        {{ section.title }}
+      </li>
+    </ul>
+  </div>
+  <div class="app-dynamic-sections-list__content">
+    <ul 
+      *ngFor="let section of sections; let i = index;"
+      class="app-dynamic-sections-list__sections"
+    >
+      <li 
+        [id]="'id'+section.sectionId"
+        (mouseenter)="handleHover($event, i)"
+        (mouseleave)="handleHover($event, -1)"
+        class="app-dynamic-sections-list__section"
+        [ngStyle]="(!isElementActive || section.initialState.length === 0) && isSectionActive && activeSection === i && {'border': '1px dashed rgba(var(--secondary-color-code), 0.5)'}"
+      >
+        <p class="app-dynamic-sections-list__main-title fs-h3">
+          <textarea
+            autosize
+            [(ngModel)]="sections[i].title" 
+            spellcheck="false"
+            class="app-dynamic-sections-list__main-title-input fs-h3"
+          >
+          </textarea>
+        </p>
+        <app-customized-element 
+          (addComponentToSection)="addComponentToSection($event)"
+          (deleteComponentFromSection)="deleteComponentFromSection($event)"
+          (editSection)="editSection($event)"
+          (setHoverElement)="setHoverElement()"
+          (setNoHoverElement)="setNoHoverElement()"
+          [initialState]="section.initialState"
+          [sectionId]="section.sectionId"
+        >
+        </app-customized-element>
+        <div
+          class="app-dynamic-sections-list__buttons-container"
+          *ngIf="((!isElementActive || section.initialState.length === 0) && isSectionActive && activeSection === i && i===sections.length - 1)"
+        >
+          <app-small-light-add-button
+            [title]="'Add table'"
+            [classes]="'app-small-light-add-button fs-14-gramm-400-light'"
+            (click)="addComponentToSection({ sectionId:section.sectionId, index:section.initialState.length-1, type:'table' })"
+          >
+          </app-small-light-add-button>
+          <app-small-light-add-button
+            [title]="'Add a paragraph'"
+            [classes]="'app-small-light-add-button fs-14-gramm-400-light'"
+            (click)="addComponentToSection({ sectionId:section.sectionId, index:section.initialState.length-1, type:'text' })"
+          >
+          </app-small-light-add-button>
+          <app-small-light-add-button
+            [title]="'Add list'"
+            [classes]="'app-small-light-add-button fs-14-gramm-400-light'"
+            (click)="addComponentToSection({ sectionId:section.sectionId, index:section.initialState.length-1, type:'list' })"
+          >
+          </app-small-light-add-button>
+        </div>
+        <div class="app-dynamic-sections-list__line"></div>
+      </li>
+    </ul>
+    <app-simple-button
+      [title]="'confirm'"
+      [classes]="'btn-dark fs-16-sofia-800 btn-app--h52'"
+    >
+    </app-simple-button>
+  </div>
+</div>

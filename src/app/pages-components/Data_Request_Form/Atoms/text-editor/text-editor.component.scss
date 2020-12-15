@@ -96,19 +96,19 @@ angular-editor-toolbar > div > {
       }
 
       &:nth-child(1):before {
-        content: url('../../../../assets/images/text-editior/align-left.svg');
+        content: url('../../../../../assets/images/text-editior/align-left.svg');
       }
 
       &:nth-child(2):before {
-        content: url('../../../../assets/images/text-editior/align-center.svg');
+        content: url('../../../../../assets/images/text-editior/align-center.svg');
       }
 
       &:nth-child(3):before {
-        content: url('../../../../assets/images/text-editior/align-right.svg');
+        content: url('../../../../../assets/images/text-editior/align-right.svg');
       }
 
       &:nth-child(4):before {
-        content: url('../../../../assets/images/text-editior/align-stretch.svg');
+        content: url('../../../../../assets/images/text-editior/align-stretch.svg');
       }
     }
   }
@@ -124,14 +124,14 @@ angular-editor-toolbar > div > {
       }
   
       &:nth-child(1):before {
-        content: url('../../../../assets/images/text-editior/arrow-left.svg');
+        content: url('../../../../../assets/images/text-editior/arrow-left.svg');
         position: absolute;
         bottom: 0.5px;
         left: calc(50% - 10px);
       }
 
       &:nth-child(2):before {
-        content: url('../../../../assets/images/text-editior/arrow-right.svg');
+        content: url('../../../../../assets/images/text-editior/arrow-right.svg');
         position: absolute;
         bottom: 0.5px;
         left: calc(50% - 10px);
@@ -150,14 +150,14 @@ angular-editor-toolbar > div > {
       }
   
       &:nth-child(1):before {
-        content: url('../../../../assets/images/text-editior/list-dots.svg');
+        content: url('../../../../../assets/images/text-editior/list-dots.svg');
         position: absolute;
         bottom: 0.5px;
         left: calc(50% - 10px);
       }
   
       &:nth-child(2):before {
-        content: url('../../../../assets/images/text-editior/list-numbers.svg');
+        content: url('../../../../../assets/images/text-editior/list-numbers.svg');
         position: absolute;
         bottom: 0.5px;
         left: calc(50% - 10px);

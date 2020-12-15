@@ -1,0 +1,46 @@
+.app-dynamic-list {
+  width: 95%;
+  overflow-x: hidden;
+
+  &__input {
+    width: 100%;
+    padding-right: 15px;
+
+    border: none;
+    background-color: transparent;
+    color: var(--secondary-color);
+    font-style: italic;
+    line-height: 150%;
+  }
+
+  &__title {
+    width: calc(100% + 35px);
+    padding-right: 35px;
+    margin-bottom: 18px;
+    
+    color: var(--secondary-color);
+    border: none;
+    background-color: transparent;
+    text-transform: capitalize;
+  }
+
+  &_title-wrapper {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    margin: 12px 0;
+    margin-right: -15px;
+  }
+
+  &__dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: var(--secondary-color);
+    margin-right: 18px;
+  }
+}

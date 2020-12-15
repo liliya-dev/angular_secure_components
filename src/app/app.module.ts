@@ -92,17 +92,24 @@ import { LinearChartComponent } from './atoms/charts/linear-chart/linear-chart.c
 import { ColumnChartComponent } from './atoms/charts/column-chart/column-chart.component';
 import { MapChartComponent } from './atoms/charts/map-chart/map-chart.component';
 import { RoundChartComponent } from './atoms/charts/round-chart/round-chart.component';
-import { TextEditorComponent } from './Data_Request_Form/Atoms/text-editor/text-editor.component';
+import { TextEditorComponent } from './pages-components/Data_Request_Form/Atoms/text-editor/text-editor.component';
 import { TextareaCopyToClipboardComponent } from './atoms/inputs/textarea/textarea-copy-to-clipboard/textarea-copy-to-clipboard.component';
 import { GradientBorderContainerComponent } from './atoms/containers/gradient-border-container/gradient-border-container.component';
 import { PreviewContainerComponent } from './atoms/containers/preview-container/preview-container.component';
-import { PoliciesGradientBorderContainerComponent } from './Policies_Generator/Atoms/gradient-border-container/gradient-border-container.component';
-import { PoliciesPreviewContainerComponent } from './Policies_Generator/Atoms/preview-container/preview-container.component';
-import { PoliciesTextareaCopyToClipboardComponent } from './Policies_Generator/Atoms/textarea-copy-to-clipboard/textarea-copy-to-clipboard.component';
-import { PoliciesColorPickerComponent } from './Policies_Generator/Atoms/color-picker/color-picker.component';
-import { PoliciesSelectInputWithInitialValueComponent } from './Policies_Generator/Atoms/select-input/select-input-with-initial-value/select-input-with-initial-value.component';
-import { PoliciesCheckboxInputDarkComponent } from './Policies_Generator/Atoms/checkbox-input-dark/checkbox-input-dark.component';
-import { PoliciesButtonComponent } from './Policies_Generator/Atoms/buttons/policies-button.component';
+import { PoliciesGradientBorderContainerComponent } from './pages-components/Policies_Generator/Atoms/gradient-border-container/gradient-border-container.component';
+import { PoliciesPreviewContainerComponent } from './pages-components/Policies_Generator/Atoms/preview-container/preview-container.component';
+import { PoliciesTextareaCopyToClipboardComponent } from './pages-components/Policies_Generator/Atoms/textarea-copy-to-clipboard/textarea-copy-to-clipboard.component';
+import { PoliciesColorPickerComponent } from './pages-components/Policies_Generator/Atoms/color-picker/color-picker.component';
+import { PoliciesSelectInputWithInitialValueComponent } from './pages-components/Policies_Generator/Atoms/select-input/select-input-with-initial-value/select-input-with-initial-value.component';
+import { PoliciesCheckboxInputDarkComponent } from './pages-components/Policies_Generator/Atoms/checkbox-input-dark/checkbox-input-dark.component';
+import { PoliciesButtonComponent } from './pages-components/Policies_Generator/Atoms/buttons/policies-button.component';
+import { PoliciesDynamicTextComponent } from './pages-components/Policies_Customize/Atoms/dynamic-text/dynamic-text.component'
+import { PoliciesDynamicListComponent } from './pages-components/Policies_Customize/Atoms/dynamic-list/dynamic-list.component';
+import { PoliciesDynamicTableComponent } from './pages-components/Policies_Customize/Atoms/dynamic-table/dynamic-table.component';
+import { PoliciesSmallLightAddButtonComponent } from './pages-components/Policies_Customize/Atoms/buttons/small-light-add-button/small-light-add-button.component';
+import { PoliciesDarkAddButtonComponent } from './pages-components/Policies_Customize/Atoms/buttons/dark-add-button/dark-add-button.component';
+import { PoliciesCustomizedElementComponent } from './pages-components/Policies_Customize/Molecules/customized-element/customized-element.component';
+import { PoliciesDynamicSectionsListComponent } from './pages-components/Policies_Customize/Organisms/dynamic-sections-list/dynamic-sections-list.component';
 
 PlotlyModule.plotlyjs = PlotlyJS;
 
@@ -110,7 +117,10 @@ PlotlyModule.plotlyjs = PlotlyJS;
   entryComponents: [
     DynamicTableComponent,
     DynamicListComponent,
-    DynamicTextComponent
+    DynamicTextComponent,
+    PoliciesDynamicTextComponent,
+    PoliciesDynamicListComponent,
+    PoliciesDynamicTableComponent
  ],
   providers: [AddService],
   declarations: [
@@ -206,7 +216,14 @@ PlotlyModule.plotlyjs = PlotlyJS;
     PoliciesColorPickerComponent,
     PoliciesSelectInputWithInitialValueComponent,
     PoliciesCheckboxInputDarkComponent,
-    PoliciesButtonComponent
+    PoliciesButtonComponent,
+    PoliciesDynamicTextComponent,
+    PoliciesDynamicListComponent,
+    PoliciesDynamicTableComponent,
+    PoliciesSmallLightAddButtonComponent,
+    PoliciesDarkAddButtonComponent,
+    PoliciesCustomizedElementComponent,
+    PoliciesDynamicSectionsListComponent
   ],
   imports: [
     ColorSketchModule,
