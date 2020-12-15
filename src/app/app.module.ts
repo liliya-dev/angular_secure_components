@@ -96,6 +96,13 @@ import { TextEditorComponent } from './Data_Request_Form/Atoms/text-editor/text-
 import { TextareaCopyToClipboardComponent } from './atoms/inputs/textarea/textarea-copy-to-clipboard/textarea-copy-to-clipboard.component';
 import { GradientBorderContainerComponent } from './atoms/containers/gradient-border-container/gradient-border-container.component';
 import { PreviewContainerComponent } from './atoms/containers/preview-container/preview-container.component';
+import { PoliciesGradientBorderContainerComponent } from './Policies_Generator/Atoms/gradient-border-container/gradient-border-container.component';
+import { PoliciesPreviewContainerComponent } from './Policies_Generator/Atoms/preview-container/preview-container.component';
+import { PoliciesTextareaCopyToClipboardComponent } from './Policies_Generator/Atoms/textarea-copy-to-clipboard/textarea-copy-to-clipboard.component';
+import { PoliciesColorPickerComponent } from './Policies_Generator/Atoms/color-picker/color-picker.component';
+import { PoliciesSelectInputWithInitialValueComponent } from './Policies_Generator/Atoms/select-input/select-input-with-initial-value/select-input-with-initial-value.component';
+import { PoliciesCheckboxInputDarkComponent } from './Policies_Generator/Atoms/checkbox-input-dark/checkbox-input-dark.component';
+import { PoliciesButtonComponent } from './Policies_Generator/Atoms/buttons/policies-button.component';
 
 PlotlyModule.plotlyjs = PlotlyJS;
 
@@ -193,6 +200,13 @@ PlotlyModule.plotlyjs = PlotlyJS;
     TextareaCopyToClipboardComponent,
     GradientBorderContainerComponent,
     PreviewContainerComponent,
+    PoliciesGradientBorderContainerComponent,
+    PoliciesPreviewContainerComponent,
+    PoliciesTextareaCopyToClipboardComponent,
+    PoliciesColorPickerComponent,
+    PoliciesSelectInputWithInitialValueComponent,
+    PoliciesCheckboxInputDarkComponent,
+    PoliciesButtonComponent
   ],
   imports: [
     ColorSketchModule,

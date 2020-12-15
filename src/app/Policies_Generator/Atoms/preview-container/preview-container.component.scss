@@ -1,0 +1,21 @@
+.app-preview-container {
+  min-height: 141px;
+  padding: 20px 32px 32px;
+  background-color: rgba(var(--secondary-color-code), 0.05);
+  border-radius: 12px;
+  text-align: center;
+
+
+  &__content {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__title {
+    text-transform: uppercase;
+    color: rgba(var(--secondary-color-code), 0.5);
+    margin-bottom: 30px;
+  }
+}

@@ -1,172 +1,136 @@
-.container {
-  width: 700px;
+.app-text-editor {
+  width: 100%;
+}
+
+.angular-editor-button,
+.ae-picker-label,
+.ae-picker-item {
+  font-family: 'Montserrat', 'open-sans'!important;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 100%;
 }
 
 .angular-editor-button {
-  border-radius: 3px;
   width: 32px;
   height: 28px;
+  border-radius: 3px;
   color: var(--secondary-color);
   border: none!important;
   background: transparent!important;
-  font-family: 'Montserrat', 'open-sans'!important;
+  font-weight: 700;
 
   &.active {
-    background: #D0DAEB!important;
+    background: var(--asimetric-bg-color)!important;
   }
 }
 
-/// new icons for buttons
-
-angular-editor-toolbar > div > div:nth-child(2) {
-  .angular-editor-button {
-    font-family: 'Montserrat', 'open-sans'!important;
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 100%;
-
-    &:nth-child(1) {
-      & > i {
-        display: none;
+/// change icons for buttons
+angular-editor-toolbar > div > {
+  & div:nth-child(2) {
+    .angular-editor-button {
+      &:nth-child(1),
+      &:nth-child(2),
+      &:nth-child(3),
+      &:nth-child(4),
+      &:nth-child(5),
+      &:nth-child(6) {
+        & > i {
+          display: none;
+        }
       }
-      &:before {
+  
+      &:nth-child(1):before {
         content: 'B';
       }
-    }
 
-    &:nth-child(2) {
-      & > i {
-        display: none;
-      }
-      &:before {
+      &:nth-child(2):before {
         content: 'I';
       }
-    }
 
-    &:nth-child(3) {
-      & > i {
-        display: none;
-      }
-      &:before {
+      &:nth-child(3):before {
         content: 'U';
         text-decoration: underline;
       }
-    }
 
-    &:nth-child(4) {
-      & > i {
-        display: none;
-      }
-      &:before {
+      &:nth-child(4):before {
         content: 'S';
         text-decoration: line-through;
       }
-    }
 
-    &:nth-child(5) {
-      position: relative;
-      & > i {
-        display: none;
+      &:nth-child(5) {
+        position: relative;
+        &:before {
+          content: 'x';
+        }
+        &::after {
+          content: '2';
+          font-size: 6px;
+          position: absolute;
+          top: 0;
+        }
       }
-      &:before {
-        content: 'x';
-      }
-      &::after {
-        content: '2';
-        font-size: 6px;
-        position: absolute;
-        top: 0;
-      }
-    }
 
-    &:nth-child(6) {
-      position: relative;
-      & > i {
-        display: none;
-      }
-      &:before {
-        content: 'x';
-      }
-      &::after {
-        content: '2';
-        font-size: 6px;
+      &:nth-child(6) {
+        position: relative;
+        &:before {
+          content: 'x';
+        }
+        &::after {
+          content: '2';
+          font-size: 6px;
+        }
       }
     }
   }
-}
 
-
-angular-editor-toolbar > div > div:nth-child(3) {
-  .angular-editor-button {
-    font-family: 'Montserrat', 'open-sans'!important;
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 100%;
-
-    &:nth-child(1) {
-      & > i {
-        display: none;
+  & div:nth-child(3) {
+    .angular-editor-button {
+      &:nth-child(1),
+      &:nth-child(2),
+      &:nth-child(3),
+      &:nth-child(4) {
+        & > i {
+          display: none;
+        }
       }
-      &:before {
+
+      &:nth-child(1):before {
         content: url('../../../../assets/images/text-editior/align-left.svg');
       }
-    }
 
-    &:nth-child(2) {
-      & > i {
-        display: none;
-      }
-      &:before {
+      &:nth-child(2):before {
         content: url('../../../../assets/images/text-editior/align-center.svg');
       }
-    }
 
-    &:nth-child(3) {
-      & > i {
-        display: none;
-      }
-      &:before {
+      &:nth-child(3):before {
         content: url('../../../../assets/images/text-editior/align-right.svg');
       }
-    }
 
-    &:nth-child(4) {
-      & > i {
-        display: none;
-      }
-      &:before {
+      &:nth-child(4):before {
         content: url('../../../../assets/images/text-editior/align-stretch.svg');
       }
     }
   }
-}
 
-angular-editor-toolbar > div > div:nth-child(4) {
-  .angular-editor-button {
-    font-family: 'Montserrat', 'open-sans'!important;
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 100%;
-
-    &:nth-child(1) {
-      position: relative;
-      & > i {
-        display: none;
+  & div:nth-child(4) {
+    .angular-editor-button {
+      &:nth-child(1),
+      &:nth-child(2) {
+        position: relative;
+        & > i {
+          display: none;
+        }
       }
-      &:before {
+  
+      &:nth-child(1):before {
         content: url('../../../../assets/images/text-editior/arrow-left.svg');
         position: absolute;
         bottom: 0.5px;
         left: calc(50% - 10px);
       }
-    }
 
-    &:nth-child(2) {
-      position: relative;
-      & > i {
-        display: none;
-      }
-      &:before {
+      &:nth-child(2):before {
         content: url('../../../../assets/images/text-editior/arrow-right.svg');
         position: absolute;
         bottom: 0.5px;
@@ -174,34 +138,25 @@ angular-editor-toolbar > div > div:nth-child(4) {
       }
     }
   }
-}
 
-angular-editor-toolbar > div > div:nth-child(5) {
-  .angular-editor-button {
-    font-family: 'Montserrat', 'open-sans'!important;
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 100%;
-
-    &:nth-child(1) {
-      position: relative;
-      & > i {
-        display: none;
+  & div:nth-child(5) {
+    .angular-editor-button {
+      &:nth-child(1),
+      &:nth-child(2) {
+        position: relative;
+        & > i {
+          display: none;
+        }
       }
-      &:before {
+  
+      &:nth-child(1):before {
         content: url('../../../../assets/images/text-editior/list-dots.svg');
         position: absolute;
         bottom: 0.5px;
         left: calc(50% - 10px);
       }
-    }
-
-    &:nth-child(2) {
-      position: relative;
-      & > i {
-        display: none;
-      }
-      &:before {
+  
+      &:nth-child(2):before {
         content: url('../../../../assets/images/text-editior/list-numbers.svg');
         position: absolute;
         bottom: 0.5px;
@@ -209,68 +164,32 @@ angular-editor-toolbar > div > div:nth-child(5) {
       }
     }
   }
-}
 
-angular-editor-toolbar > div > div:nth-child(9) {
-  .angular-editor-button {
-    font-family: 'Montserrat', 'open-sans'!important;
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 100%;
-
-    &:nth-child(2) {
-      & > span > i {
-        display: none;
+  & div:nth-child(9) {
+    .angular-editor-button {
+      &:nth-child(2),
+      &:nth-child(4) {
+        & > span {
+          display: none;
+        }
       }
   
-      &::before {
+      &:nth-child(2)::before {
         content: 'A';
         text-decoration: underline;
-      }
-    } 
-
-    &:nth-child(4) {
-      & > span {
-        background-color: transparent!important;
-      }
-      & > span > i {
-        display: none;
-      }
+      } 
   
-      &::before {
+      &:nth-child(4):before {
         content: 'A';
-        background-color: #D0DAEB;
+        background-color: var(--asimetric-bg-color);
         padding: 4px 10px;
         border-radius: 3px;
         text-decoration: underline;
-      }
-    } 
-
+      } 
+    }
   }
 }
 
-
-#root > storybook-dynamic-app-root > app-text-editor > div > angular-editor > div > angular-editor-toolbar > div > div:nth-child(9) {
-  input:nth-child(1) {
-    // display: block!important;
-  }
-}
-
-.ae-picker-label {
-  border-radius: 3px;
-  color: var(--secondary-color); 
-  background: #D0DAEB!important;
-  color: var(--secondary-color)!important;
-  font-weight: bold;
-  font-family: 'Montserrat', 'open-sans';
-  font-style: normal;
-  font-weight: 500;
-  font-size: 14px!important;
-
-  &::before {
-    background: #D0DAEB!important;
-  }
-}
 angular-editor-toolbar > div > div:nth-child(7) > ae-select {
   width: 170px!important;
 }
@@ -283,42 +202,59 @@ angular-editor-toolbar > div > div:nth-child(6) > ae-select {
   background: transparent;
   
   & > .ae-picker-label {
-    background-color: #A7B2C5!important;
+    background-color: var(--light-gray-color)!important;
     color: var(--secondary-color);
     &::before {
-      background: #A7B2C5!important;
+      background: var(--light-gray-color)!important;
     }
   }
 }
 
-.ae-picker-options {
-  background-color: #A7B2C5!important;
-  border-radius: 3px;
-  border: none!important;
-}
+.ae-picker {
+  &-label {
+    border-radius: 3px;
+    background: var(--asimetric-bg-color)!important;
+    color: var(--secondary-color)!important;
+    font-size: 14px!important;
+  
+    &::before {
+      background: var(--asimetric-bg-color)!important;
+    }
+  }
 
-.ae-picker-item.selected.focused {
-  background-color: #A7B2C5!important;
-  color: var(--secondary-color)!important;
-}
+  &-options {
+    background-color: var(--light-gray-color)!important;
+    border-radius: 3px;
+    border: none!important;
+  }
 
-.ae-picker-item {
-  color: var(--secondary-color)!important;
-  font-weight: bold;
-  font-family: 'Montserrat', 'open-sans';
-  font-style: normal;
-  font-weight: 500;
-  font-size: 14px;
-  &:hover {
-    background-color: #7A89A2!important;
+  &-item {
+    color: var(--secondary-color)!important;
+    font-size: 14px!important;
+  
+    &:hover {
+      background-color: var(--light-highlited-gray-color)!important;
+    }
+  
+    &.selected.focused {
+      background-color: var(--light-gray-color)!important;
+      color: var(--secondary-color)!important;
+    }
   }
 }
 
 .angular-editor-toolbar {
-  background: #EAEDF2;
-  border: 1px solid #B3BAC9;
+  display: flex;
+  flex-wrap: wrap;
+  background: var(--status-bar-bg-color);
+  border: 1px solid var(--light-gray2-color);
   border-radius: 12px 12px 0px 0px;
   padding: 13px 37px 12px 42px!important;
+
+  &-set {
+    display: flex;
+    align-items: flex-start;
+  }
 }
 
 angular-editor-toolbar > div > div:nth-child(1) > button:nth-child(1),
@@ -328,23 +264,20 @@ angular-editor-toolbar > div > div:nth-child(1) {
   display: none;
 }
 
-.angular-editor-toolbar-set {
-  display: flex;
-  align-items: flex-start;
-}
-
-.angular-editor-toolbar {
-  display: flex;
-  flex-wrap: wrap;
-}
-
 .angular-editor-textarea {
-  background: #FFFFFF;
-  border: 1px solid #011949;
+  background: var(--text-color);
+  border: 1px solid var(--secondary-color);
   border-top: none!important;
   border-radius: 0px 0px 12px 12px;
+  padding: 17px!important;
   margin-top: 0!important;
   outline: none!important;
+
+  font-family: 'Sofia pro', 'open-sans';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 28px;
 }
 
 ae-select > span > button > svg > polygon {

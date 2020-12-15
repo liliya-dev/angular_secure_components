@@ -1,0 +1,15 @@
+<div  class="app-checkbox-input-dark__container">
+  <input
+    type="checkbox" 
+    [id]="id"
+    name="checkbox-input-simple" 
+    class="app-checkbox-input-dark"
+    [checked]="isChecked"
+  >
+  <label [for]="id" class="app-checkbox-input-dark__label">
+    <p class="app-checkbox-input-dark__title fs-16-sofia-300" *ngIf="title!==''">
+      {{ title }}
+    </p>
+  </label>
+</div>
+

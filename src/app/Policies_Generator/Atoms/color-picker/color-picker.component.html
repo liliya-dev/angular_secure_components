@@ -1,0 +1,18 @@
+<div class="color-picker-container">
+  <div class="color-picker__wrapper" *ngIf="isColorPickerVisible" #picker>
+    <color-sketch 
+      color="#A5C3B3" 
+      (onChange)="consoleColor($event)"
+    >
+    </color-sketch>
+  </div>
+  <div class="color-picker__box" (click)="setColorPickerVisibility()">
+    <div 
+      class="color-picker__color"
+      [ngStyle]="{ 'background-color': color }"
+    >
+    </div>
+    <div class="color-picker__value fs-16-sofia-300">{{ value }}</div>
+  </div>
+</div>
+
