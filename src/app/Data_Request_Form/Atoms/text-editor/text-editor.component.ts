@@ -8,6 +8,10 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 })
 export class TextEditorComponent implements OnInit {
 
+  checkk(s) {
+    console.log(s)
+  }
+
   constructor() { }
 
   ngOnInit(): void {
