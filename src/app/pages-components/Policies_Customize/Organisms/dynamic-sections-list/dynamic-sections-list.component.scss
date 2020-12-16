@@ -1,4 +1,5 @@
 .app-dynamic-sections-list {
+  position: relative;
   width: 100%;
   height: 100%;
   margin-top: 10px;
@@ -8,6 +9,29 @@
   align-items: flex-start;
 
   border: 1px solid var(--status-bar-bg-color);
+  overflow-x: hidden;
+
+  &__open-button {
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    z-index: 2;
+
+    width: 25px;
+    height: 25px;
+    padding: 5px;
+    
+    outline: none;
+    border: none;
+    background-color: transparent;
+    border: 1px solid var(--status-bar-bg-color);
+    transform: rotate(90deg);
+
+    & > img {
+      width: 15px;
+      height: 10px;
+    }
+  }
 
   &__main-title-input {
     width: 100%;
@@ -28,6 +52,17 @@
 
     color: rgba(var(--secondary-color-code), 0.7);
     border: 1px solid var(--status-bar-bg-color);
+
+    &.mobile {
+      width: 250px;
+      position: absolute;
+      background-color: var(--text-color);
+      z-index: 3;
+      top: 0;
+      will-change: transform;
+      transition: left 1s;
+      // animation: appear 0.5s ease-in-out;
+    }
 
     &::-webkit-scrollbar {
       width: 3px;
@@ -128,4 +163,9 @@
 
 .btn-dark {
   margin: 32px 0 32px 32px;
+}
+
+@keyframes appear {
+  from { left: -100%; }
+  to { left: 0%; }
 }

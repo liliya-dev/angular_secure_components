@@ -1,5 +1,7 @@
-import { Component, Input, OnChanges, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, Input, OnChanges, OnInit, HostListener, ViewEncapsulation, ViewChild, ElementRef } from '@angular/core';
  
+const MOBILE_VIEW = 725;
+
 @Component({
   selector: 'app-dynamic-sections-list',
   templateUrl: './dynamic-sections-list.component.html',
@@ -13,13 +15,56 @@ export class PoliciesDynamicSectionsListComponent implements OnInit, OnChanges {
   activeSection: number;
   isSectionActive: boolean = false;
   isElementActive: boolean = false;
-  constructor() { }
+  isMobile: boolean;
+  isVisibleMobileMenu: boolean;
+
+  @ViewChild('sectionsList') sectionsList: ElementRef;
+  @ViewChild('mobileMenu') mobileMenu: ElementRef;
+  @ViewChild('mobileButton') mobileButton: ElementRef;
+
+  @HostListener('document:click', ['$event'])
+	onClick(event: Event) {
+    if (!this.mobileMenu.nativeElement.contains(event.target) && !this.mobileButton.nativeElement.contains(event.target)) {
+      this.isVisibleMobileMenu = false;
+    }
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event: any) {
+    this.isMobile = this.sectionsList.nativeElement.clientWidth < MOBILE_VIEW;
+  }
+
+  toggleSectionsMenu() {
+    this.isVisibleMobileMenu = !this.isVisibleMobileMenu;
+  }
+
+  /// visual effects
+
+  setHoverElement = () => {
+    this.isElementActive = true;
+    this.isSectionActive = false;
+  }
+
+  setNoHoverElement = () => {
+    this.isElementActive = false;
+    this.isSectionActive = true;
+  }
+
+  handleHover = (event: any, index: number) => {
+    this.isSectionActive = index !== -1;
+    this.activeSection = index;
+  }
 
   scrollToActive(index) {
     const id = this.sections[index].sectionId;
     const element: HTMLElement = document.querySelector('#id'+id);
     element.scrollIntoView();
+    if(this.isVisibleMobileMenu && this.isMobile) {
+      this.isVisibleMobileMenu = false;
+    }
   }
+
+  /// managing section content
 
   editSection = (props) => {
     const indexOfSectionToEdit = this.sections.findIndex(section => section.sectionId === props.sectionId);
@@ -53,22 +98,6 @@ export class PoliciesDynamicSectionsListComponent implements OnInit, OnChanges {
     this.sections[indexOfSectionToEdit].initialState  = [...newState];
   }
 
-  setHoverElement = () => {
-    this.isElementActive = true;
-    this.isSectionActive = false;
-  }
-
-  setNoHoverElement = () => {
-    this.isElementActive = false;
-    this.isSectionActive = true;
-  }
-
-  handleHover = (event: any, index: number) => {
-    console.log(index)
-    this.isSectionActive = index !== -1;
-    this.activeSection = index;
-  }
-
   addSection(index: number) {
     const initialSectionState =  [{
       type: 'text',
@@ -89,7 +118,7 @@ export class PoliciesDynamicSectionsListComponent implements OnInit, OnChanges {
     return index;
   }
 
-  ngOnChanges(): void {
+  setInitialState() {
     if (this.sections.length === 0 && !this.initialSectionsList) {
       this.addSection(0);
     }
@@ -98,12 +127,15 @@ export class PoliciesDynamicSectionsListComponent implements OnInit, OnChanges {
     }
   }
 
+  ngAfterViewInit() {
+    this.isMobile = this.sectionsList.nativeElement.clientWidth < MOBILE_VIEW;
+  }
+
+  ngOnChanges(): void {
+    this.setInitialState();
+  }
+
   ngOnInit(): void {
-    if (this.sections.length === 0 && !this.initialSectionsList) {
-      this.addSection(0);
-    }
-    if (this.initialSectionsList) {
-      this.sections = this.initialSectionsList
-    }
+    this.setInitialState();
   }
 }

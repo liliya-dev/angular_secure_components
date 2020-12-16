@@ -1,24 +1,60 @@
-<div class="app-dynamic-sections-list">
-  <div class="app-dynamic-sections-list__navigation fs-14-gramm-400-light">
-    <app-small-light-add-button
-      [title]="'Add section'"
-      [classes]="'app-small-light-add-button fs-14-gramm-400-light'"
-      (click)="addSection(sections.length)"
-    >
-    </app-small-light-add-button>
-    <ul *ngFor="let section of sections; let i = index;trackBy:indexTracker" class="app-dynamic-sections-list__titles">
-      <li 
-        [ngClass]="i===activeSection ? 'app-dynamic-sections-list__title active' : 'app-dynamic-sections-list__title'"
-        (click)="scrollToActive(i)"
+<div class="app-dynamic-sections-list" #sectionsList>
+  <ng-container *ngIf="!isMobile">
+    <div class="app-dynamic-sections-list__navigation fs-14-gramm-400-light">
+      <app-small-light-add-button
+        [title]="'Add section'"
+        [classes]="'app-small-light-add-button fs-14-gramm-400-light'"
+        (click)="addSection(sections.length)"
       >
-        {{ section.title }}
-      </li>
-    </ul>
-  </div>
-  <div class="app-dynamic-sections-list__content">
+      </app-small-light-add-button>
+        <ul *ngFor="let section of sections; let i = index;trackBy:indexTracker" class="app-dynamic-sections-list__titles">
+          <li 
+            [ngClass]="i===activeSection ? 'app-dynamic-sections-list__title active' : 'app-dynamic-sections-list__title'"
+            (click)="scrollToActive(i)"
+          >
+            {{ section.title }}
+          </li>
+        </ul>
+    </div>
+  </ng-container>
+  <ng-container *ngIf="isMobile">
+    <button 
+      type="button" 
+      class="app-dynamic-sections-list__open-button"
+      (click)="toggleSectionsMenu()"
+      #mobileButton
+    >
+      <img src="assets/images/customPolicy/open.png" alt="arrow">
+    </button>
+    <div 
+      #mobileMenu
+      class="app-dynamic-sections-list__navigation mobile fs-14-gramm-400-light"
+      [ngStyle]="isVisibleMobileMenu ? { 'left': '0' } : { 'left': '-100%' }"
+    >
+      <app-small-light-add-button
+        [title]="'Add section'"
+        [classes]="'app-small-light-add-button fs-14-gramm-400-light'"
+        (click)="addSection(sections.length)"
+      >
+      </app-small-light-add-button>
+        <ul *ngFor="let section of sections; let i = index;trackBy:indexTracker" class="app-dynamic-sections-list__titles">
+          <li 
+            [ngClass]="i===activeSection ? 'app-dynamic-sections-list__title active' : 'app-dynamic-sections-list__title'"
+            (click)="scrollToActive(i)"
+          >
+            {{ section.title }}
+          </li>
+        </ul>
+    </div>
+  </ng-container>
+  <div 
+    class="app-dynamic-sections-list__content"
+    [ngStyle]="isMobile && { 'margin': '15px 0 0', 'width': '100%' }"
+  >
     <ul 
       *ngFor="let section of sections; let i = index;"
       class="app-dynamic-sections-list__sections"
+      [ngStyle]="isMobile && { 'padding': '0' }"
     >
       <li 
         [id]="'id'+section.sectionId"

@@ -26,20 +26,20 @@
   }
 
   &__button-delete {
-    width: 6px;
-    height: 6px;
+    width: 10px;
+    height: 10px;
 
     position: absolute;
     top: calc(50% - 21px);
-    right: 2%;
+    right: 1%;
 
     background-color: transparent;
     border: none;
 
-    z-index: 20;
+    z-index: 200;
     &.delete-table {
       top: 22px;
-      right: 25px;
+      right: 20px;
     }
   }
 

@@ -20,8 +20,8 @@ const Template: Story<TemplateItemComponent> = (args: TemplateItemComponent) => 
   props: args,
 });
 
-export const TextEditor = Template.bind({});
-TextEditor.args = {
+export const TemplateItem = Template.bind({});
+TemplateItem.args = {
   title: 'Company name',
   value: 'CompanyName'
 };
