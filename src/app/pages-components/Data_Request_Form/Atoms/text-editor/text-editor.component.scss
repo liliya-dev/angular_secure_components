@@ -11,6 +11,23 @@
   line-height: 100%;
 }
 
+#italic- {
+  font-family: 'Montserrat Italic', 'open-sans'!important;
+  font-weight: 700;
+}
+
+#bold- {
+  font-weight: 900;
+}
+
+#null {
+  display: none;
+}
+
+.angular-editor-toolbar-set {
+  margin-bottom: 5px;
+}
+
 .angular-editor-button {
   width: 32px;
   height: 28px;
@@ -19,6 +36,12 @@
   border: none!important;
   background: transparent!important;
   font-weight: 700;
+  transition: 0.3s;
+  margin: 0 5px 5px 0;
+
+  &:hover {
+    background: var(--asimetric-bg-color)!important;
+  }
 
   &.active {
     background: var(--asimetric-bg-color)!important;
@@ -169,6 +192,7 @@ angular-editor-toolbar > div > {
     .angular-editor-button {
       &:nth-child(2),
       &:nth-child(4) {
+        position: relative;
         & > span {
           display: none;
         }
@@ -181,10 +205,15 @@ angular-editor-toolbar > div > {
   
       &:nth-child(4):before {
         content: 'A';
+        position: absolute;
+        top: 0;
+        left: 0;
+
         background-color: var(--asimetric-bg-color);
-        padding: 4px 10px;
+        line-height: 28px;
+        width: 32px;
+        height: 28px;
         border-radius: 3px;
-        text-decoration: underline;
       } 
     }
   }
@@ -196,18 +225,6 @@ angular-editor-toolbar > div > div:nth-child(7) > ae-select {
 
 angular-editor-toolbar > div > div:nth-child(6) > ae-select {
   width: 120px!important;
-}
-
-.ae-font.ae-picker.ae-expanded{
-  background: transparent;
-  
-  & > .ae-picker-label {
-    background-color: var(--light-gray-color)!important;
-    color: var(--secondary-color);
-    &::before {
-      background: var(--light-gray-color)!important;
-    }
-  }
 }
 
 .ae-picker {
@@ -223,7 +240,7 @@ angular-editor-toolbar > div > div:nth-child(6) > ae-select {
   }
 
   &-options {
-    background-color: var(--light-gray-color)!important;
+    background: var(--asimetric-bg-color)!important;
     border-radius: 3px;
     border: none!important;
   }
@@ -249,11 +266,10 @@ angular-editor-toolbar > div > div:nth-child(6) > ae-select {
   background: var(--status-bar-bg-color);
   border: 1px solid var(--light-gray2-color);
   border-radius: 12px 12px 0px 0px;
-  padding: 13px 37px 12px 42px!important;
+  padding: 13px 37px 7px 42px!important;
 
   &-set {
-    display: flex;
-    align-items: flex-start;
+    display: contents!important;
   }
 }
 
@@ -272,6 +288,7 @@ angular-editor-toolbar > div > div:nth-child(1) {
   padding: 17px!important;
   margin-top: 0!important;
   outline: none!important;
+  white-space: pre-wrap;
 
   font-family: 'Sofia pro', 'open-sans';
   font-style: normal;
@@ -282,4 +299,14 @@ angular-editor-toolbar > div > div:nth-child(1) {
 
 ae-select > span > button > svg > polygon {
   stroke: var(--secondary-color)!important;
+}
+
+.ng-pristine {
+  margin: 0 5px 5px 0;
+}
+
+@media screen and (max-width: 800px) {
+  .angular-editor-toolbar {
+    padding: 8px 15px 3px 15px!important;
+  }
 }

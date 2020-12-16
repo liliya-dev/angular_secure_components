@@ -1,7 +1,6 @@
 import { HttpClientModule} from '@angular/common/http';
-import { AngularEditorModule } from '@kolkov/angular-editor';
 import { Meta, moduleMetadata, Story } from '@storybook/angular';
-import { TextEditorComponent } from './text-editor.component';
+import { TemplateItemComponent } from './template-item.component';
 
 const props = {};
 
@@ -9,21 +8,20 @@ export default {
   title: 'DATA REQUEST FORM/Atoms',
   decorators: [
     moduleMetadata({
-      declarations: [TextEditorComponent],
-      imports: [HttpClientModule, AngularEditorModule]
+      declarations: [TemplateItemComponent],
+      imports: [HttpClientModule]
     }),
   ],
   argTypes: props,
 } as Meta;
 
-const Template: Story<TextEditorComponent> = (args: TextEditorComponent) => ({
-  component: TextEditorComponent,
+const Template: Story<TemplateItemComponent> = (args: TemplateItemComponent) => ({
+  component: TemplateItemComponent,
   props: args,
 });
 
 export const TextEditor = Template.bind({});
 TextEditor.args = {
+  title: 'Company name',
+  value: 'CompanyName'
 };
-
-
-

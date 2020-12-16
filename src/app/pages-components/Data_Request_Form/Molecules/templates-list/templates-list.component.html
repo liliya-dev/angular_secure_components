@@ -1,0 +1,13 @@
+<ul 
+  class="app-templates-list" 
+  #element
+  [ngStyle]="{ 'grid-template-columns': 'repeat(' + gridColumnsNumber + ', 1fr)' }"
+>
+  <li class="app-templates-list__item" *ngFor="let item of list">
+    <app-template-item 
+      [title]="item.title"
+      [value]="item.value"
+    >
+    </app-template-item>
+  </li>
+</ul>

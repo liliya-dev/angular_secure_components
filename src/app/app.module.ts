@@ -110,6 +110,9 @@ import { PoliciesSmallLightAddButtonComponent } from './pages-components/Policie
 import { PoliciesDarkAddButtonComponent } from './pages-components/Policies_Customize/Atoms/buttons/dark-add-button/dark-add-button.component';
 import { PoliciesCustomizedElementComponent } from './pages-components/Policies_Customize/Molecules/customized-element/customized-element.component';
 import { PoliciesDynamicSectionsListComponent } from './pages-components/Policies_Customize/Organisms/dynamic-sections-list/dynamic-sections-list.component';
+import { TemplateItemComponent } from './pages-components/Data_Request_Form/Atoms/template-item/template-item.component';
+import { TemplatesListComponent } from './pages-components/Data_Request_Form/Molecules/templates-list/templates-list.component';
+import { AngularEditorModule } from '@kolkov/angular-editor';
 
 PlotlyModule.plotlyjs = PlotlyJS;
 
@@ -223,7 +226,9 @@ PlotlyModule.plotlyjs = PlotlyJS;
     PoliciesSmallLightAddButtonComponent,
     PoliciesDarkAddButtonComponent,
     PoliciesCustomizedElementComponent,
-    PoliciesDynamicSectionsListComponent
+    PoliciesDynamicSectionsListComponent,
+    TemplateItemComponent,
+    TemplatesListComponent
   ],
   imports: [
     ColorSketchModule,
@@ -235,7 +240,8 @@ PlotlyModule.plotlyjs = PlotlyJS;
     PlotlyModule,
     CommonModule,
     NgApexchartsModule,
-    TextareaAutosizeModule
+    TextareaAutosizeModule,
+    AngularEditorModule
   ],
   bootstrap: [AppComponent]
 })

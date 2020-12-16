@@ -8,19 +8,17 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 })
 export class TextEditorComponent implements OnInit {
   htmlContent = `
-    <pre>
-    Hi ##Hal##,\n
-    A person has requested removal. The details of that person are\n
-    Name: ##customer_name##
-    Email: ##customer_email##
-    Address: ##customer_address##
-    Phone: ##customer_Phonenumber##
-    Request type: ##request_type##
-    Message: ##customer_Message##
+Hi ##Hal##,\n
+A person has requested removal. The details of that person are gvhgv vgvtyv bgyugbuy bgukygiuvg\n
+Name: ##customer_name##
+Email: ##customer_email##
+Address: ##customer_address##
+Phone: ##customer_Phonenumber##
+Request type: ##request_type##
+Message: ##customer_Message##
 
-    Thank you,
-    Secure Privacy Team
-    </pre>
+Thank you,
+Secure Privacy Team
   `;
 
   onChange(event) {

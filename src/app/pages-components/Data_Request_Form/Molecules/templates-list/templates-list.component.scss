@@ -1,0 +1,9 @@
+.app-templates-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 16px;
+  background-color: rgba(var(--secondary-color-code), 0.05);
+  border-radius: 22px;
+  padding: 32px;
+  width: 100%;
+}
