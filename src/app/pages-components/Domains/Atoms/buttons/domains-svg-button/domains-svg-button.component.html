@@ -1,0 +1,15 @@
+<button 
+  class="domains-svg-button"
+  [ngStyle]="{ 'background-color': background, 'border': '1px solid '+border }"
+  (mousedown)="changeToStaticColor()"
+  (mouseup)="changeToActiveColor()"
+  (mouseenter)="changeToActiveColor()"
+  (mouseleave)="changeToStaticColor()"
+>
+  <svg-icon 
+    [src]="svgPath"
+    [svgStyle]="isStroke ? { 'stroke': svgColor } : { 'fill': svgColor }"
+  >
+  </svg-icon>
+</button>
+
