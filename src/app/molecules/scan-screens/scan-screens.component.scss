@@ -17,8 +17,49 @@
     }
 
     & > .fs-16-sofia-300 {
-      margin-bottom: 57px;
+      margin-bottom: 20px;
       opacity: 0.75;
+    }
+  }
+
+  &__wrapper {
+    width: 100%;
+    max-width: 355px;
+    height: 120px;
+    margin-bottom: 25px;
+    padding: 16px 16px 16px 24px;
+    background: var(--card-bg-color);
+    border-radius: 12px;
+  }
+
+  &__list {
+    height: 88px;
+    width: 100%;
+    max-width: 315px;
+    overflow-y: scroll;
+    line-height: 19px;
+    color: var(--secondary-color-code);
+
+    &::-webkit-scrollbar {
+      width: 5px;
+    }
+    
+    &::-webkit-scrollbar-track {
+      background: var(--asimetric-bg-color);
+      -webkit-border-radius: 20px;
+      border-radius: 20px;
+      width: 5px;
+    }
+    
+    &::-webkit-scrollbar-thumb {
+      -webkit-border-radius: 20px;
+      border-radius: 20px;
+      background: var(--secondary-color); 
+      width: 5px;
+    }
+
+    &-item {
+      margin-bottom: 5px;
     }
   }
 }

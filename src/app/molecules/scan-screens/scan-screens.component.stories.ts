@@ -31,5 +31,10 @@ const Template: Story<ScanScreensComponent> = (args: ScanScreensComponent) => ({
 });
 
 export const First = Template.bind({});
-First.args = {};
+First.args = {
+  items: [
+    'domain.com', 'domain.com/shop', 'domain.com/privacy', 'domain.com/1', 'domain.com/2', 'domain.com/3', 'domain.com',
+    'domain.com/privacy', 'domain.com/1', 'domain.com/2', 'domain.com/3', 'domain.com'
+  ]
+};
 

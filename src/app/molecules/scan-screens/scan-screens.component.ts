@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, Input, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-scan-screens',
@@ -8,4 +8,5 @@ import { Component, ViewEncapsulation } from '@angular/core';
 })
 
 export class ScanScreensComponent {
+  @Input() items: string[];
 }
