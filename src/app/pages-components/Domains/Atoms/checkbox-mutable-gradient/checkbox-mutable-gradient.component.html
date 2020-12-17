@@ -1,0 +1,12 @@
+<div [ngClass]="classes">
+  <input
+    type="checkbox" 
+    [id]="id"
+    name="app-checkbox-input-gradient" 
+    class="app-checkbox-input-gradient"
+    [checked]="isChecked"
+    (change)="onToggle()"
+  >
+  <label [for]="id" class="app-checkbox-input-gradient__label"></label>
+</div>
+

@@ -1,0 +1,30 @@
+.app-mutable-primary-button {
+  padding: 16px 29px;
+  border-radius: 8px;
+  border: none;
+  background: rgba(var(--text-color-code), 0.15);
+  color: var(--text-color);
+  text-transform: uppercase;
+
+  &:hover {
+    background-color: var(--text-color);
+
+    & > p {
+      background: var(--success-grad-light);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+
+  &:active {
+    background: rgba(var(--secondary-color-code), 0.15);
+
+    & > p {
+      background: var(--text-color);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+}

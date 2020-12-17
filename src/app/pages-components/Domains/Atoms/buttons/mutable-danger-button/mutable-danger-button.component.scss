@@ -1,0 +1,16 @@
+.app-mutable-danger-button {
+  height: 44px;
+  padding: 11px 14px;
+  border-radius: 8px;
+  border: none;
+  background-color: rgba(var(--text-color-code), 0.1);
+
+  &:hover {
+    background-color: rgba(var(--text-color-code), 1);
+  }
+
+  &:active {
+    background-color: rgba(var(--text-color-code), 0.1);
+  }
+}
+

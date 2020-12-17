@@ -69,25 +69,13 @@ import { gradientButtonComponent } from './atoms/buttons/gradientButton/gradient
 import { ColorPickerComponent } from './atoms/color-picker/color-picker.component';
 import { StatusStepsDynamicComponent } from './atoms/status-steps-dynamic/status-steps-dynamic.component';
 import { StatusBarComponent } from './molecules/status-bar/status-bar.component';
-import { MutableLightButtonComponent } from './atoms/buttons/domains-card-buttons/mutable-light-button/mutable-light-button.component';
-import { MutablePrimaryButtonComponent } from './atoms/buttons/domains-card-buttons/mutable-primary-button/mutable-primary-button.component';
-import { MutableDangerButtonComponent } from './atoms/buttons/domains-card-buttons/mutable-danger-button/mutable-danger-button.component';
-import { MutableGradientIconButtonComponent } from './atoms/buttons/domains-card-buttons/mutable-gradient-icon-button/mutable-gradient-icon-button.component';
 import { CheckboxMutableGradientComponent } from './atoms/inputs/checkbox/checkbox-mutable-gradient/checkbox-mutable-gradient.component';
-import { OnboardingCardComponent } from './atoms/card/onboarding-card/onboarding-card.component';
-import { OnboardingListComponent } from './molecules/onboarding-list/onboarding-list.component';
-import { ApproveModalComponent } from './atoms/modals/approve-modal/approve-modal.component';
 import { SmallLightAddButtonComponent } from './atoms/buttons/add-buttons/small-light-add-button/small-light-add-button.component';
-import { DynamicTableComponent } from './atoms/tables/dynamic-table/dynamic-table.component';
 import { DarkAddButtonComponent } from './atoms/buttons/add-buttons/dark-add-button/dark-add-button.component';
-import { CustomizedElementComponent } from './molecules/customized-element/customized-element.component';
-import { DynamicListComponent } from './atoms/tables/dynamic-list/dynamic-list.component';
-import { AddComponent } from './molecules/customized-element/add-dynamic-component/add-dynamic.component';
-import { AddDirective } from './molecules/customized-element/add-dynamic-component/add.directive';
-import { AddService } from './molecules/customized-element/add-dynamic-component/add.service';
+import { AddComponent } from './pages-components/Policies_Customize/Molecules/customized-element/add-dynamic-component/add-dynamic.component';
+import { AddDirective } from './pages-components/Policies_Customize/Molecules/customized-element/add-dynamic-component/add.directive';
+import { AddService } from './pages-components/Policies_Customize/Molecules/customized-element/add-dynamic-component/add.service';
 import { TextareaAutosizeModule } from 'ngx-textarea-autosize';
-import { DynamicTextComponent } from './atoms/text/dynamic-text/dynamic-text.component';
-import { DynamicSectionsListComponent } from './organisms/dynamic-sections-list/dynamic-sections-list.component';
 import { LinearChartComponent } from './atoms/charts/linear-chart/linear-chart.component';
 import { ColumnChartComponent } from './atoms/charts/column-chart/column-chart.component';
 import { MapChartComponent } from './atoms/charts/map-chart/map-chart.component';
@@ -113,21 +101,27 @@ import { PoliciesDynamicSectionsListComponent } from './pages-components/Policie
 import { TemplateItemComponent } from './pages-components/Data_Request_Form/Atoms/template-item/template-item.component';
 import { TemplatesListComponent } from './pages-components/Data_Request_Form/Molecules/templates-list/templates-list.component';
 import { AngularEditorModule } from '@kolkov/angular-editor';
+import { DomainsMutablePrimaryButtonComponent } from './pages-components/Domains/Atoms/buttons/mutable-primary-button/mutable-primary-button.component';
+import { DomainsMutableLightButtonComponent } from './pages-components/Domains/Atoms/buttons/mutable-light-button/mutable-light-button.component';
+import { DomainsSimpleButtonComponent } from './pages-components/Domains/Atoms/buttons/simpleButton/simpleButton.component';
+import { DomainsMutableDangerButtonComponent } from './pages-components/Domains/Atoms/buttons/mutable-danger-button/mutable-danger-button.component';
+import { DomainsMutableGradientIconButtonComponent } from './pages-components/Domains/Atoms/buttons/mutable-gradient-icon-button/mutable-gradient-icon-button.component';
+import { DomainsApproveModalComponent } from './pages-components/Domains/Atoms/modals/approve-modal/approve-modal.component';
+import { DomainsCheckboxMutableGradientComponent } from './pages-components/Domains/Atoms/checkbox-mutable-gradient/checkbox-mutable-gradient.component';
+import { DomainsOnboardingCardComponent } from './pages-components/Domains/Molecules/onboarding-card/onboarding-card.component';
+import { DomainsOnboardingListComponent } from './pages-components/Domains/Organisms/onboarding-list/onboarding-list.component';
+
 
 PlotlyModule.plotlyjs = PlotlyJS;
 
 @NgModule({
   entryComponents: [
-    DynamicTableComponent,
-    DynamicListComponent,
-    DynamicTextComponent,
     PoliciesDynamicTextComponent,
     PoliciesDynamicListComponent,
     PoliciesDynamicTableComponent
  ],
   providers: [AddService],
   declarations: [
-    DynamicTableComponent,
     AddComponent,
     AddDirective,
     AppComponent,
@@ -190,21 +184,10 @@ PlotlyModule.plotlyjs = PlotlyJS;
     ColorPickerComponent,
     StatusStepsDynamicComponent,
     StatusBarComponent,
-    MutableLightButtonComponent,
-    MutablePrimaryButtonComponent,
-    MutableDangerButtonComponent,
-    MutableGradientIconButtonComponent,
     CheckboxMutableGradientComponent,
-    OnboardingCardComponent,
-    OnboardingListComponent,
-    ApproveModalComponent,
+    DomainsApproveModalComponent,
     SmallLightAddButtonComponent,
-    DynamicTableComponent,
     DarkAddButtonComponent,
-    CustomizedElementComponent,
-    DynamicListComponent,
-    DynamicTextComponent,
-    DynamicSectionsListComponent,
     LinearChartComponent,
     ColumnChartComponent,
     MapChartComponent,
@@ -228,7 +211,15 @@ PlotlyModule.plotlyjs = PlotlyJS;
     PoliciesCustomizedElementComponent,
     PoliciesDynamicSectionsListComponent,
     TemplateItemComponent,
-    TemplatesListComponent
+    TemplatesListComponent,
+    DomainsSimpleButtonComponent,
+    DomainsMutableGradientIconButtonComponent,
+    DomainsMutableDangerButtonComponent,
+    DomainsMutableLightButtonComponent,
+    DomainsMutablePrimaryButtonComponent,
+    DomainsCheckboxMutableGradientComponent,
+    DomainsOnboardingCardComponent,
+    DomainsOnboardingListComponent
   ],
   imports: [
     ColorSketchModule,

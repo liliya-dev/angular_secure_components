@@ -57,21 +57,8 @@ import { GradientTextComponent } from './atoms/text/gradient-text/gradient-text.
 import { SelectInputWithInitialValueComponent } from './atoms/inputs/select-input/select-input-with-initial-value/select-input-with-initial-value.component';
 import { moduleMetadata, Story, Meta } from '@storybook/angular';
 import { ColorSketchModule } from 'ngx-color/sketch';
-import { StatusStepsDynamicComponent } from './atoms/status-steps-dynamic/status-steps-dynamic.component';
-import { StatusBarComponent } from './molecules/status-bar/status-bar.component';
-import { MutableLightButtonComponent } from './atoms/buttons/domains-card-buttons/mutable-light-button/mutable-light-button.component';
-import { MutablePrimaryButtonComponent } from './atoms/buttons/domains-card-buttons/mutable-primary-button/mutable-primary-button.component';
-import { MutableDangerButtonComponent } from './atoms/buttons/domains-card-buttons/mutable-danger-button/mutable-danger-button.component';
-import { MutableGradientIconButtonComponent } from './atoms/buttons/domains-card-buttons/mutable-gradient-icon-button/mutable-gradient-icon-button.component';
-import { CheckboxMutableGradientComponent } from './atoms/inputs/checkbox/checkbox-mutable-gradient/checkbox-mutable-gradient.component';
-import { OnboardingCardComponent } from './atoms/card/onboarding-card/onboarding-card.component';
-import { OnboardingListComponent } from './molecules/onboarding-list/onboarding-list.component';
-import { ApproveModalComponent } from './atoms/modals/approve-modal/approve-modal.component';
 import { SmallLightAddButtonComponent } from './atoms/buttons/add-buttons/small-light-add-button/small-light-add-button.component';
-import { DynamicTableComponent } from './atoms/tables/dynamic-table/dynamic-table.component';
-import { DynamicListComponent } from './atoms/tables/dynamic-list/dynamic-list.component';
 import { DarkAddButtonComponent } from './atoms/buttons/add-buttons/dark-add-button/dark-add-button.component';
-import { CustomizedElementComponent } from './molecules/customized-element/customized-element.component';
 
 
 const props = {};
@@ -81,10 +68,8 @@ export default {
   decorators: [
     moduleMetadata({
       declarations: [
-        DynamicTableComponent,
         SmallLightAddButtonComponent,
         DarkAddButtonComponent,
-        DynamicListComponent,
         AppComponent,
         gradientButtonComponent,
         IconContainerComponent,
@@ -136,8 +121,6 @@ export default {
         SelectInputWithInitialValueComponent
       ],
       entryComponents: [
-        DynamicTableComponent,
-        DynamicListComponent
      ],
       imports: [
         ColorSketchModule,
