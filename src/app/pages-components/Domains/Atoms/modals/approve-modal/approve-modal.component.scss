@@ -22,6 +22,7 @@
     position: relative;
     top: -10%;
     min-width: 588px;
+    max-width: 800px;
     padding: 32px 64px;
     background: var(--card-bg-color);
     border-radius: 12px 30px;
@@ -39,6 +40,15 @@
     & :last-child {
       margin-right: 0;
     }
+  }
+
+  &__close {
+    position: absolute;
+    right: 28px;
+    top: 24px;
+    background-color: transparent;
+    border: none;
+    outline: none;
   }
 }
 

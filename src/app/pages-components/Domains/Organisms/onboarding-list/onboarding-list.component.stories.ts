@@ -11,6 +11,8 @@ import { DomainsFormInputComponent } from '../../Atoms/formInput/formInput.compo
 import { DomainsSimpleButtonComponent } from '../../Atoms/buttons/simpleButton/simpleButton.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AngularSvgIconModule } from 'angular-svg-icon';
+import { DragDropModule } from '@angular/cdk/drag-drop';
+import { DomainsSvgButtonComponent } from '../../Atoms/buttons/domains-svg-button/domains-svg-button.component';
 
 const props = {};
 
@@ -27,9 +29,15 @@ export default {
         DomainsMutableGradientIconButtonComponent,
         DomainsMutableDangerButtonComponent,
         DomainsCheckboxMutableGradientComponent,
-        DomainsApproveModalComponent
+        DomainsApproveModalComponent,
+        DomainsSvgButtonComponent
       ],
-      imports: [CommonModule, HttpClientModule, AngularSvgIconModule.forRoot()],
+      imports: [
+        CommonModule, 
+        HttpClientModule, 
+        AngularSvgIconModule.forRoot(),
+        DragDropModule
+      ],
     }),
   ],
   argTypes: props,
@@ -42,7 +50,7 @@ const Template: Story<DomainsOnboardingListComponent> = (args: DomainsOnboarding
 
 export const OnboardingList = Template.bind({});
 OnboardingList.args = {
-  domains: [
+  initialDomainsList: [
     { id: '1', title: 'Secure Privacy 1', text: 'secureprivacy.ai' },
     { id: '2', title: 'Secure Privacy 2', text: 'secureprivacy.ai' },
     { id: '3', title: 'Secure Privacy 3', text: 'secureprivacy.ai' },

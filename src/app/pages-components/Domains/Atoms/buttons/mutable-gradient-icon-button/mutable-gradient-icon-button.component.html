@@ -1,14 +1,17 @@
-<button 
-  class="app-mutable-gradient-icon-button active"
-  (mousedown)="changeToStaticColor()"
-  (mouseup)="changeToActiveColor()"
-  (mouseenter)="changeToActiveColor()"
-  (mouseleave)="changeToStaticColor()"
->
-  <svg-icon 
-    [src]="svgPath"
-    [svgStyle]="{ 'stroke': color }"
+<div class="app-mutable-gradient-icon-button__container">
+  <div class="app-mutable-gradient-icon-button__tip fs-16-sofia-500">Dupliate this domains</div>
+  <button 
+    class="app-mutable-gradient-icon-button active"
+    (mousedown)="changeToStaticColor()"
+    (mouseup)="changeToActiveColor()"
+    (mouseenter)="changeToActiveColor()"
+    (mouseleave)="changeToStaticColor()"
   >
-  </svg-icon>
-</button>
+    <svg-icon 
+      [src]="svgPath"
+      [svgStyle]="{ 'stroke': color }"
+    >
+    </svg-icon>
+  </button>
+</div>
 

@@ -17,7 +17,11 @@ export class DomainsApproveModalComponent {
 
   handleClick(event) {
     if (!event.target.closest('.approve-modal__form')) {
-      this.closeModal.emit();
+      this.handleClose();
     }
+  }
+
+  handleClose() {
+    this.closeModal.emit();
   }
 }

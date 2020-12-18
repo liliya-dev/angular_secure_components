@@ -29,3 +29,9 @@ SuccessBig.args = {
   title: "got it",
   classes: "btn-app--h46--wide btn-app btn-success ffs-12-sofia-800"
 };
+
+export const SuccessAsimetric = Template.bind({});
+SuccessAsimetric.args = {
+  title: "add domain",
+  classes: "btn-app--asimetric btn-success-asimetric fs-16-sofia-800"
+};

@@ -65,7 +65,7 @@
   <div class="app-onboarding-card__wrapper" *ngIf="!isMobile && onActive">
     <app-mutable-primary-button [title]="'edit'" (click)="handleEdit()"></app-mutable-primary-button>
     <app-mutable-primary-button [title]="'reports'" (click)="handleShowReports()"></app-mutable-primary-button>
-    <app-mutable-gradient-icon-button [svgPath]="'assets/images/copy.svg'" (click)="handleCopy()"></app-mutable-gradient-icon-button>
+    <app-mutable-gradient-icon-button [svgPath]="'assets/images/copy.svg'" (click)="handleDuplicate()"></app-mutable-gradient-icon-button>
     <app-mutable-danger-button [svgPath]="'assets/images/basket.svg'" (click)="handleDelete()"></app-mutable-danger-button>
   </div>
 </div>

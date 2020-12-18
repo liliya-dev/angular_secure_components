@@ -1,5 +1,12 @@
 <div class="approve-modal" (click)="handleClick($event)">
   <div class="approve-modal__form">
+    <button 
+      type="button" 
+      class="approve-modal__close" 
+      (click)="handleClose()"
+    >
+      <img src="assets/images/deleteX.png" alt="delete">
+    </button>
     <p class="approve-modal__title fs-h3">{{ title }}</p>
     <ng-content></ng-content>
     <div class="approve-modal__buttons">

@@ -6,7 +6,7 @@ const props = {
 };
 
 export default {
-  title: 'Atoms/Input',
+  title: 'Domains/Atoms/Input',
   component: DomainsFormInputComponent,
   argTypes: props,
 } as Meta;

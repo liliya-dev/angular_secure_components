@@ -1,6 +1,24 @@
 .app-onboarding-component {
   position: relative;
   color: var(--secondary-color);
+  background: var(--text-color);
+  box-shadow: 0px 30px 70px rgba(46, 45, 79, 0.15);
+  border-radius: 20px;
+  padding: 32px;
+
+  &__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 28px;
+  }
+
+  &__input-title {
+    text-align: left;
+    color: rgba(var(--secondary-color-code), 0.5);
+    margin: 16px 0 8px;
+    line-height: 150%;
+  }
 
   &__list {
     display: flex;
@@ -12,6 +30,32 @@
   
     & :last-child {
       margin-bottom: 0;
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 24px 14px 24px;
+    margin-bottom: 24px;
+    border-bottom: 1px solid var(--asimetric-bg-color);
+    height: 72px;
+
+    &--left {
+      display: flex;
+      align-items: center;
+
+      & > p {
+        margin-left: 26px;
+      }
+    }
+
+    &--right {
+      width: 100px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
     }
   }
 }

@@ -20,13 +20,14 @@ export class DomainsOnboardingCardComponent implements OnChanges {
   @Output() delete: EventEmitter<any> = new EventEmitter();
   @Output() edit: EventEmitter<any> = new EventEmitter();
   @Output() select: EventEmitter<any> = new EventEmitter();
+  @Output() duplicate: EventEmitter<any> = new EventEmitter();
 
   onActive = false;
   isMobile: boolean;
   isSmallMobile: boolean;
   isVisibleOptions = false;
   cardColor = this.onActive ? HIGHLITED_COLOR : STATIC_COLOR;
-  textColor = this.onActive ? STATIC_COLOR : TEXT_STATIC_COLOR;
+  textColor = '';
   textDirection = '';
 
   handleDelete = () => {
@@ -50,11 +51,11 @@ export class DomainsOnboardingCardComponent implements OnChanges {
     // your logic on press this button
   }
 
-  handleCopy = () => {
+  handleDuplicate() {
     if (this.isMobile) {
       this.isVisibleOptions = false;
     }
-    // your logic on press this button
+    this.duplicate.emit(this.id);
   }
   
   setIsVisibleOptions = () => {
@@ -63,10 +64,10 @@ export class DomainsOnboardingCardComponent implements OnChanges {
 
   setOnActive = (value: boolean) => {
     if (!this.isMobile) {
-      if (this.isSelected) {
+      if (this.isSelected && !this.isMobile) {
         this.onActive = true;
         this.cardColor = HIGHLITED_COLOR;
-        this.textColor = TEXT_STATIC_COLOR;
+        this.textColor = STATIC_COLOR;
       } else {
         this.onActive = value;
         this.cardColor = value ? HIGHLITED_COLOR : STATIC_COLOR;
@@ -92,13 +93,17 @@ export class DomainsOnboardingCardComponent implements OnChanges {
   }
 
   ngOnChanges() {
-    if (this.isSelected) {
-      this.onActive = true;
-      this.cardColor = HIGHLITED_COLOR;
-      this.textColor = TEXT_STATIC_COLOR;
-    }
     const width = document.querySelector('.app-onboarding-card').clientWidth;
     this.isMobile = width < 750;
     this.isSmallMobile = width < 420;
+    if (this.isSelected && !this.isMobile) {
+      this.onActive = true;
+      this.cardColor = HIGHLITED_COLOR;
+      this.textColor = STATIC_COLOR;
+    } else {
+      this.cardColor = STATIC_COLOR;
+      this.textColor = TEXT_STATIC_COLOR;
+      this.onActive = false;
+    }
   }
 }
