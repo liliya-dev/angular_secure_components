@@ -1,11 +1,14 @@
-import { Component, ElementRef, Input, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
+import { Component, ElementRef, HostListener, Input, OnInit, ViewChild } from '@angular/core';
 import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
+import { debounce } from './helpers';
 
 interface Domain {
   title: string,
   text: string,
   id: string
 }
+
+const MOBILE_VIEW = 460;
 
 @Component({
   selector: 'app-onboarding-list',
@@ -20,14 +23,15 @@ export class DomainsOnboardingListComponent implements OnInit {
   @ViewChild('deleteModalContent')deleteModalContent: ElementRef;
   @ViewChild('editModalContent')editModalContent: ElementRef;
   @ViewChild('addModalContent')addModalContent: ElementRef;
-
-  domains = [];
+  @ViewChild('container') container: ElementRef;
 
   drop(event: CdkDragDrop<string[]>) {
     moveItemInArray(this.domains, event.previousIndex, event.currentIndex);
   }
-
+  
+  domains = [];
   isModalVisible=false;
+  query = '';
   newDomainTitle = '';
   newDomainText = '';
   activeTitle = '';
@@ -39,6 +43,12 @@ export class DomainsOnboardingListComponent implements OnInit {
   modalDangerButtonFunction=(args: any) => {};
   modalComponent;
   ctx;
+  isMobile;
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event: any) {
+    this.isMobile = this.container.nativeElement.clientWidth < MOBILE_VIEW;
+  }
 
   selectAll() {
     this.selected = this.selected.length === this.domains.length
@@ -148,6 +158,11 @@ export class DomainsOnboardingListComponent implements OnInit {
     this.domains.splice(index, 0, newDomain);
   }
 
+  handleFilter = debounce(function(...args) {
+    this.query = args[0].toLowerCase();
+  }, 500, false)
+
+
   addDomain() {
     const newDomain = {
       id: `${Date.now()}`, 
@@ -166,6 +181,10 @@ export class DomainsOnboardingListComponent implements OnInit {
     })
     this.selected = [];
     this.isModalVisible = false;
+  }
+
+  ngAfterViewInit() {
+    this.isMobile = this.container.nativeElement.clientWidth < MOBILE_VIEW;
   }
 
   ngOnInit() {

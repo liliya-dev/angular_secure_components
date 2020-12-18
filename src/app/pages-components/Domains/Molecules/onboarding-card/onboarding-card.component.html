@@ -1,7 +1,7 @@
 <div class="app-onboarding-card"
   (mouseenter)="setOnActive(true)"
   (mouseleave)="setOnActive(false)"
-  [ngStyle]="{ 'background': cardColor }"
+  [ngStyle]="isSmallMobile ? { 'padding': '0 5px 14px 5px','background': cardColor } : { 'background': cardColor }"
   #block
 >
   <div class="app-onboarding-card__wrapper">

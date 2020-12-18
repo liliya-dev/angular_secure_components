@@ -3,6 +3,8 @@ import { Component, Input, ViewEncapsulation, ViewChild, ElementRef, OnChanges, 
 const HIGHLITED_COLOR = 'linear-gradient(89.52deg, #24B04B -46.17%, #0263BC 186.99%)';
 const STATIC_COLOR = 'rgb(255, 255, 255)';
 const TEXT_STATIC_COLOR = '#011949';
+const SMALL_MOBILE_VIEW = 460;
+const BIG_MOBILE_VIEW = 760;
 
 @Component({
   selector: 'app-onboarding-card',
@@ -80,10 +82,19 @@ export class DomainsOnboardingCardComponent implements OnChanges {
   @HostListener('window:resize', ['$event'])
   onResize(event: any) {
     const width = this.block.nativeElement.clientWidth;
-    this.isMobile = width < 750;
-    this.isSmallMobile = width < 420;
-  }
+    this.isMobile = width < BIG_MOBILE_VIEW;
+    this.isSmallMobile = width < SMALL_MOBILE_VIEW;
 
+    if (this.isSelected && !this.isMobile && !this.isSmallMobile) {
+      this.onActive = true;
+      this.cardColor = HIGHLITED_COLOR;
+      this.textColor = STATIC_COLOR;
+    } else {
+      this.cardColor = STATIC_COLOR;
+      this.textColor = TEXT_STATIC_COLOR;
+      this.onActive = false;
+    }
+  }
 
   @HostListener('document:click', ['$event'])
 	onClick(event: Event) {
@@ -94,8 +105,8 @@ export class DomainsOnboardingCardComponent implements OnChanges {
 
   ngOnChanges() {
     const width = document.querySelector('.app-onboarding-card').clientWidth;
-    this.isMobile = width < 750;
-    this.isSmallMobile = width < 420;
+    this.isMobile = width < BIG_MOBILE_VIEW;
+    this.isSmallMobile = width < SMALL_MOBILE_VIEW;
     if (this.isSelected && !this.isMobile) {
       this.onActive = true;
       this.cardColor = HIGHLITED_COLOR;

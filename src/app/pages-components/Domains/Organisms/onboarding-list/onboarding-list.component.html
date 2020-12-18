@@ -1,4 +1,8 @@
-<div class="app-onboarding-component">
+<div 
+  class="app-onboarding-component" 
+  #container 
+  [ngStyle]="isMobile && { 'padding': '10px 8px' }"
+>
 <!-- template for delete modal -->
   <ng-template #deleteModalContent let-titleActiveDomain="titleActiveDomain">
     <p class="fs-16-sofia-300">Do you really want to delete the <strong>{{titleActiveDomain}}</strong> ?</p>
@@ -37,15 +41,30 @@
   </ng-template>
 
   <div class="app-onboarding-component__top">
-    <p class="fs-h1">Domains</p>
+    <p class="fs-h1" [ngStyle]="isMobile && { 'font-size': '32px', 'line-height': '100%' }">Domains</p>
     <app-simple-button 
       [classes]="'btn-app--asimetric btn-success-asimetric fs-16-sofia-800'"
-      [title]="'Add domain'"
+      [title]="isMobile ? '+' :' Add domain'"
       (click)="handleAdd()"
     >
     </app-simple-button>
   </div>
-  <div class="app-onboarding-component__buttons" *ngIf="selected.length > 1">
+  <div class="app-onboarding-component__middle">
+    <div class="app-onboarding-component__filter-wrapper">
+      <app-domains-search-input
+        [placeholderText]="'example.com'"
+        [initialValue]="''"
+        (changeValueParentFunction)="handleFilter($event)"
+      >
+      </app-domains-search-input>
+    </div>
+    <app-mutable-light-button [title]="'options'"></app-mutable-light-button>
+  </div>
+  <div 
+    [ngStyle]="isMobile && { 'padding': '0 5px 14px 5px' }"
+    class="app-onboarding-component__buttons" 
+    *ngIf="selected.length > 1"
+  >
     <div class="app-onboarding-component__buttons--left">
       <app-checkbox-mutable-gradient
       [onActive]="false"
@@ -83,7 +102,10 @@
   <ul class="app-onboarding-component__list">
     <div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)">
       <div class="example-box" *ngFor="let domain of domains" cdkDrag>
-        <li class="app-onboarding-component__item">
+        <li 
+          class="app-onboarding-component__item" 
+          *ngIf="domain.title.toLowerCase().includes(query) || domain.text.toLowerCase().includes(query)"
+        >
           <app-onboarding-card
             [title]="domain.title"
             [text]="domain.text"

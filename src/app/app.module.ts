@@ -111,6 +111,7 @@ import { DomainsCheckboxMutableGradientComponent } from './pages-components/Doma
 import { DomainsOnboardingCardComponent } from './pages-components/Domains/Molecules/onboarding-card/onboarding-card.component';
 import { DomainsOnboardingListComponent } from './pages-components/Domains/Organisms/onboarding-list/onboarding-list.component';
 import { DomainsSvgButtonComponent } from './pages-components/Domains/Atoms/buttons/domains-svg-button/domains-svg-button.component';
+import { DomainsSearchInputComponent } from './pages-components/Domains/Atoms/domains-search-input/domains-search-input.component';
 
 
 PlotlyModule.plotlyjs = PlotlyJS;
@@ -221,7 +222,8 @@ PlotlyModule.plotlyjs = PlotlyJS;
     DomainsCheckboxMutableGradientComponent,
     DomainsOnboardingCardComponent,
     DomainsOnboardingListComponent,
-    DomainsSvgButtonComponent
+    DomainsSvgButtonComponent,
+    DomainsSearchInputComponent
   ],
   imports: [
     ColorSketchModule,

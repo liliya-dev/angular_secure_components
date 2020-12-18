@@ -1,4 +1,7 @@
+import { CommonModule } from '@angular/common';
 import { Meta, moduleMetadata, Story } from '@storybook/angular';
+import { DomainsMutableLightButtonComponent } from '../../Atoms/buttons/mutable-light-button/mutable-light-button.component';
+import { DomainsSearchInputComponent } from '../../Atoms/domains-search-input/domains-search-input.component';
 import { DomainsOnboardingListComponent } from './onboarding-list.component';
 import { DomainsApproveModalComponent } from '../../Atoms/modals/approve-modal/approve-modal.component';
 import { DomainsOnboardingCardComponent } from '../../Molecules/onboarding-card/onboarding-card.component';
@@ -6,7 +9,6 @@ import { DomainsCheckboxMutableGradientComponent } from '../../Atoms/checkbox-mu
 import { DomainsMutableDangerButtonComponent } from '../../Atoms/buttons/mutable-danger-button/mutable-danger-button.component';
 import { DomainsMutableGradientIconButtonComponent } from '../../Atoms/buttons/mutable-gradient-icon-button/mutable-gradient-icon-button.component';
 import { DomainsMutablePrimaryButtonComponent } from '../../Atoms/buttons/mutable-primary-button/mutable-primary-button.component';
-import { CommonModule } from '@angular/common';
 import { DomainsFormInputComponent } from '../../Atoms/formInput/formInput.component';
 import { DomainsSimpleButtonComponent } from '../../Atoms/buttons/simpleButton/simpleButton.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -21,6 +23,8 @@ export default {
   decorators: [
     moduleMetadata({
       declarations: [
+        DomainsMutableLightButtonComponent,
+        DomainsSearchInputComponent,
         DomainsOnboardingListComponent,
         DomainsFormInputComponent,
         DomainsSimpleButtonComponent,
