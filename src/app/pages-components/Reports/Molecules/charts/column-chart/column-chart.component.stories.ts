@@ -2,17 +2,15 @@ import { Meta, moduleMetadata, Story } from '@storybook/angular';
 import { ColumnChartComponent } from './column-chart.component';
 import { NgApexchartsModule } from "ng-apexcharts";
 import { ChartModule } from 'angular2-chartjs';
-import { CardReportStatusComponent } from '../../card/card-report-status/card-report-status.component';
 
 const props = {};
 
 export default {
-  title: 'Atoms/Charts',
+  title: 'Reports/Molecules/Charts',
   decorators: [
     moduleMetadata({
       declarations: [
         ColumnChartComponent,
-        CardReportStatusComponent
       ],
       imports: [NgApexchartsModule, ChartModule],
     }),

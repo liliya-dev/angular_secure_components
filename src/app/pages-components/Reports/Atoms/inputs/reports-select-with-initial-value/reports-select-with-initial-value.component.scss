@@ -29,7 +29,7 @@
   }
 
   &:after {
-    content: url('../../../../../assets/images/roll-up.png');
+    content: url('../../../../../../assets/images/roll-up.png');
     position: absolute;
     top: 17px;
     right: 21px;
@@ -38,7 +38,7 @@
 
   &.ng-select-opened{
     &:after {
-      content: url('../../../../../assets/images/roll-up.png');
+      content: url('../../../../../../assets/images/roll-up.png');
       position: absolute;
       top: 17px;
       right: 21px;

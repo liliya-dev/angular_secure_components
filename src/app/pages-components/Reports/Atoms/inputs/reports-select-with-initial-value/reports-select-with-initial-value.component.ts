@@ -1,13 +1,13 @@
 import { Component, Input, OnInit, Output, ViewEncapsulation, EventEmitter } from '@angular/core';
 
 @Component({
-  selector: 'app-select-input-with-initial-value',
-  templateUrl: './select-input-with-initial-value.component.html',
-  styleUrls: ['./select-input-with-initial-value.component.scss'],
+  selector: 'reports-select-with-initial-value',
+  templateUrl: './reports-select-with-initial-value.component.html',
+  styleUrls: ['./reports-select-with-initial-value.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
 
-export class SelectInputWithInitialValueComponent implements OnInit {
+export class ReportsSelectWithInitialValueComponent implements OnInit {
   @Input() items: string[];
   @Input() imagesPaths?: string[]
   @Output() onItemSelect: EventEmitter<any> = new EventEmitter();

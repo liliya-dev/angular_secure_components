@@ -5,7 +5,7 @@ import { NgApexchartsModule } from "ng-apexcharts";
 const props = {};
 
 export default {
-  title: 'Atoms/Charts',
+  title: 'Reports/Molecules/Charts',
   decorators: [
     moduleMetadata({
       declarations: [

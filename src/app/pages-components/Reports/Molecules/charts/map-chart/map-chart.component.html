@@ -1,9 +1,9 @@
 <div class="map-chart" #mapChart>
   <div class="map-chart__input-container">
-    <app-select-input-with-initial-value
+    <reports-select-with-initial-value
       (onItemSelect)="createChart($event)"
       [items]="['World', 'Europe', 'Asia', 'South America', 'North America', 'Africa', 'Australia']"
-    ></app-select-input-with-initial-value>
+    ></reports-select-with-initial-value>
   </div>
   <div class="map-chart__container" [ngStyle]="{ 'height': mapHeight+'px' }">
     <div id="chartdiv"></div>

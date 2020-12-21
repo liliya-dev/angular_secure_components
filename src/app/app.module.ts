@@ -54,7 +54,6 @@ import { TextWithAfterGradientLineComponent } from './atoms/text/text-with-after
 import { TabMenuComponent } from './molecules/menu/tab-menu/tab-menu.component';
 import { WhiteRoundedLayoutComponent } from './molecules/layouts/white-rounded-layout/white-rounded-layout.component';
 import { GradientTextComponent } from './atoms/text/gradient-text/gradient-text.component';
-import { SelectInputWithInitialValueComponent } from './atoms/inputs/select-input/select-input-with-initial-value/select-input-with-initial-value.component';
 import { CardReportsComponent } from './atoms/card/card-reports/card-reports.component';
 import { SecondaryBorderButtonComponent } from './atoms/buttons/secondary-border-button/secondary-border-button.component';
 import { SelectedItemComponent } from './atoms/filter-components/selected-item/selected-item.component';
@@ -76,10 +75,10 @@ import { AddComponent } from './pages-components/Policies_Customize/Molecules/cu
 import { AddDirective } from './pages-components/Policies_Customize/Molecules/customized-element/add-dynamic-component/add.directive';
 import { AddService } from './pages-components/Policies_Customize/Molecules/customized-element/add-dynamic-component/add.service';
 import { TextareaAutosizeModule } from 'ngx-textarea-autosize';
-import { LinearChartComponent } from './atoms/charts/linear-chart/linear-chart.component';
-import { ColumnChartComponent } from './atoms/charts/column-chart/column-chart.component';
-import { MapChartComponent } from './atoms/charts/map-chart/map-chart.component';
-import { RoundChartComponent } from './atoms/charts/round-chart/round-chart.component';
+import { LinearChartComponent } from './pages-components/Reports/Molecules/charts/linear-chart/linear-chart.component';
+import { ColumnChartComponent } from './pages-components/Reports/Molecules/charts/column-chart/column-chart.component';
+import { MapChartComponent } from './pages-components/Reports/Molecules/charts/map-chart/map-chart.component';
+import { RoundChartComponent } from './pages-components/Reports/Molecules/charts/round-chart/round-chart.component';
 import { TextEditorComponent } from './pages-components/Data_Request_Form/Atoms/text-editor/text-editor.component';
 import { TextareaCopyToClipboardComponent } from './atoms/inputs/textarea/textarea-copy-to-clipboard/textarea-copy-to-clipboard.component';
 import { GradientBorderContainerComponent } from './atoms/containers/gradient-border-container/gradient-border-container.component';
@@ -186,7 +185,6 @@ PlotlyModule.plotlyjs = PlotlyJS;
     TabMenuComponent,
     WhiteRoundedLayoutComponent,
     GradientTextComponent,
-    SelectInputWithInitialValueComponent,
     CardReportsComponent,
     SecondaryBorderButtonComponent,
     SelectedItemComponent,

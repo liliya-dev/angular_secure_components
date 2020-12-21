@@ -1,17 +1,17 @@
 import { Meta, moduleMetadata, Story } from '@storybook/angular';
 import { MapChartComponent } from './map-chart.component';
-import { SelectInputWithInitialValueComponent } from '../../inputs/select-input/select-input-with-initial-value/select-input-with-initial-value.component';
+import { ReportsSelectWithInitialValueComponent } from '../../../Atoms/inputs/reports-select-with-initial-value/reports-select-with-initial-value.component';
 import { NgSelectModule } from '@ng-select/ng-select';
 
 const props = {};
 
 export default {
-  title: 'Atoms/Charts',
+  title: 'Reports/Molecules/Charts',
   decorators: [
     moduleMetadata({
       declarations: [
         MapChartComponent,
-        SelectInputWithInitialValueComponent
+        ReportsSelectWithInitialValueComponent
       ],
       providers: [],
       imports: [NgSelectModule],

@@ -6,7 +6,7 @@ import { ChartModule } from 'angular2-chartjs';
 const props = {};
 
 export default {
-  title: 'Atoms/Charts',
+  title: 'Reports/Molecules/Charts',
   decorators: [
     moduleMetadata({
       declarations: [
