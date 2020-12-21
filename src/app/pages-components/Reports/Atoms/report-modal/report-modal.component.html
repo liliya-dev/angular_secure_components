@@ -1,0 +1,50 @@
+<div class="report-modal">
+  <div class="report-modal__form">
+    <div class="report-modal__title-container">
+      <svg-icon 
+      [src]="'assets/images/filter.svg'"
+      [svgStyle]="{ 'fill':'rgba(1, 25, 73, 0.5)', 'height': '20px' }"
+      >
+      </svg-icon>
+      <p class="report-modal__title fs-h3">Filters</p>
+    </div>
+    <ul class="report-modal__inputs-list">
+      <li *ngFor="let input of inputsData" class="report-modal__input-wrapper">
+        <p class="report-modal__input-title fs-16-sofia-300">{{ input.title }}</p>
+        <reports-search-input 
+          *ngIf="input.type==='search'"
+          [title]="input.title"
+          [initialValue]="input.initialValue"
+          [id]="input.id"
+          [placeholderText]="placeholder"
+          (changeValueParentFunction)="handleInputChange($event)"
+        >
+        </reports-search-input>
+        <reports-select-input  
+          *ngIf="input.type==='select'"
+          [title]="input.title"
+          [initialValue]="input.initialValue"
+          [items]="input.values"
+          [id]="input.id"
+          (changeValueParentFunction)="handleInputChange($event)"
+        >
+        </reports-select-input>
+      </li>
+    </ul>
+    <div class="report-modal__buttons-wrapper">
+      <reports-button
+        [title]="'cancel'"
+        [classes]="'btn-danger fs-12-sofia-800 btn-app btn-app--h46--wide'"
+        (click)="handleCancel()"
+      >
+      </reports-button>
+      <div class="ml"></div>
+      <reports-button
+        [title]="'save'"
+        [classes]="'btn-app--h46--wide btn-app btn-success fs-12-gramm-400'"
+        (click)="handleApprove()"
+      >
+      </reports-button>
+    </div>
+  </div>
+</div>

@@ -64,59 +64,78 @@ export class DomainsOnboardingListComponent implements OnInit {
     return this.selected.includes(id);
   }
 
+  /// show modal with props
+
   handleDelete(id: string) {
     this.activeTitle = this.domains.find(domain => domain.id === id).title;
     this.ctx = { titleActiveDomain: this.activeTitle };
-    this.modalTitle = 'Delete domain';
-    this.modalPrimaryButtonTitle = '';
-    this.modalDangerButtonTitle = 'delete';
-    this.modalPrimaryButtonFunction = this.closeModal;
-    this.modalDangerButtonFunction = this.deleteDomain;
     this.activeId = id;
-    this.modalComponent = this.deleteModalContent;
-    this.isModalVisible = true;
+    this.setModalVariables('Delete domain', '', 'delete', this.closeModal, this.deleteDomain, this.deleteModalContent, true);
+  }
+
+  deleteDomain() {
+    this.domains = this.domains.filter(domain => domain.id !== this.activeId);
+    this.isModalVisible = false;
+    this.selected = this.selected.filter(domain => domain !== this.activeId);
   }
 
   handleDeleteSeveral() {
     this.activeTitle = this.domains
-      .filter(domain => {
-        if(this.selected.includes(domain.id)) {
-          return domain
-        }
-      })
-      .map(domain => domain.title).join(', ')
+      .filter(domain => this.selected.includes(domain.id))
+      .map(domain => domain.title).join(', ');
     this.ctx = { titleActiveDomain: this.activeTitle };
-    this.modalTitle = 'Delete domains';
-    this.modalPrimaryButtonTitle = '';
-    this.modalDangerButtonTitle = 'delete';
-    this.modalPrimaryButtonFunction = this.closeModal;
-    this.modalDangerButtonFunction = this.deleteSelectedDomains;
-    this.modalComponent = this.deleteModalContent;
-    this.isModalVisible = true;
+    this.setModalVariables( 'Delete domains', '', 'delete', this.closeModal, this.deleteSelectedDomains, this.deleteModalContent, true);
+  }
+
+  deleteSelectedDomains() {
+    this.domains = this.domains.filter(domain => {
+      if(!this.selected.includes(domain.id)) {
+        return domain
+      }
+    })
+    this.selected = [];
+    this.isModalVisible = false;
   }
 
   handleEdit(id: string) {
     this.activeTitle =this.domains.find(domain => domain.id === id).title;
-    this.ctx = { initialValue: this.activeTitle };
-    this.modalTitle = 'Rename domain';
-    this.modalPrimaryButtonTitle = 'rename';
-    this.modalDangerButtonTitle = '';
-    this.modalPrimaryButtonFunction = this.editDomain;
-    this.modalDangerButtonFunction = null;
     this.activeId = id;
-    this.modalComponent = this.editModalContent;
-    this.isModalVisible = true;
+    this.ctx = { initialValue: this.activeTitle };
+    this.setModalVariables('Rename domain', 'rename', '', this.editDomain, null, this.editModalContent, true);
+  }
+
+  editDomain() {
+    const activeIndex = this.domains.findIndex(domain => domain.id === this.activeId);
+    this.domains[activeIndex].title = this.activeTitle;
+    this.isModalVisible = false;
   }
 
   handleAdd() {
     this.ctx = { initialValue: '' };
-    this.modalTitle = 'Add domain';
-    this.modalPrimaryButtonTitle = 'add';
-    this.modalDangerButtonTitle = '';
-    this.modalPrimaryButtonFunction = this.addDomain;
-    this.modalDangerButtonFunction = null;
-    this.modalComponent = this.addModalContent;
-    this.isModalVisible = true;
+    this.setModalVariables('Add domain', 'add', '', this.addDomain, null, this.addModalContent, true);
+  }
+
+  addDomain() {
+    const newDomain = {
+      id: `${Date.now()}`, 
+      title: this.newDomainTitle, 
+      text: this.newDomainText
+    }
+    this.domains = [...this.domains, newDomain];
+    this.isModalVisible = false;
+  }
+
+  setModalVariables(
+    modalTitle, modalPrimaryButtonTitle, modalDangerButtonTitle, modalPrimaryButtonFunction,
+    modalDangerButtonFunction, modalComponent, modalVisibility
+  ) {
+    this.modalTitle = modalTitle;
+    this.modalPrimaryButtonTitle = modalPrimaryButtonTitle;
+    this.modalDangerButtonTitle = modalDangerButtonTitle;
+    this.modalPrimaryButtonFunction = modalPrimaryButtonFunction;
+    this.modalDangerButtonFunction = modalDangerButtonFunction;
+    this.modalComponent = modalComponent;
+    this.isModalVisible = modalVisibility;
   }
 
   closeModal() {
@@ -132,18 +151,6 @@ export class DomainsOnboardingListComponent implements OnInit {
       case 'addText':
         this.newDomainText = value;
     }
-  }
-
-  editDomain() {
-    const activeIndex = this.domains.findIndex(domain => domain.id === this.activeId);
-    this.domains[activeIndex].title = this.activeTitle;
-    this.isModalVisible = false;
-  }
-
-  deleteDomain() {
-    this.domains = this.domains.filter(domain => domain.id !== this.activeId);
-    this.isModalVisible = false;
-    this.selected = this.selected.filter(domain => domain !== this.activeId);
   }
 
   duplicateDomain(id: string) {
@@ -162,26 +169,6 @@ export class DomainsOnboardingListComponent implements OnInit {
     this.query = args[0].toLowerCase();
   }, 500, false)
 
-
-  addDomain() {
-    const newDomain = {
-      id: `${Date.now()}`, 
-      title: this.newDomainTitle, 
-      text: this.newDomainText
-    }
-    this.domains = [...this.domains, newDomain];
-    this.isModalVisible = false;
-  }
-
-  deleteSelectedDomains() {
-    this.domains = this.domains.filter(domain => {
-      if(!this.selected.includes(domain.id)) {
-        return domain
-      }
-    })
-    this.selected = [];
-    this.isModalVisible = false;
-  }
 
   ngAfterViewInit() {
     this.isMobile = this.container.nativeElement.clientWidth < MOBILE_VIEW;

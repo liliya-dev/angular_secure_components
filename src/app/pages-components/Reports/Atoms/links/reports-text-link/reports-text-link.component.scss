@@ -1,0 +1,104 @@
+.nav-link-secondary {
+  position: relative;
+  text-transform: uppercase;
+  background: rgba(var(--secondary-color-code), 0.5);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  transition: 0.3;
+
+  &:hover {
+    background: var(--secondary-color); 
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+
+  &:active {
+    background: var(--success-grad-light); 
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+
+  &.active {
+    text-decoration: none;
+    -webkit-text-fill-color: transparent;
+    background: var(--success-grad-light); 
+    -webkit-background-clip: text;
+    background-clip: text;
+    transition: 0.3;
+  }
+}
+
+.nav-link-highlited {
+  &.active {
+    &::after {
+      width: 100%;
+    }
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+
+    width: 0;
+    height: 2px;
+
+    background: var(--success-grad-light);
+    transition: 0.3s;
+  }
+
+  &:active {
+    &::after {
+      width: 100%;
+    }
+  }
+}
+
+.nav-link-main {
+  position: relative;
+  background: rgba(var(--secondary-color-code), 0.75);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-transform: capitalize;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    width: 0;
+    height: 1px;
+
+    background-color: rgba(var(--secondary-color-code), 0.75);
+    transition: 0.3s;
+  }
+
+  &:hover {
+    &::after {
+      width: 100%;
+    }
+  }
+
+  &:active {
+    background: var(--success-grad-light); 
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    &::after {
+      width: 0;
+    }
+  }
+
+  &.active {
+    text-decoration: none;
+    background: var(--success-grad-light); 
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    transition: 0.3;
+  }
+}

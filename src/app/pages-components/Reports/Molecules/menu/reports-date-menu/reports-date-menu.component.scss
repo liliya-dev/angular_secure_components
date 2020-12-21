@@ -1,0 +1,31 @@
+.app-date-menu {
+  display: flex;
+  align-items: center;
+
+  &__list {
+    display: flex;
+    align-items: center;
+  }
+
+  &__item {
+    padding: 0 10px 5px;
+  }
+
+  &__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 46px;
+    padding: 0 13px;
+    margin-left: 20px;
+
+    border: 1px solid rgba(var(--secondary-color-code), 0.3);
+    border-radius: 12px;
+
+    & > img {
+      height: 18px;
+      width: 18px;
+    }
+  }
+}

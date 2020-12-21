@@ -1,0 +1,15 @@
+<button 
+  class="btn-secondary fs-16-sofia-300"
+  (mouseleave)="changeToLightColor()"
+  (mousedown)="changeToActiveColor()"
+  (mouseup)="changeToLightColor()"
+> 
+  <svg-icon 
+    [src]="srcPath"
+    [svgStyle]="{'fill':fillColor }"
+  >
+  </svg-icon>
+  <p class="btn-secondary__title" *ngIf="title!==''">
+    {{ title }}
+  </p>
+</button>

@@ -1,0 +1,19 @@
+<div class="app-date-menu">
+  <ul class="app-date-menu__list">
+    <li 
+      class="app-date-menu__item"
+      *ngFor="let item of items; let i = index" 
+    >
+      <reports-text-link
+        [isActive]="active === i"
+        [title]="item" 
+        classes="nav-link-secondary nav-link-highlited fs-12-gramm-400"
+        (click)="handlClick($event, i)"
+      >
+      </reports-text-link>
+    </li>
+  </ul>
+  <div class="app-date-menu__container">
+    <img src='assets/images/calendar.png' alt="calendar" />
+  </div>
+</div>

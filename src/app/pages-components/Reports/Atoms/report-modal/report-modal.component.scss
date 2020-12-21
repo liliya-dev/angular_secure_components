@@ -1,0 +1,88 @@
+.report-modal {
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 3;
+
+  background-color: rgba(var(--secondary-color-code), 0.5);
+  text-align: left;
+  overflow-y: scroll;
+
+  &__title {
+    margin-bottom: 32px;
+  }
+
+  &__form {
+    width: 588px;
+    padding: 32px;
+
+    position: relative;
+    top: 10%;
+    background: var(--card-bg-color);
+    border-radius: 12px 30px;
+  }
+
+  &__title-container {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 28px;
+  }
+
+  &__title {
+    margin: 0 0 0 18px;
+  }
+
+  &__inputs-list {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  &__input-wrapper {
+    min-width: 200px;
+    width: calc(50% - 16px);
+    margin-bottom: 16px;
+  }
+
+  &__buttons-wrapper {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 8px;
+  }
+
+  &__input-title {
+    color: rgba(var(--secondary-color-code), 0.5);
+    margin: 4px 0 12px 0;
+  }
+}
+
+.ml {
+  margin-left: 12px;
+}
+
+@media screen and (max-width: 600px) {
+  .report-modal {
+    &__form {
+      min-width: 90%;
+      max-width: 90%;
+      padding: 20px;
+    }
+
+    &__inputs-list {
+      flex-direction: column;
+    }
+
+    &__input-wrapper {
+      width: 100%;
+    }
+  }
+}

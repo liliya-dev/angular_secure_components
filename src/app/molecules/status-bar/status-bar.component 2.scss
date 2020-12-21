@@ -1,0 +1,13 @@
+.app-status-bar {
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+  width: 100%;
+  padding: 20px 30px;
+  background: var(--status-bar-bg-color);
+  border-radius: 20px;
+
+  &__wrapper {
+    width: calc(100% - 260px);
+  }
+}

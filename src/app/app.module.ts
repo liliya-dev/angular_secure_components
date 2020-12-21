@@ -112,7 +112,20 @@ import { DomainsOnboardingCardComponent } from './pages-components/Domains/Molec
 import { DomainsOnboardingListComponent } from './pages-components/Domains/Organisms/onboarding-list/onboarding-list.component';
 import { DomainsSvgButtonComponent } from './pages-components/Domains/Atoms/buttons/domains-svg-button/domains-svg-button.component';
 import { DomainsSearchInputComponent } from './pages-components/Domains/Atoms/domains-search-input/domains-search-input.component';
-
+import { ReportModalComponent } from './pages-components/Reports/Atoms/report-modal/report-modal.component';
+import { ReportsButtonComponent } from './pages-components/Reports/Atoms/buttons/reports-button/reports-button.component';
+import { ReportsSelectInput } from './pages-components/Reports/Atoms/inputs/reports-select-input/reports-select-input.component';
+import { ReportsSearchInputComponent } from './pages-components/Reports/Atoms/inputs/reports-search-input/reports-search-input.component';
+import { ReportsInfoButtonComponent } from './pages-components/Reports/Atoms/buttons/reports-info-button/reports-info-button.component';
+import { ReportsPrimaryButtonComponent } from './pages-components/Reports/Atoms/buttons/reports-primary-button/reports-primary-button.component';
+import { ReportsSecondaryButtonComponent } from './pages-components/Reports/Atoms/buttons/reports-secondary-button/reports-secondary-button.component';
+import { ReportsSelectInputSearchComponent } from './pages-components/Reports/Atoms/inputs/reports-select-input-search/reports-select-input-search.component';
+import { ReportsLightButtonComponent } from './pages-components/Reports/Atoms/buttons/reports-light-button/reports-light-button.component';
+import { ReportsIconLinkComponent } from './pages-components/Reports/Atoms/links/reports-icon-links/reports-icon-link.component';
+import { ReportsTextLinkComponent } from './pages-components/Reports/Atoms/links/reports-text-link/reports-text-link.component';
+import { ReportsDateMenuComponent } from './pages-components/Reports/Molecules/menu/reports-date-menu/reports-date-menu.component';
+import { ReportsMenuComponent } from './pages-components/Reports/Molecules/menu/reports-menu/reports-menu.component';
+import { ReportsMobileMenuComponent } from './pages-components/Reports/Molecules/menu/reports-mobile-menu/reports-mobile-menu.component';
 
 PlotlyModule.plotlyjs = PlotlyJS;
 
@@ -223,7 +236,21 @@ PlotlyModule.plotlyjs = PlotlyJS;
     DomainsOnboardingCardComponent,
     DomainsOnboardingListComponent,
     DomainsSvgButtonComponent,
-    DomainsSearchInputComponent
+    DomainsSearchInputComponent,
+    ReportModalComponent,
+    ReportsButtonComponent,
+    ReportsSelectInput,
+    ReportsSearchInputComponent,
+    ReportsSecondaryButtonComponent,
+    ReportsPrimaryButtonComponent,
+    ReportsInfoButtonComponent,
+    ReportsSelectInputSearchComponent,
+    ReportsLightButtonComponent,
+    ReportsIconLinkComponent,
+    ReportsTextLinkComponent,
+    ReportsDateMenuComponent,
+    ReportsMenuComponent,
+    ReportsMobileMenuComponent
   ],
   imports: [
     ColorSketchModule,

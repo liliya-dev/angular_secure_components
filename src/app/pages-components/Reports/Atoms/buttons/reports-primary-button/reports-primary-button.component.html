@@ -1,0 +1,18 @@
+<div class="module-border-wrap">
+  <div class="module-opacity-wrap ">
+    <button 
+      class="btn-primary fs-16-sofia-300"
+      (mousedown)="changeToActiveColor()"
+      (mouseup)="changeToLightColor()"
+    >
+      <svg-icon 
+        [src]="svgPath"
+        [svgStyle]="{'fill':fillColor }"
+      >
+      </svg-icon>
+      <p class="btn-primary__name" *ngIf="title!==''">
+        {{ title }}
+      </p>
+    </button>
+  </div>
+</div>

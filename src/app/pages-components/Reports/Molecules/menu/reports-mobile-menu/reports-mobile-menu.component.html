@@ -1,0 +1,15 @@
+<ul class="app-mobile-main-navigation-menu">
+  <li 
+  class="app-mobile-main-navigation-menu__item"
+  *ngFor="let item of items; let i = index" 
+  >
+    <reports-icon-link
+      [isActive]="active === i"
+      [title]="item.title" 
+      [svgPath]="item.svgPath"
+      (click)="handlClick($event, i)"
+    >
+    </reports-icon-link>
+  </li>
+</ul>
+
