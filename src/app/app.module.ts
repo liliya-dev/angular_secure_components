@@ -126,7 +126,8 @@ import { ReportsDateMenuComponent } from './pages-components/Reports/Molecules/m
 import { ReportsMenuComponent } from './pages-components/Reports/Molecules/menu/reports-menu/reports-menu.component';
 import { ReportsMobileMenuComponent } from './pages-components/Reports/Molecules/menu/reports-mobile-menu/reports-mobile-menu.component';
 import { ReportStatusComponent } from './pages-components/Reports/Atoms/report-status/report-status.component';
-
+import { ReportsCheckboxInput } from './pages-components/Reports/Atoms/inputs/reports-checkbox-input/reports-checkbox-input.component';
+import { ReportTableComponent } from './pages-components/Reports/Molecules/report-table/report-table.component';
 PlotlyModule.plotlyjs = PlotlyJS;
 
 @NgModule({
@@ -250,7 +251,9 @@ PlotlyModule.plotlyjs = PlotlyJS;
     ReportsDateMenuComponent,
     ReportsMenuComponent,
     ReportsMobileMenuComponent,
-    ReportStatusComponent
+    ReportStatusComponent,
+    ReportsCheckboxInput,
+    ReportTableComponent
   ],
   imports: [
     ColorSketchModule,

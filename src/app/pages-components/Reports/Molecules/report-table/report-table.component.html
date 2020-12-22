@@ -1,0 +1,43 @@
+<div class="report-table__container">
+  <div class="report-table">
+    <table class="report-table__table fs-12-sofia-300">
+      <tr class="report-table__head">
+        <th class="report-table__head-item">
+          <reports-checkbox-input 
+            [id]="'select all'" 
+            [isChecked]="checkIfSelected(8)"
+          >
+          </reports-checkbox-input>
+        </th>
+        <th 
+          class="report-table__head-item" 
+          *ngFor="let header of headers; let i = index"
+        >
+          <div *ngIf="header.id !== 'date'">
+            {{ header.name }}
+          </div>
+          <div *ngIf="header.id === 'date'" (click)="sortByDate()" class="report-table__date-button">
+            {{ header.name }}
+          </div>
+        </th>
+      </tr>
+      <tr *ngFor="let row of data" class="report-table__row">
+        <td class="report-table__row-item">
+          <reports-checkbox-input 
+            [id]="row.id" 
+            [isChecked]="checkIfSelected(row.id)"
+          >
+          </reports-checkbox-input>
+        </td>
+        <td class="report-table__row-item">{{ row.category }}</td>
+        <td class="report-table__row-item">{{ getDate(row.date) }}</td>
+        <td class="report-table__row-item">
+          <app-report-status [status]="row.status"></app-report-status>
+        </td>
+        <td class="report-table__row-item">{{ row.os }}</td>
+        <td class="report-table__row-item">{{ row.city }}</td>
+        <td class="report-table__row-item">{{ row.state }}</td>
+      </tr>
+    </table>
+  </div>
+</div>

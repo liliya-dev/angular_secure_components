@@ -1,0 +1,44 @@
+.report-table {
+  width: 100%;
+  min-width: 800px;
+
+  &__container {
+    width: 100%;
+    overflow-x: scroll;
+  }
+
+  &__table {
+    width: 100%;
+    text-align: left;
+    color: var(--secondary-color);
+    border-spacing: 0px;
+    border-collapse: collapse;
+  }
+
+  &__head {
+    height: 46px;
+  }
+
+  &__head-item {
+    border: none;
+    padding: 0px 7px;
+    font-weight: 300;
+    color: rgba(var(--secondary-color-code), 0.5);
+  }
+
+  &__row {
+    line-height: 15.5px;
+    border-top: 0.6px solid rgba(var(--secondary-color-code), 0.1)
+  }
+
+  &__row-item {
+    padding: 19px 7px;
+    white-space: pre-line;
+  }
+
+  &__date-button {
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
