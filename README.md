@@ -4,35 +4,39 @@ demo link https://liliya-dev.github.io/angular_secure_components/?path=/story/mo
 ## Developed components: 
 
 ### POLICIES CUSTOMIZE
-  ### Atoms
-    * Buttons:
-      - Small Dark (changed)
-      - Small Light (changed)
-      - Big Light (changed)
-    * Dynamic
-      - List
-      - Table
-      - Text
-  ### Molecules
-    * Dynamic Section
-      ( add-dynamic components, service, directive)
-  ### Molecules
-    * Dynamic Sections List (with opportunity to manage state from list ang from child components, using dynamic components)
+
+### Atoms
+
+  * Buttons:
+    - Small Dark (changed)
+    - Small Light (changed)
+    - Big Light (changed)
+  * Dynamic
+    - List
+    - Table
+    - Text
+
+### Molecules:
+  * Dynamic Section
+    ( add-dynamic components, service, directive)
+### Molecules
+  * Dynamic Sections List (with opportunity to manage state from list ang from child components, using dynamic components)
 
 ### POLICIES_GENERATOR
-  ### Atoms 
-    * Copy to clipboard textarea
-    * Containers
-      - Gradient Border
-        - Selected
-        - Static
-        - Big Dark Selected
-        - Big Dark Static
-      - Preview
-    * Select Inputs
-      - Choose Language
-      - Choose Position
-      - Choose Shape
+
+### Atoms: 
+  * Copy to clipboard textarea
+  * Containers
+    - Gradient Border
+      - Selected
+      - Static
+      - Big Dark Selected
+      - Big Dark Static
+    - Preview
+  * Select Inputs
+    - Choose Language
+    - Choose Position
+    - Choose Shape
 
 01.12.21
 ## Developed components: 
