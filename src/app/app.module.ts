@@ -125,6 +125,7 @@ import { ReportsTextLinkComponent } from './pages-components/Reports/Atoms/links
 import { ReportsDateMenuComponent } from './pages-components/Reports/Molecules/menu/reports-date-menu/reports-date-menu.component';
 import { ReportsMenuComponent } from './pages-components/Reports/Molecules/menu/reports-menu/reports-menu.component';
 import { ReportsMobileMenuComponent } from './pages-components/Reports/Molecules/menu/reports-mobile-menu/reports-mobile-menu.component';
+import { ReportStatusComponent } from './pages-components/Reports/Atoms/report-status/report-status.component';
 
 PlotlyModule.plotlyjs = PlotlyJS;
 
@@ -248,7 +249,8 @@ PlotlyModule.plotlyjs = PlotlyJS;
     ReportsTextLinkComponent,
     ReportsDateMenuComponent,
     ReportsMenuComponent,
-    ReportsMobileMenuComponent
+    ReportsMobileMenuComponent,
+    ReportStatusComponent
   ],
   imports: [
     ColorSketchModule,
