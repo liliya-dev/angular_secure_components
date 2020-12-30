@@ -1,0 +1,17 @@
+.teams-secondary-button {
+  padding: 14px 26px;
+  border: 1px solid rgba(var(--secondary-color-code), 0.3);
+  border-radius: 8px;
+  background-color: transparent;
+  color: var(--secondary-color);
+  text-transform: capitalize;
+  transition: 0.3s;
+
+  &:hover {
+    border: 1px solid rgba(var(--secondary-color-code), 1);
+  }
+
+  &:active {
+    border: 1px solid rgba(var(--secondary-color-code), 0.3);
+  }
+}

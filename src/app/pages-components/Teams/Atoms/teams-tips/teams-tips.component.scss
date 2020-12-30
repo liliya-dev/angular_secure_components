@@ -1,0 +1,19 @@
+.app-teams-tips {
+  width: 212px;
+  padding: 12px 16px;
+  
+  border-radius: 8px;
+  border: 1px solid var(--info-color);
+  color: var(--secondary-color);
+  background-color: var(--text-color);
+  box-shadow: 0px 8px 12px rgba(var(--dark-color-code), 0.2);
+
+  &__title {
+    margin-bottom: 4px;
+  }
+
+  &__text {
+    line-height: 21px;
+    opacity: 0.7;
+  }
+}

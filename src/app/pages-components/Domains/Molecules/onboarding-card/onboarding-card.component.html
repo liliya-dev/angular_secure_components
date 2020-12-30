@@ -6,7 +6,7 @@
 >
   <div class="app-onboarding-card__wrapper">
     <app-checkbox-mutable-gradient
-      [onActive]="onActive"
+      [onActive]="onActive || !(isSelected && isMobile)"
       [isChecked]="isSelected"
       [id]="id"
       (handleChange)="select.emit($event)"

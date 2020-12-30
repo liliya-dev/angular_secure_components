@@ -1,0 +1,7 @@
+<button
+  [ngClass]="classes"
+  [ngStyle]="{ 'background-color': backgroundColor, 'color': color }"
+>
+  {{ title }}
+  <img class="app-button-success__image" *ngIf="srcPath" [src]="srcPath" [alt]="'title'">
+</button>

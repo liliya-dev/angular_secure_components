@@ -1,0 +1,13 @@
+<button 
+  class="app-mutable-danger-button"
+  (mousedown)="changeToStaticColor()"
+  (mouseup)="changeToActiveColor()"
+  (mouseenter)="changeToActiveColor()"
+  (mouseleave)="changeToStaticColor()"
+>
+  <svg-icon 
+    [src]="svgPath"
+    [svgStyle]="{ 'stroke': color }"
+  >
+  </svg-icon>
+</button>

@@ -128,6 +128,20 @@ import { ReportsMobileMenuComponent } from './pages-components/Reports/Molecules
 import { ReportStatusComponent } from './pages-components/Reports/Atoms/report-status/report-status.component';
 import { ReportsCheckboxInput } from './pages-components/Reports/Atoms/inputs/reports-checkbox-input/reports-checkbox-input.component';
 import { ReportTableComponent } from './pages-components/Reports/Molecules/report-table/report-table.component';
+import { TeamsMutablePrimaryButtonComponent } from './pages-components/Teams/Atoms/buttons/teams-mutable-primary-button/teams-mutable-primary-button.component';
+import { TeamsMutableGradientIconButtonComponent } from './pages-components/Teams/Atoms/buttons/teams-mutable-gradient-icon-button/teams-mutable-gradient-icon-button.component';
+import { TeamsMutableDangerButtonComponent } from './pages-components/Teams/Atoms/buttons/teams-mutable-danger-button/teams-mutable-danger-button.component';
+import { TeamsSimpleButtonComponent } from './pages-components/Teams/Atoms/buttons/teams-simple-button/teams-simple-button.component';
+import { TeamsSecondaryButtonComponent } from './pages-components/Teams/Atoms/buttons/teams-secondary-button/teams-secondary-button.component'
+import { TeamsCheckboxMutableGradientComponent } from './pages-components/Teams/Atoms/inputs/teams-checkbox-mutable-gradient/teams-checkbox-mutable-gradient.component';
+import { TeamsSearchInputComponent } from './pages-components/Teams/Atoms/inputs/teams-search-input/teams-search-input.component';
+import { TeamsTipsComponent } from './pages-components/Teams/Atoms/teams-tips/teams-tips.component';
+import { TeamsCardComponent } from './pages-components/Teams/Molecules/teams-card/teams-card.component';
+import { TeamsCardsListComponent } from './pages-components/Teams/Organisms/teams-cards-list/teams-cards-list.component';
+import { TeamsModalComponent } from './pages-components/Teams/Atoms/modals/teams-modal/teams-modal.component';
+import { TeamsInputComponent } from './pages-components/Teams/Atoms/inputs/teams-input/teams-input.component';
+
+
 PlotlyModule.plotlyjs = PlotlyJS;
 
 @NgModule({
@@ -138,6 +152,15 @@ PlotlyModule.plotlyjs = PlotlyJS;
  ],
   providers: [AddService],
   declarations: [
+    TeamsModalComponent,
+    TeamsInputComponent,
+    TeamsCardComponent,
+    TeamsSearchInputComponent,
+    TeamsCheckboxMutableGradientComponent,
+    TeamsSimpleButtonComponent,
+    TeamsMutableDangerButtonComponent,
+    TeamsMutableGradientIconButtonComponent,
+    TeamsMutablePrimaryButtonComponent,
     AddComponent,
     AddDirective,
     AppComponent,
@@ -253,7 +276,10 @@ PlotlyModule.plotlyjs = PlotlyJS;
     ReportsMobileMenuComponent,
     ReportStatusComponent,
     ReportsCheckboxInput,
-    ReportTableComponent
+    ReportTableComponent,
+    TeamsSecondaryButtonComponent,
+    TeamsTipsComponent,
+    TeamsCardsListComponent
   ],
   imports: [
     ColorSketchModule,

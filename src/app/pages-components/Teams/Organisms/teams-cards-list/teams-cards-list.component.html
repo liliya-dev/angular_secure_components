@@ -1,0 +1,149 @@
+<div 
+  class="teams-cards-list" 
+  [ngStyle]="isMobile && { 'padding': '10px 8px' }"
+  #containerList 
+>
+<!-- template for delete modal -->
+  <ng-template #deleteModalContent let-titleActiveUser="titleActiveUser">
+    <p class="fs-16-sofia-300">Do you really want to delete the <strong>{{ titleActiveUser }}</strong> ?</p>
+  </ng-template>
+<!-- template for edit modal -->
+  <ng-template #editModalContent let-initialValue="initialValue">
+    <app-teams-input
+      [placeholderText]="''"
+      [isBold]="true"
+      [initialValue]="initialValue"
+      [name]="initialValue"
+      (changeValueParentFunction)="setValue($event, 'editTitle')"
+    >
+    </app-teams-input>
+  </ng-template>
+<!-- template for add modal -->
+  <ng-template #addModalContent let-initialValue="initialValue">
+    <p class="teams-cards-list__input-title fs-16-sofia-300">User name</p>
+    <app-teams-input
+      [placeholderText]="'Stiven Stivenson'"
+      [isBold]="true"
+      [initialValue]="initialValue"
+      [name]="initialValue"
+      (changeValueParentFunction)="setValue($event, 'addTitle')"
+    >
+    </app-teams-input>
+    <p class="teams-cards-list__input-title fs-16-sofia-300">Domain</p>
+    <app-teams-input
+      [placeholderText]="'optiona'"
+      [isBold]="true"
+      [initialValue]="initialValue"
+      [name]="initialValue"
+      (changeValueParentFunction)="setValue($event, 'addText')"
+    >
+    </app-teams-input>
+    <p class="teams-cards-list__input-title fs-16-sofia-300">Position</p>
+    <app-teams-input
+      [placeholderText]="'manager'"
+      [isBold]="true"
+      [initialValue]="initialValue"
+      [name]="initialValue"
+      (changeValueParentFunction)="setValue($event, 'addPosition')"
+    >
+    </app-teams-input>
+  </ng-template>
+
+  <div class="teams-cards-list__top">
+    <app-teams-secondary-button [title]="'Audit Log'"></app-teams-secondary-button>
+    <div class="teams-cards-list__separator"></div>
+    <app-teams-simple-button
+      [classes]="'btn-app--asimetric btn-success-asimetric fs-16-sofia-800'"
+      [title]="isMobile ? '+' :' Add new user'"
+      (click)="handleAdd()"
+    >
+    </app-teams-simple-button>
+  </div>
+  <div class="teams-cards-list__middle">
+    <div class="teams-cards-list__filter-wrapper">
+      <app-teams-search-input
+        [placeholderText]="'Enter a query'"
+        [initialValue]="''"
+        (changeValueParentFunction)="handleFilter($event)"
+      >
+      </app-teams-search-input>
+    </div>
+  </div>
+  <div 
+    [ngStyle]="isMobile && { 'padding': '0 5px 14px 5px' }"
+    class="teams-cards-list__buttons" 
+    *ngIf="selected.length > 1"
+  >
+    <div class="teams-cards-list__buttons--left">
+      <app-teams-checkbox-mutable-gradient
+      [onActive]="false"
+      [isChecked]="users.length === selected.length"
+      [id]="selectAll"
+      (handleChange)="selectAll()"
+      >
+      </app-teams-checkbox-mutable-gradient>
+      <p *ngIf="selected.length" class="fs-18-sofia-600" [ngStyle]="isMobile && { 'margin-left': '10px', 'font-size': '14px' }">
+        Seletcted {{ selected.length }} user{{ selected.length > 1 ? 's' : '' }}
+      </p>
+    </div>
+    <div class="teams-cards-list__buttons--right">
+      <app-teams-svg-button
+        [svgPath]="'assets/images/download.svg'"
+        [borderColor]="'#D0DAEB'"
+        [bgColor]="'transparent'"
+        [bgColorHover]="'#D0DAEB'"
+        [svgColor]="'url(#paint0_linear)'"
+        [isStroke]="false"
+      >
+      </app-teams-svg-button>
+      <app-teams-svg-button
+        [svgPath]="'assets/images/basket.svg'"
+        [borderColor]="''"
+        [bgColor]="'rgb(234, 45, 45, 0.1)'"
+        [bgColorHover]="'rgb(234, 45, 45, 0.3)'"
+        [svgColor]="'rgb(234, 45, 45, 1)'"
+        [isStroke]="true"
+        (click)="handleDeleteSeveral()"
+      >
+      </app-teams-svg-button>
+    </div>
+  </div>
+  <ul class="teams-cards-list__list">
+    <div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)">
+      <div class="example-box" *ngFor="let user of users" cdkDrag>
+        <li 
+          class="teams-cards-list__item" 
+          *ngIf="user.name.toLowerCase().includes(query) || user.text.toLowerCase().includes(query)"
+        >
+          <app-teams-card
+            [name]="user.name"
+            [text]="user.text"
+            [tip]="user.tip"
+            [position]="user.position"
+            [isSelected]="checkIsSelected(user.id)"
+            (delete)="handleDelete($event)"
+            (edit)="handleEdit($event)"
+            (select)="changeSelectedList($event)"
+            (duplicate)="duplicateUser($event)"
+            [id]="user.id"
+          >
+          </app-teams-card>
+        </li>
+      </div>
+    </div>
+  </ul>
+  <div *ngIf="isModalVisible">
+    <app-teams-modal
+      [title]="modalTitle"
+      [dangerButtonTitle]="modalDangerButtonTitle"
+      [primaryButtonTitle]="modalPrimaryButtonTitle"
+      (closeModal)="closeModal()"
+      (primaryButtonFunction)="modalPrimaryButtonFunction()"
+      (dangerButtonFunction)="modalDangerButtonFunction()"
+    >
+    <ng-container 
+        *ngTemplateOutlet="modalComponent;context:ctx">
+    </ng-container>
+    </app-teams-modal>
+  </div>
+</div>

@@ -1,0 +1,118 @@
+.app-teams-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  
+  width: 100%;
+  padding: 15px 24px 13px;
+  height: 72px;
+
+  color: var(--secondary-color);
+  background: transparent;
+  border: 1px solid rgba(var(--secondary-color-code), 0.15);
+  border-radius: 12px;
+
+  &:hover {
+    .app-teams-card__tips {
+      display: block;
+    }
+  }
+
+  &__tips {
+    z-index: 10;
+    position: absolute;
+    width: fit-content;
+    top: -80px;
+    left: calc(50% - 106px);
+    display: none;
+  }
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 324px;
+  }
+
+  &__wrapper-button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__text-box {
+    display: flex;
+    align-items: center;
+    margin-left: 26px;
+  }
+
+  &:hover {
+    cursor: pointer;
+    background: var(--success-grad-light);
+    color: var(--text-color);
+  }
+
+  &__name,
+  &__text,
+  &__position {
+    line-height: 20px;
+  }
+
+  &__name {
+    margin-right: 16px;
+  }
+
+  &__text {
+    opacity: 0.6;
+  }
+
+  &__position {
+    opacity: 0.5;
+  }
+
+  &__mobile-box {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 20px;
+
+    position: absolute;
+    right: 0;
+    top: calc(100% + 2px);
+    z-index: 2;
+
+    background-color: rgba(var(--text-color-code), 1);
+    border: 1px solid rgba(var(--secondary-color-code), 0.15);
+    border-radius: 12px;
+  }
+
+  &__mobile-button {
+    padding: 5px;
+    border: none;
+    background-color: transparent;
+    color: rgba(var(--secondary-color-code), 0.7);
+
+    &:active {
+      background: var(--success-grad-light);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+
+  &__toggler {
+    display: flex;
+    align-items: center;
+    border: none;
+    background-color: transparent;
+  }
+}
+
+app-teams-mutable-primary-button  {
+  margin-right: 16px;
+}
+
+app-teams-mutable-gradient-icon-button {
+  margin-right: 14px;
+}

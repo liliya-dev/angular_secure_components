@@ -1,5 +1,75 @@
 demo link https://liliya-dev.github.io/angular_secure_components/?path=/story/molecules-form-screen--third
 
+29.12.21
+## Developed components: 
+
+### TEAMS(USERS)
+
+### Atoms
+
+  * Buttons:
+    - Mutable Danger
+    - Mutable gradient icon
+    - Primary
+    - Secondary
+    - Success Asimetric
+    - Save
+    - Delete
+  * Input
+    - Checkbox (on Active Card)
+    - Checkbox (on Inactive Card)
+    - Text
+    - Search
+  * Modals
+    - Delete
+    - Rename
+  * Tips
+
+### Molecules:
+
+  * Card
+### Organisms
+
+  * Card List
+
+### REPORTS
+
+### Atoms
+
+  * Modals:
+    - Filter 1
+    - Filter 2
+  * Links:
+    - Icon
+    - Thin
+    - Static
+    - Highlited
+  * Inputs
+    - Checkbox
+    - Search
+    - Search Select
+    - Search Select Icon
+    - Select
+    - Select with initial Value
+  * Buttons
+    - Danger Big
+    - Success Big
+    - Danger
+    - Success
+    - Info
+    - Back
+    - Primary
+    - Secondary
+  * Status
+    - Decline
+    - Accept
+    - Non Selected
+
+### Molecules:
+  * Chatrs
+  * Table
+
+
 22.12.21
 ## Developed components: 
 
@@ -19,7 +89,7 @@ demo link https://liliya-dev.github.io/angular_secure_components/?path=/story/mo
 ### Molecules:
   * Dynamic Section
     ( add-dynamic components, service, directive)
-### Molecules
+### Organisms
   * Dynamic Sections List (with opportunity to manage state from list ang from child components, using dynamic components)
 
 ### POLICIES_GENERATOR

@@ -1,0 +1,73 @@
+.app-checkbox-input-gradient__container {
+  width: 24px;
+  height: 24px;
+
+  & > .app-checkbox-input-gradient {
+    display: none;
+  
+    &__label {
+      display: block;
+      position: relative;
+  
+      &:after {
+        content: "";
+        position: absolute;
+        top: 0;
+  
+        box-sizing: border-box;
+        width: 24px;
+        height: 24px;
+        border-radius: 4px;
+        border: 1px solid rgba(var(--secondary-color-code), 0.3);
+      }
+    }
+  }
+  
+  & > .app-checkbox-input-gradient:checked + .app-checkbox-input-gradient__label {
+    &:after {
+      background: var(--success-grad-light);
+      border: none;
+    }
+  
+    &:before {
+      content: "";
+      position: absolute;
+      top: 4px;
+      left: 4px;
+      z-index: 2;
+  
+      box-sizing: border-box;
+      width: 16px;
+      height: 16px;
+      background: center no-repeat url('../../../../../../assets/images/checkbox.svg');
+      background-size: contain;
+    }
+  }
+}
+
+.app-checkbox-input-gradient__container.active {
+  & > .app-checkbox-input-gradient {
+
+    &__label {
+      &:after {
+        border: 1px solid rgba(var(--text-color-code), 0.5);
+      }
+  
+      &:hover {
+        &:after {
+          border: 1px solid rgba(var(--text-color-code), 1);
+        }
+      }
+    }
+  }
+
+  & > .app-checkbox-input-gradient:checked + .app-checkbox-input-gradient__label {
+    &:after {
+      background: var(--text-color);
+    }
+
+    &:before {
+      background: center no-repeat url('../../../../../../assets/images/checkboxGradient.svg');
+    }
+  }
+}
