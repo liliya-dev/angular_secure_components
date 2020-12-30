@@ -38,6 +38,83 @@ const Template: Story<TeamsModalComponent> = (args: TeamsModalComponent) => ({
   `,
 });
 
+const stylesForTemplate2 = {
+  'text-align': 'left',
+  'color': 'rgba(var(--secondary-color-code), 0.5)',
+  'margin': '16px 0 8px',
+  'line-height': '150%'
+}
+
+const Template2: Story<TeamsModalComponent> = (args: TeamsModalComponent) => ({
+  component: TeamsModalComponent,
+  props: args,
+  template: `
+  <app-teams-modal 
+    [title]="title" 
+    [primaryButtonTitle]="primaryButtonTitle"
+    [dangerButtonTitle]="dangerButtonTitle"
+    (primaryButtonFunction)="primaryButtonFunction()"
+    (dangerButtonFunction)="dangerButtonFunction()"
+    (closeModal)="closeModal()"
+  >
+    <p 
+      class="teams-cards-list__input-title fs-16-sofia-300" 
+      [ngStyle]="{ 'text-align': 'left',
+                  'color': 'rgba(var(--secondary-color-code), 0.5)',
+                  'margin': '16px 0 8px',
+                  'line-height': '150%'
+                }"
+    >
+      User name
+    </p>
+    <app-teams-input
+      [placeholderText]="'Stiven Stivenson'"
+      [isBold]="true"
+      [initialValue]="initialValue"
+      [name]="initialValue"
+      (changeValueParentFunction)="setValue($event, 'addTitle')"
+    >
+    </app-teams-input>
+    <p 
+      class="teams-cards-list__input-title fs-16-sofia-300"
+      [ngStyle]="{ 'text-align': 'left',
+                  'color': 'rgba(var(--secondary-color-code), 0.5)',
+                  'margin': '16px 0 8px',
+                  'line-height': '150%'
+                }"
+    >
+      Domain
+    </p>
+    <app-teams-input
+      [placeholderText]="'optiona'"
+      [isBold]="true"
+      [initialValue]="initialValue"
+      [name]="initialValue"
+      (changeValueParentFunction)="setValue($event, 'addText')"
+    >
+    </app-teams-input>
+    <p 
+      class="teams-cards-list__input-title fs-16-sofia-300"
+      [ngStyle]="{ 'text-align': 'left',
+                  'color': 'rgba(var(--secondary-color-code), 0.5)',
+                  'margin': '16px 0 8px',
+                  'line-height': '150%'
+                }"
+    >
+      Position
+    </p>
+    <app-teams-input
+      [placeholderText]="'manager'"
+      [isBold]="true"
+      [initialValue]="initialValue"
+      [name]="initialValue"
+      (changeValueParentFunction)="setValue($event, 'addPosition')"
+    >
+    </app-teams-input>
+  </app-teams-modal>
+  `,
+});
+
 export const Delete = Template.bind({});
 Delete.args = {
   title: 'Delete user',
@@ -52,6 +129,16 @@ export const Rename = Template.bind({});
 Rename.args = {
   title: 'Rename user',
   primaryButtonTitle: 'rename',
+  dangerButtonTitle: '',
+  primaryButtonFunction: () => console.log('primary button function works'),
+  dangerButtonFunction: () => console.log('danger button function works'),
+  closeModal: () => console.log('close function works'),
+};
+
+export const Add = Template2.bind({});
+Add.args = {
+  title: 'Add user',
+  primaryButtonTitle: 'Add',
   dangerButtonTitle: '',
   primaryButtonFunction: () => console.log('primary button function works'),
   dangerButtonFunction: () => console.log('danger button function works'),

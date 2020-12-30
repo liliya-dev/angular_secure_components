@@ -23,6 +23,7 @@ demo link https://liliya-dev.github.io/angular_secure_components/?path=/story/mo
   * Modals
     - Delete
     - Rename
+    - Add
   * Tips
 
 ### Molecules:
