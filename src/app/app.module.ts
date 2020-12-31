@@ -140,6 +140,10 @@ import { TeamsCardComponent } from './pages-components/Teams/Molecules/teams-car
 import { TeamsCardsListComponent } from './pages-components/Teams/Organisms/teams-cards-list/teams-cards-list.component';
 import { TeamsModalComponent } from './pages-components/Teams/Atoms/modals/teams-modal/teams-modal.component';
 import { TeamsInputComponent } from './pages-components/Teams/Atoms/inputs/teams-input/teams-input.component';
+import { RequestPrimaryButtonComponent } from './pages-components/Data_Request_Form/Atoms/buttons/request-primary-button/request-primary-button.component';
+import { RequestSecondaryButtonComponent } from './pages-components/Data_Request_Form/Atoms/buttons/request-secondary-button/request-secondary-button.component';
+import { RequestTextInputComponent } from './pages-components/Data_Request_Form/Atoms/inputs/request-text-input/request-text-input.component';
+import { RequestSelectInputComponent } from './pages-components/Data_Request_Form/Atoms/inputs/request-select-input/request-select-input.component';
 
 
 PlotlyModule.plotlyjs = PlotlyJS;
@@ -279,7 +283,11 @@ PlotlyModule.plotlyjs = PlotlyJS;
     ReportTableComponent,
     TeamsSecondaryButtonComponent,
     TeamsTipsComponent,
-    TeamsCardsListComponent
+    TeamsCardsListComponent,
+    RequestPrimaryButtonComponent,
+    RequestSecondaryButtonComponent,
+    RequestTextInputComponent,
+    RequestSelectInputComponent
   ],
   imports: [
     ColorSketchModule,

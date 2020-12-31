@@ -1,0 +1,27 @@
+<div 
+  class="text-area-copy-to-clipboard"
+  (mouseenter)="setVisibleButton(true)"
+  (mouseleave)="setVisibleButton(false)"
+>
+  <textarea 
+    #textarea
+    class="text-area-copy-to-clipboard__textarea fs-14-sofia-300" 
+    [value]="initialValue"
+    rows="10"
+    spellcheck="false"
+  >
+  </textarea>
+  <button 
+    *ngIf="isButtonVisible"
+    class="text-area-copy-to-clipboard__button fs-14-sofia-normal" 
+    type="button" 
+    (click)="copyToClipboard(textarea)"
+  >
+    <svg-icon 
+      [src]="'assets/images/copy.svg'"
+      [svgStyle]="{ 'stroke': '#24B04B' }"
+    >
+    </svg-icon>
+    Copy code to clipboard
+  </button>
+</div>

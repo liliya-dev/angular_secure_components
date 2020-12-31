@@ -1,0 +1,17 @@
+.app-request-secondary-button {
+  padding: 17px 36px;
+  border: 1px solid rgba(var(--secondary-color-code), 0.3);
+  border-radius: 4px;
+  text-transform: uppercase;
+  color: var(--secondary-color);
+  background: transparent;
+  transition: 0.3s;
+
+  &:hover {
+    border: 1px solid rgba(var(--secondary-color-code), 0.7);
+  }
+
+  &:active {
+    border: 1px solid rgba(var(--secondary-color-code), 1);
+  }
+}

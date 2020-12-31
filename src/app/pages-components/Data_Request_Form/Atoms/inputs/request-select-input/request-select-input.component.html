@@ -1,0 +1,14 @@
+<div class="container">
+  <ng-select 
+      [(ngModel)]="selectedItem"
+      class="custom fs-16-sofia-300" 
+      [hideSelected]="true"
+      [searchable]="false"
+      [id]="data.id"
+      (change)="handleChange($event)"
+  >
+    <ng-option class="option" *ngFor="let item of data.values" [value]="item">
+      {{ item }}
+    </ng-option>
+  </ng-select>
+</div>

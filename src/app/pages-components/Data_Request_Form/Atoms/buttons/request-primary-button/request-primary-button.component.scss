@@ -1,0 +1,17 @@
+.app-request-primary-button {
+  padding: 17px 36px;
+  border: none;
+  border-radius: 4px;
+  text-transform: uppercase;
+  color: var(--text-color);
+  background: var(--highlited-color-light);
+  transition: 0.3s;
+
+  &:hover {
+    background: var(--highlited-color-dark);
+  }
+
+  &:active {
+    background: var(--highlited-color-light);
+  }
+}

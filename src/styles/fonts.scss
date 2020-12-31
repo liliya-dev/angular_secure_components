@@ -1,4 +1,16 @@
 @font-face {
+  font-family: 'Helvetica';
+  src: url("../assets/fonts/Helvetica/HelveticaRegular.ttf");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Helvetica';
+  src: url("../assets/fonts//Helvetica/HelveticaBold.ttf");
+  font-weight: 700;
+}
+
+@font-face {
   font-family: 'Montserrat';
   src: url("../assets/fonts/Montserrat/Montserrat-Medium.ttf");
   font-weight: 500;
@@ -195,6 +207,13 @@
   line-height: 100%;
 }
 
+.fs-16-helvetica-400 {
+  font-family: 'Helvetica', 'open-sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+}
+
 .fs-16-sofia-300 {
   font-family: 'Sofia pro', 'open-sans';
   font-style: normal;
@@ -277,6 +296,20 @@
 
 .fs-12-sofia-400 {
   font-family: 'Sofia pro', 'open-sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+}
+
+.fs-12-helvetica-700 {
+  font-family: 'Helvetica', 'open-sans';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+}
+
+.fs-12-helvetica-400 {
+  font-family: 'Helvetica', 'open-sans';
   font-style: normal;
   font-weight: 400;
   font-size: 12px;
