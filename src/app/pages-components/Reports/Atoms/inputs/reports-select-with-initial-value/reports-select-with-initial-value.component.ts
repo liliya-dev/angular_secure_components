@@ -10,7 +10,7 @@ import { Component, Input, OnInit, Output, ViewEncapsulation, EventEmitter } fro
 export class ReportsSelectWithInitialValueComponent implements OnInit {
   @Input() items: string[];
   @Input() imagesPaths?: string[]
-  @Output() onItemSelect: EventEmitter<any> = new EventEmitter();
+  @Output() onItemSelect?: EventEmitter<any> = new EventEmitter();
 
   selectedItem: string;
 

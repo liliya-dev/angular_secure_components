@@ -29,5 +29,6 @@ export class RequestTextInputComponent implements OnInit, OnChanges {
 
   ngOnInit(): void {
     this.setInitialValue();
+    this.parentHandler.emit(this.data.id)
   }
 }

@@ -1,6 +1,9 @@
-.app-request-text-input {
+.app-request-textarea {
+  min-height: 94px;
   width: 100%;
-  padding: 17px 19px;
+  padding: 19px;
+  resize: none;
+  
   color: var(--secondary-color);
   letter-spacing: 0.03em;
   background: var(--text-color);

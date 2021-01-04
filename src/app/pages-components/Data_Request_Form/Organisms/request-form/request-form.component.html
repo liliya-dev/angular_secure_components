@@ -1,0 +1,42 @@
+<div class="app-request-form">
+  <div class="app-request-form__header">
+    <img class="app-request-form__logo" src="assets/images/data-request/request-logo.png" alt="logo">
+    <app-request-select-input
+      [data]="{
+        id: '1',
+        initialValue: 'English',
+        values: ['English', 'German', 'Italian', 'Danish']
+        }"
+    ></app-request-select-input>
+  </div>
+  <div class="app-request-form__body">
+    <p class="app-request-form__title fs-18-helvetica-700">Data Request form</p>
+    <p class="app-request-form__text fs-12-helvetica-400">
+      We are commited to protecting and respecting your privacy. You can use this form to opt-out of the selling 
+      of personal information
+    </p>
+    <ul class="app-request-form__wrapper">
+      <li 
+        *ngFor="let item of requiredFieldsData"
+        class="app-request-form__input-item"
+        [style.width]="item.type==='input' ? '48%' : '100%'"
+      >
+        <app-request-input-block [title]="item.title" [isRequired]="item.isRequired">
+          <app-request-text-input 
+            *ngIf="item.type==='input'; else textarea"
+            [data]="item.data"
+            (parentHandler)="handleChange($event)"
+          >
+          </app-request-text-input>
+          <ng-template #textarea>
+            <app-request-text-area [data]="item.data" (parentHandler)="handleChange($event)"></app-request-text-area>
+          </ng-template>
+        </app-request-input-block>
+      </li>
+    </ul>
+    <div class="app-request-form__buttons">
+      <app-request-secondary-button [title]="'cancel'"></app-request-secondary-button>
+      <app-request-primary-button [title]="'submit'"></app-request-primary-button>
+    </div>
+  </div>
+</div>

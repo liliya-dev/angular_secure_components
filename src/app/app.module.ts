@@ -124,6 +124,7 @@ import { ReportsIconLinkComponent } from './pages-components/Reports/Atoms/links
 import { ReportsTextLinkComponent } from './pages-components/Reports/Atoms/links/reports-text-link/reports-text-link.component';
 import { ReportsDateMenuComponent } from './pages-components/Reports/Molecules/menu/reports-date-menu/reports-date-menu.component';
 import { ReportsMenuComponent } from './pages-components/Reports/Molecules/menu/reports-menu/reports-menu.component';
+import { ReportsSelectWithInitialValueComponent } from './pages-components/Reports/Atoms/inputs/reports-select-with-initial-value/reports-select-with-initial-value.component';
 import { ReportsMobileMenuComponent } from './pages-components/Reports/Molecules/menu/reports-mobile-menu/reports-mobile-menu.component';
 import { ReportStatusComponent } from './pages-components/Reports/Atoms/report-status/report-status.component';
 import { ReportsCheckboxInput } from './pages-components/Reports/Atoms/inputs/reports-checkbox-input/reports-checkbox-input.component';
@@ -144,7 +145,9 @@ import { RequestPrimaryButtonComponent } from './pages-components/Data_Request_F
 import { RequestSecondaryButtonComponent } from './pages-components/Data_Request_Form/Atoms/buttons/request-secondary-button/request-secondary-button.component';
 import { RequestTextInputComponent } from './pages-components/Data_Request_Form/Atoms/inputs/request-text-input/request-text-input.component';
 import { RequestSelectInputComponent } from './pages-components/Data_Request_Form/Atoms/inputs/request-select-input/request-select-input.component';
-
+import { RequestInputBlockComponent } from './pages-components/Data_Request_Form/Molecules/request-input-block/request-input-block.component';
+import { RequestTextAreaComponent } from './pages-components/Data_Request_Form/Atoms/inputs/request-text-area/request-text-area.component';
+import { RequestFormComponent } from './pages-components/Data_Request_Form/Organisms/request-form/request-form.component';
 
 PlotlyModule.plotlyjs = PlotlyJS;
 
@@ -271,6 +274,7 @@ PlotlyModule.plotlyjs = PlotlyJS;
     ReportsSecondaryButtonComponent,
     ReportsPrimaryButtonComponent,
     ReportsInfoButtonComponent,
+    ReportsSelectWithInitialValueComponent,
     ReportsSelectInputSearchComponent,
     ReportsLightButtonComponent,
     ReportsIconLinkComponent,
@@ -287,7 +291,10 @@ PlotlyModule.plotlyjs = PlotlyJS;
     RequestPrimaryButtonComponent,
     RequestSecondaryButtonComponent,
     RequestTextInputComponent,
-    RequestSelectInputComponent
+    RequestSelectInputComponent,
+    RequestInputBlockComponent,
+    RequestTextAreaComponent,
+    RequestFormComponent,
   ],
   imports: [
     ColorSketchModule,
@@ -300,7 +307,7 @@ PlotlyModule.plotlyjs = PlotlyJS;
     CommonModule,
     NgApexchartsModule,
     TextareaAutosizeModule,
-    AngularEditorModule
+    AngularEditorModule, 
   ],
   bootstrap: [AppComponent]
 })

@@ -10,6 +10,7 @@ export class ReportsSearchInputComponent implements OnInit {
   @Input() title: string;
   @Input() initialValue?: string;
   @Input() id: string;
+  @Input() name?: string;
 
   @Output() changeValueParentFunction?: EventEmitter<any> = new EventEmitter();
 

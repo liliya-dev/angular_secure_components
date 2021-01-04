@@ -15,17 +15,17 @@
   }
 
   &:after {
-    content: url('../../../../../../assets/images/select.png');
+    content: url('../../../../../../assets/images/data-request/request-select.png');
     position: absolute;
-    top: calc(50% - 11px);
+    top: calc(50% - 6px);
     right: 21px;
   }
 
-  &.ng-select-opened{
+  &.ng-select-opened {
     &:after {
-      content: url('../../../../../../assets/images/select.png');
+      content: url('../../../../../../assets/images/data-request/request-select.png');
       position: absolute;
-      top: calc(50% - 11px);
+      top: calc(50% - 6px);
       right: 21px;
       transform: rotate(180deg);
     }
@@ -33,20 +33,19 @@
 
   &-container {
     width: 100%;
-    height: 46px;
+    height: 38px;
     padding: 12px 21px 12px 16px;
     margin-bottom: 4px;
   }
 }
 
 .ng-option {
-  background-color: var(--input-bg-color);
+  background-color: var(--text-color);
   padding: 12px 21px 12px 16px;  
 
 
   &:hover {
-    background-color: var(--light-btn-hover);
-    font-weight: bold;
+    background-color: var(--select-request-color);
   }
 }
 
@@ -61,14 +60,13 @@
   position: absolute;
   box-shadow: 0px 30px 70px rgba(46, 45, 79, 0.15);
   border-radius: 8px;
+  border: 1px solid rgba(var(--secondary-color-code), 0.3);
 }
 
 .ng-clear-wrapper {
   display: none;
 }
 
-.container {
-  background-color: rgb(218, 208, 208);
-  padding: 50px 30px;
-  width: 100%;
+.request-select {
+  width: 130px;
 }
