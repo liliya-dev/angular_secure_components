@@ -13,7 +13,6 @@ export class TeamsSearchInputComponent implements OnInit {
 
   @Output() changeValueParentFunction?: EventEmitter<any> = new EventEmitter();
 
-  classes='';
   value='';
 
   handleChangeValue(event) {

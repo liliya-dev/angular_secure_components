@@ -19,12 +19,8 @@ function debounce(func, wait, immediate) {
 const MOBILE_VIEW = 525;
 
 interface User {
-  tip: {
-    title: string,
-    text: string
-  },
   name: string,
-  text: string,
+  email: string,
   position: string,
   id: string | number
 }
@@ -36,7 +32,6 @@ interface User {
 })
 
 export class TeamsCardsListComponent implements OnInit {
-  @Input() initialList: User[];
   @Input() selected: string[];
   @Input() initialUsersList: User[];
 

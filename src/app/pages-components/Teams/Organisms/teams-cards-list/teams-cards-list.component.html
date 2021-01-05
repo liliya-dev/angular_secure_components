@@ -128,7 +128,7 @@
       <div class="example-box" *ngFor="let user of users" cdkDrag>
         <li 
           class="teams-cards-list__item" 
-          *ngIf="user.name.toLowerCase().includes(query) || user.text.toLowerCase().includes(query)"
+          *ngIf="user.name.toLowerCase().includes(query) || user.email.toLowerCase().includes(query)"
         >
           <app-teams-card
             [name]="user.name"

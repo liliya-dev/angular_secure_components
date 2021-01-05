@@ -27,5 +27,5 @@ SuccessAsimetric.args = {
 export const Success = Template.bind({});
 Success.args = {
   title: "save",
-  classes: "btn-app--h46--wide btn-app btn-success fs-12-gramm-400"
+  classes: "btn-app--h46--wide btn-app btn-success fs-12-sofia-800"
 };
