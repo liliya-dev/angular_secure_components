@@ -75,15 +75,18 @@
 
 .btn-app {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
 
   transition: 0.3s;
   border-radius: 8px;
+  text-transform: uppercase;
+  text-align: center;
 
   &--h46--wide {
     height: 46px;
-    padding: 17px 37px;
+    padding: 17px 5px;
+    width: 120px;
   }
 }
 

@@ -21,24 +21,29 @@
     >
     </app-teams-checkbox-mutable-gradient>
     <div class="app-teams-card__text-box"
-      [ngStyle]="{ 'flex-direction': isMobile ? 'column' : 'row', 'margin-left': isSmallMobile && '10px', 'align-items': isMobile ? 'flex-start' : 'center' }"
+      [style.flexDirection] = "isMobile ? 'column' : 'row'"
+      [style.marginLeft] = "isSmallMobile && '10px'"
+      [style.alignItems] = "isMobile ? 'flex-start' : 'center'"
     >
       <p 
-        [ngStyle]="{ 'color': textColor, 'font-size': isSmallMobile ? '12px' : '16px' }" 
+        [style.color] = "textColor"
+        [style.fontSize] = "isSmallMobile ? '12px' : '16px'"
         class="app-teams-card__name fs-18-sofia-600"
       >
         {{ name }}
       </p>
       <p 
-        [ngStyle]="{ 'color': textColor , 'font-size': isSmallMobile ? '12px' : '16px' }" 
+        [style.color] = "textColor"
+        [style.fontSize] = "isSmallMobile ? '12px' : '16px'"
         class="app-teams-card__text fs-16-sofia-300"
       >
-        {{ text }}
+        {{ email }}
       </p>
     </div>
   </div>
   <p 
-    [ngStyle]="{ 'color': textColor, 'font-size': isSmallMobile ? '12px' : '16px' }" 
+    [style.color] = "textColor"
+    [style.fontSize] = "isSmallMobile ? '12px' : '16px'"
     class="app-teams-card__position fs-16-sofia-600"
   >
     {{ position }}
@@ -79,7 +84,7 @@
       </button>
     </div>
   </div>
-  <div class="app-teams-card__wrapper-button" *ngIf="!isMobile" [ngStyle]="(!isMobile && (onActive || isSelected)) ? { 'opacity': '1' } : { 'opacity': '0' }">
+  <div class="app-teams-card__wrapper-button" *ngIf="!isMobile" [style.opacity]="(!isMobile && (onActive || isSelected)) ? '1' : '0'">
     <app-teams-mutable-primary-button [title]="'edit'" (click)="handleEdit()"></app-teams-mutable-primary-button>
     <app-teams-mutable-gradient-icon-button [svgPath]="'assets/images/copy.svg'" (click)="handleDuplicate()"></app-teams-mutable-gradient-icon-button>
     <teams-app-mutable-danger-button [svgPath]="'assets/images/basket.svg'" (click)="handleDelete()"></teams-app-mutable-danger-button>

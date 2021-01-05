@@ -24,7 +24,6 @@ export class DomainsCheckboxMutableGradientComponent implements OnChanges {
   }
 
   ngOnChanges(): void {
-    console.log(this.onActive, 8789, this.id)
     this.classes = this.onActive ? ACTIVE_CLASS : INACTIVE_CLASS;
   }
 }

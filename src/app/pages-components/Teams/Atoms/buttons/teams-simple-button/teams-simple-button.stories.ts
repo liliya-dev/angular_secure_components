@@ -21,5 +21,11 @@ const Template: Story<TeamsSimpleButtonComponent> = (args: TeamsSimpleButtonComp
 export const SuccessAsimetric = Template.bind({});
 SuccessAsimetric.args = {
   title: "add new user",
-  classes: "btn-app--asimetric btn-success-asimetric fs-16-sofia-800"
+  classes: "btn-app--asimetric btn-success-asimetric fs-12-gramm-400"
+};
+
+export const Success = Template.bind({});
+Success.args = {
+  title: "save",
+  classes: "btn-app--h46--wide btn-app btn-success fs-12-gramm-400"
 };

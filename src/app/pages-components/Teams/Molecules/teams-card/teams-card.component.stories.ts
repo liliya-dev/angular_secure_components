@@ -42,7 +42,7 @@ Card.args = {
     text: 'Has access to all domains and all settings.'
   },
   name: 'Atrem Borysenko',
-  text: 'secureprivacy.ai',
+  email: 'secureprivacy.ai',
   position: 'Account owner',
   edit: (id) => console.log('edited', id),
   delete: (id) => console.log('deleted', id),

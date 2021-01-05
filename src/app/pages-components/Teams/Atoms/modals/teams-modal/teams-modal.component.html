@@ -1,4 +1,4 @@
-<div class="teams-modal" (click)="handleClick($event)">
+<div class="teams-modal" (click)="handleClick($event)" #modal>
   <div class="teams-modal__form">
     <button 
       type="button" 
@@ -10,18 +10,18 @@
     <p class="teams-modal__title fs-h3">{{ title }}</p>
     <ng-content></ng-content>
     <div class="teams-modal__buttons">
-      <app-teams-simple-button 
-        *ngIf="primaryButtonTitle!==''" 
-        [classes]="'btn-app--h46--wide btn-app btn-success fs-12-sofia-800'"
-        [title]="primaryButtonTitle"
-        (click)="primaryButtonFunction.emit()"
-      >
-      </app-teams-simple-button>
       <app-teams-simple-button
         *ngIf="dangerButtonTitle!==''" 
-        [classes]="'btn-danger fs-12-sofia-800 btn-app btn-app--h46--wide'"
+        [classes]="'btn-danger fs-12-gramm-400 btn-app btn-app--h46--wide'"
         [title]="dangerButtonTitle"
         (click)="dangerButtonFunction.emit()"
+      >
+      </app-teams-simple-button>
+      <app-teams-simple-button 
+        *ngIf="primaryButtonTitle!==''" 
+        [classes]="'btn-app--h46--wide btn-app btn-success fs-12-gramm-400'"
+        [title]="primaryButtonTitle"
+        (click)="primaryButtonFunction.emit()"
       >
       </app-teams-simple-button>
     </div>

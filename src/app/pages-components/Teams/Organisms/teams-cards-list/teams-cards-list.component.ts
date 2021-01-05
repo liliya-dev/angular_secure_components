@@ -49,13 +49,21 @@ export class TeamsCardsListComponent implements OnInit {
     moveItemInArray(this.users, event.previousIndex, event.currentIndex);
   }
   
+  positionsAndRights = {
+    'Account owner': 'Has eeaccess to all domains and all settings.', 
+    'Account manager': 'Has access to some domains and some settings.',
+    'Account user': 'Has no access to all domains and all settings.'
+    }
+  positions = ['Account owner', 'Account manager', 'Account user']
   users = [];
   isModalVisible = false;
   query = '';
   newUserName = '';
-  newUserText = '';
+  newUserEmail = '';
   newUserPosition = '';
   activeTitle = '';
+  activeEmail = '';
+  activePosition = '';
   activeId='';
   modalTitle='';
   modalPrimaryButtonTitle = '';
@@ -69,7 +77,6 @@ export class TeamsCardsListComponent implements OnInit {
   @HostListener('window:resize', ['$event'])
   onResize(event: any) {
     this.isMobile = this.container.nativeElement.clientWidth <= MOBILE_VIEW;
-    console.log(this.isMobile, 'container width:', this.container.nativeElement.clientWidth, 'mobile width:',MOBILE_VIEW)
   }
 
   selectAll() {
@@ -92,7 +99,7 @@ export class TeamsCardsListComponent implements OnInit {
     this.activeTitle = this.users.find(user => user.id === id).name;
     this.ctx = { titleActiveUser: this.activeTitle };
     this.activeId = id;
-    this.setModalVariables('Delete user', '', 'delete', this.closeModal, this.deleteUser, this.deleteModalContent, true);
+    this.setModalVariables('Are you sure?', '', 'delete user', this.closeModal, this.deleteUser, this.deleteModalContent, true);
   }
 
   deleteUser() {
@@ -107,7 +114,7 @@ export class TeamsCardsListComponent implements OnInit {
       .map(user => user.name).join(', ');
       console.log(this.activeTitle)
     this.ctx = { titleActiveUser: this.activeTitle };
-    this.setModalVariables( 'Delete users', '', 'delete', this.closeModal, this.deleteSelectedusers, this.deleteModalContent, true);
+    this.setModalVariables( 'Are you sure?', '', 'delete users', this.closeModal, this.deleteSelectedusers, this.deleteModalContent, true);
   }
 
   deleteSelectedusers() {
@@ -117,53 +124,44 @@ export class TeamsCardsListComponent implements OnInit {
       }
     })
     this.selected = [];
-    this.isModalVisible = false;
+    this.closeModal();
   }
 
   handleEdit(id: string) {
-    this.activeTitle =this.users.find(user => user.id === id).name;
+    const activeUser = this.users.find(user => user.id === id);
+    this.activeTitle = activeUser.name;
+    this.activeEmail = activeUser.email;
+    this.activePosition = activeUser.position
     this.activeId = id;
     this.ctx = { initialValue: this.activeTitle };
-    this.setModalVariables('Rename user', 'rename', '', this.editUser, null, this.editModalContent, true);
+    this.setModalVariables('Edit user', 'Save', 'Cancel', this.editUser, this.closeModal, this.editModalContent, true);
   }
 
   editUser() {
     const activeIndex = this.users.findIndex(user => user.id === this.activeId);
     this.users[activeIndex].name = this.activeTitle;
-    this.isModalVisible = false;
+    this.users[activeIndex].email = this.activeEmail;
+    this.users[activeIndex].position = this.activePosition;
+    this.closeModal();
   }
 
   handleAdd() {
     this.ctx = { initialValue: '' };
-    this.setModalVariables('Add user', 'add', '', this.addUser, null, this.addModalContent, true);
+    this.setModalVariables('Add user', 'add', 'cancel', this.addUser, this.closeModal, this.addModalContent, true);
   }
 
   addUser() {
-    let newUserTip;
-    switch (this.newUserPosition) {
-      case 'Account owner': 
-        newUserTip = { title: 'Account owner', text: 'Has access to all domains and all settings.' };
-        break;
-      case 'Account manager':
-        newUserTip = { title: 'Account manager', text: 'Has access to some domains and some settings.' };
-        break;
-      case 'Account user': 
-        newUserTip = { title: 'Account user', text: 'Has no access to all domains and all settings.' };
-        break;
-    }
-  
     const newUser = {
       id: `${Date.now()}`, 
       name: this.newUserName, 
-      text: this.newUserText,
-      tip: newUserTip,
+      email: this.newUserEmail,
       position: this.newUserPosition
     }
-    console.log(newUser)
 
     this.users = [...this.users, newUser];
-    this.isModalVisible = false;
+    this.closeModal()
   }
+
 
   setModalVariables(
     modalTitle, modalPrimaryButtonTitle, modalDangerButtonTitle, modalPrimaryButtonFunction,
@@ -179,6 +177,13 @@ export class TeamsCardsListComponent implements OnInit {
   }
 
   closeModal() {
+    this.newUserEmail = '';
+    this.newUserName = '';
+    this.newUserPosition = '';
+    this.activePosition = '';
+    this.activeTitle = '';
+    this.activeEmail = '';
+    this.activeId = '';
     this.isModalVisible = false;
   }
 
@@ -186,12 +191,22 @@ export class TeamsCardsListComponent implements OnInit {
     switch(type) {
       case 'editTitle':
         this.activeTitle = value;
+        break;
+      case 'editEmail':
+        this.activeEmail= value;
+        break;
+      case 'editPosition':
+        this.activePosition = value;
+        break;
       case 'addTitle':
         this.newUserName = value;
-      case 'addText':
-        this.newUserText = value;
+        break;
+      case 'addEmail':
+        this.newUserEmail = value;
+        break;
       case 'addPosition':
         this.newUserPosition = value;
+        break;
     }
   }
 

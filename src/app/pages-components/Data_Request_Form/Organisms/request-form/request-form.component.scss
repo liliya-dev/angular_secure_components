@@ -15,11 +15,10 @@
 
   &__logo {
     width: 100px;
-    height: 41px;
   }
 
   &__body {
-    padding: 22px 32px 32px 32px;
+    padding: 22px 32px 0 32px;
   }
 
   &__title {
@@ -49,6 +48,7 @@
     width: 257px;
     display: flex;
     justify-content: space-between;
+    padding-bottom: 32px;
     margin: 0 auto;
   }
 }

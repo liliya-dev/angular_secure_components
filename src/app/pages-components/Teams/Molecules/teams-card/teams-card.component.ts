@@ -16,7 +16,7 @@ const BIG_MOBILE_VIEW = 760;
 export class TeamsCardComponent implements OnChanges, AfterViewInit {
   @Input() isSelected: boolean;
   @Input() name: string;
-  @Input() text: string;
+  @Input() email: string;
   @Input() position: string;
   @Input() id: string;
   @Input() tip: { text: string, title: string };

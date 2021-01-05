@@ -5,48 +5,63 @@
 >
 <!-- template for delete modal -->
   <ng-template #deleteModalContent let-titleActiveUser="titleActiveUser">
-    <p class="fs-16-sofia-300">Do you really want to delete the <strong>{{ titleActiveUser }}</strong> ?</p>
+    <p class="fs-16-sofia-300">
+      Are you sure you want to remove a team member <strong>{{ titleActiveUser }}</strong> from the administrators list?
+  </p>
   </ng-template>
 <!-- template for edit modal -->
   <ng-template #editModalContent let-initialValue="initialValue">
+    <p class="teams-cards-list__input-title fs-16-sofia-300">Name</p>
     <app-teams-input
       [placeholderText]="''"
-      [isBold]="true"
       [initialValue]="initialValue"
       [name]="initialValue"
       (changeValueParentFunction)="setValue($event, 'editTitle')"
     >
     </app-teams-input>
+    <p class="teams-cards-list__input-title fs-16-sofia-300">Email</p>
+    <app-teams-input
+      [placeholderText]="''"
+      [initialValue]="activeEmail"
+      [name]="initialValue"
+      (changeValueParentFunction)="setValue($event, 'editEmail')"
+    >
+    </app-teams-input>
+    <p class="teams-cards-list__input-title fs-16-sofia-300">Access</p>
+    <teams-select-input
+      [initialValue]="activePosition"
+      [items]="positions"
+      [id]="'position'"
+      (changeValueParentFunction)="setValue($event, 'editPosition')"
+    >
+    </teams-select-input>
   </ng-template>
 <!-- template for add modal -->
   <ng-template #addModalContent let-initialValue="initialValue">
-    <p class="teams-cards-list__input-title fs-16-sofia-300">User name</p>
+    <p class="teams-cards-list__input-title fs-16-sofia-300">Name</p>
     <app-teams-input
-      [placeholderText]="'Stiven Stivenson'"
-      [isBold]="true"
-      [initialValue]="initialValue"
+      [placeholderText]="''"
+      [initialValue]="''"
       [name]="initialValue"
       (changeValueParentFunction)="setValue($event, 'addTitle')"
     >
     </app-teams-input>
-    <p class="teams-cards-list__input-title fs-16-sofia-300">Domain</p>
+    <p class="teams-cards-list__input-title fs-16-sofia-300">Email</p>
     <app-teams-input
-      [placeholderText]="'optiona'"
-      [isBold]="true"
-      [initialValue]="initialValue"
+      [placeholderText]="''"
+      [initialValue]="''"
       [name]="initialValue"
-      (changeValueParentFunction)="setValue($event, 'addText')"
+      (changeValueParentFunction)="setValue($event, 'addEmail')"
     >
     </app-teams-input>
-    <p class="teams-cards-list__input-title fs-16-sofia-300">Position</p>
-    <app-teams-input
-      [placeholderText]="'manager'"
-      [isBold]="true"
-      [initialValue]="initialValue"
-      [name]="initialValue"
+    <p class="teams-cards-list__input-title fs-16-sofia-300">Access</p>
+    <teams-select-input
+      [initialValue]="''"
+      [items]="positions"
+      [id]="'position'"
       (changeValueParentFunction)="setValue($event, 'addPosition')"
     >
-    </app-teams-input>
+    </teams-select-input>
   </ng-template>
 
   <div class="teams-cards-list__top">
@@ -117,8 +132,8 @@
         >
           <app-teams-card
             [name]="user.name"
-            [text]="user.text"
-            [tip]="user.tip"
+            [email]="user.email"
+            [tip]="{ title: user.position, text: positionsAndRights[user.position] }"
             [position]="user.position"
             [isSelected]="checkIsSelected(user.id)"
             (delete)="handleDelete($event)"
@@ -142,7 +157,7 @@
       (dangerButtonFunction)="modalDangerButtonFunction()"
     >
     <ng-container 
-        *ngTemplateOutlet="modalComponent;context:ctx">
+      *ngTemplateOutlet="modalComponent;context:ctx">
     </ng-container>
     </app-teams-modal>
   </div>

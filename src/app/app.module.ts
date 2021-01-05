@@ -136,6 +136,7 @@ import { TeamsSimpleButtonComponent } from './pages-components/Teams/Atoms/butto
 import { TeamsSecondaryButtonComponent } from './pages-components/Teams/Atoms/buttons/teams-secondary-button/teams-secondary-button.component'
 import { TeamsCheckboxMutableGradientComponent } from './pages-components/Teams/Atoms/inputs/teams-checkbox-mutable-gradient/teams-checkbox-mutable-gradient.component';
 import { TeamsSearchInputComponent } from './pages-components/Teams/Atoms/inputs/teams-search-input/teams-search-input.component';
+import { TeamsSelectInput } from './pages-components/Teams/Atoms/inputs/teams-select-input/teams-select-input.component';
 import { TeamsTipsComponent } from './pages-components/Teams/Atoms/teams-tips/teams-tips.component';
 import { TeamsCardComponent } from './pages-components/Teams/Molecules/teams-card/teams-card.component';
 import { TeamsCardsListComponent } from './pages-components/Teams/Organisms/teams-cards-list/teams-cards-list.component';
@@ -287,6 +288,7 @@ PlotlyModule.plotlyjs = PlotlyJS;
     ReportTableComponent,
     TeamsSecondaryButtonComponent,
     TeamsTipsComponent,
+    TeamsSelectInput,
     TeamsCardsListComponent,
     RequestPrimaryButtonComponent,
     RequestSecondaryButtonComponent,

@@ -3,6 +3,8 @@ import { Meta, moduleMetadata, Story } from '@storybook/angular';
 import { TeamsModalComponent } from './teams-modal.component';
 import { TeamsSimpleButtonComponent } from '../../buttons/teams-simple-button/teams-simple-button.component';
 import { TeamsInputComponent } from '../../inputs/teams-input/teams-input.component';
+import { TeamsSelectInput } from '../../inputs/teams-select-input/teams-select-input.component';
+import { NgSelectModule } from '@ng-select/ng-select';
 
 const props = {};
 
@@ -13,9 +15,10 @@ export default {
       declarations: [
         TeamsModalComponent,
         TeamsSimpleButtonComponent,
-        TeamsInputComponent
+        TeamsInputComponent,
+        TeamsSelectInput
       ],
-      imports: [CommonModule],
+      imports: [CommonModule, NgSelectModule],
     }),
   ],
   argTypes: props,
@@ -33,7 +36,7 @@ const Template: Story<TeamsModalComponent> = (args: TeamsModalComponent) => ({
     (dangerButtonFunction)="dangerButtonFunction()"
     (closeModal)="closeModal()"
   >
-    <p class="fs-16-sofia-300">Do you really want to delete the <strong>Anton Ivanov</strong></p>
+    <p class="fs-16-sofia-300">Are you sure you want to remove a team member <strong>Anton Ivanov</strong> from the administrators list?</p>
   </app-teams-modal>
   `,
 });
@@ -58,78 +61,63 @@ const Template2: Story<TeamsModalComponent> = (args: TeamsModalComponent) => ({
     (closeModal)="closeModal()"
   >
     <p 
-      class="teams-cards-list__input-title fs-16-sofia-300" 
-      [ngStyle]="{ 'text-align': 'left',
-                  'color': 'rgba(var(--secondary-color-code), 0.5)',
-                  'margin': '16px 0 8px',
-                  'line-height': '150%'
-                }"
+      class="teams-cards-list__input-title fs-16-sofia-300"
+      [ngStyle]="{ 'text-align': 'left', 'color': 'rgba(1, 25, 73, 0.5)', 'margin': '16px 0 8px', 'line-height': '150%' }"
     >
-      User name
+      Name
     </p>
     <app-teams-input
-      [placeholderText]="'Stiven Stivenson'"
-      [isBold]="true"
-      [initialValue]="initialValue"
+      [placeholderText]="''"
+      [initialValue]="'Anton Ivanov'"
       [name]="initialValue"
-      (changeValueParentFunction)="setValue($event, 'addTitle')"
+      (changeValueParentFunction)="setValue($event, 'editTitle')"
     >
     </app-teams-input>
     <p 
       class="teams-cards-list__input-title fs-16-sofia-300"
-      [ngStyle]="{ 'text-align': 'left',
-                  'color': 'rgba(var(--secondary-color-code), 0.5)',
-                  'margin': '16px 0 8px',
-                  'line-height': '150%'
-                }"
+      [ngStyle]="{ 'text-align': 'left', 'color': 'rgba(1, 25, 73, 0.5)', 'margin': '16px 0 8px', 'line-height': '150%' }"
     >
-      Domain
+      Email
     </p>
     <app-teams-input
-      [placeholderText]="'optiona'"
-      [isBold]="true"
-      [initialValue]="initialValue"
+      [placeholderText]="''"
+      [initialValue]="'secure.privacy@gmail.com'"
       [name]="initialValue"
-      (changeValueParentFunction)="setValue($event, 'addText')"
+      (changeValueParentFunction)="setValue($event, 'editEmail')"
     >
     </app-teams-input>
     <p 
+      [ngStyle]="{ 'text-align': 'left', 'color': 'rgba(1, 25, 73, 0.5)', 'margin': '16px 0 8px', 'line-height': '150%' }"
       class="teams-cards-list__input-title fs-16-sofia-300"
-      [ngStyle]="{ 'text-align': 'left',
-                  'color': 'rgba(var(--secondary-color-code), 0.5)',
-                  'margin': '16px 0 8px',
-                  'line-height': '150%'
-                }"
     >
-      Position
+      Access
     </p>
-    <app-teams-input
-      [placeholderText]="'manager'"
-      [isBold]="true"
-      [initialValue]="initialValue"
-      [name]="initialValue"
-      (changeValueParentFunction)="setValue($event, 'addPosition')"
+    <teams-select-input
+      [initialValue]="'Account owner'"
+      [items]="['Account owner', 'Account manager', 'Account user']"
+      [id]="'position'"
+      (changeValueParentFunction)="null"
     >
-    </app-teams-input>
+    </teams-select-input>
   </app-teams-modal>
   `,
 });
 
 export const Delete = Template.bind({});
 Delete.args = {
-  title: 'Delete user',
+  title: 'Are you sure?',
   primaryButtonTitle: '',
-  dangerButtonTitle: 'delete',
+  dangerButtonTitle: 'delete user',
   primaryButtonFunction: () => console.log('primary button function works'),
   dangerButtonFunction: () => console.log('danger button function works'),
   closeModal: () => console.log('close function works'),
 };
 
-export const Rename = Template.bind({});
+export const Rename = Template2.bind({});
 Rename.args = {
-  title: 'Rename user',
-  primaryButtonTitle: 'rename',
-  dangerButtonTitle: '',
+  title: 'Edit user',
+  primaryButtonTitle: 'Save',
+  dangerButtonTitle: 'cancel',
   primaryButtonFunction: () => console.log('primary button function works'),
   dangerButtonFunction: () => console.log('danger button function works'),
   closeModal: () => console.log('close function works'),

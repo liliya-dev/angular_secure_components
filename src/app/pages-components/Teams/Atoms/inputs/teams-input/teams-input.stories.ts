@@ -19,7 +19,6 @@ const Template: Story<TeamsInputComponent> = (args: TeamsInputComponent) => ({
 export const Text = Template.bind({});
 Text.args = {
   placeholderText: "First Name",
-  isBold: true,
   initialValue: "Secure Privacy",
   changeValueParentFunction: (value) => console.log('changeValueParentFunction works', value)
 };

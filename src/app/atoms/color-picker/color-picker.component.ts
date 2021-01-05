@@ -15,6 +15,7 @@ export class ColorPickerComponent implements OnChanges, OnInit{
   isColorPickerVisible: boolean = false;
 
   @ViewChild('picker') picker: ElementRef;
+  
 
   @HostListener('document:click', ['$event'])
   onClick(event: Event) {

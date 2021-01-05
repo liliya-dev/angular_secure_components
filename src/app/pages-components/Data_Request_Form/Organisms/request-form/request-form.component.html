@@ -1,6 +1,11 @@
-<div class="app-request-form">
+<div class="app-request-form" #container>
   <div class="app-request-form__header">
-    <img class="app-request-form__logo" src="assets/images/data-request/request-logo.png" alt="logo">
+    <img 
+      class="app-request-form__logo" 
+      src="assets/images/data-request/request-logo.png" 
+      alt="logo"
+      [style.width]="!isMobile ? '100px' : '70px'"
+    >
     <app-request-select-input
       [data]="{
         id: '1',
@@ -19,7 +24,7 @@
       <li 
         *ngFor="let item of requiredFieldsData"
         class="app-request-form__input-item"
-        [style.width]="item.type==='input' ? '48%' : '100%'"
+        [style.width]="item.type==='input' && !isMobile ? '48%' : '100%'"
       >
         <app-request-input-block [title]="item.title" [isRequired]="item.isRequired">
           <app-request-text-input 
@@ -34,9 +39,9 @@
         </app-request-input-block>
       </li>
     </ul>
-    <div class="app-request-form__buttons">
-      <app-request-secondary-button [title]="'cancel'"></app-request-secondary-button>
-      <app-request-primary-button [title]="'submit'"></app-request-primary-button>
-    </div>
+  </div>
+  <div class="app-request-form__buttons">
+    <app-request-secondary-button [title]="'cancel'"></app-request-secondary-button>
+    <app-request-primary-button [title]="'submit'"></app-request-primary-button>
   </div>
 </div>

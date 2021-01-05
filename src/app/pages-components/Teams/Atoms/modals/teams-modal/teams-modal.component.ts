@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output, Input } from '@angular/core';
+import { Component, EventEmitter, Output, Input, ViewChild, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-teams-modal',
@@ -11,14 +11,18 @@ export class TeamsModalComponent {
   @Input() primaryButtonTitle: string;
   @Input() dangerButtonTitle: string;
 
+  @ViewChild('modal') modal: ElementRef;
+
   @Output() primaryButtonFunction: EventEmitter<any> = new EventEmitter();
   @Output() dangerButtonFunction: EventEmitter<any> = new EventEmitter();
   @Output() closeModal: EventEmitter<any> = new EventEmitter();
 
   handleClick(event) {
-    if (!event.target.closest('.teams-modal')) {
-      this.handleClose();
+    const element = event.target;
+    if (element.closest('.teams-modal__form') || element.classList.contains('ng-option') || element.closest('.ng-option')) {
+      return
     }
+    this.handleClose();
   }
 
   handleClose() {

@@ -15,6 +15,8 @@ import { TeamsSimpleButtonComponent } from '../../Atoms/buttons/teams-simple-but
 import { TeamsModalComponent } from '../../Atoms/modals/teams-modal/teams-modal.component';
 import { TeamsInputComponent } from '../../Atoms/inputs/teams-input/teams-input.component';
 import { TeamsSvgButtonComponent } from '../../Atoms/buttons/teams-svg-button/teams-svg-button.component';
+import { TeamsSelectInput } from '../../Atoms/inputs/teams-select-input/teams-select-input.component';
+import { NgSelectModule } from '@ng-select/ng-select';
 
 const props = {};
 
@@ -35,9 +37,10 @@ export default {
         TeamsMutableGradientIconButtonComponent,
         TeamsMutablePrimaryButtonComponent,
         TeamsCheckboxMutableGradientComponent,
-        TeamsSecondaryButtonComponent
+        TeamsSecondaryButtonComponent,
+        TeamsSelectInput
       ],
-      imports: [CommonModule, HttpClientModule, AngularSvgIconModule.forRoot()],
+      imports: [CommonModule, HttpClientModule, AngularSvgIconModule.forRoot(), NgSelectModule],
     }),
   ],
   argTypes: props,
@@ -52,42 +55,26 @@ export const CardList = Template.bind({});
 CardList.args = {
   initialUsersList: [
     {
-      tip: {
-        title: 'Account owner',
-        text: 'Has access to all domains and all settings.'
-      },
       name: 'Atrem Borysenko',
-      text: 'secureprivacy.ai',
+      email: 'secureprivacy.ai',
       position: 'Account owner',
       id: '1'
     },
     {
-      tip: {
-        title: 'Account manager',
-        text: 'Has access to some domains and some settings.'
-      },
       name: 'Anton Ivanov',
-      text: 'secureprivacy.ai',
+      email: 'secureprivacy.ai',
       position: 'Account manager',
       id: '2'
     },
     {
-      tip: {
-        title: 'Account user',
-        text: 'Has no access to all domains and all settings.'
-      },
       name: 'John Jackson',
-      text: 'secureprivacy.ai',
+      email: 'secureprivacy.ai',
       position: 'Account user',
       id: '3'
     },
     {
-      tip: {
-        title: 'Account owner',
-        text: 'Has access to all domains and all settings.'
-      },
       name: 'Dana Lalova',
-      text: 'secureprivacy.ai',
+      email: 'secureprivacy.ai',
       position: 'Account owner',
       id: '4'
     },
