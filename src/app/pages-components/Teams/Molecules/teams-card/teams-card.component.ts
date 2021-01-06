@@ -30,6 +30,7 @@ export class TeamsCardComponent implements OnChanges, AfterViewInit {
   isMobile: boolean;
   isSmallMobile: boolean;
   isVisibleOptions = false;
+  isTipsVisible = false;
   cardColor = this.onActive ? HIGHLITED_COLOR : STATIC_COLOR;
   textColor = '';
   textDirection = '';
@@ -114,6 +115,10 @@ export class TeamsCardComponent implements OnChanges, AfterViewInit {
     } else {
       return this.onActive ? this.onActive : this.isSelected;
     }
+  }
+
+  setTipsVisibility(event, value) {
+    this.isTipsVisible = value;
   }
 
   ngAfterViewInit() {

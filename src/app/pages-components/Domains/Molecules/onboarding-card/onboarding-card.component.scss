@@ -1,21 +1,25 @@
 .app-onboarding-card {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 334px;
+  grid-column-gap: 10px;
   align-items: center;
-  justify-content: space-between;
+  justify-content: start;
   position: relative;
-  
   width: 100%;
-  height: 72px;
+  min-height: 72px;
 
   background: transparent;
   border: 1px solid rgba(var(--secondary-color-code), 0.15);
   border-radius: 12px;
   color: var(--secondary-color);
 
+  &.mobile {
+    grid-template-columns: 1fr 18px;
+  }
+
   &__wrapper {
     display: flex;
     align-items: center;
-    justify-content: space-between;
   }
 
   &__text-box {

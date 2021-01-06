@@ -1,11 +1,12 @@
-<div class="app-teams-card"
+<div
+  [ngClass]="{ 'app-teams-card': true, 'mobile': isMobile }"
   (mouseenter)="setOnActive($event, true)"
   (mouseleave)="setOnActive($event, false)"
   [style.background]="cardColor"
   [style.padding]="isSmallMobile ? '5px' : '15px 24px 13px'"
   #block
 >
-  <div class="app-teams-card__tips" *ngIf="!isMobile">
+  <div class="app-teams-card__tips" *ngIf="!isMobile && isTipsVisible">
     <app-teams-tips [title]="tip.title" [text]="tip.text"></app-teams-tips>
   </div>
   <div 
@@ -43,6 +44,8 @@
   <p 
     [style.color] = "textColor"
     [style.fontSize] = "isSmallMobile ? '12px' : '16px'"
+    (mouseenter)="setTipsVisibility($event, true)"
+    (mouseleave)="setTipsVisibility($event, false)"
     class="app-teams-card__position fs-16-sofia-600"
   >
     {{ position }}
