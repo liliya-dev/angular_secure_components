@@ -1,7 +1,8 @@
 <div class="app-teams-card"
   (mouseenter)="setOnActive($event, true)"
   (mouseleave)="setOnActive($event, false)"
-  [ngStyle]="isSmallMobile ? { 'padding': '3px 5px','background': cardColor } : { 'background': cardColor }"
+  [style.background]="cardColor"
+  [style.padding]="isSmallMobile ? '5px' : '15px 24px 13px'"
   #block
 >
   <div class="app-teams-card__tips" *ngIf="!isMobile">
