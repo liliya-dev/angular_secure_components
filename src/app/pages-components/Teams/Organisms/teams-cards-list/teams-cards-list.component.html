@@ -1,7 +1,7 @@
 <div 
   class="teams-cards-list" 
-  [ngStyle]="isMobile && { 'padding': '10px 8px' }"
   #containerList 
+  [ngStyle]="isSmallMobile && { 'padding': '10px 3px' }"
 >
 <!-- template for delete modal -->
   <ng-template #deleteModalContent let-titleActiveUser="titleActiveUser">
@@ -85,20 +85,19 @@
     </div>
   </div>
   <div 
-    [ngStyle]="isMobile && { 'padding': '0 5px 14px 5px' }"
-    class="teams-cards-list__buttons" 
+    [ngClass]="{ 'teams-cards-list__buttons': true, 'mobile': isMobile }"
     *ngIf="selected.length > 1"
   >
     <div class="teams-cards-list__buttons--left">
       <app-teams-checkbox-mutable-gradient
-      [onActive]="false"
-      [isChecked]="users.length === selected.length"
-      [id]="selectAll"
-      (handleChange)="selectAll()"
+        [onActive]="false"
+        [isChecked]="users.length === selected.length"
+        [id]="selectAll"
+        (handleChange)="selectAll()"
       >
       </app-teams-checkbox-mutable-gradient>
-      <p *ngIf="selected.length" class="fs-18-sofia-600" [ngStyle]="isMobile && { 'margin-left': '10px', 'font-size': '14px' }">
-        Seletcted {{ selected.length }} user{{ selected.length > 1 ? 's' : '' }}
+      <p *ngIf="selected.length" class="fs-18-sofia-600">
+        Seletcted {{ selected.length }} users
       </p>
     </div>
     <div class="teams-cards-list__buttons--right">

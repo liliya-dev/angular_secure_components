@@ -16,7 +16,8 @@ function debounce(func, wait, immediate) {
   };
 };
 
-const MOBILE_VIEW = 525;
+const MOBILE_VIEW = 574;
+const SMALL_MOBILE_VIEW = 400;
 
 interface User {
   name: string,
@@ -45,9 +46,9 @@ export class TeamsCardsListComponent implements OnInit {
   }
   
   positionsAndRights = {
-    'Account owner': 'Has eeaccess to all domains and all settings.', 
-    'Account manager': 'Has access to some domains and some settings.',
-    'Account user': 'Has no access to all domains and all settings.'
+      'Account owner': 'Has access to all domains and all settings.', 
+      'Account manager': 'Has access to some domains and some settings.',
+      'Account user': 'Has no access to all domains and all settings.'
     }
   positions = ['Account owner', 'Account manager', 'Account user']
   users = [];
@@ -68,10 +69,11 @@ export class TeamsCardsListComponent implements OnInit {
   modalComponent;
   ctx;
   isMobile;
+  isSmallMobile;
 
   @HostListener('window:resize', ['$event'])
   onResize(event: any) {
-    this.isMobile = this.container.nativeElement.clientWidth <= MOBILE_VIEW;
+    this.detectMobileView();
   }
 
   selectAll() {
@@ -211,9 +213,8 @@ export class TeamsCardsListComponent implements OnInit {
     const newUser = {
       id: `${Date.now()}`, 
       name: userToDuplicate.name, 
-      text: userToDuplicate.text,
+      email: userToDuplicate.email,
       position: userToDuplicate.position,
-      tip: { ...userToDuplicate.tip }
     }
 
     this.users.splice(index, 0, newUser);
@@ -223,9 +224,14 @@ export class TeamsCardsListComponent implements OnInit {
     this.query = args[0].toLowerCase();
   }, 500, false)
 
+  detectMobileView() {
+    this.isMobile = this.container.nativeElement.clientWidth <= MOBILE_VIEW;
+    this.isSmallMobile = this.container.nativeElement.clientWidth <= SMALL_MOBILE_VIEW;
+  }
+
 
   ngAfterViewInit() {
-    this.isMobile = this.container.nativeElement.clientWidth <= MOBILE_VIEW;
+    this.detectMobileView();
   }
 
   ngOnInit() {

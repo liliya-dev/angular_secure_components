@@ -1,22 +1,36 @@
 <div class="app-onboarding-card"
   (mouseenter)="setOnActive(true)"
   (mouseleave)="setOnActive(false)"
-  [ngStyle]="isSmallMobile ? { 'padding': '0 5px 14px 5px','background': cardColor } : { 'background': cardColor }"
+  [ngStyle]="isSmallMobile ? { 'padding': '3px 5px','background': cardColor } : { 'background': cardColor }"
   #block
 >
   <div class="app-onboarding-card__wrapper">
     <app-checkbox-mutable-gradient
-      [onActive]="onActive || !(isSelected && isMobile)"
+      [onActive]="checkCheckboxStyle()"
       [isChecked]="isSelected"
       [id]="id"
       (handleChange)="select.emit($event)"
     >
     </app-checkbox-mutable-gradient>
     <div class="app-onboarding-card__text-box"
-      [ngStyle]="{ 'flex-direction': isSmallMobile ? 'column' : 'row' }"
+      [style.flexDirection] = "isMobile ? 'column' : 'row'"
+      [style.marginLeft] = "isSmallMobile ? '10px' : '26px'"
+      [style.alignItems] = "isMobile ? 'flex-start' : 'center'"
     >
-      <p [ngStyle]="{ 'color': textColor }" class="app-onboarding-card__title fs-18-sofia-600">{{ title }}</p>
-      <p [ngStyle]="{ 'color': textColor }" class="app-onboarding-card__text fs-18-sofia-300-simple">{{ text }}</p>
+      <p 
+        [style.color] = "textColor"
+        [style.fontSize] = "isSmallMobile ? '12px' : '16px'"
+        class="app-onboarding-card__title fs-18-sofia-600"
+      >
+        {{ title }}
+      </p>
+      <p 
+        [style.color] = "textColor"
+        [style.fontSize] = "isSmallMobile ? '12px' : '16px'"
+        class="app-onboarding-card__text fs-18-sofia-300-simple"
+      >
+        {{ text }}
+      </p>
     </div>
   </div>
   <div class="app-ondoarding-card__wrapper" *ngIf="isMobile">

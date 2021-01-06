@@ -3,7 +3,7 @@ import { Component, Input, ViewEncapsulation, ViewChild, ElementRef, OnChanges, 
 const HIGHLITED_COLOR = 'linear-gradient(89.52deg, #24B04B -46.17%, #0263BC 186.99%)';
 const STATIC_COLOR = 'rgb(255, 255, 255)';
 const TEXT_STATIC_COLOR = '#011949';
-const SMALL_MOBILE_VIEW = 460;
+const SMALL_MOBILE_VIEW = 509;
 const BIG_MOBILE_VIEW = 760;
 
 @Component({
@@ -31,6 +31,14 @@ export class DomainsOnboardingCardComponent implements OnChanges {
   cardColor = this.onActive ? HIGHLITED_COLOR : STATIC_COLOR;
   textColor = '';
   textDirection = '';
+
+  checkCheckboxStyle() {
+    if (this.isMobile) {
+      return false;
+    } else {
+      return this.onActive ? this.onActive : this.isSelected;
+    }
+  }
 
   handleDelete = () => {
     if (this.isMobile) {

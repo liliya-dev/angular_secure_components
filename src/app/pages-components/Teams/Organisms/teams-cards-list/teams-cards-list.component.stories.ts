@@ -13,7 +13,7 @@ import { TeamsSearchInputComponent } from '../../Atoms/inputs/teams-search-input
 import { TeamsSecondaryButtonComponent } from '../../Atoms/buttons/teams-secondary-button/teams-secondary-button.component';
 import { TeamsSimpleButtonComponent } from '../../Atoms/buttons/teams-simple-button/teams-simple-button.component';
 import { TeamsModalComponent } from '../../Atoms/modals/teams-modal/teams-modal.component';
-import { TeamsInputComponent } from '../../Atoms/inputs/teams-input/teams-input.component';
+import { TeamsInputComponent } from '../../Atoms/inputs/teams-input/teams-input.component'
 import { TeamsSvgButtonComponent } from '../../Atoms/buttons/teams-svg-button/teams-svg-button.component';
 import { TeamsSelectInput } from '../../Atoms/inputs/teams-select-input/teams-select-input.component';
 import { NgSelectModule } from '@ng-select/ng-select';

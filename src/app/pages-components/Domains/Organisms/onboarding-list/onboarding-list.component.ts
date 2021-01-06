@@ -8,7 +8,8 @@ interface Domain {
   id: string
 }
 
-const MOBILE_VIEW = 460;
+const MOBILE_VIEW = 574;
+const SMALL_MOBILE_VIEW = 400;
 
 @Component({
   selector: 'app-onboarding-list',
@@ -44,10 +45,11 @@ export class DomainsOnboardingListComponent implements OnInit {
   modalComponent;
   ctx;
   isMobile;
+  isSmallMobile;
 
   @HostListener('window:resize', ['$event'])
   onResize(event: any) {
-    this.isMobile = this.container.nativeElement.clientWidth < MOBILE_VIEW;
+    this.detectMobileView();
   }
 
   selectAll() {
@@ -169,9 +171,13 @@ export class DomainsOnboardingListComponent implements OnInit {
     this.query = args[0].toLowerCase();
   }, 500, false)
 
+  detectMobileView() {
+    this.isMobile = this.container.nativeElement.clientWidth <= MOBILE_VIEW;
+    this.isSmallMobile = this.container.nativeElement.clientWidth <= SMALL_MOBILE_VIEW;
+  }
 
   ngAfterViewInit() {
-    this.isMobile = this.container.nativeElement.clientWidth < MOBILE_VIEW;
+    this.detectMobileView();
   }
 
   ngOnInit() {

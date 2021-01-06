@@ -4,9 +4,7 @@
   [ngStyle]="isSmallMobile ? { 'padding': '3px 5px','background': cardColor } : { 'background': cardColor }"
   #block
 >
-  <div 
-    class="app-teams-card__tips"
-  >
+  <div class="app-teams-card__tips" *ngIf="!isMobile">
     <app-teams-tips [title]="tip.title" [text]="tip.text"></app-teams-tips>
   </div>
   <div 
@@ -22,7 +20,7 @@
     </app-teams-checkbox-mutable-gradient>
     <div class="app-teams-card__text-box"
       [style.flexDirection] = "isMobile ? 'column' : 'row'"
-      [style.marginLeft] = "isSmallMobile && '10px'"
+      [style.marginLeft] = "isSmallMobile ? '10px' : '26px'"
       [style.alignItems] = "isMobile ? 'flex-start' : 'center'"
     >
       <p 

@@ -1,7 +1,7 @@
 <div 
-  class="app-onboarding-component" 
   #container 
-  [ngStyle]="isMobile && { 'padding': '10px 8px' }"
+  class="app-onboarding-component" 
+  [ngStyle]="isSmallMobile && { 'padding': '10px 3px' }"
 >
 <!-- template for delete modal -->
   <ng-template #deleteModalContent let-titleActiveDomain="titleActiveDomain">
@@ -61,8 +61,7 @@
     <app-mutable-light-button [title]="'options'"></app-mutable-light-button>
   </div>
   <div 
-    [ngStyle]="isMobile && { 'padding': '0 5px 14px 5px' }"
-    class="app-onboarding-component__buttons" 
+    [ngClass]="{ 'app-onboarding-component__buttons': true, 'mobile': isMobile }"
     *ngIf="selected.length > 1"
   >
     <div class="app-onboarding-component__buttons--left">

@@ -53,6 +53,15 @@
     margin-bottom: 24px;
     border-bottom: 1px solid var(--asimetric-bg-color);
 
+    &.mobile {
+      padding: 0 5px 14px 5px;
+
+      & > .app-onboarding-component__buttons--left > p {
+        margin-left: 10px;
+        font-size: 14px;
+      }
+    }
+
     &--left {
       display: flex;
       align-items: center;
