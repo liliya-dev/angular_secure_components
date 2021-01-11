@@ -30,4 +30,7 @@ const Template: Story<StatusBarComponent> = (args: StatusBarComponent) => ({
 });
 
 export const Green = Template.bind({});
-Green.args = {}
+Green.args = {
+  activePoints: 1,
+  totalSteps: 6,
+}

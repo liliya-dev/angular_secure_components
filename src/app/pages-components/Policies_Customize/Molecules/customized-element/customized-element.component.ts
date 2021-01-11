@@ -1,5 +1,5 @@
 import { 
-  Component, EventEmitter, Input, ViewEncapsulation, OnInit, OnChanges, 
+  Component, EventEmitter, Input, OnInit, OnChanges, 
   Output, ElementRef, ViewChild, HostListener, AfterViewInit 
 } from '@angular/core';
 import { AddItem } from './add-dynamic-component/add-item';
@@ -10,7 +10,6 @@ import { getInitialDataByType, getEditedDataByType } from './helpers';
   selector: 'app-customized-element',
   templateUrl: './customized-element.component.html',
   styleUrls: ['./customized-element.component.scss'],
-  encapsulation: ViewEncapsulation.None
 })
 
 export class PoliciesCustomizedElementComponent implements OnInit, OnChanges, AfterViewInit {

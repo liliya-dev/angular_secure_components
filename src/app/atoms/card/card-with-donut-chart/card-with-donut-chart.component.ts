@@ -1,10 +1,9 @@
-import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-card-with-donut-chart',
   templateUrl: './card-with-donut-chart.component.html',
   styleUrls: ['./card-with-donut-chart.component.scss'],
-  encapsulation: ViewEncapsulation.None
 })
 
 export class CardWithDonutChartComponent implements OnInit {

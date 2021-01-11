@@ -36,6 +36,16 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    ::ng-deep {
+      app-teams-mutable-primary-button  {
+        margin-right: 16px;
+      }
+      
+      app-teams-mutable-gradient-icon-button {
+        margin-right: 14px;
+      }
+    }
   }
 
   &__text-box {
@@ -104,12 +114,4 @@
     border: none;
     background-color: transparent;
   }
-}
-
-app-teams-mutable-primary-button  {
-  margin-right: 16px;
-}
-
-app-teams-mutable-gradient-icon-button {
-  margin-right: 14px;
 }

@@ -20,6 +20,16 @@
   &__wrapper {
     display: flex;
     align-items: center;
+
+    ::ng-deep {
+      app-mutable-primary-button {
+        margin-right: 16px;
+      }
+      
+      app-mutable-gradient-icon-button {
+        margin-right: 14px;
+      }
+    }
   }
 
   &__text-box {
@@ -77,12 +87,4 @@
     border: none;
     background-color: transparent;
   }
-}
-
-app-mutable-primary-button {
-  margin-right: 16px;
-}
-
-app-mutable-gradient-icon-button {
-  margin-right: 14px;
 }

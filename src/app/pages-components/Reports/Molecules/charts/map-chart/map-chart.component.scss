@@ -68,15 +68,20 @@
 
 /// overriding styles for am4charts module
 
-#chartdiv > div > svg > g > g:nth-child(2) > g:nth-child(2) > g > g:nth-child(3) > g:nth-child(2) > g:nth-child(1) > path,
-#chartdiv > div > svg > g > g:nth-child(2) > g:nth-child(2) > g > g:nth-child(3) > g:nth-child(2) > g:nth-child(2) > path,
-#chartdiv > div > svg > g > g:nth-child(2) > g:nth-child(2) > g > g:nth-child(3) > g:nth-child(1) {
-  display: none;
-}
-
-#chartdiv > div > svg > g > g:nth-child(2) > g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > g:nth-child(2) > g:nth-child(2) > g > g:nth-child(1),
-#chartdiv > div > svg > g > g:nth-child(2) > g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > g:nth-child(2) > g:nth-child(2) > g > g:nth-child(3) {
-  &:hover {
-    cursor: pointer;
+.map-chart {
+  ::ng-deep {
+    #chartdiv > div > svg > g > g:nth-child(2) > g:nth-child(2) > g > g:nth-child(3) > g:nth-child(2) > g:nth-child(1) > path,
+    #chartdiv > div > svg > g > g:nth-child(2) > g:nth-child(2) > g > g:nth-child(3) > g:nth-child(2) > g:nth-child(2) > path,
+    #chartdiv > div > svg > g > g:nth-child(2) > g:nth-child(2) > g > g:nth-child(3) > g:nth-child(1) {
+      display: none;
+    }
+    
+    #chartdiv > div > svg > g > g:nth-child(2) > g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > g:nth-child(2) > g:nth-child(2) > g > g:nth-child(1),
+    #chartdiv > div > svg > g > g:nth-child(2) > g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > g:nth-child(2) > g:nth-child(2) > g > g:nth-child(3) {
+      &:hover {
+        cursor: pointer;
+      }
+    }
   }
 }
+

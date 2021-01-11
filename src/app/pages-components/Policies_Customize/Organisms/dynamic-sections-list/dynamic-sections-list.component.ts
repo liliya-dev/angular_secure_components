@@ -1,12 +1,11 @@
-import { Component, Input, OnChanges, OnInit, HostListener, ViewEncapsulation, ViewChild, ElementRef } from '@angular/core';
+import { Component, Input, OnChanges, OnInit, HostListener, ViewChild, ElementRef } from '@angular/core';
  
 const MOBILE_VIEW = 725;
 
 @Component({
   selector: 'app-dynamic-sections-list',
   templateUrl: './dynamic-sections-list.component.html',
-  styleUrls: ['./dynamic-sections-list.component.scss'],
-  encapsulation: ViewEncapsulation.None
+  styleUrls: ['./dynamic-sections-list.component.scss']
 })
 
 export class PoliciesDynamicSectionsListComponent implements OnInit, OnChanges {

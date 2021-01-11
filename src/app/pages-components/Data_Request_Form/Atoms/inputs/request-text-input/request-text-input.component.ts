@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation, EventEmitter, Input, OnChanges, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, OnInit, Output } from '@angular/core';
 
 interface Data {
   id: string,
@@ -9,8 +9,7 @@ interface Data {
 @Component({
   selector: 'app-request-text-input',
   templateUrl: './request-text-input.component.html',
-  styleUrls: ['./request-text-input.component.scss'],
-  encapsulation: ViewEncapsulation.None
+  styleUrls: ['./request-text-input.component.scss']
 })
 
 export class RequestTextInputComponent implements OnInit, OnChanges {

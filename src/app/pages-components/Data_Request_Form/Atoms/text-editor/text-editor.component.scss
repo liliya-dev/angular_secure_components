@@ -1,312 +1,321 @@
 .app-text-editor {
   width: 100%;
-}
 
-.angular-editor-button,
-.ae-picker-label,
-.ae-picker-item {
-  font-family: 'Montserrat', 'open-sans'!important;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 100%;
-}
-
-#italic- {
-  font-family: 'Montserrat Italic', 'open-sans'!important;
-  font-weight: 700;
-}
-
-#bold- {
-  font-weight: 900;
-}
-
-#null {
-  display: none;
-}
-
-.angular-editor-toolbar-set {
-  margin-bottom: 5px;
-}
-
-.angular-editor-button {
-  width: 32px;
-  height: 28px;
-  border-radius: 3px;
-  color: var(--secondary-color);
-  border: none!important;
-  background: transparent!important;
-  font-weight: 700;
-  transition: 0.3s;
-  margin: 0 5px 5px 0;
-
-  &:hover {
-    background: var(--asimetric-bg-color)!important;
-  }
-
-  &.active {
-    background: var(--asimetric-bg-color)!important;
-  }
-}
-
-/// change icons for buttons
-angular-editor-toolbar > div > {
-  & div:nth-child(2) {
+  ::ng-deep {
+    .angular-editor-button,
+    .ae-picker-label,
+    .ae-picker-item {
+      font-family: 'Montserrat', 'open-sans'!important;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 100%;
+    }
+    
+    #italic- {
+      font-family: 'Montserrat Italic', 'open-sans'!important;
+      font-weight: 700;
+    }
+    
+    #bold- {
+      font-weight: 900;
+    }
+    
+    #null {
+      display: none;
+    }
+    
+    .angular-editor-toolbar-set {
+      margin-bottom: 5px;
+    }
+    
     .angular-editor-button {
-      &:nth-child(1),
-      &:nth-child(2),
-      &:nth-child(3),
-      &:nth-child(4),
-      &:nth-child(5),
-      &:nth-child(6) {
-        & > i {
-          display: none;
+      width: 32px;
+      height: 28px;
+      border-radius: 3px;
+      color: var(--secondary-color);
+      border: none!important;
+      background: transparent!important;
+      font-weight: 700;
+      transition: 0.3s;
+      margin: 0 5px 5px 0;
+    
+      &:hover {
+        background: var(--asimetric-bg-color)!important;
+      }
+    
+      &.active {
+        background: var(--asimetric-bg-color)!important;
+      }
+    }
+    
+    /// change icons for buttons
+    angular-editor-toolbar > div > {
+      & div:nth-child(2) {
+        .angular-editor-button {
+          &:nth-child(1),
+          &:nth-child(2),
+          &:nth-child(3),
+          &:nth-child(4),
+          &:nth-child(5),
+          &:nth-child(6) {
+            & > i {
+              display: none;
+            }
+          }
+      
+          &:nth-child(1):before {
+            content: 'B';
+          }
+    
+          &:nth-child(2):before {
+            content: 'I';
+          }
+    
+          &:nth-child(3):before {
+            content: 'U';
+            text-decoration: underline;
+          }
+    
+          &:nth-child(4):before {
+            content: 'S';
+            text-decoration: line-through;
+          }
+    
+          &:nth-child(5) {
+            position: relative;
+            &:before {
+              content: 'x';
+            }
+            &::after {
+              content: '2';
+              font-size: 6px;
+              position: absolute;
+              top: 0;
+            }
+          }
+    
+          &:nth-child(6) {
+            position: relative;
+            &:before {
+              content: 'x';
+            }
+            &::after {
+              content: '2';
+              font-size: 6px;
+            }
+          }
         }
       }
-  
-      &:nth-child(1):before {
-        content: 'B';
-      }
-
-      &:nth-child(2):before {
-        content: 'I';
-      }
-
-      &:nth-child(3):before {
-        content: 'U';
-        text-decoration: underline;
-      }
-
-      &:nth-child(4):before {
-        content: 'S';
-        text-decoration: line-through;
-      }
-
-      &:nth-child(5) {
-        position: relative;
-        &:before {
-          content: 'x';
-        }
-        &::after {
-          content: '2';
-          font-size: 6px;
-          position: absolute;
-          top: 0;
+    
+      & div:nth-child(3) {
+        .angular-editor-button {
+          &:nth-child(1),
+          &:nth-child(2),
+          &:nth-child(3),
+          &:nth-child(4) {
+            & > i {
+              display: none;
+            }
+          }
+    
+          &:nth-child(1):before {
+            content: url('../../../../../assets/images/text-editior/align-left.svg');
+          }
+    
+          &:nth-child(2):before {
+            content: url('../../../../../assets/images/text-editior/align-center.svg');
+          }
+    
+          &:nth-child(3):before {
+            content: url('../../../../../assets/images/text-editior/align-right.svg');
+          }
+    
+          &:nth-child(4):before {
+            content: url('../../../../../assets/images/text-editior/align-stretch.svg');
+          }
         }
       }
-
-      &:nth-child(6) {
-        position: relative;
-        &:before {
-          content: 'x';
+    
+      & div:nth-child(4) {
+        .angular-editor-button {
+          &:nth-child(1),
+          &:nth-child(2) {
+            position: relative;
+            & > i {
+              display: none;
+            }
+          }
+      
+          &:nth-child(1):before {
+            content: url('../../../../../assets/images/text-editior/arrow-left.svg');
+            position: absolute;
+            bottom: 0.5px;
+            left: calc(50% - 10px);
+          }
+    
+          &:nth-child(2):before {
+            content: url('../../../../../assets/images/text-editior/arrow-right.svg');
+            position: absolute;
+            bottom: 0.5px;
+            left: calc(50% - 10px);
+          }
         }
-        &::after {
-          content: '2';
-          font-size: 6px;
+      }
+    
+      & div:nth-child(5) {
+        .angular-editor-button {
+          &:nth-child(1),
+          &:nth-child(2) {
+            position: relative;
+            & > i {
+              display: none;
+            }
+          }
+      
+          &:nth-child(1):before {
+            content: url('../../../../../assets/images/text-editior/list-dots.svg');
+            position: absolute;
+            bottom: 0.5px;
+            left: calc(50% - 10px);
+          }
+      
+          &:nth-child(2):before {
+            content: url('../../../../../assets/images/text-editior/list-numbers.svg');
+            position: absolute;
+            bottom: 0.5px;
+            left: calc(50% - 10px);
+          }
+        }
+      }
+    
+      & div:nth-child(9) {
+        .angular-editor-button {
+          &:nth-child(2),
+          &:nth-child(4) {
+            position: relative;
+            & > span {
+              display: none;
+            }
+          }
+      
+          &:nth-child(2)::before {
+            content: 'A';
+            text-decoration: underline;
+          } 
+      
+          &:nth-child(4):before {
+            content: 'A';
+            position: absolute;
+            top: 0;
+            left: 0;
+    
+            background-color: var(--asimetric-bg-color);
+            line-height: 28px;
+            width: 32px;
+            height: 28px;
+            border-radius: 3px;
+          } 
         }
       }
     }
-  }
-
-  & div:nth-child(3) {
-    .angular-editor-button {
-      &:nth-child(1),
-      &:nth-child(2),
-      &:nth-child(3),
-      &:nth-child(4) {
-        & > i {
-          display: none;
-        }
-      }
-
-      &:nth-child(1):before {
-        content: url('../../../../../assets/images/text-editior/align-left.svg');
-      }
-
-      &:nth-child(2):before {
-        content: url('../../../../../assets/images/text-editior/align-center.svg');
-      }
-
-      &:nth-child(3):before {
-        content: url('../../../../../assets/images/text-editior/align-right.svg');
-      }
-
-      &:nth-child(4):before {
-        content: url('../../../../../assets/images/text-editior/align-stretch.svg');
-      }
+    
+    angular-editor-toolbar > div > div:nth-child(7) > ae-select {
+      width: 170px!important;
     }
-  }
-
-  & div:nth-child(4) {
-    .angular-editor-button {
-      &:nth-child(1),
-      &:nth-child(2) {
-        position: relative;
-        & > i {
-          display: none;
-        }
-      }
-  
-      &:nth-child(1):before {
-        content: url('../../../../../assets/images/text-editior/arrow-left.svg');
-        position: absolute;
-        bottom: 0.5px;
-        left: calc(50% - 10px);
-      }
-
-      &:nth-child(2):before {
-        content: url('../../../../../assets/images/text-editior/arrow-right.svg');
-        position: absolute;
-        bottom: 0.5px;
-        left: calc(50% - 10px);
-      }
+    
+    angular-editor-toolbar > div > div:nth-child(6) > ae-select {
+      width: 120px!important;
     }
-  }
-
-  & div:nth-child(5) {
-    .angular-editor-button {
-      &:nth-child(1),
-      &:nth-child(2) {
-        position: relative;
-        & > i {
-          display: none;
-        }
-      }
-  
-      &:nth-child(1):before {
-        content: url('../../../../../assets/images/text-editior/list-dots.svg');
-        position: absolute;
-        bottom: 0.5px;
-        left: calc(50% - 10px);
-      }
-  
-      &:nth-child(2):before {
-        content: url('../../../../../assets/images/text-editior/list-numbers.svg');
-        position: absolute;
-        bottom: 0.5px;
-        left: calc(50% - 10px);
-      }
-    }
-  }
-
-  & div:nth-child(9) {
-    .angular-editor-button {
-      &:nth-child(2),
-      &:nth-child(4) {
-        position: relative;
-        & > span {
-          display: none;
-        }
-      }
-  
-      &:nth-child(2)::before {
-        content: 'A';
-        text-decoration: underline;
-      } 
-  
-      &:nth-child(4):before {
-        content: 'A';
-        position: absolute;
-        top: 0;
-        left: 0;
-
-        background-color: var(--asimetric-bg-color);
-        line-height: 28px;
-        width: 32px;
-        height: 28px;
+    
+    .ae-picker {
+      display: block;
+      height: 100%;
+      
+      &-label {
         border-radius: 3px;
-      } 
+        background: var(--asimetric-bg-color)!important;
+        color: var(--secondary-color)!important;
+        font-size: 14px!important;
+      
+        &::before {
+          background: var(--asimetric-bg-color)!important;
+        }
+      }
+    
+      &-options {
+        background: var(--asimetric-bg-color)!important;
+        border-radius: 3px;
+        border: none!important;
+      }
+    
+      &-item {
+        color: var(--secondary-color)!important;
+        font-size: 14px!important;
+      
+        &:hover {
+          background-color: var(--light-highlited-gray-color)!important;
+        }
+      
+        &.selected.focused {
+          background-color: var(--light-gray-color)!important;
+          color: var(--secondary-color)!important;
+        }
+      }
+    }
+    
+    .angular-editor-toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      background: var(--status-bar-bg-color);
+      border: 1px solid var(--light-gray2-color);
+      border-radius: 12px 12px 0px 0px;
+      padding: 13px 37px 7px 42px!important;
+    
+      &-set {
+        display: contents!important;
+      }
+    }
+    
+    angular-editor-toolbar > div > div:nth-child(1) > button:nth-child(1),
+    angular-editor-toolbar > div > div:nth-child(1) > button:nth-child(2),
+    angular-editor-toolbar > div > div:nth-child(1) {
+      margin-right: 0!important;
+      display: none;
+    }
+    
+    .angular-editor-textarea {
+      background: var(--text-color);
+      border: 1px solid var(--secondary-color);
+      border-top: none!important;
+      border-radius: 0px 0px 12px 12px;
+      padding: 17px!important;
+      margin-top: 0!important;
+      outline: none!important;
+      white-space: pre-wrap;
+    
+      font-family: 'Sofia pro', 'open-sans';
+      font-style: normal;
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 28px;
+    }
+    
+    ae-select > span > button > svg > polygon {
+      stroke: var(--secondary-color)!important;
+    }
+    
+    .ng-pristine {
+      margin: 0 5px 5px 0;
     }
   }
-}
-
-angular-editor-toolbar > div > div:nth-child(7) > ae-select {
-  width: 170px!important;
-}
-
-angular-editor-toolbar > div > div:nth-child(6) > ae-select {
-  width: 120px!important;
-}
-
-.ae-picker {
-  &-label {
-    border-radius: 3px;
-    background: var(--asimetric-bg-color)!important;
-    color: var(--secondary-color)!important;
-    font-size: 14px!important;
-  
-    &::before {
-      background: var(--asimetric-bg-color)!important;
-    }
-  }
-
-  &-options {
-    background: var(--asimetric-bg-color)!important;
-    border-radius: 3px;
-    border: none!important;
-  }
-
-  &-item {
-    color: var(--secondary-color)!important;
-    font-size: 14px!important;
-  
-    &:hover {
-      background-color: var(--light-highlited-gray-color)!important;
-    }
-  
-    &.selected.focused {
-      background-color: var(--light-gray-color)!important;
-      color: var(--secondary-color)!important;
-    }
-  }
-}
-
-.angular-editor-toolbar {
-  display: flex;
-  flex-wrap: wrap;
-  background: var(--status-bar-bg-color);
-  border: 1px solid var(--light-gray2-color);
-  border-radius: 12px 12px 0px 0px;
-  padding: 13px 37px 7px 42px!important;
-
-  &-set {
-    display: contents!important;
-  }
-}
-
-angular-editor-toolbar > div > div:nth-child(1) > button:nth-child(1),
-angular-editor-toolbar > div > div:nth-child(1) > button:nth-child(2),
-angular-editor-toolbar > div > div:nth-child(1) {
-  margin-right: 0!important;
-  display: none;
-}
-
-.angular-editor-textarea {
-  background: var(--text-color);
-  border: 1px solid var(--secondary-color);
-  border-top: none!important;
-  border-radius: 0px 0px 12px 12px;
-  padding: 17px!important;
-  margin-top: 0!important;
-  outline: none!important;
-  white-space: pre-wrap;
-
-  font-family: 'Sofia pro', 'open-sans';
-  font-style: normal;
-  font-weight: 300;
-  font-size: 16px;
-  line-height: 28px;
-}
-
-ae-select > span > button > svg > polygon {
-  stroke: var(--secondary-color)!important;
-}
-
-.ng-pristine {
-  margin: 0 5px 5px 0;
 }
 
 @media screen and (max-width: 800px) {
-  .angular-editor-toolbar {
-    padding: 8px 15px 3px 15px!important;
+  .app-text-editor {
+    ::ng-deep {
+      .angular-editor-toolbar {
+        padding: 8px 15px 3px 15px!important;
+      }
+    }
   }
 }

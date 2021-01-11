@@ -1,10 +1,9 @@
-import { Component, EventEmitter, Input, OnInit, Output, ViewEncapsulation } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'reports-select-input',
   templateUrl: './reports-select-input.component.html',
-  styleUrls: ['./reports-select-input.component.scss'],
-  encapsulation: ViewEncapsulation.None
+  styleUrls: ['./reports-select-input.component.scss']
 })
 
 export class ReportsSelectInput implements OnInit {

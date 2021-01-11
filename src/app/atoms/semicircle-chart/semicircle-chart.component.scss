@@ -6,6 +6,13 @@
   height: 80px;
   background: var(--card-bg-color);
 
+  &__wrapper {
+    width: 80px;
+    height: 80px;
+    overflow: hidden;
+    position: relative;
+  }
+
   &__value {
     position: absolute;
     top: 30px;
@@ -15,13 +22,11 @@
   }
 }
 
-.wrapper {
-  width: 80px;
-  height: 80px;
-  overflow: hidden;
-  position: relative;
+.semicircle-chart__wrapper > .semicircle-chart {
+  ::ng-deep {
+    .apexcharts-pie-label, .apexcharts-datalabels, .apexcharts-datalabel, .apexcharts-datalabel-label, .apexcharts-datalabel-value {
+      display: none!important;
+    }
+  }
 }
 
-.apexcharts-pie-label, .apexcharts-datalabels, .apexcharts-datalabel, .apexcharts-datalabel-label, .apexcharts-datalabel-value {
-  display: none!important;
-}

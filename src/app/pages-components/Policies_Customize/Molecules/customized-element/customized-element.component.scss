@@ -4,6 +4,12 @@
   border-radius: 8px;
   transition: 0.3s;
 
+  ::ng-deep {
+    .app-dynamic-table, .app-dynamic-list__container {
+      margin-bottom: 16px!important;
+    }
+  }
+
   &:hover {
     cursor: pointer;
   }
@@ -55,6 +61,12 @@
     display: flex;
     flex-wrap: wrap;
     margin-bottom: 10px;
+
+    ::ng-deep {
+      app-small-light-add-button {
+        margin-bottom: 5px;
+      }
+    }
     
     & * {
       margin-right: 16px;
@@ -66,10 +78,3 @@
   }
 }
 
-.app-dynamic-table, .app-dynamic-list__container {
-  margin-bottom: 16px!important;
-}
-
-app-small-light-add-button {
-  margin-bottom: 5px;
-}

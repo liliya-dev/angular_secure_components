@@ -1,12 +1,14 @@
-<ng-select 
-    [(ngModel)]="selectedItem"
-    [ngClass]="classes" 
-    (change)="onChange($event)"
-    [hideSelected]="true"
-    [editableSearchTerm]="true"
-    [placeholder]="placeholderText"
->
-  <ng-option class="option" *ngFor="let item of items" [value]="item">
-    {{ item }}
-  </ng-option>
-</ng-select>
+<div class="reports-select-input-search">
+  <ng-select 
+      [(ngModel)]="selectedItem"
+      [ngClass]="classes" 
+      (change)="onChange($event)"
+      [hideSelected]="true"
+      [editableSearchTerm]="true"
+      [placeholder]="placeholderText"
+  >
+    <ng-option class="reports-select-input-search__option" *ngFor="let item of items" [value]="item">
+      {{ item }}
+    </ng-option>
+  </ng-select>
+</div>

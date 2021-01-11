@@ -1,10 +1,9 @@
-import { Component, Input, ViewEncapsulation } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-semicircle-chart-card',
   templateUrl: './semicircle-chart-card.component.html',
   styleUrls: ['./semicircle-chart-card.component.scss'],
-  encapsulation: ViewEncapsulation.None
 })
 
 export class SemicircleChartCardComponent {

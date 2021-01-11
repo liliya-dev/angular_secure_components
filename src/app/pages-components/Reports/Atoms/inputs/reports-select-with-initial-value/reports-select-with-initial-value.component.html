@@ -1,17 +1,19 @@
-<ng-select 
-  [(ngModel)]="selectedItem"
-  class="custom fs-12-sofia-600" 
-  [hideSelected]="true"
-  [searchable]="false"
-  (change)="handleValueChange($event)"
->
-  <ng-option class="option" *ngFor="let item of items; let i = index" [value]="item">
-    <div class="select-input-with-initial-value__wrapper">
-      <img *ngIf="imagesPaths" [src]="imagesPaths[i]" [alt]="item">
-      <p [ngClass]="imagesPaths && 'select-input-with-initial-value__text fs-14-sofia-normal'">
-        {{ item }}
-      </p>
-    </div>
-  </ng-option>
-</ng-select>
+<div class="reports-select-with-initial">
+  <ng-select 
+    [(ngModel)]="selectedItem"
+    class="reports-select-with-initial__input fs-12-sofia-600" 
+    [hideSelected]="true"
+    [searchable]="false"
+    (change)="handleValueChange($event)"
+  >
+    <ng-option class="reports-select-with-initial__option" *ngFor="let item of items; let i = index" [value]="item">
+      <div class="reports-select-with-initial__wrapper">
+        <img *ngIf="imagesPaths" [src]="imagesPaths[i]" [alt]="item">
+        <p [ngClass]="imagesPaths && 'reports-select-with-initial__text fs-14-sofia-normal'">
+          {{ item }}
+        </p>
+      </div>
+    </ng-option>
+  </ng-select>
+</div>
 

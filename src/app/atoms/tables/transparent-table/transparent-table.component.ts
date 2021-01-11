@@ -1,10 +1,9 @@
-import { Component, HostListener, Input, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, HostListener, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-transparent-table',
   templateUrl: './transparent-table.component.html',
-  styleUrls: ['./transparent-table.component.scss'],
-  encapsulation: ViewEncapsulation.None,
+  styleUrls: ['./transparent-table.component.scss']
 })
 
 export class TransparentTableComponent implements OnInit {

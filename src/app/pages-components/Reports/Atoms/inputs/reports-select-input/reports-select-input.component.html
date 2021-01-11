@@ -1,14 +1,16 @@
-<ng-select 
-    [(ngModel)]="selectedItem"
-    class="custom fs-12-helvetica-400 " 
-    [hideSelected]="true"
-    [searchable]="false"
-    [id]="id"
-    (change)="handleChange($event)"
->
-  <ng-option class="option" *ngFor="let item of items" [value]="item">
-    {{ item }}
-  </ng-option>
-</ng-select>
+<div class="reports-select">
+  <ng-select 
+      [(ngModel)]="selectedItem"
+      class="reports-select__input fs-12-helvetica-400 " 
+      [hideSelected]="true"
+      [searchable]="false"
+      [id]="id"
+      (change)="handleChange($event)"
+  >
+    <ng-option class="reports-select__option" *ngFor="let item of items" [value]="item">
+      {{ item }}
+    </ng-option>
+  </ng-select>
+</div>
 
   

@@ -1,10 +1,9 @@
-import { Component, Input, ViewEncapsulation } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'reports-menu',
   templateUrl: './reports-menu.component.html',
-  styleUrls: ['./reports-menu.component.scss'],
-  encapsulation: ViewEncapsulation.None
+  styleUrls: ['./reports-menu.component.scss']
 })
 
 export class ReportsMenuComponent {

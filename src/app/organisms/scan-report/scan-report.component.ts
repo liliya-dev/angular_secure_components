@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, HostListener, ViewEncapsulation, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnInit, HostListener, ViewChild } from '@angular/core';
 
 interface SideItems {
   title: string;
@@ -14,8 +14,7 @@ interface MobileItems {
 @Component({
   selector: 'app-scan-report',
   templateUrl: './scan-report.component.html',
-  styleUrls: ['./scan-report.component.scss'],
-  encapsulation: ViewEncapsulation.None
+  styleUrls: ['./scan-report.component.scss']
 })
 
 export class ScanReportComponent implements OnInit {

@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component } from '@angular/core';
 
 interface Module {
   title: string,
@@ -10,8 +10,8 @@ interface Module {
   selector: 'app-form-screen-third',
   templateUrl: './form-screen-third.component.html',
   styleUrls: ['./form-screen-third.component.scss'],
-  encapsulation: ViewEncapsulation.None
 })
+
 export class FormScreenThirdComponent {
   selectedModules: string[] = [];
   modules: Module[] = [

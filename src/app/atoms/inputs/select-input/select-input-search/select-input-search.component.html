@@ -1,4 +1,6 @@
-<ng-select 
+
+<div class="app-input-select">
+  <ng-select 
     [(ngModel)]="selectedItem"
     [ngClass]="classes" 
     (change)="onChange($event)"
@@ -9,4 +11,5 @@
   <ng-option class="option" *ngFor="let item of items" [value]="item">
     {{ item }}
   </ng-option>
-</ng-select>
+  </ng-select>
+</div>

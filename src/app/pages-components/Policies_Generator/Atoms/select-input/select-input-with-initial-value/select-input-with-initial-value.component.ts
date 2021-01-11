@@ -1,10 +1,9 @@
-import { Component, Input, OnInit, Output, ViewEncapsulation, EventEmitter } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-select-input-with-initial-value',
   templateUrl: './select-input-with-initial-value.component.html',
   styleUrls: ['./select-input-with-initial-value.component.scss'],
-  encapsulation: ViewEncapsulation.None
 })
 
 export class PoliciesSelectInputWithInitialValueComponent implements OnInit {

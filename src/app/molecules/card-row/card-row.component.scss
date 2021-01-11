@@ -4,17 +4,21 @@
   flex-wrap: wrap;
   width: 100%;
 
-  & * {
-    margin-bottom: 10px;
-    margin-right: 10px;
+  ::ng-deep {
+
+    & * {
+      margin-bottom: 10px;
+      margin-right: 10px;
+    }
+  
+    & :last-child {
+      margin-bottom: 0;
+      margin-right: 0;
+    }
+  
+    & .card {
+      height: 100%!important;
+    }
   }
 
-  & :last-child {
-    margin-bottom: 0;
-    margin-right: 0;
-  }
-
-  & .card {
-    height: 100%!important;
-  }
 }

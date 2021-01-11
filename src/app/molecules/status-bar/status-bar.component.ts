@@ -1,15 +1,14 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-status-bar',
   templateUrl: './status-bar.component.html',
-  styleUrls: ['./status-bar.component.scss'],
-  encapsulation: ViewEncapsulation.None
+  styleUrls: ['./status-bar.component.scss']
 })
 
 export class StatusBarComponent implements OnInit {
-  activePoints = 1;
-  totalSteps = 6;
+  @Input() activePoints = 1;
+  @Input() totalSteps = 6;
 
   moveToNext = () => {
     if (this.activePoints  <  this.totalSteps) {
@@ -23,9 +22,6 @@ export class StatusBarComponent implements OnInit {
     }
   }
 
-  constructor() { }
-
   ngOnInit(): void {
   }
-
 }

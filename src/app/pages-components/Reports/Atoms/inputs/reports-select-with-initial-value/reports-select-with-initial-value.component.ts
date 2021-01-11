@@ -1,10 +1,9 @@
-import { Component, Input, OnInit, Output, ViewEncapsulation, EventEmitter } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'reports-select-with-initial-value',
   templateUrl: './reports-select-with-initial-value.component.html',
-  styleUrls: ['./reports-select-with-initial-value.component.scss'],
-  encapsulation: ViewEncapsulation.None
+  styleUrls: ['./reports-select-with-initial-value.component.scss']
 })
 
 export class ReportsSelectWithInitialValueComponent implements OnInit {

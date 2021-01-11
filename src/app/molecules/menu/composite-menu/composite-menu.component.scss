@@ -10,13 +10,15 @@
   &__item {
     width: fit-content;
     margin-top: 10px;
+
+    ::ng-deep {
+      .nav-link-secondary {
+        text-transform: capitalize!important;
+      }
+    }
   }
 
   &__section {
     padding-left: 16px;
   }
-}
-
-.nav-link-secondary {
-  text-transform: capitalize!important;
 }

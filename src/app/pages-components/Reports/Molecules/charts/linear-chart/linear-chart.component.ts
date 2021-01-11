@@ -1,10 +1,9 @@
-import { Component, Input, OnChanges, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, Input, OnChanges, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-linear-chart',
   templateUrl: './linear-chart.component.html',
   styleUrls: ['./linear-chart.component.scss'],
-  encapsulation: ViewEncapsulation.None
 })
 
 export class LinearChartComponent  implements OnChanges, OnInit{

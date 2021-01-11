@@ -1,12 +1,14 @@
-<ng-select 
-    [(ngModel)]="selectedItem"
-    class="custom fs-16-sofia-300" 
-    [hideSelected]="true"
-    [searchable]="false"
->
-  <ng-option class="option" *ngFor="let item of items" [value]="item">
-    {{ item }}
-  </ng-option>
-</ng-select>
+<div class="app-select-simple">
+  <ng-select 
+      [(ngModel)]="selectedItem"
+      class="custom fs-16-sofia-300" 
+      [hideSelected]="true"
+      [searchable]="false"
+  >
+    <ng-option class="option" *ngFor="let item of items" [value]="item">
+      {{ item }}
+    </ng-option>
+  </ng-select>
+</div>
 
   

@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, HostListener, Input, OnChanges, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, HostListener, Input, OnChanges, OnInit, ViewChild } from '@angular/core';
 import * as am4core from '@amcharts/amcharts4/core';
 import * as am4maps from "@amcharts/amcharts4/maps";
 import am4geodata_worldLow from "@amcharts/amcharts4-geodata/worldLow";
@@ -24,8 +24,7 @@ interface Countries {
 @Component({
   selector: 'app-map-chart',
   templateUrl: './map-chart.component.html',
-  styleUrls: ['./map-chart.component.scss'],
-  encapsulation: ViewEncapsulation.None
+  styleUrls: ['./map-chart.component.scss']
 })
 
 export class MapChartComponent implements OnInit, OnChanges, AfterViewInit {

@@ -6,7 +6,13 @@
   width: 100%;
   background-color: var(--layout-bg-color);
   color: var(--secondary-color);
-
+  
+  ::ng-deep {
+    app-select-input-search {
+      width: 80%;
+    }
+  }
+  
   &__title {
     margin-bottom: 35px;
   }
@@ -58,9 +64,7 @@
   }
 }
 
-app-select-input-search {
-  width: 80%;
-}
+
 
 @media screen and (max-width: 1150px) {
   .app-scan-report {
@@ -81,6 +85,25 @@ app-select-input-search {
 @media screen and (max-width: 800px) {
   .app-scan-report {
     text-align: center;
+
+    ::ng-deep {
+      app-mobile-main-navigation-menu {
+        width: 100%;
+      }
+    
+      app-checkbox-input-simple {
+        text-align: left;
+      }
+    
+      app-composite-menu {
+        position: absolute; 
+        top: 90px;
+        left: 0;
+        z-index: 2;
+    
+        transition: margin-left 1s;
+      }
+    }
     
     &__nav {
       position: relative;
@@ -91,22 +114,5 @@ app-select-input-search {
         width: 100%;
       }
     }
-  }
-
-  app-mobile-main-navigation-menu {
-    width: 100%;
-  }
-
-  app-checkbox-input-simple {
-    text-align: left;
-  }
-
-  app-composite-menu {
-    position: absolute; 
-    top: 90px;
-    left: 0;
-    z-index: 2;
-
-    transition: margin-left 1s;
   }
 }

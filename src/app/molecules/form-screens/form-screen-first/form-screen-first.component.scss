@@ -9,15 +9,15 @@
   &__column {
     width: 48%;
 
-    & > app-form-input {
-      margin-bottom: 32px;
+    ::ng-deep {
+      .app-form-input-field, .ng-select {
+        margin-bottom: 32px;
+      }
     }
   }
 }
 
-.app-form-input-field, .ng-select {
-  margin-bottom: 32px;
-}
+
 
 @media screen and (max-width: 600px) {
   .app-form-screen-first {
@@ -27,10 +27,12 @@
 
     &__column {
       width: 99%;
+
+      ::ng-deep {
+        .app-form-input-field, .ng-select {
+          margin-bottom: 5px;
+        }
+      }
     }
   } 
-
-  .form-input__wrapper, .ng-select {
-    margin-bottom: 5px;
-  }
 }

@@ -1,10 +1,9 @@
-import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-select-input-simple',
   templateUrl: './select-input-simple.component.html',
   styleUrls: ['./select-input-simple.component.scss'],
-  encapsulation: ViewEncapsulation.None
 })
 
 export class SelectInputSimpleComponent implements OnInit {

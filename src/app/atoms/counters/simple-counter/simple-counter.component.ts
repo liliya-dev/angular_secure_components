@@ -1,10 +1,9 @@
-import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-simple-counter',
   templateUrl: './simple-counter.component.html',
   styleUrls: ['./simple-counter.component.scss'],
-  encapsulation: ViewEncapsulation.None
 })
 
 export class SimpleCounterComponent implements OnInit {

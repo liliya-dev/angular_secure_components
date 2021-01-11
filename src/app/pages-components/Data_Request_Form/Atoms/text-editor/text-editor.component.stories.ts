@@ -24,17 +24,17 @@ const Template: Story<TextEditorComponent> = (args: TextEditorComponent) => ({
 export const TextEditor = Template.bind({});
 TextEditor.args = {
   htmlContent: `
-  Hi ##Hal##,\n
-  A person has requested removal. The details of that person are\n
-  Name: ##customer_name##
-  Email: ##customer_email##
-  Address: ##customer_address##
-  Phone: ##customer_Phonenumber##
-  Request type: ##request_type##
-  Message: ##customer_Message##
-  
-  Thank you,
-  Secure Privacy Team
+Hi ##Hal##,\n
+A person has requested removal. The details of that person are\n
+Name: ##customer_name##
+Email: ##customer_email##
+Address: ##customer_address##
+Phone: ##customer_Phonenumber##
+Request type: ##request_type##
+Message: ##customer_Message##
+
+Thank you,
+Secure Privacy Team
     `
 };
 

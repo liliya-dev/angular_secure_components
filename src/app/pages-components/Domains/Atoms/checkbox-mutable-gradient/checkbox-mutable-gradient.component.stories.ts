@@ -24,6 +24,6 @@ const Template: Story<DomainsCheckboxMutableGradientComponent> = (args: DomainsC
 
 export const Checkbox = Template.bind({});
 Checkbox.args = {
-  onActive: true,
+  onActive: false,
   isChecked: true,
 };

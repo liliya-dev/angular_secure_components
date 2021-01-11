@@ -12,9 +12,13 @@
     &__container {
       flex-direction: column;
     }
-  }
 
-  .app-card {
-    margin-bottom: 8px;
+    &__item {
+      ::ng-deep {
+        .app-card {
+          margin-bottom: 8px;
+        }
+      }
+    }
   }
 }

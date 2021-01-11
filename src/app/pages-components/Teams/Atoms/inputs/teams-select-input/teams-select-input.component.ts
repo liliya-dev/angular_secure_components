@@ -1,10 +1,9 @@
-import { Component, EventEmitter, Input, OnInit, Output, ViewEncapsulation } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'teams-select-input',
   templateUrl: './teams-select-input.component.html',
-  styleUrls: ['./teams-select-input.component.scss'],
-  encapsulation: ViewEncapsulation.None
+  styleUrls: ['./teams-select-input.component.scss']
 })
 
 export class TeamsSelectInput implements OnInit {

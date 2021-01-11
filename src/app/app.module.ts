@@ -65,10 +65,8 @@ import { SimpleTextareaComponent } from './atoms/inputs/textarea/simple-textarea
 import { LightAssimetricButtonComponent } from './atoms/buttons/light-assimetric-button/light-assimetric-button.component';
 import { ColorSketchModule } from 'ngx-color/sketch';
 import { gradientButtonComponent } from './atoms/buttons/gradientButton/gradientButton.component';
-import { ColorPickerComponent } from './atoms/color-picker/color-picker.component';
 import { StatusStepsDynamicComponent } from './atoms/status-steps-dynamic/status-steps-dynamic.component';
 import { StatusBarComponent } from './molecules/status-bar/status-bar.component';
-import { CheckboxMutableGradientComponent } from './atoms/inputs/checkbox/checkbox-mutable-gradient/checkbox-mutable-gradient.component';
 import { SmallLightAddButtonComponent } from './atoms/buttons/add-buttons/small-light-add-button/small-light-add-button.component';
 import { DarkAddButtonComponent } from './atoms/buttons/add-buttons/dark-add-button/dark-add-button.component';
 import { AddComponent } from './pages-components/Policies_Customize/Molecules/customized-element/add-dynamic-component/add-dynamic.component';
@@ -227,10 +225,8 @@ PlotlyModule.plotlyjs = PlotlyJS;
     CheckboxInputDarkComponent,
     SimpleTextareaComponent,
     LightAssimetricButtonComponent,
-    ColorPickerComponent,
     StatusStepsDynamicComponent,
     StatusBarComponent,
-    CheckboxMutableGradientComponent,
     DomainsApproveModalComponent,
     SmallLightAddButtonComponent,
     DarkAddButtonComponent,

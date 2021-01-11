@@ -1,4 +1,4 @@
-.chart {
+.app-donut-chard-card {
   position: relative;
   width: 256px;
   min-height: 152px;
@@ -11,10 +11,6 @@
 
   &:hover {
     box-shadow: 0px 40px 70px rgba(var(--secondary-color-code), 0.3);
-  }
-
-  .user-select-none .svg-container {
-    position: absolute!important;
   }
 
   &__title {
@@ -72,32 +68,40 @@
 
 /* ####### override css rules for plotify module ###### */
 
-.pielayer {
-  transform: scale(0.6) translateX(-355px) translateY(80px)!important;
-}
-
-.js-plotly-plot .plotly .modebar--hover > :not(.watermark) {
-  display: none;
-}
-
-.surface {
-  stroke-width: 8!important;
-  stroke: var(--card-bg-color)!important;
-  
-  &:hover {
-    cursor: pointer;
-    stroke-width: 12px!important;
-    stroke-dasharray: 550 0!important;
-    opacity: 0.8!important;
-    background:linear-gradient(to right, #e5405e 0%, #e5405e 15%, rgba(46,2014,113,0.8) 30%, rgba(39,174,96,0.3)45%,#3fffa2 60%, #1a9be0 73%, #ba68ed 100%)!important;
+.app-donut-chard-card {
+  ::ng-deep {
+    .user-select-none .svg-container {
+      position: absolute!important;
+    }
+    
+    .pielayer {
+      transform: scale(0.6) translateX(-355px) translateY(80px)!important;
+    }
+    
+    .js-plotly-plot .plotly .modebar--hover > :not(.watermark) {
+      display: none;
+    }
+    
+    .surface {
+      stroke-width: 8!important;
+      stroke: var(--card-bg-color)!important;
+      
+      &:hover {
+        cursor: pointer;
+        stroke-width: 12px!important;
+        stroke-dasharray: 550 0!important;
+        opacity: 0.8!important;
+        background:linear-gradient(to right, #e5405e 0%, #e5405e 15%, rgba(46,2014,113,0.8) 30%, rgba(39,174,96,0.3)45%,#3fffa2 60%, #1a9be0 73%, #ba68ed 100%)!important;
+      }
+    }
+    
+    .slicetext {
+      display: none!important;
+    }
+    
+    .main-svg {
+      background-color: transparent!important;
+    }
   }
-}
-
-.slicetext {
-  display: none!important;
-}
-
-.main-svg {
-  background-color: transparent!important;
 }
 

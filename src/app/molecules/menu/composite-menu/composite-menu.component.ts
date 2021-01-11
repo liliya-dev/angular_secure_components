@@ -1,4 +1,4 @@
-import { Component, Input, ViewEncapsulation } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 interface Item {
   title: string;
@@ -9,7 +9,6 @@ interface Item {
   selector: 'app-composite-menu',
   templateUrl: './composite-menu.component.html',
   styleUrls: ['./composite-menu.component.scss'],
-  encapsulation: ViewEncapsulation.None
 })
 
 export class CompositeMenuComponent {

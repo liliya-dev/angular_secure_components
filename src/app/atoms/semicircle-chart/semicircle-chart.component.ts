@@ -1,10 +1,9 @@
-import { Component, Input, OnChanges, ViewEncapsulation } from '@angular/core';
+import { Component, Input, OnChanges } from '@angular/core';
 
 @Component({
   selector: 'app-semicircle-chart',
   templateUrl: './semicircle-chart.component.html',
   styleUrls: ['./semicircle-chart.component.scss'],
-  encapsulation: ViewEncapsulation.None
 })
 
 export class SemicircleChartComponent implements OnChanges {

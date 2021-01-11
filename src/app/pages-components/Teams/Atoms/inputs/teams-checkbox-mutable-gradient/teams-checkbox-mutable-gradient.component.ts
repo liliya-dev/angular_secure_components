@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation, Input, OnChanges, Output, EventEmitter } from '@angular/core';
+import { Component, Input, OnChanges, Output, EventEmitter } from '@angular/core';
 
 const ACTIVE_CLASS = 'app-checkbox-input-gradient__container active';
 const INACTIVE_CLASS = 'app-checkbox-input-gradient__container';
@@ -6,8 +6,7 @@ const INACTIVE_CLASS = 'app-checkbox-input-gradient__container';
 @Component({
   selector: 'app-teams-checkbox-mutable-gradient',
   templateUrl: './teams-checkbox-mutable-gradient.component.html',
-  styleUrls: ['./teams-checkbox-mutable-gradient.component.scss'],
-  encapsulation: ViewEncapsulation.None
+  styleUrls: ['./teams-checkbox-mutable-gradient.component.scss']
 })
 
 export class TeamsCheckboxMutableGradientComponent implements OnChanges {

@@ -23,12 +23,16 @@
     background: rgba(var(--secondary-color-code), 0.05);
     color: var(--secondary-color);
   }
-}
-.next {
-  & > app-light-button > .btn-light {
-    transform: rotate(180deg)!important;
+
+  &__next {
+    ::ng-deep {
+      app-light-button > .btn-light {
+        transform: rotate(180deg)!important;
+      }
+    }
   }
 }
+
 
 
 

@@ -1,10 +1,9 @@
-import { Component, ElementRef, HostListener, Input, OnChanges, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
+import { Component, ElementRef, HostListener, Input, OnChanges, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-color-picker',
   templateUrl: './color-picker.component.html',
-  styleUrls: ['./color-picker.component.scss'],
-  encapsulation: ViewEncapsulation.None
+  styleUrls: ['./color-picker.component.scss']
 })
 
 export class PoliciesColorPickerComponent implements OnChanges, OnInit{

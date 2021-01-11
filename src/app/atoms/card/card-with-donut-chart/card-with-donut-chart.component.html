@@ -1,5 +1,5 @@
-<div class="chart card">
-  <div class="chart__title fs-14-gramm-400">
+<div class="app-donut-chard-card card" id="app-donut-chard-card">
+  <div class="app-donut-chard-card__title fs-14-gramm-400">
     {{ title }}
   </div>
   <plotly-plot 
@@ -7,15 +7,15 @@
     [data]="data" 
     [layout]="layout"
   ></plotly-plot>
-  <div class="chart__value fs-h3-b"><p>{{ activeValue }}</p></div>
-  <ul class="chart__legend" #legend>
+  <div class="app-donut-chard-card__value fs-h3-b"><p>{{ activeValue }}</p></div>
+  <ul class="app-donut-chard-card__legend" #legend>
     <li 
-      class="chart__legend-item fs-12-sofia-300" 
+      class="app-donut-chard-card__legend-item fs-12-sofia-300" 
       *ngFor="let item of data[0].labels; let i = index"
       (click)="changeNumberOnLegendClick(i)"
     >
       <div 
-        class="chart__marker" 
+        class="app-donut-chard-card__marker" 
         [ngStyle]="{ 'background-color': data[0].marker.colors[i] }"
       >
       </div>

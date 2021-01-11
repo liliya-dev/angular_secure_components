@@ -21,6 +21,12 @@
   &__list {
     width: 75%;
     margin-bottom: 30px;
+
+    ::ng-deep {
+      .list-item-icon {
+        margin-bottom: 12px;
+      }
+    }
   }
 
   &__body {
@@ -69,10 +75,6 @@
       width: 55%;
     }
   }
-}
-
-.list-item-icon {
-  margin-bottom: 12px;
 }
 
 @media screen and (max-width: 1250px) {

@@ -1,10 +1,9 @@
-import { Component, Input, ViewEncapsulation } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'reports-select-input-search',
   templateUrl: './reports-select-input-search.component.html',
-  styleUrls: ['./reports-select-input-search.component.scss'],
-  encapsulation: ViewEncapsulation.None
+  styleUrls: ['./reports-select-input-search.component.scss']
 })
 
 export class ReportsSelectInputSearchComponent {

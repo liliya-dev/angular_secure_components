@@ -4,9 +4,11 @@
 
   &__item {
     margin-right: 20px;
-  }
-}
 
-.nav-link-secondary {
-  text-transform: capitalize!important;
+    ::ng-deep {
+      .nav-link-secondary {
+        text-transform: capitalize!important;
+      }
+    }
+  }
 }

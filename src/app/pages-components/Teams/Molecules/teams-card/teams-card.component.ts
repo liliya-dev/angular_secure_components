@@ -1,4 +1,4 @@
-import { Component, Input, ViewEncapsulation, ViewChild, ElementRef, OnChanges, HostListener, EventEmitter, Output, AfterViewInit } from '@angular/core';
+import { Component, Input, ViewChild, ElementRef, OnChanges, HostListener, EventEmitter, Output, AfterViewInit } from '@angular/core';
 
 const HIGHLITED_COLOR = 'linear-gradient(89.52deg, #24B04B -46.17%, #0263BC 186.99%)';
 const STATIC_COLOR = 'rgb(255, 255, 255)';
@@ -9,8 +9,7 @@ const BIG_MOBILE_VIEW = 760;
 @Component({
   selector: 'app-teams-card',
   templateUrl: './teams-card.component.html',
-  styleUrls: ['./teams-card.component.scss'],
-  encapsulation: ViewEncapsulation.None
+  styleUrls: ['./teams-card.component.scss']
 })
 
 export class TeamsCardComponent implements OnChanges, AfterViewInit {

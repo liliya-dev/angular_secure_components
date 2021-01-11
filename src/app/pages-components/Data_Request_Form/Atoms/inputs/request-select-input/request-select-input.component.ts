@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 interface Data {
   id: string,
@@ -9,8 +9,7 @@ interface Data {
 @Component({
   selector: 'app-request-select-input',
   templateUrl: './request-select-input.component.html',
-  styleUrls: ['./request-select-input.component.scss'],
-  encapsulation: ViewEncapsulation.None
+  styleUrls: ['./request-select-input.component.scss']
 })
 
 export class RequestSelectInputComponent implements OnInit {

@@ -61,7 +61,6 @@
       top: 0;
       will-change: transform;
       transition: left 1s;
-      // animation: appear 0.5s ease-in-out;
     }
 
     &::-webkit-scrollbar {
@@ -121,6 +120,12 @@
     margin-left: 26%;
     overflow-y: scroll;
 
+    ::ng-deep {
+      .btn-dark {
+        margin: 32px 0 32px 32px;
+      }
+    }
+
     &::-webkit-scrollbar {
       width: 3px;
     }
@@ -159,13 +164,4 @@
     margin-left: 18px;
     width: calc(100% + 15px);
   }
-}
-
-.btn-dark {
-  margin: 32px 0 32px 32px;
-}
-
-@keyframes appear {
-  from { left: -100%; }
-  to { left: 0%; }
 }

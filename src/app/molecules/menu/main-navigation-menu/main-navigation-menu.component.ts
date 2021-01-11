@@ -1,10 +1,9 @@
-import { Component, Input, ViewEncapsulation } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-main-navigation-menu',
   templateUrl: './main-navigation-menu.component.html',
-  styleUrls: ['./main-navigation-menu.component.scss'],
-  encapsulation: ViewEncapsulation.None
+  styleUrls: ['./main-navigation-menu.component.scss']
 })
 
 export class MainNavigationMenuComponent  {
