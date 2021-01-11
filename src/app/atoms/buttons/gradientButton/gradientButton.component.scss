@@ -6,6 +6,17 @@
   display: flex;
   align-items: center;
 
+  border-radius: 20px 5px;
+  height: 52px;
+  padding: 18px 41px 18px 44px;
+
+  font-family: 'Sofia pro', 'open-sans';
+  font-style: normal;
+  font-weight: 800;
+  font-size: 16px;
+  text-transform: uppercase;
+  line-height: 100%;
+
   &__img {
     margin-left: 27px;
   }

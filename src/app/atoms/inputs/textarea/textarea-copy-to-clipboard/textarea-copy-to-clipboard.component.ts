@@ -30,5 +30,4 @@ export class TextareaCopyToClipboardComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
 }

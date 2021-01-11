@@ -14,8 +14,6 @@ export class formInputComponent implements OnInit {
   @Input() id?: number = Math.random();
 
   @Output() changeValueParentFunction?: EventEmitter<any> = new EventEmitter();
-
-  classes='';
   value='';
 
   handleChangeValue(event) {
@@ -26,6 +24,5 @@ export class formInputComponent implements OnInit {
     if (this.initialValue) {
       this.value = this.initialValue;
     }
-    this.classes = this.isBold ? "app-form-input-field fs-16-sofia-600" : "app-form-input-field fs-16-sofia-300";
   }
 }

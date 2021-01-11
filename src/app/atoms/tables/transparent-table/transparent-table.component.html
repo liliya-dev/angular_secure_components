@@ -2,7 +2,7 @@
 <table 
   id="table" 
   *ngIf="isMobile" 
-  class="app-transparent-table fs-12-sofia-400"
+  class="app-transparent-table"
 >
   <tr class="app-transparent-table__head">
    <th class="app-transparent-table__head-item app-transparent-table__main-column">
@@ -13,7 +13,7 @@
    </th>
   </tr>
   <tr 
-    class="app-transparent-table__row fs-12-sofia-300" 
+    class="app-transparent-table__row" 
     *ngFor="let item of data; let i = index"
   >
     <td>
@@ -56,7 +56,7 @@
 
 
 <!-- !!!!!!!!!desktop version of table!!!!!!!!!!!!  -->
-<table id="table" class="app-transparent-table fs-12-sofia-400"  *ngIf="!isMobile">
+<table id="table" class="app-transparent-table"  *ngIf="!isMobile">
   <tr class="app-transparent-table__head">
    <th 
       class="app-transparent-table__head-item"
@@ -65,7 +65,7 @@
      {{ head }}
    </th>
   </tr>
-  <tr class="app-transparent-table__row fs-12-sofia-300" *ngFor="let item of data; let i = index">
+  <tr class="app-transparent-table__row" *ngFor="let item of data; let i = index">
     <td *ngFor="let head of heads; let j = index">
       <p *ngIf="checkType(item[head])==='string'">
         {{ item[head] }}

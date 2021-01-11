@@ -3,7 +3,7 @@ import { Component, Input } from '@angular/core';
 @Component({
   selector: 'app-info-button',
   templateUrl: './infoButton.component.html',
-  styleUrls: ['../button.component.scss', 'infoButton.component.scss'],
+  styleUrls: ['infoButton.component.scss'],
 })
 
 export class infoButtonComponent {

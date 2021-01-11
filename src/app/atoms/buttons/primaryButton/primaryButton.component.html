@@ -2,7 +2,7 @@
   <div class="module-opacity-wrap ">
     <button 
       [ngStyle]="{ 'background': backgroundColor }"
-      class="btn-app btn-app--h46 btn-primary fs-16-sofia-300"
+      class="btn-primary"
       (mousedown)="changeToActiveColor()"
       (mouseup)="changeToLightColor()"
     >
@@ -11,7 +11,7 @@
         [svgStyle]="{'fill':fillColor }"
       >
       </svg-icon>
-      <p class="btn-primary__name" *ngIf="title!==''">
+      <p class="btn-primary__title" *ngIf="title!==''">
         {{ title }}
       </p>
     </button>

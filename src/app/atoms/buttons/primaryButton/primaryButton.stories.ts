@@ -27,7 +27,7 @@ const Template: Story<primaryButtonComponent> = (args: primaryButtonComponent) =
 
 export const Primary = Template.bind({});
 Primary.args = {
-  title: '',
+  title: 'cccc',
   svgPath: 'assets/images/export.svg'
 };
 

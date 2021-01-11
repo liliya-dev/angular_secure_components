@@ -56,9 +56,6 @@ import { WhiteRoundedLayoutComponent } from './molecules/layouts/white-rounded-l
 import { GradientTextComponent } from './atoms/text/gradient-text/gradient-text.component';
 import { moduleMetadata, Story, Meta } from '@storybook/angular';
 import { ColorSketchModule } from 'ngx-color/sketch';
-import { SmallLightAddButtonComponent } from './atoms/buttons/add-buttons/small-light-add-button/small-light-add-button.component';
-import { DarkAddButtonComponent } from './atoms/buttons/add-buttons/dark-add-button/dark-add-button.component';
-
 
 const props = {};
 
@@ -67,8 +64,6 @@ export default {
   decorators: [
     moduleMetadata({
       declarations: [
-        SmallLightAddButtonComponent,
-        DarkAddButtonComponent,
         AppComponent,
         gradientButtonComponent,
         IconContainerComponent,

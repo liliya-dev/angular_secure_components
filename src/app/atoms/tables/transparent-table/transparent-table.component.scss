@@ -9,6 +9,11 @@
   border-spacing: 0;
   transition: margin 3s;
 
+  font-family: 'Sofia pro', 'open-sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+
   &__head {
     position: relative;
     padding: 13px 16px;
@@ -25,6 +30,11 @@
   &__row {
     margin-bottom: 20px;
     padding: 13px 16px;
+
+    font-family: 'Sofia pro', 'open-sans';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 12px;
   }
  
   &__main-column {

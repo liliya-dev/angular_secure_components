@@ -21,54 +21,48 @@ const Template: Story<simpleButtonComponent> = (args: simpleButtonComponent) => 
 export const Danger = Template.bind({});
 Danger.args = {
   title: "clear",
-  classes: "btn-danger fs-12-sofia-800 btn-app btn-app--h36"
+  classes: "btn-danger"
 };
 
 export const DangerBig = Template.bind({});
 DangerBig.args = {
   title: "clear",
-  classes: "btn-danger fs-12-sofia-800 btn-app btn-app--h46--wide"
+  classes: "btn-danger-big"
 };
 
 export const Transparent = Template.bind({});
 Transparent.args = {
   title: "back",
-  classes: "btn-app fs-16-sofia-500 btn-transparent"
+  classes: "btn-transparent"
 };
 
 export const Success = Template.bind({});
 Success.args = {
   title: "save",
-  classes: "btn-app--h36 btn-app btn-success fs-12-sofia-800"
+  classes: "btn-success"
 };
 
 export const SuccessBig = Template.bind({});
 SuccessBig.args = {
   title: "got it",
-  classes: "btn-app--h46--wide btn-app btn-success ffs-12-sofia-800"
+  classes: "btn-success-big"
 };
 
 export const SuccessAsimetric = Template.bind({});
 SuccessAsimetric.args = {
   title: "notify me",
-  classes: "btn-app--asimetric btn-success-asimetric fs-16-sofia-800"
+  classes: "btn-success-asimetric"
 };
 
 export const SuccessAsimetricWithIcon = Template.bind({});
 SuccessAsimetricWithIcon.args = {
   title: "next",
-  classes: "btn-app--asimetric btn-success-asimetric fs-16-sofia-800",
+  classes: "btn-success-asimetric",
   srcPath: 'assets/images/next.svg'
-};
-
-export const Dark = Template.bind({});
-Dark.args = {
-  title: "confirm",
-  classes: "btn-dark fs-16-sofia-800 btn-app--h52"
 };
 
 export const Choose = Template.bind({});
 Choose.args = {
   title: "choose",
-  classes: "btn-choose fs-12-gramm-400 btn-app--h46-p45"
+  classes: "btn-choose"
 };

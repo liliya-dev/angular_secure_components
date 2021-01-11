@@ -2,6 +2,13 @@
   position: relative;
   width: 100%;
   z-index: 2;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  transition: var(--transition);
+  border-radius: 8px;
   
   color: var(--secondary-color);
   background: transparent;
@@ -10,17 +17,30 @@
   display: flex;
   justify-content: center;
 
+  height: 53px;
+  padding: 9px 10px;
+
   &.active {
     background: var(--success-grad-light);
     color: var(--text-color);
   }
 
-  & > span > p {
-    margin: 0;
+  &__text {
+    font-family: 'Sofia pro', 'open-sans';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 100%;
+    margin-top: 2px;
   }
 
-  & > span > .fs-14-gramm-normal {
+  &__title {
     text-transform: uppercase;
+    font-family: 'Gramatica Bold', 'open-sans';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 14px;
+    line-height: 100%;
   }
 
   &::before {

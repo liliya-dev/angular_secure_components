@@ -2,6 +2,10 @@
   display: flex;
   flex-wrap: wrap;
   width: 100%;
+  font-family: 'Sofia pro', 'open-sans';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 12px;
 
   &__wrapper {
     background: var(--success-grad-light);

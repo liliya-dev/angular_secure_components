@@ -47,6 +47,18 @@
 
   &__title {
     margin-bottom: 6px;
+    font-family: 'Gramatica Bold', 'open-sans';
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 100%;
+  }
+
+  &__text {
+    font-family: 'Sofia pro', 'open-sans';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 10px;
+    line-height: 100%;
   }
 
   &__wrapper {

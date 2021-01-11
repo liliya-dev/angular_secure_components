@@ -3,7 +3,7 @@ import { Component, Input } from '@angular/core';
 @Component({
   selector: 'app-primary-button',
   templateUrl: './primaryButton.component.html',
-  styleUrls: ['../button.component.scss', 'primaryButton.component.scss'],
+  styleUrls: ['primaryButton.component.scss'],
 })
 
 export class primaryButtonComponent {

@@ -19,5 +19,4 @@ const Template: Story<GradientTextComponent> = (args: GradientTextComponent) => 
 export const Green = Template.bind({});
 Green.args = {
   title: "Send scan reports via email",
-  classes: "fs-16-gramm-300"
 };

@@ -18,6 +18,12 @@
     top: 10px;
     left: 16px;
     width: 88px;
+
+    font-family: 'Gramatica Bold', 'open-sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 100%;
   }
 
   &__value {
@@ -27,6 +33,12 @@
     width: 30px;
     text-align: center;
     line-height: 24px;
+
+    font-family: 'Gramatica Bold', 'open-sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    color: var(--secondary-color);
 
     &.fs-h3 {
       font-weight: 800;
@@ -50,6 +62,11 @@
     &-item {
       display: flex;
       margin-bottom: 6px;
+
+      font-family: 'Sofia pro', 'open-sans';
+      font-style: normal;
+      font-weight: 300;
+      font-size: 12px;
 
       &:hover {
         cursor: pointer;

@@ -4,8 +4,16 @@
   align-items: center;
   margin-bottom: 90px;
 
-  & > h4 {
+  &__title {
     flex: 0 0 150px;  
+    font-family: 'Gramatica Bold', 'open-sans';
+    font-size: 14px;
+    line-height: 150%;
+    text-transform: uppercase;
+    background: var(--success-grad-light);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 
   &__line {

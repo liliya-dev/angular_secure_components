@@ -12,10 +12,26 @@
 
   &__text {
     margin-left: 16px;
+    font-family: 'Sofia pro', 'open-sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+  }
+
+  &__regular {
+    margin-left: 16px;
+    font-family: 'Sofia pro', 'open-sans';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 12px;
   }
 
   &__link {
     margin-left: 8px;
+    font-family: 'Sofia pro', 'open-sans';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 12px;
   }
 
   &__positive {

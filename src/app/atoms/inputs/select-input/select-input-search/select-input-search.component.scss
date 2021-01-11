@@ -1,6 +1,6 @@
 .app-input-select {
   width: 100%;
-  
+
   ::ng-deep {
     .ng-select {
       position: relative;
@@ -21,6 +21,10 @@
         height: 46px;
         margin-bottom: 4px;
       }
+    }
+
+    .ng-dropdown-panel-items.scroll-host {
+      width: 100%;
     }
     
     .ng-dropdown-panel {

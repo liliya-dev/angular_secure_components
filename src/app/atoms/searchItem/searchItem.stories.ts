@@ -20,13 +20,13 @@ const Template: Story<searchItemComponent> = (args: searchItemComponent) => ({
 export const Simple = Template.bind({});
 Simple.args = {
   title: "secureprivacy.ai",
-  classes: "search-list__item fs-16-sofia-300"
+  classes: "search-list__item"
 };
 
 export const WithIcon = Template.bind({});
 WithIcon.args = {
   title: "Get access to all features.",
-  classes: "list-item-icon fs-16-sofia-300"
+  classes: "list-item-icon"
 };
 
 

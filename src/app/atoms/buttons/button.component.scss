@@ -1,46 +1,46 @@
-.btn-app {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+// .btn-app {
+//   display: flex;
+//   justify-content: space-between;
+//   align-items: center;
 
-  transition: 0.3s;
-  border-radius: 8px;
+//   transition: var(--transition);
+//   border-radius: 8px;
 
-  &--h36 {
-    display: flex;
-    align-items: center;
-    height: 36px;
-    padding: 0 18px 0 18px;
-  }
+//   &--h36 {
+//     display: flex;
+//     align-items: center;
+//     height: 36px;
+//     padding: 0 18px 0 18px;
+//   }
   
-  &--asimetric {
-    border-radius: 20px 5px;
-    height: 52px;
-    padding: 18px 41px 18px 44px;
-  }
+//   &--asimetric {
+//     border-radius: 20px 5px;
+//     height: 52px;
+//     padding: 18px 41px 18px 44px;
+//   }
 
-  &--h46 {
-    height: 46px;
-    padding: 13px 15px 12px 15px;
-  }
+//   &--h46 {
+//     height: 46px;
+//     padding: 13px 15px 12px 15px;
+//   }
 
-  &--h46-p45 {
-    height: 46px;
-    padding: 17px 45px;
-  }
+//   &--h46-p45 {
+//     height: 46px;
+//     padding: 17px 45px;
+//   }
 
-  &--h46--wide {
-    height: 46px;
-    padding: 17px 37px;
-  }
+//   &--h46--wide {
+//     height: 46px;
+//     padding: 17px 37px;
+//   }
 
-  &--h52 {
-    height: 52px;
-    padding: 18px 66px;
-  }
+//   &--h52 {
+//     height: 52px;
+//     padding: 18px 66px;
+//   }
 
-  &--h53 {
-    height: 53px;
-    padding: 9px 10px;
-  }
-}
+//   &--h53 {
+//     height: 53px;
+//     padding: 9px 10px;
+//   }
+// }

@@ -28,6 +28,12 @@
     border: none;
     transition: 0.3s;
 
+    font-family: 'Sofia pro', 'open-sans';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 100%;
+
     & > svg-icon {
       margin-right: 13px;
     }
@@ -53,5 +59,11 @@
     background-color: transparent;
     border: none;
     border-radius: 12px;
+
+    font-family: 'Sofia pro', 'open-sans';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 100%;
   }
 }

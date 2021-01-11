@@ -67,8 +67,6 @@ import { ColorSketchModule } from 'ngx-color/sketch';
 import { gradientButtonComponent } from './atoms/buttons/gradientButton/gradientButton.component';
 import { StatusStepsDynamicComponent } from './atoms/status-steps-dynamic/status-steps-dynamic.component';
 import { StatusBarComponent } from './molecules/status-bar/status-bar.component';
-import { SmallLightAddButtonComponent } from './atoms/buttons/add-buttons/small-light-add-button/small-light-add-button.component';
-import { DarkAddButtonComponent } from './atoms/buttons/add-buttons/dark-add-button/dark-add-button.component';
 import { AddComponent } from './pages-components/Policies_Customize/Molecules/customized-element/add-dynamic-component/add-dynamic.component';
 import { AddDirective } from './pages-components/Policies_Customize/Molecules/customized-element/add-dynamic-component/add.directive';
 import { AddService } from './pages-components/Policies_Customize/Molecules/customized-element/add-dynamic-component/add.service';
@@ -228,8 +226,6 @@ PlotlyModule.plotlyjs = PlotlyJS;
     StatusStepsDynamicComponent,
     StatusBarComponent,
     DomainsApproveModalComponent,
-    SmallLightAddButtonComponent,
-    DarkAddButtonComponent,
     LinearChartComponent,
     ColumnChartComponent,
     MapChartComponent,
