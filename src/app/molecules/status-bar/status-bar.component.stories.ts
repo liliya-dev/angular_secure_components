@@ -5,7 +5,6 @@ import { StatusStepsDynamicComponent } from '../../atoms/status-steps-dynamic/st
 import { LightAssimetricButtonComponent } from '../../atoms/buttons/light-assimetric-button/light-assimetric-button.component';
 import { simpleButtonComponent } from '../../atoms/buttons/simpleButton/simpleButton.component';
 
-
 const props = {};
 
 export default {

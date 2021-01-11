@@ -5,28 +5,28 @@
   </div>
   <div class="registration-form__body">
     <div class="registration-form__body--left">
-      <h2 class="fs-h2">
+      <h2 class="registration-form__title">
         Register now and receive 100% no-risk
-        <span class="fs-h2--bold">Free Trial</span>
+        <span class="registration-form__title-bold">Free Trial</span>
       </h2>
       <ul class="registration-form__list">
         <app-search-item 
           [title]="'Get access to all features.'"
-          [classes]="'list-item-icon fs-16-sofia-300'"
+          [classes]="'list-item-icon'"
         >
         </app-search-item>
         <app-search-item 
           [title]="'Pay NOTHING for the first 7-days.'"
-          [classes]="'list-item-icon fs-16-sofia-300'"
+          [classes]="'list-item-icon'"
         >
         </app-search-item>
         <app-search-item 
           [title]="'Cancel at ANY time during your trial.'"
-          [classes]="'list-item-icon fs-16-sofia-300'"
+          [classes]="'list-item-icon'"
         >
         </app-search-item>
       </ul>
-      <h5 class="fs-h5">These awesome companies are using Secure Privacy</h5>
+      <h5 class="registration-form__text">These awesome companies are using Secure Privacy</h5>
       <app-icon-container></app-icon-container>
     </div>
     <div class="registration-form__body--right">
@@ -61,28 +61,28 @@
     *ngIf="!isStarted"
     [ngStyle]="{'width':'100%', 'align-items': 'center'}"
   >
-    <h2 class="fs-h2">
+    <h2 class="registration-form__title">
       Register now and receive 100% no-risk
-      <span class="fs-h2--bold">Free Trial</span>
+      <span class="registration-form__title-bold">Free Trial</span>
     </h2>
     <ul class="registration-form__list">
       <app-search-item 
         [title]="'Get access to all features.'"
-        [classes]="'list-item-icon fs-16-sofia-300'"
+        [classes]="'list-item-icon'"
       >
       </app-search-item>
       <app-search-item 
         [title]="'Pay NOTHING for the first 7-days.'"
-        [classes]="'list-item-icon fs-16-sofia-300'"
+        [classes]="'list-item-icon'"
       >
       </app-search-item>
       <app-search-item 
         [title]="'Cancel at ANY time during your trial.'"
-        [classes]="'list-item-icon fs-16-sofia-300'"
+        [classes]="'list-item-icon'"
       >
       </app-search-item>
     </ul>
-    <h5 class="fs-h5">These awesome companies are using Secure Privacy</h5>
+    <h5 class="registration-form__text">These awesome companies are using Secure Privacy</h5>
     <app-icon-container></app-icon-container>
     <div [ngStyle]="{'margin-bottom':'32px'}"></div>
     <app-gradient-button 

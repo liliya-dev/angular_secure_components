@@ -6,7 +6,7 @@
     <app-nav-link
       [isActive]="active === i + item.title"
       [title]="item.title" 
-      classes="nav-link-secondary fs-12-gramm-400"
+      classes="nav-link-secondary"
       (click)="handlClick($event, i + item.title)"
     >
     </app-nav-link>
@@ -18,7 +18,7 @@
         <app-nav-link
           [isActive]="active === i + section"
           [title]="section" 
-          classes="nav-link-secondary fs-12-gramm-400"
+          classes="nav-link-secondary"
           (click)="handlClick($event, i + section)"
         >
         </app-nav-link>

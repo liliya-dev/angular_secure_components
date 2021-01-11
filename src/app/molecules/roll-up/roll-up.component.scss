@@ -12,8 +12,21 @@
     align-items: center;
   }
 
+  &__number {
+    font-family: 'Gramatica Regular', 'open-sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 100%;
+  }
+
   &__text {
     color: var(--secondary-color);
+    font-family: 'Gramatica Bold', 'open-sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 100%;
   }
 
   &__content {

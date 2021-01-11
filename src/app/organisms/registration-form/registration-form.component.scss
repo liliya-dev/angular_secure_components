@@ -3,6 +3,34 @@
   height: auto;
   background: url('../../../assets/images/bg.png');
 
+  &__text {
+    font-family: 'Sofia pro', 'open-sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    color: var(--secondary-color);
+    text-transform: capitalize;
+  }
+
+  &__title {
+    font-family: 'Gramatica Regular', 'open-sans';
+    font-size: 38px;
+    line-height: 120%;
+    text-transform: capitalize;
+    color: var(--secondary-color);
+
+    &-bold {
+      font-family: 'Gramatica Bold', 'open-sans';
+      font-size: 38px;
+      line-height: 120%;
+      text-transform: capitalize;
+      background: var(--success-grad-light);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+
   &__header {
     display: flex;
     justify-content: space-between;

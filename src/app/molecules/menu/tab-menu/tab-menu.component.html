@@ -3,7 +3,7 @@
     *ngFor="let title of titles; let i = index;"
     (click)="setActive(i)"
     [ngStyle]="{'left': -i * 11 + 'px', 'z-index': 10/(i + 1)}"
-    [ngClass]="i===active ? 'tab-menu__item active fs-14-gramm-400' : 'tab-menu__item fs-14-gramm-400'"
+    [ngClass]="i===active ? 'tab-menu__item active' : 'tab-menu__item'"
   >
     {{title}}
   </li>
