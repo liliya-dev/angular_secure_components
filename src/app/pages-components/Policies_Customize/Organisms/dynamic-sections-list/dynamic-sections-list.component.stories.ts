@@ -11,7 +11,7 @@ import { AddDirective } from '../../Molecules/customized-element/add-dynamic-com
 import { AddService } from '../../Molecules/customized-element/add-dynamic-component/add.service';
 import { TextareaAutosizeModule } from 'ngx-textarea-autosize';
 import { PoliciesSmallLightAddButtonComponent } from '../../Atoms/buttons/small-light-add-button/small-light-add-button.component';
-import { simpleButtonComponent } from '../../../../atoms/buttons/simpleButton/simpleButton.component';
+import { SimplePolicyGeneratorButtonComponent } from '../../Atoms/buttons/simple-policy-generator-button/simple-policy-generator-button.component';
 
 const props = {};
 
@@ -29,7 +29,7 @@ export default {
       PoliciesCustomizedElementComponent,
       PoliciesDynamicTableComponent,
       PoliciesDynamicSectionsListComponent,
-      simpleButtonComponent
+      SimplePolicyGeneratorButtonComponent
     ],
     providers: [AddService],
     imports: [CommonModule, TextareaAutosizeModule],

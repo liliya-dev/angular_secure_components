@@ -17,6 +17,11 @@
 
   &__title {
     margin-bottom: 32px;
+    font-family: 'Sofia pro', 'open-sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    color: var(--secondary-color);
   }
 
   &__form {
@@ -62,6 +67,11 @@
   &__input-title {
     color: rgba(var(--secondary-color-code), 0.5);
     margin: 4px 0 12px 0;
+    font-family: 'Sofia pro', 'open-sans';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 100%;
   }
 }
 

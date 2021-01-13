@@ -4,6 +4,9 @@
   box-shadow: 0px 20px 60px rgba(46, 66, 70, 0.2);
   border-radius: 12px;
 
+  font-family: 'Helvetica', 'open-sans';
+  font-style: normal;
+
   &__header {
     padding: 14px 32px;
     display: flex;
@@ -22,15 +25,21 @@
   }
 
   &__title {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 27px;
     color: var(--secondary-color);
     margin-bottom: 5px;
   }
 
   &__text {
+    font-weight: 400;
+    font-size: 12px;
     letter-spacing: 5%;
     line-height: 160%;
     color: rgba(var(--form-request-color), 0.75);
     margin-bottom: 32px;
+
   }
 
   &__wrapper {

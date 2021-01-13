@@ -28,11 +28,11 @@ export class LinearChartComponent  implements OnChanges, OnInit{
           { text: 'opt-in', value: series[0][dataPointIndex] },
           { text: 'opt-out', value: series[1][dataPointIndex] },
         ]
-        const liClass = 'card-report-status__item fs-14-sofia-normal';
-        const spanClass = 'card-report-status__value fs-14-sofia-800';
+        const liClass = 'card-report-status__item';
+        const spanClass = 'card-report-status__value';
         return (
           `<div class="card-report-status">
-            <p class="card-report-status__title fs-18-gramm-light">${w.config.title.text}</p>
+            <p class="card-report-status__title">${w.config.title.text}</p>
             <ul class="card-report-status__list">
               <li class=${liClass}><span class=${spanClass}>${texts[0].value}</span> ${texts[0].text}</li>
               <li class=${liClass}><span class=${spanClass}>${texts[1].value}</span> ${texts[1].text}</li>

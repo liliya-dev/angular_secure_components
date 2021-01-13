@@ -10,6 +10,11 @@
   border-spacing: 0;
   transition: margin 3s;
 
+  font-family: 'Sofia pro', 'open-sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+
   &__head-input {
     width: calc(100% + 84px);
     padding-right: 84px;
@@ -18,8 +23,11 @@
     border: none;
 
     color: rgba(var(--secondary-color-code), 0.75);
-    font-weight: 400;
     text-transform: capitalize;
+    font-family: 'Sofia pro', 'open-sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
   }
 
   &__ceil-input {
@@ -32,6 +40,9 @@
     text-transform: capitalize;
     color: rgba(var(--secondary-color-code), 1);
     font-weight: 300;
+    font-family: 'Sofia pro', 'open-sans';
+    font-style: normal;
+    font-size: 12px;
   }
 
   &__add-row-button {
@@ -71,6 +82,10 @@
   &__row {
     margin-bottom: 20px;
     padding: 13px 16px;
+    font-family: 'Sofia pro', 'open-sans';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 12px;
   }
 
   &__button {

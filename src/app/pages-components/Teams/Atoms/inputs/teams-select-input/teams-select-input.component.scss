@@ -1,4 +1,13 @@
 .teams-select {
+
+  &__input {
+    font-family: 'Sofia pro', 'open-sans';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 100%;
+  }
+
   ::ng-deep {
     .ng-select {
       position: relative;

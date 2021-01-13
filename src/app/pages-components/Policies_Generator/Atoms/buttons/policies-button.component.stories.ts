@@ -22,17 +22,17 @@ const Template: Story<PoliciesButtonComponent> = (args: PoliciesButtonComponent)
 export const Secondary = Template.bind({});
 Secondary.args = {
   title: "choose",
-  classes: 'btn-secondary fs-12-gramm-400'
+  classes: 'btn-secondary'
 };
 
 export const SuccessAsimetricBig = Template.bind({});
 SuccessAsimetricBig.args = {
   title: "save",
-  classes: "btn-success btn-success--large fs-16-sofia-800"
+  classes: "btn-success btn-success--large"
 };
 
 export const SuccessAsimetricSmall = Template.bind({});
 SuccessAsimetricSmall.args = {
   title: "add icon",
-  classes: "btn-success btn-success--small fs-12-gramm-400"
+  classes: "btn-success btn-success--small"
 };

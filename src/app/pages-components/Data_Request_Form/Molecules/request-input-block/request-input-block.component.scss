@@ -6,6 +6,11 @@
     text-transform: uppercase;
     color: rgba(var(--secondary-color-code), 0.5);
     letter-spacing: 5%;
+
+    font-family: 'Helvetica', 'open-sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 12px;
   }
 
   &__required {

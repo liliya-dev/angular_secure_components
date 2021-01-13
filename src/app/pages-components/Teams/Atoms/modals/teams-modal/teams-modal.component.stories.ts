@@ -41,13 +41,6 @@ const Template: Story<TeamsModalComponent> = (args: TeamsModalComponent) => ({
   `,
 });
 
-const stylesForTemplate2 = {
-  'text-align': 'left',
-  'color': 'rgba(var(--secondary-color-code), 0.5)',
-  'margin': '16px 0 8px',
-  'line-height': '150%'
-}
-
 const Template2: Story<TeamsModalComponent> = (args: TeamsModalComponent) => ({
   component: TeamsModalComponent,
   props: args,

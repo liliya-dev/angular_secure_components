@@ -21,24 +21,24 @@ const Template: Story<ReportsButtonComponent> = (args: ReportsButtonComponent) =
 export const DangerBig = Template.bind({});
 DangerBig.args = {
   title: "cancel",
-  classes: "btn-danger fs-12-sofia-800 btn-app btn-app--h46--wide"
+  classes: "btn-danger-big"
 };
 
 export const SuccessBig = Template.bind({});
 SuccessBig.args = {
   title: "save",
-  classes: "btn-app--h46--wide btn-app btn-success fs-12-gramm-400"
+  classes: "btn-success-big"
 };
 
 export const Danger = Template.bind({});
 Danger.args = {
   title: "clear",
-  classes: "btn-danger fs-12-sofia-800 btn-app btn-app--h36"
+  classes: "btn-danger"
 };
 
 export const Success = Template.bind({});
 Success.args = {
   title: "save",
-  classes: "btn-app--h36 btn-app btn-success fs-12-sofia-800"
+  classes: "btn-success"
 };
 

@@ -2,7 +2,7 @@
   <div id="chart-column" class="chart-column" #container>
     <div class="chart-column__yaxis">
     <div 
-      class="chart-column__yaxis-value fs-14-gramm-400"
+      class="chart-column__yaxis-value"
       [ngStyle]="{ 'height': chartHeight/(rows)+'px' }"
       *ngFor="let rowValue of rowValues"
     >
@@ -27,7 +27,7 @@
             [ngStyle]="{ 'background-color': colors[i], 'height': chartHeight*value/maxValue+'px', 'width': columnWidth-16+'px' }"
           >
           </div>
-          <div class="fs-12-gramm-400 chart-column__xaxis-name" [ngStyle]="{ 'width': columnWidth+'px' }">
+          <div class="chart-column__xaxis-name" [ngStyle]="{ 'width': columnWidth+'px' }">
             {{ categories[i] }}
           </div>
         </li>
@@ -42,11 +42,11 @@
   >
     <ul class="chart-column__tips-list">
       <li class="chart-column__tips-item" *ngFor="let item of data; let i=index">
-        <div class="chart-column__tips-text fs-12-sofia-300">
+        <div class="chart-column__tips-text">
           <div class="chart-column__tips-color" [ngStyle]="{ 'background-color': colors[i] }"></div>
           {{ categories[i] }}
         </div>
-        <div class="chart-column__tips-value fs-16-sofia-600">{{ data[i] }}</div>
+        <div class="chart-column__tips-value">{{ data[i] }}</div>
       </li>
     </ul>
   </div>

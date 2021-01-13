@@ -10,6 +10,18 @@
 
   &__text {
     text-transform: capitalize;
+    font-family: 'Sofia pro', 'open-sans';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 100%;
+  }
+
+  &__input {
+    font-family: 'Sofia pro', 'open-sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
   }
 
   ::ng-deep {

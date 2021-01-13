@@ -1,4 +1,12 @@
 .reports-select {
+
+  &__input {
+    font-family: 'Helvetica', 'open-sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+  }
+
   ::ng-deep {
     .ng-select {
       position: relative;
@@ -17,7 +25,7 @@
       &:after {
         content: url('../../../../../../assets/images/select.png');
         position: absolute;
-        top: calc(50% - 11px);
+        top: calc(50% - 7px);
         right: 21px;
       }
     
@@ -25,7 +33,7 @@
         &:after {
           content: url('../../../../../../assets/images/select.png');
           position: absolute;
-          top: calc(50% - 11px);
+          top: calc(50% - 7px);
           right: 21px;
           transform: rotate(180deg);
         }

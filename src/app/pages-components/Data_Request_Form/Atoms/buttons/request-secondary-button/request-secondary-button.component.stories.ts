@@ -1,5 +1,3 @@
-/// lazy load
-/// light house
 import { HttpClientModule} from '@angular/common/http';
 import { Meta, moduleMetadata, Story } from '@storybook/angular';
 import { RequestSecondaryButtonComponent } from './request-secondary-button.component';

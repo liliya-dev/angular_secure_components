@@ -27,4 +27,12 @@
       -webkit-text-fill-color: transparent;
     }
   }
+
+  &__title {
+    text-transform: uppercase;
+    font-family: 'Sofia pro', 'open-sans';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 12px;
+  }
 }

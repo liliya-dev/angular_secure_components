@@ -1,7 +1,7 @@
 <div class="policies-select">
   <ng-select 
     [(ngModel)]="selectedItem"
-    class="policies-select__input fs-12-sofia-600" 
+    class="policies-select__input" 
     [hideSelected]="true"
     [searchable]="false"
     (change)="handleValueChange($event)"
@@ -9,7 +9,7 @@
     <ng-option class="policies-select__option" *ngFor="let item of items; let i = index" [value]="item">
       <div class="policies-select__wrapper">
         <img *ngIf="imagesPaths" [src]="imagesPaths[i]" [alt]="item">
-        <p class="policies-select__text fs-14-sofia-normal">
+        <p class="policies-select__text">
           {{ item }}
         </p>
       </div>

@@ -15,11 +15,11 @@
     >
       <ul class="map-chart__tips-list">
         <li class="map-chart__tips-item" *ngFor="let item of tipsData; let i=index">
-          <div class="map-chart__tips-text fs-12-sofia-300">
+          <div class="map-chart__tips-text">
             <div class="map-chart__tips-color" [ngStyle]="{ 'background-color': item.id ===  activeCountry ? 'green' : 'transparent' }"></div>
             {{ item.name }}
           </div>
-          <div class="map-chart__tips-value fs-16-sofia-600">{{ item.value }}</div>
+          <div class="map-chart__tips-value">{{ item.value }}</div>
         </li>
       </ul>
     </div>

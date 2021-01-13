@@ -1,6 +1,7 @@
 .app-gradient-text {
   background: var(--success-grad-light);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 
   font-family: 'Gramatica Bold', 'open-sans';

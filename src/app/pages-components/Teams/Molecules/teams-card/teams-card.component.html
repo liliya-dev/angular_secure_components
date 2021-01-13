@@ -28,14 +28,14 @@
       <p 
         [style.color] = "textColor"
         [style.fontSize] = "isSmallMobile ? '12px' : '16px'"
-        class="app-teams-card__name fs-18-sofia-600"
+        class="app-teams-card__name"
       >
         {{ name }}
       </p>
       <p 
         [style.color] = "textColor"
         [style.fontSize] = "isSmallMobile ? '12px' : '16px'"
-        class="app-teams-card__text fs-16-sofia-300"
+        class="app-teams-card__text"
       >
         {{ email }}
       </p>
@@ -46,7 +46,7 @@
     [style.fontSize] = "isSmallMobile ? '12px' : '16px'"
     (mouseenter)="setTipsVisibility($event, true)"
     (mouseleave)="setTipsVisibility($event, false)"
-    class="app-teams-card__position fs-16-sofia-600"
+    class="app-teams-card__position"
   >
     {{ position }}
   </p>
@@ -64,21 +64,21 @@
     </button>
     <div class="app-teams-card__mobile-box" *ngIf="isVisibleOptions">
       <button 
-        class="app-teams-card__mobile-button fs-16-gramm-300" 
+        class="app-teams-card__mobile-button" 
         type="button"
         (click)="handleEdit()"
       >
         Edit
       </button>
       <button 
-        class="app-teams-card__mobile-button fs-16-gramm-300" 
+        class="app-teams-card__mobile-button" 
         type="button"
         (click)="handleDuplicate()"
       > 
         Copy
       </button>
       <button 
-        class="app-teams-card__mobile-button fs-16-gramm-300" 
+        class="app-teams-card__mobile-button" 
         type="button"
         (click)="handleDelete()"
       >

@@ -1,9 +1,9 @@
 <div class="app-dynamic-sections-list" #sectionsList>
   <ng-container *ngIf="!isMobile">
-    <div class="app-dynamic-sections-list__navigation fs-14-gramm-400-light">
+    <div class="app-dynamic-sections-list__navigation">
       <app-small-light-add-button
         [title]="'Add section'"
-        [classes]="'app-small-light-add-button fs-14-gramm-400-light'"
+        [classes]="'app-small-light-add-button'"
         (click)="addSection(sections.length)"
       >
       </app-small-light-add-button>
@@ -28,12 +28,12 @@
     </button>
     <div 
       #mobileMenu
-      class="app-dynamic-sections-list__navigation mobile fs-14-gramm-400-light"
+      class="app-dynamic-sections-list__navigation mobile"
       [ngStyle]="isVisibleMobileMenu ? { 'left': '0' } : { 'left': '-100%' }"
     >
       <app-small-light-add-button
         [title]="'Add section'"
-        [classes]="'app-small-light-add-button fs-14-gramm-400-light'"
+        [classes]="'app-small-light-add-button'"
         (click)="addSection(sections.length)"
       >
       </app-small-light-add-button>
@@ -63,12 +63,12 @@
         class="app-dynamic-sections-list__section"
         [ngStyle]="(!isElementActive || section.initialState.length === 0) && isSectionActive && activeSection === i && {'border': '1px dashed rgba(var(--secondary-color-code), 0.5)'}"
       >
-        <p class="app-dynamic-sections-list__main-title fs-h3">
+        <p class="app-dynamic-sections-list__main-title">
           <textarea
             autosize
             [(ngModel)]="sections[i].title" 
             spellcheck="false"
-            class="app-dynamic-sections-list__main-title-input fs-h3"
+            class="app-dynamic-sections-list__main-title-input"
           >
           </textarea>
         </p>
@@ -88,19 +88,19 @@
         >
           <app-small-light-add-button
             [title]="'Add table'"
-            [classes]="'app-small-light-add-button fs-14-gramm-400-light'"
+            [classes]="'app-small-light-add-button'"
             (click)="addComponentToSection({ sectionId:section.sectionId, index:section.initialState.length-1, type:'table' })"
           >
           </app-small-light-add-button>
           <app-small-light-add-button
             [title]="'Add a paragraph'"
-            [classes]="'app-small-light-add-button fs-14-gramm-400-light'"
+            [classes]="'app-small-light-add-button'"
             (click)="addComponentToSection({ sectionId:section.sectionId, index:section.initialState.length-1, type:'text' })"
           >
           </app-small-light-add-button>
           <app-small-light-add-button
             [title]="'Add list'"
-            [classes]="'app-small-light-add-button fs-14-gramm-400-light'"
+            [classes]="'app-small-light-add-button'"
             (click)="addComponentToSection({ sectionId:section.sectionId, index:section.initialState.length-1, type:'list' })"
           >
           </app-small-light-add-button>
@@ -108,10 +108,9 @@
         <div class="app-dynamic-sections-list__line"></div>
       </li>
     </ul>
-    <app-simple-button
+    <app-simple-policy-generator-button
       [title]="'confirm'"
-      [classes]="'btn-dark fs-16-sofia-800 btn-app--h52'"
     >
-    </app-simple-button>
+    </app-simple-policy-generator-button>
   </div>
 </div>

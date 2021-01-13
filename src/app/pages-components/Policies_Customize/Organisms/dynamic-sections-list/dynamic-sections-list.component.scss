@@ -40,6 +40,10 @@
     border: none;
     background-color: transparent;
     color: var(--secondary-color);
+    font-family: 'Sofia pro', 'open-sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
   }
 
   &__navigation {
@@ -52,6 +56,11 @@
 
     color: rgba(var(--secondary-color-code), 0.7);
     border: 1px solid var(--status-bar-bg-color);
+    font-family: 'Gramatica Regular', 'open-sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 100%;
 
     &.mobile {
       width: 250px;
@@ -121,7 +130,7 @@
     overflow-y: scroll;
 
     ::ng-deep {
-      .btn-dark {
+      .simple-policy-generator-button {
         margin: 32px 0 32px 32px;
       }
     }
@@ -163,5 +172,10 @@
     line-height: 180%;
     margin-left: 18px;
     width: calc(100% + 15px);
+    font-family: 'Sofia pro', 'open-sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    color: var(--secondary-color);
   }
 }

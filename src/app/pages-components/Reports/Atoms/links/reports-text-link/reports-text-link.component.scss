@@ -6,6 +6,10 @@
   -webkit-background-clip: text;
   background-clip: text;
   transition: 0.3;
+  font-family: 'Gramatica Bold', 'open-sans';
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 100%;
 
   &:hover {
     background: var(--secondary-color); 
@@ -63,6 +67,12 @@
   background-clip: text;
   -webkit-text-fill-color: transparent;
   text-transform: capitalize;
+
+  font-family: 'Sofia pro', 'open-sans';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 100%;
 
   &::after {
     content: '';

@@ -7,6 +7,11 @@
   background: var(--highlited-color-light);
   transition: 0.3s;
 
+  font-family: 'Helvetica', 'open-sans';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+
   &:hover {
     background: var(--highlited-color-dark);
   }

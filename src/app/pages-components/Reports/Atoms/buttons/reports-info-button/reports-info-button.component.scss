@@ -9,6 +9,13 @@
   color: var(--info-color);
   background-color: rgba(var(--info-color-code), 0.05);  
   text-transform: capitalize;
+  transition: var(--transition);
+
+  font-family: 'Sofia pro', 'open-sans';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 100%;
 
   & > img {
     margin-right: 15px;

@@ -23,14 +23,14 @@ const Template: Story<ReportsSelectInputSearchComponent> = (args: ReportsSelectI
 
 export const SearchSelect = Template.bind({});
 SearchSelect.args = {
-  classes: "custom fs-16-sofia-300",
+  classes: "custom",
   placeholderText: "Search for",
   items: ['My current company', 'My clients company', 'secure privacy', 'secure privacy2', 'secure privacy3']
 };
 
 export const SearchSelectIcon = Template.bind({});
 SearchSelectIcon.args = {
-  classes: "custom-icon fs-16-sofia-300",
+  classes: "custom-icon",
   placeholderText: "Search for",
   items: ['My current company', 'My clients company', 'secure privacy', 'secure privacy2', 'secure privacy3']
 };

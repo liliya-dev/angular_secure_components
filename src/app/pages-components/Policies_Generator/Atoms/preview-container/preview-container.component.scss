@@ -14,8 +14,12 @@
   }
 
   &__title {
+    margin-bottom: 30px;
     text-transform: uppercase;
     color: rgba(var(--secondary-color-code), 0.5);
-    margin-bottom: 30px;
+    font-family: 'Gramatica Bold', 'open-sans';
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 100%;
   }
 }

@@ -6,10 +6,18 @@
   color: var(--text-color);
   text-transform: uppercase;
 
+  &__title {
+    text-transform: uppercase;
+    font-family: 'Sofia pro', 'open-sans';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 12px;
+  }
+
   &:hover {
     background-color: var(--text-color);
 
-    & > p {
+    & .app-mutable-primary-button__title {
       background: var(--success-grad-light);
       background-clip: text;
       -webkit-background-clip: text;
@@ -20,7 +28,7 @@
   &:active {
     background: rgba(var(--secondary-color-code), 0.15);
 
-    & > p {
+    & .app-mutable-primary-button__title {
       background: var(--text-color);
       background-clip: text;
       -webkit-background-clip: text;

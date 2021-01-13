@@ -145,6 +145,7 @@ import { RequestSelectInputComponent } from './pages-components/Data_Request_For
 import { RequestInputBlockComponent } from './pages-components/Data_Request_Form/Molecules/request-input-block/request-input-block.component';
 import { RequestTextAreaComponent } from './pages-components/Data_Request_Form/Atoms/inputs/request-text-area/request-text-area.component';
 import { RequestFormComponent } from './pages-components/Data_Request_Form/Organisms/request-form/request-form.component';
+import { SimplePolicyGeneratorButtonComponent } from './pages-components/Policies_Customize/Atoms/buttons/simple-policy-generator-button/simple-policy-generator-button.component';
 
 PlotlyModule.plotlyjs = PlotlyJS;
 
@@ -289,6 +290,7 @@ PlotlyModule.plotlyjs = PlotlyJS;
     RequestInputBlockComponent,
     RequestTextAreaComponent,
     RequestFormComponent,
+    SimplePolicyGeneratorButtonComponent,
   ],
   imports: [
     ColorSketchModule,

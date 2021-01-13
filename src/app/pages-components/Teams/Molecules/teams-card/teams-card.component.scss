@@ -8,6 +8,10 @@
   width: 100%;
   min-height: 72px;
 
+  font-family: 'Sofia pro', 'open-sans';
+  font-style: normal;
+  line-height: 100%;
+
   color: var(--secondary-color);
   background: transparent;
   border: 1px solid rgba(var(--secondary-color-code), 0.15);
@@ -68,14 +72,20 @@
 
   &__name {
     margin-right: 16px;
+    font-weight: 600;
+    font-size: 18px;
   }
 
   &__text {
     opacity: 0.6;
+    font-weight: 300;
+    font-size: 16px;
   }
 
   &__position {
     opacity: 0.5;
+    font-weight: 600;
+    font-size: 16px;
   }
 
   &__mobile-box {
@@ -99,6 +109,13 @@
     border: none;
     background-color: transparent;
     color: rgba(var(--secondary-color-code), 0.7);
+
+    font-family: 'Gramatica Bold', 'open-sans';
+    font-style: normal;
+    font-weight: 300;
+    text-transform: uppercase;
+    font-size: 12px;
+    line-height: 100%;
 
     &:active {
       background: var(--success-grad-light);

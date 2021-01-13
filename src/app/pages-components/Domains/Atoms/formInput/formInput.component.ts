@@ -26,6 +26,5 @@ export class DomainsFormInputComponent implements OnInit {
     if (this.initialValue) {
       this.value = this.initialValue;
     }
-    this.classes = this.isBold ? "app-form-input-field fs-16-sofia-600" : "app-form-input-field fs-16-sofia-300";
   }
 }

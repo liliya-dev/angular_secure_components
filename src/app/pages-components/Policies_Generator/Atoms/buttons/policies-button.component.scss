@@ -1,12 +1,18 @@
 .btn-secondary {
-  height: 46px;
-  padding: 17px 45px;
   background-color: rgba(var(--secondary-color-code), 0.1);
   border: none;
   border-radius: 8px;
   color: var(--secondary-color);
   text-transform: uppercase;
   transition: 0.3s;
+
+  height: 46px;
+  padding: 17px 45px;
+
+  font-family: 'Gramatica Bold', 'open-sans';
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 100%;
 
   &:hover {
     background-color: rgba(var(--secondary-color-code), 1);
@@ -32,10 +38,19 @@
 
   &--small {
     padding: 17px 41px 17px 44px;
+    font-family: 'Gramatica Bold', 'open-sans';
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 100%;
   }
 
   &--large {
     padding: 15px 68px 15px 71px;
+    font-family: 'Sofia pro', 'open-sans';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 16px;
+    line-height: 100%;
   }
 
   &::before {

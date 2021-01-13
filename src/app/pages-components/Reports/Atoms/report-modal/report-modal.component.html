@@ -6,11 +6,11 @@
       [svgStyle]="{ 'fill':'rgba(1, 25, 73, 0.5)', 'height': '20px' }"
       >
       </svg-icon>
-      <p class="report-modal__title fs-h3">Filters</p>
+      <p class="report-modal__title">Filters</p>
     </div>
     <ul class="report-modal__inputs-list">
       <li *ngFor="let input of inputsData" class="report-modal__input-wrapper">
-        <p class="report-modal__input-title fs-16-sofia-300">{{ input.title }}</p>
+        <p class="report-modal__input-title">{{ input.title }}</p>
         <reports-search-input 
           *ngIf="input.type==='search'"
           [title]="input.title"
@@ -34,14 +34,14 @@
     <div class="report-modal__buttons-wrapper">
       <reports-button
         [title]="'cancel'"
-        [classes]="'btn-danger fs-12-sofia-800 btn-app btn-app--h46--wide'"
+        [classes]="'btn-danger-big'"
         (click)="handleCancel()"
       >
       </reports-button>
       <div class="ml"></div>
       <reports-button
         [title]="'save'"
-        [classes]="'btn-app--h46--wide btn-app btn-success fs-12-gramm-400'"
+        [classes]="'btn-success-big'"
         (click)="handleApprove()"
       >
       </reports-button>

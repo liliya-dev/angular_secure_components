@@ -1,8 +1,22 @@
-.btn-danger {
+.btn-danger-big {
   color: var(--danger-color);
   background: inherit;
   outline: none;
   border: 1px solid rgba(var(--danger-color-code), 0.2);
+
+  text-transform: uppercase;
+  font-family: 'Sofia pro', 'open-sans';
+  font-style: normal;
+  font-weight: 800;
+  font-size: 12px;
+
+  display: flex;
+  align-items: center;
+  height: 46px;
+  padding: 17px 37px;
+
+  transition: var(--transition);
+  border-radius: 8px;
 
   &:hover {
     cursor: pointer;
@@ -14,7 +28,7 @@
   }
 }
 
-.btn-success {
+.btn-success-big {
   position: relative;
   z-index: 2;
 
@@ -22,6 +36,17 @@
   border: none;
   color: var(--text-color);
   text-transform: uppercase;
+
+  text-transform: uppercase;
+  font-family: 'Sofia pro', 'open-sans';
+  font-style: normal;
+  font-weight: 800;
+  font-size: 12px;
+
+  display: flex;
+  align-items: center;
+  height: 46px;
+  padding: 17px 37px;
 
   &::before {
     content: '';
@@ -73,32 +98,29 @@
   }
 }
 
-.btn-app {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  transition: 0.3s;
-  border-radius: 8px;
-
-  &--h46--wide {
-    height: 46px;
-    padding: 17px 37px;
-  }
-}
-
 .btn-success-asimetric {
-  border-radius: 20px 5px;
-  height: 46px;
-  padding: 15px 36px 15px 39px;
-
   position: relative;
   z-index: 2;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 
   background: transparent;
   border: none;
   color: var(--text-color);
   text-transform: uppercase;
+
+  border-radius: 20px 5px;
+  height: 52px;
+  padding: 18px 41px 18px 44px;
+
+  font-family: 'Sofia pro', 'open-sans';
+  font-style: normal;
+  font-weight: 800;
+  font-size: 16px;
+  text-transform: uppercase;
+  line-height: 100%;
 
   &::before {
     content: '';

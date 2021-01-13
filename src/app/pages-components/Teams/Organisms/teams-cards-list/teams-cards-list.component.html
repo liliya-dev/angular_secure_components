@@ -5,13 +5,13 @@
 >
 <!-- template for delete modal -->
   <ng-template #deleteModalContent let-titleActiveUser="titleActiveUser">
-    <p class="fs-16-sofia-300">
+    <p class="teams-cards-list__modal-text">
       Are you sure you want to remove a team member <strong>{{ titleActiveUser }}</strong> from the administrators list?
   </p>
   </ng-template>
 <!-- template for edit modal -->
   <ng-template #editModalContent let-initialValue="initialValue">
-    <p class="teams-cards-list__input-title fs-16-sofia-300">Name</p>
+    <p class="teams-cards-list__input-title">Name</p>
     <app-teams-input
       [placeholderText]="''"
       [initialValue]="initialValue"
@@ -19,7 +19,7 @@
       (changeValueParentFunction)="setValue($event, 'editTitle')"
     >
     </app-teams-input>
-    <p class="teams-cards-list__input-title fs-16-sofia-300">Email</p>
+    <p class="teams-cards-list__input-title">Email</p>
     <app-teams-input
       [placeholderText]="''"
       [initialValue]="activeEmail"
@@ -27,7 +27,7 @@
       (changeValueParentFunction)="setValue($event, 'editEmail')"
     >
     </app-teams-input>
-    <p class="teams-cards-list__input-title fs-16-sofia-300">Access</p>
+    <p class="teams-cards-list__input-title">Access</p>
     <teams-select-input
       [initialValue]="activePosition"
       [items]="positions"
@@ -38,7 +38,7 @@
   </ng-template>
 <!-- template for add modal -->
   <ng-template #addModalContent let-initialValue="initialValue">
-    <p class="teams-cards-list__input-title fs-16-sofia-300">Name</p>
+    <p class="teams-cards-list__input-title">Name</p>
     <app-teams-input
       [placeholderText]="''"
       [initialValue]="''"
@@ -46,7 +46,7 @@
       (changeValueParentFunction)="setValue($event, 'addTitle')"
     >
     </app-teams-input>
-    <p class="teams-cards-list__input-title fs-16-sofia-300">Email</p>
+    <p class="teams-cards-list__input-title">Email</p>
     <app-teams-input
       [placeholderText]="''"
       [initialValue]="''"
@@ -54,7 +54,7 @@
       (changeValueParentFunction)="setValue($event, 'addEmail')"
     >
     </app-teams-input>
-    <p class="teams-cards-list__input-title fs-16-sofia-300">Access</p>
+    <p class="teams-cards-list__input-title">Access</p>
     <teams-select-input
       [initialValue]="''"
       [items]="positions"
@@ -68,7 +68,7 @@
     <app-teams-secondary-button [title]="'Audit Log'"></app-teams-secondary-button>
     <div class="teams-cards-list__separator"></div>
     <app-teams-simple-button
-      [classes]="'btn-app--asimetric btn-success-asimetric fs-16-sofia-800'"
+      [classes]="'btn-success-asimetric'"
       [title]="isMobile ? '+' :' Add new user'"
       (click)="handleAdd()"
     >
@@ -96,7 +96,7 @@
         (handleChange)="selectAll()"
       >
       </app-teams-checkbox-mutable-gradient>
-      <p *ngIf="selected.length" class="fs-18-sofia-600">
+      <p *ngIf="selected.length" class="teams-cards-list__selected">
         Seletcted {{ selected.length }} users
       </p>
     </div>

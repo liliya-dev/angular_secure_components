@@ -5,7 +5,7 @@
 >
   <textarea 
     #textarea
-    class="text-area-copy-to-clipboard__textarea fs-14-sofia-300" 
+    class="text-area-copy-to-clipboard__textarea" 
     [value]="initialValue"
     rows="10"
     spellcheck="false"
@@ -13,7 +13,7 @@
   </textarea>
   <button 
     *ngIf="isButtonVisible"
-    class="text-area-copy-to-clipboard__button fs-14-sofia-normal" 
+    class="text-area-copy-to-clipboard__button" 
     type="button" 
     (click)="copyToClipboard(textarea)"
   >

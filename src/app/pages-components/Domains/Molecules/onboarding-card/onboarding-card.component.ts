@@ -1,4 +1,4 @@
-import { Component, Input, ViewChild, ElementRef, OnChanges, HostListener, EventEmitter, Output } from '@angular/core';
+import { Component, Input, ViewChild, ElementRef, OnChanges, HostListener, EventEmitter, Output, AfterViewInit } from '@angular/core';
 
 const HIGHLITED_COLOR = 'linear-gradient(89.52deg, #24B04B -46.17%, #0263BC 186.99%)';
 const STATIC_COLOR = 'rgb(255, 255, 255)';
@@ -12,7 +12,7 @@ const BIG_MOBILE_VIEW = 760;
   styleUrls: ['./onboarding-card.component.scss']
 })
 
-export class DomainsOnboardingCardComponent implements OnChanges {
+export class DomainsOnboardingCardComponent implements OnChanges, AfterViewInit {
   @Input() isSelected: boolean;
   @Input() title: string;
   @Input() text: string;
@@ -110,7 +110,7 @@ export class DomainsOnboardingCardComponent implements OnChanges {
     }
   }
 
-  ngOnChanges() {
+  setColors() {
     const width = document.querySelector('.app-onboarding-card').clientWidth;
     this.isMobile = width < BIG_MOBILE_VIEW;
     this.isSmallMobile = width < SMALL_MOBILE_VIEW;
@@ -123,5 +123,13 @@ export class DomainsOnboardingCardComponent implements OnChanges {
       this.textColor = TEXT_STATIC_COLOR;
       this.onActive = false;
     }
+  }
+
+  ngAfterViewInit() {
+    this.setColors();
+  }
+  
+  ngOnChanges() {
+    this.setColors();
   }
 }

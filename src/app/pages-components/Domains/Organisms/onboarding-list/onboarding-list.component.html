@@ -5,7 +5,7 @@
 >
 <!-- template for delete modal -->
   <ng-template #deleteModalContent let-titleActiveDomain="titleActiveDomain">
-    <p class="fs-16-sofia-300">Do you really want to delete the <strong>{{titleActiveDomain}}</strong> ?</p>
+    <p class="app-onboarding-component__content-text">Do you really want to delete the <strong>{{titleActiveDomain}}</strong> ?</p>
   </ng-template>
 <!-- template for edit modal -->
   <ng-template #editModalContent let-initialValue="initialValue">
@@ -14,13 +14,13 @@
       [isBold]="true"
       [initialValue]="initialValue"
       [name]="initialValue"
-      (changeValueParentFunction)="setValue($event, 'editTitle')"
+      (changeValuexzParentFunction)="setValue($event, 'editTitle')"
     >
     </app-form-input>
   </ng-template>
 <!-- template for add modal -->
   <ng-template #addModalContent let-initialValue="initialValue">
-    <p class="app-onboarding-component__input-title fs-16-sofia-300">Domain name</p>
+    <p class="app-onboarding-component__input-title app-onboarding-component__content-text">Domain name</p>
     <app-form-input
       [placeholderText]="'example.com'"
       [isBold]="true"
@@ -29,7 +29,7 @@
       (changeValueParentFunction)="setValue($event, 'addTitle')"
     >
     </app-form-input>
-    <p class="app-onboarding-component__input-title fs-16-sofia-300">Domain</p>
+    <p class="app-onboarding-component__input-title app-onboarding-component__content-text">Domain</p>
     <app-form-input
       [placeholderText]="'optiona'"
       [isBold]="true"
@@ -41,9 +41,9 @@
   </ng-template>
 
   <div class="app-onboarding-component__top">
-    <p class="fs-h1" [ngStyle]="isMobile && { 'font-size': '32px', 'line-height': '100%' }">Domains</p>
+    <p class="app-onboarding-component__main-title" [ngStyle]="isMobile && { 'font-size': '32px', 'line-height': '100%' }">Domains</p>
     <app-simple-button 
-      [classes]="'btn-app--asimetric btn-success-asimetric fs-16-sofia-800'"
+      [classes]="'btn-success-asimetric'"
       [title]="isMobile ? '+' :' Add domain'"
       (click)="handleAdd()"
     >
@@ -72,7 +72,7 @@
       (handleChange)="selectAll()"
       >
       </app-checkbox-mutable-gradient>
-      <p *ngIf="selected.length" class="fs-18-sofia-600">
+      <p *ngIf="selected.length" class="app-onboarding-component__selected">
         Seletcted {{ selected.length }} domain{{ selected.length > 1 ? 's' : '' }}
       </p>
     </div>

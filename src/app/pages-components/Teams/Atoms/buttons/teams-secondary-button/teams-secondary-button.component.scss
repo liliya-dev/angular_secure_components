@@ -7,6 +7,12 @@
   text-transform: capitalize;
   transition: 0.3s;
 
+  font-family: 'Sofia pro', 'open-sans';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 100%;
+
   &:hover {
     border: 1px solid rgba(var(--secondary-color-code), 1);
   }

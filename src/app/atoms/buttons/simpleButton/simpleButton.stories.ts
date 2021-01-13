@@ -61,6 +61,7 @@ SuccessAsimetricWithIcon.args = {
   srcPath: 'assets/images/next.svg'
 };
 
+
 export const Choose = Template.bind({});
 Choose.args = {
   title: "choose",

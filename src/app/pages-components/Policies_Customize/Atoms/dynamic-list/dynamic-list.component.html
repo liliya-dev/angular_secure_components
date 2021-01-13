@@ -7,7 +7,7 @@
   <div class="app-dynamic-list__title-wrapper">
     <textarea
       autosize
-      class="app-dynamic-list__title fs-16-sofia-600"
+      class="app-dynamic-list__title"
       [(ngModel)]="listTitle"  
       spellcheck="false"
     >
@@ -22,7 +22,7 @@
       <div class="app-dynamic-list__dot"></div>
       <textarea
         autosize
-        class="app-dynamic-list__input fs-16-sofia-300" 
+        class="app-dynamic-list__input" 
         [(ngModel)]="titles[i]" 
         (keypress)="handlePressKey($event, i)"
         spellcheck="false"

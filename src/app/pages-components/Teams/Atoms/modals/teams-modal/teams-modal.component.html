@@ -7,19 +7,19 @@
     >
       <img src="assets/images/deleteX.png" alt="delete">
     </button>
-    <p class="teams-modal__title fs-h3">{{ title }}</p>
+    <p class="teams-modal__title">{{ title }}</p>
     <ng-content></ng-content>
     <div class="teams-modal__buttons">
       <app-teams-simple-button
         *ngIf="dangerButtonTitle!==''" 
-        [classes]="'btn-danger fs-12-sofia-800 btn-app btn-app--h46--wide'"
+        [classes]="'btn-danger'"
         [title]="dangerButtonTitle"
         (click)="dangerButtonFunction.emit()"
       >
       </app-teams-simple-button>
       <app-teams-simple-button 
         *ngIf="primaryButtonTitle!==''" 
-        [classes]="'btn-app--h46--wide btn-app btn-success fs-12-sofia-800'"
+        [classes]="'btn-success'"
         [title]="primaryButtonTitle"
         (click)="primaryButtonFunction.emit()"
       >

@@ -7,7 +7,7 @@
     [checked]="isChecked"
   >
   <label [for]="id" class="app-checkbox-input-dark__label">
-    <p class="app-checkbox-input-dark__title fs-16-sofia-300" *ngIf="title!==''">
+    <p class="app-checkbox-input-dark__title" *ngIf="title && title!==''">
       {{ title }}
     </p>
   </label>

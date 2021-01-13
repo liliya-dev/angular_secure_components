@@ -21,17 +21,17 @@ const Template: Story<DomainsSimpleButtonComponent> = (args: DomainsSimpleButton
 export const DangerBig = Template.bind({});
 DangerBig.args = {
   title: "clear",
-  classes: "btn-danger fs-12-sofia-800 btn-app btn-app--h46--wide"
+  classes: "btn-danger-big"
 };
 
 export const SuccessBig = Template.bind({});
 SuccessBig.args = {
   title: "got it",
-  classes: "btn-app--h46--wide btn-app btn-success fs-12-sofia-800"
+  classes: "btn-success-big"
 };
 
 export const SuccessAsimetric = Template.bind({});
 SuccessAsimetric.args = {
   title: "add domain",
-  classes: "btn-app--asimetric btn-success-asimetric fs-16-sofia-800"
+  classes: "btn-success-asimetric"
 };

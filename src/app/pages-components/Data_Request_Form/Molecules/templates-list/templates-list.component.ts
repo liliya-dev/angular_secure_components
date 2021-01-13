@@ -13,8 +13,8 @@ const PADDING = 32;
 
 export class TemplatesListComponent implements OnInit, AfterViewInit {
   @Input() list: { title: string, value: string }[];
-  @ViewChild('element') element: ElementRef;
   gridColumnsNumber = 3;
+  @ViewChild('element') element: ElementRef;
   
   @HostListener('window:resize', ['$event'])
   onResize(event: any) {

@@ -22,14 +22,14 @@
       <p 
         [style.color] = "textColor"
         [style.fontSize] = "isSmallMobile ? '12px' : '16px'"
-        class="app-onboarding-card__title fs-18-sofia-600"
+        class="app-onboarding-card__title"
       >
         {{ title }}
       </p>
       <p 
         [style.color] = "textColor"
         [style.fontSize] = "isSmallMobile ? '12px' : '16px'"
-        class="app-onboarding-card__text fs-18-sofia-300-simple"
+        class="app-onboarding-card__text"
       >
         {{ text }}
       </p>
@@ -49,28 +49,28 @@
     </button>
     <div class="app-onboarding-card__mobile-box" *ngIf="isVisibleOptions">
       <button 
-        class="app-onboarding-card__mobile-button fs-16-gramm-300" 
+        class="app-onboarding-card__mobile-button" 
         type="button"
         (click)="handleEdit()"
       >
         Edit
       </button>
       <button 
-        class="app-onboarding-card__mobile-button fs-16-gramm-300" 
+        class="app-onboarding-card__mobile-button" 
         type="button"
         (click)="handleShowReports()"
       > 
         Reports
       </button>
       <button 
-        class="app-onboarding-card__mobile-button fs-16-gramm-300" 
+        class="app-onboarding-card__mobile-button" 
         type="button"
         (click)="handleDuplicate()"
       > 
         Copy
       </button>
       <button 
-        class="app-onboarding-card__mobile-button fs-16-gramm-300" 
+        class="app-onboarding-card__mobile-button" 
         type="button"
         (click)="handleDelete()"
       >
