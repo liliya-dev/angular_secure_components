@@ -32,7 +32,6 @@
     font-style: normal;
     font-weight: normal;
     font-size: 14px;
-    line-height: 100%;
 
     & > svg-icon {
       margin-right: 13px;
@@ -52,10 +51,6 @@
     width: calc(100% + 16px);
     padding: 12px 41px 12px 32px;
 
-    color: var(--secondary-color);
-    letter-spacing: 0.03em;
-    line-height: 150%;
-
     background-color: transparent;
     border: none;
     border-radius: 12px;
@@ -64,6 +59,8 @@
     font-style: normal;
     font-weight: 300;
     font-size: 14px;
-    line-height: 100%;
+    color: var(--secondary-color);
+    letter-spacing: 0.03em;
+    line-height: 150%;
   }
 }
