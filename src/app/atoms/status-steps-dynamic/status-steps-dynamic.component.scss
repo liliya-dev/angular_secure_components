@@ -24,6 +24,10 @@
   &__label {
     position: absolute;
     top: 200%;
+    &-last {
+      text-align: right;
+      left: -700%;
+    }
   }
 
   &__line {

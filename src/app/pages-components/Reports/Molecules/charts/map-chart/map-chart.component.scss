@@ -6,6 +6,8 @@
 .map-chart {
   margin-top: 67px;
   width: 100%;
+  font-family: 'Sofia pro', 'open-sans';
+  font-style: normal;
 
   &__container {
     width: 100%;
@@ -53,8 +55,6 @@
     &-text {
       display: flex;
       align-items: center;
-      font-family: 'Sofia pro', 'open-sans';
-      font-style: normal;
       font-weight: 300;
       font-size: 12px;
     }
@@ -69,8 +69,6 @@
     }
 
     &-value {
-      font-family: 'Sofia pro', 'open-sans';
-      font-style: normal;
       font-weight: 600;
       font-size: 16px;
       line-height: 100%;

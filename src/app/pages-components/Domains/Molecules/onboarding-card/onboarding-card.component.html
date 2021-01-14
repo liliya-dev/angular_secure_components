@@ -78,7 +78,11 @@
       </button>
     </div>
   </div>
-  <div class="app-onboarding-card__wrapper" *ngIf="!isMobile" [style.opacity]="(!isMobile && (onActive || isSelected)) ? '1' : '0'">
+  <div 
+    class="app-onboarding-card__wrapper" 
+    *ngIf="!isMobile" 
+    [style.opacity]="(!isMobile && (onActive || isSelected)) ? '1' : '0'"
+  >
     <app-mutable-primary-button [title]="'edit'" (click)="handleEdit()"></app-mutable-primary-button>
     <app-mutable-primary-button [title]="'reports'" (click)="handleShowReports()"></app-mutable-primary-button>
     <app-mutable-gradient-icon-button [svgPath]="'assets/images/copy.svg'" (click)="handleDuplicate()"></app-mutable-gradient-icon-button>

@@ -21,6 +21,10 @@ interface Countries {
   africa: Country[]
 }
 
+const MAP_COLOR = "rgba(1, 25, 73, 0.2)";
+const COUNTRY_HOVER_COLOR = "rgb(22, 97, 60)";
+const SELECTED_COUNTRY_COLOR = "rgba(1, 25, 73, 0.75)";
+
 @Component({
   selector: 'app-map-chart',
   templateUrl: './map-chart.component.html',
@@ -58,9 +62,9 @@ export class MapChartComponent implements OnInit, OnChanges, AfterViewInit {
     this.polygonSeries.useGeodata = true;
     this.polygonTemplate = this.polygonSeries.mapPolygons.template;
     this.polygonTemplate.tooltipText = "";
-    this.polygonTemplate.fill = am4core.color("rgba(1, 25, 73, 0.2)")
+    this.polygonTemplate.fill = am4core.color(MAP_COLOR)
     const hs = this.polygonTemplate.states.create("hover");
-    hs.properties.fill = am4core.color("rgb(22, 97, 60)");
+    hs.properties.fill = am4core.color(COUNTRY_HOVER_COLOR);
 
     switch(region) {
       case 'World': 
@@ -105,7 +109,7 @@ export class MapChartComponent implements OnInit, OnChanges, AfterViewInit {
       break;
     }
 
-    this.polygonSeries.data.forEach(element => element.fill = am4core.color("rgba(1, 25, 73, 0.75)"));
+    this.polygonSeries.data.forEach(element => element.fill = am4core.color(SELECTED_COUNTRY_COLOR));
     this.polygonTemplate.propertyFields.fill = "fill";
  
     const setActive = (value, top, left) => {

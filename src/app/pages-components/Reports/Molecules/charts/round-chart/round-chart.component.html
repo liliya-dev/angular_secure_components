@@ -2,9 +2,10 @@
   <div 
     class="donut-rounded-chart__wrapper" 
     #legend
-    [ngStyle]="isMobile ? { 'flex-direction': 'column', 'align-items': 'center' } : { 'flex-direction': 'row' }"
+    [style.flexDirection]="isMobile ? 'column' : 'row'"
+    [style.alignItems]="isMobile && 'center'"
   >
-    <div class="donut-rounded-chart__canvas-wrapper" [ngStyle]="isMobile && { 'margin-bottom': '30px' }">
+    <div class="donut-rounded-chart__canvas-wrapper" [style.marginBottom]="isMobile && '30px'">
       <canvas width="100%" height="100%" class="donut-rounded-chart__canvas"></canvas>
       <div class="donut-rounded-chart__main-value">
         <p class="donut-rounded-chart__value">
@@ -21,7 +22,7 @@
         class="donut-rounded-chart__legend-item"
         (click)="updateMainValue(i)"
       >
-        <div class="donut-rounded-chart__legend-color" [ngStyle]="{ 'background-color': colorsList[i] }"></div>
+        <div class="donut-rounded-chart__legend-color" [style.backgroundColor]="colorsList[i]"></div>
         {{ item.title }}
       </li>
     </ul>
@@ -30,12 +31,13 @@
     *ngIf="isTipVisible && !isMobile" 
     class="donut-rounded-chart__tips" 
     #tips
-    [ngStyle]="{ 'top': tipsTop+'px', 'left': tipsLeft+'px' }"
+    [style.top]="tipsTop+'px'"
+    [style.left]="tipsLeft+'px'"
   >
     <ul class="donut-rounded-chart__tips-list">
       <li class="donut-rounded-chart__tips-item" *ngFor="let item of data; let i=index">
         <div class="donut-rounded-chart__tips-text">
-          <div class="donut-rounded-chart__tips-color" [ngStyle]="{ 'background-color': colorsList[i] }"></div>
+          <div class="donut-rounded-chart__tips-color" [style.backgroundColor]="colorsList[i]"></div>
           {{ item.title }}
         </div>
         <div class="donut-rounded-chart__tips-value">{{ item.value }}</div>

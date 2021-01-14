@@ -8,7 +8,7 @@
       (click)="toggleContent()"
       class="roll-up__button" 
       src="assets/images/roll-up.png" 
-      [ngStyle]="isOpen ? {'transform': 'rotate(0deg)'} : {'transform': 'rotate(180deg)'}"
+      [style.transform]="isOpen ? 'rotate(0deg)' : 'rotate(180deg)'"
       [alt]="title"
     >
   </div>

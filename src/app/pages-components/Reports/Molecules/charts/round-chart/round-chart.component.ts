@@ -39,6 +39,12 @@ interface Data {
   value: number
 }
 
+ const MOBILE_WIDTH = 620;
+ const TIPS_WIDTH = 220;
+ const TIPS_ITEM_HEIGHT = 16;
+ const TIPS_ITEM_MARGIN = 8;
+ const TIPS_BLOCK_MARGIN = 32;
+
 @Component({
   selector: 'app-round-chart',
   templateUrl: './round-chart.component.html',
@@ -63,7 +69,7 @@ export class RoundChartComponent implements OnInit, OnChanges, AfterViewInit {
   
   @HostListener('window:resize', ['$event'])
   onResize(event: any) {
-    this.isMobile = this.legend.nativeElement.clientWidth < 620;
+    this.isMobile = this.legend.nativeElement.clientWidth < MOBILE_WIDTH;
   }
   
   createChart() {
@@ -123,12 +129,14 @@ export class RoundChartComponent implements OnInit, OnChanges, AfterViewInit {
   }
 
   setCoordinates(top:number, left: number) {
-    this.tipsTop = top - 24 - (16 * this.data.length + 8 * (this.data.length + 1)) - 10;
-    this.tipsLeft = left - 110;
+    this.tipsTop = 
+      top - (TIPS_ITEM_HEIGHT * this.data.length + 
+      TIPS_ITEM_MARGIN * (this.data.length + 1)) - TIPS_BLOCK_MARGIN;
+    this.tipsLeft = left - TIPS_WIDTH / 2;
   }
 
   ngAfterViewInit() {
-    this.isMobile = this.legend.nativeElement.clientWidth < 620;
+    this.isMobile = this.legend.nativeElement.clientWidth < MOBILE_WIDTH;
   }
 
   ngOnChanges() {

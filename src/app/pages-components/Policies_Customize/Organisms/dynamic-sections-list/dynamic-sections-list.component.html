@@ -29,7 +29,7 @@
     <div 
       #mobileMenu
       class="app-dynamic-sections-list__navigation mobile"
-      [ngStyle]="isVisibleMobileMenu ? { 'left': '0' } : { 'left': '-100%' }"
+      [style.left]="isVisibleMobileMenu ? '0' : '-100%'"
     >
       <app-small-light-add-button
         [title]="'Add section'"
@@ -54,14 +54,14 @@
     <ul 
       *ngFor="let section of sections; let i = index;"
       class="app-dynamic-sections-list__sections"
-      [ngStyle]="isMobile && { 'padding': '0' }"
+      [style.padding]="isMobile && '0'"
     >
       <li 
         [id]="'id'+section.sectionId"
         (mouseenter)="handleHover($event, i)"
         (mouseleave)="handleHover($event, -1)"
         class="app-dynamic-sections-list__section"
-        [ngStyle]="(!isElementActive || section.initialState.length === 0) && isSectionActive && activeSection === i && {'border': '1px dashed rgba(var(--secondary-color-code), 0.5)'}"
+        [style.border]="((!isElementActive || section.initialState.length === 0) && isSectionActive && activeSection === i) && '1px dashed rgba(var(--secondary-color-code), 0.5)'"
       >
         <p class="app-dynamic-sections-list__main-title">
           <textarea

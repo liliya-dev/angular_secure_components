@@ -5,9 +5,9 @@ import { Component, Input, OnInit } from '@angular/core';
   templateUrl: './request-primary-button.component.html',
   styleUrls: ['./request-primary-button.component.scss']
 })
+
 export class RequestPrimaryButtonComponent implements OnInit {
   @Input() title: string;
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 }

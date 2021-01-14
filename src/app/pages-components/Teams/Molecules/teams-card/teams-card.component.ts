@@ -124,7 +124,5 @@ export class TeamsCardComponent implements OnChanges, AfterViewInit {
     this.setColors();
   }
 
-  ngOnChanges() {
-    this.setColors();
-  }
+  ngOnChanges() {}
 }

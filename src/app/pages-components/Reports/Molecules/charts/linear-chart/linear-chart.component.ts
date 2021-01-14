@@ -1,5 +1,10 @@
 import { Component, Input, OnChanges, OnInit } from '@angular/core';
 
+const BORDER_COLOR = 'rgba(1, 25, 73, 0.1)';
+const MARKER_COLOR = 'rgb(1, 25, 73)';
+const AXIS_LABEL_COLOR = 'rgba(1, 25, 73, 0.3)';
+const LEGEND_LABEL_COLOR = 'rgba(1, 25, 73, 0.75)';
+
 @Component({
   selector: 'app-linear-chart',
   templateUrl: './linear-chart.component.html',
@@ -54,14 +59,14 @@ export class LinearChartComponent  implements OnChanges, OnInit{
       width: 1.45,
     },
     grid: {
-      borderColor: "rgba(1, 25, 73, 0.1)",
+      borderColor: BORDER_COLOR,
       position: 'back',
       xaxis: { lines: { show: true }},
       yaxis: { lines: { show: true }},
     },
     markers: {
       size: 0,
-      colors: "rgb(1, 25, 73)",
+      colors: MARKER_COLOR,
       shape: "circle",
       hover: {
         size: 8,
@@ -73,7 +78,7 @@ export class LinearChartComponent  implements OnChanges, OnInit{
       tooltip: { enabled: false },
       labels: {
         style: {
-          colors: "rgba(1, 25, 73, 0.3)",
+          colors: AXIS_LABEL_COLOR,
           fontSize: "14px",
           fontFamily: "'Gramatica Bold', 'open-sans'"
         }
@@ -85,7 +90,7 @@ export class LinearChartComponent  implements OnChanges, OnInit{
       tickAmount: 4,
       labels: {
         style: {
-          colors: ["rgba(1, 25, 73, 0.3)"],
+          colors: [AXIS_LABEL_COLOR],
           fontSize: "14px",
           fontFamily: "'Gramatica Bold', 'open-sans'"
         }
@@ -97,7 +102,7 @@ export class LinearChartComponent  implements OnChanges, OnInit{
       horizontalAlign: 'left', 
       fontSize: '12px',
       fontFamily: "'Gramatica Bold', 'open-sans'",
-      labels: { colors: "rgba(1, 25, 73, 0.75)" },
+      labels: { colors: LEGEND_LABEL_COLOR },
       onItemClick: { toggleDataSeries: false },
       onItemHover: { highlightDataSeries: true },
     }

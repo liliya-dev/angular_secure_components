@@ -1,6 +1,10 @@
 import { Component, ElementRef, HostListener, Input, OnChanges, OnInit, ViewChild } from '@angular/core';
 import { getRandomColor } from './helpers';
 
+const CONTAINER_BOTTOM_PADDING = 32;
+const CONTAINER_LEFT_PADDING = 47;
+const YAXIS_BLOCK_WIDTH = 66;
+
 @Component({
   selector: 'app-column-chart',
   templateUrl: './column-chart.component.html',
@@ -34,9 +38,9 @@ export class ColumnChartComponent implements OnInit, OnChanges {
   @ViewChild('container') container: ElementRef;
 
   showTips = (event, index) => {
-    this.tipsLeft = index * this.columnWidth + 47 - this.list.nativeElement.scrollLeft;
+    this.tipsLeft = index * this.columnWidth + CONTAINER_LEFT_PADDING - this.list.nativeElement.scrollLeft;
     const height = +event.target.style.height.slice(0, -2);
-    this.tipsBottom = height / 2 + 32;
+    this.tipsBottom = height / 2 + CONTAINER_BOTTOM_PADDING;
     this.isTipVisible = true;
   }
 
@@ -52,7 +56,8 @@ export class ColumnChartComponent implements OnInit, OnChanges {
 
   @HostListener('window:resize', ['$event'])
   onResize(event: any) {
-    const minColumnsNumber = Math.floor((this.container.nativeElement.clientWidth - 66) / this.columnWidth);
+    const minColumnsNumber = 
+      Math.floor((this.container.nativeElement.clientWidth - YAXIS_BLOCK_WIDTH) / this.columnWidth);
     if (minColumnsNumber >= this.data.length) {
       this.columns = minColumnsNumber;
       const grid = [];
@@ -72,7 +77,8 @@ export class ColumnChartComponent implements OnInit, OnChanges {
       }
       this.colors = updatedColorsList;
     }
-    const minColumnsNumber = Math.floor((document.querySelector('.chart-column').clientWidth - 66) / this.columnWidth);
+    const minColumnsNumber = 
+      Math.floor((document.querySelector('.chart-column').clientWidth - YAXIS_BLOCK_WIDTH) / this.columnWidth);
     this.rows = this.maxValue / this.step;
     this.columns = this.data.length > minColumnsNumber ? this.data.length : minColumnsNumber;
     this.width = this.columns * this.columnWidth;

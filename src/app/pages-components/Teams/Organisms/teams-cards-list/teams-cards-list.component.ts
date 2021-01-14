@@ -229,7 +229,6 @@ export class TeamsCardsListComponent implements OnInit {
     this.isSmallMobile = this.container.nativeElement.clientWidth <= SMALL_MOBILE_VIEW;
   }
 
-
   ngAfterViewInit() {
     this.detectMobileView();
   }

@@ -1,21 +1,21 @@
-<div class="chart-column__container"  [ngStyle]="{ 'height': chartHeight+70+'px' }">
+<div class="chart-column__container"  [style.height]="chartHeight+70+'px'">
   <div id="chart-column" class="chart-column" #container>
     <div class="chart-column__yaxis">
     <div 
       class="chart-column__yaxis-value"
-      [ngStyle]="{ 'height': chartHeight/(rows)+'px' }"
+      [style.height]="chartHeight/(rows)+'px'"
       *ngFor="let rowValue of rowValues"
     >
       <span>{{ rowValue }}</span>
     </div>
   </div>
-    <div class="chart-column__list-wrapper" #list [ngStyle]="{ 'height': chartHeight+60+'px' }">
-      <ul class="chart-column__list" [ngStyle]="{ 'width': width+'px' }">
+    <div class="chart-column__list-wrapper" #list [style.height]="chartHeight+60+'px'">
+      <ul class="chart-column__list" [style.width]=" width+'px'">
         <div
           class="chart-column__grid"
-          [ngStyle]="
-            { 'grid-template-columns': 'repeat(' + columns + ', ' + columnWidth+'px)',  
-            'grid-auto-rows': chartHeight/rows+'px', 'height': chartHeight+'px' }"
+          [style.gridTemplateColumns]="'repeat(' + columns + ', ' + columnWidth+'px)'"
+          [style.gridAutoRows]="chartHeight/rows+'px'"
+          [style.height]="chartHeight+'px'"
         >
           <div class="chart-column__grid-ceil" *ngFor="let gridValue of gridValues">
           </div>
@@ -24,10 +24,12 @@
           <div 
             (mouseenter)="showTips($event, i)"
             class="chart-column__value"
-            [ngStyle]="{ 'background-color': colors[i], 'height': chartHeight*value/maxValue+'px', 'width': columnWidth-16+'px' }"
+            [style.backgroundColor]="colors[i]"
+            [style.height]="chartHeight*value/maxValue+'px'"
+            [style.width]="columnWidth-16+'px'"
           >
           </div>
-          <div class="chart-column__xaxis-name" [ngStyle]="{ 'width': columnWidth+'px' }">
+          <div class="chart-column__xaxis-name" [style.width]="columnWidth+'px'">
             {{ categories[i] }}
           </div>
         </li>
@@ -38,12 +40,13 @@
     *ngIf="isTipVisible" 
     class="chart-column__tips" 
     #tips
-    [ngStyle]="{ 'bottom': tipsBottom+'px', 'left': tipsLeft+'px' }"
+    [style.bottom]="tipsBottom+'px'"
+    [style.left]="tipsLeft+'px'"
   >
     <ul class="chart-column__tips-list">
       <li class="chart-column__tips-item" *ngFor="let item of data; let i=index">
         <div class="chart-column__tips-text">
-          <div class="chart-column__tips-color" [ngStyle]="{ 'background-color': colors[i] }"></div>
+          <div class="chart-column__tips-color" [style.backgroundColor]="colors[i]"></div>
           {{ categories[i] }}
         </div>
         <div class="chart-column__tips-value">{{ data[i] }}</div>
