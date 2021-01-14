@@ -28,4 +28,3 @@ export const Date = Template.bind({});
 Date.args = {
   items: ['today', 'this week', 'this month', 'this year']
 };
-

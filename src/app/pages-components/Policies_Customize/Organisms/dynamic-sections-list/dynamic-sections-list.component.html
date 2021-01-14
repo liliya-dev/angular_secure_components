@@ -61,7 +61,7 @@
         (mouseenter)="handleHover($event, i)"
         (mouseleave)="handleHover($event, -1)"
         class="app-dynamic-sections-list__section"
-        [style.border]="((!isElementActive || section.initialState.length === 0) && isSectionActive && activeSection === i) && '1px dashed rgba(var(--secondary-color-code), 0.5)'"
+        [style.border]="((!isElementActive || section.initialState.length === 0) && isSectionActive && activeSection === i) ? '1px dashed rgba(var(--secondary-color-code), 0.5)' : none"
       >
         <p class="app-dynamic-sections-list__main-title">
           <textarea
