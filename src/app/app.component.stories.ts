@@ -13,16 +13,7 @@ import { IconContainerComponent } from './atoms/iconContainer/iconContainer.comp
 import { navLinkComponent } from './atoms/navLink/textLinks/navLink.component';
 import { SideMenuComponent } from './molecules/menu/side-menu/side-menu.component';
 import { CardComponent } from './atoms/card/card.component';
-import { StepsComponent } from './atoms/steps/steps.component';
-import { searchItemComponent } from './atoms/searchItem/searchItem.component';
-import { formInputComponent } from './atoms/inputs/formInput/formInput.component';
-import { FormScreenFirstComponent } from './molecules/form-screens/form-screen-first/form-screen-first.component';
-import { FormScreenSecondComponent } from './molecules/form-screens/form-screen-second/form-screen-second.component';
-import { FormScreenThirdComponent } from './molecules/form-screens/form-screen-third/form-screen-third.component';
-import { FormScreenFourthComponent } from './molecules/form-screens/form-screen-fourth/form-screen-fourth.component';
-import { FormScreenFifthComponent } from './molecules/form-screens/form-screen-fifth/form-screen-fifth.component';
-import { RegistrationFormComponent } from './organisms/registration-form/registration-form.component';
-import { SelectInputSimpleComponent } from './atoms/inputs/select-input/select-input-simple/select-input-simple.component';
+import { StepsComponent } from './atoms/steps/steps.component'
 import { NgSelectModule } from '@ng-select/ng-select';
 import { CheckboxInputSwitchComponent } from './atoms/inputs/checkbox/checkbox-input-switch/checkbox-input-switch.component';
 import { ScanScreensComponent } from '../app/molecules/scan-screens/scan-screens.component';
@@ -52,10 +43,7 @@ import { RollUpComponent } from './molecules/roll-up/roll-up.component';
 import { CardRowComponent } from './molecules/card-row/card-row.component';
 import { TextWithAfterGradientLineComponent } from './atoms/text/text-with-after-gradient-line/text-with-after-gradient-line.component';
 import { TabMenuComponent } from './molecules/menu/tab-menu/tab-menu.component';
-import { WhiteRoundedLayoutComponent } from './molecules/layouts/white-rounded-layout/white-rounded-layout.component';
-import { GradientTextComponent } from './atoms/text/gradient-text/gradient-text.component';
-import { moduleMetadata, Story, Meta } from '@storybook/angular';
-import { ColorSketchModule } from 'ngx-color/sketch';
+import { Meta, moduleMetadata, Story } from '@storybook/angular';
 
 const props = {};
 
@@ -69,24 +57,15 @@ export default {
         IconContainerComponent,
         DateMenuComponent,
         navLinkComponent,
-        formInputComponent,
         simpleButtonComponent,
         secondaryButtonComponent,
         primaryButtonComponent,
         infoButtonComponent,
         lightButtonComponent,
-        searchItemComponent,
         SideMenuComponent,
         CardComponent,
         StepsComponent,
-        FormScreenFirstComponent,
-        FormScreenSecondComponent,
-        FormScreenThirdComponent,
         largeButtonComponent,
-        FormScreenFourthComponent,
-        FormScreenFifthComponent,
-        RegistrationFormComponent,
-        SelectInputSimpleComponent,
         CheckboxInputSwitchComponent,
         CompositeMenuComponent,
         ScanAnimationComponent,
@@ -110,13 +89,10 @@ export default {
         CardRowComponent,
         TextWithAfterGradientLineComponent,
         TabMenuComponent,
-        WhiteRoundedLayoutComponent,
-        GradientTextComponent,
       ],
       entryComponents: [
      ],
       imports: [
-        ColorSketchModule,
         FormsModule,
         NgSelectModule,
         AngularSvgIconModule.forRoot(),
