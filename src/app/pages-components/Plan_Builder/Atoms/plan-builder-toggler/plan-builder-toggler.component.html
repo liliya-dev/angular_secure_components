@@ -1,0 +1,28 @@
+<div class="app-plan-builder-toggler">
+  <div 
+    class="app-plan-builder-toggler__value" 
+    [style.opacity]="isChecked ? '0.75' : '1'"
+  >
+    {{ leftValue }}
+  </div>
+  <input
+    type="checkbox" 
+    [id]="id"
+    name="checkbox-input-switch" 
+    class="app-checkbox-input-switch"
+    [checked]="isChecked"
+    (change)="change($event)"
+  >
+  <label [for]="id" class="app-checkbox-input-switch__label"></label>
+  <div>
+    <div 
+      class="app-plan-builder-toggler__value"  
+      [style.opacity]="isChecked ? '1' : '0.75'"
+    >
+      {{ rightValue }}
+    </div>
+    <p class="app-plan-builder-toggler__text">
+      {{ text }}
+    </p>
+  </div>
+</div>

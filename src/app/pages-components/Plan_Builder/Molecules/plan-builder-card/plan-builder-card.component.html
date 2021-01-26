@@ -1,0 +1,34 @@
+<div 
+  class="app-plan-builder-card"
+  [style.background]="borderColor"
+  [style.width]="cardWidth+'px'"
+>
+  <div class="app-plan-builder-card__wrapper">
+    <div class="app-plan-builder-card__top">
+      <div class="app-plan-builder-card__top--left">
+        <img 
+          [src]="imagePath" 
+          [alt]="policyTitle"
+          class="app-plan-builder-card__image"
+        >
+        <div class="app-plan-builder-card__title">
+          <p class="app-plan-builder-card__name">{{ policyTitle }}</p>
+          <p class="app-plan-builder-card__location">{{ policyText }}</p>
+        </div>
+      </div>
+      <div class="app-plan-builder-card__top--right">
+        <app-plan-builder-checkbox
+          [initialValue]="isSelected"
+          [id]="id"
+          (onToggle)="selectCard($event)"
+        ></app-plan-builder-checkbox>
+        <p class="app-plan-builder-card__price">
+          {{ currency==='usd' ? '&#36;' : '	&#8364;'}} 
+          {{ price }}
+        </p>
+        <p class="app-plan-builder-card__period">{{ period }}</p>
+      </div>
+    </div>
+    <p class="app-plan-builder-card__text">{{ text }}</p>
+  </div>
+</div>

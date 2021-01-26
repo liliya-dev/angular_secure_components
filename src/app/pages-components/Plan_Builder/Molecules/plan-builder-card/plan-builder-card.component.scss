@@ -1,0 +1,92 @@
+.app-plan-builder-card {
+  height: 198px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__wrapper {
+    width: calc(100% - 2px);
+    height: calc(100% - 2px);
+    padding: 16px 16px 23px 16px;
+    overflow-y: scroll;
+
+    border-radius: 12px;
+    background-color: var(--text-color);
+  }
+
+  &__top {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+
+    &--left {
+      display: flex;
+      align-items: center;
+    }
+
+    &--right {
+      padding: 11px;
+      background: var(--status-bar-bg-color);
+      border-radius: 8px;
+      color: rgba(var(--secondary-color-code), 0.75);
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-width: 70px;
+    }
+  }
+
+  &__image {
+    margin-right: 15px;
+  }
+
+  &__name {
+    font-size: 18px;
+    line-height: 150%;
+    font-family: 'Gramatica Bold', 'open-sans';
+    text-transform: uppercase;
+    color: var(--secondary-color);
+  }
+
+  &__location {
+    font-family: 'Sofia pro', 'open-sans';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 160%;
+    color: rgba(var(--secondary-color-code), 0.75);
+  }
+
+  &__price {
+    font-family: 'Sofia pro', 'open-sans';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 16px;
+    text-transform: uppercase;
+    line-height: 100%;
+    text-align: left;
+
+    margin-top: 11px;
+  }
+
+  &__period {
+    font-family: 'Sofia pro', 'open-sans';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 10px;
+    line-height: 100%;
+  }
+
+  &__text {
+    font-family: 'Sofia pro', 'open-sans';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 18px;
+    color: rgba(var(--secondary-color-code), 0.75);
+  }
+}

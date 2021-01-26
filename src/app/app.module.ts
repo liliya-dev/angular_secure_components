@@ -146,6 +146,15 @@ import { RequestInputBlockComponent } from './pages-components/Data_Request_Form
 import { RequestTextAreaComponent } from './pages-components/Data_Request_Form/Atoms/inputs/request-text-area/request-text-area.component';
 import { RequestFormComponent } from './pages-components/Data_Request_Form/Organisms/request-form/request-form.component';
 import { SimplePolicyGeneratorButtonComponent } from './pages-components/Policies_Customize/Atoms/buttons/simple-policy-generator-button/simple-policy-generator-button.component';
+import { PlanBuilderRangeComponent } from './pages-components/Plan_Builder/Atoms/plan-builder-range/plan-builder-range.component';
+import { PlanBuilderCheckboxComponent } from './pages-components/Plan_Builder/Atoms/plan-builder-checkbox/plan-builder-checkbox.component';
+import { PlanBuilderTogglerComponent } from './pages-components/Plan_Builder/Atoms/plan-builder-toggler/plan-builder-toggler.component';
+import { PlanBuilderCardComponent } from './pages-components/Plan_Builder/Molecules/plan-builder-card/plan-builder-card.component';
+import { PlanBuilderPlanComponent } from './pages-components/Plan_Builder/Molecules/plan-builder-plan/plan-builder-plan.component';
+import { PlanBuilderPrimaryButtonComponent } from './pages-components/Plan_Builder/Atoms/plan-builder-primary-button/plan-builder-primary-button.component';
+import { PlanBuilderSecondaryButtonComponent } from './pages-components/Plan_Builder/Atoms/plan-builder-secondary-button/plan-builder-secondary-button.component';
+import { PlanBuilderContactUsComponent } from './pages-components/Plan_Builder/Molecules/plan-builder-contact-us/plan-builder-contact-us.component';
+import { PlanBuilderDomainsSelectComponent } from './pages-components/Plan_Builder/Molecules/plan-builder-domains-select/plan-builder-domains-select.component';
 
 PlotlyModule.plotlyjs = PlotlyJS;
 
@@ -291,6 +300,15 @@ PlotlyModule.plotlyjs = PlotlyJS;
     RequestTextAreaComponent,
     RequestFormComponent,
     SimplePolicyGeneratorButtonComponent,
+    PlanBuilderRangeComponent,
+    PlanBuilderCheckboxComponent,
+    PlanBuilderTogglerComponent,
+    PlanBuilderCardComponent,
+    PlanBuilderPlanComponent,
+    PlanBuilderPrimaryButtonComponent,
+    PlanBuilderSecondaryButtonComponent,
+    PlanBuilderContactUsComponent,
+    PlanBuilderDomainsSelectComponent,
   ],
   imports: [
     ColorSketchModule,

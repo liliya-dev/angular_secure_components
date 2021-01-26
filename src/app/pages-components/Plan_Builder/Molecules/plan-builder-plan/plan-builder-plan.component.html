@@ -1,0 +1,58 @@
+<div class="app-plan-builder-plan">
+  <div class="app-plan-builder-plan__period">
+    <app-plan-builder-toggler
+      [initialValue]="initialPeriod === 'annual'"
+      [leftValue]="'monthly'"
+      [rightValue]="'annual'"
+      [text]="'Save approx 30%'"
+      (onToggle)="changePeriod($event)"
+    ></app-plan-builder-toggler>
+  </div>
+  <div class="app-plan-builder-plan__box">
+    <p class="app-plan-builder-plan__title">{{ title }}</p>
+  </div>
+  <div class="app-plan-builder-plan__separator"></div>
+  <div class="app-plan-builder-plan__modules">
+    <div class="app-plan-builder-plan__module">
+      <p class="app-plan-builder-plan__module-title">{{ domainsNumber }} Domain</p>
+      <p class="app-plan-builder-plan__module-price">
+        {{ currency==='usd' ? '&#36;' : '	&#8364;'}} 
+        {{ domainsPrice }}
+      </p>
+    </div>
+    <div class="app-plan-builder-plan__module" *ngFor="let module of modules">
+      <p class="app-plan-builder-plan__module-title">{{ module.title }} module</p>
+      <p class="app-plan-builder-plan__module-price">
+        {{ currency==='usd' ? '&#36;' : '	&#8364;'}} 
+        {{ module.price }}
+      </p>
+    </div>
+  </div>
+  <div class="app-plan-builder-plan__separator"></div>
+  <div class="app-plan-builder-plan__modules">
+    <div class="app-plan-builder-plan__module">
+      <p class="app-plan-builder-plan__module-title">Total {{ initialPeriod }} cost</p>
+      <p class="app-plan-builder-plan__module-price">
+        {{ currency==='usd' ? '&#36;' : '	&#8364;'}} 
+        {{ totalCost }}
+      </p>
+    </div>
+    <div class="app-plan-builder-plan__module">
+      <p class="app-plan-builder-plan__module-title">Discount {{ salePercent }}%</p>
+      <p class="app-plan-builder-plan__module-price">
+        {{ currency==='usd' ? '&#36;' : '	&#8364;'}} 
+        {{ totalCost - totalCostWithDicount }}
+      </p>
+    </div>
+  </div>
+  <div class="app-plan-builder-plan__final-price">
+    <div class="app-plan-builder-plan__module">
+      <p class="app-plan-builder-plan__module-title">Discounted  {{ initialPeriod }} cost</p>
+      <p class="app-plan-builder-plan__module-price">
+        {{ currency==='usd' ? '&#36;' : '	&#8364;'}} 
+        {{ totalCostWithDicount }}
+      </p>
+    </div>
+  </div>
+  <app-plan-builder-primary-button [title]="'buy now'"></app-plan-builder-primary-button>
+</div>

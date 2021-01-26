@@ -1,0 +1,9 @@
+<input
+  type="checkbox" 
+  [id]="id"
+  name="checkbox-input-switch" 
+  class="app-checkbox-input-switch"
+  [checked]="isChecked"
+  (change)="onChange($event)"
+>
+<label [for]="id" class="app-checkbox-input-switch__label"></label>

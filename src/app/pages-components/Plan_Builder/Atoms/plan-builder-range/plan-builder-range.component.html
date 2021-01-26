@@ -1,0 +1,26 @@
+<div class="app-plan-builder-range__container" #container>
+  <div class="app-plan-builder-range" (mouseup)="stopMoving()" (mousemove)="moveThumb($event)">
+    <div class="app-plan-builder-range__track">
+      <div class="app-plan-builder-range__scale">
+          <div *ngFor="let point of points; let i = index" class="app-plan-builder-range__scale-item">
+            <div 
+              class="app-plan-builder-range__scale-value"
+              [style.left]="detectPosition(i)+'px'"
+              [style.width]="isMobile ? '20px' : '80px'"
+            >
+              {{ points[i]}} 
+              {{ isMobile ? '' : 'Domain'}}
+            </div>
+          </div>
+      </div>
+      <div class="app-plan-builder-range__track-filled" [style.width]="filledTrackWidth+'px'"></div>
+    </div>
+    <div 
+      class="app-plan-builder-range__thumb"
+      (mousedown)="setIsMoving($event, true)"
+      [style.left]="left+'px'"
+    >
+      <div class="app-plan-builder-range__thumb-tip">{{ points[activePoint] }} Domains</div>
+    </div>
+  </div>
+</div>

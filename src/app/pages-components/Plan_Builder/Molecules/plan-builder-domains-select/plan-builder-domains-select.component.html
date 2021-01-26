@@ -1,0 +1,20 @@
+<div class="app-plan-builder-domains-select">
+  <div class="app-plan-builder-domains-select__top">
+    <div class="app-plan-builder-domains-select__text">
+      Choose how many domains you need using the slider below:
+    </div>
+    <div class="app-plan-builder-domains-select__price">
+      <span>
+        {{ currency==='usd' ? '&#36;' : '	&#8364;'}} 
+        {{ activeValue.price }}
+      </span> 
+      {{ period }}
+      <div class="app-plan-builder-domains-select__discount">Discount {{ discount }}%</div>
+    </div>
+  </div>
+  <app-plan-builder-range
+    (onChange)="onChange($event)"
+    [points]="rangeValues"
+    [value]="activeValue.value"
+  ></app-plan-builder-range>
+</div>
