@@ -3,9 +3,7 @@ import { PlanBuilderCardsListComponent } from './plan-builder-cards-list.compone
 import { PlanBuilderCardComponent } from '../../Molecules/plan-builder-card/plan-builder-card.component';
 import { PlanBuilderCheckboxComponent } from '../../Atoms/plan-builder-checkbox/plan-builder-checkbox.component';
 
-const props = {
-  isChecked: { control: 'boolean' },
-};
+const props = {};
 
 export default {
   title: 'Plan Builder/Organisms',

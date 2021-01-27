@@ -96,6 +96,7 @@ export class PlanBuilderRangeComponent implements OnInit, AfterViewInit {
     this.leftDocumentPosition = document.querySelector('.app-plan-builder-range').getBoundingClientRect().x;
     this.sectionWidth = this.containerWidth / (this.points.length - 1);
     const activeIndex = this.points.findIndex(point => point === this.value);
+    this.activePoint = activeIndex;
     let coordinatesX = activeIndex * this.sectionWidth - THUMB_WIDTH / 2;
     this.filledTrackWidth = coordinatesX + THUMB_WIDTH / 2;
     this.left = coordinatesX;
