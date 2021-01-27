@@ -1,0 +1,34 @@
+<div class="app-plan-builder-cards-list">
+  <div 
+    class="app-plan-builder-cards-list__container" 
+    [style.paddingRight]="isMobileForCard ? '5px' : '20px'"
+    #container
+  >
+    <ul 
+      class="app-plan-builder-cards-list__wrapper"
+      [style.justifyContent]="isMobileForContainer ? 'center' : 'space-between'"
+    >
+      <li 
+        class="app-plan-builder-cards-list__item" 
+        *ngFor="let card of cards"
+        [style.width]="isMobileForCard ? '280px' : '386px'"
+      >
+        <app-plan-builder-card
+          [isMobile]="isMobileForCard"
+          [currency]="currency"
+          [period]="period"
+          [isSelected]="detectIfSelected(card.id)"
+          [id]="card.id"
+          [policyTitle]="card.policyTitle"
+          [policyText]="card.policyText"
+          [text]="card.text"
+          [price]="card.price"
+          [imagePath]="card.imagePath"
+          (onSelect)="addToSelected($event)"
+        >
+        </app-plan-builder-card>
+      </li>
+    </ul>
+  </div>
+</div>
+
