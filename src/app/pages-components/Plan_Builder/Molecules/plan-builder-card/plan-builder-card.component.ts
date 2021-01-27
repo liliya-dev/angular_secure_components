@@ -38,7 +38,6 @@ export class PlanBuilderCardComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges() {
-    console.log(this.id, )
     this.borderColor = this.isSelected ? ACTIVE_COLOR : STATIC_COLOR;
     this.cardWidth = this.isMobile ? MOBILE_WIDTH : DESKTOP_WIDTH;
   }
