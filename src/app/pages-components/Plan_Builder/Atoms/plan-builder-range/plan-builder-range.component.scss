@@ -1,7 +1,7 @@
 .app-plan-builder-range {
   width: 100%;
-  position: relative;
   padding: 40px 0;
+  position: relative;
 
   &__container {
     width: 100%;
@@ -26,11 +26,12 @@
     }
 
     &-value {
-      text-align: left;
       position: absolute;
       bottom: -40px;
       left: -35px;
       width: 80px;
+
+      text-align: left;
       font-family: 'Sofia pro', 'open-sans';
       font-weight: 300;
       font-size: 14px;

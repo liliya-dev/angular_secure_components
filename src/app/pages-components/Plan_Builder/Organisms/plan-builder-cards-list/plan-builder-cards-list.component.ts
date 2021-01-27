@@ -27,21 +27,25 @@ export class PlanBuilderCardsListComponent implements OnInit, AfterViewInit {
   isMobileForContainer: boolean;
   isMobileForCard: boolean;
 
+  @ViewChild('container') container;
+
   addToSelected(id: number) {
     const isSelected = this.selectedCards.includes(id);
     if (isSelected) {
       this.selectedCards = this.selectedCards.filter(card => card !== id);
     } else {
-      this.selectedCards = [...this.selectedCards, id]
+      this.selectedCards = [...this.selectedCards, id];
     }
   }
 
-  @ViewChild('container') container;
+  setIsMobile() {
+    this.isMobileForContainer = this.container.nativeElement.clientWidth < MOBILE_VIEW;
+    this.isMobileForCard = this.container.nativeElement.clientWidth < CARD_MOBILE_VIEW;
+  }
 
   @HostListener('window:resize', ['$event'])
   onResize(event: any) {
-    this.isMobileForContainer = this.container.nativeElement.clientWidth < MOBILE_VIEW;
-    this.isMobileForCard = this.container.nativeElement.clientWidth < CARD_MOBILE_VIEW;
+    this.setIsMobile();
   }
 
   detectIfSelected(id: number) {
@@ -49,8 +53,7 @@ export class PlanBuilderCardsListComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit() {
-    this.isMobileForContainer = this.container.nativeElement.clientWidth < MOBILE_VIEW;
-    this.isMobileForCard = this.container.nativeElement.clientWidth < CARD_MOBILE_VIEW;
+    this.setIsMobile();
   }
 
   ngOnInit(): void {}

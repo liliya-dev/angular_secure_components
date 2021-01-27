@@ -88,8 +88,7 @@ export class PlanBuilderRangeComponent implements OnInit, AfterViewInit {
     }
   }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   ngAfterViewInit() {
     this.containerWidth = document.querySelector('.app-plan-builder-range').clientWidth;

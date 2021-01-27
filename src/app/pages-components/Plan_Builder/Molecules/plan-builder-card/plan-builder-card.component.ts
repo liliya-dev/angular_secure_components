@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, OnInit, Output } from '@angular/core';
 
 const ACTIVE_COLOR = 'linear-gradient(89.52deg, #24B04B -46.17%, #0263BC 186.99%)';
 const STATIC_COLOR = 'rgba(1, 25, 73, 0.15)';
@@ -23,16 +23,22 @@ export class PlanBuilderCardComponent implements OnInit, OnChanges {
   @Input() imagePath: string;
   @Input() currency: string;
 
+  @Output() onSelect?: EventEmitter<any> = new EventEmitter();
+
   borderColor;
   cardWidth;
 
   selectCard(props) {
-    this.borderColor = props.selected ? ACTIVE_COLOR : STATIC_COLOR;
+    // logic without parent element emitter
+    // this.borderColor = props.selected ? ACTIVE_COLOR : STATIC_COLOR;
 
-    /// or pass logic from parent element
+    this.onSelect.emit(this.id);
+
+    /// or pass another logic from parent element
   }
 
   ngOnChanges() {
+    console.log(this.id, )
     this.borderColor = this.isSelected ? ACTIVE_COLOR : STATIC_COLOR;
     this.cardWidth = this.isMobile ? MOBILE_WIDTH : DESKTOP_WIDTH;
   }

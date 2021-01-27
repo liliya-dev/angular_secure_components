@@ -30,7 +30,7 @@ Card.args = {
   id: 1,
   policyTitle: 'GDPR, eprivacy',
   policyText: 'Europe',
-  text: 'Add support fot the European GDPR & ePrivacy directive. This include EU geotargeting, website scanning including adequate country matching, cookie declaration and banners that are compliant with the GDPR requirements.',
+  text: 'Add support fot the European GDPR & ePrivacy directive. Add support fot the European GDPR & ePrivacy directive. This include EU geotargeting, website scanning including adequate country matching, cookie declaration and banners that are compliant with the GDPR requirements.',
   isSelected: true,
   price: 4.25,
   period: 'per month',

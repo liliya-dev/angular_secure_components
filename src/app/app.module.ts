@@ -155,6 +155,7 @@ import { PlanBuilderPrimaryButtonComponent } from './pages-components/Plan_Build
 import { PlanBuilderSecondaryButtonComponent } from './pages-components/Plan_Builder/Atoms/plan-builder-secondary-button/plan-builder-secondary-button.component';
 import { PlanBuilderContactUsComponent } from './pages-components/Plan_Builder/Molecules/plan-builder-contact-us/plan-builder-contact-us.component';
 import { PlanBuilderDomainsSelectComponent } from './pages-components/Plan_Builder/Molecules/plan-builder-domains-select/plan-builder-domains-select.component';
+import { PlanBuilderCardsListComponent } from './pages-components/Plan_Builder/Organisms/plan-builder-cards-list/plan-builder-cards-list.component';
 
 PlotlyModule.plotlyjs = PlotlyJS;
 
@@ -309,6 +310,7 @@ PlotlyModule.plotlyjs = PlotlyJS;
     PlanBuilderSecondaryButtonComponent,
     PlanBuilderContactUsComponent,
     PlanBuilderDomainsSelectComponent,
+    PlanBuilderCardsListComponent,
   ],
   imports: [
     ColorSketchModule,

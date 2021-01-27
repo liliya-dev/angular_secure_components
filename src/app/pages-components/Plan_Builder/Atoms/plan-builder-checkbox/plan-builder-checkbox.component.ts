@@ -17,7 +17,7 @@ export class PlanBuilderCheckboxComponent implements OnInit, OnChanges {
     this.isChecked = event.target.checked;
     this.onToggle.emit({
       id: this.id,
-      selected: this.isChecked
+      selected: this.isChecked,
     })
   }
 

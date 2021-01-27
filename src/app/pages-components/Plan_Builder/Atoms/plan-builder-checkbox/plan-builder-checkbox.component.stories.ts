@@ -20,5 +20,5 @@ export const Switch = Template.bind({});
 Switch.args = {
   initialValue: true,
   id: '1',
-  onToggle: (event) => console.log(event)
+  onToggle: (event) => console.log(event),
 };

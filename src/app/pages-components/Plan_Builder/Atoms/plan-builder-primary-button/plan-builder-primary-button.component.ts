@@ -5,6 +5,7 @@ import { Component, Input, OnInit } from '@angular/core';
   templateUrl: './plan-builder-primary-button.component.html',
   styleUrls: ['./plan-builder-primary-button.component.scss']
 })
+
 export class PlanBuilderPrimaryButtonComponent implements OnInit {
   @Input() title :string;
 

@@ -2,7 +2,6 @@ import { CommonModule } from '@angular/common';
 import { Meta, moduleMetadata, Story } from '@storybook/angular';
 import { PlanBuilderRangeComponent } from './plan-builder-range.component';
 
-
 const props = {
   items: { control: 'object' }
 };

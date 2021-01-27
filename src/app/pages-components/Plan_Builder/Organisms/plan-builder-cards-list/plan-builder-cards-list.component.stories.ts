@@ -34,7 +34,7 @@ CardsList.args = {
       id: 1,
       policyTitle: 'GDPR, eprivacy',
       policyText: 'Europe',
-      text: 'Add support fot the European GDPR & ePrivacy directive. This include EU geotargeting, website scanning including adequate country matching, cookie declaration and banners that are compliant with the GDPR requirements.',
+      text: 'Add support fot the European GDPR & ePrivacy directive. This include EU geotargeting,, Add support fot the European GDPR & ePrivacy directive. This include EU geotargeting, website scanning including adequate country matching, cookie declaration and banners that are compliant with the GDPR requirements.',
       price: 4.25,
       imagePath: 'assets/images/flags/euro.png',
     },
@@ -96,6 +96,6 @@ CardsList.args = {
     }
   ],
   currency: 'usd',
-  selectedCards: [1, 2, 5],
+  selectedCards: [ 1, 2, 5 ],
   period: 'per month',
 };
