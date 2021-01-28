@@ -1,5 +1,33 @@
 demo link https://liliya-dev.github.io/angular_secure_components/?path=/story/molecules-form-screen--third
 
+28.01.21
+## Removed viewencapsulation.none from all components, removed all global font classes from all components
+
+## Developed components: 
+
+### PLAN BUILDER
+
+### Atoms
+
+  * Buttons:
+    - Primary
+    - Secondary
+  * Inputs
+    - Switch
+    - Range
+    - Toggler
+
+### Molecules:
+
+  * Card
+  * Contact us
+  * Select domains
+  * Plan
+
+### Organisms
+
+  * Cards List
+
 29.12.21
 ## Developed components: 
 
