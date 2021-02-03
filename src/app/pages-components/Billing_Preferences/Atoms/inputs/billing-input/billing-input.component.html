@@ -1,0 +1,13 @@
+<input 
+  [ngClass]="{ 'app-billing-input': true, error: isError }"
+  [type]="isCvv ? 'password' : 'text'"
+  [id]="id"
+  [placeholder]="placeholderText"
+  spellcheck="false"
+  [formControl]="initialValue"
+  (blur)="onBlur()"
+  (focus)="onFocus()"
+  (paste)="onPaste($event)"
+  autocomplete="off"
+>
+

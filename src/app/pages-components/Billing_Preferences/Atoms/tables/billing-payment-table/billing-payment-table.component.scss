@@ -1,0 +1,76 @@
+.app-billing-payment-table {
+  width: 100%;
+  min-width: 600px;
+  
+  font-family: 'Sofia pro', 'open-sans';
+  font-style: normal;
+  font-size: 12px;
+  line-height: 100%;
+  text-align: left;
+  border-collapse: collapse;
+  
+  &__container {
+    width: 100%;
+    overflow-x: scroll;
+  }
+
+  &__header {
+    font-weight: 400;
+    color: rgba(var(--secondary-color-code), 0.5);
+    border-bottom: 0.6px solid rgba(var(--secondary-color-code), 0.1);
+
+    &-item {
+      padding: 16px 0;
+
+      &.domains {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+
+        &:hover {
+          cursor: pointer;
+        }
+
+        & > img {
+          margin-left: 10px;
+        }
+      }
+    }
+  }
+
+  &__row {
+    padding: 16px 0;
+    font-weight: 300;
+    color: rgba(var(--secondary-color-code), 1);
+
+    &-item {
+      padding: 16px 0;
+
+      &.status-block {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+      }
+    }
+  }
+
+  &__status {
+    width: 10px;
+    height: 10px;
+    margin-right: 10px;
+    border-radius: 50%;
+    position: relative;
+    margin-bottom: 2px;
+
+    &:after {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      background-color: var(--text-color);
+    }
+  }
+}

@@ -1,0 +1,67 @@
+.app-billing-payment {
+  padding: 32px;
+  background: var(--text-color);
+  box-shadow: 0px 30px 70px rgba(46, 45, 79, 0.15);
+  border-radius: 20px;
+  max-width: 1200px;
+
+  &__container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 32px;
+  }
+
+  &__form {
+    width: calc(100% - 324px);
+
+    font-family: 'Sofia pro', 'open-sans';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 160%;
+    color: rgba(var(--secondary-color-code), 0.5);
+
+    &-row {
+      display: flex;
+      align-items: flex-end;
+
+      ::ng-deep {
+        app-billing-primary-button {
+          width: 115px;
+          margin-left: 30px;
+        }
+      }
+    }
+
+    &-cvv {
+      margin-left: 30px;
+      width: 115px;
+    }
+
+    &-holder {
+      width: calc(100% - 145px);
+    }
+
+    &-input-wrapper {
+      width: calc(100% - 145px);
+    }
+
+    &-title {
+      margin-bottom: 10px;
+      margin-top: 16px;
+    }
+
+    &-date {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+
+      ::ng-deep {
+        app-billing-select {
+          width: 47%;
+        }
+      }
+    }
+  }
+}

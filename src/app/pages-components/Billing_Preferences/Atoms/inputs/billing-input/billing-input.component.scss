@@ -1,0 +1,23 @@
+.app-billing-input {
+  width: 100%;
+  padding: 15.5px 19px;
+  color: var(--secondary-color);
+  letter-spacing: 0.03em;
+  background: var(--text-color);
+  border: 1px solid rgba(var(--secondary-color-code), 0.3);
+  border-radius: 8px;
+
+  font-family: 'Sofia pro', 'open-sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 100%;
+  &::placeholder {
+    color: #1C1C1C;
+    opacity: 0.2;
+  }
+
+  &.error {
+    border: 1px solid rgba(var(--danger-color-code), 0.3);
+  }
+}

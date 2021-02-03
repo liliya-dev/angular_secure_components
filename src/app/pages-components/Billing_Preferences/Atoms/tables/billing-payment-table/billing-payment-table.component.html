@@ -1,0 +1,29 @@
+<div class="app-billing-payment-table__container">
+  <table class="app-billing-payment-table">
+    <tr class="app-billing-payment-table__header">
+      <th class="app-billing-payment-table__header-item">Status</th>
+      <th class="app-billing-payment-table__header-item">Plan Details</th>
+      <th class="app-billing-payment-table__header-item">Billing Cycle</th>
+      <th class="app-billing-payment-table__header-item domains" (click)="sortTable()">
+        Domains
+        <img src="assets/images/sort-arrows.png" alt="sort arrow">
+      </th>
+      <th class="app-billing-payment-table__header-item">Unit Price</th>
+      <th class="app-billing-payment-table__header-item">Total Price</th>
+    </tr>
+    <tr *ngFor="let item of data" class="app-billing-payment-table__row">
+      <td class="app-billing-payment-table__row-item status-block">
+        <div 
+          class="app-billing-payment-table__status"
+          [style.background]="detectColor(item.status)"
+        ></div>
+        {{ item.status ? 'Active' : 'Non-active' }}
+      </td>
+      <td class="app-billing-payment-table__row-item">{{ item.details }}</td>
+      <td class="app-billing-payment-table__row-item">{{ item.cycle }}</td>
+      <td class="app-billing-payment-table__row-item">{{ item.domains }}</td>
+      <td class="app-billing-payment-table__row-item">${{ item.unitPrice.toFixed(2) }}</td>
+      <td class="app-billing-payment-table__row-item">${{ (item.unitPrice * item.domains).toFixed(2) }}</td>
+   </tr>
+  </table>
+</div>

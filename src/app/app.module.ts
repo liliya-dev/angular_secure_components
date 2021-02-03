@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { largeButtonComponent} from './atoms/buttons/largeButton/largeButton.component';
 import { simpleButtonComponent } from './atoms/buttons/simpleButton/simpleButton.component';
@@ -156,6 +156,16 @@ import { PlanBuilderSecondaryButtonComponent } from './pages-components/Plan_Bui
 import { PlanBuilderContactUsComponent } from './pages-components/Plan_Builder/Molecules/plan-builder-contact-us/plan-builder-contact-us.component';
 import { PlanBuilderDomainsSelectComponent } from './pages-components/Plan_Builder/Molecules/plan-builder-domains-select/plan-builder-domains-select.component';
 import { PlanBuilderCardsListComponent } from './pages-components/Plan_Builder/Organisms/plan-builder-cards-list/plan-builder-cards-list.component';
+import { BillingPrimaryButtonComponent } from './pages-components/Billing_Preferences/Atoms/buttons/billing-primary-button/billing-primary-button.component';
+import { BillingPrimaryAsymmetricalButtonComponent } from './pages-components/Billing_Preferences/Atoms/buttons/billing-primary-asymmetrical-button/billing-primary-asymmetrical-button.component';
+import { BillingSecondaryButtonComponent } from './pages-components/Billing_Preferences/Atoms/buttons/billing-secondary-button/billing-secondary-button.component';
+import { BillingDangerButtonComponent } from './pages-components/Billing_Preferences/Atoms/buttons/billing-danger-button/billing-danger-button.component';
+import { BillingInputComponent } from './pages-components/Billing_Preferences/Atoms/inputs/billing-input/billing-input.component';
+import { BillingSelectComponent } from './pages-components/Billing_Preferences/Atoms/inputs/billing-select/billing-select.component';
+import { BillingPaymentComponent } from './pages-components/Billing_Preferences/Molecules/billing-payment/billing-payment.component';
+import { BillingPaymentTableComponent } from './pages-components/Billing_Preferences/Atoms/tables/billing-payment-table/billing-payment-table.component';
+import { BillingTitleComponent } from './pages-components/Billing_Preferences/Atoms/billing-title/billing-title.component';
+import { BillingCardComponent } from './pages-components/Billing_Preferences/Atoms/billing-card/billing-card.component';
 
 PlotlyModule.plotlyjs = PlotlyJS;
 
@@ -311,6 +321,16 @@ PlotlyModule.plotlyjs = PlotlyJS;
     PlanBuilderContactUsComponent,
     PlanBuilderDomainsSelectComponent,
     PlanBuilderCardsListComponent,
+    BillingPrimaryButtonComponent,
+    BillingPrimaryAsymmetricalButtonComponent,
+    BillingSecondaryButtonComponent,
+    BillingDangerButtonComponent,
+    BillingInputComponent,
+    BillingSelectComponent,
+    BillingPaymentComponent,
+    BillingPaymentTableComponent,
+    BillingTitleComponent,
+    BillingCardComponent,
   ],
   imports: [
     ColorSketchModule,
@@ -324,6 +344,8 @@ PlotlyModule.plotlyjs = PlotlyJS;
     NgApexchartsModule,
     TextareaAutosizeModule,
     AngularEditorModule, 
+    FormsModule, 
+    ReactiveFormsModule
   ],
   bootstrap: [AppComponent]
 })

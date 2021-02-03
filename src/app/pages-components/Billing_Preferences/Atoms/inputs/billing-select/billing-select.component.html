@@ -1,0 +1,16 @@
+<div [ngClass]="{ 'app-billing-select': true, error: isError }">
+  <ng-select 
+      [(ngModel)]="selectedItem"
+      (change)="onSelect($event)"
+      class="app-billing-select__input" 
+      [hideSelected]="true"
+      [searchable]="false"
+      (blur)="onBlur()"
+      (focus)="onFocus()"
+  >
+    <ng-option class="app-billing-select__option" *ngFor="let item of items" [value]="item">
+      {{ item }}
+    </ng-option>
+  </ng-select>
+</div>
+

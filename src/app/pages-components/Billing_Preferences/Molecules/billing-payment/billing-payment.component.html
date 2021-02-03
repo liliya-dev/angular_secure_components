@@ -1,0 +1,107 @@
+<div 
+  class="app-billing-payment" 
+  #container
+  [style.padding]="isSmallMobile ? '16px' : '32px'"
+>
+  <app-billing-title [title]="'Payment Details'"></app-billing-title>
+  <div 
+    class="app-billing-payment__container"
+    [style.flexDirection]="isSmallMobile ? 'column' : 'row'"
+    [style.alignItems]="isSmallMobile ? 'center' : 'flex-start'"
+  >
+    <app-billing-card
+      [lastNumbers]="lastNumbers"
+      [date]="date"
+      [name]="name"
+    ></app-billing-card>
+    <div 
+      class="app-billing-payment__form"
+      [style.width]="isSmallMobile ? '100%' : 'calc(100% - 324px)'"
+    >
+      <p class="app-billing-payment__form-title">Credit card number*</p>
+      <app-billing-input
+        (input)="setCardNumber($event)"
+        [id]="'card-number'"
+        [placeholderText]="''"
+        [initialValue]="temporaryCardNumber"
+        [isError]="errors.number"
+        (onInputBlur)="validate('number')"
+        (onInputFocus)="deleteError('number')"
+        (onInputPaste)="validateOnPaste($event, 'number')"
+      ></app-billing-input>
+      <div 
+        class="app-billing-payment__form-row"
+        [style.flexDirection]="isMobile ? 'column' : 'row'"
+      >
+        <div 
+          class="app-billing-payment__form-input-wrapper"
+          [style.width]="isMobile ? '100%' : 'calc(100% - 145px)'"
+        >
+          <p class="app-billing-payment__form-title">Expiry date*</p>
+          <div class="app-billing-payment__form-date">
+            <app-billing-select
+              (onInputBlur)="validate('month')"
+              (onInputFocus)="deleteError('month')"
+              (parentHandler)="setMonth($event)"
+              [initialValue]="temporaryMonth"
+              [isError]="errors.month"
+              [items]="monthes"
+            ></app-billing-select>
+            <app-billing-select
+              (onInputBlur)="validate('year')"
+              (onInputFocus)="deleteError('year')"
+              (parentHandler)="setYear($event)"
+              [initialValue]="temporaryYear"
+              [isError]="errors.year"
+              [items]="[2021, 2022, 2023, 2024, 2025, 2026, 2027]"
+            ></app-billing-select>
+          </div>
+        </div>
+        <div 
+          class="app-billing-payment__form-cvv"
+          [style.width]="isMobile ? '100%' : '115px'"
+          [style.marginLeft]="isMobile ? '0' : '30px'"
+        >
+          <p class="app-billing-payment__form-title">CVC/CVV2*</p>
+          <app-billing-input
+            [id]="'cvv'"
+            [placeholderText]="''"
+            [initialValue]="temporaryCvv"
+            [isCvv]="true"
+            [isError]="errors.cvv"
+            (input)="setCvv($event)"
+            (onInputBlur)="validate('cvv')"
+            (onInputFocus)="deleteError('cvv')"
+            (onInputPaste)="validateOnPaste($event, 'cvv')"
+          ></app-billing-input>
+        </div>
+      </div>
+      <div class="app-billing-payment__form-row" [style.flexDirection]="isSmallMobile ? 'column' : 'row'">
+        <div 
+          class="app-billing-payment__form-holder" 
+          [style.width]="isSmallMobile ? '100%' : 'calc(100% - 145px)'"
+        >
+          <p class="app-billing-payment__form-title">Card holder*</p>
+          <app-billing-input
+            (input)="setName($event)"
+            [id]="'name'"
+            [placeholderText]="''"
+            [initialValue]="temporaryName"
+            [isError]="errors.name"
+            (onInputBlur)="validate('name')"
+            (onInputFocus)="deleteError('name')"
+            (onInputPaste)="validateOnPaste($event, 'name')"
+          ></app-billing-input>
+        </div>
+        <app-billing-primary-button 
+          (click)="save()"
+          [title]="'Save'"
+          [style.width]="isSmallMobile ? '100%' : '115px'"
+          [style.marginLeft]="isSmallMobile ? '0' : '30px'"
+          [style.marginTop]="isSmallMobile ? '30px' : '0'"
+        ></app-billing-primary-button>
+      </div>
+    </div>
+  </div>
+  <app-billing-payment-table [initialData]="tableData"></app-billing-payment-table>
+</div>

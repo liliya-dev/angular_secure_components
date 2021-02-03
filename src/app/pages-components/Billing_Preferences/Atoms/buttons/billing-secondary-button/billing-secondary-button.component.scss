@@ -1,0 +1,23 @@
+.app-billing-secondary-button {
+  width: 100%;
+  padding: 16px 20px;
+  border: 1px solid rgba(var(--secondary-color-code), 0.3);
+  border-radius: 4px;
+  text-transform: uppercase;
+  color: var(--secondary-color);
+  background: transparent;
+  transition: 0.3s;
+
+  font-family: 'Helvetica', 'open-sans';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+
+  &:hover {
+    border: 1px solid rgba(var(--secondary-color-code), 0.7);
+  }
+
+  &:active {
+    border: 1px solid rgba(var(--secondary-color-code), 1);
+  }
+}

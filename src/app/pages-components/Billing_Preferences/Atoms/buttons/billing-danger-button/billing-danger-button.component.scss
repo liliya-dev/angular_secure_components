@@ -1,0 +1,50 @@
+.app-billing-danger-button {
+  color: var(--danger-color);
+  background: inherit;
+  outline: none;
+  border: 1px solid rgba(var(--danger-color-code), 0.2);
+
+  text-transform: uppercase;
+  text-align: center;
+  font-family: 'Gramatica Bold', 'open-sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  height: 46px;
+  width: 100%;
+  padding: 16px 20px;
+
+  transition: var(--transition);
+  border-radius: 8px;
+
+  &.short {
+    height: 30px;
+    padding: 8px 11px;
+    border: 1px solid rgba(var(--danger-color-code), 1);
+
+    &:hover {
+      cursor: pointer;
+      background: rgba(var(--danger-color-code), 1);
+      color: var(--text-color);
+    }
+
+    &:active {
+      background: rgba(var(--danger-color-code), 1);
+      color: var(--text-color);
+    }
+  }
+
+  &:hover {
+    cursor: pointer;
+    background: rgba(var(--danger-color-code), 0.3);
+  }
+
+  &:active {
+    background: rgba(var(--danger-color-code), 0.5);
+  }
+}
