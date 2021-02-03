@@ -29,13 +29,7 @@ export class BillingPaymentComponent implements OnInit, AfterViewInit {
   isMobile: boolean;
   isSmallMobile: boolean;
   monthes = MONTHES;
-
-  temporaryMonth = 'Month';
-  temporaryYear = 'Year';
-  temporaryCardNumber = new FormControl(this.cardNumber);
-  temporaryCvv = new FormControl('');
-  temporaryName = new FormControl(this.name);
-
+  totalSum: number;
   errors = {
     month: false,
     year: false,
@@ -43,6 +37,13 @@ export class BillingPaymentComponent implements OnInit, AfterViewInit {
     name: false,
     number: false
   }
+  vat: number = 25;
+
+  temporaryMonth = 'Month';
+  temporaryYear = 'Year';
+  temporaryCardNumber = new FormControl(this.cardNumber);
+  temporaryCvv = new FormControl('');
+  temporaryName = new FormControl(this.name);
 
   @ViewChild('container') container: ElementRef;
 
@@ -200,5 +201,9 @@ export class BillingPaymentComponent implements OnInit, AfterViewInit {
     this.isSmallMobile = this.container.nativeElement.clientWidth < SMALL_MOBILE_VIEW;
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    let sum = 0;
+    this.tableData.forEach((value) => { sum = sum + value.unitPrice * value.domains });
+    this.totalSum = sum;
+  }
 }

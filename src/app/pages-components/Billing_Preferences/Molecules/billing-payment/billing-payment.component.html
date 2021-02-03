@@ -104,4 +104,14 @@
     </div>
   </div>
   <app-billing-payment-table [initialData]="tableData"></app-billing-payment-table>
+  <div class="app-billing-payment__total" [style.padding]="isSmallMobile ? '14px 55px' : '14px 70px'">
+    <div class="app-billing-payment__total-titles">
+      <p class="app-billing-payment__total-title-main">Sum Total</p>
+      <p class="app-billing-payment__total-title-secondary">Vat</p>
+    </div>
+    <div class="app-billing-payment__total-values">
+      <p class="app-billing-payment__total-value-main">${{ totalSum }}</p>
+      <p class="app-billing-payment__total-value-secondary">{{ vat }}%</p>
+    </div>
+  </div>
 </div>
