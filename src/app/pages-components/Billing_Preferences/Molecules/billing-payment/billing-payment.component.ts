@@ -10,7 +10,7 @@ interface TableItem {
 }
 
 const MOBILE_VIEW = 800;
-const SMALL_MOBILE_VIEW = 655;
+const SMALL_MOBILE_VIEW = 680;
 const MONTHES = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
 @Component({

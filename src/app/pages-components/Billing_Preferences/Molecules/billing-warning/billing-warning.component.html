@@ -1,0 +1,21 @@
+<div 
+  class="app-billing-warning" 
+  #container
+  [style.padding]="isMobile ? '16px' : '16px 32px'"
+  [style.flexDirection]="isMobile ? 'column' : 'row'"
+>
+  <div 
+    class="app-billing-warning__text"
+    [style.textAlign]="isMobile ? 'center' : 'left'"
+  >
+    <p>Your current plan is <b>“Freemium”</b>.</p>
+    <p> You’re limited to 1 domain, and have restricted functionality.</p>
+    <br>
+    <p> To add more domains, please upgrade.</p> 
+  </div>
+  <app-billing-primary-button 
+    [title]="'View Pricing'"
+    [style.width]="isMobile ? '100%' : '132px'"
+    [style.marginTop]="isMobile ? '15px' : '0'"
+  ></app-billing-primary-button>
+</div>

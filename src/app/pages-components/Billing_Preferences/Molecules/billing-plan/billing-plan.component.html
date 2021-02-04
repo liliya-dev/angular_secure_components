@@ -1,0 +1,79 @@
+<div
+  class="app-billing-plan"
+  #container
+  [style.padding]="isMobile ? '16px' : '32px'"
+>
+  <app-billing-modal
+    *ngIf="isModalVisible && modalType===MODAL_APPROVE"
+    [title]="'Are You Sure?'"
+    [text]="'Are you sure you want to unsubscribe from your plan? You will be downgrade to the &#60;b&#62;&quot;Freemium plan&quot;&#60;/b&#62;'"
+    [secondaryButtonTitle]="'Cancel'"
+    [dangerButtonTitle]="'Downgrade'"
+    (close)="hideModal()"
+    (onSecondaryClick)="hideModal()"
+    (onDangerClick)="downgradePlan()"
+  ></app-billing-modal>
+  <app-billing-modal
+    *ngIf="isModalVisible && modalType===MODAL_ERROR"
+    [title]="'Oops, Sorry'"
+    [text]="'We cannot downgrade your account as you have more than 1 domain. Please delete your domains until you have 1 to enable the free plan.'"
+    [secondaryButtonTitle]="'Close'"
+    (close)="hideModal()"
+    (onSecondaryClick)="hideModal()"
+  ></app-billing-modal>
+  <app-billing-title [title]="'Current Plan'"></app-billing-title>
+  <div 
+    class="app-billing-plan__container"
+    [style.flexDirection]="isMobile ? 'column' : 'row'"
+    [style.alignItems]="isMobile ? 'center' : 'flex-end'"
+  >
+    <div class="app-billing-plan__card-wrapper">
+      <div class="app-billing-plan__card">
+        <p 
+          class="app-billing-plan__card-title"
+          [style.fontSize]="isMobile ? '32px' : '42px'"
+        >
+          {{ title }}
+        </p>
+        <p class="app-billing-plan__card-description">
+          {{ description }}
+        </p>
+        <p class="app-billing-plan__card-price">
+          ${{ price }}<span class="app-billing-plan__card-period">/{{ period }}</span>
+        </p>
+        <app-billing-primary-asymmetrical-button [title]="'change plan'"></app-billing-primary-asymmetrical-button>
+      </div>
+    </div>
+    <div 
+      class="app-billing-plan__features"
+      [style.width]="isMobile ? '100%' : 'calc(100% - 386px - 32px)'"
+      [style.marginTop]="isMobile ? '40px' : '0'"
+    >
+      <ul class="app-billing-plan__features-list">
+        <li class="app-billing-plan__features-title" [innerHTML]="featuresTitle"></li>
+        <li 
+          [style.marginBottom]="isFreemium ? '16px' : '8px'"
+          class="app-billing-plan__features-item" 
+          *ngFor="let feature of features"
+        >
+          <div class="app-billing-plan__features-status"></div>
+          <p class="app-billing-plan__features-text">{{ feature }}</p>
+        </li>
+      </ul>
+      <div class="separator"></div>
+      <div class="app-billing-plan__features-description" [style.justifyContent]="isFreemium ? 'center' : 'space-between'">
+        <p>
+          Your plan will end on  <b>{{ date }}</b>
+        </p>
+        <app-billing-danger-button
+          *ngIf="!isFreemium" 
+          [title]="'Downgrade'" 
+          [isShort]="true"
+          [style.marginLeft]="isMobile ? '16px' : '9px'"
+          (click)="showModal()"
+        >
+        </app-billing-danger-button>
+      </div>
+    </div>
+  </div>
+</div>

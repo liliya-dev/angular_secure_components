@@ -1,0 +1,33 @@
+<div 
+  class="app-billing-invoices"
+  #container
+  [style.padding]="isMobile ? '16px' : '32px'"
+>
+  <app-billing-title [title]="title"></app-billing-title>
+  <div class="app-billing-invoices__table-container">
+    <table class="app-billing-invoices__table">
+      <tr class="app-billing-invoices__table-header">
+        <th class="app-billing-invoices__table-header-item date" (click)="sortTable()">
+          Date
+          <img src="assets/images/sort-arrows.png" alt="sort arrow">
+        </th>
+        <th class="app-billing-invoices__table-header-item">Amount</th>
+        <th class="app-billing-invoices__table-header-item">Paid</th>
+        <th class="app-billing-invoices__table-header-item">Download Invoice</th>
+      </tr>
+      <tr *ngFor="let item of data" class="app-billing-invoices__table-row">
+        <td class="app-billing-invoices__table-row-item">{{ item.date }}</td>
+        <td class="app-billing-invoices__table-row-item">${{ item.amount.toFixed(2) }}</td>
+        <td class="app-billing-invoices__table-row-item status">
+          <div [ngClass]="{ 'app-billing-invoices__status': true, 'active': item.paid }"></div>
+        </td>
+        <td 
+          class="app-billing-invoices__table-row-item download"
+          (click)="download(item.invoice)"
+        >
+          Download
+        </td>
+     </tr>
+    </table>
+  </div>
+</div>

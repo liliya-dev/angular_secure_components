@@ -1,0 +1,17 @@
+.app-billing-warning {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  background: linear-gradient(269.4deg, rgba(251, 95, 71, 0.2) 38.27%, rgba(249, 190, 90, 0.2) 113.07%);
+  border-radius: 12px;
+  justify-content: space-between;
+  align-items: center;
+
+  &__text {
+    font-family: 'Sofia pro', 'open-sans';
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 130%;
+    color: rgba(var(--secondary-color-code), 0.75);
+  }
+}

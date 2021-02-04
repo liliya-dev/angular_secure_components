@@ -1,0 +1,131 @@
+.app-billing-invoices {
+  padding: 32px;
+  background: var(--text-color);
+  box-shadow: 0px 30px 70px rgba(var(--secondary-color-code), 0.15);
+  border-radius: 20px;
+  max-width: 1200px;
+
+  ::ng-deep {
+    .app-billing-title {
+      & > .app-billing-title__text {
+        flex: 0 0 190px;  
+      }
+    }
+  }
+
+  &__table-container {
+    width: 100%;
+    overflow-x: scroll;
+
+    &::-webkit-scrollbar-thumb {
+      background-color: rgba(var(--secondary-color-code), 0.5);
+      border-radius: 5px;
+    }
+
+    &::-webkit-scrollbar {
+      height: 5px;
+    }
+  }
+
+  &__status {
+    height: 19px;
+    width: 19px;
+    position: relative;
+    border-radius: 50%;
+    background-color: rgba(var(--danger-color-code), 0.2);
+
+    &::after {
+      content: '';
+      width: 7px;
+      height: 7px;
+
+      position: absolute;
+      top: 6px;
+      left: 6px;
+
+      background: url('../../../../../assets/images/close.svg') center no-repeat;
+      background-size: contain;
+      color: rgba(var(--danger-color-code), 1);
+    }
+
+    &.active {
+      background: var(--success-grad-light);
+
+      &::after {
+        content: '';
+        width: 9px;
+        height: 9px;
+  
+        position: absolute;
+        top: 5px;
+        left: 5px;
+  
+        background: url('../../../../../assets/images/checkbox.svg') center no-repeat;
+        background-size: contain;
+        color: rgba(var(--danger-color-code), 1);
+      }
+    }
+  }
+
+  &__table {
+    width: 100%;
+    min-width: 400px;
+    
+    font-family: 'Sofia pro', 'open-sans';
+    font-style: normal;
+    font-size: 12px;
+    line-height: 100%;
+    text-align: left;
+    border-collapse: collapse;
+    color: var(--secondary-color);
+
+    &-row {
+      padding: 16px 0;
+      font-weight: 300;
+      color: rgba(var(--secondary-color-code), 1);
+  
+      &-item {
+        padding: 16px 0;
+        width: 25%;
+
+        &.download {
+          font-weight: 800;
+          text-decoration-line: underline;
+          transition: var(--transition);
+
+          &:hover {
+            cursor: pointer;
+          }
+
+          &:active {
+            opacity: 0.8;
+          }
+        }
+      }
+    }
+
+    &-header {
+      font-weight: 400;
+      color: rgba(var(--secondary-color-code), 0.5);
+      border-bottom: 0.6px solid rgba(var(--secondary-color-code), 0.1);
+  
+      &-item {
+        padding: 16px 0;
+  
+        &.date {
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+  
+          &:hover {
+            cursor: pointer;
+          }
+  
+          & > img {
+            margin-left: 10px;
+          }
+        }
+      }
+    }
+  }
+}
