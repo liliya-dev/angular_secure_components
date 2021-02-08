@@ -1,0 +1,43 @@
+<div class="app-cookie-design-card-row">
+  <div class="app-cookie-design-card-row__add">
+    <app-cookie-design-card 
+      [id]="'add'"
+      [isSelected]="false"
+    >
+    </app-cookie-design-card>
+    <div class="app-cookie-design-card-row__buttons" *ngIf="areArrowsVisible">
+      <button 
+        type="button" 
+        class="app-cookie-design-card-row__button"
+        (click)="scrollOnButtonClick('back')"
+      >
+        <svg-icon 
+          [src]="'assets/images/cookie-banner/scroll-arrow.svg'"
+          [svgStyle]="{ 'fill': leftArrowColor }"
+        >
+        </svg-icon>
+      </button>
+      <button  
+        type="button" 
+        class="app-cookie-design-card-row__button"
+        (click)="scrollOnButtonClick('forward')"
+      >
+        <svg-icon 
+          [src]="'assets/images/cookie-banner/scroll-arrow.svg'"
+          [svgStyle]="{ 'transform': 'rotate(180deg)','fill': rightArrowColor }"
+        >
+        </svg-icon>
+      </button>
+    </div>
+  </div>
+  <div class="app-cookie-design-card-row__wrapper" #scrollContainer (scroll)="onScroll($event)">
+    <app-cookie-design-card 
+      *ngFor="let item of items"
+      [id]="item.id"
+      [imgSrc]="item.imgSrc"
+      [isSelected]="item.id === selectedId"
+      (click)="selectCard(item.id)"
+    >
+    </app-cookie-design-card>
+  </div>
+</div>

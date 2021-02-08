@@ -1,0 +1,25 @@
+.app-cookie-layout-card-row {
+  display: flex;
+  max-width: 100%;
+  padding-bottom: 30px;
+  overflow-x: scroll;
+
+  ::ng-deep {
+    .app-cookie-layout-card__wrapper {
+      margin-right: 14px;
+    }
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: var( --success-grad-light);
+    border-radius: 3px;
+  }
+
+  &::-webkit-scrollbar {
+    height: 3px;
+  }
+
+  &::-webkit-scrollbar-track {
+    border-bottom: 1px solid rgb(228, 238, 240);
+  }
+}

@@ -1,0 +1,45 @@
+.app-cookie-design-card-row {
+  display: flex;
+  align-items: flex-start;
+
+  ::ng-deep {
+    .app-cookie-design-card__wrapper {
+      margin-right: 12px;
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    width: calc(100% - 163px);
+    overflow-x: scroll;
+    padding-bottom: 30px;
+
+    &::-webkit-scrollbar-thumb {
+      background: var( --success-grad-light);
+      border-radius: 3px;
+    }
+
+    &::-webkit-scrollbar {
+      height: 3px;
+    }
+
+    &::-webkit-scrollbar-track {
+      border-bottom: 1px solid #E4EEF0;
+    }
+  }
+
+  &__buttons {
+    width: 147px;
+    padding-top: 24px;
+
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__button {
+    width: 55px;
+    outline: none;
+    background-color: transparent;
+    border: none;
+  }
+}

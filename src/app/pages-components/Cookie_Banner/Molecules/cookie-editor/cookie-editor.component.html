@@ -1,0 +1,36 @@
+<div class="app-cookie-editor" #container>
+  <div 
+    class="app-cookie-editor__wrapper"
+    [style.flexDirection]="isMobile ? 'column' : 'row'"
+  >
+    <div 
+      class="app-cookie-editor__block"
+      [style.width]="isMobile ? '100%' : '49%'"
+      [style.marginBottom]="isMobile ? '20px' : '0'"
+    >
+      <p class="app-cookie-editor__title">HTML</p>
+      <textarea 
+        class="app-cookie-editor__textarea" 
+        [value]="intialHTMLContent"
+        spellcheck="false"
+      >
+      </textarea>
+    </div>
+    <div 
+      class="app-cookie-editor__block"
+      [style.width]="isMobile ? '100%' : '49%'"
+    >
+      <p class="app-cookie-editor__title">CSS</p>
+      <textarea 
+        class="app-cookie-editor__textarea" 
+        [value]="intialCSSContent"
+        spellcheck="false"
+      >
+      </textarea>
+    </div>
+  </div>
+  <div class="app-cookie-editor__buttons">
+    <app-cookie-secondary-button (click)="onCloseClick()"[title]="'close'"></app-cookie-secondary-button>
+    <app-cookie-primary-button [title]="'save'" (click)="onSaveClick()"></app-cookie-primary-button>
+  </div>
+</div>

@@ -1,0 +1,13 @@
+<div class="app-cookie-layout-card-row">
+  <app-cookie-layout-card
+    *ngFor="let item of items"
+    [isSelected]="item.id === selectedId"
+    [width]="item.width"
+    [heigth]="item.heigth"
+    [top]="item.top"
+    [left]="item.left"
+    [borderRadius]="item.borderRadius"
+    (click)="selectCard(item.id)"
+  >
+  </app-cookie-layout-card>
+</div>
