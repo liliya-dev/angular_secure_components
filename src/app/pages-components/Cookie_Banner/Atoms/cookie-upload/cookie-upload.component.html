@@ -1,0 +1,16 @@
+<div class="app-cookie-upload">
+  <div class="app-cookie-upload__image-container">
+    <img [src]="imgSrc" alt="" >
+  </div>
+  <input 
+    class="app-cookie-upload__input"
+    [id]="id"
+    (change)="onUpload($event)" 
+    type="file" 
+    accept=".jpg, .jpeg, .png" 
+    #container
+  >
+  <label [for]="id" class="app-cookie-upload__label">
+    upload image
+  </label>
+</div>

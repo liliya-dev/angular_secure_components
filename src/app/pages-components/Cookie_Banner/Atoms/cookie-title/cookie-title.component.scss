@@ -1,0 +1,25 @@
+.app-cookie-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+
+  &__text {
+    flex: 0 0 150px;  
+    font-family: 'Gramatica Bold', 'open-sans';
+    font-size: 14px;
+    line-height: 150%;
+    text-transform: uppercase;
+    background: var(--success-grad-light);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  &__line {
+    height: 1px;
+    width: 85%;
+    background: var(--success-grad-light);
+    opacity: 0.1;
+  }
+}

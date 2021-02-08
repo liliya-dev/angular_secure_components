@@ -21,7 +21,7 @@ export class BillingPaymentTableComponent implements OnInit {
   @Input() initialData: Item[];
 
   data: Item[];
-  direction = 'forward';
+  direction: 'forward' | 'back' = 'forward';
 
   detectColor(status) {
     return status ? ACTIVE_COLOR : INACTIVE_COLOR;

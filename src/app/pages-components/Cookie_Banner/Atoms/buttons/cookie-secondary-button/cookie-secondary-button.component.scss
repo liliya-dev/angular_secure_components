@@ -1,0 +1,28 @@
+.app-cookie-secondary-button {
+
+  width: 127px;
+  height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 2px;
+  border: 1px solid rgba(var(--secondary-color-code), 0.3);
+  border-radius: 8px;
+  background: transparent;
+  transition: 0.3s;
+
+  font-family: 'Gramatica Medium', 'open-sans';
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 100%;
+  text-transform: capitalize;
+  color: var(--secondary-color);
+
+  &:hover {
+    border: 1px solid rgba(var(--secondary-color-code), 0.7);
+  }
+
+  &:active {
+    border: 1px solid rgba(var(--secondary-color-code), 1);
+  }
+}

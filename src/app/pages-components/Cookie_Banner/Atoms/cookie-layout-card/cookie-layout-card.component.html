@@ -1,0 +1,14 @@
+<div class="app-cookie-layout-card__wrapper" [style.padding]="isSelected ? '2px' : '0'">
+  <div class="app-cookie-layout-card__selected" *ngIf="isSelected"></div>
+  <div class="app-cookie-layout-card">
+    <div 
+      class="app-cookie-layout-card__content"
+      [style.width]="width"
+      [style.height]="heigth"
+      [style.top]="top"
+      [style.left]="left"
+      [style.borderRadius]="borderRadius"
+    ></div>
+  </div>
+</div>
+

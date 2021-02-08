@@ -166,6 +166,22 @@ import { BillingPaymentComponent } from './pages-components/Billing_Preferences/
 import { BillingPaymentTableComponent } from './pages-components/Billing_Preferences/Atoms/tables/billing-payment-table/billing-payment-table.component';
 import { BillingTitleComponent } from './pages-components/Billing_Preferences/Atoms/billing-title/billing-title.component';
 import { BillingCardComponent } from './pages-components/Billing_Preferences/Atoms/billing-card/billing-card.component';
+import { BillingWarningComponent } from './pages-components/Billing_Preferences/Molecules/billing-warning/billing-warning.component';
+import { BillingPlanComponent } from './pages-components/Billing_Preferences/Molecules/billing-plan/billing-plan.component';
+import { BillingModalComponent } from './pages-components/Billing_Preferences/Atoms/billing-modal/billing-modal.component';
+import { BillingInvoicesComponent } from './pages-components/Billing_Preferences/Molecules/billing-invoices/billing-invoices.component';
+import { CookieTitleComponent } from './pages-components/Cookie_Banner/Atoms/cookie-title/cookie-title.component';
+import { CookieLayoutCardComponent } from './pages-components/Cookie_Banner/Atoms/cookie-layout-card/cookie-layout-card.component';
+import { CookieDesignCardComponent } from './pages-components/Cookie_Banner/Atoms/cookie-design-card/cookie-design-card.component';
+import { CookieSelectInputComponent } from './pages-components/Cookie_Banner/Atoms/cookie-select-input/cookie-select-input.component';
+import { CookieColorPickerComponent } from './pages-components/Cookie_Banner/Atoms/cookie-color-picker/cookie-color-picker.component';
+import { CookieReloadButtonComponent } from './pages-components/Cookie_Banner/Atoms/buttons/cookie-reload-button/cookie-reload-button.component';
+import { CookieUploadComponent } from './pages-components/Cookie_Banner/Atoms/cookie-upload/cookie-upload.component';
+import { CookieDesignCardRowComponent } from './pages-components/Cookie_Banner/Molecules/rows/cookie-design-card-row/cookie-design-card-row.component';
+import { CookieLayoutCardRowComponent } from './pages-components/Cookie_Banner/Molecules/rows/cookie-layout-card-row/cookie-layout-card-row.component';
+import { CookiePrimaryButtonComponent } from './pages-components/Cookie_Banner/Atoms/buttons/cookie-primary-button/cookie-primary-button.component';
+import { CookieSecondaryButtonComponent } from './pages-components/Cookie_Banner/Atoms/buttons/cookie-secondary-button/cookie-secondary-button.component';
+import { CookieEditorComponent } from './pages-components/Cookie_Banner/Molecules/cookie-editor/cookie-editor.component';
 
 PlotlyModule.plotlyjs = PlotlyJS;
 
@@ -331,6 +347,22 @@ PlotlyModule.plotlyjs = PlotlyJS;
     BillingPaymentTableComponent,
     BillingTitleComponent,
     BillingCardComponent,
+    BillingWarningComponent,
+    BillingPlanComponent,
+    BillingModalComponent,
+    BillingInvoicesComponent,
+    CookieTitleComponent,
+    CookieLayoutCardComponent,
+    CookieDesignCardComponent,
+    CookieSelectInputComponent,
+    CookieColorPickerComponent,
+    CookieReloadButtonComponent,
+    CookieUploadComponent,
+    CookieDesignCardRowComponent,
+    CookieLayoutCardRowComponent,
+    CookiePrimaryButtonComponent,
+    CookieSecondaryButtonComponent,
+    CookieEditorComponent,
   ],
   imports: [
     ColorSketchModule,

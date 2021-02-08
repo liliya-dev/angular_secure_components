@@ -6,7 +6,7 @@ import { Component, ElementRef, HostListener, Input, OnChanges, OnInit, ViewChil
   styleUrls: ['./color-picker.component.scss']
 })
 
-export class PoliciesColorPickerComponent implements OnChanges, OnInit{
+export class PoliciesColorPickerComponent implements OnChanges, OnInit {
   @Input() startHexColor: string;
 
   color: string;

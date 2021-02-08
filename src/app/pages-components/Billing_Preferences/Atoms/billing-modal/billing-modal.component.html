@@ -1,0 +1,26 @@
+<div class="app-billing-modal">
+  <div class="app-billing-modal__container">
+    <button 
+      type="button" 
+      class="app-billing-modal__close" 
+      (click)="close.emit()"
+    >
+      <img src="assets/images/deleteX.png" alt="delete">
+    </button>
+    <p class="app-billing-modal__title">{{ title }}</p>
+    <p class="app-billing-modal__text" [innerHTML]="text"></p>
+    <div class="app-billing-modal__buttons">
+      <app-billing-secondary-button 
+        [title]="secondaryButtonTitle"
+        (click)="onSecondaryClick.emit()"
+      >
+      </app-billing-secondary-button>
+      <app-billing-danger-button 
+        *ngIf="dangerButtonTitle && dangerButtonTitle !== ''"
+        [title]="dangerButtonTitle"
+        (click)="onDangerClick.emit()"
+      >
+      </app-billing-danger-button>
+    </div>
+  </div>
+</div>

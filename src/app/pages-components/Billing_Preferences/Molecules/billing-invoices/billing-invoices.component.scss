@@ -45,7 +45,6 @@
 
       background: url('../../../../../assets/images/close.svg') center no-repeat;
       background-size: contain;
-      color: rgba(var(--danger-color-code), 1);
     }
 
     &.active {
@@ -62,7 +61,6 @@
   
         background: url('../../../../../assets/images/checkbox.svg') center no-repeat;
         background-size: contain;
-        color: rgba(var(--danger-color-code), 1);
       }
     }
   }

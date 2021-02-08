@@ -1,0 +1,82 @@
+.app-cookie-color-picker {
+  &-container {
+    width: 240px;
+    position: relative;
+
+    display: flex;
+    justify-content: space-between;
+
+    padding: 8px; 
+    background: var(--card-bg-color);
+    border-radius: 8px;
+  }
+
+  &__wrapper {
+    width: 100%;
+    position: absolute;
+    top: 50px;
+    left: 0;
+
+    ::ng-deep {
+      .sketch-swatches  {
+        display: none!important;
+      }
+      
+      .color-hue.color-hue-horizontal, .alpha-checkboard, .alpha-gradient  {
+        border-radius: 30px!important;
+      }
+      
+      .sketch-active, .grid {
+        border-radius: 50%!important;
+      }
+      
+      .saturation-black, .saturation-white, .color-saturation {
+        border-radius: 5px!important;
+      }
+      
+      .wrap > input {
+        border-radius: 5px!important;
+      }
+      
+      .color-saturation {
+        margin-bottom: 15px;
+      }
+      
+      .sketch-picker {
+        background-color: var(--card-bg-color)!important;
+        box-shadow: 0px 40px 48px -1px rgba(var(--secondary-color-code), 0.3)!important;
+      }
+    }
+  }
+
+  &__box {
+    width: 187px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__color {
+    width: 29px;
+    height: 29px;
+    border: 1px solid rgba(var(--secondary-color-code), 0.2);
+    border-radius: 4px;
+  }
+
+  &__value {
+    width: 149px;
+    height: 29px;
+    border-radius: 4px;
+    padding: 5.5px 8px;
+    border: 1px solid rgba(var(--secondary-color-code), 0.2);
+    background-color: var(--text-color);
+    
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: var(--secondary-color);
+    font-family: 'Sofia pro', 'open-sans';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 100%;
+  }
+}

@@ -43,6 +43,7 @@
     "ngx-textarea-autosize": "^2.0.3",
     "plotly.js": "^1.57.1",
     "rxjs": "~6.6.0",
+    "sanitize-html": "^2.3.2",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.2"
   },

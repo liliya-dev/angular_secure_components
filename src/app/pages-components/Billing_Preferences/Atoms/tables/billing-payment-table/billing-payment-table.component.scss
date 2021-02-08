@@ -12,6 +12,15 @@
   &__container {
     width: 100%;
     overflow-x: scroll;
+
+    &::-webkit-scrollbar-thumb {
+      background-color: rgba(var(--secondary-color-code), 0.5);
+      border-radius: 5px;
+    }
+
+    &::-webkit-scrollbar {
+      height: 5px;
+    }
   }
 
   &__header {

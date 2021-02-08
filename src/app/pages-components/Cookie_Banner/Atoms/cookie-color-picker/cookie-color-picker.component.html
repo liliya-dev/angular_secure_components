@@ -1,0 +1,19 @@
+<div class="app-cookie-color-picker-container">
+  <div class="app-cookie-color-picker__wrapper" *ngIf="isColorPickerVisible" #picker>
+    <color-sketch 
+      [color]="color" 
+      (onChange)="consoleColor($event)"
+    >
+    </color-sketch>
+  </div>
+  <div class="app-cookie-color-picker__box" (click)="setColorPickerVisibility()">
+    <div 
+      class="app-cookie-color-picker__color"
+      [ngStyle]="{ 'background-color': color }"
+    >
+    </div>
+    <div class="app-cookie-color-picker__value">{{ value }}</div>
+  </div>
+  <app-cookie-reload-button (click)="setToDefaultColor()"></app-cookie-reload-button>
+</div>
+

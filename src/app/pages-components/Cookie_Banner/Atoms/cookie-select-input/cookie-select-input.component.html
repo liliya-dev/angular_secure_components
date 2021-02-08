@@ -1,0 +1,18 @@
+<div class="app-cookie-select-input">
+  <ng-select 
+    [(ngModel)]="selectedItem"
+    class="app-cookie-select-input__input" 
+    [hideSelected]="true"
+    [searchable]="false"
+    (change)="handleValueChange($event)"
+  >
+    <ng-option class="app-cookie-select-input__option" *ngFor="let item of items; let i = index" [value]="item">
+      <div class="app-cookie-select-input__wrapper">
+        <img *ngIf="imagesPaths" [src]="imagesPaths[i]" [alt]="item">
+        <p class="app-cookie-select-input__text">
+          {{ item }}
+        </p>
+      </div>
+    </ng-option>
+  </ng-select>
+</div>

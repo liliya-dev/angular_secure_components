@@ -1,0 +1,50 @@
+.app-cookie-upload {
+  display: flex;
+  align-items: center;
+
+  &__input {
+    display: none;
+  }
+
+  &__label {
+    height: 34px;
+    width: 160px;
+
+    font-family: 'Gramatica Bold', 'open-sans';
+    font-size: 14px;
+    line-height: 34px;
+    color: var(--secondary-color);
+    text-transform: uppercase;
+    text-align: center;
+
+    border-radius: 4px;
+    background: rgba(var(--secondary-color-code), 0.1);
+    transition: var(transition);
+
+    &:hover {
+      background: rgba(var(--secondary-color-code), 0.3);
+    }
+
+    &:active {
+      background: rgba(var(--secondary-color-code), 0.5);
+    }
+  }
+
+  &__image-container {
+    width: 44px;
+    height: 44px;
+    margin-right: 16px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(var(--secondary-color-code), 0.05);
+    border-radius: 4px;
+
+    & > img {
+      max-width: 100%;
+      max-height: 100%;
+    }
+  }
+}

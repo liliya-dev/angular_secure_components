@@ -1,0 +1,103 @@
+.app-cookie-select-input {
+  &__wrapper {
+    display: flex;
+    align-items: center;
+  
+    & > img {
+      margin-right: 15px;
+    }
+  }
+
+  &__input {
+    font-family: 'Sofia pro', 'open-sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+  }
+
+  &__text {
+    text-transform: capitalize;
+    font-family: 'Sofia pro', 'open-sans';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 100%;
+  }
+
+  ::ng-deep {
+    .ng-dropdown-panel-items.scroll-host {
+      width: 100%;
+    }
+
+    .ng-select {
+      position: relative;
+      box-sizing: border-box;
+      height: 48px; 
+      width: 242px;
+    
+      background: transparent;
+      border: 1px solid rgba(var(--secondary-color-code), 0.3);
+      border-radius: 8px;
+      color: rgba(var(--secondary-color-code), 1);
+    
+      &:hover {
+        cursor: pointer;
+      }
+    
+      &:after {
+        content: url('../../../../../assets/images/roll-up.png');
+        position: absolute;
+        top: 17px;
+        right: 21px;
+        transform: rotate(180deg);
+      }
+    
+      &.ng-select-opened{
+        &:after {
+          content: url('../../../../../assets/images/roll-up.png');
+          position: absolute;
+          top: 17px;
+          right: 21px;
+          transform: rotate(0deg);
+        }
+      }
+    
+      &-container {
+        width: 100%;
+        height: 46px;
+        padding: 0 21px 0 16px;  
+        margin-bottom: 4px;
+        display: flex;
+        align-items: center;
+      }
+    }
+    
+    .ng-option {
+      background-color: var(--text-color);
+      padding: 0 21px 0 16px;  
+      height: 46px;
+      display: flex!important;
+      align-items: center;
+    
+      &:hover {
+        background-color: var(--card-bg-color);
+      }
+    }
+    
+    .ng-dropdown-panel {
+      position: absolute;
+    }
+    
+    .scroll-host {
+      color: rgba(var(--dark-color-code), 1);
+      position: absolute;
+      box-shadow: 0px 30px 70px rgba(44, 59, 82, 0.2);
+      border: 1px solid #B1B9C8;
+      border-radius: 8px;
+    }
+    
+    .ng-clear-wrapper {
+      display: none;
+    }
+  }
+}

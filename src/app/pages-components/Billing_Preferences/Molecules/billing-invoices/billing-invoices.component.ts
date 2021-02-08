@@ -14,6 +14,7 @@ const MOBILE_VIEW = 680;
   templateUrl: './billing-invoices.component.html',
   styleUrls: ['./billing-invoices.component.scss']
 })
+
 export class BillingInvoicesComponent implements OnInit, AfterViewInit {
   @Input() title: string;
   @Input() initialData: Item[];
@@ -21,6 +22,7 @@ export class BillingInvoicesComponent implements OnInit, AfterViewInit {
   data: Item[];
   direction: 'forward' | 'back' = 'forward';
   isMobile: boolean;
+  element = null;
 
   @ViewChild('container') container: ElementRef;
 

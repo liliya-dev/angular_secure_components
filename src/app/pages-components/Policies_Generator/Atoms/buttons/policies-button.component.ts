@@ -5,6 +5,7 @@ import { Component, Input, OnInit } from '@angular/core';
   templateUrl: './policies-button.component.html',
   styleUrls: ['./policies-button.component.scss']
 })
+
 export class PoliciesButtonComponent implements OnInit {
   @Input() title: string;
   @Input() classes: string;
